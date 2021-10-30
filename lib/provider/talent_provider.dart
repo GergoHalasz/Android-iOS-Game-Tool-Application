@@ -60,15 +60,12 @@ class TalentProvider extends ChangeNotifier {
   /// increase spell rank if it's not max and not over 60
   /// loop 5 times to max out
   void increaseTalentPoints(
-      Talent talent, int currentRank, String talentTreeName) {
-    int length = 1;
-    for (int i = 0; i < 5; i++) {
-      if (talent.points < length && getTotalTalentPoints() < 60) {
-        talent.points = talent.points + 1;
-        increaseTreePoints(talentTreeName);
-        updateTalentTree();
-        notifyListeners();
-      }
+      Talent talent, int currentRank, int maxRank, String talentTreeName) {
+    if (talent.points < maxRank && getTotalTalentPoints() < 60) {
+      talent.points = talent.points + 1;
+      increaseTreePoints(talentTreeName);
+      updateTalentTree();
+      notifyListeners();
     }
   }
 
@@ -106,7 +103,8 @@ class TalentProvider extends ChangeNotifier {
       if (talent.dependency != '') {
         Talent? dependencyTalent = findTalentByName(talent.dependency);
         //check for enough required points
-        if (dependencyTalent?.points == dependencyTalent?.ranks.rankList.length) {
+        if (dependencyTalent?.points ==
+            dependencyTalent?.ranks.rankList.length) {
           talent.enable = true;
         } else {
           talent.enable = false;

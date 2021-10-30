@@ -35,6 +35,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   collection: ^1.15.0
   provider: ^6.0.1
+  swipedetector: ^1.2.0
 
 dev_dependencies:
   flutter_test:

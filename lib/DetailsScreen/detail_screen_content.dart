@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wow_talent_calculator/utils/string.dart' as str;
@@ -13,7 +12,7 @@ import 'package:wow_talent_calculator/utils/constants.dart';
 class DetailScreenContent extends StatefulWidget {
   final String className;
   final Color classColor;
-  TalentTrees talentTrees;
+  final TalentTrees talentTrees;
   DetailScreenContent(
       {required this.className,
       required this.talentTrees,

@@ -1,15 +1,12 @@
 class TalentTrees {
-  final List<TalentTree> specTreeList;
+  late List<TalentTree> specTreeList;
 
   TalentTrees({
     required this.specTreeList,
   });
 
-  factory TalentTrees.fromJson(List<dynamic> parsedJson) {
-    List<TalentTree> specTrees;
-    specTrees = parsedJson.map((i) => TalentTree.fromJson(i)).toList();
-
-    return new TalentTrees(specTreeList: specTrees);
+  TalentTrees.fromJson(List<dynamic> parsedJson) {
+    specTreeList = parsedJson.map((i) => TalentTree.fromJson(i)).toList();
   }
 
   List<TalentTree> toJson() {
@@ -40,14 +37,12 @@ class TalentTree {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['Name'] = this.name;
-    data['Icon'] = this.icon;
-    data['Background'] = this.background;
-    data['Points'] = this.points;
-    if (this.talents != null) {
-      data['Talents'] = this.talents.toJson();
-    }
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data['Name'] = name;
+    data['Icon'] = icon;
+    data['Background'] = background;
+    data['Points'] = points;
+    data['Talents'] = talents.toJson();
     return data;
   }
 }
@@ -55,19 +50,17 @@ class TalentTree {
 class Talents {
   List<Talent> talentList = [];
 
-  Talents();
+  Talents({required this.talentList});
 
   Talents.fromJson(Map<String, dynamic> json) {
-    if (json['Talent'] != null) {
-      json['Talent'].forEach((v) {
-        talentList.add(Talent.fromJson(v));
-      });
-    }
+    json['Talent'].forEach((v) {
+      talentList.add(Talent.fromJson(v));
+    });
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['Talent'] = this.talentList.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data['Talent'] = talentList.map((v) => v.toJson()).toList();
     return data;
   }
 }
@@ -107,7 +100,7 @@ class Talent {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['Icon'] = icon;
     data['Name'] = name;
     data['Points'] = points;
@@ -128,11 +121,9 @@ class Ranks {
   Ranks({required this.rankList});
 
   Ranks.fromJson(Map<String, dynamic> json) {
-    if (json['Rank'] != null) {
-      json['Rank'].forEach((v) {
-        rankList.add(Rank.fromJson(v));
-      });
-    }
+    json['Rank'].forEach((v) {
+      rankList.add(Rank.fromJson(v));
+    });
   }
 
   Map<String, dynamic> toJson() {
@@ -154,9 +145,9 @@ class Rank {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['Number'] = this.number;
-    data['Description'] = this.description;
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data['Number'] = number;
+    data['Description'] = description;
     return data;
   }
 }

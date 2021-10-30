@@ -62,12 +62,18 @@ class HomeScreen extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           GestureDetector(
-              onTap: () => _handleOnTap(
-                  context, 'druid', druidTalentTrees, kColorOrangeDruid),
-              child: Container(
-                color: Colors.white,
-                child: Text('asd'),
-              )),
+            child: Container(
+              width: 50,
+              height: 50,
+              color: Colors.black,
+              child: Text(
+                'asd',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            onTap: () => _handleOnTap(
+                context, 'druid', druidTalentTrees, kColorOrangeDruid),
+          )
         ],
       ),
     );

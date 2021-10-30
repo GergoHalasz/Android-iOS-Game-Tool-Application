@@ -46,7 +46,7 @@ class TalentTreeWidget extends StatelessWidget {
                   padding: EdgeInsets.symmetric(
                       vertical: kTalentScreenPadding,
                       horizontal: kTalentScreenPadding),
-                  child: Stack(children: <Widget>[  
+                  child: Stack(children: <Widget>[
                     ..._buildTalentTree(talentProvider),
                   ]))));
     });

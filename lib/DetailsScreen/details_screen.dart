@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:async' show Future;
+import 'dart:async' show Future, Timer;
 import 'package:provider/provider.dart';
 import 'package:wow_talent_calculator/DetailsScreen/detail_screen_content.dart';
 import 'package:wow_talent_calculator/DetailsScreen/talent_tree_widget.dart';
@@ -24,13 +24,22 @@ class DetailScreen extends StatelessWidget {
           /// make new talent object every time we go to detail view
           TalentTrees talentTreesObject =
               TalentTrees.fromJson(snapshot.data ?? []);
-          return ChangeNotifierProvider<TalentProvider>(
-              create: (_) => TalentProvider(talentTreesObject),
-              child: DetailScreenContent(
-                talentTrees: talentTreesObject,
-                className: className,
-                classColor: classColor,
-              ));
+          talentTreesObject.specTreeList.forEach((talentList) => {
+                precacheImage(
+                    AssetImage(
+                        'assets/background/${talentList.background}.png'),
+                    context)
+              });
+          Timer(
+              Duration(milliseconds: 200),
+              () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => ChangeNotifierProvider<TalentProvider>(
+                      create: (_) => TalentProvider(talentTreesObject),
+                      child: DetailScreenContent(
+                        talentTrees: talentTreesObject,
+                        className: className,
+                        classColor: classColor,
+                      )))));
         } else if (snapshot.hasError) {
           return Text("${snapshot.error}");
         }

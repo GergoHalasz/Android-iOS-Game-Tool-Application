@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:swipedetector/swipedetector.dart';
 import 'package:wow_talent_calculator/model/talent.dart';
 import 'package:wow_talent_calculator/provider/talent_provider.dart';
 import 'package:wow_talent_calculator/utils/size_config.dart';
@@ -33,8 +34,6 @@ class _SpellWidgetState extends State<SpellWidget> {
     tooltip.ensureTooltipVisible();
   }
 
-
-
   String _getDescription() {
     int displayRank = currentRank - 1;
     if (displayRank < 0) {
@@ -47,10 +46,9 @@ class _SpellWidgetState extends State<SpellWidget> {
 
   // onTap, increase spell rank if it's not max and not over 60
 
-
   void _increaseRank() {
     talentProvider.increaseTalentPoints(
-        widget.talent, currentRank, widget.talentTreeName);
+        widget.talent, currentRank, maxRank, widget.talentTreeName);
   }
 
   bool _checkSpellCanDecrease() {
@@ -106,24 +104,36 @@ class _SpellWidgetState extends State<SpellWidget> {
     if (_checkSpellCanDecrease()) {
       talentProvider.decreaseTalentPoints(
           widget.talent, currentRank, widget.talentTreeName);
-    } // else show toast to let user know cannot decrease
+    }
+    // else show toast to let user know cannot decrease
   }
 
   // check if spell talent is enable or not
   // disable Tap action if grey out
   _buildSpellWidget() {
     if (widget.talent.enable) {
-      return Material(
-        color: Colors.transparent,
-        child: Ink.image(
-          image: AssetImage(imgLocation),
-          fit: BoxFit.cover,
-          child: InkWell(
-            onTap: () => _increaseRank(),
-            onLongPress: () => _showDescription(),
-            borderRadius: BorderRadius.circular(10),
+      return SwipeDetector(
+        child: Material(
+          color: Colors.transparent,
+          child: Ink.image(
+            image: AssetImage(imgLocation),
+            fit: BoxFit.cover,
+            child: InkWell(
+              onTap: () => _increaseRank(),
+              borderRadius: BorderRadius.circular(10),
+            ),
           ),
         ),
+        onSwipeDown: () {
+          _decreaseRank();
+        },
+        swipeConfiguration: SwipeConfiguration(
+            verticalSwipeMinVelocity: 100.0,
+            verticalSwipeMinDisplacement: 0.0,
+            verticalSwipeMaxWidthThreshold: 100.0,
+            horizontalSwipeMaxHeightThreshold: 50.0,
+            horizontalSwipeMinDisplacement: 50.0,
+            horizontalSwipeMinVelocity: 200.0),
       );
     } else {
       return Material(
@@ -181,7 +191,7 @@ class _SpellWidgetState extends State<SpellWidget> {
                 borderRadius: BorderRadius.circular(3),
               ),
               child: Text(
-                '${widget.talent.points}/$maxRank',
+                '$currentRank/$maxRank',
                 style: TextStyle(color: Colors.white),
               ),
             ),
