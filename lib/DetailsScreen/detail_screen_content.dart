@@ -1,17 +1,23 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
-import 'package:wow_talent_calculator/utils/string.dart' as str;
-import 'package:wow_talent_calculator/DetailsScreen/talent_tree_widget.dart';
-import 'package:wow_talent_calculator/model/talent.dart';
-import 'package:wow_talent_calculator/provider/talent_provider.dart';
-import 'package:wow_talent_calculator/utils/colors.dart';
-import 'package:wow_talent_calculator/utils/constants.dart';
+import 'package:wowtalentcalculator/utils/size_config.dart';
+import 'package:wowtalentcalculator/utils/string.dart' as str;
+import 'package:wowtalentcalculator/DetailsScreen/talent_tree_widget.dart';
+import 'package:wowtalentcalculator/model/talent.dart';
+import 'package:wowtalentcalculator/provider/talent_provider.dart';
+import 'package:wowtalentcalculator/utils/colors.dart';
+import 'package:wowtalentcalculator/utils/constants.dart';
+
+import '../ad_state.dart';
 
 // detail screen content below the tabs bar
 class DetailScreenContent extends StatefulWidget {
   final String className;
   final Color classColor;
+  
   final TalentTrees talentTrees;
   DetailScreenContent(
       {required this.className,
@@ -25,9 +31,32 @@ class DetailScreenContent extends StatefulWidget {
 class _DetailScreenContentState extends State<DetailScreenContent>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  BannerAd? banner;
+  bool firstTimeAdInit = true;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (firstTimeAdInit) {
+      final adState = Provider.of<AdState>(context);
+      adState.initialization.then((value) {
+        setState(() {
+          banner = BannerAd(
+              adUnitId: adState.bannerAdUnitId,
+              size: AdSize.banner,
+              request: AdRequest(),
+              listener: adState.listener)
+            ..load();
+          firstTimeAdInit = false;
+        });
+      });
+      print('didchangedep');
+    }
+  }
 
   @override
   initState() {
+    print('initstate');
     super.initState();
     _tabController = TabController(length: 3, vsync: this, initialIndex: 0);
   }
@@ -68,6 +97,28 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     }
   }
 
+  TabBar _tabBar() => TabBar(
+        controller: _tabController,
+        indicatorColor: widget.classColor,
+        tabs: [
+          Tab(
+              icon: Image.asset(
+            "assets/Icons/${widget.talentTrees.specTreeList[0].icon}.png",
+            width: kTabIconSize,
+          )),
+          Tab(
+              icon: Image.asset(
+            "assets/Icons/${widget.talentTrees.specTreeList[1].icon}.png",
+            width: kTabIconSize,
+          )),
+          Tab(
+              icon: Image.asset(
+            "assets/Icons/${widget.talentTrees.specTreeList[2].icon}.png",
+            width: kTabIconSize,
+          )),
+        ],
+      );
+
   @override
   Widget build(BuildContext context) {
     // get the current level to display at the top corner
@@ -78,101 +129,97 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     }
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: kColorSelectiveYellow),
-        title: Text(
-          str.capitalize(widget.className),
-          style: TextStyle(color: kColorSelectiveYellow),
-        ),
-        actions: <Widget>[
-          // level label
-          Center(
-            child: Container(
-              padding: EdgeInsets.only(right: 20),
-              child: Text(
-                'Level $level',
-                style: TextStyle(
-                    fontSize: 19,
-                    fontWeight: FontWeight.w600,
-                    color: kColorSelectiveYellow),
+          title: Text(
+            str.capitalize(widget.className),
+            style: TextStyle(color: kColorSelectiveYellow),
+          ),
+          actions: <Widget>[
+            // level label
+            Center(
+              child: Container(
+                padding: EdgeInsets.only(right: 20),
+                child: Text(
+                  'Level $level',
+                  style: TextStyle(
+                      fontSize: 19,
+                      fontWeight: FontWeight.w600,
+                      color: kColorSelectiveYellow),
+                ),
               ),
             ),
-          ),
-          // overflow menu
-          PopupMenuButton<String>(
-            // color: kColorSelectiveYellow,
-            onSelected: (value) {
-              handlePopupMenuSelect(value);
-            },
-            itemBuilder: (context) => [
-              PopupMenuItem(
-                value: "Help",
-                child: Text("Help"),
-              ),
-            ],
-          ),
-        ],
-        backgroundColor: kColorLightLicorice,
-        bottom: TabBar(
-          controller: _tabController,
-          indicatorColor: widget.classColor,
-          tabs: [
-            Tab(
-                icon: Image.asset(
-              "assets/Icons/${widget.talentTrees.specTreeList[0].icon}.png",
-              width: kTabIconSize,
-            )),
-            Tab(
-                icon: Image.asset(
-              "assets/Icons/${widget.talentTrees.specTreeList[1].icon}.png",
-              width: kTabIconSize,
-            )),
-            Tab(
-                icon: Image.asset(
-              "assets/Icons/${widget.talentTrees.specTreeList[2].icon}.png",
-              width: kTabIconSize,
-            )),
+            Container(
+                padding: EdgeInsets.only(right: 15),
+                child: InkResponse(
+                  child: Icon(
+                    Icons.save,
+                  ),
+                  onTap: () {},
+                ))
           ],
-        ),
-      ),
-      body: TabBarView(
-        controller: _tabController,
+          backgroundColor: Colors.black87,
+          bottom: PreferredSize(
+              preferredSize: _tabBar().preferredSize,
+              child:
+                  ColoredBox(color: Colors.grey.shade800, child: _tabBar()))),
+      body: Column(
         children: [
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                    "assets/background/${widget.talentTrees.specTreeList[0].background}.png"),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: TalentTreeWidget(
-              talentTreeName: widget.talentTrees.specTreeList[0].name,
+          Expanded(
+            child: TabBarView(
+              controller: _tabController,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(
+                            "assets/background/${widget.talentTrees.specTreeList[0].background}.png"),
+                        fit: BoxFit.cover,
+                      ),
+                      color: Colors.black),
+                  child: TalentTreeWidget(
+                    talentTreeName: widget.talentTrees.specTreeList[0].name,
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                          "assets/background/${widget.talentTrees.specTreeList[1].background}.png"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: TalentTreeWidget(
+                    talentTreeName: widget.talentTrees.specTreeList[1].name,
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                          "assets/background/${widget.talentTrees.specTreeList[2].background}.png"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: TalentTreeWidget(
+                    talentTreeName: widget.talentTrees.specTreeList[2].name,
+                  ),
+                )
+              ],
             ),
           ),
           Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                    "assets/background/${widget.talentTrees.specTreeList[1].background}.png"),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: TalentTreeWidget(
-              talentTreeName: widget.talentTrees.specTreeList[1].name,
-            ),
+            height: SizeConfig.blockSizeVertical * 4.5,
+            color: Colors.grey.shade800,
           ),
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                    "assets/background/${widget.talentTrees.specTreeList[2].background}.png"),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: TalentTreeWidget(
-              talentTreeName: widget.talentTrees.specTreeList[2].name,
-            ),
-          )
+          if (banner == null)
+            Container(
+              height: 50,
+            )
+          else
+            Container(
+              height: 50,
+              child: AdWidget(ad: banner!),
+              color: Colors.black,
+            )
         ],
       ),
     );

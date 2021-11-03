@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:wow_talent_calculator/model/talent.dart';
+import 'package:wowtalentcalculator/model/talent.dart';
 
 class TalentProvider extends ChangeNotifier {
   int _firstTalentTreePoints;

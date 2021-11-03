@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:wow_talent_calculator/HomeScreen/load_home_screen.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:provider/provider.dart';
+import 'package:wowtalentcalculator/HomeScreen/load_home_screen.dart';
+import 'package:wowtalentcalculator/ad_state.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  final initFuture = MobileAds.instance.initialize();
+  final adState = AdState(initFuture);
+  runApp(Provider.value(
+    value: adState,
+    builder: (context, child) => MyApp()
+  ));
 }
 
 class MyApp extends StatelessWidget {

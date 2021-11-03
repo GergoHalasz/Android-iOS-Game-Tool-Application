@@ -1,4 +1,4 @@
-package com.example.wow_talent_calculator
+package com.fissher.wowtalentcalculator
 
 import io.flutter.embedding.android.FlutterActivity
 

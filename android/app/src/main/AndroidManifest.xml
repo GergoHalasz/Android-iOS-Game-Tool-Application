@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.wow_talent_calculator">
+    package="com.fissher.wowtalentcalculator">
    <application
-        android:label="wow_talent_calculator"
+        android:label="wowtalentcalculator"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
@@ -37,5 +37,8 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8156706115088392~9335766755"/>
     </application>
 </manifest>

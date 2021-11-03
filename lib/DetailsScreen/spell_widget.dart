@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:swipedetector/swipedetector.dart';
-import 'package:wow_talent_calculator/model/talent.dart';
-import 'package:wow_talent_calculator/provider/talent_provider.dart';
-import 'package:wow_talent_calculator/utils/size_config.dart';
+import 'package:wowtalentcalculator/model/talent.dart';
+import 'package:wowtalentcalculator/provider/talent_provider.dart';
+import 'package:wowtalentcalculator/utils/size_config.dart';
 // import 'package:transparent_image/transparent_image.dart';
 
 //add ripple effect
@@ -181,7 +181,7 @@ class _SpellWidgetState extends State<SpellWidget> {
           Align(
             alignment: Alignment.center,
             child: _buildSpellWidget(), //spell icon
-          ),
+          ),widget.talent.enable ?
           Align(
             // spell rank
             alignment: Alignment.bottomRight,
@@ -195,7 +195,7 @@ class _SpellWidgetState extends State<SpellWidget> {
                 style: TextStyle(color: Colors.white),
               ),
             ),
-          ),
+          ) : Container(),
         ],
       ),
     );

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'dart:async' show Future, Timer;
 import 'package:provider/provider.dart';
-import 'package:wow_talent_calculator/DetailsScreen/detail_screen_content.dart';
-import 'package:wow_talent_calculator/DetailsScreen/talent_tree_widget.dart';
-import 'package:wow_talent_calculator/model/talent.dart';
-import 'package:wow_talent_calculator/provider/talent_provider.dart';
+import 'package:wowtalentcalculator/DetailsScreen/detail_screen_content.dart';
+import 'package:wowtalentcalculator/DetailsScreen/talent_tree_widget.dart';
+import 'package:wowtalentcalculator/model/talent.dart';
+import 'package:wowtalentcalculator/provider/talent_provider.dart';
 
 class DetailScreen extends StatelessWidget {
   final String className;
@@ -30,16 +30,13 @@ class DetailScreen extends StatelessWidget {
                         'assets/background/${talentList.background}.png'),
                     context)
               });
-          Timer(
-              Duration(milliseconds: 200),
-              () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ChangeNotifierProvider<TalentProvider>(
-                      create: (_) => TalentProvider(talentTreesObject),
-                      child: DetailScreenContent(
-                        talentTrees: talentTreesObject,
-                        className: className,
-                        classColor: classColor,
-                      )))));
+          return ChangeNotifierProvider<TalentProvider>(
+              create: (_) => TalentProvider(talentTreesObject),
+              child: DetailScreenContent(
+                talentTrees: talentTreesObject,
+                className: className,
+                classColor: classColor,
+              ));
         } else if (snapshot.hasError) {
           return Text("${snapshot.error}");
         }

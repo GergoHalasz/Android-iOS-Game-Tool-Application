@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:wow_talent_calculator/DetailsScreen/spell_widget.dart';
-import 'package:wow_talent_calculator/model/talent.dart';
-import 'package:wow_talent_calculator/provider/talent_provider.dart';
-import 'package:wow_talent_calculator/utils/constants.dart';
-import 'package:wow_talent_calculator/utils/size_config.dart';
+import 'package:wowtalentcalculator/DetailsScreen/spell_widget.dart';
+import 'package:wowtalentcalculator/model/talent.dart';
+import 'package:wowtalentcalculator/provider/talent_provider.dart';
+import 'package:wowtalentcalculator/utils/constants.dart';
+import 'package:wowtalentcalculator/utils/size_config.dart';
 import 'package:provider/provider.dart';
 
 // display talent tree for each specialization
 class TalentTreeWidget extends StatelessWidget {
   final String talentTreeName;
-  TalentTreeWidget({required this.talentTreeName});
 
+  TalentTreeWidget({required this.talentTreeName});
   _buildTalentTree(talentProvider) {
     /// contain talent list for this tree/page
     List<Talent> talentList =
@@ -32,6 +32,7 @@ class TalentTreeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final talentProvider = Provider.of<TalentProvider>(context);
+    final isMobile = MediaQuery.of(context).size.width < 600 ? true : false;
 
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints viewportConstraints) {
@@ -42,13 +43,21 @@ class TalentTreeWidget extends StatelessWidget {
                 maxHeight: SizeConfig.cellSize * 7 +
                     kTalentScreenTwoPadding, // cell size * number of row + padding
               ),
-              child: Container(
-                  padding: EdgeInsets.symmetric(
-                      vertical: kTalentScreenPadding,
-                      horizontal: kTalentScreenPadding),
-                  child: Stack(children: <Widget>[
-                    ..._buildTalentTree(talentProvider),
-                  ]))));
+              child: !isMobile
+                  ? Container(
+                      alignment: Alignment.center,
+                      child: SizedBox(
+                          width: 560,
+                          child: Stack(children: <Widget>[
+                            ..._buildTalentTree(talentProvider),
+                          ])))
+                  : Container(
+                      padding: EdgeInsets.symmetric(
+                          vertical: kTalentScreenPadding,
+                          horizontal: kTalentScreenPadding),
+                      child: Stack(children: <Widget>[
+                        ..._buildTalentTree(talentProvider),
+                      ]))));
     });
   }
 }

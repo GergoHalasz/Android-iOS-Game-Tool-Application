@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wow_talent_calculator/DetailsScreen/details_screen.dart';
-import 'package:wow_talent_calculator/utils/colors.dart';
-import 'package:wow_talent_calculator/utils/size_config.dart';
+import 'package:wowtalentcalculator/DetailsScreen/details_screen.dart';
+import 'package:wowtalentcalculator/utils/colors.dart';
+import 'package:wowtalentcalculator/utils/size_config.dart';
 
 /// Main Home Page, show for normal log in
 class HomeScreen extends StatelessWidget {
@@ -46,36 +46,9 @@ class HomeScreen extends StatelessWidget {
     //home_screen is the first page render that can calculate screen size
     SizeConfig().init(context);
 
-    return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: kColorSelectiveYellow),
-        title: Text(
-          'Classic Talent Calculator',
-          style: TextStyle(
-            color: kColorSelectiveYellow,
-            fontSize: 24,
-          ),
-        ),
-        centerTitle: true,
-        backgroundColor: kColorLightLicorice,
-      ),
-      body: ListView(
-        children: <Widget>[
-          GestureDetector(
-            child: Container(
-              width: 50,
-              height: 50,
-              color: Colors.black,
-              child: Text(
-                'asd',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-            onTap: () => _handleOnTap(
-                context, 'druid', druidTalentTrees, kColorOrangeDruid),
-          )
-        ],
-      ),
-    );
+    return DetailScreen(
+        className: 'druid',
+        classColor: kColorOrangeDruid,
+        talentTrees: druidTalentTrees);
   }
 }

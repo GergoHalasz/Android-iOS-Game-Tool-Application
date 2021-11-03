@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:wow_talent_calculator/utils/constants.dart';
+import 'package:wowtalentcalculator/utils/constants.dart';
 
 
 //https://medium.com/flutter-community/flutter-effectively-scale-ui-according-to-different-screen-sizes-2cb7c115ea0a
@@ -58,7 +58,7 @@ class SizeConfig {
     safeAreaScreenHeight = screenHeight - _safeAreaVertical;
 
     /// the width of cell of the [DetailScreen], calculate upon init.
-    cellSize = (screenWidth - kTalentScreenTwoPadding) / NUM_COLS;
+    cellSize =screenWidth < 600 ?  (screenWidth - kTalentScreenTwoPadding) / NUM_COLS : 140;
 
   }
 }
