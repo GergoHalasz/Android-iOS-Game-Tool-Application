@@ -9,7 +9,7 @@ class AdState {
 
   String get bannerAdUnitId => Platform.isAndroid
       ? 'ca-app-pub-3940256099942544/6300978111'
-      : '	ca-app-pub-3940256099942544/2934735716';
+      : 'ca-app-pub-3940256099942544/2934735716';
 
   final BannerAdListener listener = BannerAdListener(
     // Called when an ad is successfully received.
