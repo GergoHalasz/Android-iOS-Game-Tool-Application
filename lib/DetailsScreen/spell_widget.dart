@@ -192,7 +192,7 @@ class _SpellWidgetState extends State<SpellWidget> {
               ),
               child: Text(
                 '$currentRank/$maxRank',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(fontSize: 15),
               ),
             ),
           ) : Container(),

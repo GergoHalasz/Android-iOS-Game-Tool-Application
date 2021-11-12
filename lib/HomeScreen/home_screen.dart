@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wowtalentcalculator/DetailsScreen/details_screen.dart';
 import 'package:wowtalentcalculator/utils/colors.dart';
 import 'package:wowtalentcalculator/utils/size_config.dart';
+import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
 
 /// Main Home Page, show for normal log in
 class HomeScreen extends StatelessWidget {
@@ -33,10 +34,10 @@ class HomeScreen extends StatelessWidget {
       context,
       MaterialPageRoute(
         builder: (context) => DetailScreen(
-          className: className,
-          talentTrees: talentTrees,
-          classColor: classColor,
-        ),
+            className: className,
+            talentTrees: talentTrees,
+            classColor: classColor,
+            arrowTrees: getArrowClassByName(className)),
       ),
     );
   }
@@ -49,6 +50,7 @@ class HomeScreen extends StatelessWidget {
     return DetailScreen(
         className: 'druid',
         classColor: kColorOrangeDruid,
-        talentTrees: druidTalentTrees);
+        talentTrees: druidTalentTrees,
+        arrowTrees: getArrowClassByName('druid'));
   }
 }

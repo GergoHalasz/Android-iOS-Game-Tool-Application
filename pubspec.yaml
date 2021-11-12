@@ -37,13 +37,12 @@ dependencies:
   provider: ^6.0.1
   swipedetector: ^1.2.0
   google_mobile_ads: ^0.13.5
-  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: ^0.9.2
-  
+
 flutter_icons:
   image_path: "assets/AppIcons/launcherIcon.png"
   android: true
@@ -67,19 +66,20 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-      - data_repo/druid.json
-      - data_repo/hunter.json
-      - data_repo/mage.json
-      - data_repo/paladin.json
-      - data_repo/priest.json
-      - data_repo/rogue.json
-      - data_repo/shaman.json
-      - data_repo/warlock.json
-      - data_repo/warrior.json
-      - assets/background/
-      - assets/Icons/
-      - assets/Arrows/
-      - assets/Class/
+    - data_repo/druid.json
+    - data_repo/hunter.json
+    - data_repo/mage.json
+    - data_repo/paladin.json
+    - data_repo/priest.json
+    - data_repo/rogue.json
+    - data_repo/shaman.json
+    - data_repo/warlock.json
+    - data_repo/warrior.json
+    - assets/background/
+    - assets/Icons/
+    - assets/Arrows/
+    - assets/Class/
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
@@ -110,3 +110,12 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Roboto-Black.ttf
+          weight: 900

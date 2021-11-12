@@ -10,10 +10,14 @@ class DetailScreen extends StatelessWidget {
   final String className;
   final Color classColor;
   final Future<List> talentTrees;
+  final List arrowTrees;
+
   DetailScreen(
       {required this.className,
       required this.classColor,
-      required this.talentTrees});
+      required this.talentTrees,
+      required this.arrowTrees
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +40,7 @@ class DetailScreen extends StatelessWidget {
                 talentTrees: talentTreesObject,
                 className: className,
                 classColor: classColor,
+                arrowTrees: arrowTrees,
               ));
         } else if (snapshot.hasError) {
           return Text("${snapshot.error}");

@@ -9,8 +9,9 @@ import 'package:provider/provider.dart';
 // display talent tree for each specialization
 class TalentTreeWidget extends StatelessWidget {
   final String talentTreeName;
+  final List<Widget> arrowList;
 
-  TalentTreeWidget({required this.talentTreeName});
+  TalentTreeWidget({required this.talentTreeName, required this.arrowList});
   _buildTalentTree(talentProvider) {
     /// contain talent list for this tree/page
     List<Talent> talentList =
@@ -57,6 +58,7 @@ class TalentTreeWidget extends StatelessWidget {
                           horizontal: kTalentScreenPadding),
                       child: Stack(children: <Widget>[
                         ..._buildTalentTree(talentProvider),
+                        ...arrowList
                       ]))));
     });
   }
