@@ -35,7 +35,7 @@ class DetailScreen extends StatelessWidget {
                     context)
               });
           return ChangeNotifierProvider<TalentProvider>(
-              create: (_) => TalentProvider(talentTreesObject),
+              create: (_) => TalentProvider(talentTreesObject, className),
               child: DetailScreenContent(
                 talentTrees: talentTreesObject,
                 className: className,

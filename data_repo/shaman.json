@@ -1,7 +1,7 @@
 [
 	{
 		"Name": "Elemental",
-		"Icon": "spell_fire_fireball",
+		"Icon": "spell_nature_lightning",
 		"Background": "shaman_elemental",
 		"Points": 0,
 		"Talents": {

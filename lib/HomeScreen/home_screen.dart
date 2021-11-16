@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
       required this.warriorTalentTrees});
 
   /// open class talents
-  _handleOnTap(BuildContext context, String className, Future<List> talentTrees,
+  handleOnTap(BuildContext context, String className, Future<List> talentTrees,
       Color classColor) {
     Navigator.push(
       context,
@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
 
     return DetailScreen(
         className: 'druid',
-        classColor: kColorOrangeDruid,
+        classColor: kColorDruid,
         talentTrees: druidTalentTrees,
         arrowTrees: getArrowClassByName('druid'));
   }

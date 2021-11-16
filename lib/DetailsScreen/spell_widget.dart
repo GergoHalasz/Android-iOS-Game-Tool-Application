@@ -51,6 +51,11 @@ class _SpellWidgetState extends State<SpellWidget> {
         widget.talent, currentRank, maxRank, widget.talentTreeName);
   }
 
+  void _increaseMaxRank() {
+    talentProvider.increaseMaxTalentPoints(
+        widget.talent, currentRank, maxRank, widget.talentTreeName);
+  }
+
   bool _checkSpellCanDecrease() {
     // rules if can decrease:
     // 1. currentRank > 0
@@ -119,13 +124,17 @@ class _SpellWidgetState extends State<SpellWidget> {
             image: AssetImage(imgLocation),
             fit: BoxFit.cover,
             child: InkWell(
-              onTap: () => _increaseRank(),
+              onTap: () => _showDescription(),
+              onLongPress: () => _increaseMaxRank(),
               borderRadius: BorderRadius.circular(10),
             ),
           ),
         ),
         onSwipeDown: () {
           _decreaseRank();
+        },
+        onSwipeUp: () {
+          _increaseRank();
         },
         swipeConfiguration: SwipeConfiguration(
             verticalSwipeMinVelocity: 100.0,
@@ -181,21 +190,23 @@ class _SpellWidgetState extends State<SpellWidget> {
           Align(
             alignment: Alignment.center,
             child: _buildSpellWidget(), //spell icon
-          ),widget.talent.enable ?
-          Align(
-            // spell rank
-            alignment: Alignment.bottomRight,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.black87,
-                borderRadius: BorderRadius.circular(3),
-              ),
-              child: Text(
-                '$currentRank/$maxRank',
-                style: TextStyle(fontSize: 15),
-              ),
-            ),
-          ) : Container(),
+          ),
+          widget.talent.enable
+              ? Align(
+                  // spell rank
+                  alignment: Alignment.bottomRight,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.black87,
+                      borderRadius: BorderRadius.circular(3),
+                    ),
+                    child: Text(
+                      '$currentRank/$maxRank',
+                      style: TextStyle(fontSize: 15),
+                    ),
+                  ),
+                )
+              : Container(),
         ],
       ),
     );

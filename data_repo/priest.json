@@ -452,7 +452,7 @@
 	},
 	{
 	  "Name": "Holy",
-	  "Icon": "spell_holy_renew",
+	  "Icon": "spell_holy_holybolt",
 	  "Background": "priest_holy",
 	  "Points": 0,
 	  "Talents": {

@@ -34,6 +34,7 @@ class _ArrowWidgetState extends State<ArrowWidget> {
   late double arrowHeadLeft;
   late double arrowHeadWidth;
 
+
   setEnable() {
     Talent dependencyTalent =
         talentProvider.findTalentByName(widget.dependencyTalent);

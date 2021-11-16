@@ -7,15 +7,31 @@ import 'package:wowtalentcalculator/utils/size_config.dart';
 import 'package:provider/provider.dart';
 
 // display talent tree for each specialization
-class TalentTreeWidget extends StatelessWidget {
+class TalentTreeWidget extends StatefulWidget {
   final String talentTreeName;
   final List<Widget> arrowList;
+  TalentTreeWidget(
+      {Key? key, required this.talentTreeName, required this.arrowList})
+      : super(key: key);
+  @override
+  State<TalentTreeWidget> createState() => _TalentTreeWidgetState();
+}
 
-  TalentTreeWidget({required this.talentTreeName, required this.arrowList});
+class _TalentTreeWidgetState extends State<TalentTreeWidget> {
+  late TalentProvider talentProvider;
+  late List<Widget> arrowList;
+  late int asd;
+
+  @override
+  initState() {
+    super.initState();
+    arrowList = widget.arrowList;
+  }
+
   _buildTalentTree(talentProvider) {
     /// contain talent list for this tree/page
     List<Talent> talentList =
-        talentProvider.findTalentTreeByName(talentTreeName);
+        talentProvider.findTalentTreeByName(widget.talentTreeName);
     List<Widget> talentTree = [];
     for (int i = 0; i < talentList.length; i++) {
       Widget spell = Positioned(
@@ -23,7 +39,7 @@ class TalentTreeWidget extends StatelessWidget {
           left: talentList[i].position[1].toDouble() * SizeConfig.cellSize,
           child: SpellWidget(
             talent: talentList[i],
-            talentTreeName: talentTreeName,
+            talentTreeName: widget.talentTreeName,
           ));
       talentTree.add(spell);
     }
@@ -32,7 +48,7 @@ class TalentTreeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final talentProvider = Provider.of<TalentProvider>(context);
+    talentProvider = Provider.of<TalentProvider>(context);
     final isMobile = MediaQuery.of(context).size.width < 600 ? true : false;
 
     return LayoutBuilder(
@@ -51,6 +67,7 @@ class TalentTreeWidget extends StatelessWidget {
                           width: 560,
                           child: Stack(children: <Widget>[
                             ..._buildTalentTree(talentProvider),
+                            ...arrowList
                           ])))
                   : Container(
                       padding: EdgeInsets.symmetric(

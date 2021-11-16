@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
+import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
 import 'package:wowtalentcalculator/DetailsScreen/Save_screen.dart';
+import 'package:wowtalentcalculator/DetailsScreen/drawer_screen.dart';
+import 'package:wowtalentcalculator/HomeScreen/home_screen.dart';
+import 'package:wowtalentcalculator/HomeScreen/load_home_screen.dart';
+import 'package:wowtalentcalculator/utils/methods.dart';
 import 'package:wowtalentcalculator/utils/size_config.dart';
 import 'package:wowtalentcalculator/utils/string.dart' as str;
 import 'package:wowtalentcalculator/DetailsScreen/talent_tree_widget.dart';
@@ -34,9 +39,17 @@ class DetailScreenContent extends StatefulWidget {
 class _DetailScreenContentState extends State<DetailScreenContent>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  late TalentProvider talentProvider;
   int _selectedIndex = 0;
   BannerAd? banner;
   bool firstTimeAdInit = true;
+  late TalentTrees talentTrees;
+  late String className;
+  late Color classColor;
+  late List arrowTrees;
+  Key talentTree1Key = UniqueKey();
+  Key talentTree2Key = UniqueKey();
+  Key talentTree3Key = UniqueKey();
 
   @override
   void didChangeDependencies() {
@@ -60,6 +73,10 @@ class _DetailScreenContentState extends State<DetailScreenContent>
   @override
   initState() {
     super.initState();
+    talentTrees = widget.talentTrees;
+    className = widget.className;
+    classColor = widget.classColor;
+    arrowTrees = widget.arrowTrees;
 
     _tabController = TabController(length: 3, vsync: this, initialIndex: 0);
     _tabController.addListener(() {
@@ -78,7 +95,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
   void saveTalent() {
     print("save talent");
 
-    String json = jsonEncode(widget.talentTrees);
+    String json = jsonEncode(talentTrees);
     print(json);
   }
 
@@ -107,46 +124,69 @@ class _DetailScreenContentState extends State<DetailScreenContent>
 
   TabBar _tabBar() => TabBar(
         controller: _tabController,
-        indicatorColor: widget.classColor,
+        indicatorColor: classColor,
         tabs: [
           Tab(
+            icon: Image.asset(
+              "assets/Icons/${talentTrees.specTreeList[0].icon}.png",
+              width: kTabIconSize,
+            ),
+          ),
+          Tab(
               icon: Image.asset(
-            "assets/Icons/${widget.talentTrees.specTreeList[0].icon}.png",
+            "assets/Icons/${talentTrees.specTreeList[1].icon}.png",
             width: kTabIconSize,
           )),
           Tab(
               icon: Image.asset(
-            "assets/Icons/${widget.talentTrees.specTreeList[1].icon}.png",
-            width: kTabIconSize,
-          )),
-          Tab(
-              icon: Image.asset(
-            "assets/Icons/${widget.talentTrees.specTreeList[2].icon}.png",
+            "assets/Icons/${talentTrees.specTreeList[2].icon}.png",
             width: kTabIconSize,
           )),
         ],
       );
 
+  changeClass(String name) => {
+        loadTalentString(name).then((value) {
+          TalentTrees talentTreesObject = TalentTrees.fromJson(value);
+          talentProvider.changeClass(talentTreesObject, name);
+
+          setState(() {
+            talentTrees = talentTreesObject;
+            classColor = classColors[name]!;
+            className = name;
+            arrowTrees = getArrowClassByName(name);
+            talentTree1Key = UniqueKey();
+            talentTree2Key = UniqueKey();
+            talentTree3Key = UniqueKey();
+          });
+        })
+      };
+
   @override
   Widget build(BuildContext context) {
     // get the current level to display at the top corner
     // display level 10 for starting
+    talentProvider = Provider.of<TalentProvider>(context);
     int level = Provider.of<TalentProvider>(context).getTotalTalentPoints();
     int firstTalentTreePoints = Provider.of<TalentProvider>(context)
-        .getTalentTreePoints(widget.talentTrees.specTreeList[0].name);
+        .getTalentTreePoints(talentTrees.specTreeList[0].name);
     int secondTalentTreePoints = Provider.of<TalentProvider>(context)
-        .getTalentTreePoints(widget.talentTrees.specTreeList[1].name);
+        .getTalentTreePoints(talentTrees.specTreeList[1].name);
     int thirdTalentTreePoints = Provider.of<TalentProvider>(context)
-        .getTalentTreePoints(widget.talentTrees.specTreeList[2].name);
+        .getTalentTreePoints(talentTrees.specTreeList[2].name);
 
     if (level == 9) {
       level = 10;
     }
     return Scaffold(
-      drawer: Drawer(),
+      drawer: Drawer(
+          child: DrawerScreen(
+        changeClass: changeClass,
+      )),
       appBar: AppBar(
           centerTitle: true,
-          title: Text(str.capitalize(widget.className),
+          title: Text(
+              '${talentTrees.specTreeList[_selectedIndex].name} ${str.capitalize(className)}',
               style: TextStyle(color: kColorSelectiveYellow)),
           actions: <Widget>[
             Container(
@@ -162,11 +202,11 @@ class _DetailScreenContentState extends State<DetailScreenContent>
               ),
             )
           ],
-          backgroundColor: Colors.black87,
+          backgroundColor: Colors.black,
           bottom: PreferredSize(
               preferredSize: _tabBar().preferredSize,
               child:
-                  ColoredBox(color: Colors.grey.shade800, child: _tabBar()))),
+                  ColoredBox(color: Colors.grey.shade700, child: _tabBar()))),
       body: DefaultTextStyle(
         style: TextStyle(
             fontSize: 16,
@@ -183,44 +223,47 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                     decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(
-                              "assets/background/${widget.talentTrees.specTreeList[0].background}.png"),
+                              "assets/background/${talentTrees.specTreeList[0].background}.png"),
                           fit: BoxFit.cover,
                         ),
                         color: Colors.black),
                     child: TalentTreeWidget(
-                        talentTreeName: widget.talentTrees.specTreeList[0].name,
-                        arrowList: widget.arrowTrees[0]),
+                        key: talentTree1Key,
+                        talentTreeName: talentTrees.specTreeList[0].name,
+                        arrowList: arrowTrees[0]),
                   ),
                   Container(
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
-                            "assets/background/${widget.talentTrees.specTreeList[1].background}.png"),
+                            "assets/background/${talentTrees.specTreeList[1].background}.png"),
                         fit: BoxFit.cover,
                       ),
                     ),
                     child: TalentTreeWidget(
-                        talentTreeName: widget.talentTrees.specTreeList[1].name,
-                        arrowList: widget.arrowTrees[1]),
+                        key: talentTree2Key,
+                        talentTreeName: talentTrees.specTreeList[1].name,
+                        arrowList: arrowTrees[1]),
                   ),
                   Container(
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
-                            "assets/background/${widget.talentTrees.specTreeList[2].background}.png"),
+                            "assets/background/${talentTrees.specTreeList[2].background}.png"),
                         fit: BoxFit.cover,
                       ),
                     ),
                     child: TalentTreeWidget(
-                        talentTreeName: widget.talentTrees.specTreeList[2].name,
-                        arrowList: widget.arrowTrees[2]),
+                        key: talentTree3Key,
+                        talentTreeName: talentTrees.specTreeList[2].name,
+                        arrowList: arrowTrees[2]),
                   )
                 ],
               ),
             ),
             Container(
                 height: SizeConfig.blockSizeVertical * 4.5,
-                color: Colors.grey.shade800,
+                color: Colors.grey.shade700,
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

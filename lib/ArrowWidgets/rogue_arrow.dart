@@ -28,8 +28,8 @@ getRogueArrowList() {
         dependencyTalent: 'Dual Wield Specialization',
       ),
       ArrowWidget(
-        startPosition: Position(row: 1, column: 2),
-        endPosition: Position(row: 2, column: 2),
+        startPosition: Position(row: 1, column: 1),
+        endPosition: Position(row: 2, column: 1),
         lengthType: 'short',
         dependencyTalent: 'Riposte',
       ),

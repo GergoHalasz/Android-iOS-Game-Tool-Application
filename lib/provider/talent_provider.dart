@@ -6,8 +6,9 @@ class TalentProvider extends ChangeNotifier {
   int _secondTalentTreePoints;
   int _thirdTalentTreePoints;
   TalentTrees talentTrees;
+  String className;
 
-  TalentProvider(this.talentTrees)
+  TalentProvider(this.talentTrees, this.className)
       : _firstTalentTreePoints = talentTrees.specTreeList[0].points,
         _secondTalentTreePoints = talentTrees.specTreeList[1].points,
         _thirdTalentTreePoints = talentTrees.specTreeList[2].points;
@@ -18,6 +19,19 @@ class TalentProvider extends ChangeNotifier {
       _firstTalentTreePoints +
       _secondTalentTreePoints +
       _thirdTalentTreePoints;
+
+  changeClass(talentTreesObj, newClassName) {
+    talentTrees = talentTreesObj;
+    _firstTalentTreePoints = 0;
+    _secondTalentTreePoints = 0;
+    _thirdTalentTreePoints = 0;
+    className = newClassName;
+
+    notifyListeners();
+  }
+
+  getTotalTalentPointsWithoutLevel() =>
+      _firstTalentTreePoints + _secondTalentTreePoints + _thirdTalentTreePoints;
 
   /// return the total points of selected tree
   getTalentTreePoints(String talentTreeName) {
@@ -44,6 +58,18 @@ class TalentProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  void increaseTreePointsWithSomePoints(String talentTreeName, int points) {
+    if (talentTreeName == talentTrees.specTreeList[0].name) {
+      _firstTalentTreePoints = _firstTalentTreePoints + points;
+    } else if (talentTreeName == talentTrees.specTreeList[1].name) {
+      _secondTalentTreePoints = _secondTalentTreePoints + points;
+    } else if (talentTreeName == talentTrees.specTreeList[2].name) {
+      _thirdTalentTreePoints = _thirdTalentTreePoints + points;
+    }
+
+    notifyListeners();
+  }
+
   /// decrease the total talent points of selected tree
   void decreaseTreePoints(String talentTree) {
     if (talentTree == talentTrees.specTreeList[0].name) {
@@ -64,6 +90,17 @@ class TalentProvider extends ChangeNotifier {
     if (talent.points < maxRank && getTotalTalentPoints() < 60) {
       talent.points = talent.points + 1;
       increaseTreePoints(talentTreeName);
+      updateTalentTree();
+      notifyListeners();
+    }
+  }
+
+  void increaseMaxTalentPoints(
+      Talent talent, int currentRank, int maxRank, String talentTreeName) {
+    if (talent.points < maxRank &&
+        getTotalTalentPointsWithoutLevel() + (maxRank - currentRank) <= 51) {
+      talent.points = maxRank;
+      increaseTreePointsWithSomePoints(talentTreeName, (maxRank - currentRank));
       updateTalentTree();
       notifyListeners();
     }
@@ -128,6 +165,14 @@ class TalentProvider extends ChangeNotifier {
       }
     }
     return talentTree;
+  }
+
+  bool isThereTalentTreeByName(String name) {
+    bool isThereTalentTree = false;
+    talentTrees.specTreeList.forEach((element) {
+      if (element.name == name) isThereTalentTree = true;
+    });
+    return isThereTalentTree;
   }
 
   /// return the talent spell by name
