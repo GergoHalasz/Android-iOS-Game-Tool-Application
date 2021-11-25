@@ -9,8 +9,9 @@ class TalentTrees {
     specTreeList = parsedJson.map((i) => TalentTree.fromJson(i)).toList();
   }
 
-  List<TalentTree> toJson() {
-    return specTreeList;
+  List<Map<String, dynamic>> toJson() {
+    var map1 = specTreeList.map((e) => e.toJson()).toList();
+    return map1;
   }
 }
 
@@ -95,7 +96,7 @@ class Talent {
     support = json['Support'].cast<String>();
     position = json['Position'].cast<int>();
     enable = json['Enable'];
-    tier = json['Tier'];
+    tier = json['Tier'] is String ? int.parse(json['Tier']) : json['Tier'];
     ranks = Ranks.fromJson(json['Ranks']);
   }
 
@@ -140,7 +141,8 @@ class Rank {
   Rank({required this.number, required this.description});
 
   Rank.fromJson(Map<String, dynamic> json) {
-    number = json['Number'];
+    number =
+        json["Number"] is String ? int.parse(json['Number']) : json['Number'];
     description = json['Description'];
   }
 

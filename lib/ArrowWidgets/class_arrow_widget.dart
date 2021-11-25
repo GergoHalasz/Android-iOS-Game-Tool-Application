@@ -9,34 +9,34 @@ import 'package:wowtalentcalculator/ArrowWidgets/warrior_arrow.dart';
 import 'hunter_arrow.dart';
 import 'mage_arrow.dart';
 
-getArrowClassByName(String className) {
+getArrowClassByName(String className, String expansion) {
   switch (className) {
     case 'warlock':
-      return getWarlockArrowList();
+      return getWarlockArrowList(expansion);
       break;
     case 'druid':
-      return getDruidArrowList();
+      return getDruidArrowList(expansion);
       break;
     case 'hunter':
-      return getHunterArrowList();
+      return getHunterArrowList(expansion);
       break;
     case 'mage':
-      return getMageArrowList();
+      return getMageArrowList(expansion);
       break;
     case 'paladin':
-      return getPaladinArrowList();
+      return getPaladinArrowList(expansion);
       break;
     case 'priest':
-      return getPriestArrowList();
+      return getPriestArrowList(expansion);
       break;
     case 'rogue':
-      return getRogueArrowList();
+      return getRogueArrowList(expansion);
       break;
     case 'shaman':
-      return getShamanArrowList();
+      return getShamanArrowList(expansion);
       break;
     case 'warrior':
-      return getWarriorArrowList();
+      return getWarriorArrowList(expansion);
       break;
 
     default:

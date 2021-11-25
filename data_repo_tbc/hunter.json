@@ -1,0 +1,1703 @@
+[
+  {
+    "Name": "Beast Mastery",
+    "Icon": "ability_hunter_beasttaming",
+    "Background": "hunter_beast",
+    "Points": 0,
+    "Talents": {
+      "Talent": [
+        {
+          "Icon": "Spell_Nature_RavenForm",
+          "Name": "Improved Aspect of the Hawk",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 1],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "While Aspect of the Hawk is active, all normal ranged attacks have a 10% chance of increasing ranged attack speed by 3% for 12 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "While Aspect of the Hawk is active, all normal ranged attacks have a 10% chance of increasing ranged attack speed by 6% for 12 sec."
+              },
+              {
+                "Number": "3",
+                "Description": "While Aspect of the Hawk is active, all normal ranged attacks have a 10% chance of increasing ranged attack speed by 9% for 12 sec."
+              },
+              {
+                "Number": "4",
+                "Description": "While Aspect of the Hawk is active, all normal ranged attacks have a 10% chance of increasing ranged attack speed by 12% for 12 sec."
+              },
+              {
+                "Number": "5",
+                "Description": "While Aspect of the Hawk is active, all normal ranged attacks have a 10% chance of increasing ranged attack speed by 15% for 12 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Nature_Reincarnation",
+          "Name": "Endurance Training",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 2],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the Health of your pet by 2% and your total health by 1%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the Health of your pet by 4% and your total health by 2%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the Health of your pet by 6% and your total health by 3%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases the Health of your pet by 8% and your total health by 4%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases the Health of your pet by 10% and your total health by 5%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_SilentHunter",
+
+          "Name": "Focused Fire",
+
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 0],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "All damage caused by you is increased by 1% while your pet is active and the critical strike chance of your Kill Command ability is increased by 10%."
+              },
+              {
+                "Number": "2",
+                "Description": "All damage caused by you is increased by 2% while your pet is active and the critical strike chance of your Kill Command ability is increased by 20%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_AspectOfTheMonkey",
+          "Name": "Improved Aspect of the Monkey",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 1],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the Dodge bonus of your Aspect of the Monkey by 2%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the Dodge bonus of your Aspect of the Monkey by 4%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the Dodge bonus of your Aspect of the Monkey by 6%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Misc_Pelt_Bear_03",
+          "Name": "Thick Hide",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 2],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the armor rating of your pets by 7% and your armor contribution from items by 4%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the armor rating of your pets by 14% and your armor contribution from items by 7%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the armor rating of your pets by 20% and your armor contribution from items by 10%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_BeastSoothe",
+          "Name": "Improved Revive Pet",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 3],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Revive Pet's casting time is reduced by 3 sec, mana cost is reduced by 20%, and increases the health your pet returns with by an additional 15%."
+              },
+              {
+                "Number": "2",
+                "Description": "Revive Pet's casting time is reduced by 6 sec, mana cost is reduced by 40%, and increases the health your pet returns with by an additional 30%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Mount_JungleTiger",
+          "Name": "Pathfinding",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 0],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by 4%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by 8%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Druid_Dash",
+          "Name": "Bestial Swiftness",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 1],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the outdoor movement speed of your pets by 30%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_BullRush",
+          "Name": "Unleashed Fury",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 2],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the damage done by your pets by 4%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the damage done by your pets by 8%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the damage done by your pets by 12%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases the damage done by your pets by 16%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases the damage done by your pets by 20%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_MendPet",
+          "Name": "Improved Mend Pet",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 1],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Reduces the mana cost of your Mend Pet spell by 10% and gives the Mend Pet spell a 25% chance of cleansing 1 Curse, Disease, Magic or Poison effect from the pet each tick."
+              },
+              {
+                "Number": "2",
+                "Description": "Reduces the mana cost of your Mend Pet spell by 20% and gives the Mend Pet spell a 50% chance of cleansing 1 Curse, Disease, Magic or Poison effect from the pet each tick."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Misc_MonsterClaw_04",
+          "Name": "Ferocity",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Frenzy"],
+          "Position": [3, 2],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the critical strike chance of your pet by 2%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the critical strike chance of your pet by 4%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the critical strike chance of your pet by 6%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases the critical strike chance of your pet by 8%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases the critical strike chance of your pet by 10%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Druid_DemoralizingRoar",
+          "Name": "Spirit Bond",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 0],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "While your pet is active, you and your pet will regenerate 1% of total health every 10 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "While your pet is active, you and your pet will regenerate 2% of total health every 10 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Devour",
+          "Name": "Intimidation",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Bestial Wrath"],
+          "Position": [4, 1],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Command your pet to intimidate the target on the next successful melee attack, causing a high amount of threat and stunning the target for 3 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Nature_AbolishMagic",
+          "Name": "Bestial Discipline",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 3],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the Focus regeneration of your pets by 50%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the Focus regeneration of your pets by 100%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_AnimalHandler",
+          "Name": "Animal Handler",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 0],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your speed while mounted by 4% and your pet's chance to hit by 2%.  The mounted movement speed increase does not stack with other effects."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your speed while mounted by 8% and your pet's chance to hit by 4%.  The mounted movement speed increase does not stack with other effects."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Misc_MonsterClaw_03",
+          "Name": "Frenzy",
+          "Points": 0,
+          "Dependency": "Ferocity",
+          "Support": [],
+          "Position": [5, 2],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Gives your pet a 20% chance to gain a 30% attack speed increase for 8 sec after dealing a critical strike."
+              },
+              {
+                "Number": "2",
+                "Description": "Gives your pet a 40% chance to gain a 30% attack speed increase for 8 sec after dealing a critical strike."
+              },
+              {
+                "Number": "3",
+                "Description": "Gives your pet a 60% chance to gain a 30% attack speed increase for 8 sec after dealing a critical strike."
+              },
+              {
+                "Number": "4",
+                "Description": "Gives your pet a 80% chance to gain a 30% attack speed increase for 8 sec after dealing a critical strike."
+              },
+              {
+                "Number": "5",
+                "Description": "Gives your pet a 100% chance to gain a 30% attack speed increase for 8 sec after dealing a critical strike."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_FerociousInspiration",
+          "Name": "Ferocious Inspiration",
+          "Points": 0,
+          "Dependency": "Ferocity",
+          "Support": [],
+          "Position": [6, 0],
+          "Enable": false,
+          "Tier": 7,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "When your pet scores a critical hit, all party members have all damage increased by 1% for 10 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "When your pet scores a critical hit, all party members have all damage increased by 2% for 10 sec."
+              },
+              {
+                "Number": "3",
+                "Description": "When your pet scores a critical hit, all party members have all damage increased by 3% for 10 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Druid_FerociousBite",
+          "Name": "Bestial Wrath",
+          "Points": 0,
+          "Dependency": "Intimidation",
+          "Support": ["The Beast Within"],
+          "Position": [6, 1],
+          "Enable": false,
+          "Tier": 7,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Send your pet into a rage causing 50% additional damage for 18 sec.  While enraged, the beast does not feel pity or remorse or fear and it cannot be stopped unless killed."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_CatlikeReflexes",
+
+          "Name": "Catlike Reflexes",
+
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [6, 2],
+          "Enable": false,
+          "Tier": 7,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your chance to dodge by 1% and your pet's chance to dodge by an additional 3%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your chance to dodge by 2% and your pet's chance to dodge by an additional 6%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases your chance to dodge by 3% and your pet's chance to dodge by an additional 9%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_SerpentSwiftness",
+
+          "Name": "Serpent's Swiftness",
+
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [7, 2],
+          "Enable": false,
+          "Tier": 8,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases ranged combat attack speed by 4% and your pet's melee attack speed by 4%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases ranged combat attack speed by 8% and your pet's melee attack speed by 8%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases ranged combat attack speed by 12% and your pet's melee attack speed by 12%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases ranged combat attack speed by 16% and your pet's melee attack speed by 16%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases ranged combat attack speed by 20% and your pet's melee attack speed by 20%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_BeastWithin",
+
+          "Name": "The Beast Within",
+
+          "Points": 0,
+          "Dependency": "Bestial Wrath",
+          "Support": [],
+          "Position": [8, 1],
+          "Enable": false,
+          "Tier": 9,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "When your pet is under the effects of Bestial Wrath, you also go into a rage causing 10% additional damage and reducing mana costs of all spells by 20% for 18 sec.  While enraged, you do not feel pity or remorse or fear and you cannot be stopped unless killed."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Marksmanship",
+    "Icon": "ability_marksmanship",
+    "Background": "hunter_marksmanship",
+    "Points": 0,
+    "Talents": {
+      "Talent": [
+        {
+          "Icon": "Spell_Frost_Stun",
+          "Name": "Improved Concussive Shot",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 1],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Gives your Concussive Shot a 4% chance to stun the target for 3 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "Gives your Concussive Shot a 8% chance to stun the target for 3 sec."
+              },
+              {
+                "Number": "3",
+                "Description": "Gives your Concussive Shot a 12% chance to stun the target for 3 sec."
+              },
+              {
+                "Number": "4",
+                "Description": "Gives your Concussive Shot a 16% chance to stun the target for 3 sec."
+              },
+              {
+                "Number": "5",
+                "Description": "Gives your Concussive Shot a 20% chance to stun the target for 3 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_SearingArrow",
+          "Name": "Lethal Shots",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 2],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your critical strike chance with ranged weapons by 1%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your critical strike chance with ranged weapons by 2%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases your critical strike chance with ranged weapons by 3%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases your critical strike chance with ranged weapons by 4%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases your critical strike chance with ranged weapons by 5%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_SniperShot",
+          "Name": "Improved Hunter's Mark",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 1],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Causes 20% of your Hunter's Mark ability's base attack power to apply to melee attack power as well."
+              },
+              {
+                "Number": "2",
+                "Description": "Causes 40% of your Hunter's Mark ability's base attack power to apply to melee attack power as well."
+              },
+              {
+                "Number": "3",
+                "Description": "Causes 60% of your Hunter's Mark ability's base attack power to apply to melee attack power as well."
+              },
+              {
+                "Number": "4",
+                "Description": "Causes 80% of your Hunter's Mark ability's base attack power to apply to melee attack power as well."
+              },
+              {
+                "Number": "5",
+                "Description": "Causes 100% of your Hunter's Mark ability's base attack power to apply to melee attack power as well."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Frost_WizardMark",
+          "Name": "Efficiency",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 2],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Reduces the Mana cost of your Shots and Stings by 2%."
+              },
+              {
+                "Number": "2",
+                "Description": "Reduces the Mana cost of your Shots and Stings by 4%."
+              },
+              {
+                "Number": "3",
+                "Description": "Reduces the Mana cost of your Shots and Stings by 6%."
+              },
+              {
+                "Number": "4",
+                "Description": "Reduces the Mana cost of your Shots and Stings by 8%."
+              },
+              {
+                "Number": "5",
+                "Description": "Reduces the Mana cost of your Shots and Stings by 10%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_GoForTheThroat",
+          "Name": "Go for the Throat",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 0],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Your ranged critical hits cause your pet to generate 25 Focus."
+              },
+              {
+                "Number": "2",
+                "Description": "Your ranged critical hits cause your pet to generate 50 Focus."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_ImpalingBolt",
+          "Name": "Improved Arcane Shot",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 1],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Reduces the cooldown of your Arcane Shot by 0.2 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "Reduces the cooldown of your Arcane Shot by 0.4 sec."
+              },
+              {
+                "Number": "3",
+                "Description": "Reduces the cooldown of your Arcane Shot by 0.6 sec."
+              },
+              {
+                "Number": "4",
+                "Description": "Reduces the cooldown of your Arcane Shot by 0.8 sec."
+              },
+              {
+                "Number": "5",
+                "Description": "Reduces the cooldown of your Arcane Shot by 1 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Spear_07",
+          "Name": "Aimed Shot",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Mortal Shots"],
+          "Position": [2, 2],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "An aimed shot that increases ranged damage by 70 and reduces healing done to that target by 50%.  Lasts 10 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_RapidKilling",
+          "Name": "Rapid Killing",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 3],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Reduces the cooldown of your Rapid Fire ability by 1 min.  In addition, after killing an opponent that yields experience or honor, your next Aimed Shot, Arcane Shot or Auto Shot causes 10% additional damage.  Lasts 20 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "Reduces the cooldown of your Rapid Fire ability by 2 min.  In addition, after killing an opponent that yields experience or honor, your next Aimed Shot, Arcane Shot or Auto Shot causes 20% additional damage.  Lasts 20 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_Quickshot",
+          "Name": "Improved Stings",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 1],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the damage done by your Serpent Sting and Wyvern Sting by 6% and the mana drained by your Viper Sting by 6%.  In addition, reduces the chance your Stings will be dispelled by 6%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the damage done by your Serpent Sting and Wyvern Sting by 12% and the mana drained by your Viper Sting by 12%.  In addition, reduces the chance your Stings will be dispelled by 12%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the damage done by your Serpent Sting and Wyvern Sting by 18% and the mana drained by your Viper Sting by 18%.  In addition, reduces the chance your Stings will be dispelled by 18%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases the damage done by your Serpent Sting and Wyvern Sting by 24% and the mana drained by your Viper Sting by 24%.  In addition, reduces the chance your Stings will be dispelled by 24%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases the damage done by your Serpent Sting and Wyvern Sting by 30% and the mana drained by your Viper Sting by 30%.  In addition, reduces the chance your Stings will be dispelled by 30%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_PierceDamage",
+          "Name": "Mortal Shots",
+          "Points": 0,
+          "Dependency": "Aimed Shot",
+          "Support": [],
+          "Position": [3, 2],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your ranged weapon critical strike damage bonus by 6%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your ranged weapon critical strike damage bonus by 12%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases your ranged weapon critical strike damage bonus by 18%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases your ranged weapon critical strike damage bonus by 24%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases your ranged weapon critical strike damage bonus by 30%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Arcane_StarFire",
+          "Name": "Concussive Barrage",
+
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 0],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Your successful Auto Shot attacks have a 2% chance to Daze the target for 4 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "Your successful Auto Shot attacks have a 4% chance to Daze the target for 4 sec."
+              },
+              {
+                "Number": "3",
+                "Description": "Your successful Auto Shot attacks have a 6% chance to Daze the target for 4 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_GolemStormBolt",
+          "Name": "Scatter Shot",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Trueshot Aura"],
+          "Position": [4, 1],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "A short-range shot that deals 50% weapon damage and disorients the target for 4 sec.  Any damage caused will remove the effect.  Turns off your attack when used."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_UpgradeMoonGlaive",
+          "Name": "Barrage",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Improved Barrage"],
+          "Position": [4, 2],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the damage done by your Multi-Shot and Volley spells by 4%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the damage done by your Multi-Shot and Volley spells by 8%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the damage done by your Multi-Shot and Volley spells by 12%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_CombatExperience",
+          "Name": "Combat Experience",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 0],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your total Agility by 1% and your total Intellect by 3%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your total Agility by 2% and your total Intellect by 6%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Weapon_Rifle_06",
+          "Name": "Ranged Weapon Specialization",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 3],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the damage you deal with ranged weapons by 1%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the damage you deal with ranged weapons by 2%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the damage you deal with ranged weapons by 3%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases the damage you deal with ranged weapons by 4%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases the damage you deal with ranged weapons by 5%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_ZenArchery",
+          "Name": "Careful Aim",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [6, 0],
+          "Enable": false,
+          "Tier": 7,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your ranged attack power by an amount equal to 15% of your total Intellect."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your ranged attack power by an amount equal to 30% of your total Intellect."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases your ranged attack power by an amount equal to 45% of your total Intellect."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_TrueShot",
+          "Name": "Trueshot Aura",
+          "Points": 0,
+          "Dependency": "Scatter Shot",
+          "Support": [],
+          "Position": [6, 1],
+          "Enable": false,
+          "Tier": 7,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the attack power of party members within 45 yards by 50.  Lasts 0 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_UpgradeMoonGlaive",
+
+          "Name": "Improved Barrage",
+
+          "Points": 0,
+          "Dependency": "Barrage",
+          "Support": [],
+          "Position": [6, 2],
+          "Enable": false,
+          "Tier": 7,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the critical strike chance of your Multi-Shot ability by 4% and gives you a 33% chance to avoid interruption caused by damage while channeling Volley."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the critical strike chance of your Multi-Shot ability by 8% and gives you a 66% chance to avoid interruption caused by damage while channeling Volley."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the critical strike chance of your Multi-Shot ability by 12% and gives you a 100% chance to avoid interruption caused by damage while channeling Volley."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_MasterMarksman",
+          "Name": "Master Marksman",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Silencing Shot"],
+          "Position": [7, 1],
+          "Enable": false,
+          "Tier": 8,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your ranged attack power by 2%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your ranged attack power by 4%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases your ranged attack power by 6%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases your ranged attack power by 8%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases your ranged attack power by 10%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_TheBlackArrow",
+          "Name": "Silencing Shot",
+          "Points": 0,
+          "Dependency": "Master Marksman",
+          "Support": [],
+          "Position": [8, 1],
+          "Enable": false,
+          "Tier": 9,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "A shot that deals 50% weapon damage and Silences the target for 3 sec."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Survival",
+    "Icon": "ability_hunter_swiftstrike",
+    "Background": "hunter_survival",
+    "Points": 0,
+    "Talents": {
+      "Talent": [
+        {
+          "Icon": "INV_Misc_Head_Dragon_Black",
+          "Name": "Monster Slaying",
+          "Points": 0,
+          "Dependency": "",
+          "Tier": "1",
+          "Support": [],
+          "Enable": true,
+          "Position": [0, 0],
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases all damage caused against Beasts, Giants and Dragonkin targets by 1% and increases critical damage caused against Beasts, Giants and Dragonkin targets by an additional 1%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases all damage caused against Beasts, Giants and Dragonkin targets by 2% and increases critical damage caused against Beasts, Giants and Dragonkin targets by an additional 2%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases all damage caused against Beasts, Giants and Dragonkin targets by 3% and increases critical damage caused against Beasts, Giants and Dragonkin targets by an additional 3%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_PrayerOfHealing",
+          "Name": "Humanoid Slaying",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Enable": true,
+          "Position": [0, 1],
+          "Tier": "1",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases all damage caused against Humanoid targets by 1% and increases critical damage caused against Humanoid targets by an additional 1%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases all damage caused against Humanoid targets by 2% and increases critical damage caused against Humanoid targets by an additional 2%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases all damage caused against Humanoid targets by 3% and increases critical damage caused against Humanoid targets by an additional 3%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_TownWatch",
+          "Name": "Hawk Eye",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Enable": true,
+          "Position": [0, 2],
+          "Tier": "1",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the range of your ranged weapons by 2 yards."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the range of your ranged weapons by 4 yards."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the range of your ranged weapons by 6 yards."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Racial_BloodRage",
+          "Name": "Savage Strikes",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Enable": true,
+          "Position": [0, 3],
+          "Tier": "1",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the critical strike chance of Raptor Strike and Mongoose Bite by 10%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the critical strike chance of Raptor Strike and Mongoose Bite by 20%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Nature_StrangleVines",
+          "Name": "Entrapment",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Enable": false,
+          "Position": [1, 0],
+          "Tier": "2",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Gives your Immolation Trap, Frost Trap, Explosive Trap, and Snake Trap a 8% chance to entrap the target, preventing them from moving for 4 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "Gives your Immolation Trap, Frost Trap, Explosive Trap, and Snake Trap a 16% chance to entrap the target, preventing them from moving for 4 sec."
+              },
+              {
+                "Number": "3",
+                "Description": "Gives your Immolation Trap, Frost Trap, Explosive Trap, and Snake Trap a 25% chance to entrap the target, preventing them from moving for 4 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Parry",
+          "Name": "Deflection",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Enable": false,
+          "Position": [1, 1],
+          "Tier": "2",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your Parry chance by 1%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your Parry chance by 2%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases your Parry chance by 3%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases your Parry chance by 4%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases your Parry chance by 5%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_Trip",
+          "Name": "Improved Wing Clip",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Enable": false,
+          "Position": [1, 2],
+          "Tier": "2",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Gives your Wing Clip ability a 7% chance to immobilize the target for 5 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "Gives your Wing Clip ability a 14% chance to immobilize the target for 5 sec."
+              },
+              {
+                "Number": "3",
+                "Description": "Gives your Wing Clip ability a 20% chance to immobilize the target for 5 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Nature_TimeStop",
+          "Name": "Clever Traps",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Enable": false,
+          "Position": [2, 0],
+          "Tier": "3",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the duration of Freezing and Frost Trap effects by 15%, the damage of Immolation and Explosive Trap effects by 15%, and the number of snakes summoned from Snake Traps by 15%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the duration of Freezing and Frost Trap effects by 30%, the damage of Immolation and Explosive Trap effects by 30%, and the number of snakes summoned from Snake Traps by 30%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_Twilight",
+          "Name": "Survivalist",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Enable": false,
+          "Position": [2, 1],
+          "Tier": "3",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases total health by 2%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases total health by 4%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases total health by 6%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases total health by 8%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases total health by 10%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Whirlwind",
+          "Name": "Deterrence",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Counterattack"],
+          "Enable": false,
+          "Position": [2, 2],
+          "Tier": "3",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "When activated, increases your Dodge and Parry chance by 25% for 10 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Ensnare",
+          "Name": "Trap Mastery",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Enable": false,
+          "Position": [3, 0],
+          "Tier": "4",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Decreases the chance enemies will resist trap effects by 5%."
+              },
+              {
+                "Number": "2",
+                "Description": "Decreases the chance enemies will resist trap effects by 10%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Kick",
+          "Name": "Surefooted",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Enable": false,
+          "Position": [3, 1],
+          "Tier": "4",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases hit chance by 1% and increases the chance movement impairing effects will be resisted by an additional 5%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases hit chance by 2% and increases the chance movement impairing effects will be resisted by an additional 10%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases hit chance by 3% and increases the chance movement impairing effects will be resisted by an additional 15%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_FeignDeath",
+          "Name": "Improved Feign Death",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Enable": false,
+          "Position": [3, 3],
+          "Tier": "4",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Reduces the chance your Feign Death ability will be resisted by 2%."
+              },
+              {
+                "Number": "2",
+                "Description": "Reduces the chance your Feign Death ability will be resisted by 4%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_SurvivalInstincts",
+          "Name": "Survival Instincts",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Enable": false,
+          "Position": [4, 0],
+          "Tier": "5",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Reduces all damage taken by 2% and increases attack power by 2%."
+              },
+              {
+                "Number": "2",
+                "Description": "Reduces all damage taken by 4% and increases attack power by 4%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_BlessingOfStamina",
+          "Name": "Killer Instinct",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Wyvern Sting"],
+          "Enable": false,
+          "Position": [4, 1],
+          "Tier": "5",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your critical strike chance with all attacks by 1%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your critical strike chance with all attacks by 2%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases your critical strike chance with all attacks by 3%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_Challange",
+          "Name": "Counterattack",
+          "Dependency": "Deterrence",
+          "Points": 0,
+          "Support": [],
+          "Enable": false,
+          "Position": [4, 2],
+          "Tier": "5",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "A strike that becomes active after parrying an opponent's attack.  This attack deals 40 damage and immobilizes the target for 5 sec.  Counterattack cannot be blocked, dodged, or parried."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_Resourcefulness",
+          "Name": "Resourcefulness",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Enable": false,
+          "Position": [5, 0],
+          "Tier": "6",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Reduces the mana cost of all traps and melee abilities by 20% and reduces the cooldown of all traps by 2 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "Reduces the mana cost of all traps and melee abilities by 40% and reduces the cooldown of all traps by 4 sec."
+              },
+              {
+                "Number": "3",
+                "Description": "Reduces the mana cost of all traps and melee abilities by 60% and reduces the cooldown of all traps by 6 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Nature_Invisibilty",
+          "Name": "Lightning Reflexes",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Expose Weakness"],
+          "Enable": false,
+          "Position": [5, 2],
+          "Tier": "6",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your Agility by 3%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your Agility by 6%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases your Agility by 9%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases your Agility by 12%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases your Agility by 15%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_ThrilloftheHunt",
+          "Name": "Thrill of the Hunt",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Enable": false,
+          "Position": [6, 0],
+          "Tier": "7",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Gives you a 33% chance to regain 40% of the mana cost of any shot when it critically hits."
+              },
+              {
+                "Number": "2",
+                "Description": "Gives you a 66% chance to regain 40% of the mana cost of any shot when it critically hits."
+              },
+              {
+                "Number": "3",
+                "Description": "Gives you a 100% chance to regain 40% of the mana cost of any shot when it critically hits."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Spear_02",
+          "Name": "Wyvern Sting",
+          "Dependency": "Killer Instinct",
+          "Points": 0,
+          "Support": [],
+          "Enable": false,
+          "Position": [6, 1],
+          "Tier": "7",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "A stinging shot that puts the target to sleep for 12 sec.  Any damage will cancel the effect.  When the target wakes up, the Sting causes 300 Nature damage over 12 sec.  Only one Sting per Hunter can be active on the target at a time."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_FindWeakness",
+          "Name": "Expose Weakness",
+          "Dependency": "Lightning Reflexes",
+          "Points": 0,
+          "Support": [],
+          "Enable": false,
+          "Position": [6, 2],
+          "Tier": "7",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Your ranged criticals have a 33% chance to apply an Expose Weakness effect to the target. Expose Weakness increases the attack power of all attackers against that target by 25% of your Agility for 7 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "Your ranged criticals have a 66% chance to apply an Expose Weakness effect to the target. Expose Weakness increases the attack power of all attackers against that target by 25% of your Agility for 7 sec."
+              },
+              {
+                "Number": "3",
+                "Description": "Your ranged criticals have a 100% chance to apply an Expose Weakness effect to the target. Expose Weakness increases the attack power of all attackers against that target by 25% of your Agility for 7 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_MasterTactitian",
+          "Name": "Master Tactician",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Readiness"],
+          "Enable": false,
+          "Position": [7, 1],
+          "Tier": "8",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Your successful ranged attacks have a 6% chance to increase your critical strike chance with all attacks by 2% for 8 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "Your successful ranged attacks have a 6% chance to increase your critical strike chance with all attacks by 4% for 8 sec."
+              },
+              {
+                "Number": "3",
+                "Description": "Your successful ranged attacks have a 6% chance to increase your critical strike chance with all attacks by 6% for 8 sec."
+              },
+              {
+                "Number": "4",
+                "Description": "Your successful ranged attacks have a 6% chance to increase your critical strike chance with all attacks by 8% for 8 sec."
+              },
+              {
+                "Number": "5",
+                "Description": "Your successful ranged attacks have a 6% chance to increase your critical strike chance with all attacks by 10% for 8 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_Readiness",
+          "Name": "Readiness",
+          "Dependency": "Master Tactician",
+          "Points": 0,
+          "Support": [],
+          "Enable": false,
+          "Position": [8, 1],
+          "Tier": "9",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "When activated, this ability immediately finishes the cooldown on your other Hunter abilities."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

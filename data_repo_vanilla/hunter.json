@@ -1,7 +1,7 @@
 [
 	{
 	  "Name": "Beast Mastery",
-	  "Icon": "spell_nature_ravenform",
+	  "Icon": "ability_hunter_beasttaming",
 	  "Background": "hunter_beast",
 	  "Points": 0,
 	  "Talents": {
@@ -469,7 +469,7 @@
 	},
 	{
 	  "Name": "Marksmanship",
-	  "Icon": "ability_hunter_snipershot",
+	  "Icon": "ability_marksmanship",
 	  "Background": "hunter_marksmanship",
 	  "Points": 0,
 	  "Talents": {
@@ -919,7 +919,7 @@
 	},
 	{
 	  "Name": "Survival",
-	  "Icon": "ability_parry",
+	  "Icon": "ability_hunter_swiftstrike",
 	  "Background": "hunter_survival",
 	  "Points": 0,
 	  "Talents": {

@@ -1,4 +1,3 @@
-
 /// The number of rows and columns of the [DetailScreen].
 const int NUM_ROWS = 6;
 const int NUM_COLS = 4;

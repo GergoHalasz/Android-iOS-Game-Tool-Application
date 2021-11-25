@@ -38,10 +38,12 @@ class _SpellWidgetState extends State<SpellWidget> {
     int displayRank = currentRank - 1;
     if (displayRank < 0) {
       displayRank = 0;
-      return '${widget.talent.name}: ${widget.talent.ranks.rankList[displayRank].description}';
+      return '${widget.talent.name} : ${widget.talent.ranks.rankList[displayRank].description}' +
+          '\n\nSwipe up to increase rank \nSwipe down to decrease rank';
     }
-    return 'Rank ${widget.talent.ranks.rankList[displayRank].number}: ' +
-        widget.talent.ranks.rankList[displayRank].description;
+    return 'Rank ${widget.talent.ranks.rankList[displayRank].number} : ' +
+        widget.talent.ranks.rankList[displayRank].description +
+        '\n\nSwipe up to increase rank \nSwipe down to decrease rank';
   }
 
   // onTap, increase spell rank if it's not max and not over 60
@@ -158,7 +160,7 @@ class _SpellWidgetState extends State<SpellWidget> {
             image: AssetImage(imgLocation),
             fit: BoxFit.cover,
             child: InkWell(
-              onLongPress: () => _showDescription(),
+              onTap: () => _showDescription(),
               borderRadius: BorderRadius.circular(10),
             ),
           ),
@@ -175,39 +177,40 @@ class _SpellWidgetState extends State<SpellWidget> {
     spellName = widget.talent.icon.toLowerCase();
     imgLocation = 'assets/Icons/$spellName.png';
 
-    return Container(
-      width: SizeConfig.cellSize,
-      height: SizeConfig.cellSize,
-      padding: EdgeInsets.all(10),
-      child: Stack(
-        children: <Widget>[
-          Tooltip(
-            key: key,
-            verticalOffset: -32,
-            padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-            message: _getDescription(),
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: _buildSpellWidget(), //spell icon
-          ),
-          widget.talent.enable
-              ? Align(
-                  // spell rank
-                  alignment: Alignment.bottomRight,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.black87,
-                      borderRadius: BorderRadius.circular(3),
+    return Tooltip(
+      decoration: BoxDecoration(color: Colors.black),
+      textStyle: TextStyle(
+          fontSize: 13, color: Colors.white, fontWeight: FontWeight.bold),
+      key: key,
+      verticalOffset: 40,
+      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+      message: _getDescription(),
+      child: Container(
+        width: SizeConfig.cellSize,
+        height: SizeConfig.cellSize,
+        padding: EdgeInsets.all(10),
+        child: Stack(
+          children: <Widget>[
+            Align(
+              alignment: Alignment.center,
+              child: _buildSpellWidget(), //spell icon
+            ),
+        Align(
+                    // spell rank
+                    alignment: Alignment.bottomRight,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.black87,
+                        borderRadius: BorderRadius.circular(3),
+                      ),
+                      child: Text(
+                        '$currentRank/$maxRank',
+                        style: TextStyle(fontSize: 14),
+                      ),
                     ),
-                    child: Text(
-                      '$currentRank/$maxRank',
-                      style: TextStyle(fontSize: 15),
-                    ),
-                  ),
-                )
-              : Container(),
-        ],
+                  )
+          ],
+        ),
       ),
     );
   }

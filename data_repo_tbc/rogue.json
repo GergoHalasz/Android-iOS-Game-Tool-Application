@@ -1,0 +1,1762 @@
+[
+  {
+    "Name": "Assassination",
+    "Icon": "ability_rogue_eviscerate",
+    "Background": "rogue_assassination",
+    "Points": 0,
+    "Talents": {
+      "Talent": [
+        {
+          "Icon": "Ability_Rogue_Eviscerate",
+          "Name": "Improved Eviscerate",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 0],
+          "Enable": true,
+          "Tier": "1",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the damage done by your Eviscerate ability by 5%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the damage done by your Eviscerate ability by 10%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the damage done by your Eviscerate ability by 15%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_FiegnDead",
+          "Name": "Remorseless Attacks",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 1],
+          "Enable": true,
+          "Tier": "1",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "After killing an opponent that yields experience or honor, gives you a 20% increased critical strike chance on your next Sinister Strike, Hemorrhage, Backstab, Mutilate, Ambush, or Ghostly Strike.  Lasts 20 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "After killing an opponent that yields experience or honor, gives you a 40% increased critical strike chance on your next Sinister Strike, Hemorrhage, Backstab, Mutilate, Ambush, or Ghostly Strike.  Lasts 20 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Racial_Bloodrage",
+          "Name": "Malice",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Lethality"],
+          "Position": [0, 2],
+          "Enable": true,
+          "Tier": "1",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your critical strike chance by 1%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your critical strike chance by 2%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases your critical strike chance by 3%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases your critical strike chance by 4%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases your critical strike chance by 5%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Druid_Disembowel",
+          "Name": "Ruthlessness",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 0],
+          "Enable": false,
+          "Tier": "2",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Gives your melee finishing moves a 20% chance to add a combo point to your target."
+              },
+              {
+                "Number": "2",
+                "Description": "Gives your melee finishing moves a 40% chance to add a combo point to your target."
+              },
+              {
+                "Number": "3",
+                "Description": "Gives your melee finishing moves a 60% chance to add a combo point to your target."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_DeathScream",
+          "Name": "Murder",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 1],
+          "Enable": false,
+          "Tier": "2",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases all damage caused against Humanoid, Giant, Beast and Dragonkin targets by 1%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases all damage caused against Humanoid, Giant, Beast and Dragonkin targets by 2%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_BackStab",
+          "Name": "Puncturing Wounds",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 3],
+          "Enable": false,
+          "Tier": "2",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the critical strike chance of your Backstab ability by 10%, and the critical strike chance of your Mutilate ability by 5%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the critical strike chance of your Backstab ability by 20%, and the critical strike chance of your Mutilate ability by 10%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the critical strike chance of your Backstab ability by 30%, and the critical strike chance of your Mutilate ability by 15%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_Decisivestrike",
+          "Name": "Relentless Strikes",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 0],
+          "Enable": false,
+          "Tier": "3",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Your finishing moves have a 20% chance per combo point to restore 25 energy."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_Riposte",
+          "Name": "Improved Expose Armor",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 1],
+          "Enable": false,
+          "Tier": "3",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the armor reduced by your Expose Armor ability by 25%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the armor reduced by your Expose Armor ability by 50%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_CriticalStrike",
+          "Name": "Lethality",
+          "Dependency": "Malice",
+          "Points": 0,
+          "Support": [],
+          "Position": [2, 2],
+          "Enable": false,
+          "Tier": "3",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ghostly Strike, Mutilate, Shiv, and Hemorrhage abilities by 6%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ghostly Strike, Mutilate, Shiv, and Hemorrhage abilities by 12%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ghostly Strike, Mutilate, Shiv, and Hemorrhage abilities by 18%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ghostly Strike, Mutilate, Shiv, and Hemorrhage abilities by 24%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ghostly Strike, Mutilate, Shiv, and Hemorrhage abilities by 30%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_FeignDeath",
+          "Name": "Vile Poisons",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 1],
+          "Enable": false,
+          "Tier": "4",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the damage dealt by your poisons and Envenom ability by 4% and gives your poisons an additional 8% chance to resist dispel effects."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the damage dealt by your poisons and Envenom ability by 8% and gives your poisons an additional 16% chance to resist dispel effects."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the damage dealt by your poisons and Envenom ability by 12% and gives your poisons an additional 24% chance to resist dispel effects."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases the damage dealt by your poisons and Envenom ability by 16% and gives your poisons an additional 32% chance to resist dispel effects."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases the damage dealt by your poisons and Envenom ability by 20% and gives your poisons an additional 40% chance to resist dispel effects."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Poisons",
+          "Name": "Improved Poisons",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 2],
+          "Enable": false,
+          "Tier": "4",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the chance to apply poisons to your target by 2%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the chance to apply poisons to your target by 4%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the chance to apply poisons to your target by 6%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases the chance to apply poisons to your target by 8%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases the chance to apply poisons to your target by 10%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_FleetFooted",
+          "Name": "Fleet Footed",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 0],
+          "Enable": false,
+          "Tier": "5",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your chance to resist movement impairing effects by 5% and increases your movement speed by 8%.  This does not stack with other movement speed increasing effects."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your chance to resist movement impairing effects by 10% and increases your movement speed by 15%.  This does not stack with other movement speed increasing effects."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Ice_Lament",
+          "Name": "Cold Blood",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Seal Fate"],
+          "Position": [4, 1],
+          "Enable": false,
+          "Tier": "5",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "When activated, increases the critical strike chance of your next offensive ability by 100%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_KidneyShot",
+          "Name": "Improved Kidney Shot",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 2],
+          "Enable": false,
+          "Tier": "5",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "While affected by your Kidney Shot ability, the target receives an additional 3% damage from all sources."
+              },
+              {
+                "Number": "2",
+                "Description": "While affected by your Kidney Shot ability, the target receives an additional 6% damage from all sources."
+              },
+              {
+                "Number": "3",
+                "Description": "While affected by your Kidney Shot ability, the target receives an additional 9% damage from all sources."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_QuickRecovery",
+          "Name": "Quick Recovery",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 3],
+          "Enable": false,
+          "Tier": "5",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "All healing effects on you are increased by 10%.  In addition, your finishing moves cost 40% less Energy when they fail to hit."
+              },
+              {
+                "Number": "2",
+                "Description": "All healing effects on you are increased by 20%.  In addition, your finishing moves cost 80% less Energy when they fail to hit."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_ChillTouch",
+          "Name": "Seal Fate",
+          "Dependency": "Cold Blood",
+          "Points": 0,
+          "Support": [],
+          "Position": [5, 1],
+          "Enable": false,
+          "Tier": "6",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Your critical strikes from abilities that add combo points have a 20% chance to add an additional combo point."
+              },
+              {
+                "Number": "2",
+                "Description": "Your critical strikes from abilities that add combo points have a 40% chance to add an additional combo point."
+              },
+              {
+                "Number": "3",
+                "Description": "Your critical strikes from abilities that add combo points have a 60% chance to add an additional combo point."
+              },
+              {
+                "Number": "4",
+                "Description": "Your critical strikes from abilities that add combo points have a 80% chance to add an additional combo point."
+              },
+              {
+                "Number": "5",
+                "Description": "Your critical strikes from abilities that add combo points have a 100% chance to add an additional combo point."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Creature_Poison_06",
+          "Name": "Master Poisoner",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 2],
+          "Enable": false,
+          "Tier": "6",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Reduces the chance your poisons will be resisted by 5% and increases your chance to resist Poison effects by an additional 15%."
+              },
+              {
+                "Number": "2",
+                "Description": "Reduces the chance your poisons will be resisted by 10% and increases your chance to resist Poison effects by an additional 30%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Nature_EarthBindTotem",
+          "Name": "Vigor",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Mutilate"],
+          "Position": [6, 1],
+          "Enable": false,
+          "Tier": "7",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your maximum Energy by 10."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_DeadenedNerves",
+          "Name": "Deadened Nerves",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [6, 2],
+          "Enable": false,
+          "Tier": "7",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Decreases all physical damage taken by 1%."
+              },
+              {
+                "Number": "2",
+                "Description": "Decreases all physical damage taken by 2%."
+              },
+              {
+                "Number": "3",
+                "Description": "Decreases all physical damage taken by 3%."
+              },
+              {
+                "Number": "4",
+                "Description": "Decreases all physical damage taken by 4%."
+              },
+              {
+                "Number": "5",
+                "Description": "Decreases all physical damage taken by 5%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_FindWeakness",
+          "Name": "Find Weakness",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [7, 2],
+          "Enable": false,
+          "Tier": "8",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Your finishing moves increase the damage of all your offensive abilities by 2% for 10 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "Your finishing moves increase the damage of all your offensive abilities by 4% for 10 sec."
+              },
+              {
+                "Number": "3",
+                "Description": "Your finishing moves increase the damage of all your offensive abilities by 6% for 10 sec."
+              },
+              {
+                "Number": "4",
+                "Description": "Your finishing moves increase the damage of all your offensive abilities by 8% for 10 sec."
+              },
+              {
+                "Number": "5",
+                "Description": "Your finishing moves increase the damage of all your offensive abilities by 10% for 10 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_ShadowStrikes",
+          "Name": "Mutilate",
+          "Dependency": "Vigor",
+          "Points": 0,
+          "Support": [],
+          "Position": [8, 1],
+          "Enable": false,
+          "Tier": "9",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Instantly attacks with both weapons for an additional 44 with each weapon.  Damage is increased by 50% against Poisoned targets.  Must be behind the target.  Awards 2 combo points."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Combat",
+    "Icon": "ability_backstab",
+    "Background": "rogue_combat",
+    "Points": 0,
+    "Talents": {
+      "Talent": [
+        {
+          "Icon": "Ability_Gouge",
+          "Name": "Improved Gouge",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 0],
+          "Enable": true,
+          "Tier": "1",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the effect duration of your Gouge ability by 0.5 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the effect duration of your Gouge ability by 1 sec."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the effect duration of your Gouge ability by 1.5 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_RitualOfSacrifice",
+          "Name": "Improved Sinister Strike",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 1],
+          "Enable": true,
+          "Tier": "1",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Reduces the Energy cost of your Sinister Strike ability by 3."
+              },
+              {
+                "Number": "2",
+                "Description": "Reduces the Energy cost of your Sinister Strike ability by 5."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Nature_Invisibilty",
+          "Name": "Lightning Reflexes",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 2],
+          "Enable": true,
+          "Tier": "1",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your Dodge chance by 1%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your Dodge chance by 2%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases your Dodge chance by 3%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases your Dodge chance by 4%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases your Dodge chance by 5%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_SliceDice",
+          "Name": "Improved Slice and Dice",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 0],
+          "Enable": false,
+          "Tier": "2",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the duration of your Slice and Dice ability by 15%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the duration of your Slice and Dice ability by 30%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the duration of your Slice and Dice ability by 45%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Parry",
+          "Name": "Deflection",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Riposte"],
+          "Position": [1, 1],
+          "Enable": false,
+          "Tier": "2",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your Parry chance by 1%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your Parry chance by 2%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases your Parry chance by 3%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases your Parry chance by 4%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases your Parry chance by 5%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Marksmanship",
+          "Name": "Precision",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Dual Wield Specialization"],
+          "Position": [1, 2],
+          "Enable": false,
+          "Tier": "2",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your chance to hit with weapons by 1%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your chance to hit with weapons by 2%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases your chance to hit with weapons by 3%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases your chance to hit with weapons by 4%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases your chance to hit with weapons by 5%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_ShadowWard",
+          "Name": "Endurance",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 0],
+          "Enable": false,
+          "Tier": "3",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Reduces the cooldown of your Sprint and Evasion abilities by 45 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "Reduces the cooldown of your Sprint and Evasion abilities by 1.5 min."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_Challange",
+          "Name": "Riposte",
+          "Dependency": "Deflection",
+          "Points": 0,
+          "Support": [],
+          "Position": [2, 1],
+          "Enable": false,
+          "Tier": "3",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "A strike that becomes active after parrying an opponent's attack.  This attack deals 150% weapon damage and disarms the target for 6 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_Sprint",
+          "Name": "Improved Sprint",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 3],
+          "Enable": false,
+          "Tier": "3",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Gives a 50% chance to remove all Movement Impairing effects when you activate your Sprint ability."
+              },
+              {
+                "Number": "2",
+                "Description": "Gives a 100% chance to remove all Movement Impairing effects when you activate your Sprint ability."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Kick",
+          "Name": "Improved Kick",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 0],
+          "Enable": false,
+          "Tier": "4",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Gives your Kick ability a 50% chance to silence the target for 2 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "Gives your Kick ability a 100% chance to silence the target for 2 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Weapon_ShortBlade_05",
+          "Name": "Dagger Specialization",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 1],
+          "Enable": false,
+          "Tier": "4",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your chance to get a critical strike with Daggers by 1%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your chance to get a critical strike with Daggers by 2%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases your chance to get a critical strike with Daggers by 3%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases your chance to get a critical strike with Daggers by 4%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases your chance to get a critical strike with Daggers by 5%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_DualWield",
+          "Name": "Dual Wield Specialization",
+          "Dependency": "Precision",
+          "Points": 0,
+          "Support": [],
+          "Position": [3, 2],
+          "Enable": false,
+          "Tier": "4",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the damage done by your offhand weapon by 10%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the damage done by your offhand weapon by 20%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the damage done by your offhand weapon by 30%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases the damage done by your offhand weapon by 40%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases the damage done by your offhand weapon by 50%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Mace_01",
+          "Name": "Mace Specialization",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 0],
+          "Enable": false,
+          "Tier": "5",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the damage dealt by your critical strikes with maces by 1%, and gives you a 1% chance to stun your target for 3 sec with a mace."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the damage dealt by your critical strikes with maces by 2%, and gives you a 2% chance to stun your target for 3 sec with a mace."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the damage dealt by your critical strikes with maces by 3%, and gives you a 3% chance to stun your target for 3 sec with a mace."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases the damage dealt by your critical strikes with maces by 4%, and gives you a 4% chance to stun your target for 3 sec with a mace."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases the damage dealt by your critical strikes with maces by 5%, and gives you a 6% chance to stun your target for 3 sec with a mace."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_PunishingBlow",
+          "Name": "Blade Flurry",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Weapon"],
+          "Position": [4, 1],
+          "Enable": false,
+          "Tier": "5",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your attack speed by 20%.  In addition, attacks strike an additional nearby opponent.  Lasts 15 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Sword_27",
+          "Name": "Sword Specialization",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 2],
+          "Enable": false,
+          "Tier": "5",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Gives you a 1% chance to get an extra attack on the same target after hitting your target with your Sword."
+              },
+              {
+                "Number": "2",
+                "Description": "Gives you a 2% chance to get an extra attack on the same target after hitting your target with your Sword."
+              },
+              {
+                "Number": "3",
+                "Description": "Gives you a 3% chance to get an extra attack on the same target after hitting your target with your Sword."
+              },
+              {
+                "Number": "4",
+                "Description": "Gives you a 4% chance to get an extra attack on the same target after hitting your target with your Sword."
+              },
+              {
+                "Number": "5",
+                "Description": "Gives you a 5% chance to get an extra attack on the same target after hitting your target with your Sword."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Gauntlets_04",
+          "Name": "Fist Weapon Specialization",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 3],
+          "Enable": false,
+          "Tier": "5",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your chance to get a critical strike with Fist Weapons by 1%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your chance to get a critical strike with Fist Weapons by 2%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases your chance to get a critical strike with Fist Weapons by 3%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases your chance to get a critical strike with Fist Weapons by 4%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases your chance to get a critical strike with Fist Weapons by 5%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_BladeTwisting",
+          "Name": "Blade Twisting",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 0],
+          "Enable": false,
+          "Tier": "6",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Gives your Sinister Strike, Backstab, Gouge and Shiv abilities a 10% chance to Daze the target for 8 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "Gives your Sinister Strike, Backstab, Gouge and Shiv abilities a 20% chance to Daze the target for 8 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_BlessingOfStrength",
+          "Name": "Weapon Expertise",
+          "Dependency": "Blade Flurry",
+          "Points": 0,
+          "Support": [],
+          "Position": [5, 1],
+          "Enable": false,
+          "Tier": "6",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your expertise by 5."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your expertise by 10."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Racial_Avatar",
+          "Name": "Aggression",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 2],
+          "Enable": false,
+          "Tier": "6",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the damage of your Sinister Strike, Backstab, and Eviscerate abilities by 2%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the damage of your Sinister Strike, Backstab, and Eviscerate abilities by 4%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the damage of your Sinister Strike, Backstab, and Eviscerate abilities by 6%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_Revenge",
+          "Name": "Vitality",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [6, 0],
+          "Enable": false,
+          "Tier": "7",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your total Stamina by 2% and your total Agility by 1%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your total Stamina by 4% and your total Agility by 2%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_ShadowWordDominate",
+          "Name": "Adrenaline Rush",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Surprise Attacks"],
+          "Position": [6, 1],
+          "Enable": false,
+          "Tier": "7",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your Energy regeneration rate by 100% for 15 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_NervesOfSteel",
+          "Name": "Nerves of Steel",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [6, 2],
+          "Enable": false,
+          "Tier": "7",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your chance to resist Stun and Fear effects by an additional 5%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your chance to resist Stun and Fear effects by an additional 10%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Weapon_Shortblade_38",
+          "Name": "Combat Potency",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [7, 2],
+          "Enable": false,
+          "Tier": "8",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Gives your successful off-hand melee attacks a 20% chance to generate 3 Energy."
+              },
+              {
+                "Number": "2",
+                "Description": "Gives your successful off-hand melee attacks a 20% chance to generate 6 Energy."
+              },
+              {
+                "Number": "3",
+                "Description": "Gives your successful off-hand melee attacks a 20% chance to generate 9 Energy."
+              },
+              {
+                "Number": "4",
+                "Description": "Gives your successful off-hand melee attacks a 20% chance to generate 12 Energy."
+              },
+              {
+                "Number": "5",
+                "Description": "Gives your successful off-hand melee attacks a 20% chance to generate 15 Energy."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_SurpriseAttack",
+          "Name": "Surprise Attacks",
+          "Dependency": "Adrenaline Rush",
+          "Points": 0,
+          "Support": [],
+          "Position": [8, 1],
+          "Enable": false,
+          "Tier": "9",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Your finishing moves can no longer be dodged, and the damage dealt by your Sinister Strike, Backstab, Shiv and Gouge abilities is increased by 10%."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Subtlety",
+    "Icon": "ability_stealth",
+    "Background": "rogue_subtlety",
+    "Points": 0,
+    "Talents": {
+      "Talent": [
+        {
+          "Icon": "Spell_Shadow_Charm",
+          "Name": "Master of Deception",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 1],
+          "Enable": true,
+          "Tier": "1",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Reduces the chance enemies have to detect you while in Stealth mode."
+              },
+              {
+                "Number": "2",
+                "Description": "Reduces the chance enemies have to detect you while in Stealth mode.  More effective than Master of Deception (Rank 1)."
+              },
+              {
+                "Number": "3",
+                "Description": "Reduces the chance enemies have to detect you while in Stealth mode.  More effective than Master of Deception (Rank 2)."
+              },
+              {
+                "Number": "4",
+                "Description": "Reduces the chance enemies have to detect you while in Stealth mode.  More effective than Master of Deception (Rank 3)."
+              },
+              {
+                "Number": "5",
+                "Description": "Reduces the chance enemies have to detect you while in Stealth mode.  More effective than Master of Deception (Rank 4)."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_WarCry",
+          "Name": "Opportunity",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 2],
+          "Enable": true,
+          "Tier": "1",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the damage dealt when striking from behind with your Backstab, Mutilate, Garrote and Ambush abilities by 4%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the damage dealt when striking from behind with your Backstab, Mutilate, Garrote and Ambush abilities by 8%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the damage dealt when striking from behind with your Backstab, Mutilate, Garrote and Ambush abilities by 12%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases the damage dealt when striking from behind with your Backstab, Mutilate, Garrote and Ambush abilities by 16%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases the damage dealt when striking from behind with your Backstab, Mutilate, Garrote and Ambush abilities by 20%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_Feint",
+          "Name": "Sleight of Hand",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 0],
+          "Enable": false,
+          "Tier": "2",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Reduces the chance you are critically hit by melee and ranged attacks by 1% and increases the threat reduction of your Feint ability by 10%."
+              },
+              {
+                "Number": "2",
+                "Description": "Reduces the chance you are critically hit by melee and ranged attacks by 2% and increases the threat reduction of your Feint ability by 20%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Sap",
+          "Name": "Dirty Tricks",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 1],
+          "Enable": false,
+          "Tier": "2",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the range of your Blind and Sap abilities by 2 yards and reduces the energy cost of your Blind and Sap abilities by 25%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the range of your Blind and Sap abilities by 5 yards and reduces the energy cost of your Blind and Sap abilities by 50%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Stealth",
+          "Name": "Camouflage",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 2],
+          "Enable": false,
+          "Tier": "2",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your speed while stealthed by 3% and reduces the cooldown of your Stealth ability by 1 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your speed while stealthed by 6% and reduces the cooldown of your Stealth ability by 2 sec."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases your speed while stealthed by 9% and reduces the cooldown of your Stealth ability by 3 sec."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases your speed while stealthed by 12% and reduces the cooldown of your Stealth ability by 4 sec."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases your speed while stealthed by 15% and reduces the cooldown of your Stealth ability by 5 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_Fumble",
+          "Name": "Initiative",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 0],
+          "Enable": false,
+          "Tier": "3",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Gives you a 25% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability."
+              },
+              {
+                "Number": "2",
+                "Description": "Gives you a 50% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability."
+              },
+              {
+                "Number": "3",
+                "Description": "Gives you a 75% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_Curse",
+          "Name": "Ghostly Strike",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 1],
+          "Enable": false,
+          "Tier": "3",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "A strike that deals 125% weapon damage and increases your chance to dodge by 15% for 7 sec.  Awards 1 combo point;."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_Ambush",
+          "Name": "Improved Ambush",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 2],
+          "Enable": false,
+          "Tier": "3",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases the critical strike chance of your Ambush ability by 15%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases the critical strike chance of your Ambush ability by 30%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases the critical strike chance of your Ambush ability by 45%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Nature_MirrorImage",
+          "Name": "Setup",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 0],
+          "Enable": false,
+          "Tier": "4",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Gives you a 15% chance to add a combo point to your target after dodging their attack or fully resisting one of their spells."
+              },
+              {
+                "Number": "2",
+                "Description": "Gives you a 30% chance to add a combo point to your target after dodging their attack or fully resisting one of their spells."
+              },
+              {
+                "Number": "3",
+                "Description": "Gives you a 45% chance to add a combo point to your target after dodging their attack or fully resisting one of their spells."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Magic_LesserInvisibilty",
+          "Name": "Elusiveness",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 1],
+          "Enable": false,
+          "Tier": "4",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Reduces the cooldown of your Vanish and Blind abilities by 45 sec."
+              },
+              {
+                "Number": "2",
+                "Description": "Reduces the cooldown of your Vanish and Blind abilities by 90 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Sword_17",
+          "Name": "Serrated Blades",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Hemorrhage"],
+          "Position": [3, 2],
+          "Enable": false,
+          "Tier": "4",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Causes your attacks to ignore 2.67 of your target's Armor and increases the damage dealt by your Rupture ability by 10%.  The amount of Armor reduced increases with your level."
+              },
+              {
+                "Number": "2",
+                "Description": "Causes your attacks to ignore 5.34 of your target's Armor and increases the damage dealt by your Rupture ability by 20%.  The amount of Armor reduced increases with your level."
+              },
+              {
+                "Number": "3",
+                "Description": "Causes your attacks to ignore 8 of your target's Armor and increases the damage dealt by your Rupture ability by 30%.  The amount of Armor reduced increases with your level."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Ambush",
+          "Name": "Heightened Senses",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 0],
+          "Enable": false,
+          "Tier": "5",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your Stealth detection and reduces the chance you are hit by spells and ranged attacks by 2%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your Stealth detection and reduces the chance you are hit by spells and ranged attacks by 4%.  More effective than Heightened Senses (Rank 1)."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_AntiShadow",
+          "Name": "Preparation",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Premeditation"],
+          "Position": [4, 1],
+          "Enable": false,
+          "Tier": "5",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "When activated, this ability immediately finishes the cooldown on your Evasion, Sprint, Vanish, Cold Blood, Shadowstep and Premeditation abilities."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_SummonSuccubus",
+          "Name": "Dirty Deeds",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 2],
+          "Enable": false,
+          "Tier": "5",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Reduces the Energy cost of your Cheap Shot and Garrote abilities by 10.  Additionally, your special abilities cause 10% more damage against targets below 35% health."
+              },
+              {
+                "Number": "2",
+                "Description": "Reduces the Energy cost of your Cheap Shot and Garrote abilities by 20.  Additionally, your special abilities cause 20% more damage against targets below 35% health."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_LifeDrain",
+          "Name": "Hemorrhage",
+          "Dependency": "Serrated Blades",
+          "Tier": "5",
+          "Points": 0,
+          "Support": [],
+          "Position": [4, 3],
+          "Enable": false,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "An instant strike that deals 110% weapon damage and causes the target to hemorrhage, increasing any Physical damage dealt to the target by up to 13.  Lasts 10 charges or 15 sec.  Awards 1 combo point."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_MasterOfSubtlety",
+          "Name": "Master of Subtlety",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 0],
+          "Enable": false,
+          "Tier": "6",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Attacks made while stealthed and for 6 seconds after breaking stealth cause an additional 4% damage."
+              },
+              {
+                "Number": "2",
+                "Description": "Attacks made while stealthed and for 6 seconds after breaking stealth cause an additional 7% damage."
+              },
+              {
+                "Number": "3",
+                "Description": "Attacks made while stealthed and for 6 seconds after breaking stealth cause an additional 10% damage."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Weapon_Crossbow_11",
+          "Name": "Deadliness",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 2],
+          "Enable": false,
+          "Tier": "6",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your attack power by 2%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your attack power by 4%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases your attack power by 6%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases your attack power by 8%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases your attack power by 10%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_EnvelopingShadows",
+          "Name": "Enveloping Shadows",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [6, 0],
+          "Enable": false,
+          "Tier": "7",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your chance to avoid area of effect attacks by an additional 5%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your chance to avoid area of effect attacks by an additional 10%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases your chance to avoid area of effect attacks by an additional 15%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_Possession",
+          "Name": "Premeditation",
+          "Dependency": "Preparation",
+          "Points": 0,
+          "Support": ["Sinister Calling"],
+          "Position": [6, 1],
+          "Enable": false,
+          "Tier": "7",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "When used, adds 2 combo points to your target.  You must add to or use those combo points within 10 sec or the combo points are lost."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_CheatDeath",
+          "Name": "Cheat Death",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [6, 2],
+          "Enable": false,
+          "Tier": "7",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "You have a 33% chance that an attack which would otherwise kill you will instead reduce you to 10% of your maximum health. In addition, all damage taken will be reduced by up to 90% for 3 sec (modified by resilience).  This effect cannot occur more than once per minute."
+              },
+              {
+                "Number": "2",
+                "Description": "You have a 66% chance that an attack which would otherwise kill you will instead reduce you to 10% of your maximum health. In addition, all damage taken will be reduced by up to 90% for 3 sec (modified by resilience).  This effect cannot occur more than once per minute."
+              },
+              {
+                "Number": "3",
+                "Description": "You have a 100% chance that an attack which would otherwise kill you will instead reduce you to 10% of your maximum health. In addition, all damage taken will be reduced by up to 90% for 3 sec (modified by resilience).  This effect cannot occur more than once per minute."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_SinisterCalling",
+          "Name": "Sinister Calling",
+          "Dependency": "Premeditation",
+          "Points": 0,
+          "Support": [],
+          "Position": [7, 1],
+          "Enable": false,
+          "Tier": "8",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Increases your total Agility by 3% and increases the percentage damage bonus of Backstab and Hemorrhage by an additional 1%."
+              },
+              {
+                "Number": "2",
+                "Description": "Increases your total Agility by 6% and increases the percentage damage bonus of Backstab and Hemorrhage by an additional 2%."
+              },
+              {
+                "Number": "3",
+                "Description": "Increases your total Agility by 9% and increases the percentage damage bonus of Backstab and Hemorrhage by an additional 3%."
+              },
+              {
+                "Number": "4",
+                "Description": "Increases your total Agility by 12% and increases the percentage damage bonus of Backstab and Hemorrhage by an additional 4%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases your total Agility by 15% and increases the percentage damage bonus of Backstab and Hemorrhage by an additional 5%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_Shadowstep",
+          "Name": "Shadowstep",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [8, 1],
+          "Enable": false,
+          "Tier": "9",
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Attempts to step through the shadows and reappear behind your enemy and increases movement speed by 70% for 3 sec.  The damage of your next ability is increased by 20% and the threat caused is reduced by 50%.  Lasts 10 sec."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

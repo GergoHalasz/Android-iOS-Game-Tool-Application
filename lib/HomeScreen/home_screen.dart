@@ -7,25 +7,10 @@ import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
 /// Main Home Page, show for normal log in
 class HomeScreen extends StatelessWidget {
   final Future<List> druidTalentTrees;
-  final Future<List> hunterTalentTrees;
-  final Future<List> mageTalentTrees;
-  final Future<List> paladinTalentTrees;
-  final Future<List> priestTalentTrees;
-  final Future<List> rogueTalentTrees;
-  final Future<List> shamanTalentTrees;
-  final Future<List> warlockTalentTrees;
-  final Future<List> warriorTalentTrees;
 
-  HomeScreen(
-      {required this.druidTalentTrees,
-      required this.hunterTalentTrees,
-      required this.mageTalentTrees,
-      required this.paladinTalentTrees,
-      required this.priestTalentTrees,
-      required this.rogueTalentTrees,
-      required this.shamanTalentTrees,
-      required this.warlockTalentTrees,
-      required this.warriorTalentTrees});
+  HomeScreen({
+    required this.druidTalentTrees,
+  });
 
   /// open class talents
   handleOnTap(BuildContext context, String className, Future<List> talentTrees,
@@ -37,7 +22,7 @@ class HomeScreen extends StatelessWidget {
             className: className,
             talentTrees: talentTrees,
             classColor: classColor,
-            arrowTrees: getArrowClassByName(className)),
+            arrowTrees: getArrowClassByName(className,'tbc')),
       ),
     );
   }
@@ -51,6 +36,6 @@ class HomeScreen extends StatelessWidget {
         className: 'druid',
         classColor: kColorDruid,
         talentTrees: druidTalentTrees,
-        arrowTrees: getArrowClassByName('druid'));
+        arrowTrees: getArrowClassByName('druid','tbc'));
   }
 }

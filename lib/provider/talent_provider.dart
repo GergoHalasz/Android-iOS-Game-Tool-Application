@@ -7,8 +7,10 @@ class TalentProvider extends ChangeNotifier {
   int _thirdTalentTreePoints;
   TalentTrees talentTrees;
   String className;
+  String expansion;
+  String? buildName = null;
 
-  TalentProvider(this.talentTrees, this.className)
+  TalentProvider(this.talentTrees, this.className, this.expansion)
       : _firstTalentTreePoints = talentTrees.specTreeList[0].points,
         _secondTalentTreePoints = talentTrees.specTreeList[1].points,
         _thirdTalentTreePoints = talentTrees.specTreeList[2].points;
@@ -20,11 +22,21 @@ class TalentProvider extends ChangeNotifier {
       _secondTalentTreePoints +
       _thirdTalentTreePoints;
 
+  changeExpansion(expansion) {
+    this.expansion = expansion;
+    notifyListeners();
+  }
+
+  changeBuildName(name) {
+    this.buildName = name;
+    notifyListeners();
+  }
+
   changeClass(talentTreesObj, newClassName) {
     talentTrees = talentTreesObj;
-    _firstTalentTreePoints = 0;
-    _secondTalentTreePoints = 0;
-    _thirdTalentTreePoints = 0;
+    _firstTalentTreePoints = talentTreesObj.specTreeList[0].points;
+    _secondTalentTreePoints = talentTreesObj.specTreeList[1].points;
+    _thirdTalentTreePoints = talentTreesObj.specTreeList[2].points;
     className = newClassName;
 
     notifyListeners();
@@ -87,7 +99,8 @@ class TalentProvider extends ChangeNotifier {
   /// loop 5 times to max out
   void increaseTalentPoints(
       Talent talent, int currentRank, int maxRank, String talentTreeName) {
-    if (talent.points < maxRank && getTotalTalentPoints() < 60) {
+    if (talent.points < maxRank &&
+        getTotalTalentPointsWithoutLevel() < (expansion == 'tbc' ? 61 : 51)) {
       talent.points = talent.points + 1;
       increaseTreePoints(talentTreeName);
       updateTalentTree();
@@ -98,7 +111,8 @@ class TalentProvider extends ChangeNotifier {
   void increaseMaxTalentPoints(
       Talent talent, int currentRank, int maxRank, String talentTreeName) {
     if (talent.points < maxRank &&
-        getTotalTalentPointsWithoutLevel() + (maxRank - currentRank) <= 51) {
+        getTotalTalentPointsWithoutLevel() + (maxRank - currentRank) <=
+            (expansion == 'tbc' ? 61 : 51)) {
       talent.points = maxRank;
       increaseTreePointsWithSomePoints(talentTreeName, (maxRank - currentRank));
       updateTalentTree();
@@ -115,11 +129,36 @@ class TalentProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  void resetTalentTree(int idx) {
+    List<TalentTree> specTrees = talentTrees.specTreeList;
+    specTrees[idx].points = 0;
+    if (idx == 0) {
+      _firstTalentTreePoints = 0;
+    } else if (idx == 1) {
+      _secondTalentTreePoints = 0;
+    } else if (idx == 2) {
+      _thirdTalentTreePoints = 0;
+    }
+    List<Talent> talents = specTrees[idx].talents.talentList;
+    for (int j = 0; j < talents.length; j++) {
+      talents[j].points = 0;
+    }
+    updateTalentTree();
+    notifyListeners();
+  }
+
   /// run update for the entire talent trees for enable or disable spell
   void updateTalentTree() {
     List<TalentTree> specTrees = talentTrees.specTreeList;
     for (int i = 0; i < specTrees.length; i++) {
       String specTreeName = specTrees[i].name;
+      if (i == 0) {
+        specTrees[i].points = _firstTalentTreePoints;
+      } else if (i == 1) {
+        specTrees[i].points = _secondTalentTreePoints;
+      } else if (i == 2) {
+        specTrees[i].points = _thirdTalentTreePoints;
+      }
       List<Talent> talents = specTrees[i].talents.talentList;
       for (int j = 0; j < talents.length; j++) {
         updateTalentEnable(talents[j], specTreeName);

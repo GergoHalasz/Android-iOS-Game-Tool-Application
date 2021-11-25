@@ -16,8 +16,7 @@ class DetailScreen extends StatelessWidget {
       {required this.className,
       required this.classColor,
       required this.talentTrees,
-      required this.arrowTrees
-      });
+      required this.arrowTrees});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +34,8 @@ class DetailScreen extends StatelessWidget {
                     context)
               });
           return ChangeNotifierProvider<TalentProvider>(
-              create: (_) => TalentProvider(talentTreesObject, className),
+              create: (_) =>
+                  TalentProvider(talentTreesObject, className, 'tbc'),
               child: DetailScreenContent(
                 talentTrees: talentTreesObject,
                 className: className,

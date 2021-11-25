@@ -6,12 +6,12 @@ import 'package:wowtalentcalculator/provider/talent_provider.dart';
 import 'package:wowtalentcalculator/utils/constants.dart';
 import 'package:wowtalentcalculator/utils/size_config.dart';
 
-class ArrowWidget extends StatefulWidget {
+class LeftArrowWidget extends StatefulWidget {
   final Position startPosition;
   final Position endPosition;
   final String lengthType;
   final String dependencyTalent;
-  ArrowWidget({
+  LeftArrowWidget({
     required this.startPosition,
     required this.endPosition,
     required this.lengthType,
@@ -19,21 +19,20 @@ class ArrowWidget extends StatefulWidget {
   });
 
   @override
-  _ArrowWidgetState createState() => _ArrowWidgetState();
+  _LeftArrowWidgetState createState() => _LeftArrowWidgetState();
 }
 
-class _ArrowWidgetState extends State<ArrowWidget> {
+class _LeftArrowWidgetState extends State<LeftArrowWidget> {
   String arrowBodyImg = 'assets/Arrows/GreyArrowBody.png';
   String arrowHeadImg = 'assets/Arrows/GreyArrowHead.png';
   var talentProvider;
   late double arrowBodyTop;
   late double arrowBodyLeft;
-  late double arrowBodyWidth;
   late double arrowBodyHeight;
+  late double arrowBodyWidth;
   late double arrowHeadTop;
   late double arrowHeadLeft;
-  late double arrowHeadWidth;
-
+  late double arrowHeadHeight;
 
   setEnable() {
     Talent dependencyTalent =
@@ -53,25 +52,19 @@ class _ArrowWidgetState extends State<ArrowWidget> {
 
   void _calculatePositions() {
     arrowBodyTop = SizeConfig.cellSize * widget.startPosition.row -
-        SizeConfig.cellSize / 7;
-    arrowBodyLeft = SizeConfig.cellSize * widget.startPosition.column -
         SizeConfig.cellSize / 1.6;
-    arrowBodyWidth = kArrowWidthSize;
-    arrowBodyHeight = 0;
-    arrowHeadTop = SizeConfig.cellSize * (widget.endPosition.row - 1);
-    arrowHeadLeft = SizeConfig.cellSize * widget.startPosition.column -
+    arrowBodyLeft =
+        SizeConfig.cellSize * widget.startPosition.column - SizeConfig.cellSize;
+    arrowBodyHeight = kArrowWidthSize;
+    arrowBodyWidth = 0;
+    arrowHeadTop = SizeConfig.cellSize * widget.endPosition.row -
         SizeConfig.cellSize / 1.6;
-    arrowHeadWidth = kArrowWidthSize;
+    arrowHeadLeft = SizeConfig.cellSize - kTalentScreenPadding + kTalentScreenPadding / 2;
+    arrowHeadHeight = kArrowWidthSize;
 
-    if (widget.lengthType == 'long') {
-      arrowBodyHeight = SizeConfig.cellSize * 2.15; //magic number
-    } else if (widget.lengthType == 'medium') {
-      arrowBodyHeight = SizeConfig.cellSize * 1.15; //magic number
-    } else if (widget.lengthType == 'short') {
-      arrowBodyHeight = SizeConfig.cellSize * 0.15; //magic number
-    } else if (widget.lengthType == 'extralong') {
-      arrowBodyHeight = SizeConfig.cellSize * 3.15; //magic number
-    } 
+    if (widget.lengthType == 'short') {
+      arrowBodyWidth = SizeConfig.cellSize * 0.15; //magic number
+    }
   }
 
   @override
@@ -83,6 +76,7 @@ class _ArrowWidgetState extends State<ArrowWidget> {
   @override
   Widget build(BuildContext context) {
     talentProvider = Provider.of<TalentProvider>(context);
+
     // set arrow enable or disable depend on the state of talent spell
     setEnable();
 
@@ -94,19 +88,25 @@ class _ArrowWidgetState extends State<ArrowWidget> {
           child: Container(
               width: arrowBodyWidth,
               height: arrowBodyHeight,
-              child: Image.asset(
-                arrowBodyImg,
-                fit: BoxFit.fill,
+              child: RotatedBox(
+                quarterTurns: 1,
+                child: Image.asset(
+                  arrowBodyImg,
+                  fit: BoxFit.fill,
+                ),
               )),
         ),
         Positioned(
           top: arrowHeadTop,
           left: arrowHeadLeft,
           child: Container(
-              width: arrowHeadWidth,
-              child: Image.asset(
-                arrowHeadImg,
-                fit: BoxFit.fill,
+              height: arrowHeadHeight,
+              child: RotatedBox(
+                quarterTurns: 1,
+                child: Image.asset(
+                  arrowHeadImg,
+                  fit: BoxFit.fill,
+                ),
               )),
         )
       ],

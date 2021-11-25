@@ -57,7 +57,8 @@ class _TalentTreeWidgetState extends State<TalentTreeWidget> {
           child: ConstrainedBox(
               constraints: BoxConstraints(
                 // minHeight: viewportConstraints.maxHeight,
-                maxHeight: SizeConfig.cellSize * 7 +
+                maxHeight: SizeConfig.cellSize *
+                        (talentProvider.expansion == 'tbc' ? 9 : 7) +
                     kTalentScreenTwoPadding, // cell size * number of row + padding
               ),
               child: !isMobile

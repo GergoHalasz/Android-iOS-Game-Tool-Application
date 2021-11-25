@@ -1,14 +1,65 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_guid/flutter_guid.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:wowtalentcalculator/provider/talent_provider.dart';
 
 class SaveScreen extends StatefulWidget {
+  String buildName;
+  String buildKey;
+  Function changeBuildKeyAndName;
+  Function changeBuildName;
+
+  SaveScreen(
+      {required this.buildName,
+      required this.buildKey,
+      required this.changeBuildKeyAndName,
+      required this.changeBuildName});
+
   @override
   _SaveScreenState createState() => _SaveScreenState();
 }
 
 class _SaveScreenState extends State<SaveScreen> {
+  late String buildName;
+  late TextEditingController _controller;
+
+  @override
+  void initState() {
+    buildName = widget.buildName;
+    _controller = new TextEditingController();
+    _controller.text = widget.buildName;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    String value = "";
+    var talentProvider = Provider.of<TalentProvider>(context);
+
+    Future<void> _saveBuild() async {
+      final prefs = await SharedPreferences.getInstance();
+      var data = talentProvider.talentTrees.toJson();
+      Map dataJson = {
+        "build": data,
+        "buildName": buildName,
+        "buildClass": talentProvider.className
+      };
+
+      var newKey = talentProvider.expansion == "tbc"
+          ? 't' + Guid.newGuid.toString()
+          : 'v' + Guid.newGuid.toString();
+      await prefs.setString(widget.buildKey == "" ? newKey : widget.buildKey,
+          jsonEncode(dataJson));
+      if (widget.buildKey == "") {
+        widget.changeBuildKeyAndName(newKey, buildName);
+      } else {
+        widget.changeBuildName(buildName);
+      }
+      talentProvider.changeBuildName(buildName);
+      Navigator.pop(context);
+    }
 
     return Scaffold(
         backgroundColor: Colors.grey.shade700,
@@ -23,8 +74,8 @@ class _SaveScreenState extends State<SaveScreen> {
                     child: Icon(
                       Icons.save,
                     ),
-                    onTap: () {},
-                  ))
+                    onTap: _saveBuild,
+                  )),
             ]),
         body: DefaultTextStyle(
             style: TextStyle(
@@ -36,22 +87,36 @@ class _SaveScreenState extends State<SaveScreen> {
               children: [
                 Container(
                     padding: EdgeInsets.all(10),
-                    child: TextField(
-                      decoration: InputDecoration(
+                    child: Theme(
+                      data: new ThemeData(
+                        primaryColor: Colors.redAccent,
+                        primaryColorDark: Colors.red,
+                      ),
+                      child: TextField(
+                        controller: _controller,
+                        decoration: InputDecoration(
+                          counterStyle: TextStyle(color: Colors.white),
+                          labelText: 'Name',
                           labelStyle: TextStyle(color: Colors.white),
-                          labelText: "Name",
-                          border: UnderlineInputBorder(
-                              borderSide: new BorderSide(color: Colors.white))),
-                      maxLength: 25,
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.white,
-                          fontFamily: "Roboto",
-                          fontWeight: FontWeight.w900),
-                      onChanged: (text) {
-                        value = text;
-                      },
-                    ))
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.white, width: 0.0),
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                          ),
+                        ),
+                        maxLength: 25,
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                            fontFamily: "Roboto",
+                            fontWeight: FontWeight.w900),
+                        onChanged: (text) {
+                          buildName = text;
+                        },
+                      ),
+                    )),
               ],
             )));
   }

@@ -1,13 +1,10 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
 import 'package:wowtalentcalculator/DetailsScreen/Save_screen.dart';
 import 'package:wowtalentcalculator/DetailsScreen/drawer_screen.dart';
-import 'package:wowtalentcalculator/HomeScreen/home_screen.dart';
-import 'package:wowtalentcalculator/HomeScreen/load_home_screen.dart';
 import 'package:wowtalentcalculator/utils/methods.dart';
 import 'package:wowtalentcalculator/utils/size_config.dart';
 import 'package:wowtalentcalculator/utils/string.dart' as str;
@@ -42,6 +39,8 @@ class _DetailScreenContentState extends State<DetailScreenContent>
   late TalentProvider talentProvider;
   int _selectedIndex = 0;
   BannerAd? banner;
+  String buildName = "";
+  String key = "";
   bool firstTimeAdInit = true;
   late TalentTrees talentTrees;
   late String className;
@@ -146,21 +145,43 @@ class _DetailScreenContentState extends State<DetailScreenContent>
       );
 
   changeClass(String name) => {
-        loadTalentString(name).then((value) {
+        loadTalentString(name, talentProvider.expansion).then((value) {
           TalentTrees talentTreesObject = TalentTrees.fromJson(value);
           talentProvider.changeClass(talentTreesObject, name);
+          talentProvider.changeBuildName(null);
 
           setState(() {
+            key = "";
+            buildName = "";
             talentTrees = talentTreesObject;
             classColor = classColors[name]!;
             className = name;
-            arrowTrees = getArrowClassByName(name);
+            arrowTrees = getArrowClassByName(name, talentProvider.expansion);
             talentTree1Key = UniqueKey();
             talentTree2Key = UniqueKey();
             talentTree3Key = UniqueKey();
           });
         })
       };
+
+  fetchSavedBuild(data, key) {
+    String name = data["buildClass"];
+    TalentTrees talentTreesObject = TalentTrees.fromJson(data["build"]);
+    talentProvider.changeClass(talentTreesObject, name);
+    talentProvider.changeBuildName(data["buildName"]);
+
+    setState(() {
+      this.key = key;
+      buildName = data["buildName"];
+      talentTrees = talentTreesObject;
+      classColor = classColors[name]!;
+      className = name;
+      arrowTrees = getArrowClassByName(name, talentProvider.expansion);
+      talentTree1Key = UniqueKey();
+      talentTree2Key = UniqueKey();
+      talentTree3Key = UniqueKey();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -181,14 +202,25 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     return Scaffold(
       drawer: Drawer(
           child: DrawerScreen(
+        fetchSavedBuild: fetchSavedBuild,
         changeClass: changeClass,
       )),
       appBar: AppBar(
           centerTitle: true,
           title: Text(
-              '${talentTrees.specTreeList[_selectedIndex].name} ${str.capitalize(className)}',
+              talentProvider.buildName == null
+                  ? '${talentTrees.specTreeList[_selectedIndex].name} ${str.capitalize(className)}'
+                  : talentProvider.buildName!,
               style: TextStyle(color: kColorSelectiveYellow)),
           actions: <Widget>[
+            Container(
+                padding: EdgeInsets.only(right: 15),
+                child: InkResponse(
+                  child: Icon(Icons.refresh),
+                  onTap: () {
+                    talentProvider.resetTalentTree(_selectedIndex);
+                  },
+                )),
             Container(
               padding: EdgeInsets.only(right: 15),
               child: InkResponse(
@@ -196,11 +228,27 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                   Icons.save,
                 ),
                 onTap: () {
-                  Navigator.of(context)
-                      .push(CustomPageRoute(child: SaveScreen()));
+                  Navigator.of(context).push(CustomPageRoute(
+                      child: ChangeNotifierProvider<TalentProvider>.value(
+                          value: talentProvider,
+                          child: SaveScreen(
+                            changeBuildKeyAndName: (key, buildName) {
+                              setState(() {
+                                this.key = key;
+                                this.buildName = buildName;
+                              });
+                            },
+                            changeBuildName: (buildName) {
+                              setState(() {
+                                this.buildName = buildName;
+                              });
+                            },
+                            buildName: buildName,
+                            buildKey: key,
+                          ))));
                 },
               ),
-            )
+            ),
           ],
           backgroundColor: Colors.black,
           bottom: PreferredSize(

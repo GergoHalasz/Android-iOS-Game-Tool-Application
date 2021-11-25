@@ -30,6 +30,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_guid: ^0.2.0
+  shared_preferences: ^2.0.8
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -66,15 +68,8 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - data_repo/druid.json
-    - data_repo/hunter.json
-    - data_repo/mage.json
-    - data_repo/paladin.json
-    - data_repo/priest.json
-    - data_repo/rogue.json
-    - data_repo/shaman.json
-    - data_repo/warlock.json
-    - data_repo/warrior.json
+    - data_repo_vanilla/
+    - data_repo_tbc/
     - assets/background/
     - assets/Icons/
     - assets/Arrows/
