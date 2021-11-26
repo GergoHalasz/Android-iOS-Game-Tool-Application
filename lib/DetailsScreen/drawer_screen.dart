@@ -1,8 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:wowtalentcalculator/ad_state.dart';
 import 'package:wowtalentcalculator/provider/talent_provider.dart';
 import 'package:wowtalentcalculator/utils/colors.dart';
 import 'package:wowtalentcalculator/utils/string.dart';
@@ -33,7 +35,6 @@ class _DrawerScreenState extends State<DrawerScreen> {
   List<String> expansions = ['vanilla', 'tbc'];
   List builds = [];
   late TalentProvider talentProvider;
-
   Future<List> _getSavedBuilds() async {
     final prefs = await SharedPreferences.getInstance();
     List<String> keys = prefs.getKeys().toList();
@@ -41,6 +42,12 @@ class _DrawerScreenState extends State<DrawerScreen> {
     return keys.map((key) {
       return {"build": jsonDecode(prefs.getString(key)!), "key": key};
     }).toList();
+  }
+
+  @override
+  void didChangeDependencies() {
+    
+    super.didChangeDependencies();
   }
 
   @override
@@ -55,6 +62,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final adState = Provider.of<AdState>(context);
     talentProvider = Provider.of<TalentProvider>(context);
 
     return Material(
@@ -130,6 +138,24 @@ class _DrawerScreenState extends State<DrawerScreen> {
                         children: [
                           ListTile(
                             onTap: () {
+                              if (adState.interstitialAdCounter == 2) {
+                                adState.interstitialAdCounter = 0;
+                                adState.interstitialAd?.show();
+                                InterstitialAd.load(
+                                    adUnitId: adState.interstitialAdUnitId,
+                                    request: AdRequest(),
+                                    adLoadCallback: InterstitialAdLoadCallback(
+                                      onAdLoaded: (InterstitialAd ad) {
+                                        adState.interstitialAd = ad;
+                                      },
+                                      onAdFailedToLoad: (LoadAdError error) {
+                                        print(
+                                            'InterstitialAd failed to load: $error');
+                                      },
+                                    ));
+                              } else {
+                                adState.interstitialAdCounter++;
+                              }
                               widget.changeClass(element);
                             },
                             dense: true,
@@ -169,6 +195,25 @@ class _DrawerScreenState extends State<DrawerScreen> {
                           children: [
                             ListTile(
                               onTap: () {
+                                if (adState.interstitialAdCounter == 2) {
+                                  adState.interstitialAdCounter = 0;
+                                  adState.interstitialAd?.show();
+                                  InterstitialAd.load(
+                                      adUnitId: adState.interstitialAdUnitId,
+                                      request: AdRequest(),
+                                      adLoadCallback:
+                                          InterstitialAdLoadCallback(
+                                        onAdLoaded: (InterstitialAd ad) {
+                                          adState.interstitialAd = ad;
+                                        },
+                                        onAdFailedToLoad: (LoadAdError error) {
+                                          print(
+                                              'InterstitialAd failed to load: $error');
+                                        },
+                                      ));
+                                } else {
+                                  adState.interstitialAdCounter++;
+                                }
                                 widget.fetchSavedBuild(
                                     obj["build"], obj["key"]);
                               },

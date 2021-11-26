@@ -89,7 +89,7 @@ getPaladinArrowList(String expansion) {
         startPosition: Position(row: 2, column: 1),
         endPosition: Position(row: 5, column: 1),
         lengthType: 'long',
-        dependencyTalent: 'Repentance',
+        dependencyTalent: 'Vengeance',
       ),
       RightArrowWidget(
         startPosition: Position(row: 4, column: 2),

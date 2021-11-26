@@ -41,7 +41,7 @@ class _SpellWidgetState extends State<SpellWidget> {
       return '${widget.talent.name} : ${widget.talent.ranks.rankList[displayRank].description}' +
           '\n\nSwipe up to increase rank \nSwipe down to decrease rank';
     }
-    return 'Rank ${widget.talent.ranks.rankList[displayRank].number} : ' +
+    return '${widget.talent.name}(Rank ${widget.talent.ranks.rankList[displayRank].number}) : ' +
         widget.talent.ranks.rankList[displayRank].description +
         '\n\nSwipe up to increase rank \nSwipe down to decrease rank';
   }
