@@ -2,8 +2,10 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_guid/flutter_guid.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:wowtalentcalculator/ad_state.dart';
 import 'package:wowtalentcalculator/provider/talent_provider.dart';
 
 class SaveScreen extends StatefulWidget {
@@ -37,6 +39,7 @@ class _SaveScreenState extends State<SaveScreen> {
   @override
   Widget build(BuildContext context) {
     var talentProvider = Provider.of<TalentProvider>(context);
+    final adState = Provider.of<AdState>(context);
 
     Future<void> _saveBuild() async {
       final prefs = await SharedPreferences.getInstance();
@@ -46,6 +49,19 @@ class _SaveScreenState extends State<SaveScreen> {
         "buildName": buildName,
         "buildClass": talentProvider.className
       };
+
+      InterstitialAd.load(
+          adUnitId: adState.interstitialAdUnitId,
+          request: AdRequest(),
+          adLoadCallback: InterstitialAdLoadCallback(
+            onAdLoaded: (InterstitialAd ad) {
+              adState.interstitialAd = ad;
+            },
+            onAdFailedToLoad: (LoadAdError error) {
+              print('InterstitialAd failed to load: $error');
+            },
+          ));
+      adState.interstitialAd?.show();
 
       var newKey = talentProvider.expansion == "tbc"
           ? 't' + Guid.newGuid.toString()
@@ -58,6 +74,7 @@ class _SaveScreenState extends State<SaveScreen> {
         widget.changeBuildName(buildName);
       }
       talentProvider.changeBuildName(buildName);
+
       Navigator.pop(context);
     }
 
