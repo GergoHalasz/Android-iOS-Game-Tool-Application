@@ -10,12 +10,12 @@ class AdState {
   AdState(this.initialization);
 
   String get bannerAdUnitId => Platform.isAndroid
-      ? 'ca-app-pub-3940256099942544/6300978111'
-      : 'ca-app-pub-3940256099942544/2934735716';
+      ? 'ca-app-pub-8156706115088392/4083440070'
+      : 'ca-app-pub-8156706115088392/4369191164';
 
   String get interstitialAdUnitId => Platform.isAndroid
-      ? 'ca-app-pub-3940256099942544/1033173712'
-      : 'ca-app-pub-3940256099942544/4411468910';
+      ? 'ca-app-pub-8156706115088392/8921865020'
+      : 'ca-app-pub-8156706115088392/4643068037';
 
   final BannerAdListener listener = BannerAdListener(
     // Called when an ad is successfully received.
@@ -34,8 +34,7 @@ class AdState {
     onAdImpression: (Ad ad) => print('Ad impression.'),
   );
 
-  createInterstitialAd()
-  {
+  createInterstitialAd() {
     InterstitialAd.load(
         adUnitId: interstitialAdUnitId,
         request: AdRequest(),
