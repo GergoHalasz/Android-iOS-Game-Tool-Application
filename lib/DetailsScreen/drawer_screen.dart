@@ -32,13 +32,12 @@ class _DrawerScreenState extends State<DrawerScreen> {
     'warlock',
     'warrior'
   ];
-  List<String> expansions = ['vanilla', 'tbc'];
+  List<String> expansions = ['vanilla', 'tbc', 'wotlk'];
   List builds = [];
   late TalentProvider talentProvider;
   Future<List> _getSavedBuilds() async {
     final prefs = await SharedPreferences.getInstance();
     List<String> keys = prefs.getKeys().toList();
-    print(keys);
     return keys.map((key) {
       if (key.contains("build_"))
         return {"build": jsonDecode(prefs.getString(key)!), "key": key};
@@ -102,6 +101,26 @@ class _DrawerScreenState extends State<DrawerScreen> {
       }
     }
 
+    showWotlkDialog(BuildContext context) {
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: new Text("Wotlk soon"),
+              content: new Text(
+                  "The Wotlk expansion is currently under development. It's coming soon!"),
+              actions: <Widget>[
+                TextButton(
+                  child: const Text('OK'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            );
+          });
+    }
+
     return Material(
       color: Colors.grey.shade800,
       child: DefaultTextStyle(
@@ -139,8 +158,13 @@ class _DrawerScreenState extends State<DrawerScreen> {
                             selected: element == talentProvider.expansion,
                             selectedTileColor: Colors.amber[700],
                             onTap: () {
-                              talentProvider.changeExpansion(element);
-                              widget.changeClass(talentProvider.className);
+                              if (element != "wotlk") {
+                                talentProvider.changeExpansion(element);
+                                widget.changeClass(talentProvider.className);
+                              } else {
+                                Future.delayed(Duration.zero,
+                                    () => showWotlkDialog(context));
+                              }
                             },
                             dense: true,
                             title: Text(
