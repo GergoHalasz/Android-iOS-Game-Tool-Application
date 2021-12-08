@@ -8,19 +8,27 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   final initFuture = MobileAds.instance.initialize();
   final adState = AdState(initFuture);
-  runApp(Provider.value(
-    value: adState,
-    builder: (context, child) => MyApp()
-  ));
+  runApp(Provider.value(value: adState, builder: (context, child) => MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
+        title: 'WoW Talent Calculator',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),

@@ -6,7 +6,7 @@ import 'package:wowtalentcalculator/DetailsScreen/talent_tree_widget.dart';
 import 'package:wowtalentcalculator/model/talent.dart';
 import 'package:wowtalentcalculator/provider/talent_provider.dart';
 
-class DetailScreen extends StatelessWidget {
+class DetailScreen extends StatefulWidget {
   final String className;
   final Color classColor;
   final Future<List> talentTrees;
@@ -19,9 +19,20 @@ class DetailScreen extends StatelessWidget {
       required this.arrowTrees});
 
   @override
+  State<DetailScreen> createState() => _DetailScreenState();
+}
+
+class _DetailScreenState extends State<DetailScreen> {
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return FutureBuilder<List>(
-      future: talentTrees,
+      future: widget.talentTrees,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           /// make new talent object every time we go to detail view
@@ -35,12 +46,12 @@ class DetailScreen extends StatelessWidget {
               });
           return ChangeNotifierProvider<TalentProvider>(
               create: (_) =>
-                  TalentProvider(talentTreesObject, className, 'tbc'),
+                  TalentProvider(talentTreesObject, widget.className, 'tbc'),
               child: DetailScreenContent(
                 talentTrees: talentTreesObject,
-                className: className,
-                classColor: classColor,
-                arrowTrees: arrowTrees,
+                className: widget.className,
+                classColor: widget.classColor,
+                arrowTrees: widget.arrowTrees,
               ));
         } else if (snapshot.hasError) {
           return Text("${snapshot.error}");

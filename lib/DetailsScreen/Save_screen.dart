@@ -64,8 +64,8 @@ class _SaveScreenState extends State<SaveScreen> {
       adState.interstitialAd?.show();
 
       var newKey = talentProvider.expansion == "tbc"
-          ? 't' + Guid.newGuid.toString()
-          : 'v' + Guid.newGuid.toString();
+          ? 't' + "build_" + Guid.newGuid.toString()
+          : 'v' + "build_" + Guid.newGuid.toString();
       await prefs.setString(widget.buildKey == "" ? newKey : widget.buildKey,
           jsonEncode(dataJson));
       if (widget.buildKey == "") {

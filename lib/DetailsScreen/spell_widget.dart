@@ -4,6 +4,8 @@ import 'package:swipedetector/swipedetector.dart';
 import 'package:wowtalentcalculator/model/talent.dart';
 import 'package:wowtalentcalculator/provider/talent_provider.dart';
 import 'package:wowtalentcalculator/utils/size_config.dart';
+import 'package:just_the_tooltip/just_the_tooltip.dart';
+
 // import 'package:transparent_image/transparent_image.dart';
 
 //add ripple effect
@@ -27,23 +29,27 @@ class _SpellWidgetState extends State<SpellWidget> {
   int currentRank = 0;
   String spellName = '';
   String imgLocation = '';
+  final tooltipController = JustTheController();
+  bool isTooltipOpen = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   // show spell tooltip description on long press
   void _showDescription() {
-    final dynamic tooltip = key.currentState;
-    tooltip.ensureTooltipVisible();
+    tooltipController.showTooltip();
   }
 
   String _getDescription() {
     int displayRank = currentRank - 1;
     if (displayRank < 0) {
       displayRank = 0;
-      return '${widget.talent.name} : ${widget.talent.ranks.rankList[displayRank].description}' +
-          '\n\nSwipe up to increase rank \nSwipe down to decrease rank';
+      return '${widget.talent.name} : ${widget.talent.ranks.rankList[displayRank].description}';
     }
     return '${widget.talent.name}(Rank ${widget.talent.ranks.rankList[displayRank].number}) : ' +
-        widget.talent.ranks.rankList[displayRank].description +
-        '\n\nSwipe up to increase rank \nSwipe down to decrease rank';
+        widget.talent.ranks.rankList[displayRank].description;
   }
 
   // onTap, increase spell rank if it's not max and not over 60
@@ -119,32 +125,19 @@ class _SpellWidgetState extends State<SpellWidget> {
   // disable Tap action if grey out
   _buildSpellWidget() {
     if (widget.talent.enable) {
-      return SwipeDetector(
-        child: Material(
-          color: Colors.transparent,
-          child: Ink.image(
-            image: AssetImage(imgLocation),
-            fit: BoxFit.cover,
-            child: InkWell(
-              onTap: () => _showDescription(),
-              onLongPress: () => _increaseMaxRank(),
-              borderRadius: BorderRadius.circular(10),
-            ),
+      return Material(
+        color: Colors.transparent,
+        child: Ink.image(
+          image: AssetImage(imgLocation),
+          fit: BoxFit.cover,
+          child: InkWell(
+            onTap: () {
+              _showDescription();
+            },
+            onLongPress: () => _increaseMaxRank(),
+            borderRadius: BorderRadius.circular(10),
           ),
         ),
-        onSwipeDown: () {
-          _decreaseRank();
-        },
-        onSwipeUp: () {
-          _increaseRank();
-        },
-        swipeConfiguration: SwipeConfiguration(
-            verticalSwipeMinVelocity: 100.0,
-            verticalSwipeMinDisplacement: 0.0,
-            verticalSwipeMaxWidthThreshold: 100.0,
-            horizontalSwipeMaxHeightThreshold: 50.0,
-            horizontalSwipeMinDisplacement: 50.0,
-            horizontalSwipeMinVelocity: 200.0),
       );
     } else {
       return Material(
@@ -177,39 +170,140 @@ class _SpellWidgetState extends State<SpellWidget> {
     spellName = widget.talent.icon.toLowerCase();
     imgLocation = 'assets/Icons/$spellName.png';
 
-    return Tooltip(
-      decoration: BoxDecoration(color: Colors.black),
-      textStyle: TextStyle(
-          fontSize: 13, color: Colors.white, fontWeight: FontWeight.bold),
+    return JustTheTooltip(
+      controller: tooltipController,
+      fadeInDuration: Duration(milliseconds: 0),
+      fadeOutDuration: Duration(milliseconds: 0),
+      tailLength: 0,
       key: key,
-      verticalOffset: 40,
-      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-      message: _getDescription(),
+      backgroundColor: Colors.grey.shade700,
+      content: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Align(
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  '${widget.talent.name}',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      letterSpacing: -0.5),
+                )),
+            SizedBox(
+              height: 4,
+            ),
+            Align(
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  '${widget.talent.ranks.rankList[currentRank == 0 ? 0 : currentRank - 1].description}',
+                  style: TextStyle(
+                      color: Colors.amber,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12,
+                      letterSpacing: -0.5),
+                )),
+            if (currentRank != 0 && currentRank < maxRank)
+              SizedBox(
+                height: 8,
+              ),
+            if (currentRank != 0 && currentRank < maxRank)
+              Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Text('Next rank:',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 11,
+                          letterSpacing: -0.5))),
+            if (currentRank != 0 && currentRank < maxRank)
+              Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Text(
+                    '${widget.talent.ranks.rankList[currentRank < maxRank ? currentRank : currentRank - 1].description}',
+                    style: TextStyle(
+                        color: Colors.amber,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12,
+                        letterSpacing: -0.5),
+                  )),
+            if (widget.talent.enable)
+              SizedBox(
+                height: 4,
+              ),
+            if (widget.talent.enable)
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  'Swipe up to increase rank',
+                  style: TextStyle(
+                      color: currentRank < maxRank ? Colors.green : Colors.red,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 11,
+                      letterSpacing: -0.5),
+                ),
+              ),
+            if (widget.talent.enable)
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  'Swipe down to decrease rank',
+                  style: TextStyle(
+                      color: currentRank > 0 ? Colors.green : Colors.red,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 11,
+                      letterSpacing: -0.5),
+                ),
+              )
+          ],
+        ),
+      ),
       child: Container(
         width: SizeConfig.cellSize,
         height: SizeConfig.cellSize,
         padding: EdgeInsets.all(10),
-        child: Stack(
-          children: <Widget>[
-            Align(
-              alignment: Alignment.center,
-              child: _buildSpellWidget(), //spell icon
-            ),
-        Align(
-                    // spell rank
-                    alignment: Alignment.bottomRight,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.black87,
-                        borderRadius: BorderRadius.circular(3),
-                      ),
-                      child: Text(
-                        '$currentRank/$maxRank',
-                        style: TextStyle(fontSize: 14),
-                      ),
-                    ),
-                  )
-          ],
+        child: SwipeDetector(
+          onSwipeDown: () {
+            if (widget.talent.enable) {
+              _decreaseRank();
+            }
+          },
+          onSwipeUp: () {
+            if (widget.talent.enable) {
+              _increaseRank();
+            }
+          },
+          swipeConfiguration: SwipeConfiguration(
+              verticalSwipeMinVelocity: 100.0,
+              verticalSwipeMinDisplacement: 0.0,
+              verticalSwipeMaxWidthThreshold: 100.0,
+              horizontalSwipeMaxHeightThreshold: 50.0,
+              horizontalSwipeMinDisplacement: 50.0,
+              horizontalSwipeMinVelocity: 200.0),
+          child: Stack(
+            children: <Widget>[
+              Align(
+                alignment: Alignment.center,
+                child: _buildSpellWidget(), //spell icon
+              ),
+              Align(
+                // spell rank
+                alignment: Alignment.bottomRight,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.black87,
+                    borderRadius: BorderRadius.circular(3),
+                  ),
+                  child: Text(
+                    '$currentRank/$maxRank',
+                    style: TextStyle(fontSize: 14),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

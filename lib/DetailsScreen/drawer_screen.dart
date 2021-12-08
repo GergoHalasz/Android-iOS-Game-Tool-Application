@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
@@ -8,6 +7,7 @@ import 'package:wowtalentcalculator/ad_state.dart';
 import 'package:wowtalentcalculator/provider/talent_provider.dart';
 import 'package:wowtalentcalculator/utils/colors.dart';
 import 'package:wowtalentcalculator/utils/string.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class DrawerScreen extends StatefulWidget {
   Function changeClass;
@@ -38,15 +38,15 @@ class _DrawerScreenState extends State<DrawerScreen> {
   Future<List> _getSavedBuilds() async {
     final prefs = await SharedPreferences.getInstance();
     List<String> keys = prefs.getKeys().toList();
-
+    print(keys);
     return keys.map((key) {
-      return {"build": jsonDecode(prefs.getString(key)!), "key": key};
+      if (key.contains("build_"))
+        return {"build": jsonDecode(prefs.getString(key)!), "key": key};
     }).toList();
   }
 
   @override
   void didChangeDependencies() {
-    
     super.didChangeDependencies();
   }
 
@@ -60,10 +60,47 @@ class _DrawerScreenState extends State<DrawerScreen> {
     super.initState();
   }
 
+  Widget stackBehindDismiss() {
+    return Container(
+      alignment: Alignment.centerRight,
+      padding: EdgeInsets.only(right: 20.0),
+      color: Colors.red,
+      child: Icon(
+        Icons.delete,
+        color: Colors.white,
+      ),
+    );
+  }
+
+  onDeleteBuild(buildContext, key) async {
+    SharedPreferences sharedPreference = await SharedPreferences.getInstance();
+    sharedPreference.remove(key);
+  }
+
   @override
   Widget build(BuildContext context) {
-    final adState = Provider.of<AdState>(context);
     talentProvider = Provider.of<TalentProvider>(context);
+    final adState = Provider.of<AdState>(context);
+
+    loadInterstitialAd() {
+      if (adState.interstitialAdCounter == 1) {
+        adState.interstitialAdCounter = 0;
+        adState.interstitialAd?.show();
+        InterstitialAd.load(
+            adUnitId: adState.interstitialAdUnitId,
+            request: AdRequest(),
+            adLoadCallback: InterstitialAdLoadCallback(
+              onAdLoaded: (InterstitialAd ad) {
+                adState.interstitialAd = ad;
+              },
+              onAdFailedToLoad: (LoadAdError error) {
+                print('InterstitialAd failed to load: $error');
+              },
+            ));
+      } else {
+        adState.interstitialAdCounter++;
+      }
+    }
 
     return Material(
       color: Colors.grey.shade800,
@@ -138,25 +175,8 @@ class _DrawerScreenState extends State<DrawerScreen> {
                         children: [
                           ListTile(
                             onTap: () {
-                              if (adState.interstitialAdCounter == 2) {
-                                adState.interstitialAdCounter = 0;
-                                adState.interstitialAd?.show();
-                                InterstitialAd.load(
-                                    adUnitId: adState.interstitialAdUnitId,
-                                    request: AdRequest(),
-                                    adLoadCallback: InterstitialAdLoadCallback(
-                                      onAdLoaded: (InterstitialAd ad) {
-                                        adState.interstitialAd = ad;
-                                      },
-                                      onAdFailedToLoad: (LoadAdError error) {
-                                        print(
-                                            'InterstitialAd failed to load: $error');
-                                      },
-                                    ));
-                              } else {
-                                adState.interstitialAdCounter++;
-                              }
                               widget.changeClass(element);
+                              loadInterstitialAd();
                             },
                             dense: true,
                             title: Text(
@@ -187,50 +207,56 @@ class _DrawerScreenState extends State<DrawerScreen> {
                           fontWeight: FontWeight.w500)),
                   children: [
                     ...builds.map((obj) {
-                      if ((talentProvider.expansion == "tbc" &&
+                      if ((obj != null &&
+                              talentProvider.expansion == "tbc" &&
                               obj["key"][0] == "t") ||
-                          (talentProvider.expansion == "vanilla" &&
+                          (obj != null &&
+                              talentProvider.expansion == "vanilla" &&
                               obj["key"][0] == "v")) {
                         return Column(
                           children: [
-                            ListTile(
-                              onTap: () {
-                                if (adState.interstitialAdCounter == 2) {
-                                  adState.interstitialAdCounter = 0;
-                                  adState.interstitialAd?.show();
-                                  InterstitialAd.load(
-                                      adUnitId: adState.interstitialAdUnitId,
-                                      request: AdRequest(),
-                                      adLoadCallback:
-                                          InterstitialAdLoadCallback(
-                                        onAdLoaded: (InterstitialAd ad) {
-                                          adState.interstitialAd = ad;
-                                        },
-                                        onAdFailedToLoad: (LoadAdError error) {
-                                          print(
-                                              'InterstitialAd failed to load: $error');
-                                        },
-                                      ));
-                                } else {
-                                  adState.interstitialAdCounter++;
-                                }
-                                widget.fetchSavedBuild(
-                                    obj["build"], obj["key"]);
-                              },
-                              dense: true,
-                              title: Text(obj["build"]["buildName"],
-                                  style: TextStyle(
-                                      color: classColors[obj["build"]
-                                          ["buildClass"]])),
-                              subtitle: Text(
-                                  '${obj["build"]["build"][0]["Points"]}/${obj["build"]["build"][1]["Points"]}/${obj["build"]["build"][2]["Points"]}',
-                                  style: TextStyle(
-                                      color: classColors[obj["build"]
-                                          ["buildClass"]])),
-                              leading: CircleAvatar(
-                                backgroundImage: AssetImage(
-                                    "assets/Class/icon_${obj["build"]["buildClass"]}.png"),
-                                backgroundColor: Colors.transparent,
+                            Slidable(
+                              key: Key(obj["key"]),
+                              endActionPane: ActionPane(
+                                extentRatio: 1 / 5,
+                                // A motion is a widget used to control how the pane animates.
+                                motion: const ScrollMotion(),
+
+                                // A pane can dismiss the Slidable.
+
+                                // All actions are defined in the children parameter.
+                                children: [
+                                  // A SlidableAction can have an icon and/or a label.
+                                  SlidableAction(
+                                    onPressed: (context) {
+                                      onDeleteBuild(context, obj["key"]);
+                                    },
+                                    backgroundColor: Colors.red,
+                                    foregroundColor: Colors.white,
+                                    icon: Icons.delete,
+                                  )
+                                ],
+                              ),
+                              child: ListTile(
+                                onTap: () {
+                                  widget.fetchSavedBuild(
+                                      obj["build"], obj["key"]);
+                                },
+                                dense: true,
+                                title: Text(obj["build"]["buildName"],
+                                    style: TextStyle(
+                                        color: classColors[obj["build"]
+                                            ["buildClass"]])),
+                                subtitle: Text(
+                                    '${obj["build"]["build"][0]["Points"]}/${obj["build"]["build"][1]["Points"]}/${obj["build"]["build"][2]["Points"]}',
+                                    style: TextStyle(
+                                        color: classColors[obj["build"]
+                                            ["buildClass"]])),
+                                leading: CircleAvatar(
+                                  backgroundImage: AssetImage(
+                                      "assets/Class/icon_${obj["build"]["buildClass"]}.png"),
+                                  backgroundColor: Colors.transparent,
+                                ),
                               ),
                             ),
                             Divider(color: Colors.white12, height: 0)

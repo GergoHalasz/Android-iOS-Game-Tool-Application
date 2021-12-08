@@ -205,7 +205,7 @@
           "Name": "Call of Thunder",
           "Points": 0,
           "Dependency": "",
-          "Support": ["Call of Thunder"],
+          "Support": ["Lightning Mastery"],
           "Position": [2, 2],
           "Enable": false,
           "Tier": "3",
