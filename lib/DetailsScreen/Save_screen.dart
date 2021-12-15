@@ -29,6 +29,24 @@ class _SaveScreenState extends State<SaveScreen> {
   late TextEditingController _controller;
 
   @override
+  void didChangeDependencies() {
+    final adState = Provider.of<AdState>(context);
+
+    InterstitialAd.load(
+        adUnitId: adState.interstitialAdUnitId,
+        request: AdRequest(),
+        adLoadCallback: InterstitialAdLoadCallback(
+          onAdLoaded: (InterstitialAd ad) {
+            adState.interstitialAd = ad;
+          },
+          onAdFailedToLoad: (LoadAdError error) {
+            print('InterstitialAd failed to load: $error');
+          },
+        ));
+    super.didChangeDependencies();
+  }
+
+  @override
   void initState() {
     buildName = widget.buildName;
     _controller = new TextEditingController();
@@ -50,19 +68,6 @@ class _SaveScreenState extends State<SaveScreen> {
         "buildClass": talentProvider.className
       };
 
-      InterstitialAd.load(
-          adUnitId: adState.interstitialAdUnitId,
-          request: AdRequest(),
-          adLoadCallback: InterstitialAdLoadCallback(
-            onAdLoaded: (InterstitialAd ad) {
-              adState.interstitialAd = ad;
-            },
-            onAdFailedToLoad: (LoadAdError error) {
-              print('InterstitialAd failed to load: $error');
-            },
-          ));
-      adState.interstitialAd?.show();
-
       var newKey = talentProvider.expansion == "tbc"
           ? 't' + "build_" + Guid.newGuid.toString()
           : 'v' + "build_" + Guid.newGuid.toString();
@@ -76,6 +81,7 @@ class _SaveScreenState extends State<SaveScreen> {
       talentProvider.changeBuildName(buildName);
 
       Navigator.pop(context);
+      adState.interstitialAd?.show();
     }
 
     return Scaffold(
@@ -91,7 +97,10 @@ class _SaveScreenState extends State<SaveScreen> {
                     child: Icon(
                       Icons.save,
                     ),
-                    onTap: _saveBuild,
+                    onTap: () {
+                      _saveBuild();
+                      FocusScope.of(context).unfocus();
+                    },
                   )),
             ]),
         body: DefaultTextStyle(
