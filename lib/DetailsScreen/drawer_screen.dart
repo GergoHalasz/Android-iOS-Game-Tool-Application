@@ -74,6 +74,11 @@ class _DrawerScreenState extends State<DrawerScreen> {
   onDeleteBuild(buildContext, key) async {
     SharedPreferences sharedPreference = await SharedPreferences.getInstance();
     sharedPreference.remove(key);
+    _getSavedBuilds().then((res) => {
+          setState(() {
+            builds = res;
+          })
+        });
   }
 
   @override
