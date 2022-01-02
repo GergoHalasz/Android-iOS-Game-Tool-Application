@@ -195,7 +195,7 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
               child: SizedBox(
                   child: Wrap(
                 alignment: WrapAlignment.center,
-                spacing: 50,
+                spacing: 30,
                 runSpacing: 10,
                 children: [
                   if (currentExpansionSelected == 'wotlk')
@@ -263,7 +263,7 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                   ),
                   Container(
                       width: double.maxFinite,
-                      height: 150,
+                      height: SizeConfig.screenHeight / 5,
                       child: ListView.builder(
                           itemCount: builds.length,
                           itemBuilder: (context, index) {
