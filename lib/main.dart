@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:wowtalentcalculator/HomeScreen/load_home_screen.dart';
@@ -6,6 +7,8 @@ import 'package:wowtalentcalculator/ad_state.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   final initFuture = MobileAds.instance.initialize();
   final adState = AdState(initFuture);
   runApp(Provider.value(value: adState, builder: (context, child) => MyApp()));

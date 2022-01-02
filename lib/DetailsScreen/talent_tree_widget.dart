@@ -51,6 +51,17 @@ class _TalentTreeWidgetState extends State<TalentTreeWidget> {
     talentProvider = Provider.of<TalentProvider>(context);
     final isMobile = MediaQuery.of(context).size.width < 600 ? true : false;
 
+  expansionCellSize() {
+    if(talentProvider.expansion == 'tbc') {
+      return 9;
+    } else 
+    if(talentProvider.expansion == 'vanilla') {
+      return 7;
+    } else {
+      return 11;
+    }
+  }
+
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints viewportConstraints) {
       return SingleChildScrollView(
@@ -58,7 +69,7 @@ class _TalentTreeWidgetState extends State<TalentTreeWidget> {
               constraints: BoxConstraints(
                 // minHeight: viewportConstraints.maxHeight,
                 maxHeight: SizeConfig.cellSize *
-                        (talentProvider.expansion == 'tbc' ? 9 : 7) +
+                        expansionCellSize() +
                     kTalentScreenTwoPadding, // cell size * number of row + padding
               ),
               child: !isMobile

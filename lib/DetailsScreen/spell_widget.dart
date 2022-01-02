@@ -162,6 +162,73 @@ class _SpellWidgetState extends State<SpellWidget> {
     }
   }
 
+  _buildTalentWidget() {
+    if (widget.talent.enable) {
+      return SwipeDetector(
+        onSwipeDown: () {
+          if (widget.talent.enable) {
+            _decreaseRank();
+          }
+        },
+        onSwipeUp: () {
+          if (widget.talent.enable) {
+            _increaseRank();
+          }
+        },
+        swipeConfiguration: SwipeConfiguration(
+            verticalSwipeMinVelocity: 100.0,
+            verticalSwipeMinDisplacement: 0.0,
+            verticalSwipeMaxWidthThreshold: 100.0,
+            horizontalSwipeMaxHeightThreshold: 50.0,
+            horizontalSwipeMinDisplacement: 50.0,
+            horizontalSwipeMinVelocity: 200.0),
+        child: Stack(
+          children: <Widget>[
+            Align(
+              alignment: Alignment.center,
+              child: _buildSpellWidget(), //spell icon
+            ),
+            Align(
+              // spell rank
+              alignment: Alignment.bottomRight,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.black87,
+                  borderRadius: BorderRadius.circular(3),
+                ),
+                child: Text(
+                  '$currentRank/$maxRank',
+                  style: TextStyle(fontSize: 14),
+                ),
+              ),
+            )
+          ],
+        ),
+      );
+    } else {
+      return Stack(children: <Widget>[
+        Align(
+          alignment: Alignment.center,
+          child: _buildSpellWidget(), //spell icon
+        ),
+        Align(
+          // spell rank
+          alignment: Alignment.bottomRight,
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.black87,
+              borderRadius: BorderRadius.circular(3),
+            ),
+            child: Text(
+              '$currentRank/$maxRank',
+              style: TextStyle(fontSize: 14),
+            ),
+          ),
+        )
+      ]);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     talentProvider = Provider.of<TalentProvider>(context);
@@ -261,51 +328,10 @@ class _SpellWidgetState extends State<SpellWidget> {
         ),
       ),
       child: Container(
-        width: SizeConfig.cellSize,
-        height: SizeConfig.cellSize,
-        padding: EdgeInsets.all(10),
-        child: SwipeDetector(
-          onSwipeDown: () {
-            if (widget.talent.enable) {
-              _decreaseRank();
-            }
-          },
-          onSwipeUp: () {
-            if (widget.talent.enable) {
-              _increaseRank();
-            }
-          },
-          swipeConfiguration: SwipeConfiguration(
-              verticalSwipeMinVelocity: 100.0,
-              verticalSwipeMinDisplacement: 0.0,
-              verticalSwipeMaxWidthThreshold: 100.0,
-              horizontalSwipeMaxHeightThreshold: 50.0,
-              horizontalSwipeMinDisplacement: 50.0,
-              horizontalSwipeMinVelocity: 200.0),
-          child: Stack(
-            children: <Widget>[
-              Align(
-                alignment: Alignment.center,
-                child: _buildSpellWidget(), //spell icon
-              ),
-              Align(
-                // spell rank
-                alignment: Alignment.bottomRight,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.black87,
-                    borderRadius: BorderRadius.circular(3),
-                  ),
-                  child: Text(
-                    '$currentRank/$maxRank',
-                    style: TextStyle(fontSize: 14),
-                  ),
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
+          width: SizeConfig.cellSize,
+          height: SizeConfig.cellSize,
+          padding: EdgeInsets.all(10),
+          child: _buildTalentWidget()),
     );
   }
 }

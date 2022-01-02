@@ -146,5 +146,42 @@ getDruidArrowList(String expansion) {
       ),
     ]
   ];
-  return expansion == "tbc" ? arrowListTbc : arrowListVanilla;
+
+  var arrowListWotlk = [
+    [
+      RightArrowWidget(
+        startPosition: Position(row: 0, column: 1),
+        endPosition: Position(row: 0, column: 2),
+        lengthType: 'short',
+        dependencyTalent: "Improved Nature's Grasp",
+      ),
+    ],
+    [
+      ArrowWidget(
+        startPosition: Position(row: 6, column: 1),
+        endPosition: Position(row: 8, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Mangle',
+      ),
+    ],
+    [
+      ArrowWidget(
+        startPosition: Position(row: 7, column: 1),
+        endPosition: Position(row: 8, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Tree of Life',
+      ),
+    ]
+  ];
+
+  arrowWidgetsClass() {
+    if (expansion == "tbc")
+      return arrowListTbc;
+    else if (expansion == "vanilla")
+      return arrowListVanilla;
+    else
+      return arrowListWotlk;
+  }
+
+  return arrowWidgetsClass();
 }

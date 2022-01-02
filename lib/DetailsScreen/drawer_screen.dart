@@ -163,13 +163,8 @@ class _DrawerScreenState extends State<DrawerScreen> {
                             selected: element == talentProvider.expansion,
                             selectedTileColor: Colors.amber[700],
                             onTap: () {
-                              if (element != "wotlk") {
-                                talentProvider.changeExpansion(element);
-                                widget.changeClass(talentProvider.className);
-                              } else {
-                                Future.delayed(Duration.zero,
-                                    () => showWotlkDialog(context));
-                              }
+                              talentProvider.changeExpansion(element);
+                              widget.changeClass(talentProvider.className);
                             },
                             dense: true,
                             title: Text(
