@@ -85,11 +85,11 @@ class _SaveScreenState extends State<SaveScreen> {
     }
 
     return Scaffold(
-        backgroundColor: Colors.grey.shade700,
+        backgroundColor: Color(0xff556F7A),
         appBar: AppBar(
             centerTitle: true,
             title: Text('Save Build'),
-            backgroundColor: Colors.black,
+            backgroundColor: Color(0xff2E6171),
             actions: <Widget>[
               Container(
                   padding: EdgeInsets.only(right: 15),

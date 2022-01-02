@@ -41,4 +41,11 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-8156706115088392~6764568991"/>
     </application>
+    <queries>
+  <!-- If your app opens https URLs -->
+  <intent>
+    <action android:name="android.intent.action.VIEW" />
+    <data android:scheme="https" />
+  </intent>
+</queries>
 </manifest>
