@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
 import 'package:wowtalentcalculator/provider/talent_provider.dart';
 import 'package:wowtalentcalculator/utils/colors.dart';
@@ -21,18 +22,6 @@ class DrawerScreen extends StatefulWidget {
 
 class _DrawerScreenState extends State<DrawerScreen> {
   bool isOpen = false;
-  List<String> classes = [
-    'druid',
-    'hunter',
-    'mage',
-    'paladin',
-    'priest',
-    'rogue',
-    'shaman',
-    'warlock',
-    'warrior'
-  ];
-  List<String> expansions = ['vanilla', 'tbc', 'wotlk'];
   List builds = [];
   late TalentProvider talentProvider;
   Future<List> _getSavedBuilds() async {
@@ -81,53 +70,13 @@ class _DrawerScreenState extends State<DrawerScreen> {
         });
   }
 
+  String _termsUrl = 'https://github.com/HalaszGergo123/wow-talent-calculator/blob/main/terms_and_conditions.md';
+  String _privacyUrl = 'https://github.com/HalaszGergo123/wow-talent-calculator/blob/main/privacy_policy.md';
+
   @override
   Widget build(BuildContext context) {
-    talentProvider = Provider.of<TalentProvider>(context);
-    final adState = Provider.of<AdState>(context);
-
-    loadInterstitialAd() {
-      if (adState.interstitialAdCounter == 1) {
-        adState.interstitialAdCounter = 0;
-        adState.interstitialAd?.show();
-        InterstitialAd.load(
-            adUnitId: adState.interstitialAdUnitId,
-            request: AdRequest(),
-            adLoadCallback: InterstitialAdLoadCallback(
-              onAdLoaded: (InterstitialAd ad) {
-                adState.interstitialAd = ad;
-              },
-              onAdFailedToLoad: (LoadAdError error) {
-                print('InterstitialAd failed to load: $error');
-              },
-            ));
-      } else {
-        adState.interstitialAdCounter++;
-      }
-    }
-
-    showWotlkDialog(BuildContext context) {
-      showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: new Text("Wotlk soon"),
-              content: new Text(
-                  "The Wotlk expansion is currently under development. It's coming soon!"),
-              actions: <Widget>[
-                TextButton(
-                  child: const Text('OK'),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                ),
-              ],
-            );
-          });
-    }
-
     return Material(
-      color: Colors.grey.shade800,
+      color: Color(0xff556F7A),
       child: DefaultTextStyle(
         style: TextStyle(
             fontSize: 16,
@@ -136,161 +85,75 @@ class _DrawerScreenState extends State<DrawerScreen> {
             fontWeight: FontWeight.w500),
         child: ListView(
           children: [
-            Padding(
-              padding: EdgeInsets.only(top: 15, left: 15),
-              child: Text('Builds'),
-            ),
             SizedBox(
               height: 10,
             ),
-            Divider(color: Colors.white12, height: 0),
-            Theme(
-                data: Theme.of(context).copyWith(dividerColor: Colors.white12),
-                child: ExpansionTile(
-                  initiallyExpanded: true,
-                  collapsedIconColor: Colors.white,
-                  title: Text('Expansions',
-                      style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.white,
-                          fontFamily: "Roboto",
-                          fontWeight: FontWeight.w500)),
-                  children: [
-                    ...expansions.map((element) {
-                      return Column(
-                        children: [
-                          ListTile(
-                            selected: element == talentProvider.expansion,
-                            selectedTileColor: Colors.amber[700],
-                            onTap: () {
-                              talentProvider.changeExpansion(element);
-                              widget.changeClass(talentProvider.className);
-                            },
-                            dense: true,
-                            title: Text(
-                              capitalize(element),
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            leading: CircleAvatar(
-                              backgroundImage:
-                                  AssetImage("assets/Icons/WoW_$element.ico"),
-                              backgroundColor: Colors.transparent,
-                            ),
-                          ),
-                          Divider(color: Colors.white12, height: 0)
-                        ],
-                      );
-                    }),
-                  ],
-                )),
-            Theme(
-                data: Theme.of(context).copyWith(dividerColor: Colors.white12),
-                child: ExpansionTile(
-                  collapsedIconColor: Colors.white,
-                  title: Text('New Builds',
-                      style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.white,
-                          fontFamily: "Roboto",
-                          fontWeight: FontWeight.w500)),
-                  children: [
-                    ...classes.map((element) {
-                      return Column(
-                        children: [
-                          ListTile(
-                            onTap: () {
-                              widget.changeClass(element);
-                              loadInterstitialAd();
-                            },
-                            dense: true,
-                            title: Text(
-                              capitalize(element),
-                              style: TextStyle(color: classColors[element]),
-                            ),
-                            leading: CircleAvatar(
-                              backgroundImage:
-                                  AssetImage("assets/Class/icon_$element.png"),
-                              backgroundColor: Colors.transparent,
-                            ),
-                          ),
-                          Divider(color: Colors.white12, height: 0)
-                        ],
-                      );
-                    }),
-                  ],
-                )),
-            Theme(
-                data: Theme.of(context).copyWith(dividerColor: Colors.white12),
-                child: ExpansionTile(
-                  collapsedIconColor: Colors.white,
-                  title: Text('Saved Builds',
-                      style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.white,
-                          fontFamily: "Roboto",
-                          fontWeight: FontWeight.w500)),
-                  children: [
-                    ...builds.map((obj) {
-                      if ((obj != null &&
-                              talentProvider.expansion == "tbc" &&
-                              obj["key"][0] == "t") ||
-                          (obj != null &&
-                              talentProvider.expansion == "vanilla" &&
-                              obj["key"][0] == "v")) {
-                        return Column(
+            ListTile(
+              onTap: () {
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: new Text("WoW Talent Calculator"),
+                        content: Column(
+                          mainAxisSize: MainAxisSize.min,
                           children: [
-                            Slidable(
-                              key: Key(obj["key"]),
-                              endActionPane: ActionPane(
-                                extentRatio: 1 / 5,
-                                // A motion is a widget used to control how the pane animates.
-                                motion: const ScrollMotion(),
-
-                                // A pane can dismiss the Slidable.
-
-                                // All actions are defined in the children parameter.
-                                children: [
-                                  // A SlidableAction can have an icon and/or a label.
-                                  SlidableAction(
-                                    onPressed: (context) {
-                                      onDeleteBuild(context, obj["key"]);
-                                    },
-                                    backgroundColor: Colors.red,
-                                    foregroundColor: Colors.white,
-                                    icon: Icons.delete,
-                                  )
-                                ],
-                              ),
-                              child: ListTile(
-                                onTap: () {
-                                  widget.fetchSavedBuild(
-                                      obj["build"], obj["key"]);
-                                },
-                                dense: true,
-                                title: Text(obj["build"]["buildName"],
-                                    style: TextStyle(
-                                        color: classColors[obj["build"]
-                                            ["buildClass"]])),
-                                subtitle: Text(
-                                    '${obj["build"]["build"][0]["Points"]}/${obj["build"]["build"][1]["Points"]}/${obj["build"]["build"][2]["Points"]}',
-                                    style: TextStyle(
-                                        color: classColors[obj["build"]
-                                            ["buildClass"]])),
-                                leading: CircleAvatar(
-                                  backgroundImage: AssetImage(
-                                      "assets/Class/icon_${obj["build"]["buildClass"]}.png"),
-                                  backgroundColor: Colors.transparent,
+                            RichText(
+                                text: TextSpan(
+                              style: DefaultTextStyle.of(context).style,
+                              children: <TextSpan>[
+                                TextSpan(
+                                  text:
+                                      "Copyright 2019 Halasz Gergo.All rights reserved.\n\nLogo and store icons created using Icons8 icons are based on remasterings by barrens.chat\n\n",
                                 ),
-                              ),
-                            ),
-                            Divider(color: Colors.white12, height: 0)
+                                TextSpan(
+                                  text:
+                                      "This application is not affiliated with Blizzard Entertainment® or World of Warcraft in any way. All the World of Warcraft texts, logos, images and trademarks are property of Blizzard Entertainment® and are used according to community guidelines.World of Warcraft, Warcraft and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.",
+                                  style: TextStyle(fontSize: 13),
+                                )
+                              ],
+                            )),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                InkWell(
+                                  child: Text(
+                                    'Privacy Policy',
+                                    style: TextStyle(
+                                      color: Colors.blue,
+                                      decoration: TextDecoration.underline,
+                                    ),
+                                  ),
+                                  onTap: () {
+                                    launch(_privacyUrl);
+                                  },
+                                ),
+                                InkWell(
+                                  child: Text(
+                                    'Terms and Conditions',
+                                    style: TextStyle(
+                                      color: Colors.blue,
+                                      decoration: TextDecoration.underline,
+                                    ),
+                                  ),
+                                  onTap: () {
+                                    launch(_termsUrl);
+                                  },
+                                ),
+                              ],
+                            )
                           ],
-                        );
-                      } else
-                        return Container();
-                    })
-                  ],
-                ))
+                        ),
+                      );
+                    });
+              },
+              leading: Icon(Icons.info, color: Colors.white),
+              title: Text(
+                'About',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            Divider(color: Colors.white12, height: 0),
           ],
         ),
       ),

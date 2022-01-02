@@ -243,7 +243,7 @@ class _SpellWidgetState extends State<SpellWidget> {
       fadeOutDuration: Duration(milliseconds: 0),
       tailLength: 0,
       key: key,
-      backgroundColor: Colors.grey.shade700,
+      backgroundColor: Color(0xff556F7A),
       content: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -304,7 +304,7 @@ class _SpellWidgetState extends State<SpellWidget> {
               Align(
                 alignment: Alignment.bottomLeft,
                 child: Text(
-                  'Swipe up to increase rank',
+                  'Swipe up to learn',
                   style: TextStyle(
                       color: currentRank < maxRank ? Colors.green : Colors.red,
                       fontWeight: FontWeight.bold,
@@ -316,7 +316,7 @@ class _SpellWidgetState extends State<SpellWidget> {
               Align(
                 alignment: Alignment.bottomLeft,
                 child: Text(
-                  'Swipe down to decrease rank',
+                  'Swipe down to unlearn',
                   style: TextStyle(
                       color: currentRank > 0 ? Colors.green : Colors.red,
                       fontWeight: FontWeight.bold,
