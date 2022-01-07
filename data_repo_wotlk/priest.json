@@ -46,7 +46,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 2],
           "Tier": "1",
           "Ranks": {
@@ -710,7 +710,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 0],
           "Tier": "1",
           "Ranks": {
@@ -732,7 +732,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 1],
           "Tier": "1",
           "Ranks": {
@@ -758,7 +758,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 2],
           "Tier": "1",
           "Ranks": {
@@ -1440,7 +1440,7 @@
           "Dependency": "Spirit Tap",
           "Points": 0,
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 1],
           "Tier": "1",
           "Ranks": {
@@ -1462,7 +1462,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 2],
           "Tier": "1",
           "Ranks": {
@@ -2028,6 +2028,10 @@
               {
                 "Number": "4",
                 "Description": "Increases your spell power by 16% of your total Spirit, and your damage done by your Mind Flay and Mind Blast is increased by 8% if your target is afflicted by your Shadow Word: Pain."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases your spell power by 20% of your total Spirit, and your damage done by your Mind Flay and Mind Blast is increased by 10% if your target is afflicted by your Shadow Word: Pain."
               }
             ]
           }

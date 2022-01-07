@@ -26,6 +26,7 @@ class NewBuildDialog extends StatefulWidget {
 class _NewBuildDialogState extends State<NewBuildDialog> {
   List<String> expansions = ['vanilla', 'tbc', 'wotlk'];
   List<String> wotlkClasses = [
+    'deathknight',
     'druid',
     'hunter',
     'mage',
@@ -35,7 +36,6 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
     'shaman',
     'warlock',
     'warrior',
-    'deathknight'
   ];
   List<String> tbcVanillaClasses = [
     'druid',
@@ -48,6 +48,7 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
     'warlock',
     'warrior',
   ];
+  ScrollController _scrollController = ScrollController();
   String currentExpansionSelected = 'tbc';
   List builds = [];
   Future<List> _getSavedBuilds() async {
@@ -70,6 +71,7 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
         });
     super.initState();
   }
+
   @override
   void didChangeDependencies() {
     talentProvider = Provider.of<TalentProvider>(context);
@@ -112,7 +114,7 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
     final adState = Provider.of<AdState>(context);
 
     loadInterstitialAd() {
-      if (adState.interstitialAdCounter == 1) {
+      if (adState.interstitialAdCounter == 2) {
         adState.interstitialAdCounter = 0;
         adState.interstitialAd?.show();
         InterstitialAd.load(
@@ -135,11 +137,11 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
       backgroundColor: Color(0xff556F7A),
       title: new Text(
         'Choose expansion and create or see saved builds',
-        style: TextStyle(color: Colors.white, fontSize: 16),
+        style: TextStyle(color: Colors.white, fontSize: 15),
       ),
       content: DefaultTextStyle(
         style: TextStyle(
-            fontSize: 16,
+            fontSize: 15,
             color: Colors.white,
             fontFamily: "Roboto",
             fontWeight: FontWeight.w500),
@@ -147,6 +149,7 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
+              height: 45,
               padding: EdgeInsets.symmetric(horizontal: 10),
               decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey, width: 2),
@@ -180,72 +183,84 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                           ));
                     }).toList(),
                     onChanged: (value) {
-                      if (value == 'wotlk') {
-                        showWotlkDialog(context);
-                      } else {
-                        setState(() {
-                          currentExpansionSelected = value as String;
-                        });
-                      }
+                      setState(() {
+                        currentExpansionSelected = value as String;
+                      });
                     }),
               ),
             ),
             Container(
-              padding: EdgeInsets.only(top: 10),
-              child: SizedBox(
-                  child: Wrap(
-                alignment: WrapAlignment.center,
-                spacing: 30,
-                runSpacing: 10,
-                children: [
-                  if (currentExpansionSelected == 'wotlk')
-                    ...wotlkClasses.map((element) {
-                      return Container(
-                        width: SizeConfig.cellSize / 1.7,
-                        height: SizeConfig.cellSize / 1.7,
-                        child: Material(
-                          color: Colors.transparent,
-                          child: Ink.image(
-                            image: AssetImage("assets/Class/$element.png"),
-                            fit: BoxFit.cover,
-                            child: InkWell(
-                              onTap: () {
-                                loadInterstitialAd();
-                                widget.changeClass(element);
-                                Navigator.pop(context);
-                              },
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                        ),
-                      );
-                    })
-                  else
-                    ...tbcVanillaClasses.map((element) {
-                      return Container(
-                        width: SizeConfig.cellSize / 1.7,
-                        height: SizeConfig.cellSize / 1.7,
-                        child: Material(
-                          color: Colors.transparent,
-                          child: Ink.image(
-                            image: AssetImage("assets/Class/$element.png"),
-                            fit: BoxFit.cover,
-                            child: InkWell(
-                              onTap: () {
-                                loadInterstitialAd();
-                                talentProvider
-                                    .changeExpansion(currentExpansionSelected);
-                                widget.changeClass(element);
-                                Navigator.pop(context);
-                              },
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                        ),
-                      );
-                    })
-                ],
-              )),
+              height: SizeConfig.cellSize / 1.7 * 3 + 40,
+              child: Scrollbar(
+                isAlwaysShown: true,
+                thickness: 3.5,
+                radius: Radius.circular(20),
+                controller: _scrollController,
+                child: SingleChildScrollView(
+                  controller: _scrollController,
+                  child: Container(
+                    padding: EdgeInsets.only(top: 10,right: 3.5),
+                    child: SizedBox(
+                        child: Wrap(
+                      alignment: WrapAlignment.center,
+                      spacing: 27,
+                      runSpacing: 10,
+                      children: [
+                        if (currentExpansionSelected == 'wotlk')
+                          ...wotlkClasses.map((element) {
+                            return Container(
+                              width: SizeConfig.cellSize / 1.7,
+                              height: SizeConfig.cellSize / 1.7,
+                              child: Material(
+                                color: Colors.transparent,
+                                child: Ink.image(
+                                  image:
+                                      AssetImage("assets/Class/$element.png"),
+                                  fit: BoxFit.cover,
+                                  child: InkWell(
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                      loadInterstitialAd();
+                                      talentProvider.changeExpansion(
+                                          currentExpansionSelected);
+                                      widget.changeClass(element);
+                                    },
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                              ),
+                            );
+                          })
+                        else
+                          ...tbcVanillaClasses.map((element) {
+                            return Container(
+                              width: SizeConfig.cellSize / 1.7,
+                              height: SizeConfig.cellSize / 1.7,
+                              child: Material(
+                                color: Colors.transparent,
+                                child: Ink.image(
+                                  image:
+                                      AssetImage("assets/Class/$element.png"),
+                                  fit: BoxFit.cover,
+                                  child: InkWell(
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                      loadInterstitialAd();
+                                      talentProvider.changeExpansion(
+                                          currentExpansionSelected);
+                                      widget.changeClass(element);
+                                    },
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                              ),
+                            );
+                          })
+                      ],
+                    )),
+                  ),
+                ),
+              ),
             ),
             Container(
               margin: EdgeInsets.only(top: 10),
@@ -272,7 +287,9 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                                     builds[index]["key"][0] == "t") ||
                                 (builds[index] != null &&
                                     currentExpansionSelected == "vanilla" &&
-                                    builds[index]["key"][0] == "v")) {
+                                    builds[index]["key"][0] == "v") || (builds[index] != null &&
+                                    currentExpansionSelected == "wotlk" &&
+                                    builds[index]["key"][0] == "w")) {
                               return Column(children: [
                                 Slidable(
                                     key: Key(builds[index]["key"]),
@@ -297,44 +314,39 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                                         )
                                       ],
                                     ),
-                                    child: Card(
-                                      color: Colors.grey.shade700,
-                                      margin: EdgeInsets.fromLTRB(3, 0, 3, 3),
-                                      child: ListTile(
-                                        visualDensity: VisualDensity(
-                                            horizontal: 0, vertical: -4),
-                                        contentPadding:
-                                            EdgeInsets.symmetric(horizontal: 4),
-                                        dense: true,
-                                        subtitle: Transform.translate(
-                                          offset: Offset(-16, -5),
-                                          child: Text(
+                                    child: Container(
+                                      child: Card(
+                                        color: Colors.grey.shade700,
+                                        margin: EdgeInsets.fromLTRB(3, 0, 3, 3),
+                                        child: ListTile(
+                                          visualDensity: VisualDensity(vertical: -4),
+                                          contentPadding:
+                                              EdgeInsets.symmetric(horizontal: 12),
+                                          dense: true,
+                                          subtitle: Text(
                                               '${builds[index]["build"]["build"][0]["Points"]}/${builds[index]["build"]["build"][1]["Points"]}/${builds[index]["build"]["build"][2]["Points"]}',
                                               style: TextStyle(
                                                   color: classColors[
                                                       builds[index]["build"]
                                                           ["buildClass"]])),
-                                        ),
-                                        leading: Image.asset(
-                                          "assets/Class/${builds[index]["build"]["buildClass"]}.png",
-                                          width: 45,
-                                          height: 45,
-                                        ),
-                                        title: Transform.translate(
-                                          offset: Offset(-16, -5),
-                                          child: Text(
+                                          leading: Image.asset(
+                                            "assets/Class/${builds[index]["build"]["buildClass"]}.png",
+                                          ),
+                                          title: Text(
                                             builds[index]["build"]["buildName"],
                                             style: TextStyle(
+                                              fontSize: 16,
                                                 color: classColors[builds[index]
                                                     ["build"]["buildClass"]]),
                                           ),
+                                          onTap: () {
+                                            Navigator.pop(context);
+                                            loadInterstitialAd();
+                                            widget.fetchSavedBuild(
+                                                builds[index]["build"],
+                                                builds[index]["key"]);
+                                          },
                                         ),
-                                        onTap: () {
-                                          widget.fetchSavedBuild(
-                                              builds[index]["build"],
-                                              builds[index]["key"]);
-                                          Navigator.pop(context);
-                                        },
                                       ),
                                     ))
                               ]);

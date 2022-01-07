@@ -12,7 +12,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 1],
           "Tier": "1",
           "Ranks": {
@@ -46,7 +46,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 2],
           "Tier": "1",
           "Ranks": {
@@ -682,7 +682,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 1],
           "Tier": "1",
           "Ranks": {
@@ -716,7 +716,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 2],
           "Tier": "1",
           "Ranks": {
@@ -1340,7 +1340,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 1],
           "Tier": "1",
           "Ranks": {
@@ -1374,7 +1374,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 2],
           "Tier": "1",
           "Ranks": {

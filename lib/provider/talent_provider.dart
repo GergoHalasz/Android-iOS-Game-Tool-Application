@@ -99,24 +99,45 @@ class TalentProvider extends ChangeNotifier {
   /// loop 5 times to max out
   void increaseTalentPoints(
       Talent talent, int currentRank, int maxRank, String talentTreeName) {
-    if (talent.points < maxRank &&
-        getTotalTalentPointsWithoutLevel() < (expansion == 'tbc' ? 61 : 51)) {
-      talent.points = talent.points + 1;
-      increaseTreePoints(talentTreeName);
-      updateTalentTree();
-      notifyListeners();
+    if (expansion == 'wotlk') {
+      if (talent.points < maxRank && getTotalTalentPointsWithoutLevel() < 71) {
+        talent.points = talent.points + 1;
+        increaseTreePoints(talentTreeName);
+        updateTalentTree();
+        notifyListeners();
+      }
+    } else {
+      if (talent.points < maxRank &&
+          getTotalTalentPointsWithoutLevel() < (expansion == 'tbc' ? 61 : 51)) {
+        talent.points = talent.points + 1;
+        increaseTreePoints(talentTreeName);
+        updateTalentTree();
+        notifyListeners();
+      }
     }
   }
 
   void increaseMaxTalentPoints(
       Talent talent, int currentRank, int maxRank, String talentTreeName) {
-    if (talent.points < maxRank &&
-        getTotalTalentPointsWithoutLevel() + (maxRank - currentRank) <=
-            (expansion == 'tbc' ? 61 : 51)) {
-      talent.points = maxRank;
-      increaseTreePointsWithSomePoints(talentTreeName, (maxRank - currentRank));
-      updateTalentTree();
-      notifyListeners();
+    if (expansion == 'wotlk') {
+      if (talent.points < maxRank &&
+          getTotalTalentPointsWithoutLevel() + (maxRank - currentRank) <= 71) {
+        talent.points = maxRank;
+        increaseTreePointsWithSomePoints(
+            talentTreeName, (maxRank - currentRank));
+        updateTalentTree();
+        notifyListeners();
+      }
+    } else {
+      if (talent.points < maxRank &&
+          getTotalTalentPointsWithoutLevel() + (maxRank - currentRank) <=
+              (expansion == 'tbc' ? 61 : 51)) {
+        talent.points = maxRank;
+        increaseTreePointsWithSomePoints(
+            talentTreeName, (maxRank - currentRank));
+        updateTalentTree();
+        notifyListeners();
+      }
     }
   }
 

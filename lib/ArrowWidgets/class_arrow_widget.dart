@@ -1,3 +1,4 @@
+import 'package:wowtalentcalculator/ArrowWidgets/deathknight_arrow.dart';
 import 'package:wowtalentcalculator/ArrowWidgets/druid_arrow.dart';
 import 'package:wowtalentcalculator/ArrowWidgets/paladin_arrow.dart';
 import 'package:wowtalentcalculator/ArrowWidgets/priest_arrow.dart';
@@ -38,7 +39,9 @@ getArrowClassByName(String className, String expansion) {
     case 'warrior':
       return getWarriorArrowList(expansion);
       break;
-
+    case 'deathknight':
+      return getDeathKnightArrowList(expansion);
+      break;
     default:
       {
         //statements;

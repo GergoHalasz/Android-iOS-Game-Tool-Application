@@ -105,5 +105,74 @@ getPaladinArrowList(String expansion) {
       ),
     ]
   ];
-  return expansion == "tbc" ? arrowListTbc : arrowListVanilla;
+
+  var arrowListWotlk = [[
+     ArrowWidget(
+        startPosition: Position(row: 2, column: 1),
+        endPosition: Position(row: 4, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Divine Favor',
+      ),
+       ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 6, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Holy Shock',
+      ),
+       ArrowWidget(
+        startPosition: Position(row: 6, column: 1),
+        endPosition: Position(row: 9, column: 1),
+        lengthType: 'long',
+        dependencyTalent: 'Infusion of Light',
+      ),
+  ], [
+     ArrowWidget(
+        startPosition: Position(row: 2, column: 0),
+        endPosition: Position(row: 3, column: 0),
+        lengthType: 'short',
+        dependencyTalent: 'Divine Guardian',
+      ),
+       ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 6, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Holy Shield',
+      ),
+       ArrowWidget(
+        startPosition: Position(row: 6, column: 1),
+        endPosition: Position(row: 8, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Fanaticism',
+      ),
+       ArrowWidget(
+        startPosition: Position(row: 8, column: 1),
+        endPosition: Position(row: 9, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Shield of the Templar',
+      ),
+  ], [
+     ArrowWidget(
+        startPosition: Position(row: 2, column: 1),
+        endPosition: Position(row: 5, column: 1),
+        lengthType: 'long',
+        dependencyTalent: 'Vengeance',
+      ),
+       ArrowWidget(
+        startPosition: Position(row: 6, column: 1),
+        endPosition: Position(row: 7, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Fanaticism',
+      ),
+  ]];
+
+  arrowWidgetsClass() {
+    if (expansion == "tbc")
+      return arrowListTbc;
+    else if (expansion == "vanilla")
+      return arrowListVanilla;
+    else
+      return arrowListWotlk;
+  }
+
+  return arrowWidgetsClass();
 }

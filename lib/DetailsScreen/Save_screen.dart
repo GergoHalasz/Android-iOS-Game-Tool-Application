@@ -68,9 +68,14 @@ class _SaveScreenState extends State<SaveScreen> {
         "buildClass": talentProvider.className
       };
 
-      var newKey = talentProvider.expansion == "tbc"
-          ? 't' + "build_" + Guid.newGuid.toString()
-          : 'v' + "build_" + Guid.newGuid.toString();
+      var newKey;
+      if (talentProvider.expansion == 'wotlk') {
+        newKey = 'w' + "build_" + Guid.newGuid.toString();
+      } else {
+        newKey = talentProvider.expansion == "tbc"
+            ? 't' + "build_" + Guid.newGuid.toString()
+            : 'v' + "build_" + Guid.newGuid.toString();
+      }
       await prefs.setString(widget.buildKey == "" ? newKey : widget.buildKey,
           jsonEncode(dataJson));
       if (widget.buildKey == "") {

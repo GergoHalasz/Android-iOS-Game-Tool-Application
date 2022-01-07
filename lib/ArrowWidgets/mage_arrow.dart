@@ -1,3 +1,7 @@
+import 'package:wowtalentcalculator/ArrowWidgets/left_arrow_widget.dart';
+import 'package:wowtalentcalculator/ArrowWidgets/left_corner_arrow_widget.dart';
+import 'package:wowtalentcalculator/ArrowWidgets/right_arrow_widget.dart';
+import 'package:wowtalentcalculator/ArrowWidgets/right_corner_arrow_widget.dart';
 import 'package:wowtalentcalculator/model/position.dart';
 
 import 'arrow_widget.dart';
@@ -109,5 +113,92 @@ getMageArrowList(String expansion) {
       )
     ]
   ];
-  return expansion == "tbc" ? arrowListTbc : arrowListVanilla;
+
+  var arrowListWotlk = [[
+    RightCornerArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 5, column: 2),
+        lengthType: 'short',
+        dependencyTalent: 'Arcane Potency',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 5, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Arcane Instability',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 5, column: 1),
+        endPosition: Position(row: 6, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Arcane Flows',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 6, column: 1),
+        endPosition: Position(row: 7, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Arcane Flows',
+      ),
+  ], [
+    ArrowWidget(
+        startPosition: Position(row: 2, column: 2),
+        endPosition: Position(row: 4, column: 2),
+        lengthType: 'medium',
+        dependencyTalent: 'Blast Wave',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 6, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Combustion',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 6, column: 1),
+        endPosition: Position(row: 8, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: "Dragon's Breath",
+      ),
+      LeftArrowWidget(
+        startPosition: Position(row: 8, column: 1),
+        endPosition: Position(row: 8, column: 0),
+        lengthType: 'short',
+        dependencyTalent: 'Firestarter',
+      )
+  ], [
+    LeftCornerArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 5, column: 0),
+        lengthType: 'short',
+        dependencyTalent: 'Cold as Ice',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 6, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Ice Barrier',
+      ),
+      LeftArrowWidget(
+        startPosition: Position(row: 6, column: 1),
+        endPosition: Position(row: 6, column: 0),
+        lengthType: 'short',
+        dependencyTalent: 'Shattered Barrier',
+      ),
+      RightArrowWidget(
+        startPosition: Position(row: 8, column: 1),
+        endPosition: Position(row: 8, column: 2),
+        lengthType: 'short',
+        dependencyTalent: 'Enduring Winter',
+      )
+  ]];
+
+  arrowWidgetsClass() {
+    if (expansion == "tbc")
+      return arrowListTbc;
+    else if (expansion == "vanilla")
+      return arrowListVanilla;
+    else
+      return arrowListWotlk;
+  }
+
+  return arrowWidgetsClass();
 }

@@ -2126,6 +2126,10 @@
               {
                 "Number": "4",
                 "Description": "Increases your total spell haste by 8% and reduces the base cooldown of your Lifebloom spell by 8%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases your total spell haste by 10% and reduces the base cooldown of your Lifebloom spell by 10%."
               }
             ]
           }

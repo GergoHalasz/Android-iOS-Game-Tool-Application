@@ -12,7 +12,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 0],
           "Tier": "1",
           "Ranks": {
@@ -34,7 +34,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 1],
           "Tier": "1",
           "Ranks": {
@@ -60,7 +60,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 2],
           "Tier": "1",
           "Ranks": {
@@ -491,7 +491,7 @@
           "Points": 0,
           "Support": [],
           "Enable": false,
-          "Position": [0, 0],
+          "Position": [5, 2],
           "Tier": "6",
           "Ranks": {
             "Rank": [
@@ -766,7 +766,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 0],
           "Tier": "1",
           "Ranks": {
@@ -788,7 +788,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 1],
           "Tier": "1",
           "Ranks": {
@@ -814,7 +814,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 2],
           "Tier": "1",
           "Ranks": {
@@ -1460,7 +1460,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 0],
           "Tier": "1",
           "Ranks": {
@@ -1486,7 +1486,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 1],
           "Tier": "1",
           "Ranks": {
@@ -1520,7 +1520,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Enable": false,
+          "Enable": true,
           "Position": [0, 2],
           "Tier": "1",
           "Ranks": {
@@ -2116,6 +2116,10 @@
               {
                 "Number": "4",
                 "Description": "Increases the damage caused by your Frostbolt, Frostfire Bolt and Ice Lance spells by 4% and reduces the movement speed of all chilled targets by an additional 8%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases the damage caused by your Frostbolt, Frostfire Bolt and Ice Lance spells by 5% and reduces the movement speed of all chilled targets by an additional 10%."
               }
             ]
           }

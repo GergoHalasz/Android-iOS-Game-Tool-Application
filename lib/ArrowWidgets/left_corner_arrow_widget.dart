@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wowtalentcalculator/model/position.dart';
@@ -6,12 +8,12 @@ import 'package:wowtalentcalculator/provider/talent_provider.dart';
 import 'package:wowtalentcalculator/utils/constants.dart';
 import 'package:wowtalentcalculator/utils/size_config.dart';
 
-class RightCornerArrowWidget extends StatefulWidget {
+class LeftCornerArrowWidget extends StatefulWidget {
   final Position startPosition;
   final Position endPosition;
   final String lengthType;
   final String dependencyTalent;
-  RightCornerArrowWidget({
+  LeftCornerArrowWidget({
     required this.startPosition,
     required this.endPosition,
     required this.lengthType,
@@ -19,10 +21,10 @@ class RightCornerArrowWidget extends StatefulWidget {
   });
 
   @override
-  _RightCornerArrowWidgetState createState() => _RightCornerArrowWidgetState();
+  _LeftCornerArrowWidgetState createState() => _LeftCornerArrowWidgetState();
 }
 
-class _RightCornerArrowWidgetState extends State<RightCornerArrowWidget> {
+class _LeftCornerArrowWidgetState extends State<LeftCornerArrowWidget> {
   String arrowBodyImg = 'assets/Arrows/GreyArrowBody.png';
   String arrowHeadImg = 'assets/Arrows/GreyArrowHead.png';
   String arrowCornerImg = 'assets/Arrows/GreyArrowCorner.png';
@@ -34,8 +36,8 @@ class _RightCornerArrowWidgetState extends State<RightCornerArrowWidget> {
   late double arrowHeadTop;
   late double arrowHeadLeft;
   late double arrowHeadWidth;
-  late double rightArrowBodyTop;
-  late double rightArrowBodyLeft;
+  late double leftArrowBodyTop;
+  late double leftArrowBodyLeft;
   late double rightArrowBodyHeight;
   late double rightArrowBodyWidth;
   late double arrowCornerTop;
@@ -62,27 +64,29 @@ class _RightCornerArrowWidgetState extends State<RightCornerArrowWidget> {
   void _calculatePositions() {
     arrowBodyTop = SizeConfig.cellSize * (widget.startPosition.row) -
         SizeConfig.cellSize / 2;
-    arrowBodyLeft = SizeConfig.cellSize * (widget.startPosition.column + 1) -
-        SizeConfig.cellSize / 1.6;
+    arrowBodyLeft = SizeConfig.cellSize * (widget.startPosition.column - 1) -
+        SizeConfig.cellSize / 1.7;
     arrowBodyWidth = kArrowWidthSize;
     arrowBodyHeight = 0;
 
     arrowHeadTop = SizeConfig.cellSize * (widget.endPosition.row - 1);
-    arrowHeadLeft = SizeConfig.cellSize * (widget.startPosition.column + 1) -
-        SizeConfig.cellSize / 1.6;
+    arrowHeadLeft = SizeConfig.cellSize * (widget.startPosition.column - 1) -
+        SizeConfig.cellSize / 1.7;
     arrowHeadWidth = kArrowWidthSize;
-    rightArrowBodyTop = SizeConfig.cellSize * widget.startPosition.row -
+    leftArrowBodyTop = SizeConfig.cellSize * widget.startPosition.row -
         SizeConfig.cellSize / 1.6;
-    rightArrowBodyLeft = SizeConfig.cellSize * widget.startPosition.column -
-        SizeConfig.cellSize / 7;
 
     rightArrowBodyHeight = kArrowWidthSize;
     rightArrowBodyWidth = SizeConfig.cellSize * 0.52;
+    leftArrowBodyLeft =
+        SizeConfig.cellSize * (widget.startPosition.column - 1) -
+            rightArrowBodyWidth +
+            SizeConfig.cellSize / 7;
 
     arrowCornerTop = SizeConfig.cellSize * (widget.startPosition.row) -
-        SizeConfig.cellSize / 1.67;
-    arrowCornerLeft = SizeConfig.cellSize * (widget.startPosition.column + 1) -
-        SizeConfig.cellSize / 1.60;
+      SizeConfig.cellSize / 1.67;
+    arrowCornerLeft = SizeConfig.cellSize * (widget.startPosition.column - 1) -
+        SizeConfig.cellSize / 1.78;
 
     if (widget.lengthType == 'long') {
       arrowBodyHeight = SizeConfig.cellSize * 2.15; //magic number
@@ -110,8 +114,8 @@ class _RightCornerArrowWidgetState extends State<RightCornerArrowWidget> {
       children: <Widget>[
         /// horizontal bar
         Positioned(
-          top: rightArrowBodyTop,
-          left: rightArrowBodyLeft,
+          top: leftArrowBodyTop,
+          left: leftArrowBodyLeft,
           child: Container(
               width: rightArrowBodyWidth,
               height: rightArrowBodyHeight,
@@ -144,9 +148,12 @@ class _RightCornerArrowWidgetState extends State<RightCornerArrowWidget> {
           child: Container(
               width: SizeConfig.cellSize * 0.2,
               height: SizeConfig.cellSize * 0.2,
-              child: Image.asset(
-                arrowCornerImg,
-                fit: BoxFit.fill,
+              child: Transform.rotate(
+                angle: 270 * pi / 180,
+                child: Image.asset(
+                  arrowCornerImg,
+                  fit: BoxFit.fill,
+                ),
               )),
         ),
 

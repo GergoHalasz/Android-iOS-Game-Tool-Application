@@ -11,6 +11,7 @@ final kColorPaladin = const Color(0xffF58CBA);
 final kColorMage = const Color(0xff40C7EB);
 final kColorHunter = const Color(0xffABD473);
 final kColorDruid = const Color(0xffFF7D0A);
+final kColorDeathKnight = const Color(0xffC41E3B);
 
 final kColorSelectiveYellow = const Color(0xFFF8B700);
 final kColorLicorice = const Color(0xFF211510);
@@ -27,5 +28,6 @@ Map<String, Color> classColors = {
   'rogue': kColorRogue,
   'shaman': kColorShaman,
   'warlock': kColorWarlock,
-  'warrior': kColorWarrior
+  'warrior': kColorWarrior,
+  'deathknight': kColorDeathKnight
 };

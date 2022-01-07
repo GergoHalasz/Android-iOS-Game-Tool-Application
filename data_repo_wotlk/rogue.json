@@ -697,7 +697,7 @@
           "Dependency": "",
           "Support": [],
           "Position": [0, 0],
-          "Enable": false,
+          "Enable": true,
           "Tier": "1",
           "Ranks": {
             "Rank": [
@@ -745,7 +745,7 @@
           "Dependency": "",
           "Support": ["Close Quarters Combat"],
           "Position": [0, 2],
-          "Enable": false,
+          "Enable": true,
           "Tier": "1",
           "Ranks": {
             "Rank": [
@@ -1449,7 +1449,7 @@
           "Dependency": "",
           "Support": [],
           "Position": [0, 1],
-          "Enable": false,
+          "Enable": true,
           "Tier": "1",
           "Ranks": {
             "Rank": [
@@ -1475,7 +1475,7 @@
           "Dependency": "",
           "Support": [],
           "Position": [0, 2],
-          "Enable": false,
+          "Enable": true,
           "Tier": "1",
           "Ranks": {
             "Rank": [
@@ -1846,7 +1846,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Position": [6, 1],
+          "Position": [6, 0],
           "Enable": false,
           "Tier": "7",
           "Ranks": {
@@ -1916,7 +1916,7 @@
           "Dependency": "Premeditation",
           "Points": 0,
           "Support": [],
-          "Position": [0, 1],
+          "Position": [7, 1],
           "Enable": false,
           "Tier": "8",
           "Ranks": {
@@ -2058,6 +2058,10 @@
               {
                 "Number": "4",
                 "Description": "Reduces the energy cost of your Backstab and Ambush abilities by 16 and the energy cost of your Hemorrhage by 4, and increases all damage done by 4%."
+              },
+              {
+                "Number": "5",
+                "Description": "Reduces the energy cost of your Backstab and Ambush abilities by 20 and the energy cost of your Hemorrhage by 5, and increases all damage done by 5%."
               }
             ]
           }
