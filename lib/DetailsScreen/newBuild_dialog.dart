@@ -335,7 +335,7 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                                           title: Text(
                                             builds[index]["build"]["buildName"],
                                             style: TextStyle(
-                                              fontSize: 16,
+                                              fontSize: 15,
                                                 color: classColors[builds[index]
                                                     ["build"]["buildClass"]]),
                                           ),
