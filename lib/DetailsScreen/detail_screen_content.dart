@@ -53,9 +53,9 @@ class _DetailScreenContentState extends State<DetailScreenContent>
 
   @override
   void didChangeDependencies() {
-    final adState = Provider.of<AdState>(context);
     super.didChangeDependencies();
     if (firstTimeAdInit) {
+    final adState = Provider.of<AdState>(context);
       adState.initialization.then((value) {
         setState(() {
           banner = BannerAd(
@@ -68,17 +68,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
         });
       });
     }
-    InterstitialAd.load(
-        adUnitId: adState.interstitialAdUnitId,
-        request: AdRequest(),
-        adLoadCallback: InterstitialAdLoadCallback(
-          onAdLoaded: (InterstitialAd ad) {
-            adState.interstitialAd = ad;
-          },
-          onAdFailedToLoad: (LoadAdError error) {
-            print('InterstitialAd failed to load: $error');
-          },
-        ));
   }
 
   @override

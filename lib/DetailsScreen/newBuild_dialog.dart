@@ -116,7 +116,6 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
     loadInterstitialAd() {
       if (adState.interstitialAdCounter == 2) {
         adState.interstitialAdCounter = 0;
-        adState.interstitialAd?.show();
         InterstitialAd.load(
             adUnitId: adState.interstitialAdUnitId,
             request: AdRequest(),
@@ -127,7 +126,7 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
               onAdFailedToLoad: (LoadAdError error) {
                 print('InterstitialAd failed to load: $error');
               },
-            ));
+            )).then((value) => {adState.interstitialAd?.show()});
       } else {
         adState.interstitialAdCounter++;
       }
@@ -199,7 +198,7 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                 child: SingleChildScrollView(
                   controller: _scrollController,
                   child: Container(
-                    padding: EdgeInsets.only(top: 10,right: 3.5),
+                    padding: EdgeInsets.only(top: 10, right: 3.5),
                     child: SizedBox(
                         child: Wrap(
                       alignment: WrapAlignment.center,
@@ -287,7 +286,8 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                                     builds[index]["key"][0] == "t") ||
                                 (builds[index] != null &&
                                     currentExpansionSelected == "vanilla" &&
-                                    builds[index]["key"][0] == "v") || (builds[index] != null &&
+                                    builds[index]["key"][0] == "v") ||
+                                (builds[index] != null &&
                                     currentExpansionSelected == "wotlk" &&
                                     builds[index]["key"][0] == "w")) {
                               return Column(children: [
@@ -319,9 +319,10 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                                         color: Colors.grey.shade700,
                                         margin: EdgeInsets.fromLTRB(3, 0, 3, 3),
                                         child: ListTile(
-                                          visualDensity: VisualDensity(vertical: -4),
-                                          contentPadding:
-                                              EdgeInsets.symmetric(horizontal: 12),
+                                          visualDensity:
+                                              VisualDensity(vertical: -4),
+                                          contentPadding: EdgeInsets.symmetric(
+                                              horizontal: 12),
                                           dense: true,
                                           subtitle: Text(
                                               '${builds[index]["build"]["build"][0]["Points"]}/${builds[index]["build"]["build"][1]["Points"]}/${builds[index]["build"]["build"][2]["Points"]}',
@@ -335,7 +336,7 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                                           title: Text(
                                             builds[index]["build"]["buildName"],
                                             style: TextStyle(
-                                              fontSize: 15,
+                                                fontSize: 15,
                                                 color: classColors[builds[index]
                                                     ["build"]["buildClass"]]),
                                           ),

@@ -32,17 +32,6 @@ class _SaveScreenState extends State<SaveScreen> {
   void didChangeDependencies() {
     final adState = Provider.of<AdState>(context);
 
-    InterstitialAd.load(
-        adUnitId: adState.interstitialAdUnitId,
-        request: AdRequest(),
-        adLoadCallback: InterstitialAdLoadCallback(
-          onAdLoaded: (InterstitialAd ad) {
-            adState.interstitialAd = ad;
-          },
-          onAdFailedToLoad: (LoadAdError error) {
-            print('InterstitialAd failed to load: $error');
-          },
-        ));
     super.didChangeDependencies();
   }
 
@@ -60,6 +49,17 @@ class _SaveScreenState extends State<SaveScreen> {
     final adState = Provider.of<AdState>(context);
 
     Future<void> _saveBuild() async {
+      InterstitialAd.load(
+          adUnitId: adState.interstitialAdUnitId,
+          request: AdRequest(),
+          adLoadCallback: InterstitialAdLoadCallback(
+            onAdLoaded: (InterstitialAd ad) {
+              adState.interstitialAd = ad;
+            },
+            onAdFailedToLoad: (LoadAdError error) {
+              print('InterstitialAd failed to load: $error');
+            },
+          )).then((value) => {adState.interstitialAd?.show()});
       final prefs = await SharedPreferences.getInstance();
       var data = talentProvider.talentTrees.toJson();
       Map dataJson = {
@@ -86,7 +86,6 @@ class _SaveScreenState extends State<SaveScreen> {
       talentProvider.changeBuildName(buildName);
 
       Navigator.pop(context);
-      adState.interstitialAd?.show();
     }
 
     return Scaffold(
