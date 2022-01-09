@@ -34,7 +34,7 @@ class AdState {
     onAdImpression: (Ad ad) => print('Ad impression.'),
   );
 
-  createInterstitialAd() {
+  void createInterstitialAd() {
     InterstitialAd.load(
         adUnitId: interstitialAdUnitId,
         request: AdRequest(),

@@ -114,13 +114,13 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
     final adState = Provider.of<AdState>(context);
 
     loadInterstitialAd() {
-      if (adState.interstitialAdCounter == 2) {
-        adState.interstitialAdCounter = 0;
+      if (adState.interstitialAdCounter >= 2) {
         InterstitialAd.load(
             adUnitId: adState.interstitialAdUnitId,
             request: AdRequest(),
             adLoadCallback: InterstitialAdLoadCallback(
               onAdLoaded: (InterstitialAd ad) {
+                adState.interstitialAdCounter = 0;
                 adState.interstitialAd = ad;
               },
               onAdFailedToLoad: (LoadAdError error) {

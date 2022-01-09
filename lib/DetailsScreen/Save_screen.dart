@@ -49,6 +49,7 @@ class _SaveScreenState extends State<SaveScreen> {
     final adState = Provider.of<AdState>(context);
 
     Future<void> _saveBuild() async {
+      adState.interstitialAd?.show();
       InterstitialAd.load(
           adUnitId: adState.interstitialAdUnitId,
           request: AdRequest(),
@@ -59,7 +60,7 @@ class _SaveScreenState extends State<SaveScreen> {
             onAdFailedToLoad: (LoadAdError error) {
               print('InterstitialAd failed to load: $error');
             },
-          )).then((value) => {adState.interstitialAd?.show()});
+          ));
       final prefs = await SharedPreferences.getInstance();
       var data = talentProvider.talentTrees.toJson();
       Map dataJson = {
