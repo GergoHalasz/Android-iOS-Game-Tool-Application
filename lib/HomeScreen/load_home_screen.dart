@@ -1,5 +1,8 @@
 import 'dart:io';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:provider/provider.dart';
 import 'package:wowtalentcalculator/RateMyAppCustomClasses/minimum_app_launches_condition.dart';
+import 'package:wowtalentcalculator/ad_state.dart';
 
 import '../RateMyAppCustomClasses/do_not_open_again_condition.dart';
 import 'package:flutter/cupertino.dart';
@@ -27,6 +30,8 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
 
   @override
   void initState() {
+    var adState;
+    
     WidgetsBinding.instance?.addPostFrameCallback((_) async {
       CustomDoNotOpenAgainCondition condition = CustomDoNotOpenAgainCondition();
       CustomMinimumAppLaunchesCondition minimumAppLaunchesCondition =
@@ -49,6 +54,18 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
       }
     });
     super.initState();
+    adState = Provider.of<AdState>(context, listen: false);
+    InterstitialAd.load(
+        adUnitId: adState.interstitialAdUnitId,
+        request: AdRequest(),
+        adLoadCallback: InterstitialAdLoadCallback(
+          onAdLoaded: (InterstitialAd ad) {
+            adState.interstitialAd = ad;
+          },
+          onAdFailedToLoad: (LoadAdError error) {
+            print('InterstitialAd failed to load: $error');
+          },
+        ));
   }
 
   @override
