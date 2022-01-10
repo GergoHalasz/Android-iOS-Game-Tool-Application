@@ -122,6 +122,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                                     style: TextStyle(
                                       color: Colors.blue,
                                       decoration: TextDecoration.underline,
+                                      fontSize: 13
                                     ),
                                   ),
                                   onTap: () {
@@ -134,6 +135,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                                     style: TextStyle(
                                       color: Colors.blue,
                                       decoration: TextDecoration.underline,
+                                      fontSize: 13
                                     ),
                                   ),
                                   onTap: () {
