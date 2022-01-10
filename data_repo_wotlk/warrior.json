@@ -142,7 +142,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Position": [1, 1],
+          "Position": [1, 2],
           "Enable": false,
           "Tier": "2",
           "Ranks": {
@@ -1878,6 +1878,10 @@
               {
                 "Number": "4",
                 "Description": "Increases physical damage you deal when a one-handed melee weapon is equipped by 8%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases physical damage you deal when a one-handed melee weapon is equipped by 10%."
               }
             ]
           }

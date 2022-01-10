@@ -1011,7 +1011,7 @@
           "Dependency": "",
           "Support": ["Dual Wield"],
           "Position": [4, 1],
-          "Enable": true,
+          "Enable": false,
           "Tier": "5",
           "Ranks": {
             "Rank": [

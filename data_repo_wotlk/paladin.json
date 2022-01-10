@@ -1520,6 +1520,10 @@
               {
                 "Number": "4",
                 "Description": "Increases your chance to get a critical strike with all spells and attacks by 4%."
+              },
+              {
+                "Number": "5",
+                "Description": "Increases your chance to get a critical strike with all spells and attacks by 5%."
               }
             ]
           }

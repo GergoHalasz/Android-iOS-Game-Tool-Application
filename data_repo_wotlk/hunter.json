@@ -550,7 +550,7 @@
           "Points": 0,
           "Dependency": "",
           "Support": [],
-          "Position": [8, 1],
+          "Position": [8, 0],
           "Enable": false,
           "Tier": "9",
           "Ranks": {
@@ -1924,6 +1924,10 @@
               {
                 "Number": "4",
                 "Description": "Your successful ranged attacks have a 10% chance to increase your critical strike chance with all attacks by 8% for 8 sec."
+              },
+              {
+                "Number": "5",
+                "Description": "Your successful ranged attacks have a 10% chance to increase your critical strike chance with all attacks by 10% for 8 sec."
               }
             ]
           }
