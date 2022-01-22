@@ -114,21 +114,23 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
     final adState = Provider.of<AdState>(context);
 
     loadInterstitialAd() {
-      if (adState.interstitialAdCounter >= 2) {
-        InterstitialAd.load(
-            adUnitId: adState.interstitialAdUnitId,
-            request: AdRequest(),
-            adLoadCallback: InterstitialAdLoadCallback(
-              onAdLoaded: (InterstitialAd ad) {
-                adState.interstitialAdCounter = 0;
-                adState.interstitialAd = ad;
-              },
-              onAdFailedToLoad: (LoadAdError error) {
-                print('InterstitialAd failed to load: $error');
-              },
-            )).then((value) => {adState.interstitialAd?.show()});
-      } else {
-        adState.interstitialAdCounter++;
+      if (!adState.isAdFreeVersion) {
+        if (adState.interstitialAdCounter >= 1) {
+          InterstitialAd.load(
+              adUnitId: adState.interstitialAdUnitId,
+              request: AdRequest(),
+              adLoadCallback: InterstitialAdLoadCallback(
+                onAdLoaded: (InterstitialAd ad) {
+                  adState.interstitialAdCounter = 0;
+                  adState.interstitialAd = ad;
+                },
+                onAdFailedToLoad: (LoadAdError error) {
+                  print('InterstitialAd failed to load: $error');
+                },
+              )).then((value) => {adState.interstitialAd?.show()});
+        } else {
+          adState.interstitialAdCounter++;
+        }
       }
     }
 

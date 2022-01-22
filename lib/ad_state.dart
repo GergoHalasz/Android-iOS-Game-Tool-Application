@@ -1,13 +1,61 @@
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class AdState {
+class AdState extends ChangeNotifier {
   Future<InitializationStatus> initialization;
   InterstitialAd? interstitialAd;
   int interstitialAdCounter = 0;
 
-  AdState(this.initialization);
+  AdState(this.initialization) {
+    this.initialization = initialization;
+    Purchases.addPurchaserInfoUpdateListener(
+        (purchaserInfo) => {updatePurchaseStatus()});
+    checkIsAdFreeversion();
+  }
+
+  bool isAdFreeVersion = false;
+
+  Future updatePurchaseStatus() async {
+    final purchaserInfo = await Purchases.getPurchaserInfo();
+    if (purchaserInfo.allPurchasedProductIdentifiers.length > 0 &&
+        purchaserInfo.allPurchasedProductIdentifiers[0] ==
+            "wowtc_ad_free_version") {
+      final prefs = await SharedPreferences.getInstance();
+      prefs.setBool('isAdFreeVersion', true);
+      isAdFreeVersion = true;
+      notifyListeners();
+    }
+  }
+
+  checkIsAdFreeversion() async {
+    final prefs = await SharedPreferences.getInstance();
+    bool? isAdFree = prefs.getBool("isAdFreeVersion");
+    if (isAdFree != null && isAdFree == true) {
+      isAdFreeVersion = true;
+      notifyListeners();
+    } else {
+      InterstitialAd.load(
+          adUnitId: interstitialAdUnitId,
+          request: AdRequest(),
+          adLoadCallback: InterstitialAdLoadCallback(
+            onAdLoaded: (InterstitialAd ad) {
+              interstitialAd = ad;
+            },
+            onAdFailedToLoad: (LoadAdError error) {
+              print('InterstitialAd failed to load: $error');
+            },
+          ));
+    }
+  }
+
+  void changeToAdFreeVersion() {
+    isAdFreeVersion = true;
+    notifyListeners();
+  }
 
   String get bannerAdUnitId => Platform.isAndroid
       ? 'ca-app-pub-8156706115088392/4083440070'

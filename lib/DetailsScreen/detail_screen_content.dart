@@ -203,6 +203,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
 
   @override
   Widget build(BuildContext context) {
+    final adState = Provider.of<AdState>(context);
     // get the current level to display at the top corner
     // display level 10 for starting
     talentProvider = Provider.of<TalentProvider>(context);
@@ -217,9 +218,10 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     if (level == 9) {
       level = 10;
     }
+
     return Scaffold(
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 45),
+        padding: EdgeInsets.only(bottom: !adState.isAdFreeVersion ? 45 : 15),
         child: FloatingActionButton(
             onPressed: showAddBuildDialog,
             backgroundColor: Color(0xffB79FAD),
@@ -390,9 +392,11 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                 ],
               ),
             ),
-            if (banner == null)
+            if(!adState.isAdFreeVersion)
+            if (banner == null) 
               Container(
                 height: 50,
+                color: Colors.black,
               )
             else
               Container(

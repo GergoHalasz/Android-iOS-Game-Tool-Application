@@ -2,16 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:wowtalentcalculator/HomeScreen/load_home_screen.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
+import 'package:wowtalentcalculator/api/purchase_api.dart';
 
-void main() {
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await PurchaseApi.init();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   final initFuture = MobileAds.instance.initialize();
-  final adState = AdState(initFuture);
-  runApp(Provider.value(value: adState, builder: (context, child) => MyApp()));
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider<AdState>(create: (_) => AdState(initFuture)),
+    ],
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatefulWidget {
@@ -22,7 +30,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   void initState() {
     super.initState();

@@ -23,7 +23,6 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
-
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -45,8 +44,10 @@ class _DetailScreenState extends State<DetailScreen> {
                     context)
               });
           return ChangeNotifierProvider<TalentProvider>(
-              create: (_) =>
-                  TalentProvider(talentTreesObject, widget.className, 'tbc'),
+              create: (_) {
+                return TalentProvider(
+                    talentTreesObject, widget.className, 'tbc');
+              },
               child: DetailScreenContent(
                 talentTrees: talentTreesObject,
                 className: widget.className,

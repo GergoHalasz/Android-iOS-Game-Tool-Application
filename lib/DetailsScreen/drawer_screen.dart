@@ -1,14 +1,19 @@
 import 'dart:convert';
+import 'dart:io';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
+import 'package:wowtalentcalculator/api/purchase_api.dart';
 import 'package:wowtalentcalculator/provider/talent_provider.dart';
-import 'package:wowtalentcalculator/utils/colors.dart';
-import 'package:wowtalentcalculator/utils/string.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 
 class DrawerScreen extends StatefulWidget {
   Function changeClass;
@@ -70,11 +75,15 @@ class _DrawerScreenState extends State<DrawerScreen> {
         });
   }
 
-  String _termsUrl = 'https://github.com/HalaszGergo123/wow-talent-calculator/blob/main/terms_and_conditions.md';
-  String _privacyUrl = 'https://github.com/HalaszGergo123/wow-talent-calculator/blob/main/privacy_policy.md';
+  String _termsUrl =
+      'https://github.com/HalaszGergo123/wow-talent-calculator/blob/main/terms_and_conditions.md';
+  String _privacyUrl =
+      'https://github.com/HalaszGergo123/wow-talent-calculator/blob/main/privacy_policy.md';
 
   @override
   Widget build(BuildContext context) {
+    talentProvider = Provider.of<TalentProvider>(context);
+
     return Material(
       color: Color(0xff556F7A),
       child: DefaultTextStyle(
@@ -120,10 +129,9 @@ class _DrawerScreenState extends State<DrawerScreen> {
                                   child: Text(
                                     'Privacy Policy',
                                     style: TextStyle(
-                                      color: Colors.blue,
-                                      decoration: TextDecoration.underline,
-                                      fontSize: 13
-                                    ),
+                                        color: Colors.blue,
+                                        decoration: TextDecoration.underline,
+                                        fontSize: 13),
                                   ),
                                   onTap: () {
                                     launch(_privacyUrl);
@@ -133,10 +141,9 @@ class _DrawerScreenState extends State<DrawerScreen> {
                                   child: Text(
                                     'Terms and Conditions',
                                     style: TextStyle(
-                                      color: Colors.blue,
-                                      decoration: TextDecoration.underline,
-                                      fontSize: 13
-                                    ),
+                                        color: Colors.blue,
+                                        decoration: TextDecoration.underline,
+                                        fontSize: 13),
                                   ),
                                   onTap: () {
                                     launch(_termsUrl);
@@ -156,6 +163,68 @@ class _DrawerScreenState extends State<DrawerScreen> {
               ),
             ),
             Divider(color: Colors.white12, height: 0),
+            ListTile(
+              leading: Icon(Icons.not_interested, color: Colors.white),
+              title: Text(
+                'Remove Ads',
+                style: TextStyle(color: Colors.white),
+              ),
+              onTap: () async {
+                final adState = Provider.of<AdState>(context, listen: false);
+                if (!adState.isAdFreeVersion) {
+                  final offerings = await PurchaseApi.fetchOffers();
+                  final isSuccess = await Purchases.purchasePackage(
+                      offerings[0].availablePackages[0]);
+                  if (isSuccess == true) {
+                    adState.changeToAdFreeVersion();
+                  }
+                }
+              },
+            ),
+            Divider(color: Colors.white12, height: 1),
+            ListTile(
+              leading:
+                  Icon(Icons.replay_circle_filled_sharp, color: Colors.white),
+              title: Text(
+                'Restore Purchases',
+                style: TextStyle(color: Colors.white),
+              ),
+              onTap: () async {
+                try {
+                  final adState = Provider.of<AdState>(context, listen: false);
+                  if (!adState.isAdFreeVersion) {
+                    PurchaserInfo restoredInfo =
+                        await Purchases.restoreTransactions();
+                    if (restoredInfo.allPurchasedProductIdentifiers.length >
+                            0 &&
+                        restoredInfo.allPurchasedProductIdentifiers[0] ==
+                            "wowtc_ad_free_version") {
+                      adState.changeToAdFreeVersion();
+                    } else {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: new Text("Restore Purchases"),
+                              content: Text(
+                                  "Please sign in with your Google/Apple account you did the purchase."),
+                              actions: [
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text('OK'))
+                              ],
+                            );
+                          });
+                    }
+                  }
+                  // ... check restored purchaserInfo to see if entitlement is now active
+                } on PlatformException catch (e) {
+                  print(e);
+                }
+              },
+            ),
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:wowtalentcalculator/model/talent.dart';
 
 class TalentProvider extends ChangeNotifier {
@@ -9,6 +10,8 @@ class TalentProvider extends ChangeNotifier {
   String className;
   String expansion;
   String? buildName = null;
+
+  
 
   TalentProvider(this.talentTrees, this.className, this.expansion)
       : _firstTalentTreePoints = talentTrees.specTreeList[0].points,

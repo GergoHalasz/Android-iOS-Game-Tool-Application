@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "765441738391",
+    "project_id": "wow-tc",
+    "storage_bucket": "wow-tc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765441738391:android:1aa223f2627417988a8bd2",
+        "android_client_info": {
+          "package_name": "com.fissher.wowtalentcalculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "765441738391-qg83eb5a027micb18imhilj2rd6trmio.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fissher.wowtalentcalculator",
+            "certificate_hash": "630b07bfd36118a73cf3399433688df9945b9daf"
+          }
+        },
+        {
+          "client_id": "765441738391-2ushhdhmv8nou8g564kukmig2rqlsr4s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxqK09tKwBFaLEBkXL6KMaeggZq_ap8V0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "765441738391-2ushhdhmv8nou8g564kukmig2rqlsr4s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
