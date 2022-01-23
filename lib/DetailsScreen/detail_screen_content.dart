@@ -55,7 +55,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
   void didChangeDependencies() {
     super.didChangeDependencies();
     if (firstTimeAdInit) {
-    final adState = Provider.of<AdState>(context);
+      final adState = Provider.of<AdState>(context);
       adState.initialization.then((value) {
         setState(() {
           banner = BannerAd(
@@ -290,121 +290,127 @@ class _DetailScreenContentState extends State<DetailScreenContent>
             color: Colors.white,
             fontFamily: "Roboto",
             fontWeight: FontWeight.w900),
-        child: Column(
-          children: [
-            Container(
-                height: SizeConfig.blockSizeVertical * 4.5,
-                color: Color(0xff556F7A),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Container(
+          decoration: BoxDecoration(color: Color(0xff2E6171)),
+          child: SafeArea(
+            top: false,
+            child: Column(
+              children: [
+                Container(
+                    height: SizeConfig.blockSizeVertical * 4.5,
+                    color: Color(0xff556F7A),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Container(
+                              padding: EdgeInsets.only(left: 15),
+                              child: Row(
+                                children: [
+                                  Text('$firstTalentTreePoints ',
+                                      style: TextStyle(
+                                          color: _selectedIndex == 0
+                                              ? kColorSelectiveYellow
+                                              : Colors.white)),
+                                  Text('/'),
+                                  Text(' $secondTalentTreePoints ',
+                                      style: TextStyle(
+                                          color: _selectedIndex == 1
+                                              ? kColorSelectiveYellow
+                                              : Colors.white)),
+                                  Text('/'),
+                                  Text(' $thirdTalentTreePoints ',
+                                      style: TextStyle(
+                                          color: _selectedIndex == 2
+                                              ? kColorSelectiveYellow
+                                              : Colors.white)),
+                                  Text('('),
+                                  Text(
+                                      '${firstTalentTreePoints + secondTalentTreePoints + thirdTalentTreePoints}',
+                                      style: TextStyle(
+                                          color: kColorSelectiveYellow)),
+                                  Text(')'),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: Container(
+                              padding: EdgeInsets.only(right: 15),
+                              child: Row(
+                                children: [
+                                  Text('Level: '),
+                                  Text('$level',
+                                      style: TextStyle(
+                                          color: kColorSelectiveYellow))
+                                ],
+                              ),
+                            ),
+                          )
+                        ])),
+                Expanded(
+                  child: TabBarView(
+                    controller: _tabController,
                     children: [
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Container(
-                          padding: EdgeInsets.only(left: 15),
-                          child: Row(
-                            children: [
-                              Text('$firstTalentTreePoints ',
-                                  style: TextStyle(
-                                      color: _selectedIndex == 0
-                                          ? kColorSelectiveYellow
-                                          : Colors.white)),
-                              Text('/'),
-                              Text(' $secondTalentTreePoints ',
-                                  style: TextStyle(
-                                      color: _selectedIndex == 1
-                                          ? kColorSelectiveYellow
-                                          : Colors.white)),
-                              Text('/'),
-                              Text(' $thirdTalentTreePoints ',
-                                  style: TextStyle(
-                                      color: _selectedIndex == 2
-                                          ? kColorSelectiveYellow
-                                          : Colors.white)),
-                              Text('('),
-                              Text(
-                                  '${firstTalentTreePoints + secondTalentTreePoints + thirdTalentTreePoints}',
-                                  style:
-                                      TextStyle(color: kColorSelectiveYellow)),
-                              Text(')'),
-                            ],
-                          ),
-                        ),
+                      Container(
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(
+                                  "assets/background/${talentTrees.specTreeList[0].background}.png"),
+                              fit: BoxFit.cover,
+                            ),
+                            color: Colors.black),
+                        child: TalentTreeWidget(
+                            key: talentTree1Key,
+                            talentTreeName: talentTrees.specTreeList[0].name,
+                            arrowList: arrowTrees[0]),
                       ),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Container(
-                          padding: EdgeInsets.only(right: 15),
-                          child: Row(
-                            children: [
-                              Text('Level: '),
-                              Text('$level',
-                                  style:
-                                      TextStyle(color: kColorSelectiveYellow))
-                            ],
+                      Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                                "assets/background/${talentTrees.specTreeList[1].background}.png"),
+                            fit: BoxFit.cover,
                           ),
                         ),
+                        child: TalentTreeWidget(
+                            key: talentTree2Key,
+                            talentTreeName: talentTrees.specTreeList[1].name,
+                            arrowList: arrowTrees[1]),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                                "assets/background/${talentTrees.specTreeList[2].background}.png"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        child: TalentTreeWidget(
+                            key: talentTree3Key,
+                            talentTreeName: talentTrees.specTreeList[2].name,
+                            arrowList: arrowTrees[2]),
                       )
-                    ])),
-            Expanded(
-              child: TabBarView(
-                controller: _tabController,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                              "assets/background/${talentTrees.specTreeList[0].background}.png"),
-                          fit: BoxFit.cover,
-                        ),
-                        color: Colors.black),
-                    child: TalentTreeWidget(
-                        key: talentTree1Key,
-                        talentTreeName: talentTrees.specTreeList[0].name,
-                        arrowList: arrowTrees[0]),
+                    ],
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                            "assets/background/${talentTrees.specTreeList[1].background}.png"),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    child: TalentTreeWidget(
-                        key: talentTree2Key,
-                        talentTreeName: talentTrees.specTreeList[1].name,
-                        arrowList: arrowTrees[1]),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                            "assets/background/${talentTrees.specTreeList[2].background}.png"),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    child: TalentTreeWidget(
-                        key: talentTree3Key,
-                        talentTreeName: talentTrees.specTreeList[2].name,
-                        arrowList: arrowTrees[2]),
-                  )
-                ],
-              ),
+                ),
+                if (!adState.isAdFreeVersion)
+                  if (banner == null)
+                    Container(
+                      height: 50,
+                      color: Colors.black,
+                    )
+                  else
+                    Container(
+                      height: 50,
+                      child: AdWidget(ad: banner!),
+                      color: Colors.black,
+                    )
+              ],
             ),
-            if(!adState.isAdFreeVersion)
-            if (banner == null) 
-              Container(
-                height: 50,
-                color: Colors.black,
-              )
-            else
-              Container(
-                height: 50,
-                child: AdWidget(ad: banner!),
-                color: Colors.black,
-              )
-          ],
+          ),
         ),
       ),
     );
