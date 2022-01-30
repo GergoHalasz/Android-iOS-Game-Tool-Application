@@ -175,6 +175,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                       offerings[0].availablePackages[0]);
                   if (isSuccess == true) {
                     adState.changeToAdFreeVersion();
+                    
                   }
                 }
               },

@@ -75,28 +75,12 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
   @override
   void didChangeDependencies() {
     talentProvider = Provider.of<TalentProvider>(context);
+    final adState = Provider.of<AdState>(context);
+    if (adState.interstitialAd == null && !adState.isAdFreeVersion) {
+      adState.createInterstitialAd();
+    }
     currentExpansionSelected = talentProvider.expansion;
     super.didChangeDependencies();
-  }
-
-  showWotlkDialog(BuildContext context) {
-    showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: new Text("Wotlk soon"),
-            content: new Text(
-                "The Wotlk expansion is currently under development. It's coming soon!"),
-            actions: <Widget>[
-              TextButton(
-                child: const Text('OK'),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-            ],
-          );
-        });
   }
 
   onDeleteBuild(buildContext, key) async {
@@ -116,18 +100,10 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
     loadInterstitialAd() {
       if (!adState.isAdFreeVersion) {
         if (adState.interstitialAdCounter >= 1) {
-          InterstitialAd.load(
-              adUnitId: adState.interstitialAdUnitId,
-              request: AdRequest(),
-              adLoadCallback: InterstitialAdLoadCallback(
-                onAdLoaded: (InterstitialAd ad) {
-                  adState.interstitialAdCounter = 0;
-                  adState.interstitialAd = ad;
-                },
-                onAdFailedToLoad: (LoadAdError error) {
-                  print('InterstitialAd failed to load: $error');
-                },
-              )).then((value) => {adState.interstitialAd?.show()});
+          adState.interstitialAdCounter = 0;
+          adState.interstitialAd?.show();
+          adState.interstitialAd?.dispose();
+          adState.createInterstitialAd();
         } else {
           adState.interstitialAdCounter++;
         }

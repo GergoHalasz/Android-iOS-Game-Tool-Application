@@ -1,11 +1,14 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_guid/flutter_guid.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
+import 'package:wowtalentcalculator/api/purchase_api.dart';
 import 'package:wowtalentcalculator/provider/talent_provider.dart';
 
 class SaveScreen extends StatefulWidget {
@@ -27,11 +30,14 @@ class SaveScreen extends StatefulWidget {
 class _SaveScreenState extends State<SaveScreen> {
   late String buildName;
   late TextEditingController _controller;
+  bool isTextEmpty = false;
 
   @override
   void didChangeDependencies() {
     final adState = Provider.of<AdState>(context);
-
+    if (adState.interstitialAd == null && !adState.isAdFreeVersion) {
+      adState.createInterstitialAd();
+    }
     super.didChangeDependencies();
   }
 
@@ -49,46 +55,42 @@ class _SaveScreenState extends State<SaveScreen> {
     final adState = Provider.of<AdState>(context);
 
     Future<void> _saveBuild() async {
-      if (!adState.isAdFreeVersion) {
-        adState.interstitialAd?.show();
-        InterstitialAd.load(
-            adUnitId: adState.interstitialAdUnitId,
-            request: AdRequest(),
-            adLoadCallback: InterstitialAdLoadCallback(
-              onAdLoaded: (InterstitialAd ad) {
-                adState.interstitialAd = ad;
-              },
-              onAdFailedToLoad: (LoadAdError error) {
-                print('InterstitialAd failed to load: $error');
-              },
-            ));
-      }
-      final prefs = await SharedPreferences.getInstance();
-      var data = talentProvider.talentTrees.toJson();
-      Map dataJson = {
-        "build": data,
-        "buildName": buildName,
-        "buildClass": talentProvider.className
-      };
+      if (_controller.text != "") {
+        if (!adState.isAdFreeVersion) {
+          adState.interstitialAd?.show();
+          adState.interstitialAd?.dispose();
+          adState.createInterstitialAd();
+        }
+        final prefs = await SharedPreferences.getInstance();
+        var data = talentProvider.talentTrees.toJson();
+        Map dataJson = {
+          "build": data,
+          "buildName": buildName,
+          "buildClass": talentProvider.className
+        };
 
-      var newKey;
-      if (talentProvider.expansion == 'wotlk') {
-        newKey = 'w' + "build_" + Guid.newGuid.toString();
+        var newKey;
+        if (talentProvider.expansion == 'wotlk') {
+          newKey = 'w' + "build_" + Guid.newGuid.toString();
+        } else {
+          newKey = talentProvider.expansion == "tbc"
+              ? 't' + "build_" + Guid.newGuid.toString()
+              : 'v' + "build_" + Guid.newGuid.toString();
+        }
+        await prefs.setString(widget.buildKey == "" ? newKey : widget.buildKey,
+            jsonEncode(dataJson));
+        if (widget.buildKey == "") {
+          widget.changeBuildKeyAndName(newKey, buildName);
+        } else {
+          widget.changeBuildName(buildName);
+        }
+        talentProvider.changeBuildName(buildName);
+        Navigator.pop(context);
       } else {
-        newKey = talentProvider.expansion == "tbc"
-            ? 't' + "build_" + Guid.newGuid.toString()
-            : 'v' + "build_" + Guid.newGuid.toString();
+        setState(() {
+          isTextEmpty = true;
+        });
       }
-      await prefs.setString(widget.buildKey == "" ? newKey : widget.buildKey,
-          jsonEncode(dataJson));
-      if (widget.buildKey == "") {
-        widget.changeBuildKeyAndName(newKey, buildName);
-      } else {
-        widget.changeBuildName(buildName);
-      }
-      talentProvider.changeBuildName(buildName);
-
-      Navigator.pop(context);
     }
 
     return Scaffold(
@@ -116,41 +118,89 @@ class _SaveScreenState extends State<SaveScreen> {
                 color: Colors.white,
                 fontFamily: "Roboto",
                 fontWeight: FontWeight.w900),
-            child: Column(
-              children: [
-                Container(
-                    padding: EdgeInsets.all(10),
-                    child: Theme(
-                      data: new ThemeData(
-                        primaryColor: Colors.redAccent,
-                        primaryColorDark: Colors.red,
-                      ),
-                      child: TextField(
-                        controller: _controller,
-                        decoration: InputDecoration(
-                          counterStyle: TextStyle(color: Colors.white),
-                          labelText: 'Name',
-                          labelStyle: TextStyle(color: Colors.white),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.white, width: 0.0),
+            child: SafeArea(
+              child: Stack(children: [
+                Column(
+                  children: [
+                    Container(
+                        padding: EdgeInsets.all(10),
+                        child: Theme(
+                          data: new ThemeData(
+                            primaryColor: Colors.redAccent,
+                            primaryColorDark: Colors.red,
                           ),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                          child: TextField(
+                            controller: _controller,
+                            decoration: InputDecoration(
+                              errorStyle: TextStyle(color: Colors.red[600], fontSize: 14),
+                              errorText: isTextEmpty ? "Value Can't Be Empty" : null,
+                              counterStyle: TextStyle(color: Colors.white),
+                              labelText: 'Name',
+                              labelStyle: TextStyle(color: Colors.white),
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: Colors.white, width: 0.0),
+                              ),
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.white),
+                              ),
+                            ),
+                            maxLength: 25,
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontFamily: "Roboto",
+                                fontWeight: FontWeight.w900),
+                            onChanged: (text) {
+                              buildName = text;
+                            },
                           ),
+                        )),
+                  ],
+                ),
+                SizedBox(
+                  height: 100,
+                ),
+                if (!adState.isAdFreeVersion)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 100),
+                    child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Text('Support me by removing the ads! :)')),
+                  ),
+                if (!adState.isAdFreeVersion)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.grey,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
+                        width: 300,
+                        child: ListTile(
+                          leading:
+                              Icon(Icons.not_interested, color: Colors.white),
+                          title: Text(
+                            'Remove Ads',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          onTap: () async {
+                            if (!adState.isAdFreeVersion) {
+                              final offerings = await PurchaseApi.fetchOffers();
+                              final isSuccess = await Purchases.purchasePackage(
+                                  offerings[0].availablePackages[0]);
+                              if (isSuccess == true) {
+                                adState.changeToAdFreeVersion();
+                              }
+                            }
+                          },
                         ),
-                        maxLength: 25,
-                        style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.white,
-                            fontFamily: "Roboto",
-                            fontWeight: FontWeight.w900),
-                        onChanged: (text) {
-                          buildName = text;
-                        },
                       ),
-                    )),
-              ],
+                    ),
+                  ),
+              ]),
             )));
   }
 }

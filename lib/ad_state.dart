@@ -37,18 +37,6 @@ class AdState extends ChangeNotifier {
     if (isAdFree != null && isAdFree == true) {
       isAdFreeVersion = true;
       notifyListeners();
-    } else {
-      InterstitialAd.load(
-          adUnitId: interstitialAdUnitId,
-          request: AdRequest(),
-          adLoadCallback: InterstitialAdLoadCallback(
-            onAdLoaded: (InterstitialAd ad) {
-              interstitialAd = ad;
-            },
-            onAdFailedToLoad: (LoadAdError error) {
-              print('InterstitialAd failed to load: $error');
-            },
-          ));
     }
   }
 
@@ -89,9 +77,10 @@ class AdState extends ChangeNotifier {
         adLoadCallback: InterstitialAdLoadCallback(
           onAdLoaded: (InterstitialAd ad) {
             this.interstitialAd = ad;
+            notifyListeners();
           },
           onAdFailedToLoad: (LoadAdError error) {
-            print('InterstitialAd failed to load: $error');
+            createInterstitialAd();
           },
         ));
   }

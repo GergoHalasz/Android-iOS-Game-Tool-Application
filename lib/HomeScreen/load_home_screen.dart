@@ -21,21 +21,19 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
   RateMyApp rateMyApp = RateMyApp(
     preferencesPrefix: 'rateMyApp_',
     minDays: 0,
-    minLaunches: 2,
+    minLaunches: 4,
     remindDays: 1,
-    remindLaunches: 3,
+    remindLaunches: 4,
     googlePlayIdentifier: 'com.fissher.wowtalentcalculator',
     appStoreIdentifier: '1593368066',
   );
 
   @override
   void initState() {
-    var adState;
-
     WidgetsBinding.instance?.addPostFrameCallback((_) async {
       CustomDoNotOpenAgainCondition condition = CustomDoNotOpenAgainCondition();
       CustomMinimumAppLaunchesCondition minimumAppLaunchesCondition =
-          CustomMinimumAppLaunchesCondition(minLaunches: 2, remindLaunches: 3);
+          CustomMinimumAppLaunchesCondition(minLaunches: 4, remindLaunches: 5);
       rateMyApp.conditions.add(condition);
       rateMyApp.conditions.add(minimumAppLaunchesCondition);
       await rateMyApp.init();
@@ -76,7 +74,7 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
             return AlertDialog(
               title: new Text("Welcome"),
               content: new Text(
-                  "Swipe up to increase rank\nSwipe down to decrease rank\nLong press on talent to increase to the max level\nOn the top right corner you can save your build\nDelete the build by swiping the saved build to left"),
+                  "Long press on talent to increase to the max level\nSwipe up to increase rank\nSwipe down to decrease rank\nOn the top right corner you can save your build\nDelete the build by swiping the saved build to left\nSupport me by removing the ads :)!"),
               actions: <Widget>[
                 TextButton(
                   child: const Text('OK'),
@@ -90,7 +88,7 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
             return CupertinoAlertDialog(
               title: const Text('Welcome'),
               content: const Text(
-                  'Swipe up to increase rank\nSwipe down to decrease rank\nLong press on talent to increase to the max level\nOn the top right corner you can save your build\nDelete the build by swiping the saved build to left'),
+                  'Long press on talent to increase to the max level\nSwipe up to increase rank\nSwipe down to decrease rank\nOn the top right corner you can save your build\nDelete the build by swiping the saved build to left\nSupport me by removing the ads :)!'),
               actions: <Widget>[
                 TextButton(
                   onPressed: () => Navigator.of(context).pop(),
