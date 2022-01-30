@@ -94,6 +94,7 @@ class _SaveScreenState extends State<SaveScreen> {
     }
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
         backgroundColor: Color(0xff556F7A),
         appBar: AppBar(
             centerTitle: true,
