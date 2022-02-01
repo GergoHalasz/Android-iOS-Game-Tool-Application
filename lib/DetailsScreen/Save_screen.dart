@@ -94,7 +94,7 @@ class _SaveScreenState extends State<SaveScreen> {
     }
 
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: false,
         backgroundColor: Color(0xff556F7A),
         appBar: AppBar(
             centerTitle: true,
@@ -133,8 +133,10 @@ class _SaveScreenState extends State<SaveScreen> {
                           child: TextField(
                             controller: _controller,
                             decoration: InputDecoration(
-                              errorStyle: TextStyle(color: Colors.red[600], fontSize: 14),
-                              errorText: isTextEmpty ? "Value Can't Be Empty" : null,
+                              errorStyle: TextStyle(
+                                  color: Colors.red[600], fontSize: 14),
+                              errorText:
+                                  isTextEmpty ? "Value Can't Be Empty" : null,
                               counterStyle: TextStyle(color: Colors.white),
                               labelText: 'Name',
                               labelStyle: TextStyle(color: Colors.white),
@@ -159,33 +161,33 @@ class _SaveScreenState extends State<SaveScreen> {
                         )),
                   ],
                 ),
-                SizedBox(
-                  height: 100,
-                ),
                 if (!adState.isAdFreeVersion)
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 100),
+                    padding: const EdgeInsets.only(bottom: 80),
                     child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Text('Support me by removing the ads! :)')),
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Support me by removing the ads!',
+                          style: TextStyle(fontSize: 15),
+                        )),
                   ),
                 if (!adState.isAdFreeVersion)
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 20),
+                    padding: const EdgeInsets.only(top: 30),
                     child: Align(
-                      alignment: Alignment.bottomCenter,
+                      alignment: Alignment.center,
                       child: Container(
                         decoration: BoxDecoration(
                             color: Colors.grey,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
-                        width: 300,
+                            borderRadius: BorderRadius.all(Radius.circular(20))),
+                        width: 200,
                         child: ListTile(
+                          dense: true,
                           leading:
                               Icon(Icons.not_interested, color: Colors.white),
                           title: Text(
                             'Remove Ads',
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: Colors.white, fontSize: 16),
                           ),
                           onTap: () async {
                             if (!adState.isAdFreeVersion) {

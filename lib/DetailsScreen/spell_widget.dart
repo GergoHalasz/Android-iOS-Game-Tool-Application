@@ -127,15 +127,25 @@ class _SpellWidgetState extends State<SpellWidget> {
     if (widget.talent.enable) {
       return Material(
         color: Colors.transparent,
-        child: Ink.image(
-          image: AssetImage(imgLocation),
-          fit: BoxFit.cover,
-          child: InkWell(
-            onTap: () {
-              _showDescription();
-            },
-            onLongPress: () => _increaseMaxRank(),
-            borderRadius: BorderRadius.circular(10),
+        child: Ink(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage(imgLocation), fit: BoxFit.cover),
+              borderRadius: BorderRadius.circular(10)),
+          child: Container(
+            decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.grey.shade700,
+                  width: 3,
+                ),
+                borderRadius: BorderRadius.circular(10)),
+            child: InkWell(
+              onTap: () {
+                _showDescription();
+              },
+              onLongPress: () => _increaseMaxRank(),
+              borderRadius: BorderRadius.circular(10),
+            ),
           ),
         ),
       );
@@ -149,14 +159,26 @@ class _SpellWidgetState extends State<SpellWidget> {
             borderRadius:
                 BorderRadius.circular(14), // icon curve border magic number
           ),
-          child: Ink.image(
-            image: AssetImage(imgLocation),
-            fit: BoxFit.cover,
+          child: Ink(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage(imgLocation), fit: BoxFit.cover),
+              borderRadius: BorderRadius.circular(10)),
+          child: Container(
+            decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.grey.shade700,
+                  width: 3,
+                ),
+                borderRadius: BorderRadius.circular(10)),
             child: InkWell(
-              onTap: () => _showDescription(),
+              onTap: () {
+                _showDescription();
+              },
               borderRadius: BorderRadius.circular(10),
             ),
           ),
+        ),
         ),
       );
     }

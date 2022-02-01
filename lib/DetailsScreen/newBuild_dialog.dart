@@ -187,48 +187,72 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                         if (currentExpansionSelected == 'wotlk')
                           ...wotlkClasses.map((element) {
                             return Container(
-                              width: SizeConfig.cellSize / 1.7,
-                              height: SizeConfig.cellSize / 1.7,
-                              child: Material(
-                                color: Colors.transparent,
-                                child: Ink.image(
-                                  image:
-                                      AssetImage("assets/Class/$element.png"),
-                                  fit: BoxFit.cover,
-                                  child: InkWell(
-                                    onTap: () {
-                                      Navigator.pop(context);
-                                      loadInterstitialAd();
-                                      talentProvider.changeExpansion(
-                                          currentExpansionSelected);
-                                      widget.changeClass(element);
-                                    },
-                                    borderRadius: BorderRadius.circular(10),
+                                width: SizeConfig.cellSize / 1.65,
+                                height: SizeConfig.cellSize / 1.65,
+                                child: Material(
+                                  color: Colors.transparent,
+                                  child: Ink(
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                "assets/Class/$element.png"),
+                                            fit: BoxFit.cover),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: Colors.grey.shade700,
+                                            width: 3,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
+                                      child: InkWell(
+                                        onTap: () {
+                                          Navigator.pop(context);
+                                          loadInterstitialAd();
+                                          talentProvider.changeExpansion(
+                                              currentExpansionSelected);
+                                          widget.changeClass(element);
+                                        },
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    ),
                                   ),
-                                ),
-                              ),
-                            );
+                                ));
                           })
                         else
                           ...tbcVanillaClasses.map((element) {
                             return Container(
-                              width: SizeConfig.cellSize / 1.7,
-                              height: SizeConfig.cellSize / 1.7,
+                              width: SizeConfig.cellSize / 1.65,
+                              height: SizeConfig.cellSize / 1.65,
                               child: Material(
                                 color: Colors.transparent,
-                                child: Ink.image(
-                                  image:
-                                      AssetImage("assets/Class/$element.png"),
-                                  fit: BoxFit.cover,
-                                  child: InkWell(
-                                    onTap: () {
-                                      Navigator.pop(context);
-                                      loadInterstitialAd();
-                                      talentProvider.changeExpansion(
-                                          currentExpansionSelected);
-                                      widget.changeClass(element);
-                                    },
-                                    borderRadius: BorderRadius.circular(10),
+                                child: Ink(
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              "assets/Class/$element.png"),
+                                          fit: BoxFit.cover),
+                                      borderRadius: BorderRadius.circular(10)),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: Colors.grey.shade700,
+                                          width: 3,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    child: InkWell(
+                                      onTap: () {
+                                        Navigator.pop(context);
+                                        loadInterstitialAd();
+                                        talentProvider.changeExpansion(
+                                            currentExpansionSelected);
+                                        widget.changeClass(element);
+                                      },
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
                                   ),
                                 ),
                               ),
