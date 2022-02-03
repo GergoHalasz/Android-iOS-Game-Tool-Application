@@ -81,6 +81,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
   @override
   Widget build(BuildContext context) {
     talentProvider = Provider.of<TalentProvider>(context);
+    final adState = Provider.of<AdState>(context);
 
     return Material(
       color: Color(0xff556F7A),
@@ -160,7 +161,10 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 style: TextStyle(color: Colors.white),
               ),
             ),
+                if (!adState.isAdFreeVersion)
+
             Divider(color: Colors.white12, height: 0),
+                if (!adState.isAdFreeVersion)
             ListTile(
               leading: Icon(Icons.not_interested, color: Colors.white),
               title: Text(

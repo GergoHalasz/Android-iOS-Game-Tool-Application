@@ -160,25 +160,25 @@ class _SpellWidgetState extends State<SpellWidget> {
                 BorderRadius.circular(14), // icon curve border magic number
           ),
           child: Ink(
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(imgLocation), fit: BoxFit.cover),
-              borderRadius: BorderRadius.circular(10)),
-          child: Container(
             decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.grey.shade700,
-                  width: 3,
-                ),
+                image: DecorationImage(
+                    image: AssetImage(imgLocation), fit: BoxFit.cover),
                 borderRadius: BorderRadius.circular(10)),
-            child: InkWell(
-              onTap: () {
-                _showDescription();
-              },
-              borderRadius: BorderRadius.circular(10),
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.grey.shade700,
+                    width: 3,
+                  ),
+                  borderRadius: BorderRadius.circular(10)),
+              child: InkWell(
+                onTap: () {
+                  _showDescription();
+                },
+                borderRadius: BorderRadius.circular(10),
+              ),
             ),
           ),
-        ),
         ),
       );
     }
@@ -204,50 +204,58 @@ class _SpellWidgetState extends State<SpellWidget> {
             horizontalSwipeMaxHeightThreshold: 50.0,
             horizontalSwipeMinDisplacement: 50.0,
             horizontalSwipeMinVelocity: 200.0),
-        child: Stack(
-          children: <Widget>[
-            Align(
-              alignment: Alignment.center,
-              child: _buildSpellWidget(), //spell icon
-            ),
-            Align(
-              // spell rank
-              alignment: Alignment.bottomRight,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.black87,
-                  borderRadius: BorderRadius.circular(3),
-                ),
-                child: Text(
-                  '$currentRank/$maxRank',
-                  style: TextStyle(fontSize: 14),
-                ),
+        child: Container(
+          padding: EdgeInsets.all(9),
+          decoration: BoxDecoration(color: Colors.transparent),
+          child: Stack(
+            children: <Widget>[
+              Align(
+                alignment: Alignment.center,
+                child: _buildSpellWidget(), //spell icon
               ),
-            )
-          ],
+              Align(
+                // spell rank
+                alignment: Alignment.bottomRight,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.black87,
+                    borderRadius: BorderRadius.circular(3),
+                  ),
+                  child: Text(
+                    '$currentRank/$maxRank',
+                    style: TextStyle(fontSize: 14),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       );
     } else {
-      return Stack(children: <Widget>[
-        Align(
-          alignment: Alignment.center,
-          child: _buildSpellWidget(), //spell icon
-        ),
-        Align(
-          // spell rank
-          alignment: Alignment.bottomRight,
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.black87,
-              borderRadius: BorderRadius.circular(3),
-            ),
-            child: Text(
-              '$currentRank/$maxRank',
-              style: TextStyle(fontSize: 14),
-            ),
+      return Container(
+        padding: EdgeInsets.all(9),
+        decoration: BoxDecoration(color: Colors.transparent),
+        child: Stack(children: <Widget>[
+          Align(
+            alignment: Alignment.center,
+            child: _buildSpellWidget(), //spell icon
           ),
-        )
-      ]);
+          Align(
+            // spell rank
+            alignment: Alignment.bottomRight,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.black87,
+                borderRadius: BorderRadius.circular(3),
+              ),
+              child: Text(
+                '$currentRank/$maxRank',
+                style: TextStyle(fontSize: 14),
+              ),
+            ),
+          )
+        ]),
+      );
     }
   }
 
@@ -352,7 +360,6 @@ class _SpellWidgetState extends State<SpellWidget> {
       child: Container(
           width: SizeConfig.cellSize,
           height: SizeConfig.cellSize,
-          padding: EdgeInsets.all(10),
           child: _buildTalentWidget()),
     );
   }

@@ -136,7 +136,7 @@ class _SaveScreenState extends State<SaveScreen> {
                               errorStyle: TextStyle(
                                   color: Colors.red[600], fontSize: 14),
                               errorText:
-                                  isTextEmpty ? "Value Can't Be Empty" : null,
+                                  isTextEmpty ? "Build Name Can't Be Empty" : null,
                               counterStyle: TextStyle(color: Colors.white),
                               labelText: 'Name',
                               labelStyle: TextStyle(color: Colors.white),
@@ -163,9 +163,9 @@ class _SaveScreenState extends State<SaveScreen> {
                 ),
                 if (!adState.isAdFreeVersion)
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 80),
+                    padding: const EdgeInsets.only(bottom: 120),
                     child: Align(
-                        alignment: Alignment.center,
+                        alignment: Alignment.bottomCenter,
                         child: Text(
                           'Support me by removing the ads!',
                           style: TextStyle(fontSize: 15),
@@ -173,9 +173,9 @@ class _SaveScreenState extends State<SaveScreen> {
                   ),
                 if (!adState.isAdFreeVersion)
                   Padding(
-                    padding: const EdgeInsets.only(top: 30),
+                    padding: const EdgeInsets.only(bottom: 50),
                     child: Align(
-                      alignment: Alignment.center,
+                      alignment: Alignment.bottomCenter,
                       child: Container(
                         decoration: BoxDecoration(
                             color: Colors.grey,

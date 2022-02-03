@@ -185,10 +185,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
   }
 
   showAddBuildDialog() {
-    int classNumbers = -1;
-    int classRow = 0;
-    String? expansion;
-
     showDialog(
         context: context,
         builder: (BuildContext context) {
