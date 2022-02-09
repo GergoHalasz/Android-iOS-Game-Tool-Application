@@ -16,7 +16,7 @@ class PurchaseApi {
   static Future<List<Offering>> fetchOffers() async {
     try {
       final offerings = await Purchases.getOfferings();
-      final current = offerings.current;
+      final current =   offerings.current;
 
       return current == null ? [] : [current];
     } on PlatformException catch (e) {
