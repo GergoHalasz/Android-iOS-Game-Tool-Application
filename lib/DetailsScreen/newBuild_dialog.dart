@@ -346,6 +346,8 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                                           onTap: () {
                                             Navigator.pop(context);
                                             loadInterstitialAd();
+                                            talentProvider.changeExpansion(
+                                            currentExpansionSelected);
                                             widget.fetchSavedBuild(
                                                 builds[index]["build"],
                                                 builds[index]["key"]);
