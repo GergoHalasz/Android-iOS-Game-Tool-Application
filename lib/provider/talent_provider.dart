@@ -1,22 +1,32 @@
 import 'package:flutter/foundation.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:wowtalentcalculator/model/glyph.dart';
 import 'package:wowtalentcalculator/model/talent.dart';
+import 'package:wowtalentcalculator/utils/methods.dart';
 
 class TalentProvider extends ChangeNotifier {
-  int _firstTalentTreePoints;
-  int _secondTalentTreePoints;
-  int _thirdTalentTreePoints;
+  late int _firstTalentTreePoints;
+  late int _secondTalentTreePoints;
+  late int _thirdTalentTreePoints;
   TalentTrees talentTrees;
   String className;
   String expansion;
   String? buildName = null;
+  List<ClassGlyphs> classGlyphs;
 
-  
+  TalentProvider(
+      this.talentTrees, this.className, this.expansion, this.classGlyphs) {
+    _firstTalentTreePoints = talentTrees.specTreeList[0].points;
+    _secondTalentTreePoints = talentTrees.specTreeList[1].points;
+    _thirdTalentTreePoints = talentTrees.specTreeList[2].points;
+    getClassGlyphs();
+  }
 
-  TalentProvider(this.talentTrees, this.className, this.expansion)
-      : _firstTalentTreePoints = talentTrees.specTreeList[0].points,
-        _secondTalentTreePoints = talentTrees.specTreeList[1].points,
-        _thirdTalentTreePoints = talentTrees.specTreeList[2].points;
+  bool checkIfBuildIsMaxed() {
+    return (expansion == 'vanilla' && getTotalTalentPoints() == 60) ||
+        (expansion == 'tbc' && getTotalTalentPoints() == 70) ||
+        (expansion == 'wotlk' && getTotalTalentPoints() == 80);
+  }
 
   /// return total points of talent selected
   getTotalTalentPoints() =>
@@ -32,6 +42,19 @@ class TalentProvider extends ChangeNotifier {
 
   changeBuildName(name) {
     this.buildName = name;
+    notifyListeners();
+  }
+
+  Future fetchClassGlyphs() async {
+    return await loadTalentString('glyphs', 'wotlk');
+  }
+
+  getClassGlyphs() async {
+    List classGlyphList = await fetchClassGlyphs();
+    classGlyphs = classGlyphList.map<ClassGlyphs>((wowClass) {
+      ClassGlyphs classGlyphs = ClassGlyphs.fromJson(wowClass);
+      return classGlyphs;
+    }).toList();
     notifyListeners();
   }
 
@@ -149,6 +172,22 @@ class TalentProvider extends ChangeNotifier {
       Talent talent, int currentRank, String talentTreeName) {
     talent.points = currentRank - 1;
     decreaseTreePoints(talentTreeName);
+    updateTalentTree();
+    notifyListeners();
+  }
+
+  void resetTalentTrees() {
+    List<TalentTree> specTrees = talentTrees.specTreeList;
+    for (var i = 0; i < specTrees.length; i++) {
+      List<Talent> talents = specTrees[i].talents.talentList;
+      specTrees[i].points = 0;
+      for (int j = 0; j < talents.length; j++) {
+        talents[j].points = 0;
+      }
+    }
+    _firstTalentTreePoints = 0;
+    _secondTalentTreePoints = 0;
+    _thirdTalentTreePoints = 0;
     updateTalentTree();
     notifyListeners();
   }
@@ -292,6 +331,6 @@ class TalentProvider extends ChangeNotifier {
     return totalPoints;
   }
 
-  // lock spell or not
+// lock spell or not
 
 }

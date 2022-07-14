@@ -7,35 +7,27 @@ import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
 /// Main Home Page, show for normal log in
 class HomeScreen extends StatelessWidget {
   final Future<List> druidTalentTrees;
+  final Future<String> expansion;
 
-  HomeScreen({
-    required this.druidTalentTrees,
-  });
-
-  /// open class talents
-  handleOnTap(BuildContext context, String className, Future<List> talentTrees,
-      Color classColor) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => DetailScreen(
-            className: className,
-            talentTrees: talentTrees,
-            classColor: classColor,
-            arrowTrees: getArrowClassByName(className,'tbc')),
-      ),
-    );
-  }
+  HomeScreen({required this.druidTalentTrees, required this.expansion});
 
   @override
   Widget build(BuildContext context) {
     //home_screen is the first page render that can calculate screen size
     SizeConfig().init(context);
 
-    return DetailScreen(
-        className: 'druid',
-        classColor: kColorDruid,
-        talentTrees: druidTalentTrees,
-        arrowTrees: getArrowClassByName('druid','tbc'));
+    return FutureBuilder(
+        future: expansion,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return DetailScreen(
+                expansion: snapshot.data as String,
+                className: 'druid',
+                classColor: kColorDruid,
+                talentTrees: druidTalentTrees,
+                arrowTrees: getArrowClassByName('druid', snapshot.data as String));
+          }
+          return Center(child: CircularProgressIndicator());
+        });
   }
 }

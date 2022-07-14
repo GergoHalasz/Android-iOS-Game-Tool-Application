@@ -50,6 +50,7 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
   ];
   ScrollController _scrollController = ScrollController();
   String currentExpansionSelected = 'tbc';
+
   List builds = [];
   Future<List> _getSavedBuilds() async {
     final prefs = await SharedPreferences.getInstance();
@@ -74,12 +75,16 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
 
   @override
   void didChangeDependencies() {
+    SharedPreferences.getInstance().then((value) {
+      currentExpansionSelected = value.getString('expansion')!;
+    });
+
     talentProvider = Provider.of<TalentProvider>(context);
     final adState = Provider.of<AdState>(context);
     if (adState.interstitialAd == null && !adState.isAdFreeVersion) {
       adState.createInterstitialAd();
     }
-    currentExpansionSelected = talentProvider.expansion;
+
     super.didChangeDependencies();
   }
 
@@ -208,9 +213,11 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                                           borderRadius:
                                               BorderRadius.circular(10)),
                                       child: InkWell(
-                                        onTap: () {
+                                        onTap: () async {
+                                          final prefs = await SharedPreferences.getInstance();
                                           Navigator.pop(context);
                                           loadInterstitialAd();
+                                          prefs.setString('expansion', currentExpansionSelected);
                                           talentProvider.changeExpansion(
                                               currentExpansionSelected);
                                           widget.changeClass(element);
@@ -244,9 +251,11 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                                         borderRadius:
                                             BorderRadius.circular(10)),
                                     child: InkWell(
-                                      onTap: () {
+                                      onTap: () async {
+                                        final prefs = await SharedPreferences.getInstance();
                                         Navigator.pop(context);
                                         loadInterstitialAd();
+                                        prefs.setString('expansion', currentExpansionSelected);
                                         talentProvider.changeExpansion(
                                             currentExpansionSelected);
                                         widget.changeClass(element);

@@ -21,7 +21,7 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
   RateMyApp rateMyApp = RateMyApp(
     preferencesPrefix: 'rateMyApp_',
     minDays: 0,
-    minLaunches: 4,
+    minLaunches: 0,
     remindDays: 1,
     remindLaunches: 4,
     googlePlayIdentifier: 'com.fissher.wowtalentcalculator',
@@ -57,8 +57,10 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
   @override
   Widget build(BuildContext context) {
     Future.delayed(Duration.zero, () => showDialogIfFirstLoaded(context));
+
     return HomeScreen(
-      druidTalentTrees: loadTalentString('druid', 'tbc'),
+      expansion: getExpansion(),
+      druidTalentTrees: loadTalentString('druid', 'start'),
     );
   }
 

@@ -2,10 +2,15 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
 import 'package:wowtalentcalculator/DetailsScreen/Save_screen.dart';
 import 'package:wowtalentcalculator/DetailsScreen/drawer_screen.dart';
+import 'package:wowtalentcalculator/DetailsScreen/glyphs_screen.dart';
 import 'package:wowtalentcalculator/DetailsScreen/newBuild_dialog.dart';
+import 'package:wowtalentcalculator/data/menu_items.dart';
+import 'package:wowtalentcalculator/model/glyph.dart';
+import 'package:wowtalentcalculator/model/menu_item.dart';
 import 'package:wowtalentcalculator/utils/methods.dart';
 import 'package:wowtalentcalculator/utils/size_config.dart';
 import 'package:wowtalentcalculator/utils/string.dart' as str;
@@ -24,6 +29,7 @@ class DetailScreenContent extends StatefulWidget {
   final List arrowTrees;
 
   final TalentTrees talentTrees;
+
   DetailScreenContent(
       {required this.className,
       required this.talentTrees,
@@ -56,6 +62,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     super.didChangeDependencies();
     if (firstTimeAdInit) {
       final adState = Provider.of<AdState>(context);
+
       adState.initialization.then((value) {
         setState(() {
           banner = BannerAd(
@@ -77,7 +84,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     className = widget.className;
     classColor = widget.classColor;
     arrowTrees = widget.arrowTrees;
-
     _tabController = TabController(length: 3, vsync: this, initialIndex: 0);
     _tabController.addListener(() {
       setState(() {
@@ -240,15 +246,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
               style: TextStyle(color: kColorSelectiveYellow)),
           actions: <Widget>[
             Container(
-                padding: EdgeInsets.only(right: 15),
-                child: InkResponse(
-                  child: Icon(Icons.refresh),
-                  onTap: () {
-                    talentProvider.resetTalentTree(_selectedIndex);
-                  },
-                )),
-            Container(
-              padding: EdgeInsets.only(right: 15),
               child: InkResponse(
                 child: Icon(
                   Icons.save,
@@ -273,6 +270,20 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                             buildKey: key,
                           ))));
                 },
+              ),
+            ),
+            DividerTheme(
+              data: DividerThemeData(color: Colors.grey),
+              child: PopupMenuButton<MenuItemPopUp>(
+                icon: Icon(Icons.more_horiz),
+                offset: Offset(0, 56),
+                onSelected: (item) => onSelected(context, item),
+                itemBuilder: (context) => [
+                  ...MenuItems.itemsFirst.map(buildItem).toList(),
+                  ...MenuItems.itemsSecond.map(buildItem).toList(),
+                  ...MenuItems.itemsThird.map(buildItem).toList()
+                ],
+                color: Color(0xff556F7A),
               ),
             ),
           ],
@@ -410,5 +421,73 @@ class _DetailScreenContentState extends State<DetailScreenContent>
         ),
       ),
     );
+  }
+
+  PopupMenuItem<MenuItemPopUp> buildItem(MenuItemPopUp item) =>
+      PopupMenuItem<MenuItemPopUp>(
+          value: item,
+          child: Row(children: [
+            Icon(
+              item.icon,
+              color: Colors.white,
+              size: 20,
+            ),
+            const SizedBox(
+              width: 12,
+            ),
+            Text(
+              item.text,
+              style: TextStyle(color: Colors.white),
+            ),
+          ]));
+
+  void shareBuild() {
+    String talentPointsInLink = '';
+    String expansionInLink = '';
+    String link = '';
+
+    List<TalentTree> specTrees = talentTrees.specTreeList;
+    for (var i = 0; i < specTrees.length; i++) {
+      if (i != 0) {
+        talentPointsInLink = talentPointsInLink + '-';
+      }
+      List<Talent> talents = specTrees[i].talents.talentList;
+      for (int j = 0; j < talents.length; j++) {
+        talentPointsInLink = talentPointsInLink + talents[j].points.toString();
+      }
+    }
+
+    if (talentProvider.expansion == 'tbc') {
+      expansionInLink =
+          'tbc.wowhead.com/talent-calc/${talentProvider.className}/';
+    } else if (talentProvider.expansion == 'wotlk') {
+      expansionInLink =
+          'wowhead.com/wotlk/talent-calc/${talentProvider.className == 'deathknight' ? 'death-knight' : talentProvider.className}/';
+    } else if (talentProvider.expansion == 'vanilla') {
+      expansionInLink =
+          'classic.wowhead.com/talent-calc/${talentProvider.className}/';
+    }
+
+    link = 'https://' + expansionInLink + talentPointsInLink;
+    launch(link);
+  }
+
+  void onSelected(BuildContext context, MenuItemPopUp item) {
+    switch (item) {
+      case MenuItems.itemResetTree:
+        talentProvider.resetTalentTree(_selectedIndex);
+        break;
+      case MenuItems.itemResetTrees:
+        talentProvider.resetTalentTrees();
+        break;
+      case MenuItems.itemShareBuild:
+        shareBuild();
+        break;
+      case MenuItems.itemSetGlyphs:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const GlyphsScreen()),
+        );
+    }
   }
 }

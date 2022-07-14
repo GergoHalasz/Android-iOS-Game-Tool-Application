@@ -11,12 +11,15 @@ class DetailScreen extends StatefulWidget {
   final Color classColor;
   final Future<List> talentTrees;
   final List arrowTrees;
+  final String expansion;
 
   DetailScreen(
       {required this.className,
       required this.classColor,
       required this.talentTrees,
-      required this.arrowTrees});
+      required this.arrowTrees,
+      required this.expansion
+      });
 
   @override
   State<DetailScreen> createState() => _DetailScreenState();
@@ -43,10 +46,11 @@ class _DetailScreenState extends State<DetailScreen> {
                         'assets/background/${talentList.background}.png'),
                     context)
               });
+
           return ChangeNotifierProvider<TalentProvider>(
               create: (_) {
                 return TalentProvider(
-                    talentTreesObject, widget.className, 'tbc');
+                    talentTreesObject, widget.className, widget.expansion, []);
               },
               child: DetailScreenContent(
                 talentTrees: talentTreesObject,

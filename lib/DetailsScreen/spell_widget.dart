@@ -124,7 +124,7 @@ class _SpellWidgetState extends State<SpellWidget> {
   // check if spell talent is enable or not
   // disable Tap action if grey out
   _buildSpellWidget() {
-    if (widget.talent.enable) {
+    if (widget.talent.enable && (!talentProvider.checkIfBuildIsMaxed() || widget.talent.points > 0)) {
       return Material(
         color: Colors.transparent,
         child: Ink(
