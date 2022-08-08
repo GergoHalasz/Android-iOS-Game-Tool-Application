@@ -1,2214 +1,2214 @@
 [
-      {
-        "Name": "Warrior",
-        "Glyphs": {
-          "Minor": {
-            "Glyph": [
-              {
-                "Id": "483",
-                "Name": "Glyph of Battle",
-                "Rune": "UI-Glyph-Rune-1",
-                "Description": "Increases the duration of your Battle Shout ability by 2 min."
-              },
-              {
-                "Id": "484",
-                "Name": "Glyph of Bloodrage",
-                "Rune": "UI-Glyph-Rune-4",
-                "Description": "Reduces the health cost of your Bloodrage ability by 100%."
-              },
-              {
-                "Id": "485",
-                "Name": "Glyph of Charge",
-                "Rune": "UI-Glyph-Rune-5",
-                "Description": "Increases the range of your Charge ability by 5 yards."
-              },
-              {
-                "Id": "851",
-                "Name": "Glyph of Command",
-                "Rune": "UI-Glyph-Rune-17",
-                "Description": "Increases the duration of your Commanding Shout ability by 2 min."
-              },
-              {
-                "Id": "488",
-                "Name": "Glyph of Enduring Victory",
-                "Rune": "UI-Glyph-Rune-16",
-                "Description": "Increases the window of opportunity in which you can use Victory Rush by 5 sec."
-              },
-              {
-                "Id": "486",
-                "Name": "Glyph of Mocking Blow",
-                "Rune": "UI-Glyph-Rune-6",
-                "Description": "Increases the damage of your Mocking Blow ability by 25%."
-              },
-              {
-                "Id": "487",
-                "Name": "Glyph of Thunder Clap",
-                "Rune": "UI-Glyph-Rune-2",
-                "Description": "Increases the radius of your Thunder Clap ability by 2 yards."
-              }
-            ]
+  {
+    "Name": "Warrior",
+    "Glyphs": {
+      "Minor": {
+        "Glyph": [
+          {
+            "Id": "483",
+            "Name": "Glyph of Battle",
+            "Rune": "UI-Glyph-Rune-1",
+            "Description": "Increases the duration of your Battle Shout ability by 2 min."
           },
-          "Major": {
-            "Glyph": [
-              {
-                "Id": "498",
-                "Name": "Glyph of Barbaric Insults",
-                "Rune": "UI-Glyph-Rune-7",
-                "Description": "Your Mocking Blow ability generates 100% additional threat."
-              },
-              {
-                "Id": "762",
-                "Name": "Glyph of Bladestorm",
-                "Rune": "UI-Glyph-Rune-18",
-                "Description": "Reduces the cooldown on Bladestorm by 15 sec."
-              },
-              {
-                "Id": "502",
-                "Name": "Glyph of Blocking",
-                "Rune": "UI-Glyph-Rune-20",
-                "Description": "Increases your block value by 10% for 10 sec after using your Shield Slam ability."
-              },
-              {
-                "Id": "490",
-                "Name": "Glyph of Bloodthirst",
-                "Rune": "UI-Glyph-Rune-13",
-                "Description": "Increases the healing you receive from your Bloodthirst ability by 100%."
-              },
-              {
-                "Id": "492",
-                "Name": "Glyph of Cleaving",
-                "Rune": "UI-Glyph-Rune-10",
-                "Description": "Increases the number of targets your Cleave hits by 1."
-              },
-              {
-                "Id": "493",
-                "Name": "Glyph of Devastate",
-                "Rune": "UI-Glyph-Rune-4",
-                "Description": "Your Devastate ability now applies two stacks of Sunder Armor."
-              },
-              {
-                "Id": "765",
-                "Name": "Glyph of Enraged Regeneration",
-                "Rune": "UI-Glyph-Rune-20",
-                "Description": "Your Enraged Regeneration ability heals for an additional 10% of your health over its duration."
-              },
-              {
-                "Id": "494",
-                "Name": "Glyph of Execution",
-                "Rune": "UI-Glyph-Rune-16",
-                "Description": "Your Execute ability deals damage as if you had 10 additional rage."
-              },
-              {
-                "Id": "495",
-                "Name": "Glyph of Hamstring",
-                "Rune": "UI-Glyph-Rune-14",
-                "Description": "Gives your Hamstring ability a 101% chance to immobilize the target for 5 sec."
-              },
-              {
-                "Id": "496",
-                "Name": "Glyph of Heroic Strike",
-                "Rune": "UI-Glyph-Rune-6",
-                "Description": "You gain 10 rage when you critically strike with your Heroic Strike ability."
-              },
-              {
-                "Id": "497",
-                "Name": "Glyph of Intervene",
-                "Rune": "UI-Glyph-Rune-9",
-                "Description": "Increases the number attacks you intercept for your Intervene target by 1."
-              },
-              {
-                "Id": "503",
-                "Name": "Glyph of Last Stand",
-                "Rune": "UI-Glyph-Rune-11",
-                "Description": "Reduces the cooldown of your Last Stand ability by 1 min."
-              },
-              {
-                "Id": "489",
-                "Name": "Glyph of Mortal Strike",
-                "Rune": "UI-Glyph-Rune-17",
-                "Description": "Increases the damage of your Mortal Strike ability by 10%."
-              },
-              {
-                "Id": "499",
-                "Name": "Glyph of Overpower",
-                "Rune": "UI-Glyph-Rune-1",
-                "Description": "Adds a 100% chance to enable your Overpower when your attacks are parried."
-              },
-              {
-                "Id": "491",
-                "Name": "Glyph of Rapid Charge",
-                "Rune": "UI-Glyph-Rune-5",
-                "Description": "Reduces the cooldown of your Charge ability by 7%."
-              },
-              {
-                "Id": "500",
-                "Name": "Glyph of Rending",
-                "Rune": "UI-Glyph-Rune-12",
-                "Description": "Increases the duration of your Rend ability by 6 sec."
-              },
-              {
-                "Id": "507",
-                "Name": "Glyph of Resonating Power",
-                "Rune": "UI-Glyph-Rune-19",
-                "Description": "Reduces the rage cost of your Thunder Clap ability by 5."
-              },
-              {
-                "Id": "501",
-                "Name": "Glyph of Revenge",
-                "Rune": "UI-Glyph-Rune-2",
-                "Description": "After using Revenge, your next Heroic Strike costs no rage."
-              },
-              {
-                "Id": "767",
-                "Name": "Glyph of Shield Wall",
-                "Rune": "UI-Glyph-Rune-4",
-                "Description": "Reduces the cooldown on Shield Wall by 2 min, but Shield Wall now only reduces damage taken by 40%."
-              },
-              {
-                "Id": "763",
-                "Name": "Glyph of Shockwave",
-                "Rune": "UI-Glyph-Rune-19",
-                "Description": "Reduces the cooldown on Shockwave by 3 sec."
-              },
-              {
-                "Id": "766",
-                "Name": "Glyph of Spell Reflection",
-                "Rune": "UI-Glyph-Rune-3",
-                "Description": "Reduces the cooldown on Spell Reflection by 1 sec."
-              },
-              {
-                "Id": "504",
-                "Name": "Glyph of Sunder Armor",
-                "Rune": "UI-Glyph-Rune-18",
-                "Description": "Your Sunder Armor ability affects a second nearby target."
-              },
-              {
-                "Id": "505",
-                "Name": "Glyph of Sweeping Strikes",
-                "Rune": "UI-Glyph-Rune1",
-                "Description": "Reduces the rage cost of your Sweeping Strikes ability by 100%."
-              },
-              {
-                "Id": "506",
-                "Name": "Glyph of Taunt",
-                "Rune": "UI-Glyph-Rune-15",
-                "Description": "Increases the chance for your Taunt ability to succeed by 8%."
-              },
-              {
-                "Id": "508",
-                "Name": "Glyph of Victory Rush",
-                "Rune": "UI-Glyph-Rune-3",
-                "Description": "Your Victory Rush ability has a 30% increased critical strike chance."
-              },
-              {
-                "Id": "764",
-                "Name": "Glyph of Vigilance",
-                "Rune": "UI-Glyph-Rune-2",
-                "Description": "Your Vigilance ability transfers an additional 5% of your target's threat to you."
-              },
-              {
-                "Id": "509",
-                "Name": "Glyph of Whirlwind",
-                "Rune": "UI-Glyph-Rune-8",
-                "Description": "Reduces the cooldown of your Whirlwind by 2 sec."
-              }
-            ]
+          {
+            "Id": "484",
+            "Name": "Glyph of Bloodrage",
+            "Rune": "UI-Glyph-Rune-4",
+            "Description": "Reduces the health cost of your Bloodrage ability by 100%."
+          },
+          {
+            "Id": "485",
+            "Name": "Glyph of Charge",
+            "Rune": "UI-Glyph-Rune-5",
+            "Description": "Increases the range of your Charge ability by 5 yards."
+          },
+          {
+            "Id": "851",
+            "Name": "Glyph of Command",
+            "Rune": "UI-Glyph-Rune-17",
+            "Description": "Increases the duration of your Commanding Shout ability by 2 min."
+          },
+          {
+            "Id": "488",
+            "Name": "Glyph of Enduring Victory",
+            "Rune": "UI-Glyph-Rune-16",
+            "Description": "Increases the window of opportunity in which you can use Victory Rush by 5 sec."
+          },
+          {
+            "Id": "486",
+            "Name": "Glyph of Mocking Blow",
+            "Rune": "UI-Glyph-Rune-6",
+            "Description": "Increases the damage of your Mocking Blow ability by 25%."
+          },
+          {
+            "Id": "487",
+            "Name": "Glyph of Thunder Clap",
+            "Rune": "UI-Glyph-Rune-2",
+            "Description": "Increases the radius of your Thunder Clap ability by 2 yards."
           }
-        }
+        ]
       },
-      {
-        "Name": "Paladin",
-        "Glyphs": {
-          "Minor": {
-            "Glyph": [
-              {
-                "Id": "452",
-                "Name": "Glyph of Blessing of Kings",
-                "Rune": "UI-Glyph-Rune-4",
-                "Description": "Reduces the mana cost of your Blessing of Kings and Greater Blessing of Kings spells by 50%."
-              },
-              {
-                "Id": "453",
-                "Name": "Glyph of Blessing of Might",
-                "Rune": "UI-Glyph-Rune-2",
-                "Description": "Increases the duration of your Blessing of Might spell by 20 min when cast on yourself."
-              },
-              {
-                "Id": "454",
-                "Name": "Glyph of Blessing of Wisdom",
-                "Rune": "UI-Glyph-Rune-3",
-                "Description": "Increases the duration of your Blessing of Wisdom spell by 20 min when cast on yourself."
-              },
-              {
-                "Id": "455",
-                "Name": "Glyph of Lay on Hands",
-                "Rune": "UI-Glyph-Rune-11",
-                "Description": "Reduces the cooldown of your Lay on Hands spell by 5 min."
-              },
-              {
-                "Id": "456",
-                "Name": "Glyph of Sense Undead",
-                "Rune": "UI-Glyph-Rune-9",
-                "Description": "Damage against Undead increased by 1% while your Sense Undead ability is active."
-              },
-              {
-                "Id": "457",
-                "Name": "Glyph of the Wise",
-                "Rune": "UI-Glyph-Rune-1",
-                "Description": "Reduces the mana cost of your Seal of Wisdom spell by 50%."
-              }
-            ]
+      "Major": {
+        "Glyph": [
+          {
+            "Id": "498",
+            "Name": "Glyph of Barbaric Insults",
+            "Rune": "UI-Glyph-Rune-7",
+            "Description": "Your Mocking Blow ability generates 100% additional threat."
           },
-          "Major": {
-            "Glyph": [
-              {
-                "Id": "191",
-                "Name": "Glyph of Avenger's Shield",
-                "Rune": "UI-Glyph-Rune-5",
-                "Description": "Your Avenger's Shield hits 2 fewer targets, but for 100% more damage."
-              },
-              {
-                "Id": "197",
-                "Name": "Glyph of Avenging Wrath",
-                "Rune": "UI-Glyph-Rune-12",
-                "Description": "Reduces the cooldown of your Hammer of Wrath spell by 50% while Avenging Wrath is active."
-              },
-              {
-                "Id": "701",
-                "Name": "Glyph of Beacon of Light",
-                "Rune": "UI-Glyph-Rune-7",
-                "Description": "Increases the duration of Beacon of Light by 30 sec."
-              },
-              {
-                "Id": "194",
-                "Name": "Glyph of Cleansing",
-                "Rune": "UI-Glyph-Rune-6",
-                "Description": "Reduces the mana cost of your Cleanse and Purify spells by 20%."
-              },
-              {
-                "Id": "189",
-                "Name": "Glyph of Consecration",
-                "Rune": "UI-Glyph-Rune-18",
-                "Description": "Increases the duration and cooldown of Consecration by 2 sec."
-              },
-              {
-                "Id": "188",
-                "Name": "Glyph of Crusader Strike",
-                "Rune": "UI-Glyph-Rune-1",
-                "Description": "Reduces the mana cost of your Crusader Strike ability by 20%."
-              },
-              {
-                "Id": "705",
-                "Name": "Glyph of Divine Plea",
-                "Rune": "UI-Glyph-Rune-1",
-                "Description": "While Divine Plea is active, you take 3% reduced damage from all sources."
-              },
-              {
-                "Id": "703",
-                "Name": "Glyph of Divine Storm",
-                "Rune": "UI-Glyph-Rune-9",
-                "Description": "Your Divine Storm now heals for an additional 15% of the damage it causes."
-              },
-              {
-                "Id": "198",
-                "Name": "Glyph of Divinity",
-                "Rune": "UI-Glyph-Rune-13",
-                "Description": "Your Lay on Hands grants twice as much mana as normal and also grants you as much mana as it grants your target."
-              },
-              {
-                "Id": "193",
-                "Name": "Glyph of Exorcism",
-                "Rune": "UI-Glyph-Rune-2",
-                "Description": "Increases damage done by Exorcism by 20%."
-              },
-              {
-                "Id": "195",
-                "Name": "Glyph of Flash of Light",
-                "Rune": "UI-Glyph-Rune-7",
-                "Description": "Your Flash of Light has an additional 5% critical strike chance."
-              },
-              {
-                "Id": "185",
-                "Name": "Glyph of Hammer of Justice",
-                "Rune": "UI-Glyph-Rune-10",
-                "Description": "Increases your Hammer of Justice range by 5 yards."
-              },
-              {
-                "Id": "702",
-                "Name": "Glyph of Hammer of the Righteous",
-                "Rune": "UI-Glyph-Rune-8",
-                "Description": "Your Hammer of the Righteous hits 1 additional target."
-              },
-              {
-                "Id": "187",
-                "Name": "Glyph of Hammer of Wrath",
-                "Rune": "UI-Glyph-Rune-16",
-                "Description": "Reduces the mana cost of Hammer of Wrath by 100%."
-              },
-              {
-                "Id": "196",
-                "Name": "Glyph of Holy Light",
-                "Rune": "UI-Glyph-Rune1",
-                "Description": "Your Holy Light grants 10% of its heal amount to up to 5 friendly targets within 8 yards of the initial target."
-              },
-              {
-                "Id": "706",
-                "Name": "Glyph of Holy Shock",
-                "Rune": "UI-Glyph-Rune-10",
-                "Description": "Reduces the cooldown of Holy Shock by 1 sec."
-              },
-              {
-                "Id": "559",
-                "Name": "Glyph of Holy Wrath",
-                "Rune": "UI-Glyph-Rune-11",
-                "Description": "Reduces the cooldown of your Holy Wrath spell by 15 sec."
-              },
-              {
-                "Id": "183",
-                "Name": "Glyph of Judgement",
-                "Rune": "UI-Glyph-Rune-8",
-                "Description": "Your Judgements deal 10% more damage."
-              },
-              {
-                "Id": "190",
-                "Name": "Glyph of Righteous Defense",
-                "Rune": "UI-Glyph-Rune-17",
-                "Description": "Increases the chance for your Righteous Defense and Hand of Reckoning abilities to work successfully by 8% on each target."
-              },
-              {
-                "Id": "707",
-                "Name": "Glyph of Salvation",
-                "Rune": "UI-Glyph-Rune-11",
-                "Description": "When you cast Hand of Salvation on yourself, it also reduces damage taken by 20%."
-              },
-              {
-                "Id": "184",
-                "Name": "Glyph of Seal of Command",
-                "Rune": "UI-Glyph-Rune-20",
-                "Description": "You gain 8% of your base mana each time you use a Judgement with Seal of Command active."
-              },
-              {
-                "Id": "200",
-                "Name": "Glyph of Seal of Light",
-                "Rune": "UI-Glyph-Rune-3",
-                "Description": "While Seal of Light is active, the effect of your healing spells is increased by 5%."
-              },
-              {
-                "Id": "560",
-                "Name": "Glyph of Seal of Righteousness",
-                "Rune": "UI-Glyph-Rune-19",
-                "Description": "Increases the damage done by Seal of Righteousness by 10%."
-              },
-              {
-                "Id": "561",
-                "Name": "Glyph of Seal of Vengeance",
-                "Rune": "UI-Glyph-Rune-15",
-                "Description": "Your Seal of Vengeance or Seal of Corruption also grants 10 expertise while active."
-              },
-              {
-                "Id": "199",
-                "Name": "Glyph of Seal of Wisdom",
-                "Rune": "UI-Glyph-Rune-4",
-                "Description": "While Seal of Wisdom is active, the cost of your healing spells is reduced by 5%."
-              },
-              {
-                "Id": "704",
-                "Name": "Glyph of Shield of Righteousness",
-                "Rune": "UI-Glyph-Rune1",
-                "Description": "Reduces the mana cost of Shield of Righteousness by 80%."
-              },
-              {
-                "Id": "186",
-                "Name": "Glyph of Spiritual Attunement",
-                "Rune": "UI-Glyph-Rune-14",
-                "Description": "Increases the amount of mana gained from your Spiritual Attunement spell by an additional 2%."
-              },
-              {
-                "Id": "192",
-                "Name": "Glyph of Turn Evil",
-                "Rune": "UI-Glyph-Rune-9",
-                "Description": "Reduces the casting time of your Turn Evil spell by 100%, but increases the cooldown by 8 sec."
-              }
-            ]
-          }
-        }
-      },
-      {
-        "Name": "Hunter",
-        "Glyphs": {
-          "Minor": {
-            "Glyph": [
-              {
-                "Id": "441",
-                "Name": "Glyph of Feign Death",
-                "Rune": "UI-Glyph-Rune-19",
-                "Description": "Reduces the cooldown of your Feign Death spell by 5 sec."
-              },
-              {
-                "Id": "440",
-                "Name": "Glyph of Mend Pet",
-                "Rune": "UI-Glyph-Rune-13",
-                "Description": "Your Mend Pet spell increases your pet's happiness slightly."
-              },
-              {
-                "Id": "444",
-                "Name": "Glyph of Possessed Strength",
-                "Rune": "UI-Glyph-Rune-8",
-                "Description": "Increases the damage your pet inflicts while using Eyes of the Beast by 50%."
-              },
-              {
-                "Id": "439",
-                "Name": "Glyph of Revive Pet",
-                "Rune": "UI-Glyph-Rune-18",
-                "Description": "Reduces the pushback suffered from damaging attacks while casting Revive Pet by 100%."
-              },
-              {
-                "Id": "442",
-                "Name": "Glyph of Scare Beast",
-                "Rune": "UI-Glyph-Rune-19",
-                "Description": "Reduces the pushback suffered from damaging attacks while casting Scare Beast by 75%."
-              },
-              {
-                "Id": "443",
-                "Name": "Glyph of the Pack",
-                "Rune": "UI-Glyph-Rune-4",
-                "Description": "Increases the range of your Aspect of the Pack ability by 15 yards."
-              }
-            ]
+          {
+            "Id": "762",
+            "Name": "Glyph of Bladestorm",
+            "Rune": "UI-Glyph-Rune-18",
+            "Description": "Reduces the cooldown on Bladestorm by 15 sec."
           },
-          "Major": {
-            "Glyph": [
-              {
-                "Id": "351",
-                "Name": "Glyph of Aimed Shot",
-                "Rune": "UI-Glyph-Rune-5",
-                "Description": "Reduces the cooldown of your Aimed Shot ability by 2 sec."
-              },
-              {
-                "Id": "352",
-                "Name": "Glyph of Arcane Shot",
-                "Rune": "UI-Glyph-Rune-6",
-                "Description": "Your Arcane Shot refunds 20% of its mana cost if the target has one of your Stings active on it."
-              },
-              {
-                "Id": "355",
-                "Name": "Glyph of Aspect of the Viper",
-                "Rune": "UI-Glyph-Rune-18",
-                "Description": "Increases the amount of mana gained from attacks while Aspect of the Viper is active by 10%."
-              },
-              {
-                "Id": "356",
-                "Name": "Glyph of Bestial Wrath",
-                "Rune": "UI-Glyph-Rune-1",
-                "Description": "Decreases the cooldown of Bestial Wrath by 20 sec."
-              },
-              {
-                "Id": "677",
-                "Name": "Glyph of Chimera Shot",
-                "Rune": "UI-Glyph-Rune-15",
-                "Description": "Reduces the cooldown of Chimera Shot by 1 sec."
-              },
-              {
-                "Id": "357",
-                "Name": "Glyph of Deterrence",
-                "Rune": "UI-Glyph-Rune-2",
-                "Description": "Decreases the cooldown of Deterrence by 10 sec."
-              },
-              {
-                "Id": "358",
-                "Name": "Glyph of Disengage",
-                "Rune": "UI-Glyph-Rune-7",
-                "Description": "Decreases the cooldown of Disengage by 5 sec."
-              },
-              {
-                "Id": "691",
-                "Name": "Glyph of Explosive Shot",
-                "Rune": "UI-Glyph-Rune-16",
-                "Description": "Increases the critical strike chance of Explosive Shot by 4%."
-              },
-              {
-                "Id": "693",
-                "Name": "Glyph of Explosive Trap",
-                "Rune": "UI-Glyph-Rune-18",
-                "Description": "The periodic damage from your Explosive Trap can now be critical strikes."
-              },
-              {
-                "Id": "359",
-                "Name": "Glyph of Freezing Trap",
-                "Rune": "UI-Glyph-Rune-10",
-                "Description": "When your Freezing Trap breaks, the victim's movement speed is reduced by 30% for 4 sec."
-              },
-              {
-                "Id": "360",
-                "Name": "Glyph of Frost Trap",
-                "Rune": "UI-Glyph-Rune-16",
-                "Description": "Increases the radius of the effect from your Frost Trap by 2 yards."
-              },
-              {
-                "Id": "361",
-                "Name": "Glyph of Hunter's Mark",
-                "Rune": "UI-Glyph-Rune1",
-                "Description": "Increases the attack power bonus of your Hunter's Mark by 20%."
-              },
-              {
-                "Id": "362",
-                "Name": "Glyph of Immolation Trap",
-                "Rune": "UI-Glyph-Rune-8",
-                "Description": "Decreases the duration of the effect from your Immolation Trap by 6 sec., but damage while active is increased by 100%."
-              },
-              {
-                "Id": "692",
-                "Name": "Glyph of Kill Shot",
-                "Rune": "UI-Glyph-Rune-17",
-                "Description": "Reduces the cooldown of Kill Shot by 6 sec."
-              },
-              {
-                "Id": "354",
-                "Name": "Glyph of Mending",
-                "Rune": "UI-Glyph-Rune-14",
-                "Description": "Increases the healing done by your Mend Pet ability by 40%."
-              },
-              {
-                "Id": "364",
-                "Name": "Glyph of Multi-Shot",
-                "Rune": "UI-Glyph-Rune-17",
-                "Description": "Decreases the cooldown of Multi-Shot by 1 sec."
-              },
-              {
-                "Id": "365",
-                "Name": "Glyph of Rapid Fire",
-                "Rune": "UI-Glyph-Rune-20",
-                "Description": "Increases the haste from Rapid Fire by an additional 8%."
-              },
-              {
-                "Id": "695",
-                "Name": "Glyph of Raptor Strike",
-                "Rune": "UI-Glyph-Rune-2",
-                "Description": "Reduces damage taken by 20% for 3 sec after using Raptor Strike."
-              },
-              {
-                "Id": "694",
-                "Name": "Glyph of Scatter Shot",
-                "Rune": "UI-Glyph-Rune-19",
-                "Description": "Increases the range of Scatter Shot by 3 yards."
-              },
-              {
-                "Id": "366",
-                "Name": "Glyph of Serpent Sting",
-                "Rune": "UI-Glyph-Rune-3",
-                "Description": "Increases the duration of your Serpent Sting by 6 sec."
-              },
-              {
-                "Id": "367",
-                "Name": "Glyph of Snake Trap",
-                "Rune": "UI-Glyph-Rune-4",
-                "Description": "Snakes from your Snake Trap take 90% reduced damage from area of effect spells."
-              },
-              {
-                "Id": "368",
-                "Name": "Glyph of Steady Shot",
-                "Rune": "UI-Glyph-Rune-9",
-                "Description": "Increases the damage dealt by Steady Shot by 10% when your target is afflicted with Serpent Sting."
-              },
-              {
-                "Id": "353",
-                "Name": "Glyph of the Beast",
-                "Rune": "UI-Glyph-Rune-12",
-                "Description": "Increases the attack power bonus of Aspect of the Beast for you and your pet by an additional 2%."
-              },
-              {
-                "Id": "363",
-                "Name": "Glyph of the Hawk",
-                "Rune": "UI-Glyph-Rune-13",
-                "Description": "Increases the haste bonus of the Improved Aspect of the Hawk effect by an additional 6%."
-              },
-              {
-                "Id": "369",
-                "Name": "Glyph of Trueshot Aura",
-                "Rune": "UI-Glyph-Rune-11",
-                "Description": "While your Trueshot Aura is active, you have 10% increased critical strike chance on your Aimed Shot."
-              },
-              {
-                "Id": "370",
-                "Name": "Glyph of Volley",
-                "Rune": "UI-Glyph-Rune-15",
-                "Description": "Decreases the mana cost of Volley by 20%."
-              },
-              {
-                "Id": "371",
-                "Name": "Glyph of Wyvern Sting",
-                "Rune": "UI-Glyph-Rune-19",
-                "Description": "Decreases the cooldown of your Wyvern Sting by 6 sec."
-              }
-            ]
-          }
-        }
-      },
-      {
-        "Name": "Rogue",
-        "Glyphs": {
-          "Minor": {
-            "Glyph": [
-              {
-                "Id": "468",
-                "Name": "Glyph of Blurred Speed",
-                "Rune": "UI-Glyph-Rune1",
-                "Description": "Enables you to walk on water while your Sprint ability is active."
-              },
-              {
-                "Id": "464",
-                "Name": "Glyph of Distract",
-                "Rune": "UI-Glyph-Rune-12",
-                "Description": "Increases the range of your Distract ability by 5 yards."
-              },
-              {
-                "Id": "465",
-                "Name": "Glyph of Pick Lock",
-                "Rune": "UI-Glyph-Rune-7",
-                "Description": "Reduces the cast time of your Pick Lock ability by 100%."
-              },
-              {
-                "Id": "466",
-                "Name": "Glyph of Pick Pocket",
-                "Rune": "UI-Glyph-Rune-14",
-                "Description": "Increases the range of your Pick Pocket ability by 5 yards."
-              },
-              {
-                "Id": "467",
-                "Name": "Glyph of Safe Fall",
-                "Rune": "UI-Glyph-Rune-5",
-                "Description": "Increases the distance your Safe Fall ability allows you to fall without taking damage."
-              },
-              {
-                "Id": "469",
-                "Name": "Glyph of Vanish",
-                "Rune": "UI-Glyph-Rune-15",
-                "Description": "Increases your movement speed by 30% while the Vanish effect is active."
-              }
-            ]
+          {
+            "Id": "502",
+            "Name": "Glyph of Blocking",
+            "Rune": "UI-Glyph-Rune-20",
+            "Description": "Increases your block value by 10% for 10 sec after using your Shield Slam ability."
           },
-          "Major": {
-            "Glyph": [
-              {
-                "Id": "391",
-                "Name": "Glyph of Adrenaline Rush",
-                "Rune": "UI-Glyph-Rune-11",
-                "Description": "Increases the duration of Adrenaline Rush by 5 sec."
-              },
-              {
-                "Id": "392",
-                "Name": "Glyph of Ambush",
-                "Rune": "UI-Glyph-Rune-8",
-                "Description": "Increases the range on Ambush by 5 yards."
-              },
-              {
-                "Id": "393",
-                "Name": "Glyph of Backstab",
-                "Rune": "UI-Glyph-Rune-5",
-                "Description": "Your Backstab increases the duration of your Rupture effect on the target by 2 sec, up to a maximum of 6 additional sec."
-              },
-              {
-                "Id": "394",
-                "Name": "Glyph of Blade Flurry",
-                "Rune": "UI-Glyph-Rune-3",
-                "Description": "Reduces the energy cost of Blade Flurry by 100%."
-              },
-              {
-                "Id": "734",
-                "Name": "Glyph of Cloak of Shadows",
-                "Rune": "UI-Glyph-Rune-5",
-                "Description": "While Cloak of Shadows is active, you take 40% less physical damage."
-              },
-              {
-                "Id": "395",
-                "Name": "Glyph of Crippling Poison",
-                "Rune": "UI-Glyph-Rune-13",
-                "Description": "Increases the chance to inflict your target with Crippling Poison by an additional 20%."
-              },
-              {
-                "Id": "396",
-                "Name": "Glyph of Deadly Throw",
-                "Rune": "UI-Glyph-Rune-15",
-                "Description": "Increases the slowing effect on Deadly Throw by 20%."
-              },
-              {
-                "Id": "791",
-                "Name": "Glyph of Envenom",
-                "Rune": "UI-Glyph-Rune1",
-                "Description": "Your Envenom ability no longer consumes Deadly Poison from your target."
-              },
-              {
-                "Id": "397",
-                "Name": "Glyph of Evasion",
-                "Rune": "UI-Glyph-Rune-6",
-                "Description": "Increases the duration of Evasion by 5 sec."
-              },
-              {
-                "Id": "398",
-                "Name": "Glyph of Eviscerate",
-                "Rune": "UI-Glyph-Rune-12",
-                "Description": "Increases the critical strike chance of Eviscerate by 10%."
-              },
-              {
-                "Id": "399",
-                "Name": "Glyph of Expose Armor",
-                "Rune": "UI-Glyph-Rune-14",
-                "Description": "Increases the duration of Expose Armor by 12 sec."
-              },
-              {
-                "Id": "731",
-                "Name": "Glyph of Fan of Knives",
-                "Rune": "UI-Glyph-Rune-20",
-                "Description": "Increases the damage done by Fan of Knives by 20%."
-              },
-              {
-                "Id": "400",
-                "Name": "Glyph of Feint",
-                "Rune": "UI-Glyph-Rune1",
-                "Description": "Reduces the energy cost of Feint by 20."
-              },
-              {
-                "Id": "401",
-                "Name": "Glyph of Garrote",
-                "Rune": "UI-Glyph-Rune-18",
-                "Description": "Reduces the duration of your Garrote ability by 3 sec and increases the total damage it deals by 20%."
-              },
-              {
-                "Id": "402",
-                "Name": "Glyph of Ghostly Strike",
-                "Rune": "UI-Glyph-Rune-17",
-                "Description": "Increases the damage dealt by Ghostly Strike by 40% and the duration of its effect by 4 sec., but increases its cooldown by 10 sec."
-              },
-              {
-                "Id": "403",
-                "Name": "Glyph of Gouge",
-                "Rune": "UI-Glyph-Rune-1",
-                "Description": "Reduces the energy cost of Gouge by 15."
-              },
-              {
-                "Id": "404",
-                "Name": "Glyph of Hemorrhage",
-                "Rune": "UI-Glyph-Rune-4",
-                "Description": "Increases the damage bonus against targets afflicted by Hemorrhage by 40%."
-              },
-              {
-                "Id": "714",
-                "Name": "Glyph of Hunger for Blood",
-                "Rune": "UI-Glyph-Rune-18",
-                "Description": "Increases the bonus damage from Hunger For Blood by 3%."
-              },
-              {
-                "Id": "715",
-                "Name": "Glyph of Killing Spree",
-                "Rune": "UI-Glyph-Rune-19",
-                "Description": "Reduces the cooldown on Killing Spree by 45 sec."
-              },
-              {
-                "Id": "733",
-                "Name": "Glyph of Mutilate",
-                "Rune": "UI-Glyph-Rune-4",
-                "Description": "Reduces the cost of Mutilate by 5 energy."
-              },
-              {
-                "Id": "405",
-                "Name": "Glyph of Preparation",
-                "Rune": "UI-Glyph-Rune-9",
-                "Description": "Your Preparation ability also instantly resets the cooldown of Blade Flurry, Dismantle, and Kick."
-              },
-              {
-                "Id": "406",
-                "Name": "Glyph of Rupture",
-                "Rune": "UI-Glyph-Rune-20",
-                "Description": "Increases the duration of Rupture by 4 sec."
-              },
-              {
-                "Id": "407",
-                "Name": "Glyph of Sap",
-                "Rune": "UI-Glyph-Rune-2",
-                "Description": "Increases the duration of Sap by 20 sec."
-              },
-              {
-                "Id": "716",
-                "Name": "Glyph of Shadow Dance",
-                "Rune": "UI-Glyph-Rune-2",
-                "Description": "Increases the duration of Shadow Dance by 2 sec."
-              },
-              {
-                "Id": "409",
-                "Name": "Glyph of Sinister Strike",
-                "Rune": "UI-Glyph-Rune-7",
-                "Description": "Your Sinister Strike critical strikes have a 101% chance to add an additional combo point."
-              },
-              {
-                "Id": "410",
-                "Name": "Glyph of Slice and Dice",
-                "Rune": "UI-Glyph-Rune-10",
-                "Description": "Increases the duration of Slice and Dice by 3 sec."
-              },
-              {
-                "Id": "411",
-                "Name": "Glyph of Sprint",
-                "Rune": "UI-Glyph-Rune-16",
-                "Description": "Increases the movement speed of your Sprint ability by an additional 30%."
-              },
-              {
-                "Id": "732",
-                "Name": "Glyph of Tricks of the Trade",
-                "Rune": "UI-Glyph-Rune-3",
-                "Description": "The bonus damage and threat redirection granted by your Tricks of the Trade ability lasts an additional 4 sec."
-              },
-              {
-                "Id": "408",
-                "Name": "Glyph of Vigor",
-                "Rune": "UI-Glyph-Rune-19",
-                "Description": "Vigor grants an additional 10 maximum energy."
-              }
-            ]
-          }
-        }
-      },
-      {
-        "Name": "Priest",
-        "Glyphs": {
-          "Minor": {
-            "Glyph": [
-              {
-                "Id": "458",
-                "Name": "Glyph of Fading",
-                "Rune": "UI-Glyph-Rune-9",
-                "Description": "Reduces the mana cost of your Fade spell by 30%."
-              },
-              {
-                "Id": "460",
-                "Name": "Glyph of Fortitude",
-                "Rune": "UI-Glyph-Rune-17",
-                "Description": "Reduces the mana cost of your Power Word: Fortitude and Prayer of Fortitude spells by 50%."
-              },
-              {
-                "Id": "459",
-                "Name": "Glyph of Levitate",
-                "Rune": "UI-Glyph-Rune-3",
-                "Description": "Your Levitate spell no longer requires a reagent."
-              },
-              {
-                "Id": "461",
-                "Name": "Glyph of Shackle Undead",
-                "Rune": "UI-Glyph-Rune-10",
-                "Description": "Increases the range of your Shackle Undead spell by 5 yards."
-              },
-              {
-                "Id": "462",
-                "Name": "Glyph of Shadow Protection",
-                "Rune": "UI-Glyph-Rune1",
-                "Description": "Increases the duration of your Shadow Protection and Prayer of Shadow Protection spells by 10 min."
-              },
-              {
-                "Id": "463",
-                "Name": "Glyph of Shadowfiend",
-                "Rune": "UI-Glyph-Rune-18",
-                "Description": "Receive 5% of your maximum mana if your Shadowfiend dies from damage."
-              }
-            ]
+          {
+            "Id": "490",
+            "Name": "Glyph of Bloodthirst",
+            "Rune": "UI-Glyph-Rune-13",
+            "Description": "Increases the healing you receive from your Bloodthirst ability by 100%."
           },
-          "Major": {
-            "Glyph": [
-              {
-                "Id": "251",
-                "Name": "Glyph of Circle of Healing",
-                "Rune": "UI-Glyph-Rune-11",
-                "Description": "Your Circle of Healing spell heals 1 additional target."
-              },
-              {
-                "Id": "252",
-                "Name": "Glyph of Dispel Magic",
-                "Rune": "UI-Glyph-Rune-10",
-                "Description": "Your Dispel Magic spell also heals your target for 3% of maximum health."
-              },
-              {
-                "Id": "708",
-                "Name": "Glyph of Dispersion",
-                "Rune": "UI-Glyph-Rune-12",
-                "Description": "Reduces the cooldown on Dispersion by 45 sec."
-              },
-              {
-                "Id": "253",
-                "Name": "Glyph of Fade",
-                "Rune": "UI-Glyph-Rune-12",
-                "Description": "Reduces the cooldown of your Fade spell by 9 sec."
-              },
-              {
-                "Id": "254",
-                "Name": "Glyph of Fear Ward",
-                "Rune": "UI-Glyph-Rune-16",
-                "Description": "Reduces cooldown and duration of Fear Ward by 60 sec."
-              },
-              {
-                "Id": "255",
-                "Name": "Glyph of Flash Heal",
-                "Rune": "UI-Glyph-Rune-14",
-                "Description": "Reduces the mana cost of your Flash Heal by 10%."
-              },
-              {
-                "Id": "709",
-                "Name": "Glyph of Guardian Spirit",
-                "Rune": "UI-Glyph-Rune-13",
-                "Description": "If your Guardian Spirit lasts its entire duration without being triggered, the cooldown is reset to 1 min."
-              },
-              {
-                "Id": "256",
-                "Name": "Glyph of Holy Nova",
-                "Rune": "UI-Glyph-Rune1",
-                "Description": "Increases the damage and healing of your Holy Nova spell by an additional 20%."
-              },
-              {
-                "Id": "712",
-                "Name": "Glyph of Hymn of Hope",
-                "Rune": "UI-Glyph-Rune-16",
-                "Description": "Your Hymn of Hope lasts an additional 2 sec."
-              },
-              {
-                "Id": "257",
-                "Name": "Glyph of Inner Fire",
-                "Rune": "UI-Glyph-Rune-18",
-                "Description": "Increases the armor from your Inner Fire spell by 50%."
-              },
-              {
-                "Id": "258",
-                "Name": "Glyph of Lightwell",
-                "Rune": "UI-Glyph-Rune-9",
-                "Description": "Increases the amount healed by your Lightwell by 20%"
-              },
-              {
-                "Id": "259",
-                "Name": "Glyph of Mass Dispel",
-                "Rune": "UI-Glyph-Rune-19",
-                "Description": "Reduces the mana cost of Mass Dispel by 35%."
-              },
-              {
-                "Id": "260",
-                "Name": "Glyph of Mind Control",
-                "Rune": "UI-Glyph-Rune-20",
-                "Description": "Reduces the chance targets will resist or break your Mind Control spell by an additional 17%."
-              },
-              {
-                "Id": "269",
-                "Name": "Glyph of Mind Flay",
-                "Rune": "UI-Glyph-Rune-2",
-                "Description": "Increases the damage done by your Mind Flay spell by 10% when your target is afflicted with Shadow Word: Pain."
-              },
-              {
-                "Id": "711",
-                "Name": "Glyph of Mind Sear",
-                "Rune": "UI-Glyph-Rune-15",
-                "Description": "Increases the radius of effect on Mind Sear by 5 yards."
-              },
-              {
-                "Id": "713",
-                "Name": "Glyph of Pain Suppression",
-                "Rune": "UI-Glyph-Rune-17",
-                "Description": "Allows Pain Suppression to be cast while stunned."
-              },
-              {
-                "Id": "710",
-                "Name": "Glyph of Penance",
-                "Rune": "UI-Glyph-Rune-14",
-                "Description": "Reduces the cooldown of Penance by 2 sec."
-              },
-              {
-                "Id": "263",
-                "Name": "Glyph of Power Word: Shield",
-                "Rune": "UI-Glyph-Rune-5",
-                "Description": "Your Power Word: Shield also heals the target for 20% of the absorption amount."
-              },
-              {
-                "Id": "264",
-                "Name": "Glyph of Prayer of Healing",
-                "Rune": "UI-Glyph-Rune-3",
-                "Description": "Your Prayer of Healing spell also heals an additional 20% of its initial heal over 6 sec."
-              },
-              {
-                "Id": "265",
-                "Name": "Glyph of Psychic Scream",
-                "Rune": "UI-Glyph-Rune-6",
-                "Description": "Increases the duration of your Psychic Scream by 2 sec. and increases its cooldown by 8 sec."
-              },
-              {
-                "Id": "266",
-                "Name": "Glyph of Renew",
-                "Rune": "UI-Glyph-Rune-1",
-                "Description": "Reduces the duration of your Renew by 3 sec. but increases the amount healed each tick by 25%."
-              },
-              {
-                "Id": "267",
-                "Name": "Glyph of Scourge Imprisonment",
-                "Rune": "UI-Glyph-Rune-17",
-                "Description": "Reduces the cast time of your Shackle Undead by 1.1 sec."
-              },
-              {
-                "Id": "262",
-                "Name": "Glyph of Shadow",
-                "Rune": "UI-Glyph-Rune-13",
-                "Description": "While in Shadowform, your non-periodic spell critical strikes increase your spell power by 30% of your Spirit for 10 sec."
-              },
-              {
-                "Id": "268",
-                "Name": "Glyph of Shadow Word: Death",
-                "Rune": "UI-Glyph-Rune-15",
-                "Description": "Targets below 35% health take an additional 10% damage from your Shadow Word: Death spell."
-              },
-              {
-                "Id": "261",
-                "Name": "Glyph of Shadow Word: Pain",
-                "Rune": "UI-Glyph-Rune-8",
-                "Description": "The periodic damage ticks of your Shadow Word: Pain spell restore 1% of your base mana."
-              },
-              {
-                "Id": "270",
-                "Name": "Glyph of Smite",
-                "Rune": "UI-Glyph-Rune-7",
-                "Description": "Your Smite spell inflicts an additional 20% damage against targets afflicted by Holy Fire."
-              },
-              {
-                "Id": "271",
-                "Name": "Glyph of Spirit of Redemption",
-                "Rune": "UI-Glyph-Rune-4",
-                "Description": "Increases the duration of Spirit of Redemption by 6 sec."
-              }
-            ]
-          }
-        }
-      },
-      {
-        "Name": "Shaman",
-        "Glyphs": {
-          "Minor": {
-            "Glyph": [
-              {
-                "Id": "470",
-                "Name": "Glyph of Astral Recall",
-                "Rune": "UI-Glyph-Rune-17",
-                "Description": "Cooldown of your Astral Recall spell reduced by 7.5.1 min."
-              },
-              {
-                "Id": "552",
-                "Name": "Glyph of Ghost Wolf",
-                "Rune": "UI-Glyph-Rune-11",
-                "Description": "Your Ghost Wolf form regenerates an additional 1% of your maximum health every 5 sec."
-              },
-              {
-                "Id": "473",
-                "Name": "Glyph of Renewed Life",
-                "Rune": "UI-Glyph-Rune-20",
-                "Description": "Your Reincarnation spell no longer requires a reagent."
-              },
-              {
-                "Id": "612",
-                "Name": "Glyph of Thunderstorm",
-                "Rune": "UI-Glyph-Rune-8",
-                "Description": "Increases the mana you receive from your Thunderstorm spell by 2%, but it no longer knocks enemies back."
-              },
-              {
-                "Id": "474",
-                "Name": "Glyph of Water Breathing",
-                "Rune": "UI-Glyph-Rune-16",
-                "Description": "Your Water Breathing spell no longer requires a reagent."
-              },
-              {
-                "Id": "475",
-                "Name": "Glyph of Water Shield",
-                "Rune": "UI-Glyph-Rune-11",
-                "Description": "Increases the number of charges on your Water Shield spell by 1."
-              },
-              {
-                "Id": "476",
-                "Name": "Glyph of Water Walking",
-                "Rune": "UI-Glyph-Rune-2",
-                "Description": "Your Water Walking spell no longer requires a reagent."
-              }
-            ]
+          {
+            "Id": "492",
+            "Name": "Glyph of Cleaving",
+            "Rune": "UI-Glyph-Rune-10",
+            "Description": "Increases the number of targets your Cleave hits by 1."
           },
-          "Major": {
-            "Glyph": [
-              {
-                "Id": "212",
-                "Name": "Glyph of Chain Heal",
-                "Rune": "UI-Glyph-Rune-17",
-                "Description": "Your Chain Heal heals 1 additional target."
-              },
-              {
-                "Id": "213",
-                "Name": "Glyph of Chain Lightning",
-                "Rune": "UI-Glyph-Rune-13",
-                "Description": "Your Chain Lightning strikes 1 additional target."
-              },
-              {
-                "Id": "751",
-                "Name": "Glyph of Earth Shield",
-                "Rune": "UI-Glyph-Rune-9",
-                "Description": "Increases the amount healed by your Earth Shield by 20%."
-              },
-              {
-                "Id": "216",
-                "Name": "Glyph of Earthliving Weapon",
-                "Rune": "UI-Glyph-Rune1",
-                "Description": "Increases the chance for your Earthliving weapon to trigger by 5%."
-              },
-              {
-                "Id": "230",
-                "Name": "Glyph of Elemental Mastery",
-                "Rune": "UI-Glyph-Rune-11",
-                "Description": "Reduces the cooldown of your Elemental Mastery ability by 30 sec."
-              },
-              {
-                "Id": "736",
-                "Name": "Glyph of Feral Spirit",
-                "Rune": "UI-Glyph-Rune-7",
-                "Description": "Your spirit wolves gain an additional 30% of your attack power."
-              },
-              {
-                "Id": "217",
-                "Name": "Glyph of Fire Elemental Totem",
-                "Rune": "UI-Glyph-Rune-19",
-                "Description": "Reduces the cooldown of your Fire Elemental Totem by 5 min."
-              },
-              {
-                "Id": "218",
-                "Name": "Glyph of Fire Nova",
-                "Rune": "UI-Glyph-Rune-12",
-                "Description": "Reduces the cooldown of your Fire Nova spell by 3 seconds."
-              },
-              {
-                "Id": "219",
-                "Name": "Glyph of Flame Shock",
-                "Rune": "UI-Glyph-Rune-5",
-                "Description": "Increases the critical strike damage bonus of your Flame Shock damage by 60%."
-              },
-              {
-                "Id": "220",
-                "Name": "Glyph of Flametongue Weapon",
-                "Rune": "UI-Glyph-Rune-14",
-                "Description": "Increases spell critical strike chance by 2% while Flametongue Weapon is active."
-              },
-              {
-                "Id": "221",
-                "Name": "Glyph of Frost Shock",
-                "Rune": "UI-Glyph-Rune-2",
-                "Description": "Increases the duration of your Frost Shock by 2 sec."
-              },
-              {
-                "Id": "222",
-                "Name": "Glyph of Healing Stream Totem",
-                "Rune": "UI-Glyph-Rune-7",
-                "Description": "Your Healing Stream Totem heals for an additional 20%."
-              },
-              {
-                "Id": "223",
-                "Name": "Glyph of Healing Wave",
-                "Rune": "UI-Glyph-Rune-9",
-                "Description": "Your Healing Wave also heals you for 20% of the healing effect when you heal someone else."
-              },
-              {
-                "Id": "753",
-                "Name": "Glyph of Hex",
-                "Rune": "UI-Glyph-Rune-1",
-                "Description": "Increases the damage your Hex target can take before the Hex effect is removed by 20%."
-              },
-              {
-                "Id": "214",
-                "Name": "Glyph of Lava",
-                "Rune": "UI-Glyph-Rune-15",
-                "Description": "Your Lava Burst spell gains an additional 10% of your spellpower."
-              },
-              {
-                "Id": "229",
-                "Name": "Glyph of Lava Lash",
-                "Rune": "UI-Glyph-Rune-1",
-                "Description": "Damage on your Lava Lash is increased by an additional 10% if your weapon is enchanted with Flametongue."
-              },
-              {
-                "Id": "224",
-                "Name": "Glyph of Lesser Healing Wave",
-                "Rune": "UI-Glyph-Rune-10",
-                "Description": "Your Lesser Healing Wave heals for 20% more if the target is also affected by Earth Shield."
-              },
-              {
-                "Id": "226",
-                "Name": "Glyph of Lightning Bolt",
-                "Rune": "UI-Glyph-Rune-18",
-                "Description": "Increases the damage dealt by Lightning Bolt by 4%."
-              },
-              {
-                "Id": "225",
-                "Name": "Glyph of Lightning Shield",
-                "Rune": "UI-Glyph-Rune-6",
-                "Description": "Increases the damage from Lightning Shield by 20%."
-              },
-              {
-                "Id": "227",
-                "Name": "Glyph of Mana Tide Totem",
-                "Rune": "UI-Glyph-Rune-20",
-                "Description": "Your Mana Tide Totem grants an additional 1% of each target's maximum mana each time it pulses."
-              },
-              {
-                "Id": "737",
-                "Name": "Glyph of Riptide",
-                "Rune": "UI-Glyph-Rune-8",
-                "Description": "Increases the duration of Riptide by 6 sec."
-              },
-              {
-                "Id": "215",
-                "Name": "Glyph of Shocking",
-                "Rune": "UI-Glyph-Rune-4",
-                "Description": "Reduces the global cooldown triggered by your shock spells to 1 sec."
-              },
-              {
-                "Id": "754",
-                "Name": "Glyph of Stoneclaw Totem",
-                "Rune": "UI-Glyph-Rune-10",
-                "Description": "Your Stoneclaw Totem also places a damage absorb shield on you, equal to 4 times the strength of the shield it places on your totems."
-              },
-              {
-                "Id": "228",
-                "Name": "Glyph of Stormstrike",
-                "Rune": "UI-Glyph-Rune-3",
-                "Description": "Increases the Nature damage bonus from your Stormstrike ability by an additional 8%."
-              },
-              {
-                "Id": "735",
-                "Name": "Glyph of Thunder",
-                "Rune": "UI-Glyph-Rune-6",
-                "Description": "Reduces the cooldown on Thunderstorm by 10 sec."
-              },
-              {
-                "Id": "752",
-                "Name": "Glyph of Totem of Wrath",
-                "Rune": "UI-Glyph-Rune1",
-                "Description": "When you cast Totem of Wrath, you gain 30% of the totem's bonus spell power for 300 sec."
-              },
-              {
-                "Id": "211",
-                "Name": "Glyph of Water Mastery",
-                "Rune": "UI-Glyph-Rune-16",
-                "Description": "Increases the passive mana regeneration of your Water Shield spell by 30%."
-              },
-              {
-                "Id": "231",
-                "Name": "Glyph of Windfury Weapon",
-                "Rune": "UI-Glyph-Rune-8",
-                "Description": "Increases the chance per swing for Windfury Weapon to trigger by 2%."
-              }
-            ]
-          }
-        }
-      },
-      {
-        "Name": "Mage",
-        "Glyphs": {
-          "Minor": {
-            "Glyph": [
-              {
-                "Id": "445",
-                "Name": "Glyph of Arcane Intellect",
-                "Rune": "UI-Glyph-Rune1",
-                "Description": "Reduces the mana cost of your Arcane Intellect and Arcane Brilliance spells by 50%."
-              },
-              {
-                "Id": "611",
-                "Name": "Glyph of Blast Wave",
-                "Rune": "UI-Glyph-Rune1",
-                "Description": "The mana cost of your Blast Wave spell is reduced by 15%, but it no longer knocks enemies back."
-              },
-              {
-                "Id": "446",
-                "Name": "Glyph of Fire Ward",
-                "Rune": "UI-Glyph-Rune-5",
-                "Description": "You have an additional 5% chance to reflect Fire spells while your Fire Ward is active."
-              },
-              {
-                "Id": "448",
-                "Name": "Glyph of Frost Armor",
-                "Rune": "UI-Glyph-Rune-10",
-                "Description": "Increases the duration of your Frost Armor and Ice Armor spells by 30 min."
-              },
-              {
-                "Id": "447",
-                "Name": "Glyph of Frost Ward",
-                "Rune": "UI-Glyph-Rune-14",
-                "Description": "You have an additional 5% chance to reflect Frost spells while your Frost Ward is active."
-              },
-              {
-                "Id": "451",
-                "Name": "Glyph of Slow Fall",
-                "Rune": "UI-Glyph-Rune-20",
-                "Description": "Your Slow Fall spell no longer requires a reagent."
-              },
-              {
-                "Id": "449",
-                "Name": "Glyph of the Bear Cub",
-                "Rune": "UI-Glyph-Rune-15",
-                "Description": "Your Polymorph: Sheep spell polymorphs the target into a polar bear cub instead."
-              },
-              {
-                "Id": "450",
-                "Name": "Glyph of the Penguin",
-                "Rune": "UI-Glyph-Rune-16",
-                "Description": "Your Polymorph: Sheep spell polymorphs the target into a penguin instead."
-              }
-            ]
+          {
+            "Id": "493",
+            "Name": "Glyph of Devastate",
+            "Rune": "UI-Glyph-Rune-4",
+            "Description": "Your Devastate ability now applies two stacks of Sunder Armor."
           },
-          "Major": {
-            "Glyph": [
-              {
-                "Id": "698",
-                "Name": "Glyph of Arcane Barrage",
-                "Rune": "UI-Glyph-Rune-4",
-                "Description": "Reduces the mana cost of Arcane Barrage by 20%."
-              },
-              {
-                "Id": "651",
-                "Name": "Glyph of Arcane Blast",
-                "Rune": "UI-Glyph-Rune-6",
-                "Description": "Increases the damage from your Arcane Blast buff by 3%."
-              },
-              {
-                "Id": "311",
-                "Name": "Glyph of Arcane Explosion",
-                "Rune": "UI-Glyph-Rune-12",
-                "Description": "Reduces mana cost of Arcane Explosion by 10%."
-              },
-              {
-                "Id": "312",
-                "Name": "Glyph of Arcane Missiles",
-                "Rune": "UI-Glyph-Rune-14",
-                "Description": "Increases the critical strike damage bonus of Arcane Missiles by 25%."
-              },
-              {
-                "Id": "313",
-                "Name": "Glyph of Arcane Power",
-                "Rune": "UI-Glyph-Rune-8",
-                "Description": "Increases the duration of Arcane Power by 3 sec."
-              },
-              {
-                "Id": "314",
-                "Name": "Glyph of Blink",
-                "Rune": "UI-Glyph-Rune-18",
-                "Description": "Increases the distance you travel with the Blink spell by 5 yards."
-              },
-              {
-                "Id": "696",
-                "Name": "Glyph of Deep Freeze",
-                "Rune": "UI-Glyph-Rune-20",
-                "Description": "Increases the range of Deep Freeze by 10 yards."
-              },
-              {
-                "Id": "871",
-                "Name": "Glyph of Eternal Water",
-                "Rune": "UI-Glyph-Rune-18",
-                "Description": "Your Summon Water Elemental now lasts indefinitely, but your Water Elemental can no longer cast Freeze."
-              },
-              {
-                "Id": "315",
-                "Name": "Glyph of Evocation",
-                "Rune": "UI-Glyph-Rune-1",
-                "Description": "Your Evocation ability also causes you to regain 60% of your health over its duration."
-              },
-              {
-                "Id": "317",
-                "Name": "Glyph of Fire Blast",
-                "Rune": "UI-Glyph-Rune-4",
-                "Description": "Increases the critical strike chance of Fire Blast by 50% when the target is stunned or incapacitated."
-              },
-              {
-                "Id": "316",
-                "Name": "Glyph of Fireball",
-                "Rune": "UI-Glyph-Rune-9",
-                "Description": "Reduces the casting time of your Fireball spell by 0.15.2 sec, but removes the damage over time effect."
-              },
-              {
-                "Id": "318",
-                "Name": "Glyph of Frost Nova",
-                "Rune": "UI-Glyph-Rune-5",
-                "Description": "Your Frost Nova targets can take an additional 20% damage before the Frost Nova effect automatically breaks."
-              },
-              {
-                "Id": "319",
-                "Name": "Glyph of Frostbolt",
-                "Rune": "UI-Glyph-Rune-11",
-                "Description": "Increases the damage dealt by Frostbolt by 5%, but removes the slowing effect."
-              },
-              {
-                "Id": "591",
-                "Name": "Glyph of Frostfire",
-                "Rune": "UI-Glyph-Rune-5",
-                "Description": "Increases the initial damage dealt by Frostfire Bolt by 2% and its critical strike chance by 2%."
-              },
-              {
-                "Id": "320",
-                "Name": "Glyph of Ice Armor",
-                "Rune": "UI-Glyph-Rune-6",
-                "Description": "Your Ice Armor and Frost Armor spells grant an additional 50% armor and resistance."
-              },
-              {
-                "Id": "700",
-                "Name": "Glyph of Ice Barrier",
-                "Rune": "UI-Glyph-Rune-6",
-                "Description": "Increases the amount of damage absorbed by your Ice Barrier by 30%."
-              },
-              {
-                "Id": "321",
-                "Name": "Glyph of Ice Block",
-                "Rune": "UI-Glyph-Rune-10",
-                "Description": "Your Frost Nova cooldown is now reset every time you use Ice Block."
-              },
-              {
-                "Id": "322",
-                "Name": "Glyph of Ice Lance",
-                "Rune": "UI-Glyph-Rune-20",
-                "Description": "Your Ice Lance now causes 4 times damage against frozen targets higher level than you instead of triple damage."
-              },
-              {
-                "Id": "323",
-                "Name": "Glyph of Icy Veins",
-                "Rune": "UI-Glyph-Rune-2",
-                "Description": "Your Icy Veins ability also removes all movement slowing and cast time slowing effects."
-              },
-              {
-                "Id": "325",
-                "Name": "Glyph of Invisibility",
-                "Rune": "UI-Glyph-Rune-3",
-                "Description": "Increases the duration of the Invisibility effect by 10 sec."
-              },
-              {
-                "Id": "697",
-                "Name": "Glyph of Living Bomb",
-                "Rune": "UI-Glyph-Rune-3",
-                "Description": "The periodic damage from your Living Bomb can now be critical strikes."
-              },
-              {
-                "Id": "326",
-                "Name": "Glyph of Mage Armor",
-                "Rune": "UI-Glyph-Rune1",
-                "Description": "Your Mage Armor spell grants an additional 20% mana regeneration while casting."
-              },
-              {
-                "Id": "327",
-                "Name": "Glyph of Mana Gem",
-                "Rune": "UI-Glyph-Rune-16",
-                "Description": "Increases the mana received from using a mana gem by 40%."
-              },
-              {
-                "Id": "699",
-                "Name": "Glyph of Mirror Image",
-                "Rune": "UI-Glyph-Rune-5",
-                "Description": "Your Mirror Image spell now creates a 4th copy."
-              },
-              {
-                "Id": "328",
-                "Name": "Glyph of Molten Armor",
-                "Rune": "UI-Glyph-Rune-17",
-                "Description": "Your Molten Armor grants an additional 20% of your spirit as critical strike rating."
-              },
-              {
-                "Id": "329",
-                "Name": "Glyph of Polymorph",
-                "Rune": "UI-Glyph-Rune-15",
-                "Description": "Your Polymorph spell also removes all damage over time effects from the target."
-              },
-              {
-                "Id": "330",
-                "Name": "Glyph of Remove Curse",
-                "Rune": "UI-Glyph-Rune-19",
-                "Description": "Your Remove Curse spell also makes the target immune to all curses for 4 sec."
-              },
-              {
-                "Id": "324",
-                "Name": "Glyph of Scorch",
-                "Rune": "UI-Glyph-Rune-7",
-                "Description": "Increases the damage of your Scorch spell by 20%."
-              },
-              {
-                "Id": "331",
-                "Name": "Glyph of Water Elemental",
-                "Rune": "UI-Glyph-Rune-13",
-                "Description": "Reduces the cooldown of your Summon Water Elemental spell by 30 sec."
-              }
-            ]
-          }
-        }
-      },
-      {
-        "Name": "Warlock",
-        "Glyphs": {
-          "Minor": {
-            "Glyph": [
-              {
-                "Id": "480",
-                "Name": "Glyph of Curse of Exhaustion",
-                "Rune": "UI-Glyph-Rune-14",
-                "Description": "Increases the range of your Curse of Exhaustion spell by 5 yards."
-              },
-              {
-                "Id": "478",
-                "Name": "Glyph of Drain Soul",
-                "Rune": "UI-Glyph-Rune-7",
-                "Description": "Your Drain Soul ability occasionally creates an additional soul shard."
-              },
-              {
-                "Id": "481",
-                "Name": "Glyph of Enslave Demon",
-                "Rune": "UI-Glyph-Rune-6",
-                "Description": "Reduces the cast time of your Enslave Demon spell by 50%."
-              },
-              {
-                "Id": "479",
-                "Name": "Glyph of Kilrogg",
-                "Rune": "UI-Glyph-Rune-13",
-                "Description": "Increases the movement speed of your Eye of Kilrogg by 50% and allows it to fly in areas where flying mounts are enabled."
-              },
-              {
-                "Id": "482",
-                "Name": "Glyph of Souls",
-                "Rune": "UI-Glyph-Rune-17",
-                "Description": "Reduces the mana cost of your Ritual of Souls spell by 70%."
-              },
-              {
-                "Id": "477",
-                "Name": "Glyph of Unending Breath",
-                "Rune": "UI-Glyph-Rune-6",
-                "Description": "Increases the swim speed of targets affected by your Unending Breath spell by 20%."
-              }
-            ]
+          {
+            "Id": "765",
+            "Name": "Glyph of Enraged Regeneration",
+            "Rune": "UI-Glyph-Rune-20",
+            "Description": "Your Enraged Regeneration ability heals for an additional 10% of your health over its duration."
           },
-          "Major": {
-            "Glyph": [
-              {
-                "Id": "757",
-                "Name": "Glyph of Chaos Bolt",
-                "Rune": "UI-Glyph-Rune-13",
-                "Description": "Reduces the cooldown on Chaos Bolt by 2 sec."
-              },
-              {
-                "Id": "273",
-                "Name": "Glyph of Conflagrate",
-                "Rune": "UI-Glyph-Rune-20",
-                "Description": "Your Conflagrate spell no longer consumes your Immolate or Shadowflame spell from the target."
-              },
-              {
-                "Id": "274",
-                "Name": "Glyph of Corruption",
-                "Rune": "UI-Glyph-Rune-5",
-                "Description": "Your Corruption spell has a 4% chance to cause you to enter a Shadow Trance state after damaging the opponent.  The Shadow Trance state reduces the casting time of your next Shadow Bolt spell by 100%."
-              },
-              {
-                "Id": "275",
-                "Name": "Glyph of Curse of Agony",
-                "Rune": "UI-Glyph-Rune-4",
-                "Description": "Increases the duration of your Curse of Agony by 4 sec."
-              },
-              {
-                "Id": "276",
-                "Name": "Glyph of Death Coil",
-                "Rune": "UI-Glyph-Rune-11",
-                "Description": "Increases the duration of your Death Coil by 0.5.1 sec."
-              },
-              {
-                "Id": "758",
-                "Name": "Glyph of Demonic Circle",
-                "Rune": "UI-Glyph-Rune-14",
-                "Description": "Reduces the cooldown on Demonic Circle by 4 sec."
-              },
-              {
-                "Id": "277",
-                "Name": "Glyph of Fear",
-                "Rune": "UI-Glyph-Rune-14",
-                "Description": "Increases the damage your Fear target can take before the Fear effect is removed by 20%."
-              },
-              {
-                "Id": "278",
-                "Name": "Glyph of Felguard",
-                "Rune": "UI-Glyph-Rune-15",
-                "Description": "Increases the Felguard's total attack power by 20%."
-              },
-              {
-                "Id": "279",
-                "Name": "Glyph of Felhunter",
-                "Rune": "UI-Glyph-Rune-13",
-                "Description": "When your Felhunter uses Devour Magic, you will also be healed for that amount."
-              },
-              {
-                "Id": "755",
-                "Name": "Glyph of Haunt",
-                "Rune": "UI-Glyph-Rune-11",
-                "Description": "The bonus damage granted by your Haunt spell is increased by an additional 3%."
-              },
-              {
-                "Id": "280",
-                "Name": "Glyph of Health Funnel",
-                "Rune": "UI-Glyph-Rune-12",
-                "Description": "Reduces the pushback suffered from damaging attacks while channeling your Health Funnel spell by 100%."
-              },
-              {
-                "Id": "281",
-                "Name": "Glyph of Healthstone",
-                "Rune": "UI-Glyph-Rune-6",
-                "Description": "You receive 30% more healing from using a healthstone."
-              },
-              {
-                "Id": "282",
-                "Name": "Glyph of Howl of Terror",
-                "Rune": "UI-Glyph-Rune-3",
-                "Description": "Reduces the cooldown on your Howl of Terror spell by 8 sec."
-              },
-              {
-                "Id": "283",
-                "Name": "Glyph of Immolate",
-                "Rune": "UI-Glyph-Rune-9",
-                "Description": "Increases the periodic damage of your Immolate by 10%."
-              },
-              {
-                "Id": "284",
-                "Name": "Glyph of Imp",
-                "Rune": "UI-Glyph-Rune-18",
-                "Description": "Increases the damage done by your Imp's Firebolt spell by 20%."
-              },
-              {
-                "Id": "272",
-                "Name": "Glyph of Incinerate",
-                "Rune": "UI-Glyph-Rune-8",
-                "Description": "Increases the damage done by Incinerate by 5%."
-              },
-              {
-                "Id": "760",
-                "Name": "Glyph of Life Tap",
-                "Rune": "UI-Glyph-Rune-16",
-                "Description": "When you use Life Tap or Dark Pact, you gain 20% of your Spirit as spell power for 40 sec."
-              },
-              {
-                "Id": "756",
-                "Name": "Glyph of Metamorphosis",
-                "Rune": "UI-Glyph-Rune-12",
-                "Description": "Increases the duration of your Metamorphosis by 6 sec."
-              },
-              {
-                "Id": "911",
-                "Name": "Glyph of Quick Decay",
-                "Rune": "UI-Glyph-Rune-9",
-                "Description": "Your haste now reduces the time between periodic damage ticks of your Corruption spell."
-              },
-              {
-                "Id": "285",
-                "Name": "Glyph of Searing Pain",
-                "Rune": "UI-Glyph-Rune-7",
-                "Description": "Increases the critical strike bonus of your Searing Pain by 20%."
-              },
-              {
-                "Id": "286",
-                "Name": "Glyph of Shadow Bolt",
-                "Rune": "UI-Glyph-Rune-1",
-                "Description": "Reduces the mana cost of your Shadow Bolt by 10%."
-              },
-              {
-                "Id": "287",
-                "Name": "Glyph of Shadowburn",
-                "Rune": "UI-Glyph-Rune-16",
-                "Description": "Increases the critical strike chance of Shadowburn by 20% when the target is below 35% health."
-              },
-              {
-                "Id": "759",
-                "Name": "Glyph of Shadowflame",
-                "Rune": "UI-Glyph-Rune-15",
-                "Description": "Your Shadowflame also applies a 70% movement speed slow on its victims."
-              },
-              {
-                "Id": "288",
-                "Name": "Glyph of Siphon Life",
-                "Rune": "UI-Glyph-Rune-17",
-                "Description": "Increases the healing you receive from your Siphon Life talent by 25%."
-              },
-              {
-                "Id": "761",
-                "Name": "Glyph of Soul Link",
-                "Rune": "UI-Glyph-Rune-17",
-                "Description": "Increases the percentage of damage shared via your Soul Link by an additional 5%."
-              },
-              {
-                "Id": "289",
-                "Name": "Glyph of Soulstone",
-                "Rune": "UI-Glyph-Rune-10",
-                "Description": "Increases the amount of health you gain from resurrecting via a Soulstone by 300%."
-              },
-              {
-                "Id": "290",
-                "Name": "Glyph of Succubus",
-                "Rune": "UI-Glyph-Rune1",
-                "Description": "Your Succubus's Seduction ability also removes all damage over time effects from the target."
-              },
-              {
-                "Id": "291",
-                "Name": "Glyph of Unstable Affliction",
-                "Rune": "UI-Glyph-Rune-19",
-                "Description": "Decreases the casting time of your Unstable Affliction by 0.2.1 sec."
-              },
-              {
-                "Id": "292",
-                "Name": "Glyph of Voidwalker",
-                "Rune": "UI-Glyph-Rune-2",
-                "Description": "Increases your Voidwalker's total Stamina by 20%."
-              }
-            ]
-          }
-        }
-      },
-      {
-        "Name": "Druid",
-        "Glyphs": {
-          "Minor": {
-            "Glyph": [
-              {
-                "Id": "431",
-                "Name": "Glyph of Aquatic Form",
-                "Rune": "UI-Glyph-Rune-3",
-                "Description": "Increases your swim speed by 50% while in Aquatic Form."
-              },
-              {
-                "Id": "432",
-                "Name": "Glyph of Challenging Roar",
-                "Rune": "UI-Glyph-Rune-18",
-                "Description": "Reduces the cooldown of your Challenging Roar ability by 30 sec."
-              },
-              {
-                "Id": "551",
-                "Name": "Glyph of Dash",
-                "Rune": "UI-Glyph-Rune-10",
-                "Description": "Reduces the cooldown of your Dash ability by 20%."
-              },
-              {
-                "Id": "433",
-                "Name": "Glyph of the Wild",
-                "Rune": "UI-Glyph-Rune-12",
-                "Description": "Mana cost of your Mark of the Wild and Gift of the Wild spells reduced by 50%."
-              },
-              {
-                "Id": "435",
-                "Name": "Glyph of Thorns",
-                "Rune": "UI-Glyph-Rune-1",
-                "Description": "Increases the duration of your Thorns ability by 50 min when cast on yourself."
-              },
-              {
-                "Id": "613",
-                "Name": "Glyph of Typhoon",
-                "Rune": "UI-Glyph-Rune-11",
-                "Description": "Reduces the cost of your Typhoon spell by 8% and increases its radius by 10 yards, but it no longer knocks enemies back."
-              },
-              {
-                "Id": "434",
-                "Name": "Glyph of Unburdened Rebirth",
-                "Rune": "UI-Glyph-Rune-8",
-                "Description": "Your Rebirth spell no longer requires a reagent."
-              }
-            ]
+          {
+            "Id": "494",
+            "Name": "Glyph of Execution",
+            "Rune": "UI-Glyph-Rune-16",
+            "Description": "Your Execute ability deals damage as if you had 10 additional rage."
           },
-          "Major": {
-            "Glyph": [
-              {
-                "Id": "676",
-                "Name": "Glyph of Barkskin",
-                "Rune": "UI-Glyph-Rune-14",
-                "Description": "Reduces the chance you'll be critically hit by melee attacks by 25% while Barkskin is active."
-              },
-              {
-                "Id": "671",
-                "Name": "Glyph of Berserk",
-                "Rune": "UI-Glyph-Rune-1",
-                "Description": "Increases the duration of Berserk by 5 sec."
-              },
-              {
-                "Id": "831",
-                "Name": "Glyph of Claw",
-                "Rune": "UI-Glyph-Rune-2",
-                "Description": "Reduces the energy cost of your Claw ability by 5."
-              },
-              {
-                "Id": "181",
-                "Name": "Glyph of Entangling Roots",
-                "Rune": "UI-Glyph-Rune-14",
-                "Description": "Increases the damage your Entangling Roots victims can take before the Entangling Roots automatically breaks by 20%."
-              },
-              {
-                "Id": "631",
-                "Name": "Glyph of Focus",
-                "Rune": "UI-Glyph-Rune-11",
-                "Description": "Increases the damage done by Starfall by 10%, but decreases its radius by 50%."
-              },
-              {
-                "Id": "161",
-                "Name": "Glyph of Frenzied Regeneration",
-                "Rune": "UI-Glyph-Rune-13",
-                "Description": "While Frenzied Regeneration is active, healing effects on you are 20% more powerful."
-              },
-              {
-                "Id": "163",
-                "Name": "Glyph of Growl",
-                "Rune": "UI-Glyph-Rune-9",
-                "Description": "Increases the chance for your Growl ability to work successfully by 8%."
-              },
-              {
-                "Id": "173",
-                "Name": "Glyph of Healing Touch",
-                "Rune": "UI-Glyph-Rune-18",
-                "Description": "Decreases the cast time of Healing Touch by 1.5.1 sec, the mana cost by 25%, and the amount healed by 50%."
-              },
-              {
-                "Id": "177",
-                "Name": "Glyph of Hurricane",
-                "Rune": "UI-Glyph-Rune-17",
-                "Description": "Your Hurricane ability now also slows the movement speed of its victims by 20%."
-              },
-              {
-                "Id": "169",
-                "Name": "Glyph of Innervate",
-                "Rune": "UI-Glyph-Rune-20",
-                "Description": "Innervate now grants the caster 45% of his base mana pool over 10 sec in addition to the normal effects of Innervate."
-              },
-              {
-                "Id": "176",
-                "Name": "Glyph of Insect Swarm",
-                "Rune": "UI-Glyph-Rune-2",
-                "Description": "Increases the damage of your Insect Swarm ability by 30%, but it no longer affects your victim's chance to hit."
-              },
-              {
-                "Id": "174",
-                "Name": "Glyph of Lifebloom",
-                "Rune": "UI-Glyph-Rune-19",
-                "Description": "Increases the duration of Lifebloom by 1 sec."
-              },
-              {
-                "Id": "164",
-                "Name": "Glyph of Mangle",
-                "Rune": "UI-Glyph-Rune-4",
-                "Description": "Increases the damage done by Mangle by 10%."
-              },
-              {
-                "Id": "162",
-                "Name": "Glyph of Maul",
-                "Rune": "UI-Glyph-Rune-12",
-                "Description": "Your Maul ability now hits 1 additional target."
-              },
-              {
-                "Id": "675",
-                "Name": "Glyph of Monsoon",
-                "Rune": "UI-Glyph-Rune-13",
-                "Description": "Reduces the cooldown of your Typhoon spell by 3 sec."
-              },
-              {
-                "Id": "180",
-                "Name": "Glyph of Moonfire",
-                "Rune": "UI-Glyph-Rune-1",
-                "Description": "Increases the periodic damage of your Moonfire ability by 75%, but initial damage is decreased by 90%."
-              },
-              {
-                "Id": "673",
-                "Name": "Glyph of Nourish",
-                "Rune": "UI-Glyph-Rune-11",
-                "Description": "Your Nourish heals an additional 6% for each of your heal over time effects present on the target."
-              },
-              {
-                "Id": "167",
-                "Name": "Glyph of Rake",
-                "Rune": "UI-Glyph-Rune-8",
-                "Description": "Your Rake ability prevents targets from fleeing."
-              },
-              {
-                "Id": "891",
-                "Name": "Glyph of Rapid Rejuvenation",
-                "Rune": "UI-Glyph-Rune-10",
-                "Description": "Your haste now reduces the time between the periodic healing ticks of your Rejuvenation spell."
-              },
-              {
-                "Id": "170",
-                "Name": "Glyph of Rebirth",
-                "Rune": "UI-Glyph-Rune-7",
-                "Description": "Players resurrected by Rebirth are returned to life with 100% health."
-              },
-              {
-                "Id": "171",
-                "Name": "Glyph of Regrowth",
-                "Rune": "UI-Glyph-Rune-11",
-                "Description": "Increases the healing of your Regrowth spell by 20% if your Regrowth effect is still active on the target."
-              },
-              {
-                "Id": "172",
-                "Name": "Glyph of Rejuvenation",
-                "Rune": "UI-Glyph-Rune-5",
-                "Description": "While your Rejuvenation targets are below 50% health, you will heal them for an additional 50% health."
-              },
-              {
-                "Id": "166",
-                "Name": "Glyph of Rip",
-                "Rune": "UI-Glyph-Rune-10",
-                "Description": "Increases the duration of your Rip ability by 4 sec."
-              },
-              {
-                "Id": "674",
-                "Name": "Glyph of Savage Roar",
-                "Rune": "UI-Glyph-Rune-12",
-                "Description": "Your Savage Roar ability grants an additional 3% bonus damage done."
-              },
-              {
-                "Id": "165",
-                "Name": "Glyph of Shred",
-                "Rune": "UI-Glyph-Rune1",
-                "Description": "Each time you Shred, the duration of your Rip on the target is extended 2 sec, up to a maximum of 6 sec."
-              },
-              {
-                "Id": "178",
-                "Name": "Glyph of Starfall",
-                "Rune": "UI-Glyph-Rune-15",
-                "Description": "Reduces the cooldown of Starfall by 30 sec."
-              },
-              {
-                "Id": "175",
-                "Name": "Glyph of Starfire",
-                "Rune": "UI-Glyph-Rune-16",
-                "Description": "Your Starfire ability increases the duration of your Moonfire effect on the target by 3 sec, up to a maximum of 9 additional seconds."
-              },
-              {
-                "Id": "811",
-                "Name": "Glyph of Survival Instincts",
-                "Rune": "UI-Glyph-Rune-16",
-                "Description": "Your Survival Instincts ability grants an additional 15% of your maximum health."
-              },
-              {
-                "Id": "168",
-                "Name": "Glyph of Swiftmend",
-                "Rune": "UI-Glyph-Rune-3",
-                "Description": "Your Swiftmend ability no longer consumes a Rejuvenation or Regrowth effect from the target."
-              },
-              {
-                "Id": "672",
-                "Name": "Glyph of Wild Growth",
-                "Rune": "UI-Glyph-Rune-10",
-                "Description": "Wild Growth can affect 1 additional target."
-              },
-              {
-                "Id": "179",
-                "Name": "Glyph of Wrath",
-                "Rune": "UI-Glyph-Rune-6",
-                "Description": "Reduces the pushback suffered from damaging attacks while casting your Wrath spell by 50%."
-              }
-            ]
-          }
-        }
-      },
-      {
-        "Name": "Death Knight",
-        "Glyphs": {
-          "Minor": {
-            "Glyph": [
-              {
-                "Id": "514",
-                "Name": "Glyph of Blood Tap",
-                "Rune": "UI-Glyph-Rune-13",
-                "Description": "Your Blood Tap no longer causes damage to you."
-              },
-              {
-                "Id": "554",
-                "Name": "Glyph of Corpse Explosion",
-                "Rune": "UI-Glyph-Rune-8",
-                "Description": "Increases the radius of effect on Corpse Explosion by 5 yards."
-              },
-              {
-                "Id": "518",
-                "Name": "Glyph of Death's Embrace",
-                "Rune": "UI-Glyph-Rune-9",
-                "Description": "Your Death Coil refunds 20 runic power when used to heal."
-              },
-              {
-                "Id": "522",
-                "Name": "Glyph of Horn of Winter",
-                "Rune": "UI-Glyph-Rune-15",
-                "Description": "Increases the duration of your Horn of Winter ability by 1 min."
-              },
-              {
-                "Id": "553",
-                "Name": "Glyph of Pestilence",
-                "Rune": "UI-Glyph-Rune-12",
-                "Description": "Increases the radius of your Pestilence effect by 5 yards."
-              },
-              {
-                "Id": "555",
-                "Name": "Glyph of Raise Dead",
-                "Rune": "UI-Glyph-Rune-7",
-                "Description": "Your Raise Dead spell no longer requires a reagent."
-              }
-            ]
+          {
+            "Id": "495",
+            "Name": "Glyph of Hamstring",
+            "Rune": "UI-Glyph-Rune-14",
+            "Description": "Gives your Hamstring ability a 101% chance to immobilize the target for 5 sec."
           },
-          "Major": {
-            "Glyph": [
-              {
-                "Id": "512",
-                "Name": "Glyph of Anti-Magic Shell",
-                "Rune": "UI-Glyph-Rune-19",
-                "Description": "Increases the duration of your Anti-Magic Shell by 2 sec."
-              },
-              {
-                "Id": "557",
-                "Name": "Glyph of Blood Strike",
-                "Rune": "UI-Glyph-Rune-16",
-                "Description": "Your Blood Strike causes an additional 20% damage to snared targets."
-              },
-              {
-                "Id": "515",
-                "Name": "Glyph of Bone Shield",
-                "Rune": "UI-Glyph-Rune-5",
-                "Description": "Adds 1 additional charge:charges; to your Bone Shield."
-              },
-              {
-                "Id": "516",
-                "Name": "Glyph of Chains of Ice",
-                "Rune": "UI-Glyph-Rune-17",
-                "Description": "Your Chains of Ice also causes 144 to 157 Frost damage, increased by your attack power."
-              },
-              {
-                "Id": "768",
-                "Name": "Glyph of Dancing Rune Weapon",
-                "Rune": "UI-Glyph-Rune-5",
-                "Description": "Increases the duration of Dancing Rune Weapon by 5 sec."
-              },
-              {
-                "Id": "511",
-                "Name": "Glyph of Dark Command",
-                "Rune": "UI-Glyph-Rune-11",
-                "Description": "Increases the chance for your Dark Command ability to work successfully by 8%."
-              },
-              {
-                "Id": "771",
-                "Name": "Glyph of Dark Death",
-                "Rune": "UI-Glyph-Rune-8",
-                "Description": "Increases the damage or healing done by Death Coil by 15%."
-              },
-              {
-                "Id": "520",
-                "Name": "Glyph of Death and Decay",
-                "Rune": "UI-Glyph-Rune-3",
-                "Description": "Damage of your Death and Decay spell increased by 20%."
-              },
-              {
-                "Id": "519",
-                "Name": "Glyph of Death Grip",
-                "Rune": "UI-Glyph-Rune-6",
-                "Description": "When you deal a killing blow that grants honor or experience, the cooldown of your Death Grip is refreshed."
-              },
-              {
-                "Id": "558",
-                "Name": "Glyph of Death Strike",
-                "Rune": "UI-Glyph-Rune-8",
-                "Description": "Increases your Death Strike's damage by 1% for every 1 runic power you currently have (up to a maximum of 25%).  The runic power is not consumed by this effect."
-              },
-              {
-                "Id": "772",
-                "Name": "Glyph of Disease",
-                "Rune": "UI-Glyph-Rune-9",
-                "Description": "Your Pestilence ability now refreshes disease durations and secondary effects of diseases on your primary target back to their maximum duration."
-              },
-              {
-                "Id": "521",
-                "Name": "Glyph of Frost Strike",
-                "Rune": "UI-Glyph-Rune-12",
-                "Description": "Reduces the cost of your Frost Strike by 8 Runic Power."
-              },
-              {
-                "Id": "513",
-                "Name": "Glyph of Heart Strike",
-                "Rune": "UI-Glyph-Rune-13",
-                "Description": "Your Heart Strike also reduces the movement speed of your target by 50% for 10 sec."
-              },
-              {
-                "Id": "773",
-                "Name": "Glyph of Howling Blast",
-                "Rune": "UI-Glyph-Rune1",
-                "Description": "Your Howling Blast ability now infects your targets with Frost Fever."
-              },
-              {
-                "Id": "769",
-                "Name": "Glyph of Hungering Cold",
-                "Rune": "UI-Glyph-Rune-6",
-                "Description": "Reduces the cost of Hungering Cold by 40 runic power."
-              },
-              {
-                "Id": "523",
-                "Name": "Glyph of Icebound Fortitude",
-                "Rune": "UI-Glyph-Rune-9",
-                "Description": "Your Icebound Fortitude now always grants at least 40% damage reduction, regardless of your defense skill."
-              },
-              {
-                "Id": "524",
-                "Name": "Glyph of Icy Touch",
-                "Rune": "UI-Glyph-Rune-14",
-                "Description": "Your Frost Fever disease deals 20% additional damage."
-              },
-              {
-                "Id": "525",
-                "Name": "Glyph of Obliterate",
-                "Rune": "UI-Glyph-Rune-4",
-                "Description": "Increases the damage of your Obliterate ability by 25%."
-              },
-              {
-                "Id": "526",
-                "Name": "Glyph of Plague Strike",
-                "Rune": "UI-Glyph-Rune-18",
-                "Description": "Your Plague Strike does 20% additional damage."
-              },
-              {
-                "Id": "528",
-                "Name": "Glyph of Rune Strike",
-                "Rune": "UI-Glyph-Rune-15",
-                "Description": "Increases the critical strike chance of your Rune Strike by 10%."
-              },
-              {
-                "Id": "556",
-                "Name": "Glyph of Rune Tap",
-                "Rune": "UI-Glyph-Rune-10",
-                "Description": "Your Rune Tap heals yourself for an additional 10% of the effect, and also heals your party for 10% of their maximum health."
-              },
-              {
-                "Id": "529",
-                "Name": "Glyph of Scourge Strike",
-                "Rune": "UI-Glyph-Rune-1",
-                "Description": "Your Scourge Strike increases the duration of your diseases on the target by 3 sec, up to a maximum of 9 additional seconds."
-              },
-              {
-                "Id": "530",
-                "Name": "Glyph of Strangulate",
-                "Rune": "UI-Glyph-Rune-20",
-                "Description": "Reduces the cooldown of your Strangulate by 20 sec."
-              },
-              {
-                "Id": "527",
-                "Name": "Glyph of the Ghoul",
-                "Rune": "UI-Glyph-Rune-3",
-                "Description": "Your Ghoul receives an additional 40% of your Strength and 40% of your Stamina."
-              },
-              {
-                "Id": "531",
-                "Name": "Glyph of Unbreakable Armor",
-                "Rune": "UI-Glyph-Rune-2",
-                "Description": "Increases the total armor granted by Unbreakable Armor to 30%."
-              },
-              {
-                "Id": "770",
-                "Name": "Glyph of Unholy Blight",
-                "Rune": "UI-Glyph-Rune-7",
-                "Description": "Increases the damage done by Unholy Blight by 40%."
-              },
-              {
-                "Id": "532",
-                "Name": "Glyph of Vampiric Blood",
-                "Rune": "UI-Glyph-Rune-7",
-                "Description": "Increases  the duration of your Vampiric Blood by 5 sec."
-              }
-            ]
+          {
+            "Id": "496",
+            "Name": "Glyph of Heroic Strike",
+            "Rune": "UI-Glyph-Rune-6",
+            "Description": "You gain 10 rage when you critically strike with your Heroic Strike ability."
+          },
+          {
+            "Id": "497",
+            "Name": "Glyph of Intervene",
+            "Rune": "UI-Glyph-Rune-9",
+            "Description": "Increases the number attacks you intercept for your Intervene target by 1."
+          },
+          {
+            "Id": "503",
+            "Name": "Glyph of Last Stand",
+            "Rune": "UI-Glyph-Rune-11",
+            "Description": "Reduces the cooldown of your Last Stand ability by 1 min."
+          },
+          {
+            "Id": "489",
+            "Name": "Glyph of Mortal Strike",
+            "Rune": "UI-Glyph-Rune-17",
+            "Description": "Increases the damage of your Mortal Strike ability by 10%."
+          },
+          {
+            "Id": "499",
+            "Name": "Glyph of Overpower",
+            "Rune": "UI-Glyph-Rune-1",
+            "Description": "Adds a 100% chance to enable your Overpower when your attacks are parried."
+          },
+          {
+            "Id": "491",
+            "Name": "Glyph of Rapid Charge",
+            "Rune": "UI-Glyph-Rune-5",
+            "Description": "Reduces the cooldown of your Charge ability by 7%."
+          },
+          {
+            "Id": "500",
+            "Name": "Glyph of Rending",
+            "Rune": "UI-Glyph-Rune-12",
+            "Description": "Increases the duration of your Rend ability by 6 sec."
+          },
+          {
+            "Id": "507",
+            "Name": "Glyph of Resonating Power",
+            "Rune": "UI-Glyph-Rune-19",
+            "Description": "Reduces the rage cost of your Thunder Clap ability by 5."
+          },
+          {
+            "Id": "501",
+            "Name": "Glyph of Revenge",
+            "Rune": "UI-Glyph-Rune-2",
+            "Description": "After using Revenge, your next Heroic Strike costs no rage."
+          },
+          {
+            "Id": "767",
+            "Name": "Glyph of Shield Wall",
+            "Rune": "UI-Glyph-Rune-4",
+            "Description": "Reduces the cooldown on Shield Wall by 2 min, but Shield Wall now only reduces damage taken by 40%."
+          },
+          {
+            "Id": "763",
+            "Name": "Glyph of Shockwave",
+            "Rune": "UI-Glyph-Rune-19",
+            "Description": "Reduces the cooldown on Shockwave by 3 sec."
+          },
+          {
+            "Id": "766",
+            "Name": "Glyph of Spell Reflection",
+            "Rune": "UI-Glyph-Rune-3",
+            "Description": "Reduces the cooldown on Spell Reflection by 1 sec."
+          },
+          {
+            "Id": "504",
+            "Name": "Glyph of Sunder Armor",
+            "Rune": "UI-Glyph-Rune-18",
+            "Description": "Your Sunder Armor ability affects a second nearby target."
+          },
+          {
+            "Id": "505",
+            "Name": "Glyph of Sweeping Strikes",
+            "Rune": "UI-Glyph-Rune1",
+            "Description": "Reduces the rage cost of your Sweeping Strikes ability by 100%."
+          },
+          {
+            "Id": "506",
+            "Name": "Glyph of Taunt",
+            "Rune": "UI-Glyph-Rune-15",
+            "Description": "Increases the chance for your Taunt ability to succeed by 8%."
+          },
+          {
+            "Id": "508",
+            "Name": "Glyph of Victory Rush",
+            "Rune": "UI-Glyph-Rune-3",
+            "Description": "Your Victory Rush ability has a 30% increased critical strike chance."
+          },
+          {
+            "Id": "764",
+            "Name": "Glyph of Vigilance",
+            "Rune": "UI-Glyph-Rune-2",
+            "Description": "Your Vigilance ability transfers an additional 5% of your target's threat to you."
+          },
+          {
+            "Id": "509",
+            "Name": "Glyph of Whirlwind",
+            "Rune": "UI-Glyph-Rune-8",
+            "Description": "Reduces the cooldown of your Whirlwind by 2 sec."
           }
-        }
+        ]
       }
+    }
+  },
+  {
+    "Name": "Paladin",
+    "Glyphs": {
+      "Minor": {
+        "Glyph": [
+          {
+            "Id": "452",
+            "Name": "Glyph of Blessing of Kings",
+            "Rune": "UI-Glyph-Rune-4",
+            "Description": "Reduces the mana cost of your Blessing of Kings and Greater Blessing of Kings spells by 50%."
+          },
+          {
+            "Id": "453",
+            "Name": "Glyph of Blessing of Might",
+            "Rune": "UI-Glyph-Rune-2",
+            "Description": "Increases the duration of your Blessing of Might spell by 20 min when cast on yourself."
+          },
+          {
+            "Id": "454",
+            "Name": "Glyph of Blessing of Wisdom",
+            "Rune": "UI-Glyph-Rune-3",
+            "Description": "Increases the duration of your Blessing of Wisdom spell by 20 min when cast on yourself."
+          },
+          {
+            "Id": "455",
+            "Name": "Glyph of Lay on Hands",
+            "Rune": "UI-Glyph-Rune-11",
+            "Description": "Reduces the cooldown of your Lay on Hands spell by 5 min."
+          },
+          {
+            "Id": "456",
+            "Name": "Glyph of Sense Undead",
+            "Rune": "UI-Glyph-Rune-9",
+            "Description": "Damage against Undead increased by 1% while your Sense Undead ability is active."
+          },
+          {
+            "Id": "457",
+            "Name": "Glyph of the Wise",
+            "Rune": "UI-Glyph-Rune-1",
+            "Description": "Reduces the mana cost of your Seal of Wisdom spell by 50%."
+          }
+        ]
+      },
+      "Major": {
+        "Glyph": [
+          {
+            "Id": "191",
+            "Name": "Glyph of Avenger's Shield",
+            "Rune": "UI-Glyph-Rune-5",
+            "Description": "Your Avenger's Shield hits 2 fewer targets, but for 100% more damage."
+          },
+          {
+            "Id": "197",
+            "Name": "Glyph of Avenging Wrath",
+            "Rune": "UI-Glyph-Rune-12",
+            "Description": "Reduces the cooldown of your Hammer of Wrath spell by 50% while Avenging Wrath is active."
+          },
+          {
+            "Id": "701",
+            "Name": "Glyph of Beacon of Light",
+            "Rune": "UI-Glyph-Rune-7",
+            "Description": "Increases the duration of Beacon of Light by 30 sec."
+          },
+          {
+            "Id": "194",
+            "Name": "Glyph of Cleansing",
+            "Rune": "UI-Glyph-Rune-6",
+            "Description": "Reduces the mana cost of your Cleanse and Purify spells by 20%."
+          },
+          {
+            "Id": "189",
+            "Name": "Glyph of Consecration",
+            "Rune": "UI-Glyph-Rune-18",
+            "Description": "Increases the duration and cooldown of Consecration by 2 sec."
+          },
+          {
+            "Id": "188",
+            "Name": "Glyph of Crusader Strike",
+            "Rune": "UI-Glyph-Rune-1",
+            "Description": "Reduces the mana cost of your Crusader Strike ability by 20%."
+          },
+          {
+            "Id": "705",
+            "Name": "Glyph of Divine Plea",
+            "Rune": "UI-Glyph-Rune-1",
+            "Description": "While Divine Plea is active, you take 3% reduced damage from all sources."
+          },
+          {
+            "Id": "703",
+            "Name": "Glyph of Divine Storm",
+            "Rune": "UI-Glyph-Rune-9",
+            "Description": "Your Divine Storm now heals for an additional 15% of the damage it causes."
+          },
+          {
+            "Id": "198",
+            "Name": "Glyph of Divinity",
+            "Rune": "UI-Glyph-Rune-13",
+            "Description": "Your Lay on Hands grants twice as much mana as normal and also grants you as much mana as it grants your target."
+          },
+          {
+            "Id": "193",
+            "Name": "Glyph of Exorcism",
+            "Rune": "UI-Glyph-Rune-2",
+            "Description": "Increases damage done by Exorcism by 20%."
+          },
+          {
+            "Id": "195",
+            "Name": "Glyph of Flash of Light",
+            "Rune": "UI-Glyph-Rune-7",
+            "Description": "Your Flash of Light has an additional 5% critical strike chance."
+          },
+          {
+            "Id": "185",
+            "Name": "Glyph of Hammer of Justice",
+            "Rune": "UI-Glyph-Rune-10",
+            "Description": "Increases your Hammer of Justice range by 5 yards."
+          },
+          {
+            "Id": "702",
+            "Name": "Glyph of Hammer of the Righteous",
+            "Rune": "UI-Glyph-Rune-8",
+            "Description": "Your Hammer of the Righteous hits 1 additional target."
+          },
+          {
+            "Id": "187",
+            "Name": "Glyph of Hammer of Wrath",
+            "Rune": "UI-Glyph-Rune-16",
+            "Description": "Reduces the mana cost of Hammer of Wrath by 100%."
+          },
+          {
+            "Id": "196",
+            "Name": "Glyph of Holy Light",
+            "Rune": "UI-Glyph-Rune1",
+            "Description": "Your Holy Light grants 10% of its heal amount to up to 5 friendly targets within 8 yards of the initial target."
+          },
+          {
+            "Id": "706",
+            "Name": "Glyph of Holy Shock",
+            "Rune": "UI-Glyph-Rune-10",
+            "Description": "Reduces the cooldown of Holy Shock by 1 sec."
+          },
+          {
+            "Id": "559",
+            "Name": "Glyph of Holy Wrath",
+            "Rune": "UI-Glyph-Rune-11",
+            "Description": "Reduces the cooldown of your Holy Wrath spell by 15 sec."
+          },
+          {
+            "Id": "183",
+            "Name": "Glyph of Judgement",
+            "Rune": "UI-Glyph-Rune-8",
+            "Description": "Your Judgements deal 10% more damage."
+          },
+          {
+            "Id": "190",
+            "Name": "Glyph of Righteous Defense",
+            "Rune": "UI-Glyph-Rune-17",
+            "Description": "Increases the chance for your Righteous Defense and Hand of Reckoning abilities to work successfully by 8% on each target."
+          },
+          {
+            "Id": "707",
+            "Name": "Glyph of Salvation",
+            "Rune": "UI-Glyph-Rune-11",
+            "Description": "When you cast Hand of Salvation on yourself, it also reduces damage taken by 20%."
+          },
+          {
+            "Id": "184",
+            "Name": "Glyph of Seal of Command",
+            "Rune": "UI-Glyph-Rune-20",
+            "Description": "You gain 8% of your base mana each time you use a Judgement with Seal of Command active."
+          },
+          {
+            "Id": "200",
+            "Name": "Glyph of Seal of Light",
+            "Rune": "UI-Glyph-Rune-3",
+            "Description": "While Seal of Light is active, the effect of your healing spells is increased by 5%."
+          },
+          {
+            "Id": "560",
+            "Name": "Glyph of Seal of Righteousness",
+            "Rune": "UI-Glyph-Rune-19",
+            "Description": "Increases the damage done by Seal of Righteousness by 10%."
+          },
+          {
+            "Id": "561",
+            "Name": "Glyph of Seal of Vengeance",
+            "Rune": "UI-Glyph-Rune-15",
+            "Description": "Your Seal of Vengeance or Seal of Corruption also grants 10 expertise while active."
+          },
+          {
+            "Id": "199",
+            "Name": "Glyph of Seal of Wisdom",
+            "Rune": "UI-Glyph-Rune-4",
+            "Description": "While Seal of Wisdom is active, the cost of your healing spells is reduced by 5%."
+          },
+          {
+            "Id": "704",
+            "Name": "Glyph of Shield of Righteousness",
+            "Rune": "UI-Glyph-Rune1",
+            "Description": "Reduces the mana cost of Shield of Righteousness by 80%."
+          },
+          {
+            "Id": "186",
+            "Name": "Glyph of Spiritual Attunement",
+            "Rune": "UI-Glyph-Rune-14",
+            "Description": "Increases the amount of mana gained from your Spiritual Attunement spell by an additional 2%."
+          },
+          {
+            "Id": "192",
+            "Name": "Glyph of Turn Evil",
+            "Rune": "UI-Glyph-Rune-9",
+            "Description": "Reduces the casting time of your Turn Evil spell by 100%, but increases the cooldown by 8 sec."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Name": "Hunter",
+    "Glyphs": {
+      "Minor": {
+        "Glyph": [
+          {
+            "Id": "441",
+            "Name": "Glyph of Feign Death",
+            "Rune": "UI-Glyph-Rune-19",
+            "Description": "Reduces the cooldown of your Feign Death spell by 5 sec."
+          },
+          {
+            "Id": "440",
+            "Name": "Glyph of Mend Pet",
+            "Rune": "UI-Glyph-Rune-13",
+            "Description": "Your Mend Pet spell increases your pet's happiness slightly."
+          },
+          {
+            "Id": "444",
+            "Name": "Glyph of Possessed Strength",
+            "Rune": "UI-Glyph-Rune-8",
+            "Description": "Increases the damage your pet inflicts while using Eyes of the Beast by 50%."
+          },
+          {
+            "Id": "439",
+            "Name": "Glyph of Revive Pet",
+            "Rune": "UI-Glyph-Rune-18",
+            "Description": "Reduces the pushback suffered from damaging attacks while casting Revive Pet by 100%."
+          },
+          {
+            "Id": "442",
+            "Name": "Glyph of Scare Beast",
+            "Rune": "UI-Glyph-Rune-19",
+            "Description": "Reduces the pushback suffered from damaging attacks while casting Scare Beast by 75%."
+          },
+          {
+            "Id": "443",
+            "Name": "Glyph of the Pack",
+            "Rune": "UI-Glyph-Rune-4",
+            "Description": "Increases the range of your Aspect of the Pack ability by 15 yards."
+          }
+        ]
+      },
+      "Major": {
+        "Glyph": [
+          {
+            "Id": "351",
+            "Name": "Glyph of Aimed Shot",
+            "Rune": "UI-Glyph-Rune-5",
+            "Description": "Reduces the cooldown of your Aimed Shot ability by 2 sec."
+          },
+          {
+            "Id": "352",
+            "Name": "Glyph of Arcane Shot",
+            "Rune": "UI-Glyph-Rune-6",
+            "Description": "Your Arcane Shot refunds 20% of its mana cost if the target has one of your Stings active on it."
+          },
+          {
+            "Id": "355",
+            "Name": "Glyph of Aspect of the Viper",
+            "Rune": "UI-Glyph-Rune-18",
+            "Description": "Increases the amount of mana gained from attacks while Aspect of the Viper is active by 10%."
+          },
+          {
+            "Id": "356",
+            "Name": "Glyph of Bestial Wrath",
+            "Rune": "UI-Glyph-Rune-1",
+            "Description": "Decreases the cooldown of Bestial Wrath by 20 sec."
+          },
+          {
+            "Id": "677",
+            "Name": "Glyph of Chimera Shot",
+            "Rune": "UI-Glyph-Rune-15",
+            "Description": "Reduces the cooldown of Chimera Shot by 1 sec."
+          },
+          {
+            "Id": "357",
+            "Name": "Glyph of Deterrence",
+            "Rune": "UI-Glyph-Rune-2",
+            "Description": "Decreases the cooldown of Deterrence by 10 sec."
+          },
+          {
+            "Id": "358",
+            "Name": "Glyph of Disengage",
+            "Rune": "UI-Glyph-Rune-7",
+            "Description": "Decreases the cooldown of Disengage by 5 sec."
+          },
+          {
+            "Id": "691",
+            "Name": "Glyph of Explosive Shot",
+            "Rune": "UI-Glyph-Rune-16",
+            "Description": "Increases the critical strike chance of Explosive Shot by 4%."
+          },
+          {
+            "Id": "693",
+            "Name": "Glyph of Explosive Trap",
+            "Rune": "UI-Glyph-Rune-18",
+            "Description": "The periodic damage from your Explosive Trap can now be critical strikes."
+          },
+          {
+            "Id": "359",
+            "Name": "Glyph of Freezing Trap",
+            "Rune": "UI-Glyph-Rune-10",
+            "Description": "When your Freezing Trap breaks, the victim's movement speed is reduced by 30% for 4 sec."
+          },
+          {
+            "Id": "360",
+            "Name": "Glyph of Frost Trap",
+            "Rune": "UI-Glyph-Rune-16",
+            "Description": "Increases the radius of the effect from your Frost Trap by 2 yards."
+          },
+          {
+            "Id": "361",
+            "Name": "Glyph of Hunter's Mark",
+            "Rune": "UI-Glyph-Rune1",
+            "Description": "Increases the attack power bonus of your Hunter's Mark by 20%."
+          },
+          {
+            "Id": "362",
+            "Name": "Glyph of Immolation Trap",
+            "Rune": "UI-Glyph-Rune-8",
+            "Description": "Decreases the duration of the effect from your Immolation Trap by 6 sec., but damage while active is increased by 100%."
+          },
+          {
+            "Id": "692",
+            "Name": "Glyph of Kill Shot",
+            "Rune": "UI-Glyph-Rune-17",
+            "Description": "Reduces the cooldown of Kill Shot by 6 sec."
+          },
+          {
+            "Id": "354",
+            "Name": "Glyph of Mending",
+            "Rune": "UI-Glyph-Rune-14",
+            "Description": "Increases the healing done by your Mend Pet ability by 40%."
+          },
+          {
+            "Id": "364",
+            "Name": "Glyph of Multi-Shot",
+            "Rune": "UI-Glyph-Rune-17",
+            "Description": "Decreases the cooldown of Multi-Shot by 1 sec."
+          },
+          {
+            "Id": "365",
+            "Name": "Glyph of Rapid Fire",
+            "Rune": "UI-Glyph-Rune-20",
+            "Description": "Increases the haste from Rapid Fire by an additional 8%."
+          },
+          {
+            "Id": "695",
+            "Name": "Glyph of Raptor Strike",
+            "Rune": "UI-Glyph-Rune-2",
+            "Description": "Reduces damage taken by 20% for 3 sec after using Raptor Strike."
+          },
+          {
+            "Id": "694",
+            "Name": "Glyph of Scatter Shot",
+            "Rune": "UI-Glyph-Rune-19",
+            "Description": "Increases the range of Scatter Shot by 3 yards."
+          },
+          {
+            "Id": "366",
+            "Name": "Glyph of Serpent Sting",
+            "Rune": "UI-Glyph-Rune-3",
+            "Description": "Increases the duration of your Serpent Sting by 6 sec."
+          },
+          {
+            "Id": "367",
+            "Name": "Glyph of Snake Trap",
+            "Rune": "UI-Glyph-Rune-4",
+            "Description": "Snakes from your Snake Trap take 90% reduced damage from area of effect spells."
+          },
+          {
+            "Id": "368",
+            "Name": "Glyph of Steady Shot",
+            "Rune": "UI-Glyph-Rune-9",
+            "Description": "Increases the damage dealt by Steady Shot by 10% when your target is afflicted with Serpent Sting."
+          },
+          {
+            "Id": "353",
+            "Name": "Glyph of the Beast",
+            "Rune": "UI-Glyph-Rune-12",
+            "Description": "Increases the attack power bonus of Aspect of the Beast for you and your pet by an additional 2%."
+          },
+          {
+            "Id": "363",
+            "Name": "Glyph of the Hawk",
+            "Rune": "UI-Glyph-Rune-13",
+            "Description": "Increases the haste bonus of the Improved Aspect of the Hawk effect by an additional 6%."
+          },
+          {
+            "Id": "369",
+            "Name": "Glyph of Trueshot Aura",
+            "Rune": "UI-Glyph-Rune-11",
+            "Description": "While your Trueshot Aura is active, you have 10% increased critical strike chance on your Aimed Shot."
+          },
+          {
+            "Id": "370",
+            "Name": "Glyph of Volley",
+            "Rune": "UI-Glyph-Rune-15",
+            "Description": "Decreases the mana cost of Volley by 20%."
+          },
+          {
+            "Id": "371",
+            "Name": "Glyph of Wyvern Sting",
+            "Rune": "UI-Glyph-Rune-19",
+            "Description": "Decreases the cooldown of your Wyvern Sting by 6 sec."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Name": "Rogue",
+    "Glyphs": {
+      "Minor": {
+        "Glyph": [
+          {
+            "Id": "468",
+            "Name": "Glyph of Blurred Speed",
+            "Rune": "UI-Glyph-Rune1",
+            "Description": "Enables you to walk on water while your Sprint ability is active."
+          },
+          {
+            "Id": "464",
+            "Name": "Glyph of Distract",
+            "Rune": "UI-Glyph-Rune-12",
+            "Description": "Increases the range of your Distract ability by 5 yards."
+          },
+          {
+            "Id": "465",
+            "Name": "Glyph of Pick Lock",
+            "Rune": "UI-Glyph-Rune-7",
+            "Description": "Reduces the cast time of your Pick Lock ability by 100%."
+          },
+          {
+            "Id": "466",
+            "Name": "Glyph of Pick Pocket",
+            "Rune": "UI-Glyph-Rune-14",
+            "Description": "Increases the range of your Pick Pocket ability by 5 yards."
+          },
+          {
+            "Id": "467",
+            "Name": "Glyph of Safe Fall",
+            "Rune": "UI-Glyph-Rune-5",
+            "Description": "Increases the distance your Safe Fall ability allows you to fall without taking damage."
+          },
+          {
+            "Id": "469",
+            "Name": "Glyph of Vanish",
+            "Rune": "UI-Glyph-Rune-15",
+            "Description": "Increases your movement speed by 30% while the Vanish effect is active."
+          }
+        ]
+      },
+      "Major": {
+        "Glyph": [
+          {
+            "Id": "391",
+            "Name": "Glyph of Adrenaline Rush",
+            "Rune": "UI-Glyph-Rune-11",
+            "Description": "Increases the duration of Adrenaline Rush by 5 sec."
+          },
+          {
+            "Id": "392",
+            "Name": "Glyph of Ambush",
+            "Rune": "UI-Glyph-Rune-8",
+            "Description": "Increases the range on Ambush by 5 yards."
+          },
+          {
+            "Id": "393",
+            "Name": "Glyph of Backstab",
+            "Rune": "UI-Glyph-Rune-5",
+            "Description": "Your Backstab increases the duration of your Rupture effect on the target by 2 sec, up to a maximum of 6 additional sec."
+          },
+          {
+            "Id": "394",
+            "Name": "Glyph of Blade Flurry",
+            "Rune": "UI-Glyph-Rune-3",
+            "Description": "Reduces the energy cost of Blade Flurry by 100%."
+          },
+          {
+            "Id": "734",
+            "Name": "Glyph of Cloak of Shadows",
+            "Rune": "UI-Glyph-Rune-5",
+            "Description": "While Cloak of Shadows is active, you take 40% less physical damage."
+          },
+          {
+            "Id": "395",
+            "Name": "Glyph of Crippling Poison",
+            "Rune": "UI-Glyph-Rune-13",
+            "Description": "Increases the chance to inflict your target with Crippling Poison by an additional 20%."
+          },
+          {
+            "Id": "396",
+            "Name": "Glyph of Deadly Throw",
+            "Rune": "UI-Glyph-Rune-15",
+            "Description": "Increases the slowing effect on Deadly Throw by 20%."
+          },
+          {
+            "Id": "791",
+            "Name": "Glyph of Envenom",
+            "Rune": "UI-Glyph-Rune1",
+            "Description": "Your Envenom ability no longer consumes Deadly Poison from your target."
+          },
+          {
+            "Id": "397",
+            "Name": "Glyph of Evasion",
+            "Rune": "UI-Glyph-Rune-6",
+            "Description": "Increases the duration of Evasion by 5 sec."
+          },
+          {
+            "Id": "398",
+            "Name": "Glyph of Eviscerate",
+            "Rune": "UI-Glyph-Rune-12",
+            "Description": "Increases the critical strike chance of Eviscerate by 10%."
+          },
+          {
+            "Id": "399",
+            "Name": "Glyph of Expose Armor",
+            "Rune": "UI-Glyph-Rune-14",
+            "Description": "Increases the duration of Expose Armor by 12 sec."
+          },
+          {
+            "Id": "731",
+            "Name": "Glyph of Fan of Knives",
+            "Rune": "UI-Glyph-Rune-20",
+            "Description": "Increases the damage done by Fan of Knives by 20%."
+          },
+          {
+            "Id": "400",
+            "Name": "Glyph of Feint",
+            "Rune": "UI-Glyph-Rune1",
+            "Description": "Reduces the energy cost of Feint by 20."
+          },
+          {
+            "Id": "401",
+            "Name": "Glyph of Garrote",
+            "Rune": "UI-Glyph-Rune-18",
+            "Description": "Reduces the duration of your Garrote ability by 3 sec and increases the total damage it deals by 20%."
+          },
+          {
+            "Id": "402",
+            "Name": "Glyph of Ghostly Strike",
+            "Rune": "UI-Glyph-Rune-17",
+            "Description": "Increases the damage dealt by Ghostly Strike by 40% and the duration of its effect by 4 sec., but increases its cooldown by 10 sec."
+          },
+          {
+            "Id": "403",
+            "Name": "Glyph of Gouge",
+            "Rune": "UI-Glyph-Rune-1",
+            "Description": "Reduces the energy cost of Gouge by 15."
+          },
+          {
+            "Id": "404",
+            "Name": "Glyph of Hemorrhage",
+            "Rune": "UI-Glyph-Rune-4",
+            "Description": "Increases the damage bonus against targets afflicted by Hemorrhage by 40%."
+          },
+          {
+            "Id": "714",
+            "Name": "Glyph of Hunger for Blood",
+            "Rune": "UI-Glyph-Rune-18",
+            "Description": "Increases the bonus damage from Hunger For Blood by 3%."
+          },
+          {
+            "Id": "715",
+            "Name": "Glyph of Killing Spree",
+            "Rune": "UI-Glyph-Rune-19",
+            "Description": "Reduces the cooldown on Killing Spree by 45 sec."
+          },
+          {
+            "Id": "733",
+            "Name": "Glyph of Mutilate",
+            "Rune": "UI-Glyph-Rune-4",
+            "Description": "Reduces the cost of Mutilate by 5 energy."
+          },
+          {
+            "Id": "405",
+            "Name": "Glyph of Preparation",
+            "Rune": "UI-Glyph-Rune-9",
+            "Description": "Your Preparation ability also instantly resets the cooldown of Blade Flurry, Dismantle, and Kick."
+          },
+          {
+            "Id": "406",
+            "Name": "Glyph of Rupture",
+            "Rune": "UI-Glyph-Rune-20",
+            "Description": "Increases the duration of Rupture by 4 sec."
+          },
+          {
+            "Id": "407",
+            "Name": "Glyph of Sap",
+            "Rune": "UI-Glyph-Rune-2",
+            "Description": "Increases the duration of Sap by 20 sec."
+          },
+          {
+            "Id": "716",
+            "Name": "Glyph of Shadow Dance",
+            "Rune": "UI-Glyph-Rune-2",
+            "Description": "Increases the duration of Shadow Dance by 2 sec."
+          },
+          {
+            "Id": "409",
+            "Name": "Glyph of Sinister Strike",
+            "Rune": "UI-Glyph-Rune-7",
+            "Description": "Your Sinister Strike critical strikes have a 101% chance to add an additional combo point."
+          },
+          {
+            "Id": "410",
+            "Name": "Glyph of Slice and Dice",
+            "Rune": "UI-Glyph-Rune-10",
+            "Description": "Increases the duration of Slice and Dice by 3 sec."
+          },
+          {
+            "Id": "411",
+            "Name": "Glyph of Sprint",
+            "Rune": "UI-Glyph-Rune-16",
+            "Description": "Increases the movement speed of your Sprint ability by an additional 30%."
+          },
+          {
+            "Id": "732",
+            "Name": "Glyph of Tricks of the Trade",
+            "Rune": "UI-Glyph-Rune-3",
+            "Description": "The bonus damage and threat redirection granted by your Tricks of the Trade ability lasts an additional 4 sec."
+          },
+          {
+            "Id": "408",
+            "Name": "Glyph of Vigor",
+            "Rune": "UI-Glyph-Rune-19",
+            "Description": "Vigor grants an additional 10 maximum energy."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Name": "Priest",
+    "Glyphs": {
+      "Minor": {
+        "Glyph": [
+          {
+            "Id": "458",
+            "Name": "Glyph of Fading",
+            "Rune": "UI-Glyph-Rune-9",
+            "Description": "Reduces the mana cost of your Fade spell by 30%."
+          },
+          {
+            "Id": "460",
+            "Name": "Glyph of Fortitude",
+            "Rune": "UI-Glyph-Rune-17",
+            "Description": "Reduces the mana cost of your Power Word: Fortitude and Prayer of Fortitude spells by 50%."
+          },
+          {
+            "Id": "459",
+            "Name": "Glyph of Levitate",
+            "Rune": "UI-Glyph-Rune-3",
+            "Description": "Your Levitate spell no longer requires a reagent."
+          },
+          {
+            "Id": "461",
+            "Name": "Glyph of Shackle Undead",
+            "Rune": "UI-Glyph-Rune-10",
+            "Description": "Increases the range of your Shackle Undead spell by 5 yards."
+          },
+          {
+            "Id": "462",
+            "Name": "Glyph of Shadow Protection",
+            "Rune": "UI-Glyph-Rune1",
+            "Description": "Increases the duration of your Shadow Protection and Prayer of Shadow Protection spells by 10 min."
+          },
+          {
+            "Id": "463",
+            "Name": "Glyph of Shadowfiend",
+            "Rune": "UI-Glyph-Rune-18",
+            "Description": "Receive 5% of your maximum mana if your Shadowfiend dies from damage."
+          }
+        ]
+      },
+      "Major": {
+        "Glyph": [
+          {
+            "Id": "251",
+            "Name": "Glyph of Circle of Healing",
+            "Rune": "UI-Glyph-Rune-11",
+            "Description": "Your Circle of Healing spell heals 1 additional target."
+          },
+          {
+            "Id": "252",
+            "Name": "Glyph of Dispel Magic",
+            "Rune": "UI-Glyph-Rune-10",
+            "Description": "Your Dispel Magic spell also heals your target for 3% of maximum health."
+          },
+          {
+            "Id": "708",
+            "Name": "Glyph of Dispersion",
+            "Rune": "UI-Glyph-Rune-12",
+            "Description": "Reduces the cooldown on Dispersion by 45 sec."
+          },
+          {
+            "Id": "253",
+            "Name": "Glyph of Fade",
+            "Rune": "UI-Glyph-Rune-12",
+            "Description": "Reduces the cooldown of your Fade spell by 9 sec."
+          },
+          {
+            "Id": "254",
+            "Name": "Glyph of Fear Ward",
+            "Rune": "UI-Glyph-Rune-16",
+            "Description": "Reduces cooldown and duration of Fear Ward by 60 sec."
+          },
+          {
+            "Id": "255",
+            "Name": "Glyph of Flash Heal",
+            "Rune": "UI-Glyph-Rune-14",
+            "Description": "Reduces the mana cost of your Flash Heal by 10%."
+          },
+          {
+            "Id": "709",
+            "Name": "Glyph of Guardian Spirit",
+            "Rune": "UI-Glyph-Rune-13",
+            "Description": "If your Guardian Spirit lasts its entire duration without being triggered, the cooldown is reset to 1 min."
+          },
+          {
+            "Id": "256",
+            "Name": "Glyph of Holy Nova",
+            "Rune": "UI-Glyph-Rune1",
+            "Description": "Increases the damage and healing of your Holy Nova spell by an additional 20%."
+          },
+          {
+            "Id": "712",
+            "Name": "Glyph of Hymn of Hope",
+            "Rune": "UI-Glyph-Rune-16",
+            "Description": "Your Hymn of Hope lasts an additional 2 sec."
+          },
+          {
+            "Id": "257",
+            "Name": "Glyph of Inner Fire",
+            "Rune": "UI-Glyph-Rune-18",
+            "Description": "Increases the armor from your Inner Fire spell by 50%."
+          },
+          {
+            "Id": "258",
+            "Name": "Glyph of Lightwell",
+            "Rune": "UI-Glyph-Rune-9",
+            "Description": "Increases the amount healed by your Lightwell by 20%"
+          },
+          {
+            "Id": "259",
+            "Name": "Glyph of Mass Dispel",
+            "Rune": "UI-Glyph-Rune-19",
+            "Description": "Reduces the mana cost of Mass Dispel by 35%."
+          },
+          {
+            "Id": "260",
+            "Name": "Glyph of Mind Control",
+            "Rune": "UI-Glyph-Rune-20",
+            "Description": "Reduces the chance targets will resist or break your Mind Control spell by an additional 17%."
+          },
+          {
+            "Id": "269",
+            "Name": "Glyph of Mind Flay",
+            "Rune": "UI-Glyph-Rune-2",
+            "Description": "Increases the damage done by your Mind Flay spell by 10% when your target is afflicted with Shadow Word: Pain."
+          },
+          {
+            "Id": "711",
+            "Name": "Glyph of Mind Sear",
+            "Rune": "UI-Glyph-Rune-15",
+            "Description": "Increases the radius of effect on Mind Sear by 5 yards."
+          },
+          {
+            "Id": "713",
+            "Name": "Glyph of Pain Suppression",
+            "Rune": "UI-Glyph-Rune-17",
+            "Description": "Allows Pain Suppression to be cast while stunned."
+          },
+          {
+            "Id": "710",
+            "Name": "Glyph of Penance",
+            "Rune": "UI-Glyph-Rune-14",
+            "Description": "Reduces the cooldown of Penance by 2 sec."
+          },
+          {
+            "Id": "263",
+            "Name": "Glyph of Power Word: Shield",
+            "Rune": "UI-Glyph-Rune-5",
+            "Description": "Your Power Word: Shield also heals the target for 20% of the absorption amount."
+          },
+          {
+            "Id": "264",
+            "Name": "Glyph of Prayer of Healing",
+            "Rune": "UI-Glyph-Rune-3",
+            "Description": "Your Prayer of Healing spell also heals an additional 20% of its initial heal over 6 sec."
+          },
+          {
+            "Id": "265",
+            "Name": "Glyph of Psychic Scream",
+            "Rune": "UI-Glyph-Rune-6",
+            "Description": "Increases the duration of your Psychic Scream by 2 sec. and increases its cooldown by 8 sec."
+          },
+          {
+            "Id": "266",
+            "Name": "Glyph of Renew",
+            "Rune": "UI-Glyph-Rune-1",
+            "Description": "Reduces the duration of your Renew by 3 sec. but increases the amount healed each tick by 25%."
+          },
+          {
+            "Id": "267",
+            "Name": "Glyph of Scourge Imprisonment",
+            "Rune": "UI-Glyph-Rune-17",
+            "Description": "Reduces the cast time of your Shackle Undead by 1.1 sec."
+          },
+          {
+            "Id": "262",
+            "Name": "Glyph of Shadow",
+            "Rune": "UI-Glyph-Rune-13",
+            "Description": "While in Shadowform, your non-periodic spell critical strikes increase your spell power by 30% of your Spirit for 10 sec."
+          },
+          {
+            "Id": "268",
+            "Name": "Glyph of Shadow Word: Death",
+            "Rune": "UI-Glyph-Rune-15",
+            "Description": "Targets below 35% health take an additional 10% damage from your Shadow Word: Death spell."
+          },
+          {
+            "Id": "261",
+            "Name": "Glyph of Shadow Word: Pain",
+            "Rune": "UI-Glyph-Rune-8",
+            "Description": "The periodic damage ticks of your Shadow Word: Pain spell restore 1% of your base mana."
+          },
+          {
+            "Id": "270",
+            "Name": "Glyph of Smite",
+            "Rune": "UI-Glyph-Rune-7",
+            "Description": "Your Smite spell inflicts an additional 20% damage against targets afflicted by Holy Fire."
+          },
+          {
+            "Id": "271",
+            "Name": "Glyph of Spirit of Redemption",
+            "Rune": "UI-Glyph-Rune-4",
+            "Description": "Increases the duration of Spirit of Redemption by 6 sec."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Name": "Shaman",
+    "Glyphs": {
+      "Minor": {
+        "Glyph": [
+          {
+            "Id": "470",
+            "Name": "Glyph of Astral Recall",
+            "Rune": "UI-Glyph-Rune-17",
+            "Description": "Cooldown of your Astral Recall spell reduced by 7.5.1 min."
+          },
+          {
+            "Id": "552",
+            "Name": "Glyph of Ghost Wolf",
+            "Rune": "UI-Glyph-Rune-11",
+            "Description": "Your Ghost Wolf form regenerates an additional 1% of your maximum health every 5 sec."
+          },
+          {
+            "Id": "473",
+            "Name": "Glyph of Renewed Life",
+            "Rune": "UI-Glyph-Rune-20",
+            "Description": "Your Reincarnation spell no longer requires a reagent."
+          },
+          {
+            "Id": "612",
+            "Name": "Glyph of Thunderstorm",
+            "Rune": "UI-Glyph-Rune-8",
+            "Description": "Increases the mana you receive from your Thunderstorm spell by 2%, but it no longer knocks enemies back."
+          },
+          {
+            "Id": "474",
+            "Name": "Glyph of Water Breathing",
+            "Rune": "UI-Glyph-Rune-16",
+            "Description": "Your Water Breathing spell no longer requires a reagent."
+          },
+          {
+            "Id": "475",
+            "Name": "Glyph of Water Shield",
+            "Rune": "UI-Glyph-Rune-11",
+            "Description": "Increases the number of charges on your Water Shield spell by 1."
+          },
+          {
+            "Id": "476",
+            "Name": "Glyph of Water Walking",
+            "Rune": "UI-Glyph-Rune-2",
+            "Description": "Your Water Walking spell no longer requires a reagent."
+          }
+        ]
+      },
+      "Major": {
+        "Glyph": [
+          {
+            "Id": "212",
+            "Name": "Glyph of Chain Heal",
+            "Rune": "UI-Glyph-Rune-17",
+            "Description": "Your Chain Heal heals 1 additional target."
+          },
+          {
+            "Id": "213",
+            "Name": "Glyph of Chain Lightning",
+            "Rune": "UI-Glyph-Rune-13",
+            "Description": "Your Chain Lightning strikes 1 additional target."
+          },
+          {
+            "Id": "751",
+            "Name": "Glyph of Earth Shield",
+            "Rune": "UI-Glyph-Rune-9",
+            "Description": "Increases the amount healed by your Earth Shield by 20%."
+          },
+          {
+            "Id": "216",
+            "Name": "Glyph of Earthliving Weapon",
+            "Rune": "UI-Glyph-Rune1",
+            "Description": "Increases the chance for your Earthliving weapon to trigger by 5%."
+          },
+          {
+            "Id": "230",
+            "Name": "Glyph of Elemental Mastery",
+            "Rune": "UI-Glyph-Rune-11",
+            "Description": "Reduces the cooldown of your Elemental Mastery ability by 30 sec."
+          },
+          {
+            "Id": "736",
+            "Name": "Glyph of Feral Spirit",
+            "Rune": "UI-Glyph-Rune-7",
+            "Description": "Your spirit wolves gain an additional 30% of your attack power."
+          },
+          {
+            "Id": "217",
+            "Name": "Glyph of Fire Elemental Totem",
+            "Rune": "UI-Glyph-Rune-19",
+            "Description": "Reduces the cooldown of your Fire Elemental Totem by 5 min."
+          },
+          {
+            "Id": "218",
+            "Name": "Glyph of Fire Nova",
+            "Rune": "UI-Glyph-Rune-12",
+            "Description": "Reduces the cooldown of your Fire Nova spell by 3 seconds."
+          },
+          {
+            "Id": "219",
+            "Name": "Glyph of Flame Shock",
+            "Rune": "UI-Glyph-Rune-5",
+            "Description": "Increases the critical strike damage bonus of your Flame Shock damage by 60%."
+          },
+          {
+            "Id": "220",
+            "Name": "Glyph of Flametongue Weapon",
+            "Rune": "UI-Glyph-Rune-14",
+            "Description": "Increases spell critical strike chance by 2% while Flametongue Weapon is active."
+          },
+          {
+            "Id": "221",
+            "Name": "Glyph of Frost Shock",
+            "Rune": "UI-Glyph-Rune-2",
+            "Description": "Increases the duration of your Frost Shock by 2 sec."
+          },
+          {
+            "Id": "222",
+            "Name": "Glyph of Healing Stream Totem",
+            "Rune": "UI-Glyph-Rune-7",
+            "Description": "Your Healing Stream Totem heals for an additional 20%."
+          },
+          {
+            "Id": "223",
+            "Name": "Glyph of Healing Wave",
+            "Rune": "UI-Glyph-Rune-9",
+            "Description": "Your Healing Wave also heals you for 20% of the healing effect when you heal someone else."
+          },
+          {
+            "Id": "753",
+            "Name": "Glyph of Hex",
+            "Rune": "UI-Glyph-Rune-1",
+            "Description": "Increases the damage your Hex target can take before the Hex effect is removed by 20%."
+          },
+          {
+            "Id": "214",
+            "Name": "Glyph of Lava",
+            "Rune": "UI-Glyph-Rune-15",
+            "Description": "Your Lava Burst spell gains an additional 10% of your spellpower."
+          },
+          {
+            "Id": "229",
+            "Name": "Glyph of Lava Lash",
+            "Rune": "UI-Glyph-Rune-1",
+            "Description": "Damage on your Lava Lash is increased by an additional 10% if your weapon is enchanted with Flametongue."
+          },
+          {
+            "Id": "224",
+            "Name": "Glyph of Lesser Healing Wave",
+            "Rune": "UI-Glyph-Rune-10",
+            "Description": "Your Lesser Healing Wave heals for 20% more if the target is also affected by Earth Shield."
+          },
+          {
+            "Id": "226",
+            "Name": "Glyph of Lightning Bolt",
+            "Rune": "UI-Glyph-Rune-18",
+            "Description": "Increases the damage dealt by Lightning Bolt by 4%."
+          },
+          {
+            "Id": "225",
+            "Name": "Glyph of Lightning Shield",
+            "Rune": "UI-Glyph-Rune-6",
+            "Description": "Increases the damage from Lightning Shield by 20%."
+          },
+          {
+            "Id": "227",
+            "Name": "Glyph of Mana Tide Totem",
+            "Rune": "UI-Glyph-Rune-20",
+            "Description": "Your Mana Tide Totem grants an additional 1% of each target's maximum mana each time it pulses."
+          },
+          {
+            "Id": "737",
+            "Name": "Glyph of Riptide",
+            "Rune": "UI-Glyph-Rune-8",
+            "Description": "Increases the duration of Riptide by 6 sec."
+          },
+          {
+            "Id": "215",
+            "Name": "Glyph of Shocking",
+            "Rune": "UI-Glyph-Rune-4",
+            "Description": "Reduces the global cooldown triggered by your shock spells to 1 sec."
+          },
+          {
+            "Id": "754",
+            "Name": "Glyph of Stoneclaw Totem",
+            "Rune": "UI-Glyph-Rune-10",
+            "Description": "Your Stoneclaw Totem also places a damage absorb shield on you, equal to 4 times the strength of the shield it places on your totems."
+          },
+          {
+            "Id": "228",
+            "Name": "Glyph of Stormstrike",
+            "Rune": "UI-Glyph-Rune-3",
+            "Description": "Increases the Nature damage bonus from your Stormstrike ability by an additional 8%."
+          },
+          {
+            "Id": "735",
+            "Name": "Glyph of Thunder",
+            "Rune": "UI-Glyph-Rune-6",
+            "Description": "Reduces the cooldown on Thunderstorm by 10 sec."
+          },
+          {
+            "Id": "752",
+            "Name": "Glyph of Totem of Wrath",
+            "Rune": "UI-Glyph-Rune1",
+            "Description": "When you cast Totem of Wrath, you gain 30% of the totem's bonus spell power for 300 sec."
+          },
+          {
+            "Id": "211",
+            "Name": "Glyph of Water Mastery",
+            "Rune": "UI-Glyph-Rune-16",
+            "Description": "Increases the passive mana regeneration of your Water Shield spell by 30%."
+          },
+          {
+            "Id": "231",
+            "Name": "Glyph of Windfury Weapon",
+            "Rune": "UI-Glyph-Rune-8",
+            "Description": "Increases the chance per swing for Windfury Weapon to trigger by 2%."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Name": "Mage",
+    "Glyphs": {
+      "Minor": {
+        "Glyph": [
+          {
+            "Id": "445",
+            "Name": "Glyph of Arcane Intellect",
+            "Rune": "UI-Glyph-Rune1",
+            "Description": "Reduces the mana cost of your Arcane Intellect and Arcane Brilliance spells by 50%."
+          },
+          {
+            "Id": "611",
+            "Name": "Glyph of Blast Wave",
+            "Rune": "UI-Glyph-Rune1",
+            "Description": "The mana cost of your Blast Wave spell is reduced by 15%, but it no longer knocks enemies back."
+          },
+          {
+            "Id": "446",
+            "Name": "Glyph of Fire Ward",
+            "Rune": "UI-Glyph-Rune-5",
+            "Description": "You have an additional 5% chance to reflect Fire spells while your Fire Ward is active."
+          },
+          {
+            "Id": "448",
+            "Name": "Glyph of Frost Armor",
+            "Rune": "UI-Glyph-Rune-10",
+            "Description": "Increases the duration of your Frost Armor and Ice Armor spells by 30 min."
+          },
+          {
+            "Id": "447",
+            "Name": "Glyph of Frost Ward",
+            "Rune": "UI-Glyph-Rune-14",
+            "Description": "You have an additional 5% chance to reflect Frost spells while your Frost Ward is active."
+          },
+          {
+            "Id": "451",
+            "Name": "Glyph of Slow Fall",
+            "Rune": "UI-Glyph-Rune-20",
+            "Description": "Your Slow Fall spell no longer requires a reagent."
+          },
+          {
+            "Id": "449",
+            "Name": "Glyph of the Bear Cub",
+            "Rune": "UI-Glyph-Rune-15",
+            "Description": "Your Polymorph: Sheep spell polymorphs the target into a polar bear cub instead."
+          },
+          {
+            "Id": "450",
+            "Name": "Glyph of the Penguin",
+            "Rune": "UI-Glyph-Rune-16",
+            "Description": "Your Polymorph: Sheep spell polymorphs the target into a penguin instead."
+          }
+        ]
+      },
+      "Major": {
+        "Glyph": [
+          {
+            "Id": "698",
+            "Name": "Glyph of Arcane Barrage",
+            "Rune": "UI-Glyph-Rune-4",
+            "Description": "Reduces the mana cost of Arcane Barrage by 20%."
+          },
+          {
+            "Id": "651",
+            "Name": "Glyph of Arcane Blast",
+            "Rune": "UI-Glyph-Rune-6",
+            "Description": "Increases the damage from your Arcane Blast buff by 3%."
+          },
+          {
+            "Id": "311",
+            "Name": "Glyph of Arcane Explosion",
+            "Rune": "UI-Glyph-Rune-12",
+            "Description": "Reduces mana cost of Arcane Explosion by 10%."
+          },
+          {
+            "Id": "312",
+            "Name": "Glyph of Arcane Missiles",
+            "Rune": "UI-Glyph-Rune-14",
+            "Description": "Increases the critical strike damage bonus of Arcane Missiles by 25%."
+          },
+          {
+            "Id": "313",
+            "Name": "Glyph of Arcane Power",
+            "Rune": "UI-Glyph-Rune-8",
+            "Description": "Increases the duration of Arcane Power by 3 sec."
+          },
+          {
+            "Id": "314",
+            "Name": "Glyph of Blink",
+            "Rune": "UI-Glyph-Rune-18",
+            "Description": "Increases the distance you travel with the Blink spell by 5 yards."
+          },
+          {
+            "Id": "696",
+            "Name": "Glyph of Deep Freeze",
+            "Rune": "UI-Glyph-Rune-20",
+            "Description": "Increases the range of Deep Freeze by 10 yards."
+          },
+          {
+            "Id": "871",
+            "Name": "Glyph of Eternal Water",
+            "Rune": "UI-Glyph-Rune-18",
+            "Description": "Your Summon Water Elemental now lasts indefinitely, but your Water Elemental can no longer cast Freeze."
+          },
+          {
+            "Id": "315",
+            "Name": "Glyph of Evocation",
+            "Rune": "UI-Glyph-Rune-1",
+            "Description": "Your Evocation ability also causes you to regain 60% of your health over its duration."
+          },
+          {
+            "Id": "317",
+            "Name": "Glyph of Fire Blast",
+            "Rune": "UI-Glyph-Rune-4",
+            "Description": "Increases the critical strike chance of Fire Blast by 50% when the target is stunned or incapacitated."
+          },
+          {
+            "Id": "316",
+            "Name": "Glyph of Fireball",
+            "Rune": "UI-Glyph-Rune-9",
+            "Description": "Reduces the casting time of your Fireball spell by 0.15.2 sec, but removes the damage over time effect."
+          },
+          {
+            "Id": "318",
+            "Name": "Glyph of Frost Nova",
+            "Rune": "UI-Glyph-Rune-5",
+            "Description": "Your Frost Nova targets can take an additional 20% damage before the Frost Nova effect automatically breaks."
+          },
+          {
+            "Id": "319",
+            "Name": "Glyph of Frostbolt",
+            "Rune": "UI-Glyph-Rune-11",
+            "Description": "Increases the damage dealt by Frostbolt by 5%, but removes the slowing effect."
+          },
+          {
+            "Id": "591",
+            "Name": "Glyph of Frostfire",
+            "Rune": "UI-Glyph-Rune-5",
+            "Description": "Increases the initial damage dealt by Frostfire Bolt by 2% and its critical strike chance by 2%."
+          },
+          {
+            "Id": "320",
+            "Name": "Glyph of Ice Armor",
+            "Rune": "UI-Glyph-Rune-6",
+            "Description": "Your Ice Armor and Frost Armor spells grant an additional 50% armor and resistance."
+          },
+          {
+            "Id": "700",
+            "Name": "Glyph of Ice Barrier",
+            "Rune": "UI-Glyph-Rune-6",
+            "Description": "Increases the amount of damage absorbed by your Ice Barrier by 30%."
+          },
+          {
+            "Id": "321",
+            "Name": "Glyph of Ice Block",
+            "Rune": "UI-Glyph-Rune-10",
+            "Description": "Your Frost Nova cooldown is now reset every time you use Ice Block."
+          },
+          {
+            "Id": "322",
+            "Name": "Glyph of Ice Lance",
+            "Rune": "UI-Glyph-Rune-20",
+            "Description": "Your Ice Lance now causes 4 times damage against frozen targets higher level than you instead of triple damage."
+          },
+          {
+            "Id": "323",
+            "Name": "Glyph of Icy Veins",
+            "Rune": "UI-Glyph-Rune-2",
+            "Description": "Your Icy Veins ability also removes all movement slowing and cast time slowing effects."
+          },
+          {
+            "Id": "325",
+            "Name": "Glyph of Invisibility",
+            "Rune": "UI-Glyph-Rune-3",
+            "Description": "Increases the duration of the Invisibility effect by 10 sec."
+          },
+          {
+            "Id": "697",
+            "Name": "Glyph of Living Bomb",
+            "Rune": "UI-Glyph-Rune-3",
+            "Description": "The periodic damage from your Living Bomb can now be critical strikes."
+          },
+          {
+            "Id": "326",
+            "Name": "Glyph of Mage Armor",
+            "Rune": "UI-Glyph-Rune1",
+            "Description": "Your Mage Armor spell grants an additional 20% mana regeneration while casting."
+          },
+          {
+            "Id": "327",
+            "Name": "Glyph of Mana Gem",
+            "Rune": "UI-Glyph-Rune-16",
+            "Description": "Increases the mana received from using a mana gem by 40%."
+          },
+          {
+            "Id": "699",
+            "Name": "Glyph of Mirror Image",
+            "Rune": "UI-Glyph-Rune-5",
+            "Description": "Your Mirror Image spell now creates a 4th copy."
+          },
+          {
+            "Id": "328",
+            "Name": "Glyph of Molten Armor",
+            "Rune": "UI-Glyph-Rune-17",
+            "Description": "Your Molten Armor grants an additional 20% of your spirit as critical strike rating."
+          },
+          {
+            "Id": "329",
+            "Name": "Glyph of Polymorph",
+            "Rune": "UI-Glyph-Rune-15",
+            "Description": "Your Polymorph spell also removes all damage over time effects from the target."
+          },
+          {
+            "Id": "330",
+            "Name": "Glyph of Remove Curse",
+            "Rune": "UI-Glyph-Rune-19",
+            "Description": "Your Remove Curse spell also makes the target immune to all curses for 4 sec."
+          },
+          {
+            "Id": "324",
+            "Name": "Glyph of Scorch",
+            "Rune": "UI-Glyph-Rune-7",
+            "Description": "Increases the damage of your Scorch spell by 20%."
+          },
+          {
+            "Id": "331",
+            "Name": "Glyph of Water Elemental",
+            "Rune": "UI-Glyph-Rune-13",
+            "Description": "Reduces the cooldown of your Summon Water Elemental spell by 30 sec."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Name": "Warlock",
+    "Glyphs": {
+      "Minor": {
+        "Glyph": [
+          {
+            "Id": "480",
+            "Name": "Glyph of Curse of Exhaustion",
+            "Rune": "UI-Glyph-Rune-14",
+            "Description": "Increases the range of your Curse of Exhaustion spell by 5 yards."
+          },
+          {
+            "Id": "478",
+            "Name": "Glyph of Drain Soul",
+            "Rune": "UI-Glyph-Rune-7",
+            "Description": "Your Drain Soul ability occasionally creates an additional soul shard."
+          },
+          {
+            "Id": "481",
+            "Name": "Glyph of Enslave Demon",
+            "Rune": "UI-Glyph-Rune-6",
+            "Description": "Reduces the cast time of your Enslave Demon spell by 50%."
+          },
+          {
+            "Id": "479",
+            "Name": "Glyph of Kilrogg",
+            "Rune": "UI-Glyph-Rune-13",
+            "Description": "Increases the movement speed of your Eye of Kilrogg by 50% and allows it to fly in areas where flying mounts are enabled."
+          },
+          {
+            "Id": "482",
+            "Name": "Glyph of Souls",
+            "Rune": "UI-Glyph-Rune-17",
+            "Description": "Reduces the mana cost of your Ritual of Souls spell by 70%."
+          },
+          {
+            "Id": "477",
+            "Name": "Glyph of Unending Breath",
+            "Rune": "UI-Glyph-Rune-6",
+            "Description": "Increases the swim speed of targets affected by your Unending Breath spell by 20%."
+          }
+        ]
+      },
+      "Major": {
+        "Glyph": [
+          {
+            "Id": "757",
+            "Name": "Glyph of Chaos Bolt",
+            "Rune": "UI-Glyph-Rune-13",
+            "Description": "Reduces the cooldown on Chaos Bolt by 2 sec."
+          },
+          {
+            "Id": "273",
+            "Name": "Glyph of Conflagrate",
+            "Rune": "UI-Glyph-Rune-20",
+            "Description": "Your Conflagrate spell no longer consumes your Immolate or Shadowflame spell from the target."
+          },
+          {
+            "Id": "274",
+            "Name": "Glyph of Corruption",
+            "Rune": "UI-Glyph-Rune-5",
+            "Description": "Your Corruption spell has a 4% chance to cause you to enter a Shadow Trance state after damaging the opponent.  The Shadow Trance state reduces the casting time of your next Shadow Bolt spell by 100%."
+          },
+          {
+            "Id": "275",
+            "Name": "Glyph of Curse of Agony",
+            "Rune": "UI-Glyph-Rune-4",
+            "Description": "Increases the duration of your Curse of Agony by 4 sec."
+          },
+          {
+            "Id": "276",
+            "Name": "Glyph of Death Coil",
+            "Rune": "UI-Glyph-Rune-11",
+            "Description": "Increases the duration of your Death Coil by 0.5.1 sec."
+          },
+          {
+            "Id": "758",
+            "Name": "Glyph of Demonic Circle",
+            "Rune": "UI-Glyph-Rune-14",
+            "Description": "Reduces the cooldown on Demonic Circle by 4 sec."
+          },
+          {
+            "Id": "277",
+            "Name": "Glyph of Fear",
+            "Rune": "UI-Glyph-Rune-14",
+            "Description": "Increases the damage your Fear target can take before the Fear effect is removed by 20%."
+          },
+          {
+            "Id": "278",
+            "Name": "Glyph of Felguard",
+            "Rune": "UI-Glyph-Rune-15",
+            "Description": "Increases the Felguard's total attack power by 20%."
+          },
+          {
+            "Id": "279",
+            "Name": "Glyph of Felhunter",
+            "Rune": "UI-Glyph-Rune-13",
+            "Description": "When your Felhunter uses Devour Magic, you will also be healed for that amount."
+          },
+          {
+            "Id": "755",
+            "Name": "Glyph of Haunt",
+            "Rune": "UI-Glyph-Rune-11",
+            "Description": "The bonus damage granted by your Haunt spell is increased by an additional 3%."
+          },
+          {
+            "Id": "280",
+            "Name": "Glyph of Health Funnel",
+            "Rune": "UI-Glyph-Rune-12",
+            "Description": "Reduces the pushback suffered from damaging attacks while channeling your Health Funnel spell by 100%."
+          },
+          {
+            "Id": "281",
+            "Name": "Glyph of Healthstone",
+            "Rune": "UI-Glyph-Rune-6",
+            "Description": "You receive 30% more healing from using a healthstone."
+          },
+          {
+            "Id": "282",
+            "Name": "Glyph of Howl of Terror",
+            "Rune": "UI-Glyph-Rune-3",
+            "Description": "Reduces the cooldown on your Howl of Terror spell by 8 sec."
+          },
+          {
+            "Id": "283",
+            "Name": "Glyph of Immolate",
+            "Rune": "UI-Glyph-Rune-9",
+            "Description": "Increases the periodic damage of your Immolate by 10%."
+          },
+          {
+            "Id": "284",
+            "Name": "Glyph of Imp",
+            "Rune": "UI-Glyph-Rune-18",
+            "Description": "Increases the damage done by your Imp's Firebolt spell by 20%."
+          },
+          {
+            "Id": "272",
+            "Name": "Glyph of Incinerate",
+            "Rune": "UI-Glyph-Rune-8",
+            "Description": "Increases the damage done by Incinerate by 5%."
+          },
+          {
+            "Id": "760",
+            "Name": "Glyph of Life Tap",
+            "Rune": "UI-Glyph-Rune-16",
+            "Description": "When you use Life Tap or Dark Pact, you gain 20% of your Spirit as spell power for 40 sec."
+          },
+          {
+            "Id": "756",
+            "Name": "Glyph of Metamorphosis",
+            "Rune": "UI-Glyph-Rune-12",
+            "Description": "Increases the duration of your Metamorphosis by 6 sec."
+          },
+          {
+            "Id": "911",
+            "Name": "Glyph of Quick Decay",
+            "Rune": "UI-Glyph-Rune-9",
+            "Description": "Your haste now reduces the time between periodic damage ticks of your Corruption spell."
+          },
+          {
+            "Id": "285",
+            "Name": "Glyph of Searing Pain",
+            "Rune": "UI-Glyph-Rune-7",
+            "Description": "Increases the critical strike bonus of your Searing Pain by 20%."
+          },
+          {
+            "Id": "286",
+            "Name": "Glyph of Shadow Bolt",
+            "Rune": "UI-Glyph-Rune-1",
+            "Description": "Reduces the mana cost of your Shadow Bolt by 10%."
+          },
+          {
+            "Id": "287",
+            "Name": "Glyph of Shadowburn",
+            "Rune": "UI-Glyph-Rune-16",
+            "Description": "Increases the critical strike chance of Shadowburn by 20% when the target is below 35% health."
+          },
+          {
+            "Id": "759",
+            "Name": "Glyph of Shadowflame",
+            "Rune": "UI-Glyph-Rune-15",
+            "Description": "Your Shadowflame also applies a 70% movement speed slow on its victims."
+          },
+          {
+            "Id": "288",
+            "Name": "Glyph of Siphon Life",
+            "Rune": "UI-Glyph-Rune-17",
+            "Description": "Increases the healing you receive from your Siphon Life talent by 25%."
+          },
+          {
+            "Id": "761",
+            "Name": "Glyph of Soul Link",
+            "Rune": "UI-Glyph-Rune-17",
+            "Description": "Increases the percentage of damage shared via your Soul Link by an additional 5%."
+          },
+          {
+            "Id": "289",
+            "Name": "Glyph of Soulstone",
+            "Rune": "UI-Glyph-Rune-10",
+            "Description": "Increases the amount of health you gain from resurrecting via a Soulstone by 300%."
+          },
+          {
+            "Id": "290",
+            "Name": "Glyph of Succubus",
+            "Rune": "UI-Glyph-Rune1",
+            "Description": "Your Succubus's Seduction ability also removes all damage over time effects from the target."
+          },
+          {
+            "Id": "291",
+            "Name": "Glyph of Unstable Affliction",
+            "Rune": "UI-Glyph-Rune-19",
+            "Description": "Decreases the casting time of your Unstable Affliction by 0.2.1 sec."
+          },
+          {
+            "Id": "292",
+            "Name": "Glyph of Voidwalker",
+            "Rune": "UI-Glyph-Rune-2",
+            "Description": "Increases your Voidwalker's total Stamina by 20%."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Name": "Druid",
+    "Glyphs": {
+      "Minor": {
+        "Glyph": [
+          {
+            "Id": "431",
+            "Name": "Glyph of Aquatic Form",
+            "Rune": "UI-Glyph-Rune-3",
+            "Description": "Increases your swim speed by 50% while in Aquatic Form."
+          },
+          {
+            "Id": "432",
+            "Name": "Glyph of Challenging Roar",
+            "Rune": "UI-Glyph-Rune-18",
+            "Description": "Reduces the cooldown of your Challenging Roar ability by 30 sec."
+          },
+          {
+            "Id": "551",
+            "Name": "Glyph of Dash",
+            "Rune": "UI-Glyph-Rune-10",
+            "Description": "Reduces the cooldown of your Dash ability by 20%."
+          },
+          {
+            "Id": "433",
+            "Name": "Glyph of the Wild",
+            "Rune": "UI-Glyph-Rune-12",
+            "Description": "Mana cost of your Mark of the Wild and Gift of the Wild spells reduced by 50%."
+          },
+          {
+            "Id": "435",
+            "Name": "Glyph of Thorns",
+            "Rune": "UI-Glyph-Rune-1",
+            "Description": "Increases the duration of your Thorns ability by 50 min when cast on yourself."
+          },
+          {
+            "Id": "613",
+            "Name": "Glyph of Typhoon",
+            "Rune": "UI-Glyph-Rune-11",
+            "Description": "Reduces the cost of your Typhoon spell by 8% and increases its radius by 10 yards, but it no longer knocks enemies back."
+          },
+          {
+            "Id": "434",
+            "Name": "Glyph of Unburdened Rebirth",
+            "Rune": "UI-Glyph-Rune-8",
+            "Description": "Your Rebirth spell no longer requires a reagent."
+          }
+        ]
+      },
+      "Major": {
+        "Glyph": [
+          {
+            "Id": "676",
+            "Name": "Glyph of Barkskin",
+            "Rune": "UI-Glyph-Rune-14",
+            "Description": "Reduces the chance you'll be critically hit by melee attacks by 25% while Barkskin is active."
+          },
+          {
+            "Id": "671",
+            "Name": "Glyph of Berserk",
+            "Rune": "UI-Glyph-Rune-1",
+            "Description": "Increases the duration of Berserk by 5 sec."
+          },
+          {
+            "Id": "831",
+            "Name": "Glyph of Claw",
+            "Rune": "UI-Glyph-Rune-2",
+            "Description": "Reduces the energy cost of your Claw ability by 5."
+          },
+          {
+            "Id": "181",
+            "Name": "Glyph of Entangling Roots",
+            "Rune": "UI-Glyph-Rune-14",
+            "Description": "Increases the damage your Entangling Roots victims can take before the Entangling Roots automatically breaks by 20%."
+          },
+          {
+            "Id": "631",
+            "Name": "Glyph of Focus",
+            "Rune": "UI-Glyph-Rune-11",
+            "Description": "Increases the damage done by Starfall by 10%, but decreases its radius by 50%."
+          },
+          {
+            "Id": "161",
+            "Name": "Glyph of Frenzied Regeneration",
+            "Rune": "UI-Glyph-Rune-13",
+            "Description": "While Frenzied Regeneration is active, healing effects on you are 20% more powerful."
+          },
+          {
+            "Id": "163",
+            "Name": "Glyph of Growl",
+            "Rune": "UI-Glyph-Rune-9",
+            "Description": "Increases the chance for your Growl ability to work successfully by 8%."
+          },
+          {
+            "Id": "173",
+            "Name": "Glyph of Healing Touch",
+            "Rune": "UI-Glyph-Rune-18",
+            "Description": "Decreases the cast time of Healing Touch by 1.5.1 sec, the mana cost by 25%, and the amount healed by 50%."
+          },
+          {
+            "Id": "177",
+            "Name": "Glyph of Hurricane",
+            "Rune": "UI-Glyph-Rune-17",
+            "Description": "Your Hurricane ability now also slows the movement speed of its victims by 20%."
+          },
+          {
+            "Id": "169",
+            "Name": "Glyph of Innervate",
+            "Rune": "UI-Glyph-Rune-20",
+            "Description": "Innervate now grants the caster 45% of his base mana pool over 10 sec in addition to the normal effects of Innervate."
+          },
+          {
+            "Id": "176",
+            "Name": "Glyph of Insect Swarm",
+            "Rune": "UI-Glyph-Rune-2",
+            "Description": "Increases the damage of your Insect Swarm ability by 30%, but it no longer affects your victim's chance to hit."
+          },
+          {
+            "Id": "174",
+            "Name": "Glyph of Lifebloom",
+            "Rune": "UI-Glyph-Rune-19",
+            "Description": "Increases the duration of Lifebloom by 1 sec."
+          },
+          {
+            "Id": "164",
+            "Name": "Glyph of Mangle",
+            "Rune": "UI-Glyph-Rune-4",
+            "Description": "Increases the damage done by Mangle by 10%."
+          },
+          {
+            "Id": "162",
+            "Name": "Glyph of Maul",
+            "Rune": "UI-Glyph-Rune-12",
+            "Description": "Your Maul ability now hits 1 additional target."
+          },
+          {
+            "Id": "675",
+            "Name": "Glyph of Monsoon",
+            "Rune": "UI-Glyph-Rune-13",
+            "Description": "Reduces the cooldown of your Typhoon spell by 3 sec."
+          },
+          {
+            "Id": "180",
+            "Name": "Glyph of Moonfire",
+            "Rune": "UI-Glyph-Rune-1",
+            "Description": "Increases the periodic damage of your Moonfire ability by 75%, but initial damage is decreased by 90%."
+          },
+          {
+            "Id": "673",
+            "Name": "Glyph of Nourish",
+            "Rune": "UI-Glyph-Rune-11",
+            "Description": "Your Nourish heals an additional 6% for each of your heal over time effects present on the target."
+          },
+          {
+            "Id": "167",
+            "Name": "Glyph of Rake",
+            "Rune": "UI-Glyph-Rune-8",
+            "Description": "Your Rake ability prevents targets from fleeing."
+          },
+          {
+            "Id": "891",
+            "Name": "Glyph of Rapid Rejuvenation",
+            "Rune": "UI-Glyph-Rune-10",
+            "Description": "Your haste now reduces the time between the periodic healing ticks of your Rejuvenation spell."
+          },
+          {
+            "Id": "170",
+            "Name": "Glyph of Rebirth",
+            "Rune": "UI-Glyph-Rune-7",
+            "Description": "Players resurrected by Rebirth are returned to life with 100% health."
+          },
+          {
+            "Id": "171",
+            "Name": "Glyph of Regrowth",
+            "Rune": "UI-Glyph-Rune-11",
+            "Description": "Increases the healing of your Regrowth spell by 20% if your Regrowth effect is still active on the target."
+          },
+          {
+            "Id": "172",
+            "Name": "Glyph of Rejuvenation",
+            "Rune": "UI-Glyph-Rune-5",
+            "Description": "While your Rejuvenation targets are below 50% health, you will heal them for an additional 50% health."
+          },
+          {
+            "Id": "166",
+            "Name": "Glyph of Rip",
+            "Rune": "UI-Glyph-Rune-10",
+            "Description": "Increases the duration of your Rip ability by 4 sec."
+          },
+          {
+            "Id": "674",
+            "Name": "Glyph of Savage Roar",
+            "Rune": "UI-Glyph-Rune-12",
+            "Description": "Your Savage Roar ability grants an additional 3% bonus damage done."
+          },
+          {
+            "Id": "165",
+            "Name": "Glyph of Shred",
+            "Rune": "UI-Glyph-Rune1",
+            "Description": "Each time you Shred, the duration of your Rip on the target is extended 2 sec, up to a maximum of 6 sec."
+          },
+          {
+            "Id": "178",
+            "Name": "Glyph of Starfall",
+            "Rune": "UI-Glyph-Rune-15",
+            "Description": "Reduces the cooldown of Starfall by 30 sec."
+          },
+          {
+            "Id": "175",
+            "Name": "Glyph of Starfire",
+            "Rune": "UI-Glyph-Rune-16",
+            "Description": "Your Starfire ability increases the duration of your Moonfire effect on the target by 3 sec, up to a maximum of 9 additional seconds."
+          },
+          {
+            "Id": "811",
+            "Name": "Glyph of Survival Instincts",
+            "Rune": "UI-Glyph-Rune-16",
+            "Description": "Your Survival Instincts ability grants an additional 15% of your maximum health."
+          },
+          {
+            "Id": "168",
+            "Name": "Glyph of Swiftmend",
+            "Rune": "UI-Glyph-Rune-3",
+            "Description": "Your Swiftmend ability no longer consumes a Rejuvenation or Regrowth effect from the target."
+          },
+          {
+            "Id": "672",
+            "Name": "Glyph of Wild Growth",
+            "Rune": "UI-Glyph-Rune-10",
+            "Description": "Wild Growth can affect 1 additional target."
+          },
+          {
+            "Id": "179",
+            "Name": "Glyph of Wrath",
+            "Rune": "UI-Glyph-Rune-6",
+            "Description": "Reduces the pushback suffered from damaging attacks while casting your Wrath spell by 50%."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Name": "Death Knight",
+    "Glyphs": {
+      "Minor": {
+        "Glyph": [
+          {
+            "Id": "514",
+            "Name": "Glyph of Blood Tap",
+            "Rune": "UI-Glyph-Rune-13",
+            "Description": "Your Blood Tap no longer causes damage to you."
+          },
+          {
+            "Id": "554",
+            "Name": "Glyph of Corpse Explosion",
+            "Rune": "UI-Glyph-Rune-8",
+            "Description": "Increases the radius of effect on Corpse Explosion by 5 yards."
+          },
+          {
+            "Id": "518",
+            "Name": "Glyph of Death's Embrace",
+            "Rune": "UI-Glyph-Rune-9",
+            "Description": "Your Death Coil refunds 20 runic power when used to heal."
+          },
+          {
+            "Id": "522",
+            "Name": "Glyph of Horn of Winter",
+            "Rune": "UI-Glyph-Rune-15",
+            "Description": "Increases the duration of your Horn of Winter ability by 1 min."
+          },
+          {
+            "Id": "553",
+            "Name": "Glyph of Pestilence",
+            "Rune": "UI-Glyph-Rune-12",
+            "Description": "Increases the radius of your Pestilence effect by 5 yards."
+          },
+          {
+            "Id": "555",
+            "Name": "Glyph of Raise Dead",
+            "Rune": "UI-Glyph-Rune-7",
+            "Description": "Your Raise Dead spell no longer requires a reagent."
+          }
+        ]
+      },
+      "Major": {
+        "Glyph": [
+          {
+            "Id": "512",
+            "Name": "Glyph of Anti-Magic Shell",
+            "Rune": "UI-Glyph-Rune-19",
+            "Description": "Increases the duration of your Anti-Magic Shell by 2 sec."
+          },
+          {
+            "Id": "557",
+            "Name": "Glyph of Blood Strike",
+            "Rune": "UI-Glyph-Rune-16",
+            "Description": "Your Blood Strike causes an additional 20% damage to snared targets."
+          },
+          {
+            "Id": "515",
+            "Name": "Glyph of Bone Shield",
+            "Rune": "UI-Glyph-Rune-5",
+            "Description": "Adds 1 additional charge:charges; to your Bone Shield."
+          },
+          {
+            "Id": "516",
+            "Name": "Glyph of Chains of Ice",
+            "Rune": "UI-Glyph-Rune-17",
+            "Description": "Your Chains of Ice also causes 144 to 157 Frost damage, increased by your attack power."
+          },
+          {
+            "Id": "768",
+            "Name": "Glyph of Dancing Rune Weapon",
+            "Rune": "UI-Glyph-Rune-5",
+            "Description": "Increases the duration of Dancing Rune Weapon by 5 sec."
+          },
+          {
+            "Id": "511",
+            "Name": "Glyph of Dark Command",
+            "Rune": "UI-Glyph-Rune-11",
+            "Description": "Increases the chance for your Dark Command ability to work successfully by 8%."
+          },
+          {
+            "Id": "771",
+            "Name": "Glyph of Dark Death",
+            "Rune": "UI-Glyph-Rune-8",
+            "Description": "Increases the damage or healing done by Death Coil by 15%."
+          },
+          {
+            "Id": "520",
+            "Name": "Glyph of Death and Decay",
+            "Rune": "UI-Glyph-Rune-3",
+            "Description": "Damage of your Death and Decay spell increased by 20%."
+          },
+          {
+            "Id": "519",
+            "Name": "Glyph of Death Grip",
+            "Rune": "UI-Glyph-Rune-6",
+            "Description": "When you deal a killing blow that grants honor or experience, the cooldown of your Death Grip is refreshed."
+          },
+          {
+            "Id": "558",
+            "Name": "Glyph of Death Strike",
+            "Rune": "UI-Glyph-Rune-8",
+            "Description": "Increases your Death Strike's damage by 1% for every 1 runic power you currently have (up to a maximum of 25%).  The runic power is not consumed by this effect."
+          },
+          {
+            "Id": "772",
+            "Name": "Glyph of Disease",
+            "Rune": "UI-Glyph-Rune-9",
+            "Description": "Your Pestilence ability now refreshes disease durations and secondary effects of diseases on your primary target back to their maximum duration."
+          },
+          {
+            "Id": "521",
+            "Name": "Glyph of Frost Strike",
+            "Rune": "UI-Glyph-Rune-12",
+            "Description": "Reduces the cost of your Frost Strike by 8 Runic Power."
+          },
+          {
+            "Id": "513",
+            "Name": "Glyph of Heart Strike",
+            "Rune": "UI-Glyph-Rune-13",
+            "Description": "Your Heart Strike also reduces the movement speed of your target by 50% for 10 sec."
+          },
+          {
+            "Id": "773",
+            "Name": "Glyph of Howling Blast",
+            "Rune": "UI-Glyph-Rune1",
+            "Description": "Your Howling Blast ability now infects your targets with Frost Fever."
+          },
+          {
+            "Id": "769",
+            "Name": "Glyph of Hungering Cold",
+            "Rune": "UI-Glyph-Rune-6",
+            "Description": "Reduces the cost of Hungering Cold by 40 runic power."
+          },
+          {
+            "Id": "523",
+            "Name": "Glyph of Icebound Fortitude",
+            "Rune": "UI-Glyph-Rune-9",
+            "Description": "Your Icebound Fortitude now always grants at least 40% damage reduction, regardless of your defense skill."
+          },
+          {
+            "Id": "524",
+            "Name": "Glyph of Icy Touch",
+            "Rune": "UI-Glyph-Rune-14",
+            "Description": "Your Frost Fever disease deals 20% additional damage."
+          },
+          {
+            "Id": "525",
+            "Name": "Glyph of Obliterate",
+            "Rune": "UI-Glyph-Rune-4",
+            "Description": "Increases the damage of your Obliterate ability by 25%."
+          },
+          {
+            "Id": "526",
+            "Name": "Glyph of Plague Strike",
+            "Rune": "UI-Glyph-Rune-18",
+            "Description": "Your Plague Strike does 20% additional damage."
+          },
+          {
+            "Id": "528",
+            "Name": "Glyph of Rune Strike",
+            "Rune": "UI-Glyph-Rune-15",
+            "Description": "Increases the critical strike chance of your Rune Strike by 10%."
+          },
+          {
+            "Id": "556",
+            "Name": "Glyph of Rune Tap",
+            "Rune": "UI-Glyph-Rune-10",
+            "Description": "Your Rune Tap heals yourself for an additional 10% of the effect, and also heals your party for 10% of their maximum health."
+          },
+          {
+            "Id": "529",
+            "Name": "Glyph of Scourge Strike",
+            "Rune": "UI-Glyph-Rune-1",
+            "Description": "Your Scourge Strike increases the duration of your diseases on the target by 3 sec, up to a maximum of 9 additional seconds."
+          },
+          {
+            "Id": "530",
+            "Name": "Glyph of Strangulate",
+            "Rune": "UI-Glyph-Rune-20",
+            "Description": "Reduces the cooldown of your Strangulate by 20 sec."
+          },
+          {
+            "Id": "527",
+            "Name": "Glyph of the Ghoul",
+            "Rune": "UI-Glyph-Rune-3",
+            "Description": "Your Ghoul receives an additional 40% of your Strength and 40% of your Stamina."
+          },
+          {
+            "Id": "531",
+            "Name": "Glyph of Unbreakable Armor",
+            "Rune": "UI-Glyph-Rune-2",
+            "Description": "Increases the total armor granted by Unbreakable Armor to 30%."
+          },
+          {
+            "Id": "770",
+            "Name": "Glyph of Unholy Blight",
+            "Rune": "UI-Glyph-Rune-7",
+            "Description": "Increases the damage done by Unholy Blight by 40%."
+          },
+          {
+            "Id": "532",
+            "Name": "Glyph of Vampiric Blood",
+            "Rune": "UI-Glyph-Rune-7",
+            "Description": "Increases  the duration of your Vampiric Blood by 5 sec."
+          }
+        ]
+      }
+    }
+  }
 ]

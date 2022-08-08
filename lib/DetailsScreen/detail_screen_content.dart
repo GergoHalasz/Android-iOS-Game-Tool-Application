@@ -1,7 +1,10 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter/services.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
 import 'package:wowtalentcalculator/DetailsScreen/Save_screen.dart';
@@ -21,6 +24,7 @@ import 'package:wowtalentcalculator/utils/colors.dart';
 import 'package:wowtalentcalculator/utils/constants.dart';
 import 'package:wowtalentcalculator/widgets/custom_page_route.dart';
 import '../ad_state.dart';
+import '../api/purchase_api.dart';
 
 // detail screen content below the tabs bar
 class DetailScreenContent extends StatefulWidget {
@@ -156,7 +160,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
           TalentTrees talentTreesObject = TalentTrees.fromJson(value);
           talentProvider.changeClass(talentTreesObject, name);
           talentProvider.changeBuildName(null);
-
+          talentProvider.setGlyphs([null, null, null], [null, null, null]);
           setState(() {
             key = "";
             buildName = "";
@@ -177,6 +181,23 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     talentProvider.changeClass(talentTreesObject, name);
     talentProvider.changeBuildName(data["buildName"]);
 
+    if (data["minorGlyphs"] != null) {
+      List<dynamic> minorGlyphs = data["minorGlyphs"].map((glyph) {
+        if (glyph != null) {
+          return Glyph.fromJson(glyph);
+        }
+        return null;
+      }).toList();
+      List<dynamic> majorGlyphs = data["majorGlyphs"].map((glyph) {
+        if (glyph != null) {
+          return Glyph.fromJson(glyph);
+        }
+        return null;
+      }).toList();
+      talentProvider.setGlyphs(minorGlyphs, majorGlyphs);
+    } else {
+      talentProvider.setGlyphs([null, null, null], [null, null, null]);
+    }
     setState(() {
       this.key = key;
       buildName = data["buildName"];
@@ -251,6 +272,13 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                   Icons.save,
                 ),
                 onTap: () {
+                  bool isGlyphSet = true;
+                  if (talentProvider.expansion == 'wotlk' &&
+                      (listEquals(
+                              talentProvider.minorGlyphs, [null, null, null]) &&
+                          listEquals(
+                              talentProvider.majorGlyphs, [null, null, null])))
+                    isGlyphSet = false;
                   Navigator.of(context).push(CustomPageRoute(
                       child: ChangeNotifierProvider<TalentProvider>.value(
                           value: talentProvider,
@@ -268,6 +296,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                             },
                             buildName: buildName,
                             buildKey: key,
+                            isGlyphSet: isGlyphSet
                           ))));
                 },
               ),
@@ -281,7 +310,9 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                 itemBuilder: (context) => [
                   ...MenuItems.itemsFirst.map(buildItem).toList(),
                   ...MenuItems.itemsSecond.map(buildItem).toList(),
-                  ...MenuItems.itemsThird.map(buildItem).toList()
+                  if (talentProvider.expansion == 'wotlk')
+                    ...MenuItems.itemsThird.map(buildItem).toList(),
+                  ...MenuItems.itemsForth.map(buildItem).toList()
                 ],
                 color: Color(0xff556F7A),
               ),
@@ -469,16 +500,19 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     }
 
     link = 'https://' + expansionInLink + talentPointsInLink;
-    launch(link);
+    Clipboard.setData(ClipboardData(text: link)).then((value) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(
+              "Build link copied to clipboard. Paste it into your browser to see your build. (It opens up wowhead where you can see the exact same build) ")));
+    });
   }
 
-  void onSelected(BuildContext context, MenuItemPopUp item) {
+  Future<void> onSelected(BuildContext context, MenuItemPopUp item) async {
+    final adState = Provider.of<AdState>(context, listen: false);
+
     switch (item) {
       case MenuItems.itemResetTree:
         talentProvider.resetTalentTree(_selectedIndex);
-        break;
-      case MenuItems.itemResetTrees:
-        talentProvider.resetTalentTrees();
         break;
       case MenuItems.itemShareBuild:
         shareBuild();
@@ -486,8 +520,30 @@ class _DetailScreenContentState extends State<DetailScreenContent>
       case MenuItems.itemSetGlyphs:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const GlyphsScreen()),
+          MaterialPageRoute(builder: (context) {
+            ClassGlyphs classGlyphs =
+                talentProvider.classGlyphs.firstWhere((classGlyphs) {
+              String className = talentProvider.className;
+              if (className == 'deathknight') className = 'death knight';
+              return classGlyphs.name!.toLowerCase() == className;
+            });
+            return ChangeNotifierProvider<TalentProvider>.value(
+                value: talentProvider,
+                child: GlyphsScreen(
+                  classGlyphs: classGlyphs,
+                ));
+          }),
         );
+        break;
+      case MenuItems.itemRemoveAds:
+        if (!adState.isAdFreeVersion) {
+          final offerings = await PurchaseApi.fetchOffers();
+          final isSuccess = await Purchases.purchasePackage(
+              offerings[0].availablePackages[0]);
+          if (isSuccess == true) {
+            adState.changeToAdFreeVersion();
+          }
+        }
     }
   }
 }

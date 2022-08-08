@@ -76,7 +76,7 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
             return AlertDialog(
               title: new Text("Welcome"),
               content: new Text(
-                  "Long press on talent to increase to the max level\nSwipe up to increase rank\nSwipe down to decrease rank\nOn the top right corner you can save your build\nDelete the build by swiping the saved build to left\nSupport me by removing the ads :)!"),
+                  "On the top right corner you can save your build(save icon), set\\see glyphs and share build(three dots)\nLong press on talent to increase to the max level\nSwipe up to increase rank\nSwipe down to decrease rank\nDelete the build by swiping the saved build to left\nSupport me by removing the ads :)!"),
               actions: <Widget>[
                 TextButton(
                   child: const Text('OK'),

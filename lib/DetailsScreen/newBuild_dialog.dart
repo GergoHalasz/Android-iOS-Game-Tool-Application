@@ -175,7 +175,7 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
               height: SizeConfig.cellSize / 1.7 * 3 + 40,
               child: RawScrollbar(
                 thumbColor: Colors.white,
-                isAlwaysShown: true,
+                thumbVisibility: true,
                 thickness: 3.5,
                 radius: Radius.circular(20),
                 controller: _scrollController,

@@ -13,6 +13,9 @@ class TalentProvider extends ChangeNotifier {
   String expansion;
   String? buildName = null;
   List<ClassGlyphs> classGlyphs;
+  List<dynamic> majorGlyphs = [null, null, null];
+  List<dynamic> minorGlyphs = [null, null, null];
+  bool showedGlyphDialog = false;
 
   TalentProvider(
       this.talentTrees, this.className, this.expansion, this.classGlyphs) {
@@ -22,10 +25,20 @@ class TalentProvider extends ChangeNotifier {
     getClassGlyphs();
   }
 
+  setShowedGlyphDialog() {
+    showedGlyphDialog = true;
+    notifyListeners();
+  }
+
   bool checkIfBuildIsMaxed() {
     return (expansion == 'vanilla' && getTotalTalentPoints() == 60) ||
         (expansion == 'tbc' && getTotalTalentPoints() == 70) ||
         (expansion == 'wotlk' && getTotalTalentPoints() == 80);
+  }
+
+  setGlyphs(List<dynamic> minorGlyphs, List<dynamic> majorGlyphs) {
+    this.minorGlyphs = minorGlyphs;
+    this.majorGlyphs = majorGlyphs;
   }
 
   /// return total points of talent selected
