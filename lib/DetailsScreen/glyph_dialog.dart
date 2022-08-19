@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:just_the_tooltip/just_the_tooltip.dart';
 
 import '../model/glyph.dart';
 import '../utils/size_config.dart';
@@ -25,6 +26,11 @@ class _GlyphDialogState extends State<GlyphDialog> {
   String value = "";
   final TextEditingController _controller = TextEditingController();
   ScrollController _scrollController = ScrollController();
+  final tooltipController = JustTheController();
+
+  void _showDescription() {
+    tooltipController.showTooltip();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +39,8 @@ class _GlyphDialogState extends State<GlyphDialog> {
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
+          Text('Long press the glyph to see the description',style: TextStyle(color: Colors.white),),
+          SizedBox(height: 10,),
           Padding(
             padding: const EdgeInsets.only(top: 4.0, bottom: 10),
             child: TextField(
@@ -115,37 +123,48 @@ class _GlyphDialogState extends State<GlyphDialog> {
                       });
                       return contains;
                     }).map((glyph) {
-                      return Column(
-                        children: [
-                          Divider(
-                            height: 0,
-                            thickness: 1,
-                          ),
-                          Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(0),
+                      return Tooltip(
+                        padding: EdgeInsets.all(6),
+                        showDuration: Duration(seconds: 10),
+                        textStyle: TextStyle(color: Colors.black),
+                        decoration: BoxDecoration(
+                            color: Colors.grey[300],
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                        child: Column(
+                          children: [
+                            Divider(
+                              height: 0,
+                              thickness: 1,
                             ),
-                            margin: EdgeInsets.zero,
-                            color: Colors.grey.shade700,
-                            child: ListTile(
-                              onTap: () {
-                                widget.onGlyphSelected(glyph);
-                                Navigator.pop(context);
-                              },
-                              title: Text(
-                                glyph.name!,
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    color: Color.fromARGB(255, 222, 222, 222)),
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(0),
                               ),
-                              leading: Image.asset(
-                                'assets/Icons/' + glyph.rune! + '.png',
-                                width: 35,
-                                height: 35,
+                              margin: EdgeInsets.zero,
+                              color: Colors.grey.shade700,
+                              child: ListTile(
+                                onTap: () {
+                                  widget.onGlyphSelected(glyph);
+                                  Navigator.pop(context);
+                                },
+                                title: Text(
+                                  glyph.name!,
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      color:
+                                          Color.fromARGB(255, 222, 222, 222)),
+                                ),
+                                leading: Image.asset(
+                                  'assets/Icons/' + glyph.rune! + '.png',
+                                  width: 35,
+                                  height: 35,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
+                        message: glyph.description,
                       );
                     }),
                   if (!widget.isMajorGlyphs)
@@ -163,38 +182,48 @@ class _GlyphDialogState extends State<GlyphDialog> {
                       });
                       return contains;
                     }).map((glyph) {
-                      return Column(
-                        children: [
-                          Divider(
-                            height: 0,
-                            thickness: 1,
-                          ),
-                          Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(0),
-                            ),
-                            margin: EdgeInsets.zero,
-                            color: Colors.grey.shade700,
-                            child: ListTile(
-                              onTap: () {
-                                widget.onGlyphSelected(glyph);
-                                Navigator.pop(context);
-                              },
-                              title: Text(
-                                glyph.name!,
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    color: Color.fromARGB(255, 222, 222, 222)),
+                      return Tooltip(
+                          message: glyph.description,
+                          padding: EdgeInsets.all(6),
+                          showDuration: Duration(seconds: 10),
+                          textStyle: TextStyle(color: Colors.black),
+                          decoration: BoxDecoration(
+                              color: Colors.grey[300],
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
+                          child: Column(
+                            children: [
+                              Divider(
+                                height: 0,
+                                thickness: 1,
                               ),
-                              leading: Image.asset(
-                                'assets/Icons/' + glyph.rune! + '.png',
-                                width: 35,
-                                height: 35,
+                              Card(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(0),
+                                ),
+                                margin: EdgeInsets.zero,
+                                color: Colors.grey.shade700,
+                                child: ListTile(
+                                  onTap: () {
+                                    widget.onGlyphSelected(glyph);
+                                    Navigator.pop(context);
+                                  },
+                                  title: Text(
+                                    glyph.name!,
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        color:
+                                            Color.fromARGB(255, 222, 222, 222)),
+                                  ),
+                                  leading: Image.asset(
+                                    'assets/Icons/' + glyph.rune! + '.png',
+                                    width: 35,
+                                    height: 35,
+                                  ),
+                                ),
                               ),
-                            ),
-                          ),
-                        ],
-                      );
+                            ],
+                          ));
                     })
                 ],
               ),

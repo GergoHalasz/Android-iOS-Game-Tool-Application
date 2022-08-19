@@ -6,8 +6,6 @@ class MenuItems {
     itemResetTree,
   ];
 
-  static const List<MenuItemPopUp> itemsSecond = [itemRemoveAds];
-
   static const List<MenuItemPopUp> itemsThird = [itemSetGlyphs];
 
   static const List<MenuItemPopUp> itemsForth = [itemShareBuild];

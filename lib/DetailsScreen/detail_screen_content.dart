@@ -309,7 +309,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                 onSelected: (item) => onSelected(context, item),
                 itemBuilder: (context) => [
                   ...MenuItems.itemsFirst.map(buildItem).toList(),
-                  ...MenuItems.itemsSecond.map(buildItem).toList(),
                   if (talentProvider.expansion == 'wotlk')
                     ...MenuItems.itemsThird.map(buildItem).toList(),
                   ...MenuItems.itemsForth.map(buildItem).toList()

@@ -208,7 +208,50 @@ class _SaveScreenState extends State<SaveScreen> {
                           ),
                         )),
                   ],
-                )
+                ),
+                if (!adState.isAdFreeVersion)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 120),
+                    child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Text(
+                          'Support me by removing the ads!',
+                          style: TextStyle(fontSize: 15),
+                        )),
+                  ),
+                if (!adState.isAdFreeVersion)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 50),
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.grey,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
+                        width: 200,
+                        child: ListTile(
+                          dense: true,
+                          leading:
+                              Icon(Icons.not_interested, color: Colors.white),
+                          title: Text(
+                            'Remove Ads',
+                            style: TextStyle(color: Colors.white, fontSize: 16),
+                          ),
+                          onTap: () async {
+                            if (!adState.isAdFreeVersion) {
+                              final offerings = await PurchaseApi.fetchOffers();
+                              final isSuccess = await Purchases.purchasePackage(
+                                  offerings[0].availablePackages[0]);
+                              if (isSuccess == true) {
+                                adState.changeToAdFreeVersion();
+                              }
+                            }
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
               ]),
             )));
   }
