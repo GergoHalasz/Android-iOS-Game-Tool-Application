@@ -46,11 +46,11 @@ class AdState extends ChangeNotifier {
   }
 
   String get bannerAdUnitId => Platform.isAndroid
-      ? 'ca-app-pub-8156706115088392/4083440070'
+      ? 'ca-app-pub-8156706115088392/4896895388'
       : 'ca-app-pub-8156706115088392/4369191164';
 
   String get interstitialAdUnitId => Platform.isAndroid
-      ? 'ca-app-pub-8156706115088392/8921865020'
+      ? 'ca-app-pub-8156706115088392/6599206908'
       : 'ca-app-pub-8156706115088392/4643068037';
 
   final BannerAdListener listener = BannerAdListener(
