@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "765441738391-12vcnc96ljinu08ktlr1rcspf69hdkli.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fissher.wowtalentcalculator",
+            "certificate_hash": "e7095bea5e92b40a2e40de9f26eb21f76ecf9a89"
+          }
+        },
+        {
           "client_id": "765441738391-qg83eb5a027micb18imhilj2rd6trmio.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -37,6 +45,51 @@
             {
               "client_id": "765441738391-2ushhdhmv8nou8g564kukmig2rqlsr4s.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "765441738391-leuvpk0l9kj87it5n05bdbuklpq4qu9l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.fissher.wowTalentCalculator",
+                "app_store_id": "1593368066"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765441738391:android:fdf6bbb860e41ac48a8bd2",
+        "android_client_info": {
+          "package_name": "com.fissherstudio.wowtalentcalculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "765441738391-2ushhdhmv8nou8g564kukmig2rqlsr4s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxqK09tKwBFaLEBkXL6KMaeggZq_ap8V0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "765441738391-2ushhdhmv8nou8g564kukmig2rqlsr4s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "765441738391-leuvpk0l9kj87it5n05bdbuklpq4qu9l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.fissher.wowTalentCalculator",
+                "app_store_id": "1593368066"
+              }
             }
           ]
         }

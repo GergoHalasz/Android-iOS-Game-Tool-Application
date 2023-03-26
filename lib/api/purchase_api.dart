@@ -7,7 +7,7 @@ class PurchaseApi {
   static Future init() async {
     final apiKey = Platform.isIOS
         ? 'appl_OFAINueZVlSYxIuLShwHKRDIHYb'
-        : 'goog_zhICXognoNhhTiVmUMZLoyNhyXa';
+        : 'goog_ORDoTnQCskoxBeCayVnpnAbFORY';
 
     await Purchases.setDebugLogsEnabled(true);
     await Purchases.setup(apiKey);
