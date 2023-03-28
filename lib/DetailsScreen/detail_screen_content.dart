@@ -304,7 +304,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
             DividerTheme(
               data: DividerThemeData(color: Colors.grey),
               child: PopupMenuButton<MenuItemPopUp>(
-                icon: Icon(Icons.more_horiz),
+                icon: Icon(Icons.more_horiz, color: Colors.white),
                 offset: Offset(0, 56),
                 onSelected: (item) => onSelected(context, item),
                 itemBuilder: (context) => [
@@ -313,7 +313,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                     ...MenuItems.itemsThird.map(buildItem).toList(),
                   ...MenuItems.itemsForth.map(buildItem).toList()
                 ],
-                color: Colors.white,
+                color: Color(0xff556F7A),
               ),
             ),
           ],
