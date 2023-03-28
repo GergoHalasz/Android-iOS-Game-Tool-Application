@@ -313,7 +313,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                     ...MenuItems.itemsThird.map(buildItem).toList(),
                   ...MenuItems.itemsForth.map(buildItem).toList()
                 ],
-                color: Color(0xff556F7A),
+                color: Colors.white,
               ),
             ),
           ],
