@@ -24,7 +24,7 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
     minLaunches: 0,
     remindDays: 1,
     remindLaunches: 4,
-    googlePlayIdentifier: 'com.fissher.wowtalentcalculator',
+    googlePlayIdentifier: 'com.fissherstudio.wowtalentcalculator',
     appStoreIdentifier: '1593368066',
   );
 
@@ -41,12 +41,12 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
         if (Platform.isAndroid) {
           rateMyApp.showRateDialog(context,
               title: 'Rate This App',
-              message: 'Do you like this app? Please leave a rating!',
+              message: 'Hey Classic Peep, if you like the app leave a rating! :)',
               actionsBuilder: actionsBuilderAndroid);
         } else {
           rateMyApp.showStarRateDialog(context,
               title: 'Rate This App',
-              message: 'Do you like this app? Please leave a rating!',
+              message: 'Hey Classic Peep, if you like the app leave a rating! :)',
               actionsBuilder: actionsBuilderIOS);
         }
       }

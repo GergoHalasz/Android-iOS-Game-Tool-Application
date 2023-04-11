@@ -215,7 +215,7 @@ class _SaveScreenState extends State<SaveScreen> {
                     child: Align(
                         alignment: Alignment.bottomCenter,
                         child: Text(
-                          'Please support me by removing the ads!',
+                          'Please support me by removing the ads! :)',
                           style: TextStyle(fontSize: 15),
                         )),
                   ),

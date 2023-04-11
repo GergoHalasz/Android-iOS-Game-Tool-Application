@@ -436,12 +436,12 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                 if (!adState.isAdFreeVersion)
                   if (banner == null)
                     Container(
-                      height: 50,
+                      height: 52,
                       color: Colors.black,
                     )
                   else
                     Container(
-                      height: 50,
+                      height: 52,
                       child: AdWidget(ad: banner!),
                       color: Colors.black,
                     )
