@@ -161,29 +161,27 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 style: TextStyle(color: Colors.white),
               ),
             ),
-                if (!adState.isAdFreeVersion)
-
-            Divider(color: Colors.white12, height: 0),
-                if (!adState.isAdFreeVersion)
-            ListTile(
-              leading: Icon(Icons.not_interested, color: Colors.white),
-              title: Text(
-                'Remove Ads',
-                style: TextStyle(color: Colors.white),
-              ),
-              onTap: () async {
-                final adState = Provider.of<AdState>(context, listen: false);
-                if (!adState.isAdFreeVersion) {
-                  final offerings = await PurchaseApi.fetchOffers();
-                  final isSuccess = await Purchases.purchasePackage(
-                      offerings[0].availablePackages[0]);
-                  if (isSuccess == true) {
-                    adState.changeToAdFreeVersion();
-                    
+            if (!adState.isAdFreeVersion)
+              Divider(color: Colors.white12, height: 0),
+            if (!adState.isAdFreeVersion)
+              ListTile(
+                leading: Icon(Icons.not_interested, color: Colors.white),
+                title: Text(
+                  'Remove Ads',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onTap: () async {
+                  final adState = Provider.of<AdState>(context, listen: false);
+                  if (!adState.isAdFreeVersion) {
+                    final offerings = await PurchaseApi.fetchOffers();
+                    final isSuccess = await Purchases.purchasePackage(
+                        offerings[0].availablePackages[0]);
+                    if (isSuccess.allPurchasedProductIdentifiers.length == 1) {
+                      adState.changeToAdFreeVersion();
+                    }
                   }
-                }
-              },
-            ),
+                },
+              ),
             Divider(color: Colors.white12, height: 1),
             ListTile(
               leading:
@@ -196,8 +194,8 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 try {
                   final adState = Provider.of<AdState>(context, listen: false);
                   if (!adState.isAdFreeVersion) {
-                    CustomerInfo restoredInfo =
-                        await Purchases.restorePurchases();
+                    PurchaserInfo restoredInfo =
+                        await Purchases.restoreTransactions();
                     if (restoredInfo.allPurchasedProductIdentifiers.length >
                             0 &&
                         restoredInfo.allPurchasedProductIdentifiers[0] ==

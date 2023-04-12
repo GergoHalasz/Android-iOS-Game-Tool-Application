@@ -12,7 +12,7 @@ class AdState extends ChangeNotifier {
 
   AdState(this.initialization) {
     this.initialization = initialization;
-    Purchases.addCustomerInfoUpdateListener(
+    Purchases.addPurchaserInfoUpdateListener(
         (purchaserInfo) => {updatePurchaseStatus()});
     checkIsAdFreeversion();
   }
@@ -20,10 +20,12 @@ class AdState extends ChangeNotifier {
   bool isAdFreeVersion = false;
 
   Future updatePurchaseStatus() async {
-    final purchaserInfo = await Purchases.getCustomerInfo();
+    final purchaserInfo = await Purchases.getPurchaserInfo();
+    final productName =
+        Platform.isAndroid ? "free_ad_version" : "wowtc_ad_free_version";
+
     if (purchaserInfo.allPurchasedProductIdentifiers.length > 0 &&
-        purchaserInfo.allPurchasedProductIdentifiers[0] ==
-            "wowtc_ad_free_version") {
+        purchaserInfo.allPurchasedProductIdentifiers[0] == productName) {
       final prefs = await SharedPreferences.getInstance();
       prefs.setBool('isAdFreeVersion', true);
       isAdFreeVersion = true;

@@ -5,23 +5,18 @@ import 'package:purchases_flutter/purchases_flutter.dart';
 
 class PurchaseApi {
   static Future init() async {
-    await Purchases.setDebugLogsEnabled(true);
+    final apiKey = Platform.isIOS
+        ? 'appl_OFAINueZVlSYxIuLShwHKRDIHYb'
+        : 'goog_ORDoTnQCskoxBeCayVnpnAbFORY';
 
-    late PurchasesConfiguration configuration;
-    if (Platform.isAndroid) {
-      configuration =
-          PurchasesConfiguration('goog_ORDoTnQCskoxBeCayVnpnAbFORY');
-    } else if (Platform.isIOS) {
-      configuration =
-          PurchasesConfiguration('appl_OFAINueZVlSYxIuLShwHKRDIHYb');
-    }
-    await Purchases.configure(configuration);
+    await Purchases.setDebugLogsEnabled(true);
+    await Purchases.setup(apiKey);
   }
 
   static Future<List<Offering>> fetchOffers() async {
     try {
       final offerings = await Purchases.getOfferings();
-      final current = offerings.current;
+      final current =   offerings.current;
 
       return current == null ? [] : [current];
     } on PlatformException catch (e) {
