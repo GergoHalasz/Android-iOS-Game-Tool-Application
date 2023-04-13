@@ -243,7 +243,9 @@ class _SaveScreenState extends State<SaveScreen> {
                               final offerings = await PurchaseApi.fetchOffers();
                               final isSuccess = await Purchases.purchasePackage(
                                   offerings[0].availablePackages[0]);
-                              if (isSuccess == true) {
+                              if (isSuccess
+                                      .allPurchasedProductIdentifiers.length ==
+                                  1) {
                                 adState.changeToAdFreeVersion();
                               }
                             }
