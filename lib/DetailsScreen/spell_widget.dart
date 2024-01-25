@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:swipedetector/swipedetector.dart';
+import 'package:swipedetector_nullsafety/swipedetector_nullsafety.dart';
 import 'package:wowtalentcalculator/model/talent.dart';
 import 'package:wowtalentcalculator/provider/talent_provider.dart';
 import 'package:wowtalentcalculator/utils/size_config.dart';

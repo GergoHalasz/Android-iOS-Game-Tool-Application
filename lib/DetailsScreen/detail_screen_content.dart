@@ -133,8 +133,10 @@ class _DetailScreenContentState extends State<DetailScreenContent>
   }
 
   TabBar _tabBar() => TabBar(
+        dividerHeight: 0,
         controller: _tabController,
         indicatorColor: classColor,
+        indicatorSize: TabBarIndicatorSize.tab,
         tabs: [
           Tab(
             icon: Image.asset(
@@ -243,22 +245,13 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     }
 
     return Scaffold(
-      floatingActionButton: Padding(
-        padding: EdgeInsets.only(bottom: !adState.isAdFreeVersion ? 45 : 15),
-        child: FloatingActionButton(
-            onPressed: showAddBuildDialog,
-            backgroundColor: Color(0xffB79FAD),
-            child: Icon(
-              Icons.add,
-              size: 35,
-            )),
-      ),
       drawer: Drawer(
           child: DrawerScreen(
         fetchSavedBuild: fetchSavedBuild,
         changeClass: changeClass,
       )),
       appBar: AppBar(
+          iconTheme: IconThemeData(color: Colors.white),
           centerTitle: true,
           title: Text(
               talentProvider.buildName == null
@@ -270,6 +263,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
               child: InkResponse(
                 child: Icon(
                   Icons.save,
+                  color: Colors.white,
                 ),
                 onTap: () {
                   bool isGlyphSet = true;
@@ -283,21 +277,20 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                       child: ChangeNotifierProvider<TalentProvider>.value(
                           value: talentProvider,
                           child: SaveScreen(
-                            changeBuildKeyAndName: (key, buildName) {
-                              setState(() {
-                                this.key = key;
-                                this.buildName = buildName;
-                              });
-                            },
-                            changeBuildName: (buildName) {
-                              setState(() {
-                                this.buildName = buildName;
-                              });
-                            },
-                            buildName: buildName,
-                            buildKey: key,
-                            isGlyphSet: isGlyphSet
-                          ))));
+                              changeBuildKeyAndName: (key, buildName) {
+                                setState(() {
+                                  this.key = key;
+                                  this.buildName = buildName;
+                                });
+                              },
+                              changeBuildName: (buildName) {
+                                setState(() {
+                                  this.buildName = buildName;
+                                });
+                              },
+                              buildName: buildName,
+                              buildKey: key,
+                              isGlyphSet: isGlyphSet))));
                 },
               ),
             ),

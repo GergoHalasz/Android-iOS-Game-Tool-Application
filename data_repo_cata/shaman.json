@@ -1,0 +1,435 @@
+{
+  "Name": "Elemental",
+  "Icon": "spell_shaman_lightning",
+  "Background": "shaman_elemental",
+  "Points": 0,
+  "Talents": {
+    "Talent": [
+      {
+        "Icon": "../icon/Spell_Nature_AstralRecalGroup.png",
+        "Name": "Acuity",
+        "Points": 0,
+        "Dependency": "",
+        "Support": [],
+        "Position": [0, 0],
+        "Enable": true,
+        "Tier": 1,
+        "Ranks": {
+          "Rank": [
+            {
+              "Number": 1,
+              "Description": "Increases your critical strike chance with all spells and attacks by 1%."
+            },
+            {
+              "Number": 2,
+              "Description": "Increases your critical strike chance with all spells and attacks by 2%."
+            },
+            {
+              "Number": 3,
+              "Description": "Increases your critical strike chance with all spells and attacks by 3%."
+            }
+          ]
+        }
+      },
+      {
+        "Icon": "../icon/spell_shaman_convection.png",
+        "Name": "Convection",
+        "Points": 0,
+        "Dependency": "",
+        "Support": [],
+        "Position": [0, 1],
+        "Enable": true,
+        "Tier": 1,
+        "Ranks": {
+          "Rank": [
+            {
+              "Number": 1,
+              "Description": "Reduces the mana cost of your damaging offensive spells by 5%."
+            },
+            {
+              "Number": 2,
+              "Description": "Reduces the mana cost of your damaging offensive spells by 10%."
+            }
+          ]
+        }
+      },
+      {
+        "Icon": "../icon/Spell_Fire_Fireball.png",
+        "Name": "Concussion",
+        "Points": 0,
+        "Dependency": "",
+        "Support": [],
+        "Position": [0, 2],
+        "Enable": true,
+        "Tier": 1,
+        "Ranks": {
+          "Rank": [
+            {
+              "Number": 1,
+              "Description": "Increases the damage done by your Lightning Bolt, Chain Lightning, Thunderstorm, Lava Burst and Shock spells by 2%."
+            },
+            {
+              "Number": 2,
+              "Description": "Increases the damage done by your Lightning Bolt, Chain Lightning, Thunderstorm, Lava Burst and Shock spells by 4%."
+            },
+            {
+              "Number": 3,
+              "Description": "Increases the damage done by your Lightning Bolt, Chain Lightning, Thunderstorm, Lava Burst and Shock spells by 6%."
+            }
+          ]
+        }
+      },
+      {
+        "Icon": "../icon/Spell_Fire_Immolation.png",
+        "Name": "Call of Flame",
+        "Points": 0,
+        "Dependency": "",
+        "Support": [],
+        "Position": [1, 0],
+        "Enable": true,
+        "Tier": 2,
+        "Ranks": {
+          "Rank": [
+            {
+              "Number": 1,
+              "Description": "Increases the damage done by your Fire Totems and Fire Nova by 10%, and damage done by your Lava Burst spell by 5%."
+            },
+            {
+              "Number": 2,
+              "Description": "Increases the damage done by your Fire Totems and Fire Nova by 20%, and damage done by your Lava Burst spell by 10%."
+            }
+          ]
+        }
+      },
+      {
+        "Icon": "../icon/Spell_Nature_SpiritArmor.png",
+        "Name": "Elemental Warding",
+        "Points": 0,
+        "Dependency": "",
+        "Support": [],
+        "Position": [1, 1],
+        "Enable": true,
+        "Tier": 2,
+        "Ranks": {
+          "Rank": [
+            {
+              "Number": 1,
+              "Description": "Reduces magical damage taken by 4%."
+            },
+            {
+              "Number": 2,
+              "Description": "Reduces magical damage taken by 8%."
+            },
+            {
+              "Number": 3,
+              "Description": "Reduces magical damage taken by 12%."
+            }
+          ]
+        }
+      },
+      {
+        "Icon": "../icon/Spell_Frost_FrostWard.png",
+        "Name": "Reverberation",
+        "Points": 0,
+        "Dependency": "",
+        "Support": [],
+        "Position": [1, 2],
+        "Enable": true,
+        "Tier": 2,
+        "Ranks": {
+          "Rank": [
+            {
+              "Number": 1,
+              "Description": "Reduces the cooldown of your Shock spells by 0.5 sec and Wind Shear by 5 sec."
+            },
+            {
+              "Number": 2,
+              "Description": "Reduces the cooldown of your Shock spells by 1 sec and Wind Shear by 10 sec."
+            }
+          ]
+        }
+      },
+      {
+        "Icon": "../icon/Spell_Nature_ElementalPrecision_1.png",
+        "Name": "Elemental Precision",
+        "Points": 0,
+        "Dependency": "",
+        "Support": [],
+        "Position": [1, 3],
+        "Enable": true,
+        "Tier": 2,
+        "Ranks": {
+          "Rank": [
+            {
+              "Number": 1,
+              "Description": "Increases your Fire, Frost and Nature damage by 1% and grants you spell hit rating equal to 33% of any Spirit gained from items or effects."
+            },
+            {
+              "Number": 2,
+              "Description": "Increases your Fire, Frost and Nature damage by 2% and grants you spell hit rating equal to 66% of any Spirit gained from items or effects."
+            },
+            {
+              "Number": 3,
+              "Description": "Increases your Fire, Frost and Nature damage by 3% and grants you spell hit rating equal to 100% of any Spirit gained from items or effects."
+            }
+          ]
+        }
+      },
+      {
+        "Icon": "../icon/Spell_Nature_CallStorm.png",
+        "Name": "Rolling Thunder",
+        "Points": 0,
+        "Dependency": "",
+        "Support": [],
+        "Position": [2, 0],
+        "Enable": true,
+        "Tier": 2,
+        "Ranks": {
+          "Rank": [
+            {
+              "Number": 1,
+              "Description": "When you deal damage with Lightning Bolt or Chain Lightning while your Lightning Shield ability is active, you have a 30% chance to recover 2% of your mana and to generate an additional Lightning Shield charge, up to a maximum of 9 charges."
+            },
+            {
+              "Number": 2,
+              "Description": "When you deal damage with Lightning Bolt or Chain Lightning while your Lightning Shield ability is active, you have a 60% chance to recover 2% of your mana and to generate an additional Lightning Shield charge, up to a maximum of 9 charges."
+            }
+          ]
+        }
+      },
+      {
+        "Icon": "../icon/Spell_Shadow_ManaBurn.png",
+        "Name": "Elemental Focus",
+        "Points": 0,
+        "Dependency": "",
+        "Support": [],
+        "Position": [2, 1],
+        "Enable": true,
+        "Tier": 2,
+        "Ranks": {
+          "Rank": [
+            {
+              "Number": 1,
+              "Description": "After landing a non-periodic critical strike with a Fire, Frost, or Nature damage spell, you enter a Clearcasting state. The Clearcasting state reduces the mana cost of your next 2 damage or healing spells by 40%."
+            }
+          ]
+        }
+      },
+      {
+        "Icon": "../icon/Spell_Nature_StormReach.png",
+        "Name": "Elemental Reach",
+        "Points": 0,
+        "Dependency": "",
+        "Support": [],
+        "Position": [2, 2],
+        "Enable": true,
+        "Tier": 2,
+        "Ranks": {
+          "Rank": [
+            {
+              "Number": 1,
+              "Description": "Increases the range of your Lightning Bolt, Chain Lightning, Fire Nova, and Lava Burst spells by 5 yards, and increases the range of your Shock spells and Searing Totem by 7 yards."
+            },
+            {
+              "Number": 2,
+              "Description": "Increases the range of your Lightning Bolt, Chain Lightning, Fire Nova, and Lava Burst spells by 10 yards, and increases the range of your Shock spells and Searing Totem by 15 yards."
+            }
+          ]
+        }
+      },
+      {
+        "Icon": "../icon/Spell_Shaman_ElementalOath.png",
+        "Name": "Elemental Oath",
+        "Points": 0,
+        "Dependency": "",
+        "Support": [],
+        "Position": [3, 1],
+        "Enable": true,
+        "Tier": 3,
+        "Ranks": {
+          "Rank": [
+            {
+              "Number": 1,
+              "Description": "While Clearcasting from Elemental Focus is active, you deal 5% more spell damage. In addition, party and raid members within 100 yards receive a 3% bonus to their critical strike chance."
+            },
+            {
+              "Number": 2,
+              "Description": "While Clearcasting from Elemental Focus is active, you deal 10% more spell damage. In addition, party and raid members within 100 yards receive a 5% bonus to their critical strike chance."
+            }
+          ],
+          "reqRow": 2,
+          "reqCol": 1,
+          "reqRank": 1
+        }
+      },
+      {
+        "Icon": "../icon/Spell_Shaman_LavaFlow.png",
+        "Name": "Lava Flows",
+        "Points": 0,
+        "Dependency": "",
+        "Support": [],
+        "Position": [3, 2],
+        "Enable": true,
+        "Tier": 3,
+        "Ranks": {
+          "Rank": [
+            {
+              "Number": 1,
+              "Description": "Increases the critical strike damage bonus of your Lava Burst spell by an additional 8% and the periodic damage of your Flame Shock by 20%. In addition, when your Flame Shock is dispelled you gain 30% spell haste for 6 sec."
+            },
+            {
+              "Number": 2,
+              "Description": "Increases the critical strike damage bonus of your Lava Burst spell by an additional 16% and the periodic damage of your Flame Shock by 40%. In addition, when your Flame Shock is dispelled you gain 60% spell haste for 6 sec."
+            },
+            {
+              "Number": 3,
+              "Description": "Increases the critical strike damage bonus of your Lava Burst spell by an additional 24% and the periodic damage of your Flame Shock by 60%. In addition, when your Flame Shock is dispelled you gain 90% spell haste for 6 sec."
+            }
+          ]
+        }
+      },
+      {
+        "Icon": "../icon/Spell_Nature_UnrelentingStorm.png",
+        "Name": "Fulmination",
+        "Points": 0,
+        "Dependency": "",
+        "Support": [],
+        "Position": [4, 0],
+        "Enable": true,
+        "Tier": 4,
+        "Ranks": {
+          "Rank": [
+            {
+              "Number": 1,
+              "Description": "When you have more than 3 Lightning Shield charges active, your Earth Shock spell will consume any surplus charges, instantly dealing their total damage to the enemy target."
+            }
+          ]
+        }
+      },
+      {
+        "Icon": "../icon/Spell_Nature_WispHeal.png",
+        "Name": "Elemental Mastery",
+        "Points": 0,
+        "Dependency": "",
+        "Support": [],
+        "Position": [4, 1],
+        "Enable": true,
+        "Tier": 4,
+        "Ranks": {
+          "Rank": [
+            {
+              "Number": 1,
+              "Description": "When activated, your next Lightning Bolt, Chain Lightning or Lava Burst spell becomes an instant cast spell. In addition, your Fire, Frost, and Nature damage is increased by 15% and you gain 20% spell haste for 15 sec."
+            }
+          ]
+        }
+      },
+      {
+        "Icon": "../icon/Spell_Nature_StrangleVines.png",
+        "Name": "Earth's Grasp",
+        "Points": 0,
+        "Dependency": "",
+        "Support": [],
+        "Position": [4, 2],
+        "Enable": true,
+        "Tier": 4,
+        "Ranks": {
+          "Rank": [
+            {
+              "Number": 1,
+              "Description": "Grants your Earthbind Totem a 50% chance to root nearby targets for 5 sec when cast."
+            },
+            {
+              "Number": 2,
+              "Description": "Grants your Earthbind Totem a 100% chance to root nearby targets for 5 sec when cast."
+            }
+          ]
+        }
+      },
+      {
+        "Icon": "../icon/Spell_Fire_TotemOfWrath.png",
+        "Name": "Totemic Wrath",
+        "Points": 0,
+        "Dependency": "",
+        "Support": [],
+        "Position": [4, 3],
+        "Enable": true,
+        "Tier": 4,
+        "Ranks": {
+          "Rank": [
+            {
+              "Number": 1,
+              "Description": "Causes your Fire totems to increase the spell power of party and raid members within 100 yards by 10%."
+            }
+          ]
+        }
+      },
+      {
+        "Icon": "../icon/ability_vehicle_electrocharge.png",
+        "Name": "Feedback",
+        "Points": 0,
+        "Dependency": "",
+        "Support": [],
+        "Position": [5, 1],
+        "Enable": true,
+        "Tier": 5,
+        "Ranks": {
+          "Rank": [
+            {
+              "Number": 1,
+              "Description": "Your Lightning Bolt and Chain Lightning spells reduce the remaining cooldown on your Elemental Mastery talent by 1 sec."
+            },
+            {
+              "Number": 2,
+              "Description": "Your Lightning Bolt and Chain Lightning spells reduce the remaining cooldown on your Elemental Mastery talent by 2 sec."
+            },
+            {
+              "Number": 3,
+              "Description": "Your Lightning Bolt and Chain Lightning spells reduce the remaining cooldown on your Elemental Mastery talent by 3 sec."
+            }
+          ]
+        }
+      },
+      {
+        "Icon": "../icon/spell_shaman_lavasurge.png",
+        "Name": "Lava Surge",
+        "Points": 0,
+        "Dependency": "",
+        "Support": [],
+        "Position": [5, 2],
+        "Enable": true,
+        "Tier": 5,
+        "Ranks": {
+          "Rank": [
+            {
+              "Number": 1,
+              "Description": "Gives your Flame Shock periodic damage ticks a 10% chance to reset the cooldown of your Lava Burst spell."
+            },
+            {
+              "Number": 2,
+              "Description": "Gives your Flame Shock periodic damage ticks a 20% chance to reset the cooldown of your Lava Burst spell."
+            }
+          ]
+        }
+      },
+      {
+        "Icon": "../icon/spell_shaman_earthquake.png",
+        "Name": "Earthquake",
+        "Points": 0,
+        "Dependency": "",
+        "Support": [],
+        "Position": [6, 1],
+        "Enable": true,
+        "Tier": 6,
+        "Ranks": {
+          "Rank": [
+            {
+              "Number": 1,
+              "Description": "You cause the earth at the target location to tremble and break, dealing (292.+SPN*0.11) Physical damage every 1 sec to enemies in an 8 yard radius, with a 10% chance of knocking down affected targets. Lasts 10 sec."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

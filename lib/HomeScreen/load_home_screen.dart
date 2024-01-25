@@ -41,12 +41,14 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
         if (Platform.isAndroid) {
           rateMyApp.showRateDialog(context,
               title: 'Rate This App',
-              message: 'Hey Classic Peep, if you like the app leave a rating! :)',
+              message:
+                  'Hey Classic Peep, if you like the app leave a rating! :)',
               actionsBuilder: actionsBuilderAndroid);
         } else {
           rateMyApp.showStarRateDialog(context,
               title: 'Rate This App',
-              message: 'Hey Classic Peep, if you like the app leave a rating! :)',
+              message:
+                  'Hey Classic Peep, if you like the app leave a rating! :)',
               actionsBuilder: actionsBuilderIOS);
         }
       }
@@ -58,10 +60,7 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
   Widget build(BuildContext context) {
     Future.delayed(Duration.zero, () => showDialogIfFirstLoaded(context));
 
-    return HomeScreen(
-      expansion: getExpansion(),
-      druidTalentTrees: loadTalentString('druid', 'start'),
-    );
+    return HomeScreen();
   }
 
   showDialogIfFirstLoaded(BuildContext context) async {

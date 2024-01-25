@@ -1,0 +1,106 @@
+{
+    "Icon": "../icon/Spell_Nature_StrangleVines.png",
+    "Name": "Earth's Grasp",
+    "Points": 0,
+    "Dependency": "",
+    "Support": [],
+    "Position": [4, 2],
+    "Enable": true,
+    "Tier": 4,
+    "Ranks": {
+      "Rank": [
+        {
+          "Number": 1,
+          "Description": "Grants your Earthbind Totem a 50% chance to root nearby targets for 5 sec when cast."
+        },
+        {
+          "Number": 2,
+          "Description": "Grants your Earthbind Totem a 100% chance to root nearby targets for 5 sec when cast."
+        }
+      ]
+    }
+},
+  {
+    "Icon": "../icon/Spell_Fire_TotemOfWrath.png",
+    "Name": "Totemic Wrath",
+    "Points": 0,
+    "Dependency": "",
+    "Support": [],
+    "Position": [4, 3],
+    "Enable": true,
+    "Tier": 4,
+    "Ranks": {
+      "Rank": [
+        {
+          "Number": 1,
+          "Description": "Causes your Fire totems to increase the spell power of party and raid members within 100 yards by 10%."
+        }
+      ]
+    }
+  },
+  {
+    "Icon": "../icon/ability_vehicle_electrocharge.png",
+    "Name": "Feedback",
+    "Points": 0,
+    "Dependency": "",
+    "Support": [],
+    "Position": [5, 1],
+    "Enable": true,
+    "Tier": 5,
+    "Ranks": {
+      "Rank": [
+        {
+          "Number": 1,
+          "Description": "Your Lightning Bolt and Chain Lightning spells reduce the remaining cooldown on your Elemental Mastery talent by 1 sec."
+        },
+        {
+          "Number": 2,
+          "Description": "Your Lightning Bolt and Chain Lightning spells reduce the remaining cooldown on your Elemental Mastery talent by 2 sec."
+        },
+        {
+          "Number": 3,
+          "Description": "Your Lightning Bolt and Chain Lightning spells reduce the remaining cooldown on your Elemental Mastery talent by 3 sec."
+        }
+      ]
+    }
+  },
+  {
+    "Icon": "../icon/spell_shaman_lavasurge.png",
+    "Name": "Lava Surge",
+    "Points": 0,
+    "Dependency": "",
+    "Support": [],
+    "Position": [5, 2],
+    "Enable": true,
+    "Tier": 5,
+    "Ranks": {
+      "Rank": [
+        {
+          "Number": 1,
+          "Description": "Gives your Flame Shock periodic damage ticks a 10% chance to reset the cooldown of your Lava Burst spell."
+        },
+        {
+          "Number": 2,
+          "Description": "Gives your Flame Shock periodic damage ticks a 20% chance to reset the cooldown of your Lava Burst spell."
+        }
+      ]
+    }
+  },
+  {
+    "Icon": "../icon/spell_shaman_earthquake.png",
+    "Name": "Earthquake",
+    "Points": 0,
+    "Dependency": "",
+    "Support": [],
+    "Position": [6, 1],
+    "Enable": true,
+    "Tier": 6,
+    "Ranks": {
+      "Rank": [
+        {
+          "Number": 1,
+          "Description": "You cause the earth at the target location to tremble and break, dealing (292.+SPN*0.11) Physical damage every 1 sec to enemies in an 8 yard radius, with a 10% chance of knocking down affected targets. Lasts 10 sec."
+        }
+      ]
+    }
+}
