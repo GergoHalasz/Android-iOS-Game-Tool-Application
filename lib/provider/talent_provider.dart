@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:wowtalentcalculator/model/glyph.dart';
+import 'package:wowtalentcalculator/model/runeData.dart';
 import 'package:wowtalentcalculator/model/talent.dart';
 import 'package:wowtalentcalculator/utils/methods.dart';
 
@@ -11,17 +12,26 @@ class TalentProvider extends ChangeNotifier {
   String className;
   String expansion;
   String? buildName = null;
+  List<RuneData> runes;
   List<ClassGlyphs> classGlyphs;
   List<dynamic> majorGlyphs = [null, null, null];
   List<dynamic> minorGlyphs = [null, null, null];
   bool showedGlyphDialog = false;
 
-  TalentProvider(this.talentTrees, this.className, this.expansion,
-      this.classGlyphs, this.buildName, this.minorGlyphs, this.majorGlyphs) {
+  TalentProvider(
+      this.talentTrees,
+      this.className,
+      this.expansion,
+      this.classGlyphs,
+      this.buildName,
+      this.minorGlyphs,
+      this.majorGlyphs,
+      this.runes) {
     _firstTalentTreePoints = talentTrees.specTreeList[0].points;
     _secondTalentTreePoints = talentTrees.specTreeList[1].points;
     _thirdTalentTreePoints = talentTrees.specTreeList[2].points;
     getClassGlyphs();
+    getRunes();
   }
 
   setShowedGlyphDialog() {
@@ -74,6 +84,10 @@ class TalentProvider extends ChangeNotifier {
     return await loadTalentString('glyphs', 'wotlk');
   }
 
+  Future fetchRunes() async {
+    return await loadTalentString('runes', 'sod');
+  }
+
   getClassGlyphs() async {
     List classGlyphList = await fetchClassGlyphs();
     classGlyphs = classGlyphList.map<ClassGlyphs>((wowClass) {
@@ -81,6 +95,11 @@ class TalentProvider extends ChangeNotifier {
       return classGlyphs;
     }).toList();
     notifyListeners();
+  }
+
+  getRunes() async {
+    List classRunesList = await fetchRunes();
+    
   }
 
   changeClass(talentTreesObj, newClassName) {

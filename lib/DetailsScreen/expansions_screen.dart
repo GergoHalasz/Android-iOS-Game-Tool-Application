@@ -17,7 +17,7 @@ class ExpansionsScreen extends StatefulWidget {
 
 class _ExpansionsScreenState extends State<ExpansionsScreen> {
   List<String> expansions = ['vanilla', 'tbc', 'wotlk'];
-  List<String> expansionsTitle = ['Vanilla', 'TBC', 'WotLK'];
+  List<String> expansionsTitle = ['SoD', 'TBC', 'WotLK'];
 
   List<String> images = [
     "hunter_marksmanship",

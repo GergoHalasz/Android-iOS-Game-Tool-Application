@@ -1,0 +1,119 @@
+{
+  "Chest": [
+    {
+      "Name": "Survival of the Fittest",
+      "Description": "Reduces the chance you'll be critically hit by melee attacks by 6% and reduces all damage taken by 10%. Damage taken reduced by an additional 10% while in Bear Form or Dire Bear Form.",
+      "icon": "ability_druid_enrage"
+    },
+    {
+      "Name": "Living Seed",
+      "Description": "When you critically heal your target with any non-periodic healing spell you plant a Living Seed on the target for 50% of the amount healed. The Living Seed will bloom the next time the target takes damage or receives non-periodic healing. Lasts 15 sec.",
+      "icon": "ability_druid_giftoftheearthmother"
+    },
+    {
+      "Name": "Wild Strikes",
+      "Description": "While you are in Cat Form, Bear Form, or Dire Bear Form, party members within 20 yards gain increased combat ferocity. Each melee hit has a 20% chance of granting the attacker an extra attack with 20% additional Attack Power. No effect if the party member is already benefitting from Windfury Totem.",
+      "icon": "ability_druid_swipe"
+    },
+    {
+      "Name": "Fury of Stormrage",
+      "Description": "Reduces the mana cost of Wrath by 100% and each time you deal damage with Wrath you have a 12% chance for your next cast of Healing Touch within 15 sec to be instant and castable in any shapeshift form.",
+      "icon": "inv_staff_90"
+    }
+  ],
+  "Waist": [
+    {
+      "Name": "Eclipse",
+      "Description": "Starfire increases the critical strike chance of your next two Wraths by 30%, and Wrath reduces the cast time of your next Starfire by 1.0 sec, both effects stacking up to 4 charges. Both spells also gain 70% chance at all times to not lose casting time when you take damage.",
+      "icon": "ability_druid_eclipse"
+    },
+    {
+      "Name": "Nourish",
+      "Description": "Heals a friendly target for 1,094 to 1,284. Heals for an additional 20% if you have a Rejuvenation, Regrowth, Lifebloom, or Wild Growth effect active on the target. This spell benefits from and triggers all effects associated with Healing Touch.",
+      "icon": "ability_druid_nourish"
+    },
+    {
+      "Name": "Berserk",
+      "Description": "When activated, this ability causes your Mangle (Bear) and Lacerate abilities to hit up to 3 targets, Lacerate to cost no Rage, Mangle (Bear) to have no cooldown, and reduces the energy cost of all your Cat Form abilities by 50%. Lasts 15 sec. Requires Bear Form, Cat Form, or Dire Bear Form to activate. Clears the effect of Fear and makes you immune to Fear for the duration.",
+      "icon": "ability_druid_berserk"
+    }
+  ],
+  "Legs": [
+    {
+      "Name": "Starsurge",
+      "Description": "Launch surging stellar energies that cause 24 to 30 Arcane damage, and increases the damage done by your next 1 Starfire cast by 80% for 15 sec. Starsurge benefits from and triggers most talents and effects that trigger or benefit from Wrath or Starfire.",
+      "icon": "spell_arcane_arcane03"
+    },
+    {
+      "Name": "Lifebloom",
+      "Description": "Reduces the global cooldown on your Rejuvenation and Lifebloom abilities by 0.5 sec and you gain the Lifebloom ability: Heals the target for 190 over 7 sec. When Lifebloom completes its duration or is dispelled, the target instantly heals for 387 and the Druid regains half the cost of the spell. This effect can stack up to 3 times on the same target.",
+      "icon": "inv_misc_herb_felblossom"
+    },
+    {
+      "Name": "Skull Bash",
+      "Description": "Charge to a target within 13 yards and bash the target's skull, interrupting spellcasting and preventing any spell in that school from being cast for 2 sec. Shares a cooldown with Feral Charge.",
+      "icon": "inv_misc_bone_taurenskull_01"
+    },
+    {
+      "Name": "Savage Roar",
+      "Description": "Finishing move that increases physical damage done by 30% while in Cat Form. Lasts longer per combo point: 1 point : 14 seconds, 2 points: 19 seconds, 3 points: 24 seconds, 4 points: 29 seconds, 5 points: 34 seconds",
+      "icon": "ability_druid_skinteeth"
+    }
+  ],
+  "Hands": [
+    {
+      "Name": "Sunfire",
+      "Description": "Gain the Sunfire ability and while in Bear Form, Cat Form, or Dire Bear Form your Moonfire is replaced with Sunfire (Bear) or Sunfire (Cat). This spell benefits from and triggers all effects associated with Moonfire. Burns the enemy for 194 to 227 Nature damage and then an additional 388 Nature damage over 12 sec. Awards 1 combo point.",
+      "icon": "ability_mage_firestarter"
+    },
+    {
+      "Name": "Lacerate",
+      "Description": "Lacerates the enemy target, making them bleed for 149 damage over 15 sec plus 20% weapon damage per existing application of Lacerate on the target. Causes a high amount of threat. This effect stacks up to 5 times on the same target.",
+      "icon": "ability_druid_lacerate"
+    },
+    {
+      "Name": "Wild Growth",
+      "Description": "Heals all of target player's party members within 40 yards of target player for 1,617 over 7 sec. The amount healed is applied quickly at first, and slows down as Wild Growth reaches its full duration.",
+      "icon": "ability_druid_flourish"
+    },
+    {
+      "Name": "Mangle",
+      "Description": "Gain the Mangle (Bear) ability and replace your Claw ability with Mangle (Cat). This ability benefits from and triggers all effects associated with Claw and Maul. Mangle the target for 160% normal damage and cause the target to take 30% additional damage from Bleed effects and Shred for 1 min. This ability benefits from and triggers all effects associated with Claw and Maul. Mangle the target for 270% normal damage and cause the target to take 30% additional damage from Bleed effects and Shred for 1 min. Awards 1 combo point. This ability benefits from and triggers all effects associated with Claw and Maul.",
+      "icon": "ability_druid_mangle2"
+    }
+  ],
+  "Head (Phase 3)": [
+    {
+      "Name": "Gore",
+      "Description": "Striking a target with Lacerate, Swipe, or Maul has a 15% chance to reset the cooldown on Mangle (Bear) and grant 10 Rage. Striking a target with Mangle (Cat) or Shred has a 5% chance to reset the cooldown on Tiger's Fury.",
+      "icon": "spell_druid_feralchargecat"
+    },
+    {
+      "Name": "Improved Barkskin",
+      "Description": "Your Barkskin can now be cast on allies, no longer penalizes melee combat speed or spellcasting time, and can be cast while shapeshifted.",
+      "icon": "spell_nature_stoneclawtotem"
+    },
+    {
+      "Name": "Gale Winds",
+      "Description": "Increases the damage done by your Hurricane by 100%, it no longer has a cooldown, and its mana cost is reduced by 20%.",
+      "icon": "ability_druid_galewinds"
+    }
+  ],
+  "Wrists (Phase 3)": [
+    {
+      "Name": "Improved Frenzied Regeneration",
+      "Description": "Your Frenzied Regeneration can now be used in all forms or while not shapeshifted. It now converts your active resource into health every second for 10 sec. Up to 10 Rage, 10 Energy, or 5% base Mana is converted per second into up to 10% health.",
+      "icon": "ability_bullrush"
+    },
+    {
+      "Name": "Efflorescence",
+      "Description": "Your Swiftmend now also causes Efflorescence, healing all party members within 15 yards of the Swiftmend target's location for 143 every 2 sec for 30 sec.",
+      "icon": "inv_misc_herb_talandrasrose"
+    },
+    {
+      "Name": "Elune's Fires",
+      "Description": "Some of your spells and abilities extend the duration of your damage and healing over time effects on their target: Starfire extends Moonfire by 6 sec. Wrath extends Sunfire by 3 sec. Regrowth extends Rejuvenation by 6 sec. Shred extends Rip by 2 sec. Each effect can only be extended up to 3 times.",
+      "icon": "ability_druid_owlkinfrenzy"
+    }
+  ]
+}

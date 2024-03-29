@@ -1,0 +1,141 @@
+{
+    "Chest": [
+      {
+        "Name": "Seal of Martyrdom",
+        "Description": "Fills you with holy spirit for 30 sec, causing each of your melee attacks to deal 50% weapon damage to your target, but you lose health equal to 10% of the damage inflicted. While this seal is active, your party and raid members within 40 yards each gain mana equal to 20% of damage you take from this seal. Unleashing this Seal's energy will judge an enemy, instantly causing 85% weapon damage at the cost of health equal to 10% of the damage inflicted. This ability's Seal and Judgement benefit from talents and effects that modify the Seal or Judgement of Seal of Righteousness.",
+        "icon": "spell_holy_sealofblood"
+      },
+      {
+        "Name": "Divine Storm",
+        "Description": "An instant weapon attack that causes 110% of weapon damage to up to 4 enemies within 8 yards. The Divine Storm heals up to 3 party or raid members totaling 25% of the damage caused.",
+        "icon": "ability_paladin_divinestorm"
+      },
+      {
+        "Name": "Horn of Lordaeron",
+        "Description": "The Paladin blows the Horn of Lordaeron, which increases total Strength and Agility of all party members within 30 yards by 6. Lasts 2 min. Exclusive with Blessing of Might.",
+        "icon": "inv_misc_horn_03"
+      },
+      {
+        "Name": "Aegis",
+        "Description": "Increases your block value by 30% and damaging melee and ranged attacks against you have a 10% chance to increase your chance to block by 30%. Lasts 10 sec or 5 blocks. Effect not cumulative with Redoubt.",
+        "icon": "inv_shield_48"
+      }
+    ],
+    "Waist": [
+      {
+        "Name": "Sheath of Light",
+        "Description": "Dealing damage with your melee weapon increases your spell power by an amount equal to 30% of your attack power for 1 min. In addition, your critical healing spells heal the target for 60% of the healed amount over 12 sec.",
+        "icon": "ability_paladin_sheathoflight"
+      },
+      {
+        "Name": "Enlightened Judgements",
+        "Description": "Increases the range on your Judgement by 30 yards and your spell hit with all spells by 17%.",
+        "icon": "ability_paladin_enlightenedjudgements"
+      },
+      {
+        "Name": "Infusion of Light",
+        "Description": "Increases the damage done by your Holy Shock by 20%, and your damaging critical strikes with Holy Shock reset the cooldowns on Holy Shock and Exorcism and refund the cost of Holy Shock.",
+        "icon": "ability_paladin_infusionoflight"
+      }
+    ],
+    "Legs": [
+      {
+        "Name": "Divine Sacrifice",
+        "Description": "30% of all damage taken by party members within 30 yards is redirected to the Paladin for 10 sec. Damage which reduces the Paladin below 20% health will break the effect and grant the paladin 10% increased damage and healing done for 10 sec. Divine Sacrifice cannot be used while you are under the effects of Blessing of Protection, Divine Shield, or Divine Protection, and prevents you from being targeted by those abilities while it is active.",
+        "icon": "spell_holy_powerwordbarrier"
+      },
+      {
+        "Name": "Inspiration Exemplar",
+        "Description": "Gain the Inspiration Exemplar ability: Your inspiring presence periodically dispels Fear and Sleep effects on nearby party members.",
+        "icon": "spell_holy_power"
+      },
+      {
+        "Name": "Avenger's Shield",
+        "Description": "Hurls a holy shield at the enemy, dealing 519 to 616 Holy damage, Dazing them and then jumping to additional nearby enemies. Affects 3 total targets. Lasts 10 sec.",
+        "icon": "spell_holy_avengersshield"
+      },
+      {
+        "Name": "Exorcist",
+        "Description": "Exorcism can now be cast on any target and has 100% increased critical strike chance against Undead and Demons.",
+        "icon": "spell_holy_retribution"
+      },
+      {
+        "Name": "Rebuke",
+        "Description": "Interrupts spellcasting and prevents any spell in that school from being cast for 3 sec.",
+        "icon": "inv_relics_totemofrage"
+      }
+    ],
+    "Feet": [
+      {
+        "Name": "Guarded by the Light",
+        "Description": "Each time you hit a target with your melee weapon, you gain 5% of your maximum mana per 3 sec for 15 sec, but the amount healed by your Flash of Light, Holy Light, and Holy Shock spells is reduced by 50% during this mana regeneration.",
+        "icon": "spell_holy_aspiration"
+      },
+      {
+        "Name": "Sacred Shield",
+        "Description": "Each time the target takes damage they gain a Sacred Shield, absorbing 242 damage and increasing the Paladin's chance to critically hit with Flash of Light by 50% for up to 6 sec. In addition, causes your Flash of Light to heal targets with Sacred Shield for an additional 100% over 12 sec. They cannot gain this effect more than once every 6 sec. Lasts 30 sec. This spell cannot be on more than one target at any one time.",
+        "icon": "ability_paladin_blessedmending"
+      },
+      {
+        "Name": "The Art of War",
+        "Description": "Your melee critical strikes reset the cooldowns on Holy Shock and Exorcism, and the mana cost of Holy Shock and Exorcism is reduced by 80%.",
+        "icon": "ability_paladin_artofwar"
+      }
+    ],
+    "Hands": [
+      {
+        "Name": "Beacon of Light",
+        "Description": "The target becomes a Beacon of Light to all members of your party or raid within a 40 yard radius. Any heals you cast on party or raid members will also heal the Beacon for 100% of the amount healed. Only one target can be the Beacon of Light at a time. Lasts 1 min.",
+        "icon": "ability_paladin_beaconoflight"
+      },
+      {
+        "Name": "Crusader Strike",
+        "Description": "An instant strike that causes 75% weapon damage as Holy and regenerates 5% of your maximum mana.",
+        "icon": "spell_holy_crusaderstrike"
+      },
+      {
+        "Name": "Hand of Reckoning",
+        "Description": "Taunts the target to attack you, but has no effect if the target is already attacking you. While you know this ability, the threat bonus from Righteous Fury is increased to 80% and Righteous Fury causes you to gain mana when healed by others equal to 25% of the amount healed. Additionally, while Righteous Fury is active, damage which takes you below 35% health is reduced by 20%. Righteous Fury will remain active until cancelled.",
+        "icon": "spell_holy_unyieldingfaith"
+      }
+    ],
+    "Head (Phase 3)": [
+      {
+        "Name": "Light's Grace",
+        "Description": "Your Holy Light spell reduces the cast time of your next Holy Light spell by 0.5 sec. Lasts 15 sec.",
+        "icon": "spell_holy_lightsgrace"
+      },
+      {
+        "Name": "Fanaticism",
+        "Description": "Increases your critical strike chance with Holy spells by 18%.",
+        "icon": "spell_holy_fanaticism"
+      },
+      {
+        "Name": "Wrath",
+        "Description": "Your Consecration damage can now be critical strikes, and damage from your Exorcism, Holy Shock, Holy Wrath, and Consecration spells gains additional critical strike chance equal to your melee critical strike chance.",
+        "icon": "ability_paladin_righteousvengeance"
+      },
+      {
+        "Name": "Improved Sanctuary",
+        "Description": "Increases the damage prevented by your Blessing of Sanctuary by 100%, and increases damage done by your Blessing of Sanctuary by 30% of your shield block value.",
+        "icon": "spell_holy_improvedresistanceauras"
+      }
+    ],
+    "Wrists (Phase 3)": [
+      {
+        "Name": "Purifying Power",
+        "Description": "Reduces the cooldown on Exorcism and Holy Wrath by 50%, and Holy Wrath can now be cast at any target and will Stun Undead and Demon targets for 2 sec.",
+        "icon": "spell_holy_purifyingpower"
+      },
+      {
+        "Name": "Improved Hammer of Wrath",
+        "Description": "The cooldown on Hammer of Wrath is reset each time it damages an enemy below 10% health.",
+        "icon": "ability_paladin_sanctifiedwrath"
+      },
+      {
+        "Name": "Hammer of the Righteous",
+        "Description": "Hammer the current target and up to 2 additional nearby targets, causing 4 times your main hand damage per second as Holy damage.",
+        "icon": "ability_paladin_hammeroftherighteous"
+      }
+    ]
+  }

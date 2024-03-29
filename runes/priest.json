@@ -1,0 +1,114 @@
+{
+    "Chest": [
+      {
+        "Name": "Twisted Faith",
+        "Description": "Mind Flay and Mind Blast deal 50% increased damage to targets afflicted with your Shadow Word: Pain.",
+        "icon": "spell_shadow_mindtwisting"
+      },
+      {
+        "Name": "Void Plague",
+        "Description": "Afflicts the target with a disease that causes 1,457 Shadow damage over 18 sec.",
+        "icon": "spell_deathknight_bloodplague"
+      },
+      {
+        "Name": "Serendipity",
+        "Description": "Healing with Flash Heal reduces the cast time of your next Lesser Heal, Heal, Greater Heal, or Prayer of Healing by 20% for 20 sec, stacking up to 3 times.",
+        "icon": "spell_holy_serendipity"
+      },
+      {
+        "Name": "Strength of Soul",
+        "Description": "Lesser Heal, Heal, Greater Heal, and Flash Heal reduce the remaining duration of Weakened Soul on targets they heal by 4 sec. In addition, targets of your Power Word: Shield will gain Rage from taking damage despite the damage being absorbed, and Righteous Fury will trigger from damage absorbed by your Power Word: Shield as if it were a heal.",
+        "icon": "spell_holy_greaterblessingofsanctuary"
+      }
+    ],
+    "Waist": [
+      {
+        "Name": "Mind Spike",
+        "Description": "Blasts the target for 230 to 267 Shadowfrost damage, and increases the critical strike chance of your next Mind Blast on the target by 30%, stacking up to 3 times.",
+        "icon": "spell_shadow_painspike"
+      },
+      {
+        "Name": "Empowered Renew",
+        "Description": "Your Renew now heals one extra time immediately when applied, and gains 15% increased benefit each time it heals from your bonus healing effects. In addition, your Renew can now be active on targets affected by another Priest's Renew.",
+        "icon": "ability_paladin_infusionoflight"
+      },
+      {
+        "Name": "Renewed Hope",
+        "Description": "Your heals from Flash Heal, Lesser Heal, Heal, Greater Heal, and Penance have 10% increased critical effect chance when cast on targets with Weakened Soul.",
+        "icon": "spell_holy_holyprotection"
+      }
+    ],
+    "Legs": [
+      {
+        "Name": "Power Word: Barrier",
+        "Description": "Summons a holy barrier to protect all party members at the target location for 10 sec, reducing all damage taken by 25% and preventing damage from delaying spellcasting.",
+        "icon": "spell_holy_powerwordbarrier"
+      },
+      {
+        "Name": "Shared Pain",
+        "Description": "Your Shadow Word: Pain now also afflicts up to 2 additional nearby targets within 15 yards.",
+        "icon": "spell_shadow_gathershadows"
+      },
+      {
+        "Name": "Homunculi",
+        "Description": "Break off splinters of your soul to animate 3 miniature copies of yourself that attempt to attack your current target with a mace, sword, and axe, reducing the attack speed, attack power, and armor respectively of any target they hit.",
+        "icon": "spell_shadow_twistedfaith"
+      },
+      {
+        "Name": "Prayer of Mending",
+        "Description": "Places a spell on the target that heals them for 498 the next time they take damage or receive healing. When the heal occurs, Prayer of Mending jumps to a party or raid member within 20 yards. Jumps up to 5 times and lasts 30 sec after each jump. This spell can only be placed on one target at a time.",
+        "icon": "spell_holy_prayerofmendingtga"
+      }
+    ],
+    "Feet": [
+      {
+        "Name": "Pain Suppression",
+        "Description": "Instantly reduces all damage taken by a friendly target by 40% and increases resistance to Dispel mechanics by 65% for 8 sec.",
+        "icon": "spell_holy_painsupression"
+      },
+      {
+        "Name": "Spirit of the Redeemer",
+        "Description": "Activate to become the Spirit of Redemption for 10 sec. While in this form, you can cast any healing spell free of cost, but you cannot move, attack, be attacked, or be targeted by any spells or effects. Requires Spirit of Redemption talent to activate, and you will no longer enter Spirit of Redemption upon dying.",
+        "icon": "inv_enchant_essenceeternallarge"
+      },
+      {
+        "Name": "Dispersion",
+        "Description": "You disperse into pure Shadow energy, reducing all damage taken by 90%. You are unable to attack or cast spells, but you regenerate 6% mana every 1 sec for 6 sec. Dispersion can be cast while stunned, feared or silenced and clears all snare and movement impairing effects when cast, and makes you immune to them while dispersed.",
+        "icon": "spell_shadow_dispersion"
+      }
+    ],
+    "Head (Phase 3)": [
+      {
+        "Name": "Divine Aegis",
+        "Description": "Critical heals create a protective shield on the target, absorbing 30% of the amount healed. Lasts 12 sec.",
+        "icon": "spell_holy_devineaegis"
+      },
+      {
+        "Name": "Pain and Suffering",
+        "Description": "Mind Flay refreshes the duration of your Shadow Word: Pain on the target back to its maximum duration.",
+        "icon": "spell_shadow_painandsuffering"
+      },
+      {
+        "Name": "Eye of the Void",
+        "Description": "Call an eye of the void to fight for you for 30 sec. The eye can cast a variety of curses on your target.",
+        "icon": "inv_misc_eye_03"
+      }
+    ],
+    "Wrists (Phase 3)": [
+      {
+        "Name": "Surge of Light",
+        "Description": "Critical spellcasts cause your next Smite or Flash Heal cast within 15 sec to be instant cast.",
+        "icon": "spell_holy_surgeoflight"
+      },
+      {
+        "Name": "Despair",
+        "Description": "Periodic damage from your spells can now be critical strikes.",
+        "icon": "spell_misc_emotionsad"
+      },
+      {
+        "Name": "Void Zone",
+        "Description": "Summons a void zone in the target area that deals 30 Shadow damage to enemies that stand within it every second for 10 sec.",
+        "icon": "inv_enchant_voidsphere"
+      }
+    ]
+  }
