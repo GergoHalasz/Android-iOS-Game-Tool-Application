@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:swipedetector_nullsafety/swipedetector_nullsafety.dart';
+import 'package:wowtalentcalculator/DetailsScreen/talent_dialog.dart';
 import 'package:wowtalentcalculator/model/talent.dart';
 import 'package:wowtalentcalculator/provider/talent_provider.dart';
 import 'package:wowtalentcalculator/utils/size_config.dart';
@@ -31,6 +33,7 @@ class _SpellWidgetState extends State<SpellWidget> {
   String imgLocation = '';
   final tooltipController = JustTheController();
   bool isTooltipOpen = false;
+  ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -124,11 +127,18 @@ class _SpellWidgetState extends State<SpellWidget> {
   // check if spell talent is enable or not
   // disable Tap action if grey out
   _buildSpellWidget() {
-    if (widget.talent.enable && (!talentProvider.checkIfBuildIsMaxed() || widget.talent.points > 0)) {
+    if (widget.talent.enable &&
+        (!talentProvider.checkIfBuildIsMaxed() || widget.talent.points > 0)) {
       return Material(
         color: Colors.transparent,
         child: Ink(
           decoration: BoxDecoration(
+              border: Border.all(
+                color: widget.talent.points == maxRank
+                    ? Colors.yellow
+                    : Colors.greenAccent.shade400,
+                width: 2,
+              ),
               image: DecorationImage(
                   image: AssetImage(imgLocation), fit: BoxFit.cover),
               borderRadius: BorderRadius.circular(10)),
@@ -213,20 +223,27 @@ class _SpellWidgetState extends State<SpellWidget> {
                 alignment: Alignment.center,
                 child: _buildSpellWidget(), //spell icon
               ),
-              Align(
-                // spell rank
-                alignment: Alignment.bottomRight,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.black87,
-                    borderRadius: BorderRadius.circular(3),
+              if (talentProvider.getRemainingTalentPoints() != 0 ||
+                  widget.talent.points != 0)
+                Align(
+                  // spell rank
+                  alignment: Alignment.bottomRight,
+                  child: Container(
+                    padding: EdgeInsets.all(1),
+                    decoration: BoxDecoration(
+                      color: Colors.black87,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(
+                      '$currentRank',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: widget.talent.points == maxRank
+                              ? Colors.yellow
+                              : Colors.greenAccent.shade400),
+                    ),
                   ),
-                  child: Text(
-                    '$currentRank/$maxRank',
-                    style: TextStyle(fontSize: 14),
-                  ),
-                ),
-              )
+                )
             ],
           ),
         ),
@@ -240,20 +257,22 @@ class _SpellWidgetState extends State<SpellWidget> {
             alignment: Alignment.center,
             child: _buildSpellWidget(), //spell icon
           ),
-          Align(
-            // spell rank
-            alignment: Alignment.bottomRight,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.black87,
-                borderRadius: BorderRadius.circular(3),
+          if (talentProvider.getRemainingTalentPoints() != 0 ||
+              widget.talent.points != 0)
+            Align(
+              // spell rank
+              alignment: Alignment.bottomRight,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.black87,
+                  borderRadius: BorderRadius.circular(3),
+                ),
+                child: Text(
+                  '$currentRank',
+                  style: TextStyle(fontSize: 16),
+                ),
               ),
-              child: Text(
-                '$currentRank/$maxRank',
-                style: TextStyle(fontSize: 14),
-              ),
-            ),
-          )
+            )
         ]),
       );
     }
@@ -289,9 +308,10 @@ class _SpellWidgetState extends State<SpellWidget> {
                       fontSize: 14,
                       letterSpacing: -0.5),
                 )),
-            SizedBox(
-              height: 4,
-            ),
+            Align(
+                alignment: Alignment.bottomLeft,
+                child: Text('Rank $currentRank/$maxRank',
+                    style: TextStyle(color: Colors.white, fontSize: 14))),
             Align(
                 alignment: Alignment.bottomLeft,
                 child: Text(
@@ -333,13 +353,29 @@ class _SpellWidgetState extends State<SpellWidget> {
             if (widget.talent.enable)
               Align(
                 alignment: Alignment.bottomLeft,
-                child: Text(
-                  'Swipe up to learn',
-                  style: TextStyle(
-                      color: currentRank < maxRank ? Colors.green : Colors.red,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 11,
-                      letterSpacing: -0.5),
+                child: Row(
+                  children: [
+                    Text(
+                      'Swipe up to learn',
+                      style: TextStyle(
+                          color:
+                              currentRank < maxRank ? Colors.green : Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 11,
+                          letterSpacing: -0.5),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 12.0),
+                      child: Text(
+                        'Long tap to max rank',
+                        style: TextStyle(
+                            color: Colors.grey[400],
+                            fontWeight: FontWeight.bold,
+                            fontSize: 11,
+                            letterSpacing: -0.5),
+                      ),
+                    )
+                  ],
                 ),
               ),
             if (widget.talent.enable)
@@ -348,7 +384,7 @@ class _SpellWidgetState extends State<SpellWidget> {
                 child: Text(
                   'Swipe down to unlearn',
                   style: TextStyle(
-                      color: currentRank > 0 ? Colors.green : Colors.red,
+                      color: Colors.red,
                       fontWeight: FontWeight.bold,
                       fontSize: 11,
                       letterSpacing: -0.5),

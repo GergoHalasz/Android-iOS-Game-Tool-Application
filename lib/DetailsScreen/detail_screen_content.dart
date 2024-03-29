@@ -5,12 +5,11 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
 import 'package:wowtalentcalculator/DetailsScreen/Save_screen.dart';
 import 'package:wowtalentcalculator/DetailsScreen/drawer_screen.dart';
 import 'package:wowtalentcalculator/DetailsScreen/glyphs_screen.dart';
-import 'package:wowtalentcalculator/DetailsScreen/newBuild_dialog.dart';
+import 'package:wowtalentcalculator/DetailsScreen/talent_dialog.dart';
 import 'package:wowtalentcalculator/data/menu_items.dart';
 import 'package:wowtalentcalculator/model/glyph.dart';
 import 'package:wowtalentcalculator/model/menu_item.dart';
@@ -31,6 +30,8 @@ class DetailScreenContent extends StatefulWidget {
   final String className;
   final Color classColor;
   final List arrowTrees;
+  final String buildKey;
+  final String buildName;
 
   final TalentTrees talentTrees;
 
@@ -38,7 +39,9 @@ class DetailScreenContent extends StatefulWidget {
       {required this.className,
       required this.talentTrees,
       required this.classColor,
-      required this.arrowTrees});
+      required this.arrowTrees,
+      this.buildKey = "",
+      this.buildName = ""});
 
   @override
   _DetailScreenContentState createState() => _DetailScreenContentState();
@@ -51,7 +54,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
   int _selectedIndex = 0;
   BannerAd? banner;
   String buildName = "";
-  String key = "";
+  String buildKey = "";
   bool firstTimeAdInit = true;
   late TalentTrees talentTrees;
   late String className;
@@ -84,6 +87,11 @@ class _DetailScreenContentState extends State<DetailScreenContent>
   @override
   initState() {
     super.initState();
+    if (widget.buildKey != "") {
+      buildKey = widget.buildKey;
+      buildName = widget.buildName;
+    }
+
     talentTrees = widget.talentTrees;
     className = widget.className;
     classColor = widget.classColor;
@@ -133,8 +141,8 @@ class _DetailScreenContentState extends State<DetailScreenContent>
   }
 
   TabBar _tabBar() => TabBar(
-        dividerHeight: 0,
         controller: _tabController,
+        dividerColor: Colors.grey,
         indicatorColor: classColor,
         indicatorSize: TabBarIndicatorSize.tab,
         tabs: [
@@ -164,7 +172,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
           talentProvider.changeBuildName(null);
           talentProvider.setGlyphs([null, null, null], [null, null, null]);
           setState(() {
-            key = "";
+            buildKey = "";
             buildName = "";
             talentTrees = talentTreesObject;
             classColor = classColors[name]!;
@@ -201,7 +209,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
       talentProvider.setGlyphs([null, null, null], [null, null, null]);
     }
     setState(() {
-      this.key = key;
+      this.buildKey = key;
       buildName = data["buildName"];
       talentTrees = talentTreesObject;
       classColor = classColors[name]!;
@@ -213,16 +221,27 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     });
   }
 
-  showAddBuildDialog() {
+  showSaveBuildDialog(bool isGlyphSet) {
     showDialog(
         context: context,
         builder: (BuildContext context) {
           return ChangeNotifierProvider<TalentProvider>.value(
               value: talentProvider,
-              child: NewBuildDialog(
-                fetchSavedBuild: fetchSavedBuild,
-                changeClass: changeClass,
-              ));
+              child: SaveScreen(
+                  changeBuildKeyAndName: (key, buildName) {
+                    setState(() {
+                      this.buildKey = key;
+                      this.buildName = buildName;
+                    });
+                  },
+                  changeBuildName: (buildName) {
+                    setState(() {
+                      this.buildName = buildName;
+                    });
+                  },
+                  buildName: buildName,
+                  buildKey: buildKey,
+                  isGlyphSet: isGlyphSet));
         });
   }
 
@@ -250,6 +269,11 @@ class _DetailScreenContentState extends State<DetailScreenContent>
         fetchSavedBuild: fetchSavedBuild,
         changeClass: changeClass,
       )),
+      bottomNavigationBar: !adState.isAdFreeVersion ? Container(
+        height: 52,
+        color: Colors.black,
+        child: AdWidget(ad: banner!),
+      ) : null,
       appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.white),
           centerTitle: true,
@@ -273,24 +297,8 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                           listEquals(
                               talentProvider.majorGlyphs, [null, null, null])))
                     isGlyphSet = false;
-                  Navigator.of(context).push(CustomPageRoute(
-                      child: ChangeNotifierProvider<TalentProvider>.value(
-                          value: talentProvider,
-                          child: SaveScreen(
-                              changeBuildKeyAndName: (key, buildName) {
-                                setState(() {
-                                  this.key = key;
-                                  this.buildName = buildName;
-                                });
-                              },
-                              changeBuildName: (buildName) {
-                                setState(() {
-                                  this.buildName = buildName;
-                                });
-                              },
-                              buildName: buildName,
-                              buildKey: key,
-                              isGlyphSet: isGlyphSet))));
+
+                  showSaveBuildDialog(isGlyphSet);
                 },
               ),
             ),
@@ -366,6 +374,20 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                             ),
                           ),
                           Align(
+                            alignment: Alignment.center,
+                            child: Container(
+                              padding: EdgeInsets.only(right: 15),
+                              child: Row(
+                                children: [
+                                  Text('Remaining points: '),
+                                  Text('${talentProvider.getRemainingTalentPoints()}',
+                                      style: TextStyle(
+                                          color: kColorSelectiveYellow))
+                                ],
+                              ),
+                            ),
+                          ),
+                          Align(
                             alignment: Alignment.centerRight,
                             child: Container(
                               padding: EdgeInsets.only(right: 15),
@@ -426,18 +448,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                     ],
                   ),
                 ),
-                if (!adState.isAdFreeVersion)
-                  if (banner == null)
-                    Container(
-                      height: 52,
-                      color: Colors.black,
-                    )
-                  else
-                    Container(
-                      height: 52,
-                      child: AdWidget(ad: banner!),
-                      color: Colors.black,
-                    )
               ],
             ),
           ),

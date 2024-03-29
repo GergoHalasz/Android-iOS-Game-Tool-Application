@@ -17,7 +17,7 @@ getWarriorArrowList(String expansion) {
         startPosition: Position(row: 1, column: 1),
         endPosition: Position(row: 2, column: 1),
         lengthType: 'short',
-        dependencyTalent: 'Anger Managementy',
+        dependencyTalent: 'Anger Management',
       ),
       ArrowWidget(
         startPosition: Position(row: 2, column: 2),

@@ -1,0 +1,1311 @@
+[
+  {
+    "Name": "Balance",
+    "Icon": "spell_nature_starfall",
+    "Background": "druid_balance",
+    "Points": 0,
+    "Talents": {
+      "Talent": [
+        {
+          "Icon": "Spell_Nature_NaturesBlessing",
+          "Name": "Nature's Grace",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 0],
+          "Enable": false,
+          "Tier": 0,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "You gain 5% spell haste after you cast Moonfire, Regrowth, or Insect Swarm, lasting 15 sec. This effect has a 1 minute cooldown. When you gain Lunar or Solar Eclipse, the cooldown of Nature's Grace is instantly reset."
+              },
+              {
+                "Number": 2,
+                "Description": "You gain 10% spell haste after you cast Moonfire, Regrowth, or Insect Swarm, lasting 15 sec. This effect has a 1 minute cooldown. When you gain Lunar or Solar Eclipse, the cooldown of Nature's Grace is instantly reset."
+              },
+              {
+                "Number": 3,
+                "Description": "You gain 15% spell haste after you cast Moonfire, Regrowth, or Insect Swarm, lasting 15 sec. This effect has a 1 minute cooldown. When you gain Lunar or Solar Eclipse, the cooldown of Nature's Grace is instantly reset."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Nature_AbolishMagic",
+          "Name": "Starlight Wrath",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 1],
+          "Enable": false,
+          "Tier": 0,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the cast time of your Wrath and Starfire spells by 0.15 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the cast time of your Wrath and Starfire spells by 0.25 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "Reduces the cast time of your Wrath and Starfire spells by 0.5 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Inv_Staff_01",
+          "Name": "Nature's Majesty",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 2],
+          "Enable": false,
+          "Tier": 0,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the critical strike chance with spells by 2%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the critical strike chance with spells by 4%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Arcane_Arcane03",
+          "Name": "Genesis",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 0],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the healing done by your periodic spells and by Swiftmend by 2%, and increases the duration of your Moonfire and Insect Swarm by 2 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the healing done by your periodic spells and by Swiftmend by 4%, and increases the duration of your Moonfire and Insect Swarm by 4 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases the healing done by your periodic spells and by Swiftmend by 6%, and increases the duration of your Moonfire and Insect Swarm by 6 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Nature_Sentinal",
+          "Name": "Moonglow",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 1],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the mana cost of your damage and healing spells by 3%."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the mana cost of your damage and healing spells by 6%."
+              },
+              {
+                "Number": 3,
+                "Description": "Reduces the mana cost of your damage and healing spells by 9%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Druid_BalanceofPower",
+          "Name": "Balance of Power",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 2],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases your Nature and Arcane spell damage by 1% and increases your spell hit rating by an additional amount equal to 50% of any Spirit gained from items or effects."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases your Nature and Arcane spell damage by 2% and increases your spell hit rating by an additional amount equal to 100% of any Spirit gained from items or effects."
+              }
+            ]
+          }
+        },
+
+        {
+          "Icon": "Achievement_Boss_ValithraDreamwalker",
+          "Name": "Euphoria",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 0],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "While not in an Eclipse state, you have a 12% chance to double the Solar or Lunar energy generated by your Wrath or Starfire when they deal damage.<br/><br/>When you reach a Solar or Lunar eclipse, you instantly are restored 8% of your total mana."
+              },
+              {
+                "Number": 2,
+                "Description": "While not in an Eclipse state, you have a 24% chance to double the Solar or Lunar energy generated by your Wrath or Starfire when they deal damage.<br/><br/>When you reach a Solar or Lunar eclipse, you instantly are restored 16% of your total mana."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Nature_ForceOfNature",
+          "Name": "Moonkin Form",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 1],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Shapeshift into Moonkin Form, increasing Arcane and Nature spell damage by 10%, reducing all damage taken by 15%, and increases spell haste of all party and raid members by 5%. The Moonkin can not cast healing or resurrection spells while shapeshifted.<br/><br/>The act of shapeshifting frees the caster of movement impairing effects."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Druid_Typhoon",
+          "Name": "Typhoon",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 2],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "You summon a violent Typhoon that does 400 Nature damage to targets in front of the caster within 30 yards, knocking them back and ]dazing them for 6 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Mage_ArcaneBarrage",
+          "Name": "Shooting Stars",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 3],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "You have a 2% chance when you deal damage with your Moonfire or Insect Swarm to instantly reset the cooldown of your Starsurge and reduce its cast time by 100%. Lasts 12 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "You have a 4% chance when you deal damage with your Moonfire or Insect Swarm to instantly reset the cooldown of your Starsurge and reduce its cast time by 100%. Lasts 12 sec."
+              }
+            ]
+          }
+        },
+
+        {
+          "Icon": "Ability_Druid_OwlkinFrenzy",
+          "Name": "Owlkin Frenzy",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 1],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Attacks done to you while in Moonkin Form have a 5% chance to cause you to go into a Frenzy, increasing your damage by 10% and causing you to be immune to pushback while casting Balance spells. Lasts 10 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Attacks done to you while in Moonkin Form have a 10% chance to cause you to go into a Frenzy, increasing your damage by 10% and causing you to be immune to pushback while casting Balance spells. Lasts 10 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "Attacks done to you while in Moonkin Form have a 15% chance to cause you to go into a Frenzy, increasing your damage by 10% and causing you to be immune to pushback while casting Balance spells. Lasts 10 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Druid_GaleWinds",
+          "Name": "Gale Winds",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 2],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases damage done by your Hurricane and Typhoon spells by 15%, and increases the range of your Cyclone spell by 2 yards."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases damage done by your Hurricane and Typhoon spells by 30%, and increases the range of your Cyclone spell by 4 yards."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Vehicle_SonicShockwave",
+          "Name": "Solar Beam",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 3],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "You summon a beam of solar light over an enemy target's location, interrupting the target and silencing all enemies under the beam while it is active. Solar Beam lasts for 10 sec."
+              }
+            ]
+          }
+        },
+
+        {
+          "Icon": "Ability_Druid_Dreamstate",
+          "Name": "Dreamstate",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 0],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "When you cast your Innervate on yourself, you regain an additional 15% of your total mana over its duration."
+              },
+              {
+                "Number": 2,
+                "Description": "When you cast your Innervate on yourself, you regain an additional 30% of your total mana over its duration."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Druid_ForceofNature",
+          "Name": "Force of Nature",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 1],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Summons 3 treants to attack enemy targets for 30 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Mage_FireStarter",
+          "Name": "Sunfire",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 2],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "While in Solar Eclipse, your Moonfire spell will morph into Sunfire."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Druid_EarthandSky",
+          "Name": "Earth and Moon",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 3],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Wrath, Starfire and Wild Mushroom: Detonate spells apply the Earth and Moon effect, which increases spell damage taken by 8% for 15 sec. Also increases your spell damage by 2%."
+              }
+            ]
+          }
+        },
+
+        {
+          "Icon": "Ability_Druid_OwlkinFrenzy",
+          "Name": "Owlkin Frenzy",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 1],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Attacks done to you while in Moonkin Form have a 5% chance to cause you to go into a Frenzy, increasing your damage by 10% and causing you to be immune to pushback while casting Balance spells. Lasts 10 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Attacks done to you while in Moonkin Form have a 10% chance to cause you to go into a Frenzy, increasing your damage by 10% and causing you to be immune to pushback while casting Balance spells. Lasts 10 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "Attacks done to you while in Moonkin Form have a 15% chance to cause you to go into a Frenzy, increasing your damage by 10% and causing you to be immune to pushback while casting Balance spells. Lasts 10 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Druid_GaleWinds",
+          "Name": "Gale Winds",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 2],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases damage done by your Hurricane and Typhoon spells by 15%, and increases the range of your Cyclone spell by 2 yards."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases damage done by your Hurricane and Typhoon spells by 30%, and increases the range of your Cyclone spell by 4 yards."
+              }
+            ]
+          }
+        },
+
+        {
+          "Icon": "Ability_Druid_Starfall",
+          "Name": "Starfall",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [6, 1],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "You summon a flurry of stars from the sky on all targets within a yards of the caster that you're in combat with, each dealing 1 Arcane damage. Maximum 20 stars. Lasts 10 sec.<br/><br/>Shapeshifting into an animal form or mounting cancels the effect. Any effect which causes you to lose control of your character will suppress the starfall effect."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Feral Combat",
+    "Icon": "ability_racial_bearform",
+    "Background": "druid_feral",
+    "Points": 0,
+    "Talents": {
+      "Talent": [
+        {
+          "Icon": "spell_nature_spiritwolf",
+          "Name": "Feral Swiftness",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 0],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases your movement speed by 15% in Cat Form and increases your chance to dodge while in Cat Form or Bear Form by 2%.<br/><br/>In addition, your Dash and Stampeding Roar have a 50% chance to remove all movement impairing effects from affected targets when used."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases your movement speed by 30% in Cat Form and increases your chance to dodge while in Cat Form or Bear Form by 4%.<br/><br/>In addition, your Dash and Stampeding Roar have a 100% chance to remove all movement impairing effects from affected targets when used."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "spell_holy_blessingofstamina",
+          "Name": "Furor",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 1],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Grants you a 33% chance to gain 10 Rage when you shapeshift into Bear Form, allows you to keep up to 33 of your Energy when you shapeshift into Cat Form, and increases your maximum mana by 5%."
+              },
+              {
+                "Number": 2,
+                "Description": "Grants you a 66% chance to gain 10 Rage when you shapeshift into Bear Form, allows you to keep up to 66 of your Energy when you shapeshift into Cat Form, and increases your maximum mana by 10%."
+              },
+              {
+                "Number": 3,
+                "Description": "Grants you a 100% chance to gain 10 Rage when you shapeshift into Bear Form, allows you to keep up to 100 of your Energy when you shapeshift into Cat Form, and increases your maximum mana by 15%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_hunter_pet_cat",
+          "Name": "Predatory Strikes",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 2],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the critical strike chance of your Ravage by 25% on targets at or above 80% health.<br/><br/>Your finishing moves have a 10% chance per combo point to make your next non-instant Nature spell with a base casting time of less than 10 sec. become an instant cast spell and cost no mana."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the critical strike chance of your Ravage by 50% on targets at or above 80% health.<br/><br/>Your finishing moves have a 20% chance per combo point to make your next non-instant Nature spell with a base casting time of less than 10 sec. become an instant cast spell and cost no mana."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_druid_infectedwound",
+          "Name": "Infected Wounds",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 0],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Shred, Maul, Ravage and Mangle attacks cause an Infected Wound in the target. The Infected Wound reduces the movement speed of the target by 25% and the attack speed by 10%. Lasts 12 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Shred, Ravage, Maul, and Mangle attacks cause an Infected Wound in the target. The Infected Wound reduces the movement speed of the target by 50% and the attack speed by 20%. Lasts 12 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_druid_mangle.tga",
+          "Name": "Fury Swipes",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 1],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "When you autoattack while in Cat Form or Bear Form, you have a 5% chance to cause a Fury Swipe dealing 310% weapon damage. This effect cannot occur more than once every 3 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "When you autoattack while in Cat Form or Bear Form, you have a 10% chance to cause a Fury Swipe dealing 310% weapon damage. This effect cannot occur more than once every 3 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "When you autoattack while in Cat Form or Bear Form, you have a 15% chance to cause a Fury Swipe dealing 310% weapon damage. This effect cannot occur more than once every 3 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_racial_cannibalize",
+          "Name": "Primal Fury",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 2],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Gives you a 50% chance to gain an additional 5 Rage anytime you get a critical strike while in Bear Form and your critical strikes from Cat Form abilities that add combo points have a 50% chance to add an additional combo point."
+              },
+              {
+                "Number": 2,
+                "Description": "Gives you a 100% chance to gain an additional 5 Rage anytime you get a critical strike while in Bear Form and your critical strikes from Cat Form abilities that add combo points have a 100% chance to add an additional combo point."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_druid_demoralizingroar",
+          "Name": "Feral Aggression",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 3],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the damage caused by your Ferocious Bite by 5% and causes Faerie Fire (Feral) to apply 2 stacks of the Faerie Fire effect when cast."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the damage caused by your Ferocious Bite by 10% and causes Faerie Fire (Feral) to apply 3 stacks of the Faerie Fire effect when cast."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_druid_kingofthejungle",
+          "Name": "King of the Jungle",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 0],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "While using your Enrage ability in Bear Form, your damage is increased by 5%, and your Tiger's Fury ability also instantly restores 20 Energy."
+              },
+              {
+                "Number": 2,
+                "Description": "While using your Enrage ability in Bear Form, your damage is increased by 10%, and your Tiger's Fury ability also instantly restores 40 Energy."
+              },
+              {
+                "Number": 3,
+                "Description": "While using your Enrage ability in Bear Form, your damage is increased by 15%, and your Tiger's Fury ability also instantly restores 60 Energy."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_hunter_pet_bear",
+          "Name": "Feral Charge",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 1],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Teaches Feral Charge (Bear) and Feral Charge (Cat).<br/><br/>Feral Charge (Bear) - Causes you to charge an enemy, immobilizing them for 4 sec. 15 second cooldown.<br/><br/>Feral Charge (Cat) - Causes you to leap behind an enemy, dazing them for 3 sec. 30 second cooldown."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "spell_druid_feralchargecat",
+          "Name": "Stampede",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 2],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases your melee haste by 15% after you use Feral Charge (Bear) for 8 sec, and your next Ravage will temporarily not require stealth or have a positioning requirement for 10 sec after you use Feral Charge (Cat), and cost 50% less energy."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases your melee haste by 30% after you use Feral Charge (Bear) for 8 sec, and your next Ravage will temporarily not require stealth or have a positioning requirement for 10 sec after you use Feral Charge (Cat), and cost 100% less energy."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "inv_misc_pelt_bear_03",
+          "Name": "Thick Hide",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 3],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases your Armor contribution from cloth and leather items by 4%, increases armor while in Bear Form by an additional 26%, and reduces the chance you'll be critically hit by melee attacks by 2%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases your Armor contribution from cloth and leather items by 7%, increases armor while in Bear Form by an additional 52%, and reduces the chance you'll be critically hit by melee attacks by 4%."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases your Armor contribution from cloth and leather items by 10%, increases armor while in Bear Form by an additional 78%, and reduces the chance you'll be critically hit by melee attacks by 6%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "inv_misc_food_134_meat",
+          "Name": "Blood in the Water",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 0],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "When you Ferocious Bite a target at or below 25% health, you have a 50% chance to instantly refresh the duration of your Rip on the target."
+              },
+              {
+                "Number": 2,
+                "Description": "When you Ferocious Bite a target at or below 25% health, you have a 100% chance to instantly refresh the duration of your Rip on the target."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_druid_primalagression",
+          "Name": "Rend and Tear",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 1],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases damage done by your Maul and Shred attacks on bleeding targets by 7%, and increases the critical strike chance of your Ferocious Bite ability on bleeding targets by 8%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases damage done by your Maul and Shred attacks on bleeding targets by 13%, and increases the critical strike chance of your Ferocious Bite ability on bleeding targets by 17%."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases damage done by your Maul and Shred attacks on bleeding targets by 20%, and increases the critical strike chance of your Ferocious Bite ability on bleeding targets by 25%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_smash",
+          "Name": "Pulverize",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 2],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": "1",
+                "Description": "Deals 60% weapon damage plus additional 786 damage for each of your Lacerate applications on the target, and increases your melee critical strike chance by 3% for each Lacerate application consumed for 10 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_druid_berserk",
+          "Name": "Berserk",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [6, 1],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Lacerate periodic damage has a 50% chance to refresh the cooldown of your Mangle (Bear) ability and make it cost no rage. <br/><br/>In addition, when activated this ability causes your Mangle (Bear) ability to hit up to 3 targets and have no cooldown, and reduces the energy cost of all your Cat Form abilities by 50%. Lasts 15 sec. You cannot use Tiger's Fury while Berserk is active."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Restoration",
+    "Icon": "spell_nature_healingtouch",
+    "Background": "druid_restoration",
+    "Points": 0,
+    "Talents": {
+      "Talent": [
+        {
+          "Icon": "spell_shaman_spiritlink",
+          "Name": "Blessing of the Grove",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 0],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the healing done by your Rejuvenation by 2% and the direct damage of your Moonfire by 3%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the healing done by your Rejuvenation by 4% and the direct damage of your Moonfire by 6%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "spell_nature_wispsplode",
+          "Name": "Natural Shapeshifter",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 1],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the mana cost of all shapeshifting by 10% and increases the duration of Tree of Life Form by 3 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the mana cost of all shapeshifting by 20% and increases the duration of Tree of Life Form by 6 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "spell_nature_healingtouch",
+          "Name": "Naturalist",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 2],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the cast time of your Healing Touch and Nourish spells by 0.25 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the cast time of your Healing Touch and Nourish spells by 0.50 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "spell_holy_blessingofagility",
+          "Name": "Hearth of the Wild",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 3],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases your Intellect by 2%. In addition, while in Bear Form your Stamina is increased by 2% and while in Cat Form your attack power is increased by 3%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases your Intellect by 4%. In addition, while in Bear Form your Stamina is increased by 4% and while in Cat Form your attack power is increased by 7%."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases your Intellect by 6%. In addition, while in Bear Form your Stamina is increased by 6% and while in Cat Form your attack power is increased by 10%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "achievement_zone_darnassus",
+          "Name": "Perseverance",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 0],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces all spell damage taken by 2%."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces all spell damage taken by 4%."
+              },
+              {
+                "Number": 3,
+                "Description": "Reduces all spell damage taken by 6%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_druid_mastershapeshifter",
+          "Name": "Master Shapeshifter",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 1],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Grants an effect which lasts while the Druid is within the respective shapeshift form.<br/><br/>Bear Form - Increases physical damage by 4%.<br/><br/>Cat Form - Increases critical strike chance by 4%.<br/><br/>Moonkin Form - Increases spell damage by 4%.<br/><br/>Tree of Life/Caster Form - Increases healing by 4%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "spell_nature_rejuvenation",
+          "Name": "Improved Rejuvenation",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 2],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the effect of your Rejuvenation and Swiftmend spells by 5%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the effect of your Rejuvenation and Swiftmend spells by 10%."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases the effect of your Rejuvenation and Swiftmend spells by 15%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_druid_giftoftheearthmother",
+          "Name": "Living Seed",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 0],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "When you critically heal a target with Swiftmend, Regrowth, Nourish or Healing Touch spell you plant a Living Seed on the target for 10% of the amount healed. The Living Seed will bloom when the target is next attacked. Lasts 15 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "When you critically heal a target with Swiftmend, Regrowth, Nourish or Healing Touch spell you plant a Living Seed on the target for 20% of the amount healed. The Living Seed will bloom when the target is next attacked. Lasts 15 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "When you critically heal a target with Swiftmend, Regrowth, Nourish or Healing Touch spell you plant a Living Seed on the target for 30% of the amount healed. The Living Seed will bloom when the target is next attacked. Lasts 15 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_druid_replenish",
+          "Name": "Revitalize",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 1],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "When you periodically heal with your Rejuvenation or Lifebloom spells, you have a 20% chance to instantly regenerate 1% of your total mana. This effect cannot occur more than once every 12 sec.<br/><br/>In addition, you also grant Replenishment when you cast or refresh Lifebloom.<br/><br/>Replenishment - Grants up to 10 party or raid members mana regeneration equal to 1% of their maximum mana per 10 sec. Lasts for 15 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "When you periodically heal with your Rejuvenation or Lifebloom spells, you have a 20% chance to instantly regenerate 2% of your total mana. This effect cannot occur more than once every 12 sec.<br/><br/>In addition, you also grant Replenishment when you cast or refresh Lifebloom.<br/><br/>Replenishment - Grants up to 10 party or raid members mana regeneration equal to 1% of their maximum mana per 10 sec. Lasts for 15 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "spell_nature_ravenform",
+          "Name": "Nature's Swiftness",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 2],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "When activated, your next Nature spell with a base casting time less than 10 sec. becomes an instant cast spell. If that spell is a healing spell, the amount healed will be increased by 50%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "inv_staff_90",
+          "Name": "Fury of Stormrage",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 3],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the mana cost of your Wrath spell by 50%, and when you deal damage with your Wrath spell you have a 6% chance to cause your next Starfire to be instant cast within 8 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the mana cost of your Wrath spell by 100%, and when you deal damage with your Wrath spell you have a 12% chance to cause your next Starfire to be instant cast within 8 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "spell_nature_natureguardian",
+          "Name": "Nature's Guardian",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 3],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Whenever a damaging attack brings you below 30% health, your maximum health is increased by 5% for 10 sec and your threat level towards the attacker is reduced. 30 second cooldown."
+              },
+              {
+                "Number": 2,
+                "Description": "Whenever a damaging attack brings you below 30% health, your maximum health is increased by 10% for 10 sec and your threat level towards the attacker is reduced. 30 second cooldown."
+              },
+              {
+                "Number": 3,
+                "Description": "Whenever a damaging attack brings you below 30% health, your maximum health is increased by 15% for 10 sec and your threat level towards the attacker is reduced. 30 second cooldown."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "spell_nature_resistnature",
+          "Name": "Nature's Bounty",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 1],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the critical effect chance of your Regrowth spell by 20%.<br/><br/>In addition, when you have Rejuvenation active on three or more targets, the cast time of your Nourish spell is reduced by 10%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the critical effect chance of your Regrowth spell by 40%.<br/><br/>In addition, when you have Rejuvenation active on three or more targets, the cast time of your Nourish spell is reduced by 20%."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases the critical effect chance of your Regrowth spell by 60%.<br/><br/>In addition, when you have Rejuvenation active on three or more targets, the cast time of your Nourish spell is reduced by 30%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_druid_empoweredtouch",
+          "Name": "Empowered Touch",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 2],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the direct healing done by your Healing Touch, Regrowth and Nourish spells by 5%, and grants those spells a 50% chance to refresh the duration of your Lifebloom on targets."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the direct healing done by your Healing Touch, Regrowth and Nourish spells by 10%, and grants those spells a 100% chance to refresh the duration of your Lifebloom on targets."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "spell_shaman_giftearthmother",
+          "Name": "Malfurion's Gift",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 3],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Whenever you heal with your Lifebloom spell, you have a 2% chance to cause Omen of Clarity.<br/><br/>In addition, the cooldown of your Tranquility is reduced by 2.5 minutes."
+              },
+              {
+                "Number": 2,
+                "Description": "Whenever you heal with your Lifebloom spell, you have a 4% chance to cause Omen of Clarity.<br/><br/>In addition, the cooldown of your Tranquility is reduced by 5 minutes."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "inv_misc_herb_talandrasrose",
+          "Name": "Efflorescence",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 0],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Swiftmend spell causes healing flora to sprout beneath the target, restoring health equal to 4% of the amount healed by your Swiftmend to the three most injured targets within 8 yards, every 1 sec for 7 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Swiftmend spell causes healing flora to sprout beneath the target, restoring health equal to 8% of the amount healed by your Swiftmend to the three most injured targets within 8 yards, every 1 sec for 7 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "Your Swiftmend spell causes healing flora to sprout beneath the target, restoring health equal to 12% of the amount healed by your Swiftmend to the three most injured targets within 8 yards, every 1 sec for 7 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_druid_flourish",
+          "Name": "Wild Growth",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 1],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Heals up to 5 friendly party or raid members within 30 yards of the target for 7 over 7 sec. Prioritizes healing most injured party members. The amount healed is applied quickly at first, and slows down as the Wild Growth reaches its full duration."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_shaman_cleansespirit",
+          "Name": "Nature's Cure",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 2],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Empowers your Remove Corruption spell to also remove a magic effect from a friendly target."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_druid_naturalperfection",
+          "Name": "Nature's Ward",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 3],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Whenever you take an attack while at or below 50% health, you have a 50% chance to automatically cast Rejuvenation on yourself with no mana cost."
+              },
+              {
+                "Number": 2,
+                "Description": "Whenever you take an attack while at or below 50% health, you have a 100% chance to automatically cast Rejuvenation on yourself with no mana cost."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_druid_manatree",
+          "Name": "Gift of the Earthmother",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 0],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the healing done when your Lifebloom expires by 5%, and causes your Rejuvenation spell to also instantly heal for 5% of the total periodic effect."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the healing done when your Lifebloom expires by 10%, and causes your Rejuvenation spell to also instantly heal for 10% of the total periodic effect."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases the healing done when your Lifebloom expires by 15%, and causes your Rejuvenation spell to also instantly heal for 15% of the total periodic effect."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_druid_empoweredrejuvination",
+          "Name": "Swift Rejuvenation",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 2],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the global cooldown of your Rejuvenation by 0.25 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the global cooldown of your Rejuvenation by 0.50 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "Reduces the global cooldown of your Rejuvenation by 0.75 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Druid_TreeofLife",
+          "Name": "Tree of Life",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [6, 1],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Shapeshift into the tree of life, increasing healing done by 15% and increasing your armor by s3%. Also protects the caster from Polymorph effects. In addition, some of your spells are temporarily enhanced while shapeshifted. Lasts 25 sec.Enhanced spells: Lifebloom, Wild Growth, Regrowth, Entangling Roots, Wrath"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

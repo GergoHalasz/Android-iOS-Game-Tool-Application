@@ -351,6 +351,7 @@
           "Support": ["Arcane Instability"],
           "Enable": false,
           "Position": [4, 1],
+          "Dependency": "",
           "Tier": "5",
           "Ranks": {
             "Rank": [

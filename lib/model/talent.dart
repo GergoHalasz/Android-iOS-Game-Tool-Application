@@ -31,7 +31,7 @@ class TalentTree {
 
   TalentTree.fromJson(Map<String, dynamic> json) {
     name = json['Name'];
-    icon = json['Icon'];
+    icon = json['Icon'].toLowerCase();
     background = json['Background'];
     points = json['Points'];
     talents = Talents.fromJson(json['Talents']);

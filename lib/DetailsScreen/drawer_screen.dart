@@ -1,10 +1,6 @@
 import 'dart:convert';
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -102,7 +98,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                     context: context,
                     builder: (context) {
                       return AlertDialog(
-                        title: new Text("WoW Talent Calculator"),
+                        title: new Text("Classic Talent Calculator"),
                         content: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
@@ -112,7 +108,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                               children: <TextSpan>[
                                 TextSpan(
                                   text:
-                                      "Copyright 2019 Halasz Gergo.All rights reserved.\n\nLogo and store icons created using Icons8 icons are based on remasterings by barrens.chat\n\n",
+                                      "Copyright 2024 Halasz Gergo.All rights reserved.\n\nLogo and store icons created using Icons8 icons are based on remasterings by warcrafttavern.com\n\n",
                                 ),
                                 TextSpan(
                                   text:
@@ -194,8 +190,8 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 try {
                   final adState = Provider.of<AdState>(context, listen: false);
                   if (!adState.isAdFreeVersion) {
-                    PurchaserInfo restoredInfo =
-                        await Purchases.restoreTransactions();
+                    CustomerInfo restoredInfo =
+                        await Purchases.restorePurchases();
                     if (restoredInfo.allPurchasedProductIdentifiers.length >
                             0 &&
                         restoredInfo.allPurchasedProductIdentifiers[0] ==

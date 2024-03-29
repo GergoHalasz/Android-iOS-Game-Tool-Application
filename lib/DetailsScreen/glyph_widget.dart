@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'glyph_dialog.dart';
 
 class GlyphWidget extends StatefulWidget {
   final Function onTap;

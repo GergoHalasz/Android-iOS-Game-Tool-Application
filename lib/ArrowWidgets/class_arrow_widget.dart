@@ -1,4 +1,3 @@
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wowtalentcalculator/ArrowWidgets/deathknight_arrow.dart';
 import 'package:wowtalentcalculator/ArrowWidgets/druid_arrow.dart';
 import 'package:wowtalentcalculator/ArrowWidgets/paladin_arrow.dart';

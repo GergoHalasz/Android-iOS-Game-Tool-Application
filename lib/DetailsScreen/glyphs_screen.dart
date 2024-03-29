@@ -1,7 +1,6 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wowtalentcalculator/DetailsScreen/glyph_dialog.dart';
 import 'package:wowtalentcalculator/DetailsScreen/glyph_widget.dart';
 import 'package:wowtalentcalculator/model/glyph.dart';
@@ -151,10 +150,13 @@ class _GlyphsScreenState extends State<GlyphsScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: Column(children: [
-          Text('Set Glyphs'),
+          Text(
+            'Set Glyphs',
+            style: TextStyle(color: Colors.white),
+          ),
           Text(
             'Save the build to save the glyphs',
-            style: TextStyle(fontSize: 14),
+            style: TextStyle(fontSize: 14, color: Colors.white),
           )
         ]),
         backgroundColor: Color(0xff2E6171),

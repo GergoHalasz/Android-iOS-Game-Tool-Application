@@ -53,7 +53,7 @@ getMageArrowList(String expansion) {
         startPosition: Position(row: 4, column: 1),
         endPosition: Position(row: 6, column: 1),
         lengthType: 'medium',
-        dependencyTalent: 'Ice Barrierg',
+        dependencyTalent: 'Ice Barrier',
       )
     ]
   ];

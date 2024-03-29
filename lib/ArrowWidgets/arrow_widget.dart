@@ -38,18 +38,16 @@ class _ArrowWidgetState extends State<ArrowWidget> {
   setEnable() {
     Talent dependencyTalent =
         talentProvider.findTalentByName(widget.dependencyTalent);
-    if (dependencyTalent != null) {
-      if (dependencyTalent.enable) {
-        setState(() {
-          arrowBodyImg = 'assets/Arrows/ArrowBody.png';
-          arrowHeadImg = 'assets/Arrows/ArrowHead.png';
-        });
-      } else {
-        arrowBodyImg = 'assets/Arrows/GreyArrowBody.png';
-        arrowHeadImg = 'assets/Arrows/GreyArrowHead.png';
-      }
+    if (dependencyTalent.enable) {
+      setState(() {
+        arrowBodyImg = 'assets/Arrows/ArrowBody.png';
+        arrowHeadImg = 'assets/Arrows/ArrowHead.png';
+      });
+    } else {
+      arrowBodyImg = 'assets/Arrows/GreyArrowBody.png';
+      arrowHeadImg = 'assets/Arrows/GreyArrowHead.png';
     }
-  }
+    }
 
   void _calculatePositions() {
     arrowBodyTop = SizeConfig.cellSize * widget.startPosition.row -

@@ -20,9 +20,9 @@
   <string>http</string>
   </array>
 	<key>CFBundleName</key>
-	<string>WoW Talent Calculator</string>
+	<string>Classic Talent Calculator</string>
   <key>CFBundleDisplayName</key>
-  <string>WoW Talents</string>
+  <string>Classic Talent Calculator</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -53,7 +53,7 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>GADApplicationIdentifier</key>
-<string>ca-app-pub-8156706115088392~8308436174</string>
+<string>ca-app-pub-7574598565891663~3803012972</string>
 <key>SKAdNetworkItems</key>
   <array>
     <dict>

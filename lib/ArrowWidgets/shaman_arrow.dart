@@ -105,7 +105,48 @@ getShamanArrowList(String expansion) {
       )
     ]
   ];
-  var arrowListWotlk = [ [
+
+  var arrowListCata = [
+    [
+      ArrowWidget(
+        startPosition: Position(row: 2, column: 0),
+        endPosition: Position(row: 4, column: 0),
+        lengthType: 'medium',
+        dependencyTalent: 'Fulmination',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 2, column: 1),
+        endPosition: Position(row: 3, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Elemental Oath',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 5, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Feedback',
+      ),
+    ],
+    [
+      ArrowWidget(
+        startPosition: Position(row: 2, column: 0),
+        endPosition: Position(row: 4, column: 0),
+        lengthType: 'short',
+        dependencyTalent: 'Fulmination',
+      ),
+    ],
+    [
+      ArrowWidget(
+        startPosition: Position(row: 2, column: 0),
+        endPosition: Position(row: 4, column: 0),
+        lengthType: 'short',
+        dependencyTalent: 'Fulmination',
+      ),
+    ]
+  ];
+
+  var arrowListWotlk = [
+    [
       ArrowWidget(
         startPosition: Position(row: 2, column: 2),
         endPosition: Position(row: 5, column: 2),
@@ -150,7 +191,7 @@ getShamanArrowList(String expansion) {
         lengthType: 'short',
         dependencyTalent: 'Dual Wield Specialization',
       ),
-       ArrowWidget(
+      ArrowWidget(
         startPosition: Position(row: 6, column: 1),
         endPosition: Position(row: 7, column: 1),
         lengthType: 'short',
@@ -176,22 +217,22 @@ getShamanArrowList(String expansion) {
         lengthType: 'short',
         dependencyTalent: 'Cleanse Spirit',
       ),
-      
       RightArrowWidget(
         startPosition: Position(row: 8, column: 1),
         endPosition: Position(row: 8, column: 2),
         lengthType: 'short',
         dependencyTalent: 'Improved Earth Shield',
       )
-    ]];
+    ]
+  ];
 
   arrowWidgetsClass() {
     if (expansion == "tbc")
       return arrowListTbc;
     else if (expansion == "vanilla")
       return arrowListVanilla;
-    else
-      return arrowListWotlk;
+    else if (expansion == "cata") return arrowListCata;
+    return arrowListWotlk;
   }
 
   return arrowWidgetsClass();

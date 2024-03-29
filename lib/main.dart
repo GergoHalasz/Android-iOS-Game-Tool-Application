@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
-import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:wowtalentcalculator/HomeScreen/load_home_screen.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
 import 'package:wowtalentcalculator/api/purchase_api.dart';
@@ -38,10 +37,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'WoW Talent Calculator',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+        title: 'Classic Talent Calculator',
+        
         debugShowCheckedModeBanner: false,
         home: LoadHomeScreen());
   }

@@ -5,12 +5,14 @@ import 'package:purchases_flutter/purchases_flutter.dart';
 
 class PurchaseApi {
   static Future init() async {
-    final apiKey = Platform.isIOS
-        ? 'appl_OFAINueZVlSYxIuLShwHKRDIHYb'
-        : 'goog_ORDoTnQCskoxBeCayVnpnAbFORY';
 
-    await Purchases.setDebugLogsEnabled(true);
-    await Purchases.setup(apiKey);
+    
+    // final apiKey = Platform.isIOS
+    //     ? 'appl_OFAINueZVlSYxIuLShwHKRDIHYb'
+    //     : 'goog_ORDoTnQCskoxBeCayVnpnAbFORY';
+
+    // await Purchases.setDebugLogsEnabled(true);
+    // await Purchases.setup(apiKey);
   }
 
   static Future<List<Offering>> fetchOffers() async {
@@ -19,7 +21,7 @@ class PurchaseApi {
       final current =   offerings.current;
 
       return current == null ? [] : [current];
-    } on PlatformException catch (e) {
+    } on PlatformException {
       return [];
     }
   }

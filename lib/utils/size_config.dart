@@ -58,7 +58,7 @@ class SizeConfig {
     safeAreaScreenHeight = screenHeight - _safeAreaVertical;
 
     /// the width of cell of the [DetailScreen], calculate upon init.
-    cellSize =screenWidth < 600 ?  (screenWidth - kTalentScreenTwoPadding) / NUM_COLS : 140;
+    cellSize =screenWidth < 600 ?  (screenWidth / 1.2  - kTalentScreenTwoPadding) / NUM_COLS : 140;
 
   }
 }

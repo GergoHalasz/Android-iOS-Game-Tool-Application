@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart';
-import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:wowtalentcalculator/model/glyph.dart';
 import 'package:wowtalentcalculator/model/talent.dart';
 import 'package:wowtalentcalculator/utils/methods.dart';
@@ -17,8 +16,8 @@ class TalentProvider extends ChangeNotifier {
   List<dynamic> minorGlyphs = [null, null, null];
   bool showedGlyphDialog = false;
 
-  TalentProvider(
-      this.talentTrees, this.className, this.expansion, this.classGlyphs) {
+  TalentProvider(this.talentTrees, this.className, this.expansion,
+      this.classGlyphs, this.buildName, this.minorGlyphs, this.majorGlyphs) {
     _firstTalentTreePoints = talentTrees.specTreeList[0].points;
     _secondTalentTreePoints = talentTrees.specTreeList[1].points;
     _thirdTalentTreePoints = talentTrees.specTreeList[2].points;
@@ -33,7 +32,8 @@ class TalentProvider extends ChangeNotifier {
   bool checkIfBuildIsMaxed() {
     return (expansion == 'vanilla' && getTotalTalentPoints() == 60) ||
         (expansion == 'tbc' && getTotalTalentPoints() == 70) ||
-        (expansion == 'wotlk' && getTotalTalentPoints() == 80);
+        (expansion == 'wotlk' && getTotalTalentPoints() == 80) ||
+        (expansion == "cata" && getTotalTalentPoints() == 50);
   }
 
   setGlyphs(List<dynamic> minorGlyphs, List<dynamic> majorGlyphs) {
@@ -47,6 +47,18 @@ class TalentProvider extends ChangeNotifier {
       _firstTalentTreePoints +
       _secondTalentTreePoints +
       _thirdTalentTreePoints;
+
+  getRemainingTalentPoints() {
+    if (expansion == 'vanilla') {
+      return 51 - getTotalTalentPointsWithoutLevel();
+    } else if (expansion == 'tbc') {
+      return 61 - getTotalTalentPointsWithoutLevel();
+    } else if (expansion == 'wotlk') {
+      return 71 - getTotalTalentPointsWithoutLevel();
+    } else if (expansion == 'cata') {
+      return 41 - getTotalTalentPointsWithoutLevel();
+    }
+  }
 
   changeExpansion(expansion) {
     this.expansion = expansion;
@@ -138,7 +150,14 @@ class TalentProvider extends ChangeNotifier {
   /// loop 5 times to max out
   void increaseTalentPoints(
       Talent talent, int currentRank, int maxRank, String talentTreeName) {
-    if (expansion == 'wotlk') {
+    if (expansion == "cata") {
+      if (talent.points < maxRank && getTotalTalentPointsWithoutLevel() < 41) {
+        talent.points = talent.points + 1;
+        increaseTreePoints(talentTreeName);
+        updateTalentTree();
+        notifyListeners();
+      }
+    } else if (expansion == 'wotlk') {
       if (talent.points < maxRank && getTotalTalentPointsWithoutLevel() < 71) {
         talent.points = talent.points + 1;
         increaseTreePoints(talentTreeName);
@@ -158,7 +177,16 @@ class TalentProvider extends ChangeNotifier {
 
   void increaseMaxTalentPoints(
       Talent talent, int currentRank, int maxRank, String talentTreeName) {
-    if (expansion == 'wotlk') {
+    if (expansion == 'cata') {
+      if (talent.points < maxRank &&
+          getTotalTalentPointsWithoutLevel() + (maxRank - currentRank) <= 41) {
+        talent.points = maxRank;
+        increaseTreePointsWithSomePoints(
+            talentTreeName, (maxRank - currentRank));
+        updateTalentTree();
+        notifyListeners();
+      }
+    } else if (expansion == 'wotlk') {
       if (talent.points < maxRank &&
           getTotalTalentPointsWithoutLevel() + (maxRank - currentRank) <= 71) {
         talent.points = maxRank;
@@ -345,5 +373,4 @@ class TalentProvider extends ChangeNotifier {
   }
 
 // lock spell or not
-
 }

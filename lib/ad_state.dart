@@ -12,15 +12,17 @@ class AdState extends ChangeNotifier {
 
   AdState(this.initialization) {
     this.initialization = initialization;
-    Purchases.addPurchaserInfoUpdateListener(
-        (purchaserInfo) => {updatePurchaseStatus()});
+    createInterstitialAd();
+    Purchases.addCustomerInfoUpdateListener((purchaserInfo) {
+      updatePurchaseStatus();
+    });
     checkIsAdFreeversion();
   }
 
   bool isAdFreeVersion = false;
 
   Future updatePurchaseStatus() async {
-    final purchaserInfo = await Purchases.getPurchaserInfo();
+    final purchaserInfo = await Purchases.getCustomerInfo();
     final productName =
         Platform.isAndroid ? "free_ad_version" : "wowtc_ad_free_version";
 
@@ -48,12 +50,12 @@ class AdState extends ChangeNotifier {
   }
 
   String get bannerAdUnitId => Platform.isAndroid
-      ? 'ca-app-pub-8156706115088392/4896895388'
-      : 'ca-app-pub-8156706115088392/4369191164';
+      ? 'ca-app-pub-3940256099942544/9214589741'
+      : 'ca-app-pub-7574598565891663/1262294328';
 
   String get interstitialAdUnitId => Platform.isAndroid
-      ? 'ca-app-pub-8156706115088392/6599206908'
-      : 'ca-app-pub-8156706115088392/4643068037';
+      ? 'ca-app-pub-3940256099942544/1033173712'
+      : 'ca-app-pub-7574598565891663/2071128904';
 
   final BannerAdListener listener = BannerAdListener(
     // Called when an ad is successfully received.
@@ -74,17 +76,46 @@ class AdState extends ChangeNotifier {
 
   void createInterstitialAd() {
     InterstitialAd.load(
-        adUnitId: interstitialAdUnitId,
+        adUnitId: interstitialAdUnitId!,
         request: AdRequest(),
         adLoadCallback: InterstitialAdLoadCallback(
           onAdLoaded: (InterstitialAd ad) {
             this.interstitialAd = ad;
-            notifyListeners();
           },
           onAdFailedToLoad: (LoadAdError error) {
-            interstitialAd!.dispose();
-            createInterstitialAd();
+            interstitialAd = null;
           },
         ));
+  }
+
+  void loadInterstitialAd(bool freezeChecks) {
+    if (interstitialAd != null && !isAdFreeVersion) {
+      if (freezeChecks) {
+        interstitialAd!.fullScreenContentCallback =
+            FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {
+          interstitialAd!.dispose();
+          createInterstitialAd();
+        }, onAdFailedToShowFullScreenContent: ((ad, error) {
+          interstitialAd!.dispose();
+          createInterstitialAd();
+        }));
+        interstitialAd!.show();
+      } else {
+        if (interstitialAdCounter >= 3) {
+          interstitialAd!.fullScreenContentCallback =
+              FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {
+            interstitialAd!.dispose();
+            createInterstitialAd();
+          }, onAdFailedToShowFullScreenContent: ((ad, error) {
+            interstitialAd!.dispose();
+            createInterstitialAd();
+          }));
+          interstitialAdCounter = 0;
+          interstitialAd!.show();
+        } else {
+          interstitialAdCounter++;
+        }
+      }
+    }
   }
 }

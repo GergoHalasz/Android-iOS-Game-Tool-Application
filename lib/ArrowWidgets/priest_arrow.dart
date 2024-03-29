@@ -123,7 +123,7 @@ getPriestArrowList(String expansion) {
         startPosition: Position(row: 2, column: 2),
         endPosition: Position(row: 4, column: 2),
         lengthType: 'medium',
-        dependencyTalent: 'Divine Spirit',
+        dependencyTalent: 'Soul Warding',
       ),
       ArrowWidget(
         startPosition: Position(row: 4, column: 1),

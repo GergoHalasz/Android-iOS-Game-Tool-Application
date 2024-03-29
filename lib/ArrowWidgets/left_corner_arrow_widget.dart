@@ -46,20 +46,18 @@ class _LeftCornerArrowWidgetState extends State<LeftCornerArrowWidget> {
   setEnable() {
     Talent dependencyTalent =
         talentProvider.findTalentByName(widget.dependencyTalent);
-    if (dependencyTalent != null) {
-      if (dependencyTalent.enable) {
-        setState(() {
-          arrowBodyImg = 'assets/Arrows/ArrowBody.png';
-          arrowHeadImg = 'assets/Arrows/ArrowHead.png';
-          arrowCornerImg = 'assets/Arrows/ArrowCorner.png';
-        });
-      } else {
-        arrowBodyImg = 'assets/Arrows/GreyArrowBody.png';
-        arrowHeadImg = 'assets/Arrows/GreyArrowHead.png';
-        arrowCornerImg = 'assets/Arrows/GreyArrowCorner.png';
-      }
+    if (dependencyTalent.enable) {
+      setState(() {
+        arrowBodyImg = 'assets/Arrows/ArrowBody.png';
+        arrowHeadImg = 'assets/Arrows/ArrowHead.png';
+        arrowCornerImg = 'assets/Arrows/ArrowCorner.png';
+      });
+    } else {
+      arrowBodyImg = 'assets/Arrows/GreyArrowBody.png';
+      arrowHeadImg = 'assets/Arrows/GreyArrowHead.png';
+      arrowCornerImg = 'assets/Arrows/GreyArrowCorner.png';
     }
-  }
+    }
 
   void _calculatePositions() {
     arrowBodyTop = SizeConfig.cellSize * (widget.startPosition.row) -
@@ -84,7 +82,7 @@ class _LeftCornerArrowWidgetState extends State<LeftCornerArrowWidget> {
             SizeConfig.cellSize / 7;
 
     arrowCornerTop = SizeConfig.cellSize * (widget.startPosition.row) -
-      SizeConfig.cellSize / 1.67;
+        SizeConfig.cellSize / 1.67;
     arrowCornerLeft = SizeConfig.cellSize * (widget.startPosition.column - 1) -
         SizeConfig.cellSize / 1.78;
 

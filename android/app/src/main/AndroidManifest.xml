@@ -3,7 +3,7 @@
 
   <uses-permission android:name="com.android.vending.BILLING" />
    <application
-        android:label="WoW Classic TBC WotLK Talents"
+        android:label="Classic Talent Calculator"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

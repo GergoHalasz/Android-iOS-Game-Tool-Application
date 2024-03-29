@@ -51,16 +51,16 @@ class _TalentTreeWidgetState extends State<TalentTreeWidget> {
     talentProvider = Provider.of<TalentProvider>(context);
     final isMobile = MediaQuery.of(context).size.width < 600 ? true : false;
 
-  expansionCellSize() {
-    if(talentProvider.expansion == 'tbc') {
-      return 9;
-    } else 
-    if(talentProvider.expansion == 'vanilla') {
-      return 7;
-    } else {
-      return 11;
+    expansionCellSize() {
+      if (talentProvider.expansion == 'tbc') {
+        return 9;
+      } else if (talentProvider.expansion == 'vanilla' ||
+          talentProvider.expansion == 'cata') {
+        return 7;
+      } else {
+        return 11;
+      }
     }
-  }
 
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints viewportConstraints) {
@@ -68,8 +68,7 @@ class _TalentTreeWidgetState extends State<TalentTreeWidget> {
           child: ConstrainedBox(
               constraints: BoxConstraints(
                 // minHeight: viewportConstraints.maxHeight,
-                maxHeight: SizeConfig.cellSize *
-                        expansionCellSize() +
+                maxHeight: SizeConfig.cellSize * expansionCellSize() +
                     kTalentScreenTwoPadding, // cell size * number of row + padding
               ),
               child: !isMobile
