@@ -55,24 +55,37 @@ class _SaveScreenState extends State<SaveScreen> {
           "buildName": buildName,
           "buildClass": talentProvider.className,
           "minorGlyphs": talentProvider.minorGlyphs,
-          "majorGlyphs": talentProvider.majorGlyphs
+          "majorGlyphs": talentProvider.majorGlyphs,
+          "selectedRunes": talentProvider.selectedRunes
         };
 
         String guid = Guid.newGuid.toString();
 
         var newKey;
         if (talentProvider.expansion == 'cata') {
-          newKey = 'c' + "build_" + guid;
-        } else
-        if (talentProvider.expansion == 'wotlk') {
-          newKey = 'w' + "build_" + guid;
-        } else {
-          newKey = talentProvider.expansion == "tbc"
-              ? 't' + "build_" + guid
-              : 'v' + "build_" + guid;
+          int buildNumber =
+              prefs.getKeys().where((key) => key.startsWith('c')).length;
+          buildNumber++;
+          newKey = 'c' + "build_" + buildNumber.toString();
+        } else if (talentProvider.expansion == 'wotlk') {
+          int buildNumber =
+              prefs.getKeys().where((key) => key.startsWith('w')).length;
+          buildNumber++;
+          newKey = 'w' + "build_" + buildNumber.toString();
+        } else if (talentProvider.expansion == "tbc") {
+          int buildNumber =
+              prefs.getKeys().where((key) => key.startsWith('t')).length;
+          buildNumber++;
+          newKey = 't' + "build_" + buildNumber.toString();
+        } else if (talentProvider.expansion == "vanilla") {
+          int buildNumber =
+              prefs.getKeys().where((key) => key.startsWith('v')).length;
+          buildNumber++;
+          newKey = 'v' + "build_" + buildNumber.toString();
         }
         await prefs.setString(widget.buildKey == "" ? newKey : widget.buildKey,
             jsonEncode(dataJson));
+            
         if (widget.buildKey == "") {
           widget.changeBuildKeyAndName(newKey, buildName);
         } else {

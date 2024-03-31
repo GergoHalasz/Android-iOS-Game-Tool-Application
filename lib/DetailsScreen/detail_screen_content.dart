@@ -9,6 +9,7 @@ import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
 import 'package:wowtalentcalculator/DetailsScreen/Save_screen.dart';
 import 'package:wowtalentcalculator/DetailsScreen/drawer_screen.dart';
 import 'package:wowtalentcalculator/DetailsScreen/glyphs_screen.dart';
+import 'package:wowtalentcalculator/DetailsScreen/runes_dialog.dart';
 import 'package:wowtalentcalculator/DetailsScreen/talent_dialog.dart';
 import 'package:wowtalentcalculator/data/menu_items.dart';
 import 'package:wowtalentcalculator/model/glyph.dart';
@@ -245,6 +246,15 @@ class _DetailScreenContentState extends State<DetailScreenContent>
         });
   }
 
+  void _showRunesDialog() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return ChangeNotifierProvider<TalentProvider>.value(
+              value: talentProvider, child: RunesDialog());
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     final adState = Provider.of<AdState>(context);
@@ -269,10 +279,48 @@ class _DetailScreenContentState extends State<DetailScreenContent>
         fetchSavedBuild: fetchSavedBuild,
         changeClass: changeClass,
       )),
-      bottomNavigationBar: !adState.isAdFreeVersion ? Container(
-        height: 52,
-        color: Colors.black,
-        child: AdWidget(ad: banner!),
+      bottomNavigationBar: !adState.isAdFreeVersion
+          ? Container(
+              height: 52,
+              color: Colors.black,
+              child: AdWidget(ad: banner!),
+            )
+          : null,
+      floatingActionButton: talentProvider.expansion == "vanilla" ? Stack(
+        children: <Widget>[
+          Positioned(
+            bottom: MediaQuery.of(context).size.height / 3, // Adjust as needed
+            right: 0.0,
+            child: GestureDetector(
+              onTap: () {
+                _showRunesDialog();
+              },
+              child: Container(
+                padding: EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.black, // specify border color
+                      width: 2.0, // specify border width
+                    ),
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.all(Radius.circular(60))),
+                child: Column(
+                  children: [
+                    Image.asset(
+                      'assets/Icons/rune.png', // Provide your rune icon image path
+                      width: 24.0, // adjust icon size as needed
+                      height: 22.0,
+                    ),
+                    Text(
+                      'Runes',
+                      style: TextStyle(fontSize: 12),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
       ) : null,
       appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.white),
@@ -380,7 +428,8 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                               child: Row(
                                 children: [
                                   Text('Remaining points: '),
-                                  Text('${talentProvider.getRemainingTalentPoints()}',
+                                  Text(
+                                      '${talentProvider.getRemainingTalentPoints()}',
                                       style: TextStyle(
                                           color: kColorSelectiveYellow))
                                 ],

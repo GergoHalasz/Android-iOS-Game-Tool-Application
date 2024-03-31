@@ -3,8 +3,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:wowtalentcalculator/DetailsScreen/classes_screen.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
+import 'package:wowtalentcalculator/api/purchase_api.dart';
 import 'package:wowtalentcalculator/utils/routestyle.dart';
 import 'package:wowtalentcalculator/utils/size_config.dart';
 
@@ -87,6 +89,37 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
     final adState = Provider.of<AdState>(context);
 
     return Scaffold(
+      floatingActionButton: !adState.isAdFreeVersion
+          ? GestureDetector(
+              onTap: () async {
+                final adState = Provider.of<AdState>(context, listen: false);
+                if (!adState.isAdFreeVersion) {
+                  final offerings = await PurchaseApi.fetchOffers();
+                  final isSuccess = await Purchases.purchasePackage(
+                      offerings[0].availablePackages[0]);
+                  if (isSuccess.allPurchasedProductIdentifiers.length == 1) {
+                    adState.changeToAdFreeVersion();
+                  }
+                }
+              },
+              child: Container(
+                padding: EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                    color: Color(0xff2E6171),
+                    borderRadius: BorderRadius.all(Radius.circular(60))),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.not_interested, color: Colors.red),
+                    Text(
+                      'Remove Ads',
+                      style: TextStyle(fontSize: 12, color: Colors.white),
+                    )
+                  ],
+                ),
+              ),
+            )
+          : null,
       bottomNavigationBar: !adState.isAdFreeVersion
           ? Container(
               height: 52,

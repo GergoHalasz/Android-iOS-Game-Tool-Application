@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
+import 'package:wowtalentcalculator/model/SelectedRunes.dart';
 import 'package:wowtalentcalculator/model/glyph.dart';
-import 'package:wowtalentcalculator/model/runeData.dart';
+import 'package:wowtalentcalculator/model/rune.dart';
 import 'package:wowtalentcalculator/model/talent.dart';
 import 'package:wowtalentcalculator/utils/methods.dart';
 
@@ -12,8 +13,9 @@ class TalentProvider extends ChangeNotifier {
   String className;
   String expansion;
   String? buildName = null;
-  List<RuneData> runes;
+  List<ClassRunes> classRunes;
   List<ClassGlyphs> classGlyphs;
+  List<dynamic> selectedRunes = [];
   List<dynamic> majorGlyphs = [null, null, null];
   List<dynamic> minorGlyphs = [null, null, null];
   bool showedGlyphDialog = false;
@@ -26,16 +28,39 @@ class TalentProvider extends ChangeNotifier {
       this.buildName,
       this.minorGlyphs,
       this.majorGlyphs,
-      this.runes) {
+      this.classRunes,
+      this.selectedRunes) {
     _firstTalentTreePoints = talentTrees.specTreeList[0].points;
     _secondTalentTreePoints = talentTrees.specTreeList[1].points;
     _thirdTalentTreePoints = talentTrees.specTreeList[2].points;
-    getClassGlyphs();
-    getRunes();
+
+    if (expansion == "wotlk") getClassGlyphs();
+    if (expansion == 'vanilla') getClassRunes();
   }
 
   setShowedGlyphDialog() {
     showedGlyphDialog = true;
+    notifyListeners();
+  }
+
+  deleteSelectedRunes(String type) {
+    if (selectedRunes.length != 0) {
+      selectedRunes.removeWhere((rune) => rune["type"] == type);
+      notifyListeners();
+    }
+  }
+
+  setSelectedRunes(dynamic rune, String type) {
+    if (selectedRunes.length != 0 &&
+        !selectedRunes.any((rune) => rune["type"] == type)) {
+      selectedRunes.add({"rune": rune, "type": type});
+    } else if (selectedRunes.length != 0) {
+      selectedRunes.removeWhere((rune) => rune["type"] == type);
+      selectedRunes.add({"rune": rune, "type": type});
+    }
+    if (selectedRunes.length == 0) {
+      selectedRunes.add({"rune": rune, "type": type});
+    }
     notifyListeners();
   }
 
@@ -84,7 +109,7 @@ class TalentProvider extends ChangeNotifier {
     return await loadTalentString('glyphs', 'wotlk');
   }
 
-  Future fetchRunes() async {
+  Future fetchClassRunes() async {
     return await loadTalentString('runes', 'sod');
   }
 
@@ -97,9 +122,13 @@ class TalentProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  getRunes() async {
-    List classRunesList = await fetchRunes();
-    
+  getClassRunes() async {
+    List classRunesList = await fetchClassRunes();
+    classRunes = classRunesList.map<ClassRunes>((wowClass) {
+      ClassRunes classRunes = ClassRunes.fromJson(wowClass);
+      return classRunes;
+    }).toList();
+    notifyListeners();
   }
 
   changeClass(talentTreesObj, newClassName) {

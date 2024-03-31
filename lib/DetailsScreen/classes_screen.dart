@@ -10,6 +10,7 @@ import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
 import 'package:wowtalentcalculator/DetailsScreen/detail_screen_content.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
 import 'package:wowtalentcalculator/model/glyph.dart';
+import 'package:wowtalentcalculator/model/rune.dart';
 import 'package:wowtalentcalculator/model/talent.dart';
 import 'package:wowtalentcalculator/provider/talent_provider.dart';
 import 'package:wowtalentcalculator/utils/colors.dart';
@@ -64,59 +65,57 @@ class _ClassesScreenState extends State<ClassesScreen> {
   Future<List> _getSavedBuilds() async {
     final prefs = await SharedPreferences.getInstance();
     List<String> keys = prefs.getKeys().toList();
-    return keys.map((key) {
+    List<dynamic> keysList = keys.map((key) {
       if (key.contains("build_"))
         return {"build": jsonDecode(prefs.getString(key)!), "key": key};
     }).toList();
+
+    keysList = keysList.where((element) => element != null).toList();
+    keysList.sort((a, b) {
+      String keyA = a["key"];
+      String keyB = b["key"];
+
+      int indexA = int.parse(keyA[keyA.length - 1]);
+      int indexB = int.parse(keyB[keyB.length - 1]);
+
+      return indexB.compareTo(indexA);
+    });
+
+    return keysList;
   }
 
   @override
   void initState() {
     currentExpansionSelected = widget.expansion;
-    _getSavedBuilds().then((res) => {
-          setState(() {
-            builds = res;
-          })
-        });
+    _getSavedBuilds().then((res) {
+      setState(() {
+        builds = res;
+      });
+    });
     super.initState();
   }
 
   setSavedBuilds() {
-    _getSavedBuilds().then((res) => {
-          setState(() {
-            builds = res;
-          })
-        });
+    _getSavedBuilds().then((res) {
+      setState(() {
+        builds = res;
+      });
+    });
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    if (firstTimeAdInit) {
-      final adState = Provider.of<AdState>(context);
-
-      adState.initialization.then((value) {
-        setState(() {
-          banner = BannerAd(
-              adUnitId: adState.bannerAdUnitId,
-              size: AdSize.banner,
-              request: AdRequest(),
-              listener: adState.listener)
-            ..load();
-          firstTimeAdInit = false;
-        });
-      });
-    }
   }
 
   onDeleteBuild(buildContext, key) async {
     SharedPreferences sharedPreference = await SharedPreferences.getInstance();
     sharedPreference.remove(key);
-    _getSavedBuilds().then((res) => {
-          setState(() {
-            builds = res;
-          })
-        });
+    _getSavedBuilds().then((res) {
+      setState(() {
+        builds = res;
+      });
+    });
   }
 
   glyphSet(data) {
@@ -164,16 +163,33 @@ class _ClassesScreenState extends State<ClassesScreen> {
 
     link = 'https://' + expansionInLink + talentPointsInLink;
     Clipboard.setData(ClipboardData(text: link)).then((value) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text(
-              "Build url link copied to clipboard.")));
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Build url link copied to clipboard.")));
     });
+  }
+
+  showBannerAd() {
+    if (firstTimeAdInit) {
+      final adState = Provider.of<AdState>(context);
+
+      adState.initialization.then((value) {
+        setState(() {
+          banner = BannerAd(
+              adUnitId: adState.bannerAdUnitId,
+              size: AdSize.banner,
+              request: AdRequest(),
+              listener: adState.listener)
+            ..load();
+          firstTimeAdInit = false;
+        });
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final adState = Provider.of<AdState>(context);
-
+    showBannerAd();
     return Scaffold(
       bottomNavigationBar: !adState.isAdFreeVersion
           ? Container(
@@ -203,7 +219,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Text(
-                    '${capitalize(widget.expansion)} Classes',
+                    '${capitalize(widget.expansion != "vanilla" ? widget.expansion : "SoD")} Classes',
                     style: TextStyle(fontSize: 24),
                   ),
                   Container(
@@ -251,7 +267,9 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                             [],
                                                             null,
                                                             [null, null, null],
-                                                            [null, null, null]);
+                                                            [null, null, null],
+                                                            [],
+                                                            []);
                                                       },
                                                       child:
                                                           DetailScreenContent(
@@ -309,7 +327,9 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                           [],
                                                           null,
                                                           [null, null, null],
-                                                          [null, null, null]);
+                                                          [null, null, null],
+                                                          [],
+                                                          []);
                                                     },
                                                     child: DetailScreenContent(
                                                       talentTrees:
@@ -349,7 +369,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                           child: Text('Saved builds - Swipe Left to Delete'),
                         ),
                         Container(
-                            height: 200,
+                            height: 250,
                             child: RawScrollbar(
                               thumbColor: Colors.grey,
                               thumbVisibility: true,
@@ -474,9 +494,79 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                         [];
                                                     List<dynamic> majorGlyphs =
                                                         [];
-
+                                                    List<dynamic>
+                                                        selectedRunes = [];
                                                     dynamic data =
                                                         builds[index]["build"];
+                                                    if (builds[index]["build"]
+                                                            ["selectedRunes"] !=
+                                                        null) {
+                                                      selectedRunes =
+                                                          builds[index]["build"]
+                                                              ["selectedRunes"];
+                                                      selectedRunes.forEach(
+                                                          (selectedRune) {
+                                                        switch (selectedRune[
+                                                            "type"]) {
+                                                          case "Chest":
+                                                            selectedRune[
+                                                                    "rune"] =
+                                                                new Chest
+                                                                    .fromJson(
+                                                                    selectedRune[
+                                                                        "rune"]);
+                                                            break;
+                                                          case "Waist":
+                                                            selectedRune[
+                                                                    "rune"] =
+                                                                new Waist
+                                                                    .fromJson(
+                                                                    selectedRune[
+                                                                        "rune"]);
+                                                            break;
+                                                          case "Legs":
+                                                            selectedRune[
+                                                                    "rune"] =
+                                                                new Legs
+                                                                    .fromJson(
+                                                                    selectedRune[
+                                                                        "rune"]);
+                                                            break;
+                                                          case "Feet":
+                                                            selectedRune[
+                                                                    "rune"] =
+                                                                new Feet
+                                                                    .fromJson(
+                                                                    selectedRune[
+                                                                        "rune"]);
+                                                            break;
+                                                          case "Hands":
+                                                            selectedRune[
+                                                                    "rune"] =
+                                                                new Hands
+                                                                    .fromJson(
+                                                                    selectedRune[
+                                                                        "rune"]);
+                                                            break;
+                                                          case "Head":
+                                                            selectedRune[
+                                                                    "rune"] =
+                                                                new Head
+                                                                    .fromJson(
+                                                                    selectedRune[
+                                                                        "rune"]);
+                                                            break;
+                                                          case "Wrists":
+                                                            selectedRune[
+                                                                    "rune"] =
+                                                                new Head
+                                                                    .fromJson(
+                                                                    selectedRune[
+                                                                        "rune"]);
+                                                            break;
+                                                        }
+                                                      });
+                                                    }
                                                     if (data["minorGlyphs"] !=
                                                         null) {
                                                       minorGlyphs =
@@ -514,7 +604,9 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                                       [],
                                                                       buildName,
                                                                       minorGlyphs,
-                                                                      majorGlyphs);
+                                                                      majorGlyphs,
+                                                                      [],
+                                                                      selectedRunes);
                                                                 },
                                                                 child:
                                                                     DetailScreenContent(

@@ -80,6 +80,7 @@ flutter:
     - data_repo_tbc/
     - data_repo_wotlk/
     - data_repo_cata/
+    - data_repo_sod/
     - assets/background/
     - assets/Icons/
     - assets/Arrows/
