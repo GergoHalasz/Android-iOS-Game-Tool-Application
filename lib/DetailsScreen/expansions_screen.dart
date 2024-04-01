@@ -89,44 +89,8 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
     final adState = Provider.of<AdState>(context);
 
     return Scaffold(
-      floatingActionButton: !adState.isAdFreeVersion
-          ? GestureDetector(
-              onTap: () async {
-                final adState = Provider.of<AdState>(context, listen: false);
-                if (!adState.isAdFreeVersion) {
-                  final offerings = await PurchaseApi.fetchOffers();
-                  final isSuccess = await Purchases.purchasePackage(
-                      offerings[0].availablePackages[0]);
-                  if (isSuccess.allPurchasedProductIdentifiers.length == 1) {
-                    adState.changeToAdFreeVersion();
-                  }
-                }
-              },
-              child: Container(
-                padding: EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                    color: Color(0xff2E6171),
-                    borderRadius: BorderRadius.all(Radius.circular(60))),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(Icons.not_interested, color: Colors.red),
-                    Text(
-                      'Remove Ads',
-                      style: TextStyle(fontSize: 12, color: Colors.white),
-                    )
-                  ],
-                ),
-              ),
-            )
-          : null,
-      bottomNavigationBar: !adState.isAdFreeVersion
-          ? Container(
-              height: 52,
-              color: Colors.black,
-              child: AdWidget(ad: banner!),
-            )
-          : null,
+      
+      
       body: Container(
           child: Stack(fit: StackFit.expand, children: [
         Container(

@@ -279,13 +279,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
         fetchSavedBuild: fetchSavedBuild,
         changeClass: changeClass,
       )),
-      bottomNavigationBar: !adState.isAdFreeVersion
-          ? Container(
-              height: 52,
-              color: Colors.black,
-              child: AdWidget(ad: banner!),
-            )
-          : null,
+      
       floatingActionButton: talentProvider.expansion == "vanilla" ? Stack(
         children: <Widget>[
           Positioned(
