@@ -89,85 +89,94 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
     final adState = Provider.of<AdState>(context);
 
     return Scaffold(
-      floatingActionButton: !adState.isAdFreeVersion
-          ? GestureDetector(
-              onTap: () async {
-                final adState = Provider.of<AdState>(context, listen: false);
-                if (!adState.isAdFreeVersion) {
-                  final offerings = await PurchaseApi.fetchOffers();
-                  final isSuccess = await Purchases.purchasePackage(
-                      offerings[0].availablePackages[0]);
-                  if (isSuccess.allPurchasedProductIdentifiers.length == 1) {
-                    adState.changeToAdFreeVersion();
+        floatingActionButton: !adState.isAdFreeVersion
+            ? GestureDetector(
+                onTap: () async {
+                  final adState = Provider.of<AdState>(context, listen: false);
+                  if (!adState.isAdFreeVersion) {
+                    final offerings = await PurchaseApi.fetchOffers();
+                    final isSuccess = await Purchases.purchasePackage(
+                        offerings[0].availablePackages[0]);
+                    if (isSuccess.allPurchasedProductIdentifiers.length == 1) {
+                      adState.changeToAdFreeVersion();
+                    }
                   }
-                }
-              },
-              child: Container(
-                padding: EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                    color: Color(0xff2E6171),
-                    borderRadius: BorderRadius.all(Radius.circular(60))),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(Icons.not_interested, color: Colors.red),
-                    Text(
-                      'Remove Ads',
-                      style: TextStyle(fontSize: 12, color: Colors.white),
-                    )
-                  ],
+                },
+                child: Container(
+                  padding: EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                      color: Color(0xff2E6171),
+                      borderRadius: BorderRadius.all(Radius.circular(60))),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.not_interested, color: Colors.red),
+                      Text(
+                        'Remove Ads',
+                        style: TextStyle(fontSize: 12, color: Colors.white),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-            )
-          : null,
-      bottomNavigationBar: !adState.isAdFreeVersion
-          ? Container(
-              height: 52,
-              color: Colors.black,
-              child: AdWidget(ad: banner!),
-            )
-          : null,
-      body: Container(
-          child: Stack(fit: StackFit.expand, children: [
-        Container(
-            decoration: new BoxDecoration(
-              image: new DecorationImage(
-                image: new AssetImage(image),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ...expansions.asMap().entries.map((entry) {
-                    return Container(
-                      padding: EdgeInsets.only(bottom: 50),
-                      width: 130,
-                      height: 100,
-                      child: ElevatedButton(
-                        child: Text(
-                          expansionsTitle[entry.key],
-                          style: TextStyle(fontSize: 16, color: Colors.white),
-                        ),
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                            Color(0xff2E6171),
-                          ),
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              buildPageRoute(ClassesScreen(
-                                expansion: entry.value,
-                                backgroundImagePath: imagesList[entry.key],
-                              )));
-                        },
+              )
+            : null,
+        bottomNavigationBar: !adState.isAdFreeVersion
+            ? SafeArea(
+                child: Container(
+                  height: 52,
+                  color: Colors.black,
+                  child: AdWidget(ad: banner!),
+                ),
+              )
+            : null,
+        body: Container(
+            decoration: BoxDecoration(color: Color(0xff2E6171)),
+            child: SafeArea(
+              top: false,
+              child: Container(
+                  child: Stack(fit: StackFit.expand, children: [
+                Container(
+                    decoration: new BoxDecoration(
+                      image: new DecorationImage(
+                        image: new AssetImage(image),
+                        fit: BoxFit.cover,
                       ),
-                    );
-                  }),
-                ])),
-      ])),
-    );
+                    ),
+                    child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ...expansions.asMap().entries.map((entry) {
+                            return Container(
+                              padding: EdgeInsets.only(bottom: 50),
+                              width: 130,
+                              height: 100,
+                              child: ElevatedButton(
+                                child: Text(
+                                  expansionsTitle[entry.key],
+                                  style: TextStyle(
+                                      fontSize: 16, color: Colors.white),
+                                ),
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                    Color(0xff2E6171),
+                                  ),
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      buildPageRoute(ClassesScreen(
+                                        expansion: entry.value,
+                                        backgroundImagePath:
+                                            imagesList[entry.key],
+                                      )));
+                                },
+                              ),
+                            );
+                          }),
+                        ])),
+              ])),
+            )));
   }
 }
