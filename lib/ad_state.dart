@@ -75,7 +75,7 @@ class AdState extends ChangeNotifier {
 
   void createInterstitialAd() {
     InterstitialAd.load(
-        adUnitId: interstitialAdUnitId!,
+        adUnitId: interstitialAdUnitId,
         request: AdRequest(),
         adLoadCallback: InterstitialAdLoadCallback(
           onAdLoaded: (InterstitialAd ad) {

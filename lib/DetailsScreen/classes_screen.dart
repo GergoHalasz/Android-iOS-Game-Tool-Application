@@ -532,6 +532,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                           contentPadding:
                                                               EdgeInsets
                                                                   .symmetric(
+                                                                    vertical: 6,
                                                                       horizontal:
                                                                           12),
                                                           dense: true,
