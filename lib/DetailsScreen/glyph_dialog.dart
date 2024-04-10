@@ -80,7 +80,6 @@ class _GlyphDialogState extends State<GlyphDialog> {
             child: RawScrollbar(
               thumbColor: Colors.white,
               controller: _scrollController,
-              thumbVisibility: true,
               thickness: 3.5,
               radius: Radius.circular(20),
               child: ListView(

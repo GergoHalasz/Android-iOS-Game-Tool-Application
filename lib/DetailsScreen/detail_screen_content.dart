@@ -143,7 +143,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
 
   TabBar _tabBar() => TabBar(
         controller: _tabController,
-        dividerColor: Colors.grey,
         indicatorColor: classColor,
         indicatorSize: TabBarIndicatorSize.tab,
         tabs: [

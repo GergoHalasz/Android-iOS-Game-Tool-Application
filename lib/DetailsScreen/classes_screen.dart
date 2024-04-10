@@ -435,7 +435,6 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                     height: 250,
                                     child: RawScrollbar(
                                       thumbColor: Colors.grey,
-                                      thumbVisibility: true,
                                       thickness: 3.5,
                                       radius: Radius.circular(20),
                                       controller: _scrollController,

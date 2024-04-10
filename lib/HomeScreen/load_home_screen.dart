@@ -23,7 +23,7 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
 
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
+    WidgetsBinding.instance?.addPostFrameCallback((_) async {
       await rateMyApp.init();
       if (mounted && rateMyApp.shouldOpenDialog) {
         if (Platform.isAndroid) {
