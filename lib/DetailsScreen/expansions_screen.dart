@@ -48,7 +48,7 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
   String image = "";
   List<String> imagesList = [];
   bool firstTimeAdInit = true;
-  BannerAd? banner;
+  late BannerAd banner;
 
   @override
   void initState() {
@@ -136,7 +136,7 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                   child: Container(
                     height: 52,
                     color: Colors.black,
-                    child: AdWidget(ad: banner!),
+                    child: AdWidget(ad: banner),
                   ),
                 ),
               )

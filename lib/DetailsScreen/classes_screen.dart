@@ -198,7 +198,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
             Navigator.pop(context)
           },
           child: Container(
-            margin: EdgeInsets.only(top: 22, left: 12),
+            margin: EdgeInsets.only(top: 30, left: 20),
             child: Icon(
               Icons.arrow_back,
               color: Colors.white,
@@ -244,9 +244,12 @@ class _ClassesScreenState extends State<ClassesScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Text(
-                            '${capitalize(widget.expansion != "vanilla" ? widget.expansion : "SoD")} Classes',
-                            style: TextStyle(fontSize: 24),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10.0),
+                            child: Text(
+                              '${capitalize(widget.expansion != "vanilla" ? widget.expansion : "SoD")} Classes',
+                              style: TextStyle(fontSize: 24),
+                            ),
                           ),
                           Container(
                             child: SizedBox(
