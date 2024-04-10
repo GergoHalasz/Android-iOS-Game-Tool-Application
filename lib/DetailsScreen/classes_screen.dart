@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
 import 'package:wowtalentcalculator/DetailsScreen/detail_screen_content.dart';
+import 'package:wowtalentcalculator/DetailsScreen/drawer_screen.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
 import 'package:wowtalentcalculator/model/glyph.dart';
 import 'package:wowtalentcalculator/model/rune.dart';
@@ -191,14 +192,33 @@ class _ClassesScreenState extends State<ClassesScreen> {
     final adState = Provider.of<AdState>(context);
     showBannerAd();
     return Scaffold(
+      floatingActionButton: SafeArea(
+        child: GestureDetector(
+          onTap: () => {
+            Navigator.pop(context)
+          },
+          child: Container(
+            margin: EdgeInsets.only(top: 22, left: 12),
+            child: Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+              size: 28,
+            ),
+          ),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniStartTop,
       bottomNavigationBar: !adState.isAdFreeVersion
-          ? SafeArea(
-            child: Container(
-                height: 52,
-                color: Colors.black,
-                child: AdWidget(ad: banner!),
+          ? Container(
+              decoration: BoxDecoration(color: Color(0xff2E6171)),
+              child: SafeArea(
+                child: Container(
+                  height: 52,
+                  color: Colors.black,
+                  child: AdWidget(ad: banner!),
+                ),
               ),
-          )
+            )
           : null,
       backgroundColor: Color(0xff556F7A),
       body: DefaultTextStyle(

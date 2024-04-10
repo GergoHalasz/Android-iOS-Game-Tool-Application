@@ -7,13 +7,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
 import 'package:wowtalentcalculator/api/purchase_api.dart';
-import 'package:wowtalentcalculator/provider/talent_provider.dart';
 
 class DrawerScreen extends StatefulWidget {
-  Function changeClass;
-  Function fetchSavedBuild;
-
-  DrawerScreen({required this.changeClass, required this.fetchSavedBuild});
+  const DrawerScreen({Key? key}) : super(key: key);
 
   @override
   State<DrawerScreen> createState() => _DrawerScreenState();
@@ -22,7 +18,6 @@ class DrawerScreen extends StatefulWidget {
 class _DrawerScreenState extends State<DrawerScreen> {
   bool isOpen = false;
   List builds = [];
-  late TalentProvider talentProvider;
   Future<List> _getSavedBuilds() async {
     final prefs = await SharedPreferences.getInstance();
     List<String> keys = prefs.getKeys().toList();
@@ -76,7 +71,6 @@ class _DrawerScreenState extends State<DrawerScreen> {
 
   @override
   Widget build(BuildContext context) {
-    talentProvider = Provider.of<TalentProvider>(context);
     final adState = Provider.of<AdState>(context);
 
     return Material(

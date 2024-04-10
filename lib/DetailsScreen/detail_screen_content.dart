@@ -274,11 +274,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     }
 
     return Scaffold(
-      drawer: Drawer(
-          child: DrawerScreen(
-        fetchSavedBuild: fetchSavedBuild,
-        changeClass: changeClass,
-      )),
       floatingActionButton: talentProvider.expansion == "vanilla"
           ? Stack(
               children: <Widget>[
