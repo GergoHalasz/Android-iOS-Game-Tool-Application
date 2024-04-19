@@ -1,11 +1,12 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:unity_ads_plugin/unity_ads_plugin.dart';
 import 'package:wowtalentcalculator/DetailsScreen/classes_screen.dart';
 import 'package:wowtalentcalculator/DetailsScreen/drawer_screen.dart';
+import 'package:wowtalentcalculator/ad_manager.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
 import 'package:wowtalentcalculator/api/purchase_api.dart';
 import 'package:wowtalentcalculator/utils/routestyle.dart';
@@ -48,7 +49,6 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
   String image = "";
   List<String> imagesList = [];
   bool firstTimeAdInit = true;
-  late BannerAd banner;
 
   @override
   void initState() {
@@ -68,21 +68,6 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
   void didChangeDependencies() {
     // TODO: implement didChangeDependencies
     super.didChangeDependencies();
-    if (firstTimeAdInit) {
-      final adState = Provider.of<AdState>(context);
-
-      adState.initialization.then((value) {
-        setState(() {
-          banner = BannerAd(
-              adUnitId: adState.bannerAdUnitId,
-              size: AdSize.banner,
-              request: AdRequest(),
-              listener: adState.listener)
-            ..load();
-          firstTimeAdInit = false;
-        });
-      });
-    }
   }
 
   @override
@@ -136,7 +121,17 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                   child: Container(
                     height: 52,
                     color: Colors.black,
-                    child: AdWidget(ad: banner),
+                    child: UnityBannerAd(
+                      placementId: AdManager.bannerAdPlacementId,
+                      onLoad: (placementId) =>
+                          print('Banner loaded: $placementId'),
+                      onClick: (placementId) =>
+                          print('Banner clicked: $placementId'),
+                      onShown: (placementId) =>
+                          print('Banner shown: $placementId'),
+                      onFailed: (placementId, error, message) => print(
+                          'Banner Ad $placementId failed: $error $message'),
+                    ),
                   ),
                 ),
               )
