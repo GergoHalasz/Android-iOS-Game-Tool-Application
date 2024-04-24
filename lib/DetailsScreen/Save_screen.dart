@@ -5,7 +5,6 @@ import 'package:flutter_guid/flutter_guid.dart';
 import 'package:provider/provider.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:wowtalentcalculator/ad_manager.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
 import 'package:wowtalentcalculator/api/purchase_api.dart';
 import 'package:wowtalentcalculator/provider/talent_provider.dart';
@@ -48,7 +47,7 @@ class _SaveScreenState extends State<SaveScreen> {
 
     Future<void> _saveBuild() async {
       if (_controller.text != "") {
-        adState.checkIfCanShowAd(AdManager.interstitialVideoAdPlacementId, true);
+        adState.loadInterstitialAd(true);
         final prefs = await SharedPreferences.getInstance();
         var data = talentProvider.talentTrees.toJson();
         Map dataJson = {
@@ -86,7 +85,7 @@ class _SaveScreenState extends State<SaveScreen> {
         }
         await prefs.setString(widget.buildKey == "" ? newKey : widget.buildKey,
             jsonEncode(dataJson));
-
+            
         if (widget.buildKey == "") {
           widget.changeBuildKeyAndName(newKey, buildName);
         } else {

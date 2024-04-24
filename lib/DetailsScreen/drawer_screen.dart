@@ -184,8 +184,8 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 try {
                   final adState = Provider.of<AdState>(context, listen: false);
                   if (!adState.isAdFreeVersion) {
-                    PurchaserInfo restoredInfo =
-                        await Purchases.restoreTransactions();
+                    CustomerInfo restoredInfo =
+                        await Purchases.restorePurchases();
                     if (restoredInfo.allPurchasedProductIdentifiers.length >
                             0 &&
                         restoredInfo.allPurchasedProductIdentifiers[0] ==

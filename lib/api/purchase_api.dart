@@ -10,7 +10,9 @@ class PurchaseApi {
         : 'goog_ORDoTnQCskoxBeCayVnpnAbFORY';
 
     await Purchases.setDebugLogsEnabled(true);
-    await Purchases.setup(apiKey);
+    PurchasesConfiguration configuration = PurchasesConfiguration(apiKey);
+
+    await Purchases.configure(configuration);
   }
 
   static Future<List<Offering>> fetchOffers() async {

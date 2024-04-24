@@ -3,13 +3,12 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:unity_ads_plugin/unity_ads_plugin.dart';
 import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
 import 'package:wowtalentcalculator/DetailsScreen/detail_screen_content.dart';
 import 'package:wowtalentcalculator/DetailsScreen/drawer_screen.dart';
-import 'package:wowtalentcalculator/ad_manager.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
 import 'package:wowtalentcalculator/model/glyph.dart';
 import 'package:wowtalentcalculator/model/rune.dart';
@@ -61,6 +60,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
   ScrollController _scrollController = ScrollController();
   late String currentExpansionSelected;
   bool firstTimeAdInit = true;
+  BannerAd? banner;
 
   List builds = [];
   Future<List> _getSavedBuilds() async {
@@ -169,15 +169,36 @@ class _ClassesScreenState extends State<ClassesScreen> {
     });
   }
 
+  showBannerAd() {
+    if (firstTimeAdInit) {
+      final adState = Provider.of<AdState>(context);
+
+      adState.initialization.then((value) {
+        setState(() {
+          banner = BannerAd(
+              adUnitId: adState.bannerAdUnitId,
+              size: AdSize.banner,
+              request: AdRequest(),
+              listener: adState.listener)
+            ..load();
+          firstTimeAdInit = false;
+        });
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final adState = Provider.of<AdState>(context);
+    showBannerAd();
     return Scaffold(
       floatingActionButton: SafeArea(
         child: GestureDetector(
-          onTap: () => {Navigator.pop(context)},
+          onTap: () => {
+            Navigator.pop(context)
+          },
           child: Container(
-            margin: EdgeInsets.only(top: 30, left: 20),
+            margin: EdgeInsets.only(top: 22, left: 12),
             child: Icon(
               Icons.arrow_back,
               color: Colors.white,
@@ -194,17 +215,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                 child: Container(
                   height: 52,
                   color: Colors.black,
-                  child: UnityBannerAd(
-                    placementId: AdManager.bannerAdPlacementId,
-                    onLoad: (placementId) =>
-                        print('Banner loaded: $placementId'),
-                    onClick: (placementId) =>
-                        print('Banner clicked: $placementId'),
-                    onShown: (placementId) =>
-                        print('Banner shown: $placementId'),
-                    onFailed: (placementId, error, message) =>
-                        print('Banner Ad $placementId failed: $error $message'),
-                  ),
+                  child: AdWidget(ad: banner!),
                 ),
               ),
             )
@@ -233,12 +244,9 @@ class _ClassesScreenState extends State<ClassesScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.only(top: 10.0),
-                            child: Text(
-                              '${capitalize(widget.expansion != "vanilla" ? widget.expansion : "SoD")} Classes',
-                              style: TextStyle(fontSize: 24),
-                            ),
+                          Text(
+                            '${capitalize(widget.expansion != "vanilla" ? widget.expansion : "SoD")} Classes',
+                            style: TextStyle(fontSize: 24),
                           ),
                           Container(
                             child: SizedBox(
@@ -266,7 +274,8 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                             child: Container(
                                               child: InkWell(
                                                 onTap: () async {
-                                                  adState.checkIfCanShowAd(AdManager.interstitialVideoAdPlacementId, false);
+                                                  adState.loadInterstitialAd(
+                                                      false);
                                                   List snapshot =
                                                       await loadTalentString(
                                                           element,
@@ -343,7 +352,8 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                           child: Container(
                                             child: InkWell(
                                               onTap: () async {
-                                                adState.checkIfCanShowAd(AdManager.interstitialVideoAdPlacementId, false);
+                                                adState
+                                                    .loadInterstitialAd(false);
                                                 List snapshot =
                                                     await loadTalentString(
                                                         element,
@@ -425,6 +435,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                     height: 250,
                                     child: RawScrollbar(
                                       thumbColor: Colors.grey,
+                                      thumbVisibility: true,
                                       thickness: 3.5,
                                       radius: Radius.circular(20),
                                       controller: _scrollController,
@@ -522,8 +533,6 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                           contentPadding:
                                                               EdgeInsets
                                                                   .symmetric(
-                                                                      vertical:
-                                                                          6,
                                                                       horizontal:
                                                                           12),
                                                           dense: true,
@@ -574,7 +583,9 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                             String key =
                                                                 builds[index]
                                                                     ["key"];
-                                                            adState.checkIfCanShowAd(AdManager.interstitialVideoAdPlacementId, false);
+                                                            adState
+                                                                .loadInterstitialAd(
+                                                                    false);
                                                             List<dynamic>
                                                                 minorGlyphs =
                                                                 [];

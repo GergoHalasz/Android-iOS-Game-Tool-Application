@@ -171,6 +171,7 @@ class _GlyphsScreenState extends State<GlyphsScreen> {
               padding: EdgeInsets.all(10),
               child: RawScrollbar(
                 thumbColor: Colors.white,
+                thumbVisibility: true,
                 thickness: 3.5,
                 radius: Radius.circular(20),
                 controller: _scrollController,

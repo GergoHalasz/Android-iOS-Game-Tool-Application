@@ -1,93 +1,28 @@
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:unity_ads_plugin/unity_ads_plugin.dart';
-import 'package:wowtalentcalculator/ad_manager.dart';
 
 class AdState extends ChangeNotifier {
+  Future<InitializationStatus> initialization;
+  InterstitialAd? interstitialAd;
   int interstitialAdCounter = 0;
-  Map<String, bool> placements = {
-    AdManager.interstitialVideoAdPlacementId: false,
-    AdManager.rewardedVideoAdPlacementId: false,
-  };
 
-  AdState() {
-    UnityAds.init(
-      gameId: AdManager.gameId,
-      testMode: true,
-      onComplete: () {
-        print('Initialization Complete');
-        _loadAds();
-      },
-      onFailed: (error, message) =>
-          print('Initialization Failed: $error $message'),
-    );
-    Purchases.addPurchaserInfoUpdateListener(
-        (purchaserInfo) => {updatePurchaseStatus()});
+  AdState(this.initialization) {
+    this.initialization = initialization;
+    createInterstitialAd();
+    Purchases.addCustomerInfoUpdateListener((purchaserInfo) {
+      updatePurchaseStatus();
+    });
     checkIsAdFreeversion();
-  }
-
-  void _loadAds() {
-    for (var placementId in placements.keys) {
-      _loadAd(placementId);
-    }
-  }
-
-  void _loadAd(String placementId) {
-    UnityAds.load(
-      placementId: placementId,
-      onComplete: (placementId) {
-        print('Load Complete $placementId');
-
-        placements[placementId] = true;
-        notifyListeners();
-      },
-      onFailed: (placementId, error, message) =>
-          print('Load Failed $placementId: $error $message'),
-    );
-  }
-
-  void checkIfCanShowAd(String placementId, bool freezeCheck) {
-    if (freezeCheck) {
-      _showAd(placementId);
-    } else {
-      if (interstitialAdCounter >= 3) {
-        _showAd(placementId);
-        interstitialAdCounter = 0;
-      } else {
-        interstitialAdCounter++;
-      }
-    }
-  }
-
-  void _showAd(String placementId) {
-    placements[placementId] = false;
-    notifyListeners();
-    UnityAds.showVideoAd(
-      placementId: placementId,
-      onComplete: (placementId) {
-        print('Video Ad $placementId completed');
-        _loadAd(placementId);
-      },
-      onFailed: (placementId, error, message) {
-        print('Video Ad $placementId failed: $error $message');
-        _loadAd(placementId);
-      },
-      onStart: (placementId) => print('Video Ad $placementId started'),
-      onClick: (placementId) => print('Video Ad $placementId click'),
-      onSkipped: (placementId) {
-        print('Video Ad $placementId skipped');
-        _loadAd(placementId);
-      },
-    );
   }
 
   bool isAdFreeVersion = false;
 
   Future updatePurchaseStatus() async {
-    final purchaserInfo = await Purchases.getPurchaserInfo();
+    final purchaserInfo = await Purchases.getCustomerInfo();
     final productName =
         Platform.isAndroid ? "free_ad_version" : "wowtc_ad_free_version";
 
@@ -112,5 +47,75 @@ class AdState extends ChangeNotifier {
   void changeToAdFreeVersion() {
     isAdFreeVersion = true;
     notifyListeners();
+  }
+
+  String get bannerAdUnitId => Platform.isAndroid
+      ? 'ca-app-pub-3940256099942544/9214589741'
+      : 'ca-app-pub-8347554982566575/1060652760';
+
+  String get interstitialAdUnitId => Platform.isAndroid
+      ? 'ca-app-pub-3940256099942544/1033173712'
+      : 'ca-app-pub-8347554982566575/9475496692';
+
+  final BannerAdListener listener = BannerAdListener(
+    // Called when an ad is successfully received.
+    onAdLoaded: (Ad ad) => print('Ad loaded.'),
+    // Called when an ad request failed.
+    onAdFailedToLoad: (Ad ad, LoadAdError error) {
+      // Dispose the ad here to free resources.
+      ad.dispose();
+      print('Ad failed to load: $error');
+    },
+    // Called when an ad opens an overlay that covers the screen.
+    onAdOpened: (Ad ad) => print('Ad opened.'),
+    // Called when an ad removes an overlay that covers the screen.
+    onAdClosed: (Ad ad) => print('Ad closed.'),
+    // Called when an impression occurs on the ad.
+    onAdImpression: (Ad ad) => print('Ad impression.'),
+  );
+
+  void createInterstitialAd() {
+    InterstitialAd.load(
+        adUnitId: interstitialAdUnitId!,
+        request: AdRequest(),
+        adLoadCallback: InterstitialAdLoadCallback(
+          onAdLoaded: (InterstitialAd ad) {
+            this.interstitialAd = ad;
+          },
+          onAdFailedToLoad: (LoadAdError error) {
+            interstitialAd = null;
+          },
+        ));
+  }
+
+  void loadInterstitialAd(bool freezeChecks) {
+    if (interstitialAd != null && !isAdFreeVersion) {
+      if (freezeChecks) {
+        interstitialAd!.fullScreenContentCallback =
+            FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {
+          interstitialAd!.dispose();
+          createInterstitialAd();
+        }, onAdFailedToShowFullScreenContent: ((ad, error) {
+          interstitialAd!.dispose();
+          createInterstitialAd();
+        }));
+        interstitialAd!.show();
+      } else {
+        if (interstitialAdCounter >= 3) {
+          interstitialAd!.fullScreenContentCallback =
+              FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {
+            interstitialAd!.dispose();
+            createInterstitialAd();
+          }, onAdFailedToShowFullScreenContent: ((ad, error) {
+            interstitialAd!.dispose();
+            createInterstitialAd();
+          }));
+          interstitialAdCounter = 0;
+          interstitialAd!.show();
+        } else {
+          interstitialAdCounter++;
+        }
+      }
+    }
   }
 }
