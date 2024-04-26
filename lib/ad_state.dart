@@ -101,7 +101,7 @@ class AdState extends ChangeNotifier {
         }));
         interstitialAd!.show();
       } else {
-        if (interstitialAdCounter >= 3) {
+        if (interstitialAdCounter >= 1) {
           interstitialAd!.fullScreenContentCallback =
               FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {
             interstitialAd!.dispose();

@@ -5,6 +5,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
 import 'package:wowtalentcalculator/DetailsScreen/Save_screen.dart';
 import 'package:wowtalentcalculator/DetailsScreen/drawer_screen.dart';
@@ -318,7 +319,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
           centerTitle: true,
           title: Text(
               talentProvider.buildName == null
-                  ? '${talentTrees.specTreeList[_selectedIndex].name} ${str.capitalize(className)}'
+                  ? '${talentTrees.specTreeList[_selectedIndex].name}'
                   : talentProvider.buildName!,
               style: TextStyle(color: kColorSelectiveYellow)),
           actions: <Widget>[
@@ -341,6 +342,20 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                 },
               ),
             ),
+            Padding(
+              padding: EdgeInsets.only(left: 12),
+              child: Container(
+                child: InkResponse(
+                  child: Icon(
+                    Icons.refresh_outlined,
+                    color: Colors.white,
+                  ),
+                  onTap: () {
+                    talentProvider.resetTalentTree(_selectedIndex);
+                  },
+                ),
+              ),
+            ),
             DividerTheme(
               data: DividerThemeData(color: Colors.grey),
               child: PopupMenuButton<MenuItemPopUp>(
@@ -351,11 +366,11 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                   ...MenuItems.itemsFirst.map(buildItem).toList(),
                   if (talentProvider.expansion == 'wotlk')
                     ...MenuItems.itemsThird.map(buildItem).toList(),
-                  ...MenuItems.itemsForth.map(buildItem).toList()
+                  ...MenuItems.itemsForth.map(buildItem).toList(),
                 ],
                 color: Color(0xff556F7A),
               ),
-            ),
+            )
           ],
           backgroundColor: Color(0xff2E6171),
           bottom: PreferredSize(
@@ -597,6 +612,16 @@ class _DetailScreenContentState extends State<DetailScreenContent>
             adState.changeToAdFreeVersion();
           }
         }
+        break;
+      case MenuItems.itemLeaveRating:
+        const url =
+            'https://apps.apple.com/us/app/id1593368066'; // Replace this with your app's store URL
+        if (await canLaunchUrl(Uri.parse(url))) {
+          await launchUrl(Uri.parse(url));
+        } else {
+          throw 'Could not launch $url';
+        }
+        break;
     }
   }
 }

@@ -4,17 +4,20 @@ import 'package:wowtalentcalculator/model/menu_item.dart';
 class MenuItems {
   static const List<MenuItemPopUp> itemsFirst = [
     itemResetTree,
+    itemRemoveAds,
+    itemLeaveRating
   ];
 
   static const List<MenuItemPopUp> itemsThird = [itemSetGlyphs];
 
   static const List<MenuItemPopUp> itemsForth = [itemShareBuild];
 
-  static const itemResetTree = const MenuItemPopUp('Reset tree', Icons.refresh);
+  static const itemResetTree = const MenuItemPopUp('Reset Tree', Icons.refresh);
 
   static const itemSetGlyphs =
       const MenuItemPopUp('Glyphs', Icons.account_balance_wallet);
 
   static const itemShareBuild = const MenuItemPopUp('Share Build', Icons.share);
   static const itemRemoveAds = const MenuItemPopUp('Remove Ads', Icons.block);
+  static const itemLeaveRating = const MenuItemPopUp('Leave a Rating!', Icons.rate_review);
 }

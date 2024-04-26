@@ -13,10 +13,10 @@ class LoadHomeScreen extends StatefulWidget {
 class _LoadHomeScreenState extends State<LoadHomeScreen> {
   RateMyApp rateMyApp = RateMyApp(
     preferencesPrefix: 'rateMyApp_',
-    minDays: 3,
-    minLaunches: 3,
-    remindDays: 3,
-    remindLaunches: 3,
+    minDays: 2,
+    minLaunches: 2,
+    remindDays: 2,
+    remindLaunches: 2,
     googlePlayIdentifier: 'com.fissherstudio.wowtalentcalculator',
     appStoreIdentifier: '1593368066',
   );
@@ -30,13 +30,13 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
           rateMyApp.showRateDialog(context,
               title: 'Rate This App',
               message:
-                  'Leave a rating!',
+                  'Do you like this app? Leave a rating!',
               actionsBuilder: actionsBuilderAndroid);
         } else {
           rateMyApp.showStarRateDialog(context,
-              title: 'Rate This App',
+              title: 'Enjoying WoW Talent Calculator?',
               message:
-                  'Leave a rating!',
+                  'Tap a star to rate it on the App Store.',
               actionsBuilder: actionsBuilderIOS);
         }
       }
