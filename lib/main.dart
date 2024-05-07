@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:unity_ads_plugin/unity_ads_plugin.dart';
 import 'package:provider/provider.dart';
 import 'package:wowtalentcalculator/HomeScreen/load_home_screen.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
@@ -12,10 +12,9 @@ Future main() async {
   await PurchaseApi.init();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-  final initFuture = MobileAds.instance.initialize();
   runApp(MultiProvider(
     providers: [
-      ChangeNotifierProvider<AdState>(create: (_) => AdState(initFuture)),
+      ChangeNotifierProvider<AdState>(create: (_) => AdState()),
     ],
     child: MyApp(),
   ));

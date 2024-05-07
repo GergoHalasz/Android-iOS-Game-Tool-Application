@@ -1,9 +1,8 @@
 import 'dart:convert';
-
+import 'package:unity_ads_plugin/unity_ads_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
@@ -19,6 +18,7 @@ import 'package:wowtalentcalculator/utils/methods.dart';
 import 'package:wowtalentcalculator/utils/routestyle.dart';
 import 'package:wowtalentcalculator/utils/size_config.dart';
 import 'package:wowtalentcalculator/utils/string.dart';
+import 'package:wowtalentcalculator/ad_manager.dart';
 
 class ClassesScreen extends StatefulWidget {
   final String expansion;
@@ -60,7 +60,6 @@ class _ClassesScreenState extends State<ClassesScreen> {
   ScrollController _scrollController = ScrollController();
   late String currentExpansionSelected;
   bool firstTimeAdInit = true;
-  BannerAd? banner;
 
   List builds = [];
   Future<List> _getSavedBuilds() async {
@@ -169,28 +168,9 @@ class _ClassesScreenState extends State<ClassesScreen> {
     });
   }
 
-  showBannerAd() {
-    if (firstTimeAdInit) {
-      final adState = Provider.of<AdState>(context);
-
-      adState.initialization.then((value) {
-        setState(() {
-          banner = BannerAd(
-              adUnitId: adState.bannerAdUnitId,
-              size: AdSize.banner,
-              request: AdRequest(),
-              listener: adState.listener)
-            ..load();
-          firstTimeAdInit = false;
-        });
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final adState = Provider.of<AdState>(context);
-    showBannerAd();
     return Scaffold(
       floatingActionButton: SafeArea(
         child: GestureDetector(
@@ -215,7 +195,17 @@ class _ClassesScreenState extends State<ClassesScreen> {
                 child: Container(
                   height: 52,
                   color: Colors.black,
-                  child: AdWidget(ad: banner!),
+                  child: UnityBannerAd(
+                    placementId: AdManager.bannerAdPlacementId,
+                    onLoad: (placementId) =>
+                        print('Banner loaded: $placementId'),
+                    onClick: (placementId) =>
+                        print('Banner clicked: $placementId'),
+                    onShown: (placementId) =>
+                        print('Banner shown: $placementId'),
+                    onFailed: (placementId, error, message) =>
+                        print('Banner Ad $placementId failed: $error $message'),
+                  ),
                 ),
               ),
             )
@@ -274,8 +264,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                             child: Container(
                                               child: InkWell(
                                                 onTap: () async {
-                                                  adState.loadInterstitialAd(
-                                                      false);
+                                                  adState.checkIfCanShowAd(AdManager.interstitialVideoAdPlacementId, false);
                                                   List snapshot =
                                                       await loadTalentString(
                                                           element,
@@ -352,8 +341,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                           child: Container(
                                             child: InkWell(
                                               onTap: () async {
-                                                adState
-                                                    .loadInterstitialAd(false);
+                                                adState.checkIfCanShowAd(AdManager.interstitialVideoAdPlacementId, false);
                                                 List snapshot =
                                                     await loadTalentString(
                                                         element,
@@ -583,9 +571,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                             String key =
                                                                 builds[index]
                                                                     ["key"];
-                                                            adState
-                                                                .loadInterstitialAd(
-                                                                    false);
+                                                            adState.checkIfCanShowAd(AdManager.interstitialVideoAdPlacementId, false);
                                                             List<dynamic>
                                                                 minorGlyphs =
                                                                 [];

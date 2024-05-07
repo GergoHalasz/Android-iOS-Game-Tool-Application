@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
@@ -25,6 +24,8 @@ import 'package:wowtalentcalculator/utils/colors.dart';
 import 'package:wowtalentcalculator/utils/constants.dart';
 import 'package:wowtalentcalculator/widgets/custom_page_route.dart';
 import '../ad_state.dart';
+import 'package:unity_ads_plugin/unity_ads_plugin.dart';
+import 'package:wowtalentcalculator/ad_manager.dart';
 import '../api/purchase_api.dart';
 
 // detail screen content below the tabs bar
@@ -54,7 +55,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
   late TabController _tabController;
   late TalentProvider talentProvider;
   int _selectedIndex = 0;
-  BannerAd? banner;
   String buildName = "";
   String buildKey = "";
   bool firstTimeAdInit = true;
@@ -69,21 +69,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    if (firstTimeAdInit) {
-      final adState = Provider.of<AdState>(context);
-
-      adState.initialization.then((value) {
-        setState(() {
-          banner = BannerAd(
-              adUnitId: adState.bannerAdUnitId,
-              size: AdSize.banner,
-              request: AdRequest(),
-              listener: adState.listener)
-            ..load();
-          firstTimeAdInit = false;
-        });
-      });
-    }
   }
 
   @override
@@ -275,6 +260,28 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     }
 
     return Scaffold(
+      bottomNavigationBar: !adState.isAdFreeVersion
+          ? Container(
+              decoration: BoxDecoration(color: Color(0xff2E6171)),
+              child: SafeArea(
+                child: Container(
+                  height: 52,
+                  color: Colors.black,
+                  child: UnityBannerAd(
+                    placementId: AdManager.bannerAdPlacementId,
+                    onLoad: (placementId) =>
+                        print('Banner loaded: $placementId'),
+                    onClick: (placementId) =>
+                        print('Banner clicked: $placementId'),
+                    onShown: (placementId) =>
+                        print('Banner shown: $placementId'),
+                    onFailed: (placementId, error, message) =>
+                        print('Banner Ad $placementId failed: $error $message'),
+                  ),
+                ),
+              ),
+            )
+          : null,
       floatingActionButton: talentProvider.expansion == "vanilla"
           ? Stack(
               children: <Widget>[
@@ -503,17 +510,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                     ],
                   ),
                 ),
-                !adState.isAdFreeVersion
-                    ? banner == null
-                        ? Container(
-                            height: 50,
-                          )
-                        : Container(
-                            height: 50,
-                            child: AdWidget(ad: banner!),
-                            color: Colors.black,
-                          )
-                    : Container()
               ],
             ),
           ),
