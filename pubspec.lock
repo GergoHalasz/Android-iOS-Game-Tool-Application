@@ -180,10 +180,10 @@ packages:
     dependency: transitive
     description:
       name: freezed_annotation
-      sha256: c3fd9336eb55a38cc1bbd79ab17573113a8deccd0ecbbf926cca3c62803b5c2d
+      sha256: "1be037f901137bf2b9a0c309e9bf2694d6ec77687645211218191ade4f41a4b8"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.1"
+    version: "1.1.0"
   image:
     dependency: transitive
     description:
@@ -364,18 +364,18 @@ packages:
     dependency: "direct main"
     description:
       name: purchases_flutter
-      sha256: "375eee487e4098b99b7d7d360f1c6033e6ed6b8e4b9c1e92c6df7a3dd44846cf"
+      sha256: "8838564cff8c702ffde348fc8e7a247d843559ae4d28adce668572b53a4a243f"
       url: "https://pub.dev"
     source: hosted
-    version: "6.27.0"
+    version: "3.10.1"
   rate_my_app:
     dependency: "direct main"
     description:
       name: rate_my_app
-      sha256: "201681ce28d2a5dc7bcfbdd394f08a64b1e2c24daca793ee1f069034757ae6f0"
+      sha256: fe210e9e6068095945f89fc2310a71b1cc2caae7f64fa65b83fc796badcb05e3
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.0"
+    version: "1.1.4"
   shared_preferences:
     dependency: "direct main"
     description:

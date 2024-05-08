@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:wowtalentcalculator/RateMyAppCustomClasses/do_not_open_again_condition.dart';
+import 'package:wowtalentcalculator/RateMyAppCustomClasses/minimum_app_launches_condition.dart';
 import 'home_screen.dart';
 
 class LoadHomeScreen extends StatefulWidget {
@@ -13,10 +15,10 @@ class LoadHomeScreen extends StatefulWidget {
 class _LoadHomeScreenState extends State<LoadHomeScreen> {
   RateMyApp rateMyApp = RateMyApp(
     preferencesPrefix: 'rateMyApp_',
-    minDays: 2,
-    minLaunches: 2,
-    remindDays: 2,
-    remindLaunches: 2,
+    minDays: 0,
+    minLaunches: 0,
+    remindDays: 1,
+    remindLaunches: 4,
     googlePlayIdentifier: 'com.fissherstudio.wowtalentcalculator',
     appStoreIdentifier: '1593368066',
   );
@@ -24,19 +26,22 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
+      CustomDoNotOpenAgainCondition condition = CustomDoNotOpenAgainCondition();
+      CustomMinimumAppLaunchesCondition minimumAppLaunchesCondition =
+          CustomMinimumAppLaunchesCondition(minLaunches: 4, remindLaunches: 5);
+      rateMyApp.conditions.add(condition);
+      rateMyApp.conditions.add(minimumAppLaunchesCondition);
       await rateMyApp.init();
       if (mounted && rateMyApp.shouldOpenDialog) {
         if (Platform.isAndroid) {
           rateMyApp.showRateDialog(context,
               title: 'Rate This App',
-              message:
-                  'Do you like this app? Leave a rating!',
+              message: 'Hey Classic Peep, if you like the app leave a rating! :)',
               actionsBuilder: actionsBuilderAndroid);
         } else {
           rateMyApp.showStarRateDialog(context,
               title: 'Enjoying WoW Talent Calculator?',
-              message:
-                  'Tap a star to rate it on the App Store.',
+              message: 'Hey Classic Peep, if you like the app leave a rating! :)',
               actionsBuilder: actionsBuilderIOS);
         }
       }

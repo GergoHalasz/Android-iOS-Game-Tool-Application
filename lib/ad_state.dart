@@ -24,7 +24,7 @@ class AdState extends ChangeNotifier {
       onFailed: (error, message) =>
           print('Initialization Failed: $error $message'),
     );
-    Purchases.addCustomerInfoUpdateListener(
+  Purchases.addPurchaserInfoUpdateListener(
         (purchaserInfo) => {updatePurchaseStatus()});
     checkIsAdFreeversion();
   }
@@ -87,7 +87,7 @@ class AdState extends ChangeNotifier {
   bool isAdFreeVersion = false;
 
   Future updatePurchaseStatus() async {
-    final purchaserInfo = await Purchases.getCustomerInfo();
+    final purchaserInfo = await Purchases.getPurchaserInfo();
     final productName =
         Platform.isAndroid ? "free_ad_version" : "wowtc_ad_free_version";
 
