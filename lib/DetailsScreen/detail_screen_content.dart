@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:applovin_max/applovin_max.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -24,7 +25,6 @@ import 'package:wowtalentcalculator/utils/colors.dart';
 import 'package:wowtalentcalculator/utils/constants.dart';
 import 'package:wowtalentcalculator/widgets/custom_page_route.dart';
 import '../ad_state.dart';
-import 'package:unity_ads_plugin/unity_ads_plugin.dart';
 import 'package:wowtalentcalculator/ad_manager.dart';
 import '../api/purchase_api.dart';
 
@@ -265,20 +265,17 @@ class _DetailScreenContentState extends State<DetailScreenContent>
               decoration: BoxDecoration(color: Color(0xff2E6171)),
               child: SafeArea(
                 child: Container(
-                  height: 52,
-                  color: Colors.black,
-                  child: UnityBannerAd(
-                    placementId: AdManager.bannerAdPlacementId,
-                    onLoad: (placementId) =>
-                        print('Banner loaded: $placementId'),
-                    onClick: (placementId) =>
-                        print('Banner clicked: $placementId'),
-                    onShown: (placementId) =>
-                        print('Banner shown: $placementId'),
-                    onFailed: (placementId, error, message) =>
-                        print('Banner Ad $placementId failed: $error $message'),
-                  ),
-                ),
+                    height: 52,
+                    color: Colors.black,
+                    child: MaxAdView(
+                        adUnitId: bannerAdId,
+                        adFormat: AdFormat.banner,
+                        listener: AdViewAdListener(
+                            onAdLoadedCallback: (ad) {},
+                            onAdLoadFailedCallback: (adUnitId, error) {},
+                            onAdClickedCallback: (ad) {},
+                            onAdExpandedCallback: (ad) {},
+                            onAdCollapsedCallback: (ad) {}))),
               ),
             )
           : null,

@@ -40,9 +40,9 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-8156706115088392~1921595294"/>
+        <meta-data android:name="applovin.sdk.key" 
+        android:value="kaiKyd46T_t3T_b0bZOGmiKUugqBnAd6wtKOKurlbl59gHTsBZeP62kg58gabcloF0n2rXuoFypnDZd9zk6Mlf"
+        />
     </application>
     <queries>
   <!-- If your app opens https URLs -->

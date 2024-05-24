@@ -1,87 +1,78 @@
 import 'dart:io';
+import 'dart:math';
+import 'package:applovin_max/applovin_max.dart';
 import 'package:flutter/foundation.dart';
 
-import 'package:unity_ads_plugin/unity_ads_plugin.dart';
 import 'package:wowtalentcalculator/ad_manager.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AdState extends ChangeNotifier {
   int interstitialAdCounter = 0;
-  Map<String, bool> placements = {
-    AdManager.interstitialVideoAdPlacementId: false,
-    AdManager.rewardedVideoAdPlacementId: false,
-  };
-
+  int _maxExponentialRetryCount = 6;
+  var _interstitialRetryAttempt = 0;
   AdState() {
-    UnityAds.init(
-      gameId: AdManager.gameId,
-      testMode: true,
-      onComplete: () {
-        print('Initialization Complete');
-        _loadAds();
-      },
-      onFailed: (error, message) =>
-          print('Initialization Failed: $error $message'),
-    );
-  Purchases.addPurchaserInfoUpdateListener(
+    Purchases.addPurchaserInfoUpdateListener(
         (purchaserInfo) => {updatePurchaseStatus()});
     checkIsAdFreeversion();
   }
 
-  void _loadAds() {
-    for (var placementId in placements.keys) {
-      _loadAd(placementId);
+  void showInterstitialAd() async {
+    bool isReady = (await AppLovinMAX.isInterstitialReady(interAdId))!;
+    if (isReady) {
+      AppLovinMAX.showInterstitial(interAdId);
     }
   }
 
-  void _loadAd(String placementId) {
-    UnityAds.load(
-      placementId: placementId,
-      onComplete: (placementId) {
-        print('Load Complete $placementId');
+  void initializeInterstitialAds() {
+    AppLovinMAX.setInterstitialListener(InterstitialListener(
+      onAdLoadedCallback: (ad) {
+        // Interstitial ad is ready to show. AppLovinMAX.isInterstitialReady(_interstitial_ad_unit_ID) now returns 'true'.
+        print('Interstitial ad loaded from ' + ad.networkName);
 
-        placements[placementId] = true;
-        notifyListeners();
+        // Reset retry attempt
+        _interstitialRetryAttempt = 0;
       },
-      onFailed: (placementId, error, message) =>
-          print('Load Failed $placementId: $error $message'),
-    );
+      onAdLoadFailedCallback: (adUnitId, error) {
+        // Interstitial ad failed to load.
+        // AppLovin recommends that you retry with exponentially higher delays up to a maximum delay (in this case 64 seconds).
+        _interstitialRetryAttempt = _interstitialRetryAttempt + 1;
+        if (_interstitialRetryAttempt > _maxExponentialRetryCount) return;
+        int retryDelay =
+            pow(2, min(_maxExponentialRetryCount, _interstitialRetryAttempt))
+                .toInt();
+
+        print('Interstitial ad failed to load with code ' +
+            error.code.toString() +
+            ' - retrying in ' +
+            retryDelay.toString() +
+            's');
+
+        Future.delayed(Duration(milliseconds: retryDelay * 1000), () {
+          AppLovinMAX.loadInterstitial(interAdId);
+        });
+      },
+      onAdDisplayedCallback: (ad) {},
+      onAdDisplayFailedCallback: (ad, error) {},
+      onAdClickedCallback: (ad) {},
+      onAdHiddenCallback: (ad) {},
+    ));
+
+    // Load the first interstitial.
+    AppLovinMAX.loadInterstitial(interAdId);
   }
 
-  void checkIfCanShowAd(String placementId, bool freezeCheck) {
+  void checkIfCanShowAd(bool freezeCheck) {
     if (freezeCheck) {
-      _showAd(placementId);
+      showInterstitialAd();
     } else {
       if (interstitialAdCounter >= 3) {
-        _showAd(placementId);
+        showInterstitialAd();
         interstitialAdCounter = 0;
       } else {
         interstitialAdCounter++;
       }
     }
-  }
-
-  void _showAd(String placementId) {
-    placements[placementId] = false;
-    notifyListeners();
-    UnityAds.showVideoAd(
-      placementId: placementId,
-      onComplete: (placementId) {
-        print('Video Ad $placementId completed');
-        _loadAd(placementId);
-      },
-      onFailed: (placementId, error, message) {
-        print('Video Ad $placementId failed: $error $message');
-        _loadAd(placementId);
-      },
-      onStart: (placementId) => print('Video Ad $placementId started'),
-      onClick: (placementId) => print('Video Ad $placementId click'),
-      onSkipped: (placementId) {
-        print('Video Ad $placementId skipped');
-        _loadAd(placementId);
-      },
-    );
   }
 
   bool isAdFreeVersion = false;

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:unity_ads_plugin/unity_ads_plugin.dart';
 import 'package:provider/provider.dart';
 import 'package:wowtalentcalculator/HomeScreen/load_home_screen.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
 import 'package:wowtalentcalculator/api/purchase_api.dart';
+import 'package:applovin_max/applovin_max.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  MaxConfiguration? sdkConfiguration = await AppLovinMAX.initialize(
+      "kaiKyd46T_t3T_b0bZOGmiKUugqBnAd6wtKOKurlbl59gHTsBZeP62kg58gabcloF0n2rXuoFypnDZd9zk6Mlf");
   await PurchaseApi.init();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
@@ -37,7 +38,6 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Classic Talent Calculator',
-        
         debugShowCheckedModeBanner: false,
         home: LoadHomeScreen());
   }

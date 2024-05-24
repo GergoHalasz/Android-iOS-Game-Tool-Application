@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:unity_ads_plugin/unity_ads_plugin.dart';
+import 'package:applovin_max/applovin_max.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -174,9 +174,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
     return Scaffold(
       floatingActionButton: SafeArea(
         child: GestureDetector(
-          onTap: () => {
-            Navigator.pop(context)
-          },
+          onTap: () => {Navigator.pop(context)},
           child: Container(
             margin: EdgeInsets.only(top: 22, left: 12),
             child: Icon(
@@ -193,20 +191,17 @@ class _ClassesScreenState extends State<ClassesScreen> {
               decoration: BoxDecoration(color: Color(0xff2E6171)),
               child: SafeArea(
                 child: Container(
-                  height: 52,
-                  color: Colors.black,
-                  child: UnityBannerAd(
-                    placementId: AdManager.bannerAdPlacementId,
-                    onLoad: (placementId) =>
-                        print('Banner loaded: $placementId'),
-                    onClick: (placementId) =>
-                        print('Banner clicked: $placementId'),
-                    onShown: (placementId) =>
-                        print('Banner shown: $placementId'),
-                    onFailed: (placementId, error, message) =>
-                        print('Banner Ad $placementId failed: $error $message'),
-                  ),
-                ),
+                    height: 52,
+                    color: Colors.black,
+                    child: MaxAdView(
+                        adUnitId: bannerAdId,
+                        adFormat: AdFormat.banner,
+                        listener: AdViewAdListener(
+                            onAdLoadedCallback: (ad) {},
+                            onAdLoadFailedCallback: (adUnitId, error) {},
+                            onAdClickedCallback: (ad) {},
+                            onAdExpandedCallback: (ad) {},
+                            onAdCollapsedCallback: (ad) {}))),
               ),
             )
           : null,
@@ -264,7 +259,8 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                             child: Container(
                                               child: InkWell(
                                                 onTap: () async {
-                                                  adState.checkIfCanShowAd(AdManager.interstitialVideoAdPlacementId, false);
+                                                  adState
+                                                      .checkIfCanShowAd(false);
                                                   List snapshot =
                                                       await loadTalentString(
                                                           element,
@@ -341,7 +337,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                           child: Container(
                                             child: InkWell(
                                               onTap: () async {
-                                                adState.checkIfCanShowAd(AdManager.interstitialVideoAdPlacementId, false);
+                                                adState.checkIfCanShowAd(false);
                                                 List snapshot =
                                                     await loadTalentString(
                                                         element,
@@ -571,7 +567,10 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                             String key =
                                                                 builds[index]
                                                                     ["key"];
-                                                            adState.checkIfCanShowAd(AdManager.interstitialVideoAdPlacementId, false);
+                                                            
+                                                            adState
+                                                                .checkIfCanShowAd(
+                                                                    false);
                                                             List<dynamic>
                                                                 minorGlyphs =
                                                                 [];

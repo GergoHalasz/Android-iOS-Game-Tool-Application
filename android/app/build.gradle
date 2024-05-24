@@ -23,8 +23,13 @@ if (flutterVersionName == null) {
 
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'applovin-quality-service'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+
+applovin {
+      		apiKey "imfHMspzRksuars3FdMp_V7uTAPHw0TR567CQ9WNE4bWe9ok1fKGfgWkiOfSG6ApQwV4cs1ObEE0cT8Tkc9KpA"  
+       }
 
 def keystoreProperties = new Properties()
    def keystorePropertiesFile = rootProject.file('key.properties')
@@ -66,4 +71,7 @@ flutter {
 dependencies {
     implementation 'androidx.work:work-runtime:2.7.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.applovin:applovin-sdk:11.3.3'
+    implementation 'com.google.android.gms:play-services-location:19.0.1'
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
 }
