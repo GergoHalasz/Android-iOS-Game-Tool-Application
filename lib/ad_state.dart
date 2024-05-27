@@ -64,9 +64,7 @@ class AdState extends ChangeNotifier {
 
   void checkIfCanShowAd(bool freezeCheck) {
     if (freezeCheck) {
-      showInterstitialAd();
-    } else {
-      if (interstitialAdCounter >= 3) {
+      if (interstitialAdCounter >= 2) {
         showInterstitialAd();
         interstitialAdCounter = 0;
       } else {

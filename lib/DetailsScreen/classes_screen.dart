@@ -259,8 +259,6 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                             child: Container(
                                               child: InkWell(
                                                 onTap: () async {
-                                                  adState
-                                                      .checkIfCanShowAd(false);
                                                   List snapshot =
                                                       await loadTalentString(
                                                           element,
@@ -337,7 +335,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                           child: Container(
                                             child: InkWell(
                                               onTap: () async {
-                                                adState.checkIfCanShowAd(false);
+                                                
                                                 List snapshot =
                                                     await loadTalentString(
                                                         element,
@@ -567,10 +565,6 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                             String key =
                                                                 builds[index]
                                                                     ["key"];
-                                                            
-                                                            adState
-                                                                .checkIfCanShowAd(
-                                                                    false);
                                                             List<dynamic>
                                                                 minorGlyphs =
                                                                 [];

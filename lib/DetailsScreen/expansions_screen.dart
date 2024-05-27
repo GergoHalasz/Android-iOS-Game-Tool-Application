@@ -20,8 +20,8 @@ class ExpansionsScreen extends StatefulWidget {
 }
 
 class _ExpansionsScreenState extends State<ExpansionsScreen> {
-  List<String> expansions = ['vanilla', 'tbc', 'wotlk'];
-  List<String> expansionsTitle = ['SoD', 'TBC', 'WotLK'];
+  List<String> expansions = ['vanilla', 'tbc', 'wotlk', 'cata'];
+  List<String> expansionsTitle = ['SoD', 'TBC', 'WotLK', 'Cata'];
 
   List<String> images = [
     "hunter_marksmanship",
@@ -66,7 +66,12 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
 
   @override
   void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
+    final adState = Provider.of<AdState>(context);
+
+    if (firstTimeAdInit) {
+      adState.initializeInterstitialAds();
+      firstTimeAdInit = false;
+    }
     super.didChangeDependencies();
   }
 
@@ -148,38 +153,47 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                     ),
                     child: Column(
                         mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           ...expansions.asMap().entries.map((entry) {
                             return Container(
-                              padding: EdgeInsets.only(bottom: 50),
-                              width: 130,
-                              height: 100,
-                              child: ElevatedButton(
-                                child: Text(
-                                  expansionsTitle[entry.key],
-                                  style: TextStyle(
-                                      fontSize: 16, color: Colors.white),
-                                ),
-                                style: ButtonStyle(
-                                  backgroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                    Color(0xff2E6171),
+                                width: SizeConfig.cellSize / 0.8,
+                                height: SizeConfig.cellSize / 0.8,
+                                child: Material(
+                                  color: Colors.transparent,
+                                  child: Ink(
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              "assets/Class/${entry.value}.png"),
+                                          fit: BoxFit.cover),
+                                    ),
+                                    child: Container(
+                                      child: InkWell(
+                                        onTap: () async {
+                                          adState.initializeInterstitialAds();
+                                          if (entry.value == 'Cata') {
+                                            showDialog(
+                                                context: context,
+                                                builder: ((context) {
+                                                  return Text(
+                                                      'Cata Coming Soon!');
+                                                }));
+                                          }
+                                          Navigator.push(
+                                              context,
+                                              buildPageRoute(ClassesScreen(
+                                                expansion: entry.value,
+                                                backgroundImagePath:
+                                                    imagesList[entry.key],
+                                              )));
+                                        },
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    ),
                                   ),
-                                ),
-                                onPressed: () {
-                                  adState.initializeInterstitialAds();
-                                  Navigator.push(
-                                      context,
-                                      buildPageRoute(ClassesScreen(
-                                        expansion: entry.value,
-                                        backgroundImagePath:
-                                            imagesList[entry.key],
-                                      )));
-                                },
-                              ),
-                            );
-                          }),
+                                ));
+                          })
                         ])),
               ])),
             )));
