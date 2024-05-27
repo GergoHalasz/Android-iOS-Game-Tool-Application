@@ -172,21 +172,27 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                                       child: InkWell(
                                         onTap: () async {
                                           adState.initializeInterstitialAds();
-                                          if (entry.value == 'Cata') {
+                                          if (entry.value == 'cata') {
                                             showDialog(
                                                 context: context,
                                                 builder: ((context) {
-                                                  return Text(
-                                                      'Cata Coming Soon!');
+                                                  return AlertDialog(
+                                                    title: Text("Coming soon!"),
+                                                    actions: [TextButton(onPressed: () {
+                                                      Navigator.pop(context);
+                                                    }, child: Text("Close"))],
+                                                      content: Text("Cata Coming Soon!"));
+                                                      
                                                 }));
+                                          } else {
+                                            Navigator.push(
+                                                context,
+                                                buildPageRoute(ClassesScreen(
+                                                  expansion: entry.value,
+                                                  backgroundImagePath:
+                                                      imagesList[entry.key],
+                                                )));
                                           }
-                                          Navigator.push(
-                                              context,
-                                              buildPageRoute(ClassesScreen(
-                                                expansion: entry.value,
-                                                backgroundImagePath:
-                                                    imagesList[entry.key],
-                                              )));
                                         },
                                         borderRadius: BorderRadius.circular(10),
                                       ),
