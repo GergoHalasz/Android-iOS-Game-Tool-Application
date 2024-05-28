@@ -8,7 +8,7 @@ import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AdState extends ChangeNotifier {
-  int interstitialAdCounter = 0;
+  int interstitialAdCounter = 2;
   int _maxExponentialRetryCount = 6;
   var _interstitialRetryAttempt = 0;
   AdState() {
