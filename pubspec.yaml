@@ -59,6 +59,7 @@ flutter_icons:
   adaptive_icon_background: "#737373"
   adaptive_icon_foreground: "assets/AppIcons/logo_foreground.png"
   ios: true
+  android: true
   # The "flutter_lints" package below contains a set  of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
