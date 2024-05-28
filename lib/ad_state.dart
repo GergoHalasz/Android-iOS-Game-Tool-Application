@@ -8,11 +8,11 @@ import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AdState extends ChangeNotifier {
-  int interstitialAdCounter = 0;
+  int interstitialAdCounter = 2;
   int _maxExponentialRetryCount = 6;
   var _interstitialRetryAttempt = 0;
   AdState() {
-    Purchases.addPurchaserInfoUpdateListener(
+    Purchases.addCustomerInfoUpdateListener(
         (purchaserInfo) => {updatePurchaseStatus()});
     checkIsAdFreeversion();
   }
@@ -76,7 +76,7 @@ class AdState extends ChangeNotifier {
   bool isAdFreeVersion = false;
 
   Future updatePurchaseStatus() async {
-    final purchaserInfo = await Purchases.getPurchaserInfo();
+    final purchaserInfo = await Purchases.getCustomerInfo();
     final productName =
         Platform.isAndroid ? "123456" : "wowtc_ad_free_version";
 

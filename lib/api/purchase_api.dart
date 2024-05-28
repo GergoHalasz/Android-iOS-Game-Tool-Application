@@ -5,12 +5,19 @@ import 'package:purchases_flutter/purchases_flutter.dart';
 
 class PurchaseApi {
   static Future init() async {
+    await Purchases.setDebugLogsEnabled(true);
+
+    late PurchasesConfiguration configuration;
     final apiKey = Platform.isIOS
         ? 'appl_OFAINueZVlSYxIuLShwHKRDIHYb'
         : 'amzn_EqmoAZFdpGyokTlaAWqXtQZHvsJ';
 
-    await Purchases.setDebugLogsEnabled(true);
-    await Purchases.setup(apiKey);
+    if (Platform.isAndroid) {
+      configuration = AmazonConfiguration(apiKey);
+    } else if (Platform.isIOS) {
+      configuration = PurchasesConfiguration(apiKey);
+    }
+    await Purchases.configure(configuration);
   }
 
   static Future<List<Offering>> fetchOffers() async {
