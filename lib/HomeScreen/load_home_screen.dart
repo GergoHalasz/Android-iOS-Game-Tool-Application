@@ -19,7 +19,7 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
     minLaunches: 0,
     remindDays: 1,
     remindLaunches: 4,
-    googlePlayIdentifier: 'com.fissherstudio.wowtalentcalculator',
+    googlePlayIdentifier: 'com.chickencowstudios.talentcalculator',
     appStoreIdentifier: '1593368066',
   );
 

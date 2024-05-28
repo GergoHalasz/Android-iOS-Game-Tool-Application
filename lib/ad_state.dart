@@ -78,7 +78,7 @@ class AdState extends ChangeNotifier {
   Future updatePurchaseStatus() async {
     final purchaserInfo = await Purchases.getPurchaserInfo();
     final productName =
-        Platform.isAndroid ? "free_ad_version" : "wowtc_ad_free_version";
+        Platform.isAndroid ? "123456" : "wowtc_ad_free_version";
 
     if (purchaserInfo.allPurchasedProductIdentifiers.length > 0 &&
         purchaserInfo.allPurchasedProductIdentifiers[0] == productName) {

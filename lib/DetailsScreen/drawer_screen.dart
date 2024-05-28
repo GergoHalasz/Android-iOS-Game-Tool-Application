@@ -188,8 +188,10 @@ class _DrawerScreenState extends State<DrawerScreen> {
                         await Purchases.restoreTransactions();
                     if (restoredInfo.allPurchasedProductIdentifiers.length >
                             0 &&
-                        restoredInfo.allPurchasedProductIdentifiers[0] ==
-                            "wowtc_ad_free_version") {
+                        (restoredInfo.allPurchasedProductIdentifiers[0] ==
+                                "wowtc_ad_free_version" ||
+                            restoredInfo.allPurchasedProductIdentifiers[0] ==
+                                "123456")) {
                       adState.changeToAdFreeVersion();
                     } else {
                       showDialog(
