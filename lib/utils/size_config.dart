@@ -74,7 +74,7 @@ class SizeConfig {
 
     /// the width of cell of the [DetailScreen], calculate upon init.
     cellSize = screenWidth < 600
-        ? ((screenWidth - kTalentScreenTwoPadding) / NUM_COLS / 1.15)
+        ? ((screenWidth - kTalentScreenTwoPadding) / NUM_COLS)
         : 140;
   }
 }
