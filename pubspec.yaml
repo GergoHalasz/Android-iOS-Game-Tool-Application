@@ -15,7 +15,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 2.7.0+64
+version: 2.7.1+65
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -57,7 +57,7 @@ flutter_icons:
   image_path: "assets/AppIcons/launcherIconWoW.png"
   remove_alpha_ios: true
   adaptive_icon_background: "#737373"
-  adaptive_icon_foreground: "assets/AppIcons/logo_foreground.png"
+  adaptive_icon_foreground: "assets/AppIcons/launcherIconWoW.png"
   ios: true
   android: true
   # The "flutter_lints" package below contains a set  of recommended lints to
