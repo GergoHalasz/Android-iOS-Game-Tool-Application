@@ -8,7 +8,7 @@ import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AdState extends ChangeNotifier {
-  int interstitialAdCounter = 2;
+  int interstitialAdCounter = 1;
   int _maxExponentialRetryCount = 6;
   var _interstitialRetryAttempt = 0;
   AdState() {
@@ -64,7 +64,7 @@ class AdState extends ChangeNotifier {
 
   void checkIfCanShowAd(bool freezeCheck) {
     if (freezeCheck) {
-      if (interstitialAdCounter >= 2) {
+      if (interstitialAdCounter >= 1) {
         showInterstitialAd();
         interstitialAdCounter = 0;
       } else {
