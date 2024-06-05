@@ -18,40 +18,13 @@ class AdState extends ChangeNotifier {
   }
 
   void showInterstitialAd() async {
-    bool isReady = (await AppLovinMAX.isInterstitialReady(interAdId))!;
-    if (isReady) {
-      AppLovinMAX.showInterstitial(interAdId);
-    }
+    AppLovinMAX.showInterstitial(interAdId);
   }
 
   void initializeInterstitialAds() {
     AppLovinMAX.setInterstitialListener(InterstitialListener(
-      onAdLoadedCallback: (ad) {
-        // Interstitial ad is ready to show. AppLovinMAX.isInterstitialReady(_interstitial_ad_unit_ID) now returns 'true'.
-        print('Interstitial ad loaded from ' + ad.networkName);
-
-        // Reset retry attempt
-        _interstitialRetryAttempt = 0;
-      },
-      onAdLoadFailedCallback: (adUnitId, error) {
-        // Interstitial ad failed to load.
-        // AppLovin recommends that you retry with exponentially higher delays up to a maximum delay (in this case 64 seconds).
-        _interstitialRetryAttempt = _interstitialRetryAttempt + 1;
-        if (_interstitialRetryAttempt > _maxExponentialRetryCount) return;
-        int retryDelay =
-            pow(2, min(_maxExponentialRetryCount, _interstitialRetryAttempt))
-                .toInt();
-
-        print('Interstitial ad failed to load with code ' +
-            error.code.toString() +
-            ' - retrying in ' +
-            retryDelay.toString() +
-            's');
-
-        Future.delayed(Duration(milliseconds: retryDelay * 1000), () {
-          AppLovinMAX.loadInterstitial(interAdId);
-        });
-      },
+      onAdLoadedCallback: (ad) {},
+      onAdLoadFailedCallback: (adUnitId, error) {},
       onAdDisplayedCallback: (ad) {},
       onAdDisplayFailedCallback: (ad, error) {},
       onAdClickedCallback: (ad) {},
@@ -69,6 +42,7 @@ class AdState extends ChangeNotifier {
         interstitialAdCounter = 0;
       } else {
         interstitialAdCounter++;
+        AppLovinMAX.loadInterstitial(interAdId);
       }
     }
   }
@@ -77,8 +51,7 @@ class AdState extends ChangeNotifier {
 
   Future updatePurchaseStatus() async {
     final purchaserInfo = await Purchases.getPurchaserInfo();
-    final productName =
-        Platform.isAndroid ? "123456" : "wowtc_ad_free_version";
+    final productName = Platform.isAndroid ? "123456" : "wowtc_ad_free_version";
 
     if (purchaserInfo.allPurchasedProductIdentifiers.length > 0 &&
         purchaserInfo.allPurchasedProductIdentifiers[0] == productName) {
