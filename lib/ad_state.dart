@@ -37,12 +37,14 @@ class AdState extends ChangeNotifier {
 
   void checkIfCanShowAd(bool freezeCheck) {
     if (freezeCheck) {
-      if (interstitialAdCounter >= 1) {
-        showInterstitialAd();
-        interstitialAdCounter = 0;
-      } else {
-        interstitialAdCounter++;
-        AppLovinMAX.loadInterstitial(interAdId);
+      if (!isAdFreeVersion) {
+        if (interstitialAdCounter >= 1) {
+          showInterstitialAd();
+          interstitialAdCounter = 0;
+        } else {
+          interstitialAdCounter++;
+          AppLovinMAX.loadInterstitial(interAdId);
+        }
       }
     }
   }
