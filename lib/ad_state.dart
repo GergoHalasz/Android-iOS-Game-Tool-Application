@@ -1,59 +1,30 @@
 import 'dart:io';
-import 'dart:math';
-import 'package:applovin_max/applovin_max.dart';
 import 'package:flutter/foundation.dart';
 
-import 'package:wowtalentcalculator/ad_manager.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AdState extends ChangeNotifier {
-  int interstitialAdCounter = 1;
-  int _maxExponentialRetryCount = 6;
-  var _interstitialRetryAttempt = 0;
-  AdState() {
-    Purchases.addPurchaserInfoUpdateListener(
-        (purchaserInfo) => {updatePurchaseStatus()});
+  Future<InitializationStatus> initialization;
+  InterstitialAd? interstitialAd;
+  int interstitialAdCounter = 0;
+
+  AdState(this.initialization) {
+    this.initialization = initialization;
+    createInterstitialAd();
+    Purchases.addCustomerInfoUpdateListener((purchaserInfo) {
+      updatePurchaseStatus();
+    });
     checkIsAdFreeversion();
-  }
-
-  void showInterstitialAd() async {
-    AppLovinMAX.showInterstitial(interAdId);
-  }
-
-  void initializeInterstitialAds() {
-    AppLovinMAX.setInterstitialListener(InterstitialListener(
-      onAdLoadedCallback: (ad) {},
-      onAdLoadFailedCallback: (adUnitId, error) {},
-      onAdDisplayedCallback: (ad) {},
-      onAdDisplayFailedCallback: (ad, error) {},
-      onAdClickedCallback: (ad) {},
-      onAdHiddenCallback: (ad) {},
-    ));
-
-    // Load the first interstitial.
-    AppLovinMAX.loadInterstitial(interAdId);
-  }
-
-  void checkIfCanShowAd(bool freezeCheck) {
-    if (freezeCheck) {
-      if (!isAdFreeVersion) {
-        if (interstitialAdCounter >= 1) {
-          showInterstitialAd();
-          interstitialAdCounter = 0;
-        } else {
-          interstitialAdCounter++;
-          AppLovinMAX.loadInterstitial(interAdId);
-        }
-      }
-    }
   }
 
   bool isAdFreeVersion = false;
 
   Future updatePurchaseStatus() async {
-    final purchaserInfo = await Purchases.getPurchaserInfo();
-    final productName = Platform.isAndroid ? "123456" : "wowtc_ad_free_version";
+    final purchaserInfo = await Purchases.getCustomerInfo();
+    final productName =
+        Platform.isAndroid ? "free_ad_version" : "wowtc_ad_free_version";
 
     if (purchaserInfo.allPurchasedProductIdentifiers.length > 0 &&
         purchaserInfo.allPurchasedProductIdentifiers[0] == productName) {
@@ -76,5 +47,75 @@ class AdState extends ChangeNotifier {
   void changeToAdFreeVersion() {
     isAdFreeVersion = true;
     notifyListeners();
+  }
+
+  String get bannerAdUnitId => Platform.isAndroid
+      ? 'ca-app-pub-3940256099942544/9214589741'
+      : 'ca-app-pub-8347554982566575/1060652760';
+
+  String get interstitialAdUnitId => Platform.isAndroid
+      ? 'ca-app-pub-3940256099942544/1033173712'
+      : 'ca-app-pub-8347554982566575/9475496692';
+
+  final BannerAdListener listener = BannerAdListener(
+    // Called when an ad is successfully received.
+    onAdLoaded: (Ad ad) => print('Ad loaded.'),
+    // Called when an ad request failed.
+    onAdFailedToLoad: (Ad ad, LoadAdError error) {
+      // Dispose the ad here to free resources.
+      ad.dispose();
+      print('Ad failed to load: $error');
+    },
+    // Called when an ad opens an overlay that covers the screen.
+    onAdOpened: (Ad ad) => print('Ad opened.'),
+    // Called when an ad removes an overlay that covers the screen.
+    onAdClosed: (Ad ad) => print('Ad closed.'),
+    // Called when an impression occurs on the ad.
+    onAdImpression: (Ad ad) => print('Ad impression.'),
+  );
+
+  void createInterstitialAd() {
+    InterstitialAd.load(
+        adUnitId: interstitialAdUnitId!,
+        request: AdRequest(),
+        adLoadCallback: InterstitialAdLoadCallback(
+          onAdLoaded: (InterstitialAd ad) {
+            this.interstitialAd = ad;
+          },
+          onAdFailedToLoad: (LoadAdError error) {
+            interstitialAd = null;
+          },
+        ));
+  }
+
+  void loadInterstitialAd(bool freezeChecks) {
+    if (interstitialAd != null && !isAdFreeVersion) {
+      if (freezeChecks) {
+        interstitialAd!.fullScreenContentCallback =
+            FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {
+          interstitialAd!.dispose();
+          createInterstitialAd();
+        }, onAdFailedToShowFullScreenContent: ((ad, error) {
+          interstitialAd!.dispose();
+          createInterstitialAd();
+        }));
+        interstitialAd!.show();
+      } else {
+        if (interstitialAdCounter >= 3) {
+          interstitialAd!.fullScreenContentCallback =
+              FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {
+            interstitialAd!.dispose();
+            createInterstitialAd();
+          }, onAdFailedToShowFullScreenContent: ((ad, error) {
+            interstitialAd!.dispose();
+            createInterstitialAd();
+          }));
+          interstitialAdCounter = 0;
+          interstitialAd!.show();
+        } else {
+          interstitialAdCounter++;
+        }
+      }
+    }
   }
 }
