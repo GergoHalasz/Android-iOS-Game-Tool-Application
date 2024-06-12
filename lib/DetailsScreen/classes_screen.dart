@@ -400,7 +400,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                         )),
                       ),
                       Container(
-                        width: SizeConfig.cellSize / 1.35 * 6,
+                        width: SizeConfig.cellSize / 1.35 * 5.5,
                         decoration: BoxDecoration(
                             border: Border.all(color: Colors.grey, width: 2)),
                         child: Column(
@@ -413,7 +413,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                   Text('Saved builds - Swipe Left to Delete'),
                             ),
                             Container(
-                                height: 250,
+                                height: 200,
                                 child: RawScrollbar(
                                   thumbColor: Colors.grey,
                                   thumbVisibility: true,
