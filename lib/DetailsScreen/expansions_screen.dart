@@ -90,13 +90,13 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
 
     return Scaffold(
         drawer: Drawer(child: DrawerScreen()),
-        // bottomNavigationBar: !adState.isAdFreeVersion
-        //     ? Container(
-        //         height: 52,
-        //         color: Colors.black,
-        //         child: AdWidget(ad: banner!),
-        //       )
-        //     : null,
+        bottomNavigationBar: !adState.isAdFreeVersion
+            ? Container(
+                height: 52,
+                color: Colors.black,
+                child: AdWidget(ad: banner!),
+              )
+            : null,
         body: Container(
             decoration: BoxDecoration(color: Color(0xff2E6171)),
             child: SafeArea(

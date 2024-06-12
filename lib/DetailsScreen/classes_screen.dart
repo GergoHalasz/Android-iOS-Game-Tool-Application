@@ -191,14 +191,12 @@ class _ClassesScreenState extends State<ClassesScreen> {
         child: Container(
           margin: EdgeInsets.only(top: 22, left: 12),
           child: Material(
-            borderRadius: BorderRadius.circular(
-                20),
+            borderRadius: BorderRadius.circular(20),
             color: Color(0xff2E6171),
             child: Container(
               padding: EdgeInsets.all(8),
               child: InkWell(
-                borderRadius: BorderRadius.circular(
-                  20),
+                borderRadius: BorderRadius.circular(20),
                 onTap: () => {Navigator.pop(context)},
                 child: Ink(
                   child: Icon(
@@ -213,13 +211,13 @@ class _ClassesScreenState extends State<ClassesScreen> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.miniStartTop,
-      // bottomNavigationBar: !adState.isAdFreeVersion
-      //     ? Container(
-      //         height: 52,
-      //         color: Colors.black,
-      //         child: AdWidget(ad: banner!),
-      //       )
-      //     : null,
+      bottomNavigationBar: !adState.isAdFreeVersion
+          ? Container(
+              height: 52,
+              color: Colors.black,
+              child: AdWidget(ad: banner!),
+            )
+          : null,
       backgroundColor: Color(0xff556F7A),
       body: DefaultTextStyle(
           style: TextStyle(
@@ -272,7 +270,8 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                           "assets/Class/$element.png"),
                                                       fit: BoxFit.cover),
                                                   borderRadius:
-                                                      BorderRadius.circular(10)),
+                                                      BorderRadius.circular(
+                                                          10)),
                                               child: Container(
                                                 child: InkWell(
                                                   onTap: () async {
@@ -356,7 +355,8 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                       await loadTalentString(
                                                           element,
                                                           widget.expansion);
-                                                  TalentTrees talentTreesObject =
+                                                  TalentTrees
+                                                      talentTreesObject =
                                                       TalentTrees.fromJson(
                                                           snapshot);
                                                   Navigator.push(
@@ -399,9 +399,10 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                                         element,
                                                                         widget
                                                                             .expansion),
-                                                              )))).then((value) =>
-                                                      setSavedBuilds());
-                        
+                                                              )))).then(
+                                                      (value) =>
+                                                          setSavedBuilds());
+
                                                   // widget.changeClass(element);
                                                 },
                                                 borderRadius:
@@ -471,14 +472,15 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                         // A motion is a widget used to control how the pane animates.
                                                         motion:
                                                             const ScrollMotion(),
-                        
+
                                                         // A pane can dismiss the Slidable.
-                        
+
                                                         // All actions are defined in the children parameter.
                                                         children: [
                                                           // A SlidableAction can have an icon and/or a label.
                                                           SlidableAction(
-                                                            onPressed: (context) {
+                                                            onPressed:
+                                                                (context) {
                                                               onDeleteBuild(
                                                                   context,
                                                                   builds[index]
@@ -492,22 +494,24 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                           ),
                                                         ],
                                                       ),
-                                                      startActionPane: ActionPane(
+                                                      startActionPane:
+                                                          ActionPane(
                                                         extentRatio: 1 / 5,
                                                         // A motion is a widget used to control how the pane animates.
                                                         motion:
                                                             const ScrollMotion(),
-                        
+
                                                         // A pane can dismiss the Slidable.
-                        
+
                                                         // All actions are defined in the children parameter.
                                                         children: [
                                                           // A SlidableAction can have an icon and/or a label.
                                                           SlidableAction(
-                                                            onPressed: (context) {
-                                                              shareBuild(
-                                                                  builds[index]
-                                                                      ["build"]);
+                                                            onPressed:
+                                                                (context) {
+                                                              shareBuild(builds[
+                                                                      index]
+                                                                  ["build"]);
                                                             },
                                                             backgroundColor:
                                                                 Colors.blue,
@@ -521,13 +525,14 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                         child: Card(
                                                           color: Colors
                                                               .grey.shade700,
-                                                          margin:
-                                                              EdgeInsets.fromLTRB(
+                                                          margin: EdgeInsets
+                                                              .fromLTRB(
                                                                   3, 0, 3, 3),
                                                           child: ListTile(
                                                             visualDensity:
                                                                 VisualDensity(
-                                                                    vertical: -4),
+                                                                    vertical:
+                                                                        -4),
                                                             contentPadding:
                                                                 EdgeInsets
                                                                     .symmetric(
@@ -537,13 +542,13 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                             subtitle: Text(
                                                                 '${builds[index]["build"]["build"][0]["Points"]}/${builds[index]["build"]["build"][1]["Points"]}/${builds[index]["build"]["build"][2]["Points"]}',
                                                                 style: TextStyle(
-                                                                    color: classColors[
-                                                                        builds[index]
-                                                                                [
-                                                                                "build"]
+                                                                    color: classColors[builds[index]
                                                                             [
-                                                                            "buildClass"]])),
-                                                            leading: Image.asset(
+                                                                            "build"]
+                                                                        [
+                                                                        "buildClass"]])),
+                                                            leading:
+                                                                Image.asset(
                                                               "assets/Class/${builds[index]["build"]["buildClass"]}.png",
                                                             ),
                                                             title: Text(
@@ -598,63 +603,58 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                                       [
                                                                       "selectedRunes"] !=
                                                                   null) {
-                                                                selectedRunes = builds[
-                                                                            index]
-                                                                        ["build"][
-                                                                    "selectedRunes"];
-                                                                selectedRunes.forEach(
-                                                                    (selectedRune) {
-                                                                  switch (
-                                                                      selectedRune[
-                                                                          "type"]) {
+                                                                selectedRunes =
+                                                                    builds[index]
+                                                                            [
+                                                                            "build"]
+                                                                        [
+                                                                        "selectedRunes"];
+                                                                selectedRunes
+                                                                    .forEach(
+                                                                        (selectedRune) {
+                                                                  switch (selectedRune[
+                                                                      "type"]) {
                                                                     case "Chest":
-                                                                      selectedRune[
-                                                                              "rune"] =
-                                                                          new Chest
-                                                                              .fromJson(
-                                                                              selectedRune["rune"]);
+                                                                      selectedRune["rune"] = new Chest
+                                                                          .fromJson(
+                                                                          selectedRune[
+                                                                              "rune"]);
                                                                       break;
                                                                     case "Waist":
-                                                                      selectedRune[
-                                                                              "rune"] =
-                                                                          new Waist
-                                                                              .fromJson(
-                                                                              selectedRune["rune"]);
+                                                                      selectedRune["rune"] = new Waist
+                                                                          .fromJson(
+                                                                          selectedRune[
+                                                                              "rune"]);
                                                                       break;
                                                                     case "Legs":
-                                                                      selectedRune[
-                                                                              "rune"] =
-                                                                          new Legs
-                                                                              .fromJson(
-                                                                              selectedRune["rune"]);
+                                                                      selectedRune["rune"] = new Legs
+                                                                          .fromJson(
+                                                                          selectedRune[
+                                                                              "rune"]);
                                                                       break;
                                                                     case "Feet":
-                                                                      selectedRune[
-                                                                              "rune"] =
-                                                                          new Feet
-                                                                              .fromJson(
-                                                                              selectedRune["rune"]);
+                                                                      selectedRune["rune"] = new Feet
+                                                                          .fromJson(
+                                                                          selectedRune[
+                                                                              "rune"]);
                                                                       break;
                                                                     case "Hands":
-                                                                      selectedRune[
-                                                                              "rune"] =
-                                                                          new Hands
-                                                                              .fromJson(
-                                                                              selectedRune["rune"]);
+                                                                      selectedRune["rune"] = new Hands
+                                                                          .fromJson(
+                                                                          selectedRune[
+                                                                              "rune"]);
                                                                       break;
                                                                     case "Head":
-                                                                      selectedRune[
-                                                                              "rune"] =
-                                                                          new Head
-                                                                              .fromJson(
-                                                                              selectedRune["rune"]);
+                                                                      selectedRune["rune"] = new Head
+                                                                          .fromJson(
+                                                                          selectedRune[
+                                                                              "rune"]);
                                                                       break;
                                                                     case "Wrists":
-                                                                      selectedRune[
-                                                                              "rune"] =
-                                                                          new Head
-                                                                              .fromJson(
-                                                                              selectedRune["rune"]);
+                                                                      selectedRune["rune"] = new Head
+                                                                          .fromJson(
+                                                                          selectedRune[
+                                                                              "rune"]);
                                                                       break;
                                                                   }
                                                                 });
@@ -664,7 +664,8 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                                   null) {
                                                                 minorGlyphs = data[
                                                                         "minorGlyphs"]
-                                                                    .map((glyph) {
+                                                                    .map(
+                                                                        (glyph) {
                                                                   if (glyph !=
                                                                       null) {
                                                                     return Glyph
@@ -673,10 +674,11 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                                   }
                                                                   return null;
                                                                 }).toList();
-                        
+
                                                                 majorGlyphs = data[
                                                                         "majorGlyphs"]
-                                                                    .map((glyph) {
+                                                                    .map(
+                                                                        (glyph) {
                                                                   if (glyph !=
                                                                       null) {
                                                                     return Glyph
@@ -686,41 +688,40 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                                   return null;
                                                                 }).toList();
                                                               }
-                        
+
                                                               Navigator.push(
                                                                   context,
-                                                                  buildPageRoute(
-                                                                      ChangeNotifierProvider<
-                                                                              TalentProvider>(
-                                                                          create:
-                                                                              (_) {
-                                                                            return TalentProvider(
-                                                                                talentTreesObject,
-                                                                                className,
-                                                                                widget.expansion,
-                                                                                [],
-                                                                                buildName,
-                                                                                minorGlyphs,
-                                                                                majorGlyphs,
-                                                                                [],
-                                                                                selectedRunes);
-                                                                          },
-                                                                          child:
-                                                                              DetailScreenContent(
-                                                                            buildName:
-                                                                                buildName,
-                                                                            buildKey:
-                                                                                key,
-                                                                            talentTrees:
-                                                                                talentTreesObject,
-                                                                            className:
-                                                                                className,
-                                                                            classColor:
-                                                                                classColors[className]!,
-                                                                            arrowTrees: getArrowClassByName(
-                                                                                className,
-                                                                                widget.expansion),
-                                                                          )))).then(
+                                                                  buildPageRoute(ChangeNotifierProvider<
+                                                                          TalentProvider>(
+                                                                      create:
+                                                                          (_) {
+                                                                        return TalentProvider(
+                                                                            talentTreesObject,
+                                                                            className,
+                                                                            widget.expansion,
+                                                                            [],
+                                                                            buildName,
+                                                                            minorGlyphs,
+                                                                            majorGlyphs,
+                                                                            [],
+                                                                            selectedRunes);
+                                                                      },
+                                                                      child:
+                                                                          DetailScreenContent(
+                                                                        buildName:
+                                                                            buildName,
+                                                                        buildKey:
+                                                                            key,
+                                                                        talentTrees:
+                                                                            talentTreesObject,
+                                                                        className:
+                                                                            className,
+                                                                        classColor:
+                                                                            classColors[className]!,
+                                                                        arrowTrees: getArrowClassByName(
+                                                                            className,
+                                                                            widget.expansion),
+                                                                      )))).then(
                                                                   (value) =>
                                                                       setSavedBuilds());
                                                             },
