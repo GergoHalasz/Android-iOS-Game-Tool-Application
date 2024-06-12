@@ -241,7 +241,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                         ),
                       ),
                       child: Container(
-                        padding: EdgeInsets.only(top: 36),
+                        padding: EdgeInsets.only(top: 26),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           mainAxisSize: MainAxisSize.max,
