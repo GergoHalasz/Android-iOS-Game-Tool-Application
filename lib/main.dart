@@ -8,13 +8,13 @@ import 'package:wowtalentcalculator/api/purchase_api.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  MobileAds.instance.initialize();
+  final initFuture = MobileAds.instance.initialize();
   await PurchaseApi.init();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(MultiProvider(
     providers: [
-      ChangeNotifierProvider<AdState>(create: (_) => AdState()),
+      ChangeNotifierProvider<AdState>(create: (_) => AdState(initFuture)),
     ],
     child: MyApp(),
   ));

@@ -2,9 +2,13 @@
     package="com.chickencowstudios.talentcalculator">
 
   <uses-permission android:name="com.android.vending.BILLING" />
+
    <application
         android:label="Classic Talent Calculator"
         android:icon="@mipmap/ic_launcher">
+        <meta-data
+        android:name="com.google.android.gms.ads.APPLICATION_ID"
+        android:value="ca-app-pub-7574598565891663~8826327642"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
@@ -40,9 +44,6 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-        <meta-data android:name="applovin.sdk.key" 
-        android:value="kaiKyd46T_t3T_b0bZOGmiKUugqBnAd6wtKOKurlbl59gHTsBZeP62kg58gabcloF0n2rXuoFypnDZd9zk6Mlf"
-        />
     </application>
     <queries>
   <!-- If your app opens https URLs -->

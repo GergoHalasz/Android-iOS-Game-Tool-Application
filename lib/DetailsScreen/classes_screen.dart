@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'package:applovin_max/applovin_max.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
@@ -18,7 +18,6 @@ import 'package:wowtalentcalculator/utils/methods.dart';
 import 'package:wowtalentcalculator/utils/routestyle.dart';
 import 'package:wowtalentcalculator/utils/size_config.dart';
 import 'package:wowtalentcalculator/utils/string.dart';
-import 'package:wowtalentcalculator/ad_manager.dart';
 
 class ClassesScreen extends StatefulWidget {
   final String expansion;
@@ -60,6 +59,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
   ScrollController _scrollController = ScrollController();
   late String currentExpansionSelected;
   bool firstTimeAdInit = true;
+  BannerAd? banner;
 
   List builds = [];
   Future<List> _getSavedBuilds() async {
@@ -106,6 +106,21 @@ class _ClassesScreenState extends State<ClassesScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    if (firstTimeAdInit) {
+      final adState = Provider.of<AdState>(context);
+
+      adState.initialization.then((value) {
+        setState(() {
+          banner = BannerAd(
+              adUnitId: adState.bannerAdUnitId,
+              size: AdSize.banner,
+              request: AdRequest(),
+              listener: adState.listener)
+            ..load();
+          firstTimeAdInit = false;
+        });
+      });
+    }
   }
 
   onDeleteBuild(buildContext, key) async {
@@ -173,38 +188,38 @@ class _ClassesScreenState extends State<ClassesScreen> {
     final adState = Provider.of<AdState>(context);
     return Scaffold(
       floatingActionButton: SafeArea(
-        child: GestureDetector(
-          onTap: () => {Navigator.pop(context)},
-          child: Container(
-            margin: EdgeInsets.only(top: 22, left: 12),
-            child: Icon(
-              Icons.arrow_back,
-              color: Colors.white,
-              size: 28,
+        child: Container(
+          margin: EdgeInsets.only(top: 22, left: 12),
+          child: Material(
+            borderRadius: BorderRadius.circular(
+                20),
+            color: Color(0xff2E6171),
+            child: Container(
+              padding: EdgeInsets.all(8),
+              child: InkWell(
+                borderRadius: BorderRadius.circular(
+                  20),
+                onTap: () => {Navigator.pop(context)},
+                child: Ink(
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: Colors.white,
+                    size: 28,
+                  ),
+                ),
+              ),
             ),
           ),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.miniStartTop,
-      bottomNavigationBar: !adState.isAdFreeVersion
-          ? Container(
-              decoration: BoxDecoration(color: Color(0xff2E6171)),
-              child: SafeArea(
-                child: Container(
-                    height: 52,
-                    color: Colors.black,
-                    child: MaxAdView(
-                        adUnitId: bannerAdId,
-                        adFormat: AdFormat.banner,
-                        listener: AdViewAdListener(
-                            onAdLoadedCallback: (ad) {},
-                            onAdLoadFailedCallback: (adUnitId, error) {},
-                            onAdClickedCallback: (ad) {},
-                            onAdExpandedCallback: (ad) {},
-                            onAdCollapsedCallback: (ad) {}))),
-              ),
-            )
-          : null,
+      // bottomNavigationBar: !adState.isAdFreeVersion
+      //     ? Container(
+      //         height: 52,
+      //         color: Colors.black,
+      //         child: AdWidget(ad: banner!),
+      //       )
+      //     : null,
       backgroundColor: Color(0xff556F7A),
       body: DefaultTextStyle(
           style: TextStyle(
@@ -225,37 +240,115 @@ class _ClassesScreenState extends State<ClassesScreen> {
                           fit: BoxFit.cover,
                         ),
                       ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Text(
-                            '${capitalize(widget.expansion != "vanilla" ? widget.expansion : "SoD")} Classes',
-                            style: TextStyle(fontSize: 24),
-                          ),
-                          Container(
-                            child: SizedBox(
-                                child: Wrap(
-                              alignment: WrapAlignment.center,
-                              spacing: 70,
-                              runSpacing: 20,
-                              children: [
-                                if (currentExpansionSelected == 'wotlk' ||
-                                    currentExpansionSelected == 'cata')
-                                  ...wotlkClasses.map((element) {
-                                    return Container(
+                      child: Container(
+                        padding: EdgeInsets.only(top: 36),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Text(
+                              '${capitalize(widget.expansion != "vanilla" ? widget.expansion : "SoD")} Classes',
+                              style: TextStyle(fontSize: 24),
+                            ),
+                            Container(
+                              child: SizedBox(
+                                  child: Wrap(
+                                alignment: WrapAlignment.center,
+                                spacing: 70,
+                                runSpacing: 20,
+                                children: [
+                                  if (currentExpansionSelected == 'wotlk' ||
+                                      currentExpansionSelected == 'cata')
+                                    ...wotlkClasses.map((element) {
+                                      return Container(
+                                          width: SizeConfig.cellSize / 1.35,
+                                          height: SizeConfig.cellSize / 1.35,
+                                          child: Material(
+                                            color: Colors.transparent,
+                                            child: Ink(
+                                              decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                      image: AssetImage(
+                                                          "assets/Class/$element.png"),
+                                                      fit: BoxFit.cover),
+                                                  borderRadius:
+                                                      BorderRadius.circular(10)),
+                                              child: Container(
+                                                child: InkWell(
+                                                  onTap: () async {
+                                                    List snapshot =
+                                                        await loadTalentString(
+                                                            element,
+                                                            widget.expansion);
+                                                    TalentTrees
+                                                        talentTreesObject =
+                                                        TalentTrees.fromJson(
+                                                            snapshot);
+                                                    Navigator.push(
+                                                        context,
+                                                        buildPageRoute(
+                                                            ChangeNotifierProvider<
+                                                                    TalentProvider>(
+                                                                create: (_) {
+                                                                  return TalentProvider(
+                                                                      talentTreesObject,
+                                                                      element,
+                                                                      widget
+                                                                          .expansion,
+                                                                      [],
+                                                                      null,
+                                                                      [
+                                                                        null,
+                                                                        null,
+                                                                        null
+                                                                      ],
+                                                                      [
+                                                                        null,
+                                                                        null,
+                                                                        null
+                                                                      ],
+                                                                      [],
+                                                                      []);
+                                                                },
+                                                                child:
+                                                                    DetailScreenContent(
+                                                                  talentTrees:
+                                                                      talentTreesObject,
+                                                                  className:
+                                                                      element,
+                                                                  classColor:
+                                                                      classColors[
+                                                                          element]!,
+                                                                  arrowTrees:
+                                                                      getArrowClassByName(
+                                                                          element,
+                                                                          widget
+                                                                              .expansion),
+                                                                )))).then(
+                                                        (value) =>
+                                                            setSavedBuilds());
+                                                  },
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                ),
+                                              ),
+                                            ),
+                                          ));
+                                    })
+                                  else
+                                    ...tbcVanillaClasses.map((element) {
+                                      return Container(
                                         width: SizeConfig.cellSize / 1.35,
                                         height: SizeConfig.cellSize / 1.35,
                                         child: Material(
                                           color: Colors.transparent,
                                           child: Ink(
                                             decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                    image: AssetImage(
-                                                        "assets/Class/$element.png"),
-                                                    fit: BoxFit.cover),
-                                                borderRadius:
-                                                    BorderRadius.circular(10)),
+                                              image: DecorationImage(
+                                                  image: AssetImage(
+                                                      "assets/Class/$element.png"),
+                                                  fit: BoxFit.cover),
+                                            ),
                                             child: Container(
                                               child: InkWell(
                                                 onTap: () async {
@@ -263,8 +356,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                       await loadTalentString(
                                                           element,
                                                           widget.expansion);
-                                                  TalentTrees
-                                                      talentTreesObject =
+                                                  TalentTrees talentTreesObject =
                                                       TalentTrees.fromJson(
                                                           snapshot);
                                                   Navigator.push(
@@ -307,419 +399,344 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                                         element,
                                                                         widget
                                                                             .expansion),
-                                                              )))).then(
-                                                      (value) =>
-                                                          setSavedBuilds());
+                                                              )))).then((value) =>
+                                                      setSavedBuilds());
+                        
+                                                  // widget.changeClass(element);
                                                 },
                                                 borderRadius:
                                                     BorderRadius.circular(10),
                                               ),
                                             ),
                                           ),
-                                        ));
-                                  })
-                                else
-                                  ...tbcVanillaClasses.map((element) {
-                                    return Container(
-                                      width: SizeConfig.cellSize / 1.35,
-                                      height: SizeConfig.cellSize / 1.35,
-                                      child: Material(
-                                        color: Colors.transparent,
-                                        child: Ink(
-                                          decoration: BoxDecoration(
-                                            image: DecorationImage(
-                                                image: AssetImage(
-                                                    "assets/Class/$element.png"),
-                                                fit: BoxFit.cover),
-                                          ),
-                                          child: Container(
-                                            child: InkWell(
-                                              onTap: () async {
-                                                
-                                                List snapshot =
-                                                    await loadTalentString(
-                                                        element,
-                                                        widget.expansion);
-                                                TalentTrees talentTreesObject =
-                                                    TalentTrees.fromJson(
-                                                        snapshot);
-                                                Navigator.push(
-                                                    context,
-                                                    buildPageRoute(
-                                                        ChangeNotifierProvider<
-                                                                TalentProvider>(
-                                                            create: (_) {
-                                                              return TalentProvider(
-                                                                  talentTreesObject,
-                                                                  element,
-                                                                  widget
-                                                                      .expansion,
-                                                                  [],
-                                                                  null,
-                                                                  [
-                                                                    null,
-                                                                    null,
-                                                                    null
-                                                                  ],
-                                                                  [
-                                                                    null,
-                                                                    null,
-                                                                    null
-                                                                  ],
-                                                                  [],
-                                                                  []);
-                                                            },
-                                                            child:
-                                                                DetailScreenContent(
-                                                              talentTrees:
-                                                                  talentTreesObject,
-                                                              className:
-                                                                  element,
-                                                              classColor:
-                                                                  classColors[
-                                                                      element]!,
-                                                              arrowTrees:
-                                                                  getArrowClassByName(
-                                                                      element,
-                                                                      widget
-                                                                          .expansion),
-                                                            )))).then((value) =>
-                                                    setSavedBuilds());
-
-                                                // widget.changeClass(element);
-                                              },
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                            ),
-                                          ),
                                         ),
-                                      ),
-                                    );
-                                  })
-                              ],
-                            )),
-                          ),
-                          Container(
-                            width: SizeConfig.cellSize / 1.35 * 6,
-                            decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: Colors.grey, width: 2)),
-                            child: Column(
-                              children: [
-                                Container(
-                                  alignment: Alignment.center,
-                                  margin: EdgeInsets.all(3),
-                                  color: Color(0xff2E6171),
-                                  child: Text(
-                                      'Saved builds - Swipe Left to Delete'),
-                                ),
-                                Container(
-                                    height: 250,
-                                    child: RawScrollbar(
-                                      thumbColor: Colors.grey,
-                                      thumbVisibility: true,
-                                      thickness: 3.5,
-                                      radius: Radius.circular(20),
-                                      controller: _scrollController,
-                                      child: ListView.builder(
-                                          controller: _scrollController,
-                                          padding: EdgeInsets.all(4),
-                                          itemCount: builds.length,
-                                          itemBuilder: (context, index) {
-                                            if ((builds[index] != null &&
-                                                    currentExpansionSelected ==
-                                                        "tbc" &&
-                                                    builds[index]["key"][0] ==
-                                                        "t") ||
-                                                (builds[index] != null &&
-                                                    currentExpansionSelected ==
-                                                        "vanilla" &&
-                                                    builds[index]["key"][0] ==
-                                                        "v") ||
-                                                (builds[index] != null &&
-                                                    currentExpansionSelected ==
-                                                        "wotlk" &&
-                                                    builds[index]["key"][0] ==
-                                                        "w") ||
-                                                (builds[index] != null &&
-                                                    currentExpansionSelected ==
-                                                        "cata" &&
-                                                    builds[index]["key"][0] ==
-                                                        "c")) {
-                                              return Column(children: [
-                                                Slidable(
-                                                    key: Key(
-                                                        builds[index]["key"]),
-                                                    endActionPane: ActionPane(
-                                                      extentRatio: 1 / 5,
-                                                      // A motion is a widget used to control how the pane animates.
-                                                      motion:
-                                                          const ScrollMotion(),
-
-                                                      // A pane can dismiss the Slidable.
-
-                                                      // All actions are defined in the children parameter.
-                                                      children: [
-                                                        // A SlidableAction can have an icon and/or a label.
-                                                        SlidableAction(
-                                                          onPressed: (context) {
-                                                            onDeleteBuild(
-                                                                context,
-                                                                builds[index]
-                                                                    ["key"]);
-                                                          },
-                                                          backgroundColor:
-                                                              Colors.red,
-                                                          foregroundColor:
-                                                              Colors.white,
-                                                          icon: Icons.delete,
-                                                        ),
-                                                      ],
-                                                    ),
-                                                    startActionPane: ActionPane(
-                                                      extentRatio: 1 / 5,
-                                                      // A motion is a widget used to control how the pane animates.
-                                                      motion:
-                                                          const ScrollMotion(),
-
-                                                      // A pane can dismiss the Slidable.
-
-                                                      // All actions are defined in the children parameter.
-                                                      children: [
-                                                        // A SlidableAction can have an icon and/or a label.
-                                                        SlidableAction(
-                                                          onPressed: (context) {
-                                                            shareBuild(
-                                                                builds[index]
-                                                                    ["build"]);
-                                                          },
-                                                          backgroundColor:
-                                                              Colors.blue,
-                                                          foregroundColor:
-                                                              Colors.white,
-                                                          icon: Icons.share,
-                                                        ),
-                                                      ],
-                                                    ),
-                                                    child: Container(
-                                                      child: Card(
-                                                        color: Colors
-                                                            .grey.shade700,
-                                                        margin:
-                                                            EdgeInsets.fromLTRB(
-                                                                3, 0, 3, 3),
-                                                        child: ListTile(
-                                                          visualDensity:
-                                                              VisualDensity(
-                                                                  vertical: -4),
-                                                          contentPadding:
-                                                              EdgeInsets
-                                                                  .symmetric(
-                                                                      horizontal:
-                                                                          12),
-                                                          dense: true,
-                                                          subtitle: Text(
-                                                              '${builds[index]["build"]["build"][0]["Points"]}/${builds[index]["build"]["build"][1]["Points"]}/${builds[index]["build"]["build"][2]["Points"]}',
+                                      );
+                                    })
+                                ],
+                              )),
+                            ),
+                            Container(
+                              width: SizeConfig.cellSize / 1.35 * 6,
+                              decoration: BoxDecoration(
+                                  border:
+                                      Border.all(color: Colors.grey, width: 2)),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    alignment: Alignment.center,
+                                    margin: EdgeInsets.all(3),
+                                    color: Color(0xff2E6171),
+                                    child: Text(
+                                        'Saved builds - Swipe Left to Delete'),
+                                  ),
+                                  Container(
+                                      height: 250,
+                                      child: RawScrollbar(
+                                        thumbColor: Colors.grey,
+                                        thumbVisibility: true,
+                                        thickness: 3.5,
+                                        radius: Radius.circular(20),
+                                        controller: _scrollController,
+                                        child: ListView.builder(
+                                            controller: _scrollController,
+                                            padding: EdgeInsets.all(4),
+                                            itemCount: builds.length,
+                                            itemBuilder: (context, index) {
+                                              if ((builds[index] != null &&
+                                                      currentExpansionSelected ==
+                                                          "tbc" &&
+                                                      builds[index]["key"][0] ==
+                                                          "t") ||
+                                                  (builds[index] != null &&
+                                                      currentExpansionSelected ==
+                                                          "vanilla" &&
+                                                      builds[index]["key"][0] ==
+                                                          "v") ||
+                                                  (builds[index] != null &&
+                                                      currentExpansionSelected ==
+                                                          "wotlk" &&
+                                                      builds[index]["key"][0] ==
+                                                          "w") ||
+                                                  (builds[index] != null &&
+                                                      currentExpansionSelected ==
+                                                          "cata" &&
+                                                      builds[index]["key"][0] ==
+                                                          "c")) {
+                                                return Column(children: [
+                                                  Slidable(
+                                                      key: Key(
+                                                          builds[index]["key"]),
+                                                      endActionPane: ActionPane(
+                                                        extentRatio: 1 / 5,
+                                                        // A motion is a widget used to control how the pane animates.
+                                                        motion:
+                                                            const ScrollMotion(),
+                        
+                                                        // A pane can dismiss the Slidable.
+                        
+                                                        // All actions are defined in the children parameter.
+                                                        children: [
+                                                          // A SlidableAction can have an icon and/or a label.
+                                                          SlidableAction(
+                                                            onPressed: (context) {
+                                                              onDeleteBuild(
+                                                                  context,
+                                                                  builds[index]
+                                                                      ["key"]);
+                                                            },
+                                                            backgroundColor:
+                                                                Colors.red,
+                                                            foregroundColor:
+                                                                Colors.white,
+                                                            icon: Icons.delete,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      startActionPane: ActionPane(
+                                                        extentRatio: 1 / 5,
+                                                        // A motion is a widget used to control how the pane animates.
+                                                        motion:
+                                                            const ScrollMotion(),
+                        
+                                                        // A pane can dismiss the Slidable.
+                        
+                                                        // All actions are defined in the children parameter.
+                                                        children: [
+                                                          // A SlidableAction can have an icon and/or a label.
+                                                          SlidableAction(
+                                                            onPressed: (context) {
+                                                              shareBuild(
+                                                                  builds[index]
+                                                                      ["build"]);
+                                                            },
+                                                            backgroundColor:
+                                                                Colors.blue,
+                                                            foregroundColor:
+                                                                Colors.white,
+                                                            icon: Icons.share,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      child: Container(
+                                                        child: Card(
+                                                          color: Colors
+                                                              .grey.shade700,
+                                                          margin:
+                                                              EdgeInsets.fromLTRB(
+                                                                  3, 0, 3, 3),
+                                                          child: ListTile(
+                                                            visualDensity:
+                                                                VisualDensity(
+                                                                    vertical: -4),
+                                                            contentPadding:
+                                                                EdgeInsets
+                                                                    .symmetric(
+                                                                        horizontal:
+                                                                            12),
+                                                            dense: true,
+                                                            subtitle: Text(
+                                                                '${builds[index]["build"]["build"][0]["Points"]}/${builds[index]["build"]["build"][1]["Points"]}/${builds[index]["build"]["build"][2]["Points"]}',
+                                                                style: TextStyle(
+                                                                    color: classColors[
+                                                                        builds[index]
+                                                                                [
+                                                                                "build"]
+                                                                            [
+                                                                            "buildClass"]])),
+                                                            leading: Image.asset(
+                                                              "assets/Class/${builds[index]["build"]["buildClass"]}.png",
+                                                            ),
+                                                            title: Text(
+                                                              builds[index]
+                                                                      ["build"]
+                                                                  ["buildName"],
                                                               style: TextStyle(
+                                                                  fontSize: 15,
                                                                   color: classColors[
                                                                       builds[index]
                                                                               [
                                                                               "build"]
                                                                           [
-                                                                          "buildClass"]])),
-                                                          leading: Image.asset(
-                                                            "assets/Class/${builds[index]["build"]["buildClass"]}.png",
+                                                                          "buildClass"]]),
+                                                            ),
+                                                            onTap: () {
+                                                              String className =
+                                                                  builds[index][
+                                                                          "build"]
+                                                                      [
+                                                                      "buildClass"];
+                                                              String buildName =
+                                                                  builds[index][
+                                                                          "build"]
+                                                                      [
+                                                                      "buildName"];
+                                                              TalentTrees
+                                                                  talentTreesObject =
+                                                                  TalentTrees.fromJson(
+                                                                      builds[index]
+                                                                              [
+                                                                              "build"]
+                                                                          [
+                                                                          "build"]);
+                                                              String key =
+                                                                  builds[index]
+                                                                      ["key"];
+                                                              List<dynamic>
+                                                                  minorGlyphs =
+                                                                  [];
+                                                              List<dynamic>
+                                                                  majorGlyphs =
+                                                                  [];
+                                                              List<dynamic>
+                                                                  selectedRunes =
+                                                                  [];
+                                                              dynamic data =
+                                                                  builds[index]
+                                                                      ["build"];
+                                                              if (builds[index][
+                                                                          "build"]
+                                                                      [
+                                                                      "selectedRunes"] !=
+                                                                  null) {
+                                                                selectedRunes = builds[
+                                                                            index]
+                                                                        ["build"][
+                                                                    "selectedRunes"];
+                                                                selectedRunes.forEach(
+                                                                    (selectedRune) {
+                                                                  switch (
+                                                                      selectedRune[
+                                                                          "type"]) {
+                                                                    case "Chest":
+                                                                      selectedRune[
+                                                                              "rune"] =
+                                                                          new Chest
+                                                                              .fromJson(
+                                                                              selectedRune["rune"]);
+                                                                      break;
+                                                                    case "Waist":
+                                                                      selectedRune[
+                                                                              "rune"] =
+                                                                          new Waist
+                                                                              .fromJson(
+                                                                              selectedRune["rune"]);
+                                                                      break;
+                                                                    case "Legs":
+                                                                      selectedRune[
+                                                                              "rune"] =
+                                                                          new Legs
+                                                                              .fromJson(
+                                                                              selectedRune["rune"]);
+                                                                      break;
+                                                                    case "Feet":
+                                                                      selectedRune[
+                                                                              "rune"] =
+                                                                          new Feet
+                                                                              .fromJson(
+                                                                              selectedRune["rune"]);
+                                                                      break;
+                                                                    case "Hands":
+                                                                      selectedRune[
+                                                                              "rune"] =
+                                                                          new Hands
+                                                                              .fromJson(
+                                                                              selectedRune["rune"]);
+                                                                      break;
+                                                                    case "Head":
+                                                                      selectedRune[
+                                                                              "rune"] =
+                                                                          new Head
+                                                                              .fromJson(
+                                                                              selectedRune["rune"]);
+                                                                      break;
+                                                                    case "Wrists":
+                                                                      selectedRune[
+                                                                              "rune"] =
+                                                                          new Head
+                                                                              .fromJson(
+                                                                              selectedRune["rune"]);
+                                                                      break;
+                                                                  }
+                                                                });
+                                                              }
+                                                              if (data[
+                                                                      "minorGlyphs"] !=
+                                                                  null) {
+                                                                minorGlyphs = data[
+                                                                        "minorGlyphs"]
+                                                                    .map((glyph) {
+                                                                  if (glyph !=
+                                                                      null) {
+                                                                    return Glyph
+                                                                        .fromJson(
+                                                                            glyph);
+                                                                  }
+                                                                  return null;
+                                                                }).toList();
+                        
+                                                                majorGlyphs = data[
+                                                                        "majorGlyphs"]
+                                                                    .map((glyph) {
+                                                                  if (glyph !=
+                                                                      null) {
+                                                                    return Glyph
+                                                                        .fromJson(
+                                                                            glyph);
+                                                                  }
+                                                                  return null;
+                                                                }).toList();
+                                                              }
+                        
+                                                              Navigator.push(
+                                                                  context,
+                                                                  buildPageRoute(
+                                                                      ChangeNotifierProvider<
+                                                                              TalentProvider>(
+                                                                          create:
+                                                                              (_) {
+                                                                            return TalentProvider(
+                                                                                talentTreesObject,
+                                                                                className,
+                                                                                widget.expansion,
+                                                                                [],
+                                                                                buildName,
+                                                                                minorGlyphs,
+                                                                                majorGlyphs,
+                                                                                [],
+                                                                                selectedRunes);
+                                                                          },
+                                                                          child:
+                                                                              DetailScreenContent(
+                                                                            buildName:
+                                                                                buildName,
+                                                                            buildKey:
+                                                                                key,
+                                                                            talentTrees:
+                                                                                talentTreesObject,
+                                                                            className:
+                                                                                className,
+                                                                            classColor:
+                                                                                classColors[className]!,
+                                                                            arrowTrees: getArrowClassByName(
+                                                                                className,
+                                                                                widget.expansion),
+                                                                          )))).then(
+                                                                  (value) =>
+                                                                      setSavedBuilds());
+                                                            },
                                                           ),
-                                                          title: Text(
-                                                            builds[index]
-                                                                    ["build"]
-                                                                ["buildName"],
-                                                            style: TextStyle(
-                                                                fontSize: 15,
-                                                                color: classColors[
-                                                                    builds[index]
-                                                                            [
-                                                                            "build"]
-                                                                        [
-                                                                        "buildClass"]]),
-                                                          ),
-                                                          onTap: () {
-                                                            String className =
-                                                                builds[index][
-                                                                        "build"]
-                                                                    [
-                                                                    "buildClass"];
-                                                            String buildName =
-                                                                builds[index][
-                                                                        "build"]
-                                                                    [
-                                                                    "buildName"];
-                                                            TalentTrees
-                                                                talentTreesObject =
-                                                                TalentTrees.fromJson(
-                                                                    builds[index]
-                                                                            [
-                                                                            "build"]
-                                                                        [
-                                                                        "build"]);
-                                                            String key =
-                                                                builds[index]
-                                                                    ["key"];
-                                                            List<dynamic>
-                                                                minorGlyphs =
-                                                                [];
-                                                            List<dynamic>
-                                                                majorGlyphs =
-                                                                [];
-                                                            List<dynamic>
-                                                                selectedRunes =
-                                                                [];
-                                                            dynamic data =
-                                                                builds[index]
-                                                                    ["build"];
-                                                            if (builds[index][
-                                                                        "build"]
-                                                                    [
-                                                                    "selectedRunes"] !=
-                                                                null) {
-                                                              selectedRunes = builds[
-                                                                          index]
-                                                                      ["build"][
-                                                                  "selectedRunes"];
-                                                              selectedRunes.forEach(
-                                                                  (selectedRune) {
-                                                                switch (
-                                                                    selectedRune[
-                                                                        "type"]) {
-                                                                  case "Chest":
-                                                                    selectedRune[
-                                                                            "rune"] =
-                                                                        new Chest
-                                                                            .fromJson(
-                                                                            selectedRune["rune"]);
-                                                                    break;
-                                                                  case "Waist":
-                                                                    selectedRune[
-                                                                            "rune"] =
-                                                                        new Waist
-                                                                            .fromJson(
-                                                                            selectedRune["rune"]);
-                                                                    break;
-                                                                  case "Legs":
-                                                                    selectedRune[
-                                                                            "rune"] =
-                                                                        new Legs
-                                                                            .fromJson(
-                                                                            selectedRune["rune"]);
-                                                                    break;
-                                                                  case "Feet":
-                                                                    selectedRune[
-                                                                            "rune"] =
-                                                                        new Feet
-                                                                            .fromJson(
-                                                                            selectedRune["rune"]);
-                                                                    break;
-                                                                  case "Hands":
-                                                                    selectedRune[
-                                                                            "rune"] =
-                                                                        new Hands
-                                                                            .fromJson(
-                                                                            selectedRune["rune"]);
-                                                                    break;
-                                                                  case "Head":
-                                                                    selectedRune[
-                                                                            "rune"] =
-                                                                        new Head
-                                                                            .fromJson(
-                                                                            selectedRune["rune"]);
-                                                                    break;
-                                                                  case "Wrists":
-                                                                    selectedRune[
-                                                                            "rune"] =
-                                                                        new Head
-                                                                            .fromJson(
-                                                                            selectedRune["rune"]);
-                                                                    break;
-                                                                }
-                                                              });
-                                                            }
-                                                            if (data[
-                                                                    "minorGlyphs"] !=
-                                                                null) {
-                                                              minorGlyphs = data[
-                                                                      "minorGlyphs"]
-                                                                  .map((glyph) {
-                                                                if (glyph !=
-                                                                    null) {
-                                                                  return Glyph
-                                                                      .fromJson(
-                                                                          glyph);
-                                                                }
-                                                                return null;
-                                                              }).toList();
-
-                                                              majorGlyphs = data[
-                                                                      "majorGlyphs"]
-                                                                  .map((glyph) {
-                                                                if (glyph !=
-                                                                    null) {
-                                                                  return Glyph
-                                                                      .fromJson(
-                                                                          glyph);
-                                                                }
-                                                                return null;
-                                                              }).toList();
-                                                            }
-
-                                                            Navigator.push(
-                                                                context,
-                                                                buildPageRoute(
-                                                                    ChangeNotifierProvider<
-                                                                            TalentProvider>(
-                                                                        create:
-                                                                            (_) {
-                                                                          return TalentProvider(
-                                                                              talentTreesObject,
-                                                                              className,
-                                                                              widget.expansion,
-                                                                              [],
-                                                                              buildName,
-                                                                              minorGlyphs,
-                                                                              majorGlyphs,
-                                                                              [],
-                                                                              selectedRunes);
-                                                                        },
-                                                                        child:
-                                                                            DetailScreenContent(
-                                                                          buildName:
-                                                                              buildName,
-                                                                          buildKey:
-                                                                              key,
-                                                                          talentTrees:
-                                                                              talentTreesObject,
-                                                                          className:
-                                                                              className,
-                                                                          classColor:
-                                                                              classColors[className]!,
-                                                                          arrowTrees: getArrowClassByName(
-                                                                              className,
-                                                                              widget.expansion),
-                                                                        )))).then(
-                                                                (value) =>
-                                                                    setSavedBuilds());
-                                                          },
                                                         ),
-                                                      ),
-                                                    ))
-                                              ]);
-                                            } else
-                                              return Container();
-                                          }),
-                                    ))
-                              ],
+                                                      ))
+                                                ]);
+                                              } else
+                                                return Container();
+                                            }),
+                                      ))
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),

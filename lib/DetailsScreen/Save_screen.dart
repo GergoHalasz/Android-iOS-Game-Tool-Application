@@ -8,7 +8,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
 import 'package:wowtalentcalculator/api/purchase_api.dart';
 import 'package:wowtalentcalculator/provider/talent_provider.dart';
-import 'package:wowtalentcalculator/ad_manager.dart';
 
 class SaveScreen extends StatefulWidget {
   String buildName;
@@ -48,7 +47,7 @@ class _SaveScreenState extends State<SaveScreen> {
 
     Future<void> _saveBuild() async {
       if (_controller.text != "") {
-        adState.checkIfCanShowAd(true);
+        adState.createInterstitialAd();
         final prefs = await SharedPreferences.getInstance();
         var data = talentProvider.talentTrees.toJson();
         Map dataJson = {

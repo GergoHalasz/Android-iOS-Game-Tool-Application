@@ -13,7 +13,7 @@ class AdState extends ChangeNotifier {
   AdState(this.initialization) {
     this.initialization = initialization;
     createInterstitialAd();
-    Purchases.addCustomerInfoUpdateListener((purchaserInfo) {
+    Purchases.addPurchaserInfoUpdateListener((purchaserInfo) {
       updatePurchaseStatus();
     });
     checkIsAdFreeversion();
@@ -22,7 +22,7 @@ class AdState extends ChangeNotifier {
   bool isAdFreeVersion = false;
 
   Future updatePurchaseStatus() async {
-    final purchaserInfo = await Purchases.getCustomerInfo();
+    final purchaserInfo = await Purchases.getPurchaserInfo();
     final productName =
         Platform.isAndroid ? "free_ad_version" : "wowtc_ad_free_version";
 
@@ -51,11 +51,11 @@ class AdState extends ChangeNotifier {
 
   String get bannerAdUnitId => Platform.isAndroid
       ? 'ca-app-pub-3940256099942544/9214589741'
-      : 'ca-app-pub-8347554982566575/1060652760';
+      : 'ca-app-pub-3940256099942544/2934735716';
 
   String get interstitialAdUnitId => Platform.isAndroid
       ? 'ca-app-pub-3940256099942544/1033173712'
-      : 'ca-app-pub-8347554982566575/9475496692';
+      : 'ca-app-pub-3940256099942544/4411468910';
 
   final BannerAdListener listener = BannerAdListener(
     // Called when an ad is successfully received.
@@ -75,17 +75,19 @@ class AdState extends ChangeNotifier {
   );
 
   void createInterstitialAd() {
-    InterstitialAd.load(
-        adUnitId: interstitialAdUnitId!,
-        request: AdRequest(),
-        adLoadCallback: InterstitialAdLoadCallback(
-          onAdLoaded: (InterstitialAd ad) {
-            this.interstitialAd = ad;
-          },
-          onAdFailedToLoad: (LoadAdError error) {
-            interstitialAd = null;
-          },
-        ));
+    if (!isAdFreeVersion) {
+      InterstitialAd.load(
+          adUnitId: interstitialAdUnitId!,
+          request: AdRequest(),
+          adLoadCallback: InterstitialAdLoadCallback(
+            onAdLoaded: (InterstitialAd ad) {
+              this.interstitialAd = ad;
+            },
+            onAdFailedToLoad: (LoadAdError error) {
+              interstitialAd = null;
+            },
+          )).then((onValue) => {loadInterstitialAd(true)});
+    }
   }
 
   void loadInterstitialAd(bool freezeChecks) {
