@@ -427,8 +427,8 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                               Text('('),
                               Text(
                                   '${firstTalentTreePoints + secondTalentTreePoints + thirdTalentTreePoints}',
-                                  style: TextStyle(
-                                      color: kColorSelectiveYellow)),
+                                  style:
+                                      TextStyle(color: kColorSelectiveYellow)),
                               Text(')'),
                             ],
                           ),
@@ -443,8 +443,8 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                               Text('Remaining points: '),
                               Text(
                                   '${talentProvider.getRemainingTalentPoints()}',
-                                  style: TextStyle(
-                                      color: kColorSelectiveYellow))
+                                  style:
+                                      TextStyle(color: kColorSelectiveYellow))
                             ],
                           ),
                         ),
@@ -457,8 +457,8 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                             children: [
                               Text('Level: '),
                               Text('$level',
-                                  style: TextStyle(
-                                      color: kColorSelectiveYellow))
+                                  style:
+                                      TextStyle(color: kColorSelectiveYellow))
                             ],
                           ),
                         ),
@@ -636,15 +636,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
           print(e);
         }
         break;
-      case MenuItems.itemLeaveRating:
-        const url =
-            'https://apps.apple.com/us/app/id1593368066'; // Replace this with your app's store URL
-        if (await canLaunchUrl(Uri.parse(url))) {
-          await launchUrl(Uri.parse(url));
-        } else {
-          throw 'Could not launch $url';
-        }
-        break;
       case MenuItems.itemAbout:
         showDialog(
             context: context,
@@ -709,6 +700,15 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                 ),
               );
             });
+        break;
+      case MenuItems.itemLeaveRating:
+        const url =
+            'https://apps.apple.com/us/app/id1593368066'; // Replace this with your app's store URL
+        if (await canLaunchUrl(Uri.parse(url))) {
+          await launchUrl(Uri.parse(url));
+        } else {
+          throw 'Could not launch $url';
+        }
         break;
     }
   }
