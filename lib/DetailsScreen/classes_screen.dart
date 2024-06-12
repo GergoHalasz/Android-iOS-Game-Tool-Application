@@ -187,23 +187,21 @@ class _ClassesScreenState extends State<ClassesScreen> {
   Widget build(BuildContext context) {
     final adState = Provider.of<AdState>(context);
     return Scaffold(
-      floatingActionButton: SafeArea(
-        child: Container(
-          margin: EdgeInsets.only(top: 22, left: 12),
-          child: Material(
-            borderRadius: BorderRadius.circular(20),
-            color: Color(0xff2E6171),
-            child: Container(
-              padding: EdgeInsets.all(8),
-              child: InkWell(
-                borderRadius: BorderRadius.circular(20),
-                onTap: () => {Navigator.pop(context)},
-                child: Ink(
-                  child: Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
-                    size: 28,
-                  ),
+      floatingActionButton: Container(
+        margin: EdgeInsets.only(top: 22, left: 12),
+        child: Material(
+          borderRadius: BorderRadius.circular(20),
+          color: Color(0xff2E6171),
+          child: Container(
+            padding: EdgeInsets.all(8),
+            child: InkWell(
+              borderRadius: BorderRadius.circular(20),
+              onTap: () => {Navigator.pop(context)},
+              child: Ink(
+                child: Icon(
+                  Icons.arrow_back,
+                  color: Colors.white,
+                  size: 28,
                 ),
               ),
             ),
@@ -218,7 +216,6 @@ class _ClassesScreenState extends State<ClassesScreen> {
       //         child: AdWidget(ad: banner!),
       //       )
       //     : null,
-      backgroundColor: Color(0xff556F7A),
       body: DefaultTextStyle(
           style: TextStyle(
               fontSize: 15,

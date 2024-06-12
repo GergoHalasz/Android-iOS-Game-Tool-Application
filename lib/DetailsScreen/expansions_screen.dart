@@ -98,79 +98,74 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
         //       )
         //     : null,
         body: Container(
-            decoration: BoxDecoration(color: Color(0xff2E6171)),
-            child: SafeArea(
-              top: false,
-              child: Container(
-                  child: Stack(fit: StackFit.expand, children: [
-                Container(
-                    decoration: new BoxDecoration(
-                      image: new DecorationImage(
-                        image: new AssetImage(image),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.only(top: 16),
-                      child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            ...expansions.asMap().entries.map((entry) {
-                              return Container(
-                                  width: SizeConfig.cellSize / 0.8,
-                                  height: SizeConfig.cellSize / 0.8,
-                                  child: Material(
-                                    color: Colors.transparent,
-                                    child: Ink(
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            image: AssetImage(
-                                                "assets/Class/${entry.value}.png"),
-                                            fit: BoxFit.cover),
-                                      ),
-                                      child: Container(
-                                        child: InkWell(
-                                          onTap: () async {
-                                            // adState.initializeInterstitialAds();
-                                            if (entry.value == 'cata') {
-                                              showDialog(
-                                                  context: context,
-                                                  builder: ((context) {
-                                                    return AlertDialog(
-                                                        title:
-                                                            Text("Coming soon!"),
-                                                        actions: [
-                                                          TextButton(
-                                                              onPressed: () {
-                                                                Navigator.pop(
-                                                                    context);
-                                                              },
-                                                              child:
-                                                                  Text("Close"))
-                                                        ],
-                                                        content: Text(
-                                                            "Cata Coming Soon!"));
-                                                  }));
-                                            } else {
-                                              Navigator.push(
-                                                  context,
-                                                  buildPageRoute(ClassesScreen(
-                                                    expansion: entry.value,
-                                                    backgroundImagePath:
-                                                        imagesList[entry.key],
-                                                  )));
-                                            }
-                                          },
-                                          borderRadius: BorderRadius.circular(10),
-                                        ),
-                                      ),
-                                    ),
-                                  ));
-                            })
-                          ]),
-                    )),
-              ])),
-            )));
+            child: Stack(fit: StackFit.expand, children: [
+          Container(
+              decoration: new BoxDecoration(
+                image: new DecorationImage(
+                  image: new AssetImage(image),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Padding(
+                padding: EdgeInsets.only(top: 16),
+                child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      ...expansions.asMap().entries.map((entry) {
+                        return Container(
+                            width: SizeConfig.cellSize / 0.8,
+                            height: SizeConfig.cellSize / 0.8,
+                            child: Material(
+                              color: Colors.transparent,
+                              child: Ink(
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          "assets/Class/${entry.value}.png"),
+                                      fit: BoxFit.cover),
+                                ),
+                                child: Container(
+                                  child: InkWell(
+                                    onTap: () async {
+                                      // adState.initializeInterstitialAds();
+                                      if (entry.value == 'cata') {
+                                        showDialog(
+                                            context: context,
+                                            builder: ((context) {
+                                              return AlertDialog(
+                                                  title:
+                                                      Text("Coming soon!"),
+                                                  actions: [
+                                                    TextButton(
+                                                        onPressed: () {
+                                                          Navigator.pop(
+                                                              context);
+                                                        },
+                                                        child:
+                                                            Text("Close"))
+                                                  ],
+                                                  content: Text(
+                                                      "Cata Coming Soon!"));
+                                            }));
+                                      } else {
+                                        Navigator.push(
+                                            context,
+                                            buildPageRoute(ClassesScreen(
+                                              expansion: entry.value,
+                                              backgroundImagePath:
+                                                  imagesList[entry.key],
+                                            )));
+                                      }
+                                    },
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                              ),
+                            ));
+                      })
+                    ]),
+              )),
+        ])));
   }
 }
