@@ -123,8 +123,9 @@ getHunterArrowList(String expansion) {
     ]
   ];
 
-  var arrowListWotlk = [[
-    ArrowWidget(
+  var arrowListWotlk = [
+    [
+      ArrowWidget(
         startPosition: Position(row: 3, column: 2),
         endPosition: Position(row: 5, column: 2),
         lengthType: 'medium',
@@ -154,8 +155,9 @@ getHunterArrowList(String expansion) {
         lengthType: 'short',
         dependencyTalent: "Cobra Strikes",
       ),
-  ], [
-    ArrowWidget(
+    ],
+    [
+      ArrowWidget(
         startPosition: Position(row: 1, column: 2),
         endPosition: Position(row: 2, column: 2),
         lengthType: 'short',
@@ -179,8 +181,9 @@ getHunterArrowList(String expansion) {
         lengthType: 'short',
         dependencyTalent: "Silencing Shot",
       ),
-  ], [
-    ArrowWidget(
+    ],
+    [
+      ArrowWidget(
         startPosition: Position(row: 2, column: 0),
         endPosition: Position(row: 4, column: 0),
         lengthType: 'medium',
@@ -204,31 +207,61 @@ getHunterArrowList(String expansion) {
         lengthType: 'short',
         dependencyTalent: "Expose Weakness",
       ),
-       ArrowWidget(
+      ArrowWidget(
         startPosition: Position(row: 6, column: 1),
         endPosition: Position(row: 7, column: 1),
         lengthType: 'short',
         dependencyTalent: "Noxious Stings",
       ),
-       ArrowWidget(
+      ArrowWidget(
         startPosition: Position(row: 6, column: 2),
         endPosition: Position(row: 9, column: 2),
         lengthType: 'long',
         dependencyTalent: "Hunting Party",
       ),
-       ArrowWidget(
+      ArrowWidget(
         startPosition: Position(row: 8, column: 1),
         endPosition: Position(row: 10, column: 1),
         lengthType: 'medium',
         dependencyTalent: "Explosive Shot",
       ),
-  ]];
+    ]
+  ];
+
+  var arrowListCata = [
+    [
+      ArrowWidget(
+        startPosition: Position(row: 8, column: 1),
+        endPosition: Position(row: 10, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: "Explosive Shot",
+      ),
+    ],
+    [
+      ArrowWidget(
+        startPosition: Position(row: 8, column: 1),
+        endPosition: Position(row: 10, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: "Explosive Shot",
+      ),
+    ],
+    [
+      ArrowWidget(
+        startPosition: Position(row: 8, column: 1),
+        endPosition: Position(row: 10, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: "Explosive Shot",
+      ),
+    ]
+  ];
 
   arrowWidgetsClass() {
     if (expansion == "tbc")
       return arrowListTbc;
     else if (expansion == "vanilla")
       return arrowListVanilla;
+    else if (expansion == 'cata')
+      return arrowListCata;
     else
       return arrowListWotlk;
   }

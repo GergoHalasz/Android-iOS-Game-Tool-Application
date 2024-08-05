@@ -94,7 +94,7 @@ getDeathKnightArrowList(String expansion) {
       ArrowWidget(
         startPosition: Position(row: 2, column: 3),
         endPosition: Position(row: 4, column: 3),
-        lengthType: 'short',
+        lengthType: 'medium',
         dependencyTalent: "Dark Transformation",
       ),
     ]

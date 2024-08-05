@@ -13,7 +13,7 @@
           "Dependency": "",
           "Support": [],
           "Position": [0, 0],
-          "Enable": false,
+          "Enable": true,
           "Tier": 0,
           "Ranks": {
             "Rank": [
@@ -29,13 +29,13 @@
           }
         },
         {
-          "Icon": "ability_upgrade_moonglaive",
+          "Icon": "ability_upgrademoonglaive",
           "Name": "Blade Barrier",
           "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [0, 1],
-          "Enable": false,
+          "Enable": true,
           "Tier": 0,
           "Ranks": {
             "Rank": [
@@ -61,7 +61,7 @@
           "Dependency": "",
           "Support": [],
           "Position": [0, 2],
-          "Enable": false,
+          "Enable": true,
           "Tier": 0,
           "Ranks": {
             "Rank": [
@@ -475,7 +475,7 @@
           "Dependency": "",
           "Support": [],
           "Position": [0, 0],
-          "Enable": false,
+          "Enable": true,
           "Tier": 0,
           "Ranks": {
             "Rank": [
@@ -501,7 +501,7 @@
           "Dependency": "",
           "Support": [],
           "Position": [0, 1],
-          "Enable": false,
+          "Enable": true,
           "Tier": 0,
           "Ranks": {
             "Rank": [
@@ -523,7 +523,7 @@
           "Dependency": "",
           "Support": [],
           "Position": [0, 2],
-          "Enable": false,
+          "Enable": true,
           "Tier": 0,
           "Ranks": {
             "Rank": [
@@ -933,7 +933,7 @@
           "Dependency": "",
           "Support": [],
           "Position": [0, 0],
-          "Enable": false,
+          "Enable": true,
           "Tier": 0,
           "Ranks": {
             "Rank": [
@@ -955,7 +955,7 @@
           "Dependency": "",
           "Support": [],
           "Position": [0, 1],
-          "Enable": false,
+          "Enable": true,
           "Tier": 0,
           "Ranks": {
             "Rank": [
@@ -981,7 +981,7 @@
           "Dependency": "",
           "Support": ["Contagion"],
           "Position": [0, 2],
-          "Enable": false,
+          "Enable": true,
           "Tier": 0,
           "Ranks": {
             "Rank": [

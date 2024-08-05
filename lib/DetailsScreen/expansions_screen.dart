@@ -144,7 +144,9 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       ...expansions.asMap().entries.map((entry) {
-                        return Container(
+                          if(entry.value == 'vanilla') {
+                            return Column(children: [
+                              Container(
                             width: SizeConfig.cellSize / 0.8,
                             height: SizeConfig.cellSize / 0.8,
                             child: Material(
@@ -160,34 +162,47 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                                   child: InkWell(
                                     onTap: () async {
                                       // adState.initializeInterstitialAds();
-                                      if (entry.value == 'cata') {
-                                        showDialog(
-                                            context: context,
-                                            builder: ((context) {
-                                              return AlertDialog(
-                                                  title:
-                                                      Text("Coming soon!"),
-                                                  actions: [
-                                                    TextButton(
-                                                        onPressed: () {
-                                                          Navigator.pop(
-                                                              context);
-                                                        },
-                                                        child:
-                                                            Text("Close"))
-                                                  ],
-                                                  content: Text(
-                                                      "Cata Coming Soon!"));
-                                            }));
-                                      } else {
-                                        Navigator.push(
-                                            context,
-                                            buildPageRoute(ClassesScreen(
-                                              expansion: entry.value,
-                                              backgroundImagePath:
-                                                  imagesList[entry.key],
-                                            )));
-                                      }
+
+                                      Navigator.push(
+                                          context,
+                                          buildPageRoute(ClassesScreen(
+                                            expansion: entry.value,
+                                            backgroundImagePath:
+                                                imagesList[entry.key],
+                                          )));
+                                    },
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                              ),
+                            )),
+                            Text('SoD & Vanilla',style: TextStyle(color: Colors.white,fontSize: 16),)
+                            ],);
+                          }
+                          return Container(
+                            width: SizeConfig.cellSize / 0.8,
+                            height: SizeConfig.cellSize / 0.8,
+                            child: Material(
+                              color: Colors.transparent,
+                              child: Ink(
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          "assets/Class/${entry.value}.png"),
+                                      fit: BoxFit.cover),
+                                ),
+                                child: Container(
+                                  child: InkWell(
+                                    onTap: () async {
+                                      // adState.initializeInterstitialAds();
+
+                                      Navigator.push(
+                                          context,
+                                          buildPageRoute(ClassesScreen(
+                                            expansion: entry.value,
+                                            backgroundImagePath:
+                                                imagesList[entry.key],
+                                          )));
                                     },
                                     borderRadius: BorderRadius.circular(10),
                                   ),

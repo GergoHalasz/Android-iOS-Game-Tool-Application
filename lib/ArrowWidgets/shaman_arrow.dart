@@ -129,19 +129,25 @@ getShamanArrowList(String expansion) {
     ],
     [
       ArrowWidget(
-        startPosition: Position(row: 2, column: 0),
-        endPosition: Position(row: 4, column: 0),
-        lengthType: 'short',
-        dependencyTalent: 'Fulmination',
+        startPosition: Position(row: 3, column: 2),
+        endPosition: Position(row: 5, column: 2),
+        lengthType: 'medium',
+        dependencyTalent: 'Improved Lava Lash',
       ),
     ],
     [
       ArrowWidget(
         startPosition: Position(row: 2, column: 0),
         endPosition: Position(row: 4, column: 0),
-        lengthType: 'short',
-        dependencyTalent: 'Fulmination',
+        lengthType: 'medium',
+        dependencyTalent: 'Ancestral Awakening',
       ),
+      RightArrowWidget(
+        startPosition: Position(row: 3, column: 2),
+        endPosition: Position(row: 3, column: 3),
+        lengthType: 'short',
+        dependencyTalent: 'Cleansing Waters',
+      )
     ]
   ];
 

@@ -1,0 +1,1352 @@
+[
+  {
+    "Name": "Holy",
+    "Icon": "spell_holy_holybolt",
+    "Background": "paladin_holy",
+    "Points": 0,
+    "Talents": {
+      "Talent": [
+        {
+          "Icon": "Spell_Holy_HealingAura",
+          "Name": "Arbiter of the Light",
+          "Points": 2,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 0],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the critical effect chance of your Judgement and Templar's Verdict by 6%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the critical effect chance of your Judgement and Templar's Verdict by 12%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_paladin_protectoroftheinnocent",
+          "Name": "Protector of the Innocent",
+          "Points": 3,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 1],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Casting a targeted heal on any target, except yourself, also heals you for 935."
+              },
+              {
+                "Number": 2,
+                "Description": "Casting a targeted heal on any target, except yourself, also heals you for 1871."
+              },
+              {
+                "Number": 3,
+                "Description": "Casting a targeted heal on any target, except yourself, also heals you for 2806."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Paladin_JudgementofthePure",
+          "Name": "Judgements of the Pure",
+          "Points": 3,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 2],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Judgement increases your casting and melee haste by 3% for 1 min and your mana regeneration from Spirit while in combat by 10%."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Judgement increases your casting and melee haste by 6% for 1 min and your mana regeneration from Spirit while in combat by 20%."
+              },
+              {
+                "Number": 3,
+                "Description": "Your Judgement increases your casting and melee haste by 9% for 1 min and your mana regeneration from Spirit while in combat by 30%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "spell_paladin_clarityofpurpose",
+          "Name": "Clarity of Purpose",
+          "Points": 3,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 0],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the casting time of your Holy Light, Divine Light and Holy Radiance by 0.15 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the casting time of your Holy Light, Divine Light and Holy Radiance by 0.3 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "Reduces the casting time of your Holy Light, Divine Light and Holy Radiance by 0.5 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_HolyGuidance",
+          "Name": "Last Word",
+          "Points": 2,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 1],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Gives your Word of Glory a 30% increased critical chance when used on targets with 35% or less health."
+              },
+              {
+                "Number": 2,
+                "Description": "Gives your Word of Glory a 60% increased critical chance when used on targets with 35% or less health."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_HolyBolt",
+          "Name": "Blazing Light",
+          "Points": 2,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 2],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the damage of your Holy Shock and Exorcism by 10%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the damage of your Holy Shock and Exorcism by 20%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_Excorcism_02",
+          "Name": "Denounce",
+          "Points": 2,
+          "Dependency": "",
+          "Support": ],
+          "Position": [2, 0],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the mana cost of Exorcism by 38%. In addition, you have a 50% chance to cause the Denounce effect on the targets of your Exorcism. The Denounce effect prevents targets from causing critical effects for the next 6 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the mana cost of Exorcism by 75%. In addition, you have a 100% chance to cause the Denounce effect on the targets of your Exorcism. The Denounce effect prevents targets from causing critical effects for the next 6 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_DivineIllumination",
+          "Name": "Divine Favor",
+          "Points": 1,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 1],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases your spell casting haste by 20% and spell critical chance by 20% for 20 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Paladin_InfusionofLight",
+          "Name": "Infusion of Light",
+          "Points": 2,
+          "Dependency": "",
+          "Support": ["Speed of Light"],
+          "Position": [2, 2],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the critical effect chance of your Holy Shock by 5%. In addition, your Holy Shock critical effects reduce the cast time of your next Flash of Light, Holy Light, Divine Light or Holy Radiance by 0.75 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the critical effect chance of your Holy Shock by 10%. In addition, your Holy Shock critical effects reduce the cast time of your next Flash of Light, Holy Light, Divine Light or Holy Radiance by 1.2 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_QirajIdol_Sun",
+          "Name": "Daybreak",
+          "Points": 2,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 3],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Flash of Light, Holy Light and Divine Light have a 10% chance to make your next Holy Shock not trigger a cooldown if used within 12 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Flash of Light, Holy Light and Divine Light have a 20% chance to make your next Holy Shock not trigger a cooldown if used within 12 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Paladin_EnlightenedJudgements",
+          "Name": "Enlightened Judgements",
+          "Points": 2,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 0],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Grants hit rating equal to 50% of any Spirit gained from items or effects, and increases the range of your Judgement by 5 yards. In addition, your Judgement instantly heals you for 1343."
+              },
+              {
+                "Number": 2,
+                "Description": "Grants hit rating equal to 100% of any Spirit gained from items or effects, and increases the range of your Judgement by 10 yards. In addition, your Judgement instantly heals you for 2686."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Paladin_BeaconofLight",
+          "Name": "Beacon of Light",
+          "Points": 1,
+          "Dependency": "",
+          "Support": ["Tower of Radiance"],
+          "Position": [3, 1],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "The target becomes a Beacon of Light to all targets within a 60 yard radius. Your Word of Glory, Holy Shock, Flash of Light, Divine Light and Light of Dawn will also heal the Beacon for 50% of the amount healed. Holy Light will heal for 50% of the amount. Only one target can be the Beacon of Light at a time. Lasts 5 min."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "paladin_icon_speedoflight",
+          "Name": "Speed of Light",
+          "Points": 3,
+          "Dependency": "Infusion of Light",
+          "Support": [],
+          "Position": [3, 2],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Grants 1% spell haste. In addition, casting Divine Protection increases your movement speed by 20% for 4 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Grants 2% spell haste. In addition, casting Divine Protection increases your movement speed by 40% for 4 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "Grants 3% spell haste. In addition, casting Divine Protection increases your movement speed by 60% for 4 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Paladin_SacredCleansing",
+          "Name": "Sacred Cleansing",
+          "Points": 1,
+          "Dependency": "",
+          "Support": ["Paragon of Virtue"],
+          "Position": [3, 3],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Cleanse spell now also dispels 1 Magic effect."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_paladin_conviction",
+          "Name": "Conviction",
+          "Points": 3,
+          "Dependency": "",
+          "Support": ["Aura Mastery"],
+          "Position": [4, 0],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Gives you a 1% bonus to damage and healing for 15 sec after causing a critical effect from a weapon swing, non-periodic spell, or ability. This effect stacks up to 3 times."
+              },
+              {
+                "Number": 2,
+                "Description": "Gives you a 2% bonus to damage and healing for 15 sec after causing a critical effect from a weapon swing, non-periodic spell, or ability. This effect stacks up to 3 times."
+              },
+              {
+                "Number": 3,
+                "Description": "Gives you a 3% bonus to damage and healing for 15 sec after causing a critical effect from a weapon swing, non-periodic spell, or ability. This effect stacks up to 3 times."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_AuraMastery",
+          "Name": "Aura Mastery",
+          "Points": 1,
+          "Dependency": "",
+          "Support": ["Paragon of Virtue"],
+          "Position": [4, 2],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Causes your Concentration Aura to make all affected targets immune to Silence and Interrupt effects and improve the effect of Devotion Aura, Resistance Aura, and Retribution Aura by 100%. Lasts 6 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_AvengineWrath",
+          "Name": "Paragon of Virtue",
+          "Points": 2,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 3],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the cooldown of Divine Protection by 15 sec, Hand of Sacrifice by 15 sec and Avenging Wrath by 30 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the cooldown of Divine Protection by 30 sec, Hand of Sacrifice by 30 sec and Avenging Wrath by 60 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Achievement_BG_winSOA",
+          "Name": "Tower of Radiance",
+          "Points": 3,
+          "Dependency": "Beacon of Light",
+          "Support": [],
+          "Position": [5, 1],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Healing the target of your Beacon of Light with Flash of Light or Divine Light has a 33% chance to generate a charge of Holy Power. In addition, casting Holy Radiance will always generate one charge of Holy Power."
+              },
+              {
+                "Number": 2,
+                "Description": "Healing the target of your Beacon of Light with Flash of Light or Divine Light has a 66% chance to generate a charge of Holy Power. In addition, casting Holy Radiance will always generate one charge of Holy Power."
+              },
+              {
+                "Number": 3,
+                "Description": "Healing the target of your Beacon of Light with Flash of Light or Divine Light has a 100% chance to generate a charge of Holy Power. In addition, casting Holy Radiance will always generate one charge of Holy Power."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_BlessedLife",
+          "Name": "Blessed Life",
+          "Points": 2,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 2],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "You have a 50% chance to gain a charge of Holy Power whenever you take direct damage. This effect cannot occur more than once every 8 seconds."
+              },
+              {
+                "Number": 2,
+                "Description": "You have a 100% chance to gain a charge of Holy Power whenever you take direct damage. This effect cannot occur more than once every 8 seconds."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "spell_paladin_lightofdawn",
+          "Name": "Light of Dawn",
+          "Points": 1,
+          "Dependency": "",
+          "Support": [],
+          "Position": [6, 1],
+          "Enable": false,
+          "Tier": 7,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Consumes all Holy Power to send a wave of healing energy before you, healing up to 544 of the most injured targets in your party or raid within a 30 yard frontal cone for 1 per charge of Holy Power."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Protection",
+    "Icon": "spell_holy_devotionaura",
+    "Background": "paladin_protection",
+    "Points": 0,
+    "Talents": {
+      "Talent": [
+        {
+          "Icon": "Spell_Holy_HealingAura",
+          "Name": "Arbiter of the Light",
+          "Points": 2,
+          "Dependency": "",
+          "Support": ["Protector of the Innocent", "Judgements of the Pure"],
+          "Position": [0, 0],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the critical effect chance of your Judgement and Templar's Verdict by 6%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the critical effect chance of your Judgement and Templar's Verdict by 12%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_paladin_protectoroftheinnocent",
+          "Name": "Protector of the Innocent",
+          "Points": 3,
+          "Dependency": "",
+          "Support": ["Judgements of the Pure", "Clarity of Purpose"],
+          "Position": [0, 1],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Casting a targeted heal on any target, except yourself, also heals you for 935."
+              },
+              {
+                "Number": 2,
+                "Description": "Casting a targeted heal on any target, except yourself, also heals you for 1871."
+              },
+              {
+                "Number": 3,
+                "Description": "Casting a targeted heal on any target, except yourself, also heals you for 2806."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Paladin_JudgementofthePure",
+          "Name": "Judgements of the Pure",
+          "Points": 3,
+          "Dependency": "",
+          "Support": ["Clarity of Purpose", "Blazing Light"],
+          "Position": [0, 2],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Judgement increases your casting and melee haste by 3% for 1 min and your mana regeneration from Spirit while in combat by 10%."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Judgement increases your casting and melee haste by 6% for 1 min and your mana regeneration from Spirit while in combat by 20%."
+              },
+              {
+                "Number": 3,
+                "Description": "Your Judgement increases your casting and melee haste by 9% for 1 min and your mana regeneration from Spirit while in combat by 30%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "spell_paladin_clarityofpurpose",
+          "Name": "Clarity of Purpose",
+          "Points": 3,
+          "Dependency": "",
+          "Support": ["Last Word", "Blazing Light"],
+          "Position": [1, 0],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the casting time of your Holy Light, Divine Light and Holy Radiance by 0.15 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the casting time of your Holy Light, Divine Light and Holy Radiance by 0.3 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "Reduces the casting time of your Holy Light, Divine Light and Holy Radiance by 0.5 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_HolyGuidance",
+          "Name": "Last Word",
+          "Points": 2,
+          "Dependency": "",
+          "Support": ["Blazing Light"],
+          "Position": [1, 1],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Gives your Word of Glory a 30% increased critical chance when used on targets with 35% or less health."
+              },
+              {
+                "Number": 2,
+                "Description": "Gives your Word of Glory a 60% increased critical chance when used on targets with 35% or less health."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_HolyBolt",
+          "Name": "Blazing Light",
+          "Points": 2,
+          "Dependency": "",
+          "Support": ["Denounce", "Divine Favor"],
+          "Position": [1, 2],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the damage of your Holy Shock and Exorcism by 10%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the damage of your Holy Shock and Exorcism by 20%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_Excorcism_02",
+          "Name": "Denounce",
+          "Points": 2,
+          "Dependency": "",
+          "Support": ["Divine Favor", "Infusion of Light"],
+          "Position": [2, 0],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the mana cost of Exorcism by 38%. In addition, you have a 50% chance to cause the Denounce effect on the targets of your Exorcism. The Denounce effect prevents targets from causing critical effects for the next 6 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the mana cost of Exorcism by 75%. In addition, you have a 100% chance to cause the Denounce effect on the targets of your Exorcism. The Denounce effect prevents targets from causing critical effects for the next 6 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_DivineIllumination",
+          "Name": "Divine Favor",
+          "Points": 1,
+          "Dependency": "",
+          "Support": ["Infusion of Light", "Daybreak"],
+          "Position": [2, 1],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases your spell casting haste by 20% and spell critical chance by 20% for 20 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Paladin_InfusionofLight",
+          "Name": "Infusion of Light",
+          "Points": 2,
+          "Dependency": "",
+          "Support": ["Daybreak"],
+          "Position": [2, 2],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the critical effect chance of your Holy Shock by 5%. In addition, your Holy Shock critical effects reduce the cast time of your next Flash of Light, Holy Light, Divine Light or Holy Radiance by 0.75 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the critical effect chance of your Holy Shock by 10%. In addition, your Holy Shock critical effects reduce the cast time of your next Flash of Light, Holy Light, Divine Light or Holy Radiance by 1.2 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_QirajIdol_Sun",
+          "Name": "Daybreak",
+          "Points": 2,
+          "Dependency": "",
+          "Support": ["Enlightened Judgements", "Speed of Light"],
+          "Position": [2, 3],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Flash of Light, Holy Light and Divine Light have a 10% chance to make your next Holy Shock not trigger a cooldown if used within 12 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Flash of Light, Holy Light and Divine Light have a 20% chance to make your next Holy Shock not trigger a cooldown if used within 12 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Paladin_EnlightenedJudgements",
+          "Name": "Enlightened Judgements",
+          "Points": 2,
+          "Dependency": "",
+          "Support": ["Beacon of Light", "Speed of Light"],
+          "Position": [3, 0],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Grants hit rating equal to 50% of any Spirit gained from items or effects, and increases the range of your Judgement by 5 yards. In addition, your Judgement instantly heals you for 1343."
+              },
+              {
+                "Number": 2,
+                "Description": "Grants hit rating equal to 100% of any Spirit gained from items or effects, and increases the range of your Judgement by 10 yards. In addition, your Judgement instantly heals you for 2686."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Paladin_BeaconofLight",
+          "Name": "Beacon of Light",
+          "Points": 1,
+          "Dependency": "",
+          "Support": ["Speed of Light", "Sacred Cleansing"],
+          "Position": [3, 1],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "The target becomes a Beacon of Light to all targets within a 60 yard radius. Your Word of Glory, Holy Shock, Flash of Light, Divine Light and Light of Dawn will also heal the Beacon for 50% of the amount healed. Holy Light will heal for 50% of the amount. Only one target can be the Beacon of Light at a time. Lasts 5 min."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "paladin_icon_speedoflight",
+          "Name": "Speed of Light",
+          "Points": 3,
+          "Dependency": "Infusion of Light",
+          "Support": ["Sacred Cleansing"],
+          "Position": [3, 2],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Grants 1% spell haste. In addition, casting Divine Protection increases your movement speed by 20% for 4 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Grants 2% spell haste. In addition, casting Divine Protection increases your movement speed by 40% for 4 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "Grants 3% spell haste. In addition, casting Divine Protection increases your movement speed by 60% for 4 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Paladin_SacredCleansing",
+          "Name": "Sacred Cleansing",
+          "Points": 1,
+          "Dependency": "",
+          "Support": ["Paragon of Virtue"],
+          "Position": [3, 3],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Cleanse spell now also dispels 1 Magic effect."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_paladin_conviction",
+          "Name": "Conviction",
+          "Points": 3,
+          "Dependency": "",
+          "Support": ["Aura Mastery"],
+          "Position": [4, 0],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Gives you a 1% bonus to damage and healing for 15 sec after causing a critical effect from a weapon swing, non-periodic spell, or ability. This effect stacks up to 3 times."
+              },
+              {
+                "Number": 2,
+                "Description": "Gives you a 2% bonus to damage and healing for 15 sec after causing a critical effect from a weapon swing, non-periodic spell, or ability. This effect stacks up to 3 times."
+              },
+              {
+                "Number": 3,
+                "Description": "Gives you a 3% bonus to damage and healing for 15 sec after causing a critical effect from a weapon swing, non-periodic spell, or ability. This effect stacks up to 3 times."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_AuraMastery",
+          "Name": "Aura Mastery",
+          "Points": 1,
+          "Dependency": "",
+          "Support": ["Paragon of Virtue"],
+          "Position": [4, 2],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Causes your Concentration Aura to make all affected targets immune to Silence and Interrupt effects and improve the effect of Devotion Aura, Resistance Aura, and Retribution Aura by 100%. Lasts 6 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_AvengineWrath",
+          "Name": "Paragon of Virtue",
+          "Points": 2,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 3],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the cooldown of Divine Protection by 15 sec, Hand of Sacrifice by 15 sec and Avenging Wrath by 30 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the cooldown of Divine Protection by 30 sec, Hand of Sacrifice by 30 sec and Avenging Wrath by 60 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Achievement_BG_winSOA",
+          "Name": "Tower of Radiance",
+          "Points": 3,
+          "Dependency": "",
+          "Support": ["Blessed Life"],
+          "Position": [5, 1],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Healing the target of your Beacon of Light with Flash of Light or Divine Light has a 33% chance to generate a charge of Holy Power. In addition, casting Holy Radiance will always generate one charge of Holy Power."
+              },
+              {
+                "Number": 2,
+                "Description": "Healing the target of your Beacon of Light with Flash of Light or Divine Light has a 66% chance to generate a charge of Holy Power. In addition, casting Holy Radiance will always generate one charge of Holy Power."
+              },
+              {
+                "Number": 3,
+                "Description": "Healing the target of your Beacon of Light with Flash of Light or Divine Light has a 100% chance to generate a charge of Holy Power. In addition, casting Holy Radiance will always generate one charge of Holy Power."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_BlessedLife",
+          "Name": "Blessed Life",
+          "Points": 2,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 2],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "You have a 50% chance to gain a charge of Holy Power whenever you take direct damage. This effect cannot occur more than once every 8 seconds."
+              },
+              {
+                "Number": 2,
+                "Description": "You have a 100% chance to gain a charge of Holy Power whenever you take direct damage. This effect cannot occur more than once every 8 seconds."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "spell_paladin_lightofdawn",
+          "Name": "Light of Dawn",
+          "Points": 1,
+          "Dependency": "",
+          "Support": [],
+          "Position": [6, 1],
+          "Enable": false,
+          "Tier": 7,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Consumes all Holy Power to send a wave of healing energy before you, healing up to 544 of the most injured targets in your party or raid within a 30 yard frontal cone for 1 per charge of Holy Power."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Retribution",
+    "Icon": "spell_holy_auraoflight",
+    "Background": "paladin_retribution",
+    "Points": 0,
+    "Talents": {
+      "Talent": [
+        {
+          "Icon": "Spell_Holy_BlindingHeal",
+          "Name": "Divinity",
+          "Points": 3,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 0],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases all healing done by you and all healing effects on you by 2%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases all healing done by you and all healing effects on you by 4%."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases all healing done by you and all healing effects on you by 6%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Mace_46",
+          "Name": "Seals of the Pure",
+          "Points": 2,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 1],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the damage done by your Seal of Righteousness, Seal of Truth, and Seal of Justice by 6%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the damage done by your Seal of Righteousness, Seal of Truth, and Seal of Justice by 12%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Torch_Thrown",
+          "Name": "Eternal Glory",
+          "Points": 2,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 2],
+          "Enable": false,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Word of Glory has a 15% chance not to consume Holy Power."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Word of Glory has a 30% chance not to consume Holy Power."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Paladin_JudgementsoftheJust",
+          "Name": "Judgements of the Just",
+          "Points": 2,
+          "Dependency": "",
+          "Support": ["Sanctuary"],
+          "Position": [1, 0],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Judgement reduces the melee and ranged attack speed of the target by 10% for 20 sec. In addition, increases the duration of your Seal of Justice effect by 0.5 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Judgement reduces the melee and ranged attack speed of the target by 20% for 20 sec. In addition, increases the duration of your Seal of Justice effect by 1 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_Devotion",
+          "Name": "Toughness",
+          "Points": 3,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 1],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases your armor value from items by 3%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases your armor value from items by 6%."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases your armor value from items by 10%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_SealOfMight",
+          "Name": "Improved Hammer of Justice",
+          "Points": 2,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 2],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Decreases the cooldown of your Hammer of Justice spell by 10 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Decreases the cooldown of your Hammer of Justice spell by 20 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_InnerFire",
+          "Name": "Hallowed Ground",
+          "Points": 2,
+          "Dependency": "",
+          "Support": ["Hammer of the Righteous"],
+          "Position": [2, 0],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the damage of your Consecration by 20% and decreases its mana cost by 40%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the damage of your Consecration by 40% and decreases its mana cost by 80%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Nature_LightningShield",
+          "Name": "Sanctuary",
+          "Points": 3,
+          "Dependency": "Shield of the Righteous",
+          "Support": [],
+          "Position": [2, 1],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the chance you'll be critically hit by melee attacks by 2% and reduces all damage taken by 3%. In addition when you block or dodge a melee attack you gain 1% of maximum mana."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the chance you'll be critically hit by melee attacks by 4% and reduces all damage taken by 7%. In addition when you block or dodge a melee attack you gain 2% of maximum mana."
+              },
+              {
+                "Number": 3,
+                "Description": "Reduces the chance you'll be critically hit by melee attacks by 6% and reduces all damage taken by 10%. In addition when you block or dodge a melee attack you gain 3% of maximum mana."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Paladin_HammeroftheRighteous",
+          "Name": "Hammer of the Righteous",
+          "Points": 1,
+          "Dependency": "",
+          "Support": ["Wrath of the Lightbringer"],
+          "Position": [2, 2],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Hammer the current target for 30% weapon damage, causing a wave of light that hits all targets within 8 yards for 833 Holy damage. Grants a charge of Holy Power."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "inv_mace_82",
+          "Name": "Wrath of the Lightbringer",
+          "Points": 2,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 3],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the damage of your Crusader Strike and Judgement abilities by 50%, and increases the critical strike chance of your Holy Wrath and Hammer of Wrath spells by 15%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the damage of your Crusader Strike and Judgement abilities by 100%, and increases the critical strike chance of your Holy Wrath and Hammer of Wrath spells by 30%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_BlessingOfStrength",
+          "Name": "Reckoning",
+          "Points": 2,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 0],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "You have a 10% chance after blocking an attack for your next 4 weapon swings within 8 sec to generate an additional attack."
+              },
+              {
+                "Number": 2,
+                "Description": "You have a 20% chance after blocking an attack for your next 4 weapon swings within 8 sec to generate an additional attack."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Paladin_ShieldofVengeance",
+          "Name": "Shield of the Righteous",
+          "Points": 1,
+          "Dependency": "",
+          "Support": ["Holy Shield"],
+          "Position": [3, 1],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Slam the target with your shield, causing Holy damage. Consumes all charges of Holy Power to determine damage dealt:<br/><br/>1 Holy Power: 667 damage<br/>2 Holy Power: 2001 damage<br/>3 Holy Power: 4002 damage"
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Helmet_74",
+          "Name": "Grand Crusader",
+          "Points": 2,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 2],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "When your Crusader Strike or Hammer of the Righteous deal damage to your primary target, they have a 10% chance of refreshing the cooldown on your next Avenger's Shield and causing it to generate a charge of Holy Power if used within 6 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "When your Crusader Strike or Hammer of the Righteous deal damage to your primary target, they have a 20% chance of refreshing the cooldown on your next Avenger's Shield and causing it to generate a charge of Holy Power if used within 6 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_Vindication",
+          "Name": "Vindication",
+          "Points": 1,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 0],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Crusader Strike and Hammer of the Righteous reduce physical damage done by their primary targets by 10% for 30 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_BlessingOfProtection",
+          "Name": "Holy Shield",
+          "Points": 1,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 1],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the amount your shield blocks by an additional 20% for 10 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Paladin_GaurdedbytheLight",
+          "Name": "Guarded by the Light",
+          "Points": 2,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 2],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases your Word of Glory by 5% when used to heal yourself."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases your Word of Glory by 10% when used to heal yourself. In addition, any overhealing will create a protective shield equal to the amount of overhealing that lasts for 6 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "spell_holy_powerwordbarrier",
+          "Name": "Divine Guardian",
+          "Points": 1,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 3],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "All party or raid members within 30 yards, excluding the Paladin, take 20% reduced damage for 6 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_DivineIntervention",
+          "Name": "Sacred Duty",
+          "Points": 2,
+          "Dependency": "Shield of the Templar",
+          "Support": [],
+          "Position": [5, 1],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Judgement and Avenger Shield have a 25% chance of making your next Shield of the Righteous a critical strike. Lasts 10 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Judgement and Avenger's Shield have a 50% chance of making your next Shield of the Righteous a critical strike. Lasts 10 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Paladin_ShieldoftheTemplar",
+          "Name": "Shield of the Templar",
+          "Points": 3,
+          "Dependency": "",
+          "Support": ["Sacred Duty"],
+          "Position": [5, 2],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the cooldown of Avenging Wrath by 20 sec and Guardian of Ancient Kings by 40 sec. In addition, your Divine Plea will generate 1 Holy Power."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the cooldown of Avenging Wrath by 40 sec and Guardian of Ancient Kings by 80 sec. In addition, your Divine Plea will generate 2 Holy Power."
+              },
+              {
+                "Number": 3,
+                "Description": "Reduces the cooldown of Avenging Wrath by 60 sec and Guardian of Ancient Kings by 120 sec. In addition, your Divine Plea will generate 3 Holy Power."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_ArdentDefender",
+          "Name": "Ardent Defender",
+          "Points": 1,
+          "Dependency": "",
+          "Support": [],
+          "Position": [6, 1],
+          "Enable": false,
+          "Tier": 7,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduce damage taken by 20% for 10 sec. While Ardent Defender is active, the next attack that would otherwise kill you will instead cause you to be healed for 15% of your maximum health."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

@@ -435,7 +435,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                         ),
                       ),
                       Align(
-                        alignment: Alignment.center,
+                        alignment: Alignment.centerRight,
                         child: Container(
                           padding: EdgeInsets.only(right: 15),
                           child: Row(
@@ -449,20 +449,21 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                           ),
                         ),
                       ),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Container(
-                          padding: EdgeInsets.only(right: 15),
-                          child: Row(
-                            children: [
-                              Text('Level: '),
-                              Text('$level',
-                                  style:
-                                      TextStyle(color: kColorSelectiveYellow))
-                            ],
+                      if (talentProvider.expansion != 'cata')
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Container(
+                            padding: EdgeInsets.only(right: 15),
+                            child: Row(
+                              children: [
+                                Text('Level: '),
+                                Text('$level',
+                                    style:
+                                        TextStyle(color: kColorSelectiveYellow))
+                              ],
+                            ),
                           ),
-                        ),
-                      )
+                        )
                     ])),
             Expanded(
               child: TabBarView(

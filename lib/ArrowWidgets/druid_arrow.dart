@@ -282,12 +282,82 @@ getDruidArrowList(String expansion) {
       ),
     ]
   ];
+  var arrowListCata = [
+    [
+      ArrowWidget(
+        startPosition: Position(row: 2, column: 0),
+        endPosition: Position(row: 4, column: 0),
+        lengthType: 'medium',
+        dependencyTalent: 'Dreamstate',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 2, column: 1),
+        endPosition: Position(row: 3, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Owlkin Frenzy',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 2, column: 2),
+        endPosition: Position(row: 3, column: 2),
+        lengthType: 'short',
+        dependencyTalent: 'Gale Winds',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 5, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Fungal Growth',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 2),
+        endPosition: Position(row: 5, column: 2),
+        lengthType: 'short',
+        dependencyTalent: 'Lunar Shower',
+      ),
+    ],
+    [
+      ArrowWidget(
+        startPosition: Position(row: 2, column: 0),
+        endPosition: Position(row: 4, column: 0),
+        lengthType: 'medium',
+        dependencyTalent: 'Primal Madness',
+      ),
+      RightArrowWidget(
+        startPosition: Position(row: 2, column: 1),
+        endPosition: Position(row: 2, column: 2),
+        lengthType: 'short',
+        dependencyTalent: 'Stampede',
+      ),
+      RightArrowWidget(
+        startPosition: Position(row: 5, column: 1),
+        endPosition: Position(row: 5, column: 2),
+        lengthType: 'short',
+        dependencyTalent: 'Pulverize',
+      ),
+    ],
+    [
+      ArrowWidget(
+        startPosition: Position(row: 0, column: 1),
+        endPosition: Position(row: 1, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Master Shapeshifter',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 6, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Tree of Life',
+      ),
+    ]
+  ];
 
   arrowWidgetsClass() {
     if (expansion == "tbc")
       return arrowListTbc;
     else if (expansion == "vanilla")
       return arrowListVanilla;
+    else if (expansion == 'cata')
+      return arrowListCata;
     else
       return arrowListWotlk;
   }
