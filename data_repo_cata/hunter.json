@@ -13,7 +13,7 @@
           "Dependency": "",
           "Support": [],
           "Position": [0, 0],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -35,7 +35,7 @@
           "Dependency": "",
           "Support": [],
           "Position": [0, 1],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -61,7 +61,7 @@
           "Dependency": "",
           "Support": [],
           "Position": [0, 2],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -433,11 +433,11 @@
         {
           "Icon": "Ability_Hunter_GoForTheThroat",
           "Name": "Go for the Throat",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": ["Sic 'Em!"],
           "Position": [0, 0],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -455,11 +455,11 @@
         {
           "Icon": "Ability_Hunter_FocusedAim",
           "Name": "Efficiency",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [0, 1],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -481,11 +481,11 @@
         {
           "Icon": "Ability_Hunter_RapidKilling",
           "Name": "Rapid Killing",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [0, 2],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -503,7 +503,7 @@
         {
           "Icon": "ability_hunter_sickem",
           "Name": "Sic 'Em!",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "Go for the Throat",
           "Support": [],
           "Position": [1, 0],
@@ -525,7 +525,7 @@
         {
           "Icon": "Ability_Hunter_ImprovedSteadyShot",
           "Name": "Improved Steady Shot",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [1, 1],
@@ -551,7 +551,7 @@
         {
           "Icon": "Ability_Hunter_ZenArchery",
           "Name": "Careful Aim",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [1, 2],
@@ -573,7 +573,7 @@
         {
           "Icon": "Ability_TheBlackArrow",
           "Name": "Silencing Shot",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [2, 0],
@@ -591,7 +591,7 @@
         {
           "Icon": "ability_hunter_efficiency",
           "Name": "Concussive Barrage",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [2, 1],
@@ -613,7 +613,7 @@
         {
           "Icon": "Ability_Hunter_PiercingShots",
           "Name": "Piercing Shots",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [2, 2],
@@ -639,7 +639,7 @@
         {
           "Icon": "Ability_Marksmanship",
           "Name": "Bombardment",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [3, 0],
@@ -661,7 +661,7 @@
         {
           "Icon": "Ability_TrueShot",
           "Name": "Trueshot Aura",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [3, 1],
@@ -679,7 +679,7 @@
         {
           "Icon": "Ability_Warrior_FocusedRage",
           "Name": "Termination",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [3, 2],
@@ -701,7 +701,7 @@
         {
           "Icon": "ability_hunter_resistanceisfutile",
           "Name": "Resistance is Futile",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [3, 3],
@@ -723,7 +723,7 @@
         {
           "Icon": "Ability_Hunter_RapidRegeneration",
           "Name": "Rapid Recuperation",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [4, 0],
@@ -745,7 +745,7 @@
         {
           "Icon": "Ability_Hunter_MasterMarksman",
           "Name": "Master Marksman",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": ["Marked for Death","Chimera Shot"],
           "Position": [4, 1],
@@ -771,7 +771,7 @@
         {
           "Icon": "Ability_Hunter_Readiness",
           "Name": "Readiness",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [4, 3],
@@ -789,7 +789,7 @@
         {
           "Icon": "ability_hunter_posthaste",
           "Name": "Posthaste",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [5, 0],
@@ -811,7 +811,7 @@
         {
           "Icon": "Ability_Hunter_Assassinate",
           "Name": "Marked for Death",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "Master Marksman",
           "Support": [],
           "Position": [5, 2],
@@ -833,7 +833,7 @@
         {
           "Icon": "Ability_Hunter_ChimeraShot2",
           "Name": "Chimera Shot",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "Master Marksman",
           "Support": [],
           "Position": [6, 1],
@@ -861,11 +861,11 @@
         {
           "Icon": "Ability_Hunter_HunterVsWild",
           "Name": "Hunter vs. Wild",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [0, 0],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -887,11 +887,11 @@
         {
           "Icon": "Ability_Hunter_ImprovedTracking",
           "Name": "Pathing",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [0, 1],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -913,11 +913,11 @@
         {
           "Icon": "Ability_Hunter_Quickshot",
           "Name": "Improved Serpent Sting",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [0, 2],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -935,7 +935,7 @@
         {
           "Icon": "Ability_Rogue_FeignDeath",
           "Name": "Survival Tactics",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [1, 0],
@@ -957,7 +957,7 @@
         {
           "Icon": "Ability_Ensnare",
           "Name": "Trap Mastery",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [1, 1],
@@ -983,7 +983,7 @@
         {
           "Icon": "Spell_Nature_StrangleVines",
           "Name": "Entrapment",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [1, 2],
@@ -1005,7 +1005,7 @@
         {
           "Icon": "Ability_Hunter_PointofNoEscape",
           "Name": "Point of No Escape",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [1, 3],
@@ -1027,7 +1027,7 @@
         {
           "Icon": "Ability_Hunter_ThrilloftheHunt",
           "Name": "Thrill of the Hunt",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [2, 0],
@@ -1053,7 +1053,7 @@
         {
           "Icon": "Ability_Warrior_Challange",
           "Name": "Counterattack",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [2, 1],
@@ -1071,7 +1071,7 @@
         {
           "Icon": "Ability_Hunter_LockAndLoad",
           "Name": "Lock and Load",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": ["T.N.T."],
           "Position": [2, 2],
@@ -1093,7 +1093,7 @@
         {
           "Icon": "Ability_Hunter_Resourcefulness",
           "Name": "Resourcefulness",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [3, 0],
@@ -1119,7 +1119,7 @@
         {
           "Icon": "inv_weapon_shortblade_99",
           "Name": "Mirrored Blades",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [3, 1],
@@ -1141,7 +1141,7 @@
         {
           "Icon": "INV_Misc_Bomb_05",
           "Name": "T.N.T.",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "Lock and Load",
           "Support": [],
           "Position": [3, 2],
@@ -1163,7 +1163,7 @@
         {
           "Icon": "inv_alchemy_enchantedvial",
           "Name": "Toxicology",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [4, 0],
@@ -1185,7 +1185,7 @@
         {
           "Icon": "INV_Spear_02",
           "Name": "Wyvern Sting",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "",
           "Support": ["Noxious Stings","Black Arrow"],
           "Position": [4, 1],
@@ -1203,7 +1203,7 @@
         {
           "Icon": "Ability_Hunter_PotentVenom",
           "Name": "Noxious Stings",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "Wyvern Sting",
           "Support": [],
           "Position": [4, 2],
@@ -1225,7 +1225,7 @@
         {
           "Icon": "Ability_Hunter_HuntingParty",
           "Name": "Hunting Party",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [4, 3],
@@ -1243,7 +1243,7 @@
         {
           "Icon": "Ability_Hunter_LongShots",
           "Name": "Sniper Training",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [5, 0],
@@ -1269,7 +1269,7 @@
         {
           "Icon": "Ability_Hunter_SerpentSwiftness",
           "Name": "Serpent Spread",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [5, 2],
@@ -1291,7 +1291,7 @@
         {
           "Icon": "Spell_Shadow_PainSpike",
           "Name": "Black Arrow",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "Wyvern Sting",
           "Support": [],
           "Position": [6, 1],

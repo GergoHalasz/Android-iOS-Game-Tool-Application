@@ -165,11 +165,61 @@ getPaladinArrowList(String expansion) {
       ),
   ]];
 
+  var arrowListCata = [[
+     
+       ArrowWidget(
+        startPosition: Position(row: 2, column: 2),
+        endPosition: Position(row: 3, column: 2),
+        lengthType: 'short',
+        dependencyTalent: 'Speed of Light',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 3, column: 1),
+        endPosition: Position(row: 5, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Tower of Radiance',
+      ),
+  ], [
+       ArrowWidget(
+        startPosition: Position(row: 2, column: 1),
+        endPosition: Position(row: 3, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Shield of the Righteous',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 3, column: 1),
+        endPosition: Position(row: 4, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Holy Shield', 
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 2, column: 2),
+        endPosition: Position(row: 3, column: 2),
+        lengthType: 'short',
+        dependencyTalent: 'Grand Crusader',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 5, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Sacred Duty',
+      ),
+  ], [
+       ArrowWidget(
+        startPosition: Position(row: 0, column: 2),
+        endPosition: Position(row: 2, column: 2),
+        lengthType: 'medium',
+        dependencyTalent: 'Long Arm of the Law',
+      ),
+  ]];
+
   arrowWidgetsClass() {
     if (expansion == "tbc")
       return arrowListTbc;
     else if (expansion == "vanilla")
       return arrowListVanilla;
+    else if (expansion == 'cata')
+      return arrowListCata;
     else
       return arrowListWotlk;
   }

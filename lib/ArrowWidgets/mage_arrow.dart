@@ -114,8 +114,9 @@ getMageArrowList(String expansion) {
     ]
   ];
 
-  var arrowListWotlk = [[
-    RightCornerArrowWidget(
+  var arrowListWotlk = [
+    [
+      RightCornerArrowWidget(
         startPosition: Position(row: 4, column: 1),
         endPosition: Position(row: 5, column: 2),
         lengthType: 'short',
@@ -139,8 +140,9 @@ getMageArrowList(String expansion) {
         lengthType: 'short',
         dependencyTalent: 'Arcane Flows',
       ),
-  ], [
-    ArrowWidget(
+    ],
+    [
+      ArrowWidget(
         startPosition: Position(row: 2, column: 2),
         endPosition: Position(row: 4, column: 2),
         lengthType: 'medium',
@@ -164,8 +166,9 @@ getMageArrowList(String expansion) {
         lengthType: 'short',
         dependencyTalent: 'Firestarter',
       )
-  ], [
-    LeftCornerArrowWidget(
+    ],
+    [
+      LeftCornerArrowWidget(
         startPosition: Position(row: 4, column: 1),
         endPosition: Position(row: 5, column: 0),
         lengthType: 'short',
@@ -189,13 +192,91 @@ getMageArrowList(String expansion) {
         lengthType: 'short',
         dependencyTalent: 'Enduring Winter',
       )
-  ]];
+    ]
+  ];
+
+  var arrowListCata = [
+    [
+      LeftArrowWidget(
+        startPosition: Position(row: 2, column: 1),
+        endPosition: Position(row: 2, column: 0),
+        lengthType: 'short',
+        dependencyTalent: 'Arcane Flows',
+      ),
+       ArrowWidget(
+        startPosition: Position(row: 1, column: 2),
+        endPosition: Position(row: 2, column: 2),
+        lengthType: 'short',
+        dependencyTalent: 'Missile Barrage',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 2, column: 1),
+        endPosition: Position(row: 3, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Arcane Tactics',
+      ),
+      RightArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 4, column: 2),
+        lengthType: 'short',
+        dependencyTalent: 'Nether Vortex',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 6, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Arcane Power',
+      ),
+    ],
+    [
+      ArrowWidget(
+        startPosition: Position(row: 2, column: 2),
+        endPosition: Position(row: 3, column: 2),
+        lengthType: 'short',
+        dependencyTalent: 'Improved Hot Streak',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 6, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Living Bomb',
+      ),
+    ],
+    [
+      RightArrowWidget(
+        startPosition: Position(row: 2, column: 2),
+        endPosition: Position(row: 2, column: 3),
+        lengthType: 'short',
+        dependencyTalent: 'Improved Freeze',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 6, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Deep Freeze',
+      ),
+      LeftArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 4, column: 0),
+        lengthType: 'short',
+        dependencyTalent: 'Shattered Barrier',
+      ),
+      RightArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 4, column: 2),
+        lengthType: 'short',
+        dependencyTalent: 'Reactive Barrier',
+      ),
+    ]
+  ];
 
   arrowWidgetsClass() {
     if (expansion == "tbc")
       return arrowListTbc;
     else if (expansion == "vanilla")
       return arrowListVanilla;
+    else if (expansion == 'cata')
+      return arrowListCata;
     else
       return arrowListWotlk;
   }

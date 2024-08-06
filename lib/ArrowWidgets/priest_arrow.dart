@@ -118,7 +118,8 @@ getPriestArrowList(String expansion) {
     ]
   ];
 
-  var arrowListWotlk = [[
+  var arrowListWotlk = [
+    [
       ArrowWidget(
         startPosition: Position(row: 2, column: 2),
         endPosition: Position(row: 4, column: 2),
@@ -145,7 +146,8 @@ getPriestArrowList(String expansion) {
         lengthType: 'medium',
         dependencyTalent: 'Lightwell',
       )
-    ],[
+    ],
+    [
       RightArrowWidget(
         startPosition: Position(row: 0, column: 0),
         endPosition: Position(row: 0, column: 1),
@@ -188,13 +190,97 @@ getPriestArrowList(String expansion) {
         lengthType: 'medium',
         dependencyTalent: 'Dispersion',
       )
-    ]];
+    ]
+  ];
+
+  var arrowListCata = [
+    [
+      RightArrowWidget(
+        startPosition: Position(row: 1, column: 0),
+        endPosition: Position(row: 1, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Archangel',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 2, column: 0),
+        endPosition: Position(row: 4, column: 0),
+        lengthType: 'medium',
+        dependencyTalent: 'Strength of Soul',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 6, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Strength of Soul',
+      ),
+    ],
+    [
+      ArrowWidget(
+        startPosition: Position(row: 0, column: 0),
+        endPosition: Position(row: 2, column: 0),
+        lengthType: 'medium',
+        dependencyTalent: 'Divine Touch',
+      ),
+ArrowWidget(
+        startPosition: Position(row: 2, column: 0),
+        endPosition: Position(row: 3, column: 0),
+        lengthType: 'short',
+        dependencyTalent: 'Rapid Renewal',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 2, column: 1),
+        endPosition: Position(row: 4, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Chakra',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 5, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Heavenly Voice',
+      ),
+      RightArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 4, column: 2),
+        lengthType: 'short',
+        dependencyTalent: 'Revelations',
+      ),
+    ],
+    [
+      ArrowWidget(
+        startPosition: Position(row: 1, column: 0),
+        endPosition: Position(row: 3, column: 0),
+        lengthType: 'medium',
+        dependencyTalent: 'Silence',
+      ),
+      RightArrowWidget(
+        startPosition: Position(row: 3, column: 1),
+        endPosition: Position(row: 3, column: 2),
+        lengthType: 'short',
+        dependencyTalent: 'Masochism',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 3, column: 1),
+        endPosition: Position(row: 4, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Vampiric Touch',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 5, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Sin and Punishment',
+      ),
+    ]
+  ];
 
   arrowWidgetsClass() {
     if (expansion == "tbc")
       return arrowListTbc;
     else if (expansion == "vanilla")
       return arrowListVanilla;
+    else if (expansion == 'cata')
+      return arrowListCata;
     else
       return arrowListWotlk;
   }

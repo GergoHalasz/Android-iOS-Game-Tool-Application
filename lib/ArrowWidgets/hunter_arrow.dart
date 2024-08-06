@@ -1,3 +1,5 @@
+import 'package:wowtalentcalculator/ArrowWidgets/right_arrow_widget.dart';
+import 'package:wowtalentcalculator/ArrowWidgets/right_corner_arrow_widget.dart';
 import 'package:wowtalentcalculator/model/position.dart';
 
 import 'arrow_widget.dart';
@@ -231,26 +233,68 @@ getHunterArrowList(String expansion) {
   var arrowListCata = [
     [
       ArrowWidget(
-        startPosition: Position(row: 8, column: 1),
-        endPosition: Position(row: 10, column: 1),
+        startPosition: Position(row: 1, column: 2),
+        endPosition: Position(row: 2, column: 2),
+        lengthType: 'short',
+        dependencyTalent: "Focus Fire",
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 2, column: 1),
+        endPosition: Position(row: 4, column: 1),
         lengthType: 'medium',
-        dependencyTalent: "Explosive Shot",
+        dependencyTalent: "Bestial Wrath",
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 5, column: 1),
+        lengthType: 'short',
+        dependencyTalent: "The Beast Within",
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 2),
+        endPosition: Position(row: 5, column: 2),
+        lengthType: 'short',
+        dependencyTalent: "Invigoration",
       ),
     ],
     [
       ArrowWidget(
-        startPosition: Position(row: 8, column: 1),
-        endPosition: Position(row: 10, column: 1),
-        lengthType: 'medium',
-        dependencyTalent: "Explosive Shot",
+        startPosition: Position(row: 0, column: 0),
+        endPosition: Position(row: 1, column: 0),
+        lengthType: 'short',
+        dependencyTalent: "Sic 'Em!",
       ),
+      RightCornerArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 5, column: 2),
+        lengthType: 'short',
+        dependencyTalent: "Marked for Death",
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 6, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: "Chimera Shot",
+      )
     ],
     [
       ArrowWidget(
-        startPosition: Position(row: 8, column: 1),
-        endPosition: Position(row: 10, column: 1),
+        startPosition: Position(row: 2, column: 2),
+        endPosition: Position(row: 3, column: 2),
+        lengthType: 'short',
+        dependencyTalent: "T.N.T.",
+      ),
+      RightArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 4, column: 2),
+        lengthType: 'short',
+        dependencyTalent: "Noxious Stings",
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 6, column: 1),
         lengthType: 'medium',
-        dependencyTalent: "Explosive Shot",
+        dependencyTalent: "Black Arrow",
       ),
     ]
   ];

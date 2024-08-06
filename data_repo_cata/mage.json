@@ -9,11 +9,11 @@
         {
           "Icon": "Spell_Shadow_ManaBurn",
           "Name": "Arcane Concentration",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [0, 0],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -35,11 +35,11 @@
         {
           "Icon": "Spell_Frost_IceShock",
           "Name": "Improved Counterspell",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [0, 1],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -57,11 +57,11 @@
         {
           "Icon": "Ability_Mage_NetherWindPresence",
           "Name": "Netherwind Presence",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [0, 2],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -83,7 +83,7 @@
         {
           "Icon": "Spell_Arcane_FocusedPower",
           "Name": "Torment the Weak",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [1, 0],
@@ -109,7 +109,7 @@
         {
           "Icon": "spell_arcane_invocation",
           "Name": "Invocation",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [1, 1],
@@ -131,7 +131,7 @@
         {
           "Icon": "Spell_Nature_StarFall",
           "Name": "Improved Arcane Missiles",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": ["Missile Barrage"],
           "Position": [1, 2],
@@ -153,7 +153,7 @@
         {
           "Icon": "Spell_Arcane_Blink",
           "Name": "Improved Blink",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [1, 3],
@@ -175,7 +175,7 @@
         {
           "Icon": "Ability_Mage_PotentSpirit",
           "Name": "Arcane Flows",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "Presence of Mind",
           "Support": [],
           "Position": [2, 0],
@@ -197,7 +197,7 @@
         {
           "Icon": "Spell_Nature_EnchantArmor",
           "Name": "Presence of Mind",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "",
           "Support": ["Arcane Flows", "Arcane Tactics"],
           "Position": [2, 1],
@@ -215,7 +215,7 @@
         {
           "Icon": "Ability_Mage_MissileBarrage",
           "Name": "Missile Barrage",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "Improved Arcane Missiles",
           "Support": [],
           "Position": [2, 2],
@@ -237,7 +237,7 @@
         {
           "Icon": "Spell_Arcane_PrismaticCloak",
           "Name": "Prismatic Cloak",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [2, 3],
@@ -263,7 +263,7 @@
         {
           "Icon": "Spell_Nature_Polymorph",
           "Name": "Improved Polymorph",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [3, 0],
@@ -285,7 +285,7 @@
         {
           "Icon": "spell_arcane_arcanetactics",
           "Name": "Arcane Tactics",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "Presence of Mind",
           "Support": [],
           "Position": [3, 1],
@@ -303,7 +303,7 @@
         {
           "Icon": "Ability_Mage_IncantersAbsorbtion",
           "Name": "Incanter's Absorption",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [3, 2],
@@ -325,7 +325,7 @@
         {
           "Icon": "Spell_Nature_WispSplode",
           "Name": "Improved Arcane Explosion",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [3, 3],
@@ -347,7 +347,7 @@
         {
           "Icon": "Spell_Arcane_ArcanePotency",
           "Name": "Arcane Potency",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [4, 0],
@@ -369,7 +369,7 @@
         {
           "Icon": "Spell_Nature_Slow",
           "Name": "Slow",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "",
           "Support": ["Nether Vortex"],
           "Position": [4, 1],
@@ -387,7 +387,7 @@
         {
           "Icon": "Spell_Arcane_Blast",
           "Name": "Nether Vortex",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "Slow",
           "Support": [],
           "Position": [4, 2],
@@ -409,7 +409,7 @@
         {
           "Icon": "Spell_Arcane_StudentOfMagic",
           "Name": "Focus Magic",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [5, 0],
@@ -427,7 +427,7 @@
         {
           "Icon": "INV_Misc_Gem_Emerald_01",
           "Name": "Improved Mana Gem",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [5, 2],
@@ -449,7 +449,7 @@
         {
           "Icon": "Spell_Nature_Lightning",
           "Name": "Arcane Power",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "Slow",
           "Support": [],
           "Position": [6, 1],
@@ -477,11 +477,11 @@
         {
           "Icon": "Spell_Fire_MasterOfElements",
           "Name": "Master of Elements",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [0, 0],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -499,11 +499,11 @@
         {
           "Icon": "spell_burningsoul",
           "Name": "Burning Soul",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [0, 1],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -525,11 +525,11 @@
         {
           "Icon": "Spell_Fire_Fireball",
           "Name": "Improved Fire Blast",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [0, 2],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -547,7 +547,7 @@
         {
           "Icon": "Spell_Fire_Incinerate",
           "Name": "Ignite",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [1, 0],
@@ -573,7 +573,7 @@
         {
           "Icon": "Spell_Fire_Immolation",
           "Name": "Fire Power",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [1, 1],
@@ -599,7 +599,7 @@
         {
           "Icon": "Spell_Fire_BurningSpeed",
           "Name": "Blazing Speed",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [1, 2],
@@ -621,7 +621,7 @@
         {
           "Icon": "Spell_Fire_MeteorStorm",
           "Name": "Impact",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [1, 3],
@@ -643,7 +643,7 @@
         {
           "Icon": "spell_fire_rune",
           "Name": "Cauterize",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [2, 0],
@@ -665,7 +665,7 @@
         {
           "Icon": "Spell_Holy_Excorcism_02",
           "Name": "Blast Wave",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [2, 1],
@@ -683,7 +683,7 @@
         {
           "Icon": "Ability_Mage_HotStreak",
           "Name": "Hot Streak",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "",
           "Support": ["Improved Hot Streak"],
           "Position": [2, 2],
@@ -701,7 +701,7 @@
         {
           "Icon": "Spell_Fire_SoulBurn",
           "Name": "Improved Scorch",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [2, 3],
@@ -723,7 +723,7 @@
         {
           "Icon": "Spell_Fire_FireArmor",
           "Name": "Molten Shields",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [3, 0],
@@ -741,7 +741,7 @@
         {
           "Icon": "Spell_Fire_SealOfFire",
           "Name": "Combustion",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [3, 1],
@@ -759,7 +759,7 @@
         {
           "Icon": "Ability_Mage_HotStreak",
           "Name": "Improved Hot Streak",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "Hot Streak",
           "Support": [],
           "Position": [3, 2],
@@ -781,7 +781,7 @@
         {
           "Icon": "Ability_Mage_FireStarter",
           "Name": "Firestarter",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [3, 3],
@@ -799,7 +799,7 @@
         {
           "Icon": "Spell_Fire_SelfDestruct",
           "Name": "Improved Flamestrike",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [4, 0],
@@ -821,7 +821,7 @@
         {
           "Icon": "INV_Misc_Head_Dragon_01",
           "Name": "Dragon's Breath",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "",
           "Support": ["Living Bomb"],
           "Position": [4, 1],
@@ -839,7 +839,7 @@
         {
           "Icon": "Spell_Fire_MoltenBlood",
           "Name": "Molten Fury",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [4, 2],
@@ -865,7 +865,7 @@
         {
           "Icon": "Spell_Fire_Burnout",
           "Name": "Pyromaniac",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [5, 0],
@@ -887,7 +887,7 @@
         {
           "Icon": "Spell_Nature_WispHeal",
           "Name": "Critical Mass",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [5, 2],
@@ -913,7 +913,7 @@
         {
           "Icon": "Ability_Mage_LivingBomb",
           "Name": "Living Bomb",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [6, 1],
@@ -941,11 +941,11 @@
         {
           "Icon": "Spell_Frost_ChillingBolt",
           "Name": "Early Frost",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [0, 0],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -963,11 +963,11 @@
         {
           "Icon": "Spell_Frost_Frostbolt",
           "Name": "Piercing Ice",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [0, 1],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -989,11 +989,11 @@
         {
           "Icon": "Spell_Frost_FrostShock",
           "Name": "Shatter",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [0, 2],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -1011,7 +1011,7 @@
         {
           "Icon": "Spell_Frost_IceFloes",
           "Name": "Ice Floes",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [1, 0],
@@ -1037,7 +1037,7 @@
         {
           "Icon": "Spell_Frost_Glacier",
           "Name": "Improved Cone of Cold",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [1, 1],
@@ -1059,7 +1059,7 @@
         {
           "Icon": "spell_frost_piercing chill",
           "Name": "Piercing Chill",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [1, 2],
@@ -1081,7 +1081,7 @@
         {
           "Icon": "Spell_Frost_Wisp",
           "Name": "Permafrost",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [1, 3],
@@ -1107,7 +1107,7 @@
         {
           "Icon": "spell_frost_ice shards",
           "Name": "Ice Shards",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [2, 0],
@@ -1129,7 +1129,7 @@
         {
           "Icon": "Spell_Frost_ColdHearted",
           "Name": "Icy Veins",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [2, 1],
@@ -1147,7 +1147,7 @@
         {
           "Icon": "Ability_Mage_WintersGrasp",
           "Name": "Fingers of Frost",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": ["Improved Freeze"],
           "Position": [2, 2],
@@ -1173,7 +1173,7 @@
         {
           "Icon": "Spell_Frost_SummonWaterElemental",
           "Name": "Improved Freeze",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "Fingers of Frost",
           "Support": [],
           "Position": [2, 3],
@@ -1199,7 +1199,7 @@
         {
           "Icon": "Spell_Frost_ArcticWinds",
           "Name": "Enduring Winter",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [3, 0],
@@ -1225,7 +1225,7 @@
         {
           "Icon": "Spell_Frost_WizardMark",
           "Name": "Cold Snap",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [3, 1],
@@ -1243,7 +1243,7 @@
         {
           "Icon": "Ability_Mage_BrainFreeze",
           "Name": "Brain Freeze",
-          "Points": 3,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [3, 2],
@@ -1269,7 +1269,7 @@
         {
           "Icon": "Ability_Mage_ColdAsIce",
           "Name": "Shattered Barrier",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "Ice Barrier",
           "Support": [],
           "Position": [4, 0],
@@ -1291,7 +1291,7 @@
         {
           "Icon": "Spell_Ice_Lament",
           "Name": "Ice Barrier",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "",
           "Support": ["Shattered Barrier", "Reactive Barrier", "Deep Freeze"],
           "Position": [4, 1],
@@ -1309,7 +1309,7 @@
         {
           "Icon": "Spell_Frost_ManaRecharge",
           "Name": "Reactive Barrier",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "Ice Barrier",
           "Support": [],
           "Position": [4, 2],
@@ -1331,7 +1331,7 @@
         {
           "Icon": "spell_firefrost orb",
           "Name": "Frostfire Orb",
-          "Points": 2,
+          "Points": 0,
           "Dependency": "",
           "Support": [],
           "Position": [5, 2],
@@ -1353,7 +1353,7 @@
         {
           "Icon": "Ability_Mage_DeepFreeze",
           "Name": "Deep Freeze",
-          "Points": 1,
+          "Points": 0,
           "Dependency": "Ice Barrier",
           "Support": [],
           "Position": [6, 1],
