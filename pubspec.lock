@@ -180,10 +180,10 @@ packages:
     dependency: transitive
     description:
       name: freezed_annotation
-      sha256: c2e2d632dd9b8a2b7751117abcfc2b4888ecfe181bd9fca7170d9ef02e595fe2
+      sha256: "1be037f901137bf2b9a0c309e9bf2694d6ec77687645211218191ade4f41a4b8"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.4"
+    version: "1.1.0"
   google_mobile_ads:
     dependency: "direct main"
     description:
@@ -372,10 +372,10 @@ packages:
     dependency: "direct main"
     description:
       name: purchases_flutter
-      sha256: d3710abb6415a665067149c15a7cdb407f67fcdc8c4703d8f9332e8bfdb203ff
+      sha256: "8838564cff8c702ffde348fc8e7a247d843559ae4d28adce668572b53a4a243f"
       url: "https://pub.dev"
     source: hosted
-    version: "7.0.1"
+    version: "3.10.1"
   rate_my_app:
     dependency: "direct main"
     description:

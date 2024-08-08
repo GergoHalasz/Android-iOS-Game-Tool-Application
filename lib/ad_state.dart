@@ -13,7 +13,7 @@ class AdState extends ChangeNotifier {
   AdState(this.initialization) {
     this.initialization = initialization;
     createInterstitialAd();
-    Purchases.addCustomerInfoUpdateListener((purchaserInfo) {
+    Purchases.addPurchaserInfoUpdateListener((purchaserInfo) {
       updatePurchaseStatus();
     });
     checkIsAdFreeversion();
@@ -22,7 +22,7 @@ class AdState extends ChangeNotifier {
   bool isAdFreeVersion = false;
 
   Future updatePurchaseStatus() async {
-    final purchaserInfo = await Purchases.getCustomerInfo();
+    final purchaserInfo = await Purchases.getPurchaserInfo();
     final productName =
         Platform.isAndroid ? "1234567890" : "wowtc_ad_free_version";
 
