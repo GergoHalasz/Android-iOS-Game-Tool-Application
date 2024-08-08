@@ -378,6 +378,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                   ...MenuItems.itemsFirst.map(buildItem).toList(),
                   if (talentProvider.expansion == 'wotlk')
                     ...MenuItems.itemsThird.map(buildItem).toList(),
+                  ...MenuItems.itemsForth.map(buildItem).toList(),
                 ],
                 color: Color(0xff556F7A),
               ),
@@ -435,7 +436,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                         ),
                       ),
                       Align(
-                        alignment: Alignment.centerRight,
+                        alignment: Alignment.center,
                         child: Container(
                           padding: EdgeInsets.only(right: 15),
                           child: Row(
@@ -449,21 +450,20 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                           ),
                         ),
                       ),
-                      if (talentProvider.expansion != 'cata')
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: Container(
-                            padding: EdgeInsets.only(right: 15),
-                            child: Row(
-                              children: [
-                                Text('Level: '),
-                                Text('$level',
-                                    style:
-                                        TextStyle(color: kColorSelectiveYellow))
-                              ],
-                            ),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: Container(
+                          padding: EdgeInsets.only(right: 15),
+                          child: Row(
+                            children: [
+                              Text('Level: '),
+                              Text('$level',
+                                  style:
+                                      TextStyle(color: kColorSelectiveYellow))
+                            ],
                           ),
-                        )
+                        ),
+                      )
                     ])),
             Expanded(
               child: TabBarView(
@@ -574,6 +574,13 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     final adState = Provider.of<AdState>(context, listen: false);
 
     switch (item) {
+      case MenuItems.itemResetTree:
+        talentProvider.resetTalentTree(_selectedIndex);
+        break;
+      case MenuItems.itemShareBuild:
+        shareBuild();
+        break;
+
       case MenuItems.itemSetGlyphs:
         Navigator.push(
           context,
@@ -601,106 +608,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
             adState.changeToAdFreeVersion();
           }
         }
-        break;
-      case MenuItems.itemRestorePurchases:
-        try {
-          final adState = Provider.of<AdState>(context, listen: false);
-          if (!adState.isAdFreeVersion) {
-            CustomerInfo restoredInfo = await Purchases.restorePurchases();
-            if (restoredInfo.allPurchasedProductIdentifiers.length > 0 &&
-                (restoredInfo.allPurchasedProductIdentifiers[0] ==
-                        "wowtc_ad_free_version" ||
-                    restoredInfo.allPurchasedProductIdentifiers[0] ==
-                        "123456")) {
-              adState.changeToAdFreeVersion();
-            } else {
-              showDialog(
-                  context: context,
-                  builder: (context) {
-                    return AlertDialog(
-                      title: new Text("Restore Purchases"),
-                      content: Text(
-                          "Please sign in with your Google/Apple account you did the purchase."),
-                      actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text('OK'))
-                      ],
-                    );
-                  });
-            }
-          }
-          // ... check restored purchaserInfo to see if entitlement is now active
-        } on PlatformException catch (e) {
-          print(e);
-        }
-        break;
-      case MenuItems.itemAbout:
-        showDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                backgroundColor: Color(0xff2E6171),
-                title: new Text("Classic Talent Calculator"),
-                content: DefaultTextStyle(
-                  style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                      fontFamily: "Roboto",
-                      fontWeight: FontWeight.w500),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      RichText(
-                          text: TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                            text:
-                                "Copyright 2024 Halasz Gergo.All rights reserved.\n\nLogo and store icons created using Icons8 icons are based on remasterings by warcrafttavern.com\n\n",
-                          ),
-                          TextSpan(
-                            text:
-                                "This application is not affiliated with Blizzard Entertainment® or World of Warcraft in any way. All the World of Warcraft texts, logos, images and trademarks are property of Blizzard Entertainment® and are used according to community guidelines.World of Warcraft, Warcraft and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.",
-                            style: TextStyle(fontSize: 13),
-                          )
-                        ],
-                      )),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          InkWell(
-                            child: Text(
-                              'Privacy Policy',
-                              style: TextStyle(
-                                  color: Colors.blue,
-                                  decoration: TextDecoration.underline,
-                                  fontSize: 13),
-                            ),
-                            onTap: () {
-                              launch(_privacyUrl);
-                            },
-                          ),
-                          InkWell(
-                            child: Text(
-                              'Terms and Conditions',
-                              style: TextStyle(
-                                  color: Colors.blue,
-                                  decoration: TextDecoration.underline,
-                                  fontSize: 13),
-                            ),
-                            onTap: () {
-                              launch(_termsUrl);
-                            },
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              );
-            });
         break;
       case MenuItems.itemLeaveRating:
         const url =

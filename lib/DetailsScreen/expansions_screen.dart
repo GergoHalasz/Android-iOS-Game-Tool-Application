@@ -89,6 +89,13 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
     final adState = Provider.of<AdState>(context);
 
     return Scaffold(
+        appBar: AppBar(
+          iconTheme: IconThemeData(color: Colors.white),
+          backgroundColor: Color(0xff2E6171),
+          title:
+              Text("Talent Calculator", style: TextStyle(color: Colors.white)),
+          centerTitle: true,
+        ),
         drawer: Drawer(child: DrawerScreen()),
         floatingActionButton: !adState.isAdFreeVersion
             ? GestureDetector(
@@ -144,9 +151,49 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       ...expansions.asMap().entries.map((entry) {
-                          if(entry.value == 'vanilla') {
-                            return Column(children: [
+                        if (entry.value == 'vanilla') {
+                          return Column(
+                            children: [
                               Container(
+                                  width: SizeConfig.cellSize / 0.8,
+                                  height: SizeConfig.cellSize / 0.8,
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    child: Ink(
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                "assets/Class/${entry.value}.png"),
+                                            fit: BoxFit.cover),
+                                      ),
+                                      child: Container(
+                                        child: InkWell(
+                                          onTap: () async {
+                                            // adState.initializeInterstitialAds();
+
+                                            Navigator.push(
+                                                context,
+                                                buildPageRoute(ClassesScreen(
+                                                  expansion: entry.value,
+                                                  backgroundImagePath:
+                                                      imagesList[entry.key],
+                                                )));
+                                          },
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                      ),
+                                    ),
+                                  )),
+                              Text(
+                                'SoD & Vanilla',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16),
+                              )
+                            ],
+                          );
+                        }
+                        return Container(
                             width: SizeConfig.cellSize / 0.8,
                             height: SizeConfig.cellSize / 0.8,
                             child: Material(
@@ -162,40 +209,6 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                                   child: InkWell(
                                     onTap: () async {
                                       // adState.initializeInterstitialAds();
-
-                                      Navigator.push(
-                                          context,
-                                          buildPageRoute(ClassesScreen(
-                                            expansion: entry.value,
-                                            backgroundImagePath:
-                                                imagesList[entry.key],
-                                          )));
-                                    },
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                ),
-                              ),
-                            )),
-                            Text('SoD & Vanilla',style: TextStyle(color: Colors.white,fontSize: 16),)
-                            ],);
-                          }
-                          return Container(
-                            width: SizeConfig.cellSize / 0.8,
-                            height: SizeConfig.cellSize / 0.8,
-                            child: Material(
-                              color: Colors.transparent,
-                              child: Ink(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          "assets/Class/${entry.value}.png"),
-                                      fit: BoxFit.cover),
-                                ),
-                                child: Container(
-                                  child: InkWell(
-                                    onTap: () async {
-                                      // adState.initializeInterstitialAds();
-
                                       Navigator.push(
                                           context,
                                           buildPageRoute(ClassesScreen(
