@@ -13,7 +13,7 @@
           "Dependency": "",
           "Support": [],
           "Position": [0, 0],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -35,7 +35,7 @@
           "Dependency": "",
           "Support": [],
           "Position": [0, 1],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -61,7 +61,7 @@
           "Dependency": "",
           "Support": [],
           "Position": [0, 2],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -485,7 +485,7 @@
           "Dependency": "",
           "Support": ["Divine Touch"],
           "Position": [0, 0],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -507,7 +507,7 @@
           "Dependency": "",
           "Support": [],
           "Position": [0, 1],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -533,7 +533,7 @@
           "Dependency": "",
           "Support": [],
           "Position": [0, 2],
-          "Enable": false,
+          "Enable": true,
           "Tier": 1,
           "Ranks": {
             "Rank": [
@@ -619,7 +619,7 @@
           "Name": "Divine Touch",
           "Points": 0,
           "Dependency": "Improved Renew",
-          "Support": [],
+          "Support": ["Rapid Renewal"],
           "Position": [2, 0],
           "Enable": false,
           "Tier": 3,
@@ -783,7 +783,7 @@
           "Name": "Chakra",
           "Points": 0,
           "Dependency": "Holy Concentration",
-          "Support": [],
+          "Support": ["Revelations","Heavenly Voice"],
           "Position": [4, 1],
           "Enable": false,
           "Tier": 5,
@@ -1004,8 +1004,8 @@
           "Icon": "Spell_Shadow_PsychicScream",
           "Name": "Improved Psychic Scream",
           "Points": 0,
-          "Dependency": "Silence",
-          "Support": [],
+          "Dependency": "",
+          "Support": ["Silence"],
           "Position": [1, 0],
           "Enable": false,
           "Tier": 2,
@@ -1158,8 +1158,8 @@
           "Icon": "ability_priest_silence",
           "Name": "Silence",
           "Points": 0,
-          "Dependency": "",
-          "Support": ["Vampiric Embrace"],
+          "Dependency": "Improved Psychic Scream",
+          "Support": [],
           "Position": [3, 0],
           "Enable": false,
           "Tier": 4,
@@ -1318,7 +1318,7 @@
           "Icon": "Spell_Holy_PrayerofShadowProtection",
           "Name": "Sin and Punishment",
           "Points": 0,
-          "Dependency": "",
+          "Dependency": "Vampiric Touch",
           "Support": [],
           "Position": [5, 1],
           "Enable": false,

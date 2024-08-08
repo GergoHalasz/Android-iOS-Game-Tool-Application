@@ -1,0 +1,1354 @@
+[
+  {
+    "Name": "Arms",
+    "Icon": "ability_rogue_eviscerate",
+    "Background": "warrior_arms",
+    "Points": 0,
+    "Talents": {
+      "Talent": [
+        {
+          "Icon": "Ability_Warrior_UnrelentingAssault",
+          "Name": "War Academy",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 0],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the damage of Mortal Strike, Raging Blow, Devastate, Victory Rush and Slam by 5%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the damage of Mortal Strike, Raging Blow, Devastate, Victory Rush and Slam by 10%."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases the damage of Mortal Strike, Raging Blow, Devastate, Victory Rush and Slam by 15%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Misc_Bandage_05",
+          "Name": "Field Dressing",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 1],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases all healing received by 3%, and the effectiveness of your self-healing abilities by an additional 10%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases all healing received by 6%, and the effectiveness of your self-healing abilities by an additional 20%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "warrior_talent_icon_blitz",
+          "Name": "Blitz",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 2],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Charge generates 5 additional Rage and stuns an additional nearby target."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Charge generates 10 additional rage and stuns an additional 2 nearby targets."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Nature_EnchantArmor",
+          "Name": "Tactical Mastery",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 0],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "You retain up to an additional 25 Rage when you change stances."
+              },
+              {
+                "Number": 2,
+                "Description": "You retain up to an additional 50 Rage when you change stances."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_Harass",
+          "Name": "Second Wind",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 1],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Whenever you are struck by a Stun or Immobilize effect you generate 10 Rage and 2% of your total health over 10 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Whenever you are struck by a Stun or Immobilize effect you generate 20 Rage and 5% of your total health over 10 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_BackStab",
+          "Name": "Deep Wounds",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Impale"],
+          "Position": [1, 2],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your critical strikes cause the opponent to bleed, dealing 16% of your melee weapon's average damage over 6 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Your critical strikes cause the opponent to bleed, dealing 32% of your melee weapon's average damage over 6 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "Your critical strikes cause the opponent to bleed, dealing 48% of your melee weapon's average damage over 6 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Achievement_BG_winWSG_3-0",
+          "Name": "Drums of War",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 3],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the Rage cost of your Pummel, Demoralizing Shout, Intimidating Shout and Challenging Shout by 50%."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the Rage cost of your Pummel, Demoralizing Shout, Intimidating Shout and Challenging Shout by 100%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_HungerforBlood",
+          "Name": "Taste for Blood",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 0],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases your Overpower critical strike chance by 20%. In addition, whenever your Rend ability causes damage, you have a 33% chance of allowing the use of Overpower for 9 sec. This effect will not occur more than once every 5 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases your Overpower critical strike chance by 40%. In addition, whenever your Rend ability causes damage, you have a 66% chance of allowing the use of Overpower for 9 sec. This effect will not occur more than once every 5 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases your Overpower critical strike chance by 60%. In addition, whenever your Rend ability causes damage, you have a 100% chance of allowing the use of Overpower for 9 sec. This effect will not occur more than once every 5 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_SliceDice",
+          "Name": "Sweeping Strikes",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 1],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your melee attacks strike an additional nearby opponent. Lasts 10 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_SearingArrow",
+          "Name": "Impale",
+          "Points": 0,
+          "Dependency": "Deep Wounds",
+          "Support": [],
+          "Position": [2, 2],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the critical strike damage bonus of Mortal Strike, Slam and Overpower by 10%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the critical strike damage bonus of Mortal Strike, Slam and Overpower by 20%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_ShockWave",
+          "Name": "Improved Hamstring",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 3],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "When reapplying Hamstring, you immobilize the target for 5 sec. This effect cannot occur more than once every 60 sec. In addition, reduces the global cooldown of your Hamstring by 0.25 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "When reapplying Hamstring, you immobilize the target for 5 sec. This effect cannot occur more than once every 30 sec. In addition, reduces the global cooldown of your Hamstring by 0.5 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_DecisiveStrike",
+          "Name": "Improved Slam",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 0],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Decreases the swing time of Slam by 0.5 sec and increases its damage by 10%."
+              },
+              {
+                "Number": 2,
+                "Description": "Decreases the swing time of Slam by 1 sec and increases its damage by 20%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "achievement_boss_kingymiron",
+          "Name": "Deadly Calm",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 1],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "For the next 10 sec, none of your abilities cost rage, but you continue to generate rage. Cannot be used during Inner Rage."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_BloodFrenzy",
+          "Name": "Blood Frenzy",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 2],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your bleed effects cause targets to take an extra 2% physical damage. Applying a bleed effect increases bleed damage taken by the target by 15% for 1 min. In addition, your autoattacks have a 5% chance to generate 20 additional Rage."
+              },
+              {
+                "Number": 2,
+                "Description": "Your bleed effects cause targets to take an extra 4% physical damage. Applying a bleed effect increases bleed damage taken by the target by 30% for 1 min. In addition, your autoattacks have a 10% chance to generate 20 additional Rage."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "warrior_talent_icon_lambstotheslaughter",
+          "Name": "Lambs to the Slaughter",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 0],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Mortal Strike causes the Slaughter effect, which refreshes the duration of Rend on the target and increases the damage of your Execute, Overpower, Slam and Mortal Strike by 10%. Lasts 15 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Mortal Strike causes the Slaughter effect, which refreshes the duration of Rend on the target and increases the damage of your Execute, Overpower, Slam and Mortal Strike by 10%. Lasts 15 sec. Stacks up to 2 times."
+              },
+              {
+                "Number": 3,
+                "Description": "Your Mortal Strike causes the Slaughter effect, which refreshes the duration of Rend on the target and increases the damage of your Execute, Overpower, Slam and Mortal Strike by 10%. Lasts 15 sec. Stacks up to 3 times."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_BullRush",
+          "Name": "Juggernaut",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Throwdown","Bladestorm"],
+          "Position": [4, 1],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Charge ability is now usable while in combat and in all stances, and the cooldown of your Charge is reduced by 2 sec. Following a Charge, your next Slam or Mortal Strike has an additional 25% chance to critically hit if used within 10 sec. However, Charge and Intercept now share a cooldown."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_ImprovedDisciplines",
+          "Name": "Sudden Death",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 3],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your melee hits have a 3% chance of resetting the cooldown on your Colossus Smash, and you keep 5 rage after using Execute."
+              },
+              {
+                "Number": 2,
+                "Description": "Your melee hits have a 6% chance of resetting the cooldown on your Colossus Smash, and you keep 10 rage after using Execute."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_Trauma",
+          "Name": "Wrecking Crew",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 0],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Mortal Strike critical hits have a 50% chance to Enrage you, increasing physical damage caused by 5% for 12 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Mortal Strike critical hits have a 100% chance to Enrage you, increasing physical damage caused by 10% for 12 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "inv_mace_62",
+          "Name": "Throwdown",
+          "Points": 0,
+          "Dependency": "Juggernaut",
+          "Support": [],
+          "Position": [5, 2],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Knocks the target to the ground and stuns it for 5 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_Bladestorm",
+          "Name": "Bladestorm",
+          "Points": 0,
+          "Dependency": "Juggernaut",
+          "Support": [],
+          "Position": [6, 1],
+          "Enable": false,
+          "Tier": 7,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "You become a whirling storm of destructive force, instantly striking all nearby targets for 150% weapon damage and continuing to perform a whirlwind attack every 1 sec for 6 sec. While under the effects of Bladestorm, you do not feel pity or remorse or fear and you cannot be stopped unless killed or disarmed, but you cannot perform any other abilities."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Fury",
+    "Icon": "ability_warrior_innerrage",
+    "Background": "warrior_fury",
+    "Points": 0,
+    "Talents": {
+      "Talent": [
+        {
+          "Icon": "Spell_Shadow_SummonImp",
+          "Name": "Blood Craze",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 0],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "After taking any damage, you have a 10% chance to regenerate 2% of your total health over 5 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "After taking any damage, you have a 10% chance to regenerate 4% of your total Health over 5 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "After taking any damage, you have a 10% chance to regenerate 6% of your total Health over 5 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Helmet_06",
+          "Name": "Battle Trance",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 1],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Bloodthirst, Mortal Strike and Shield Slam hits have a 5% chance to make your next special attack that costs more than 5 Rage consumes no Rage."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Bloodthirst, Mortal Strike and Shield Slam hits have a 10% chance to make your next special attack that costs more than 5 Rage consumes no Rage."
+              },
+              {
+                "Number": 3,
+                "Description": "Your Bloodthirst, Mortal Strike and Shield Slam hits have a 15% chance to make your next special attack that costs more than 5 Rage consumes no Rage."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Rogue_Eviscerate",
+          "Name": "Cruelty",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 2],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the critical strike chance of Bloodthirst, Mortal Strike and Shield Slam by 5%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the critical strike chance of Bloodthirst, Mortal Strike and Shield Slam by 10%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Sword_48",
+          "Name": "Executioner",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 0],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Execute hits have a 50% chance to improve your melee attack speed by 5% for 9 sec. This effect stacks up to 5 times."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Execute hits have a 100% chance to improve your melee attack speed by 5% for 9 sec. This effect stacks up to 5 times."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Nature_Purge",
+          "Name": "Booming Voice",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 1],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the cooldown of your Battle Shout and Commanding Shout by 15 sec and causes those abilities to generate 5 additional Rage."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the cooldown of your Battle Shout and Commanding Shout by 30 sec and causes those abilities to generate 10 additional Rage."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_CommandingShout",
+          "Name": "Rude Interruption",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 2],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Successfully interrupting a spell with Pummel increases your damage by 5% for 15 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Successfully interrupting a spell with Pummel increases your damage by 5% for 30 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_DeathScream",
+          "Name": "Piercing Howl",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 3],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Causes all enemies within 10 yards to be Dazed, reducing movement speed by 50% for 6 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_GhoulFrenzy",
+          "Name": "Flurry",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 0],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases your attack speed by 8% for your next 3 swings after dealing a melee critical strike."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases your attack speed by 16% for your next 3 swings after dealing a melee critical strike."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases your attack speed by 25% for your next 3 swings after dealing a melee critical strike."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_DeathPact",
+          "Name": "Death Wish",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Raging Blow"],
+          "Position": [2, 1],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "When activated you become Enraged, increasing your physical damage by 20% but increasing all damage taken by 5%. Lasts 30 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_UnholyFrenzy",
+          "Name": "Enrage",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 2],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your melee hits have a 3% chance to Enrage you, giving you a 3% physical damage bonus for 9 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Your melee hits have a 6% chance to Enrage you, giving you a 7% physical damage bonus for 9 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "Your melee hits have a 9% chance to Enrage you, giving you a 10% physical damage bonus for 9 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "inv_sword_86",
+          "Name": "Die by the Sword",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 0],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases your parry chance by 100% for 4 sec whenever you are brought to 20% health or less. This effect cannot occur more often than once every 2 min."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases your parry chance by 100% for 8 sec whenever you are brought to 20% health or less. This effect cannot occur more often than once every 2 min."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Hunter_SwiftStrike",
+          "Name": "Raging Blow",
+          "Points": 0,
+          "Dependency": "Death Wish",
+          "Support": ["Bloodsurge", "Rampage"],
+          "Position": [3, 1],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "A mighty blow that deals 72% weapon damage from both melee weapons. Can only be used while Enraged."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_Rampage",
+          "Name": "Rampage",
+          "Points": 0,
+          "Dependency": "Raging Blow",
+          "Support": [],
+          "Position": [3, 2],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the critical strike chance of all party and raid members within 100 yds by 5%. In addition, improves your critical strike chance by an additional 2%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "warrior_talent_icon_deadlycalm",
+          "Name": "Heroic Fury",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 3],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Removes any Immobilization effects and refreshes the cooldown of your Intercept ability."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_FuriousResolve",
+          "Name": "Furious Attacks",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 0],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your autoattacks have a chance to reduce all healing done to the target by 25% for 10 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "warrior_talent_icon_mastercleaver",
+          "Name": "Meat Cleaver",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 2],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Dealing damage with Cleave or Whirlwind increases the damage of Cleave and Whirlwind by 5% for 10 sec. This effect stacks up to 3 times."
+              },
+              {
+                "Number": 2,
+                "Description": "Dealing damage with Cleave or Whirlwind increases the damage of Cleave and Whirlwind by 10% for 10 sec. This effect stacks up to 3 times."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "warrior_talent_icon_furyintheblood",
+          "Name": "Intensify Rage",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 3],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the cooldown of your Berserker Rage, Recklessness and Death Wish abilities by 10%."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the cooldown of your Berserker Rage, Recklessness and Death Wish abilities by 20%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_Bloodsurge",
+          "Name": "Bloodsurge",
+          "Points": 0,
+          "Dependency":"Raging Blow",
+          "Support":  [],
+          "Position": [5, 1],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Bloodthirst hits have a 10% chance of making your next Slam instant, free, and deal 20% more damage for 10 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Bloodthirst hits have a 20% chance of making your next Slam instant, free, and deal 20% more damage for 10 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "Your Bloodthirst hits have a 30% chance of making your next Slam instant, free, and deal 20% more damage for 10 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "warrior_talent_icon_skirmisher",
+          "Name": "Skirmisher",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 2],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the cooldown of your Intercept by 5 sec and your Heroic Leap by 10 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the cooldown of your Intercept by 10 sec and your Heroic Leap by 20 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_TitansGrip",
+          "Name": "Titan's Grip",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [6, 1],
+          "Enable": false,
+          "Tier": 7,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Allows you to equip two-handed axes, maces and swords in one hand."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "warrior_talent_icon_singlemindedfury",
+          "Name": "Single-Minded Fury",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [6, 2],
+          "Enable": false,
+          "Tier": 7,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "When you dual-wield one-handed weapons, you deal 20% additional damage and Slam hits with both weapons."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Protection",
+    "Icon": "inv_shield_06",
+    "Background": "warrior_protection",
+    "Points": 0,
+    "Talents": {
+      "Talent": [
+        {
+          "Icon": "Ability_Warrior_Incite",
+          "Name": "Incite",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 0],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the critical strike chance of your Heroic Strike by 5%, and gives your Heroic Strike criticals a 33% chance to cause the next Heroic Strike to also be a critical strike. These guaranteed criticals cannot re-trigger the Incite effect."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the critical strike chance of your Heroic Strike by 10%, and gives your Heroic Strike criticals a 66% chance to cause the next Heroic Strike to also be a critical strike. These guaranteed criticals cannot re-trigger the Incite effect."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases the critical strike chance of your Heroic Strike by 15%, and gives your Heroic Strike criticals a 100% chance to cause the next Heroic Strike to also be a critical strike. These guaranteed criticals cannot re-trigger the Incite effect."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_Devotion",
+          "Name": "Toughness",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 1],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases your armor value from items by 3%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases your armor value from items by 6%."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases your armor value from items by 10%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "warrior_talent_icon_bloodandthunder",
+          "Name": "Blood and Thunder",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 2],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "When you Thunder Clap a target affected by your Rend, you have a 50% chance to affect every target with Rend."
+              },
+              {
+                "Number": 2,
+                "Description": "When you Thunder Clap a target affected by your Rend, you have a 100% chance to affect every target with Rend."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Shield_06",
+          "Name": "Shield Specialization",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 0],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "You generate 5 extra Rage when you block an attack. You generate 20 extra Rage when you Spell Reflect a magic attack."
+              },
+              {
+                "Number": 2,
+                "Description": "You generate 10 extra Rage when you block an attack. You generate 40 extra Rage when you Spell Reflect a magic attack."
+              },
+              {
+                "Number": 3,
+                "Description": "You generate 15 extra Rage when you block an attack. You generate 60 extra Rage when you Spell Reflect a magic attack."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_ShieldGuard",
+          "Name": "Shield Mastery",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 1],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the cooldown of your Shield Block by 10 sec, your Shield Wall by 60 sec and causes your Shield Block to also reduce magic damage taken by 7% for 6 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the cooldown of your Shield Block by 20 sec, your Shield Wall by 120 sec and causes your Shield Block to also reduce magic damage taken by 14% for 6 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "Reduces the cooldown of your Shield Block by 30 sec, your Shield Wall by 180 sec and causes your Shield Block to also reduce magic damage taken by 20% for 6 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Achievement_BG_DefendXtowers_AV",
+          "Name": "Hold the Line",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 2],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Improves your critical strike and critical block chance by 10% for 5 sec following a successful parry."
+              },
+              {
+                "Number": 2,
+                "Description": "Improves your critical strike and critical block chance by 10% for 10 sec following a successful parry."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Axe_66",
+          "Name": "Gag Order",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 3],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Gives your Pummel and Heroic Throw a 50% chance to silence the target for 3 sec. Also lowers the cooldown on Heroic Throw by 15 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Gives your Pummel and Heroic Throw a 100% chance to silence the target for 3 sec. Also lowers the cooldown on Heroic Throw by 30 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Holy_AshesToAshes",
+          "Name": "Last Stand",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 0],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Temporarily grants you 30% of your maximum health for 20 sec. After the effect expires, the health is lost."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_ThunderBolt",
+          "Name": "Concussion Blow",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Vigilance"],
+          "Position": [2, 1],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Stuns the opponent for 5 sec and deals [75/100*AP] damage (based on attack power)."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Defend",
+          "Name": "Bastion of Defense",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 2],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the chance you'll be critically hit by melee attacks by 3% while in Defensive Stance. In addition, when you block, dodge or parry an attack you have a 10% chance to become Enraged, increasing physical damage done by 5% for 12 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the chance you'll be critically hit by melee attacks by 6% while in Defensive Stance. In addition, when you block, dodge or parry an attack you have a 20% chance to become Enraged, increasing physical damage done by 10% for 12 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_Warbringer",
+          "Name": "Warbringer",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 3],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Charge, Intercept and Intervene abilities are now usable while in combat and in any stance. In addition, your Intervene ability will remove all movement impairing effects."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_Revenge",
+          "Name": "Improved Revenge",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 0],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the damage of your Revenge ability by 30% and causes Revenge to strike an additional target for 50% damage."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the damage of your Revenge ability by 60% and causes Revenge to strike an additional target."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Sword_11",
+          "Name": "Devastate",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Impending Victory"],
+          "Position": [3, 2],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Sunder the target's armor causing the Sunder Armor effect. In addition, causes 109% of weapon damage plus 58 for each application of Sunder Armor on the target. The Sunder Armor effect can stack up to 3 times."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_Devastate",
+          "Name": "Impending Victory",
+          "Points": 0,
+          "Dependency": "Devastate",
+          "Support": [],
+          "Position": [3, 3],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Using Devastate on a target with 20% or less health has a 25% chance to allow the use of Victory Rush but that Victory Rush only heals for 5% of your health."
+              },
+              {
+                "Number": 2,
+                "Description": "Using Devastate on a target with 20% or less health has a 50% chance to allow the use of Victory Rush but that Victory Rush only heals for 5% of your health."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "warrior_talent_icon_thunderstruck",
+          "Name": "Thunderstruck",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 0],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Improves the damage of your Rend, Cleave and Thunder Clap by 3%. In addition, your Thunder Clap improves the damage of your next Shockwave by 5%. Stacks up to 3 times."
+              },
+              {
+                "Number": 2,
+                "Description": "Improves the damage of your Rend, Cleave and Thunder Clap by 6%. In addition, your Thunder Clap improves the damage of your next Shockwave by 10%. Stacks up to 3 times."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_Vigilance",
+          "Name": "Vigilance",
+          "Points": 0,
+          "Dependency": "Concussion Blow",
+          "Support": [],
+          "Position": [4, 1],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Focus your protective gaze on a party or raid member. Each time they are hit by an attack, your Taunt cooldown is refreshed and you gain Vengeance as if 20% of the damage was done to you. Lasts 30 min. This effect can only be on one target at a time."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_Shield_01",
+          "Name": "Heavy Repercussions",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 3],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "While your Shield Block is active, your Shield Slam hits for an additional 50% damage."
+              },
+              {
+                "Number": 2,
+                "Description": "While your Shield Block is active, your Shield Slam hits for an additional 100% damage."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_Safeguard",
+          "Name": "Safeguard",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 1],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces damage taken by the target of your Intervene ability by 15% for 6 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces damage taken by the target of your Intervene ability by 30% for 6 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_SwordandBoard",
+          "Name": "Sword and Board",
+          "Points": 0,
+          "Dependency": "Devastate",
+          "Support": [],
+          "Position": [5, 2],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the critical strike chance of Devastate by 5%. In addition, when your Devastate or Revenge deal damage, they have a 10% chance of refreshing the cooldown of your Shield Slam and reducing its cost by 100% for 5 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the critical strike chance of Devastate by 10%. In addition, when your Devastate or Revenge deal damage, they have a 20% chance of refreshing the cooldown of your Shield Slam and reducing its cost by 100% for 5 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases the critical strike chance of Devastate by 15%. In addition, when your Devastate or Revenge deal damage, they have a 30% chance of refreshing the cooldown of your Shield Slam and reducing its cost by 100% for 5 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warrior_Shockwave",
+          "Name": "Shockwave",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [6, 1],
+          "Enable": false,
+          "Tier": 7,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Sends a wave of force in front of you, causing [75/100*AP] damage (based on attack power) and stunning all enemy targets within 10 yards in a frontal cone for 4 sec."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

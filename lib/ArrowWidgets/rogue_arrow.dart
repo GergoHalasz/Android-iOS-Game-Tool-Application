@@ -124,80 +124,121 @@ getRogueArrowList(String expansion) {
   ];
 
   var arrowListWotlk = [
-      [
-        ArrowWidget(
-          startPosition: Position(row: 0, column: 2),
-          endPosition: Position(row: 2, column: 2),
-          lengthType: 'medium',
-          dependencyTalent: 'Lethality',
-        ),
-        ArrowWidget(
-          startPosition: Position(row: 4, column: 1),
-          endPosition: Position(row: 5, column: 1),
-          lengthType: 'short',
-          dependencyTalent: 'Seal Fate',
-        ),
-        ArrowWidget(
-          startPosition: Position(row: 6, column: 1),
-          endPosition: Position(row: 8, column: 1),
-          lengthType: 'medium',
-          dependencyTalent: 'Mutilate',
-        )
-      ],
-      [
-        ArrowWidget(
-          startPosition: Position(row: 0, column: 2),
-          endPosition: Position(row: 2, column: 2),
-          lengthType: 'medium',
-          dependencyTalent: 'Close Quarters Combat',
-        ),
-        ArrowWidget(
-          startPosition: Position(row: 1, column: 1),
-          endPosition: Position(row: 2, column: 1),
-          lengthType: 'short',
-          dependencyTalent: 'Riposte',
-        ),
-        ArrowWidget(
-          startPosition: Position(row: 4, column: 1),
-          endPosition: Position(row: 5, column: 1),
-          lengthType: 'short',
-          dependencyTalent: 'Weapon Expertise',
-        ),
-        ArrowWidget(
-          startPosition: Position(row: 6, column: 1),
-          endPosition: Position(row: 8, column: 1),
-          lengthType: 'medium',
-          dependencyTalent: 'Surprise Attacks',
-        ),
-      ],
-      [
-        ArrowWidget(
-          startPosition: Position(row: 4, column: 1),
-          endPosition: Position(row: 6, column: 1),
-          lengthType: 'medium',
-          dependencyTalent: 'Premeditation',
-        ),
-        RightCornerArrowWidget(
-          startPosition: Position(row: 2, column: 2),
-          endPosition: Position(row: 4, column: 3),
-          lengthType: 'medium',
-          dependencyTalent: 'Hemorrhage',
-        ),
-        ArrowWidget(
-          startPosition: Position(row: 6, column: 1),
-          endPosition: Position(row: 7, column: 1),
-          lengthType: 'short',
-          dependencyTalent: 'Sinister Calling',
-        ),
-      ]
+    [
+      ArrowWidget(
+        startPosition: Position(row: 0, column: 2),
+        endPosition: Position(row: 2, column: 2),
+        lengthType: 'medium',
+        dependencyTalent: 'Lethality',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 5, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Seal Fate',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 6, column: 1),
+        endPosition: Position(row: 8, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Mutilate',
+      )
+    ],
+    [
+      ArrowWidget(
+        startPosition: Position(row: 0, column: 2),
+        endPosition: Position(row: 2, column: 2),
+        lengthType: 'medium',
+        dependencyTalent: 'Close Quarters Combat',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 1, column: 1),
+        endPosition: Position(row: 2, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Riposte',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 5, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Weapon Expertise',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 6, column: 1),
+        endPosition: Position(row: 8, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Surprise Attacks',
+      ),
+    ],
+    [
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 6, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Premeditation',
+      ),
+      RightCornerArrowWidget(
+        startPosition: Position(row: 2, column: 2),
+        endPosition: Position(row: 4, column: 3),
+        lengthType: 'medium',
+        dependencyTalent: 'Hemorrhage',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 6, column: 1),
+        endPosition: Position(row: 7, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Sinister Calling',
+      ),
+    ]
   ];
+
+  var arrowListCata = [
+    [
+      ArrowWidget(
+        startPosition: Position(row: 2, column: 2),
+        endPosition: Position(row: 4, column: 2),
+        lengthType: 'medium',
+        dependencyTalent: 'Master Poisoner',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 2, column: 1),
+        endPosition: Position(row: 3, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Seal Fate',
+      ),
+      
+    ],
+    [
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 6, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Killing Spree',
+      ),
+    ],
+    [
+      ArrowWidget(
+        startPosition: Position(row: 0, column: 1),
+        endPosition: Position(row: 1, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Waylay',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 2, column: 2),
+        endPosition: Position(row: 4, column: 2),
+        lengthType: 'medium',
+        dependencyTalent: 'Sanguinary Vein',
+      ),
+    ]
+  ];
+
   arrowWidgetsClass() {
     if (expansion == "tbc")
       return arrowListTbc;
     else if (expansion == "vanilla")
       return arrowListVanilla;
-    else
-      return arrowListWotlk;
+    else if (expansion == "cata") return arrowListCata;
+    return arrowListWotlk;
   }
 
   return arrowWidgetsClass();

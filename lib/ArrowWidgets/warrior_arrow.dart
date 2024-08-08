@@ -118,8 +118,9 @@ getWarriorArrowList(String expansion) {
     ]
   ];
 
-  var arrowListWotlk = [[
-    RightArrowWidget(
+  var arrowListWotlk = [
+    [
+      RightArrowWidget(
         startPosition: Position(row: 2, column: 2),
         endPosition: Position(row: 2, column: 3),
         lengthType: 'short',
@@ -137,8 +138,9 @@ getWarriorArrowList(String expansion) {
         lengthType: 'short',
         dependencyTalent: 'Improved Mortal Strike',
       )
-  ],[
-    ArrowWidget(
+    ],
+    [
+      ArrowWidget(
         startPosition: Position(row: 4, column: 1),
         endPosition: Position(row: 6, column: 1),
         lengthType: 'medium',
@@ -156,8 +158,9 @@ getWarriorArrowList(String expansion) {
         lengthType: 'medium',
         dependencyTalent: 'Rampage',
       )
-  ],[
-    ArrowWidget(
+    ],
+    [
+      ArrowWidget(
         startPosition: Position(row: 4, column: 1),
         endPosition: Position(row: 6, column: 1),
         lengthType: 'medium',
@@ -169,15 +172,79 @@ getWarriorArrowList(String expansion) {
         lengthType: 'short',
         dependencyTalent: 'Sword and Board',
       )
-  ]];
+    ]
+  ];
+
+  var arrowListCata = [
+    [
+      ArrowWidget(
+        startPosition: Position(row: 1, column: 2),
+        endPosition: Position(row: 2, column: 2),
+        lengthType: 'short',
+        dependencyTalent: 'Impale',
+      ),
+      RightCornerArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 5, column: 2),
+        lengthType: 'short',
+        dependencyTalent: 'Throwdown',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 6, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Bladestorm',
+      ),
+    ],
+    [
+      ArrowWidget(
+        startPosition: Position(row: 2, column: 1),
+        endPosition: Position(row: 3, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Raging Blow',
+      ),
+      RightArrowWidget(
+        startPosition: Position(row: 3, column: 1),
+        endPosition: Position(row: 3, column: 2),
+        lengthType: 'short',
+        dependencyTalent: 'Rampage',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 3, column: 1),
+        endPosition: Position(row: 5, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Bloodsurge',
+      ),
+    ],
+    [
+      ArrowWidget(
+        startPosition: Position(row: 2, column: 1),
+        endPosition: Position(row: 4, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Vigilance',
+      ),
+      RightArrowWidget(
+        startPosition: Position(row: 3, column: 2),
+        endPosition: Position(row: 3, column: 3),
+        lengthType: 'short',
+        dependencyTalent: 'Impending Victory',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 3, column: 2),
+        endPosition: Position(row: 5, column: 2),
+        lengthType: 'medium',
+        dependencyTalent: 'Sword and Board',
+      ),
+    ]
+  ];
 
   arrowWidgetsClass() {
     if (expansion == "tbc")
       return arrowListTbc;
     else if (expansion == "vanilla")
       return arrowListVanilla;
-    else
-      return arrowListWotlk;
+    else if (expansion == "cata") return arrowListCata;
+    return arrowListWotlk;
   }
 
   return arrowWidgetsClass();

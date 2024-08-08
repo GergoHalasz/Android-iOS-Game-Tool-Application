@@ -1,0 +1,1264 @@
+[
+  {
+    "Name": "Affliction",
+    "Icon": "spell_shadow_requiem",
+    "Background": "warlock_affliction",
+    "Points": 0,
+    "Talents": {
+      "Talent": [
+        {
+          "Icon": "Spell_Shadow_CurseOfSargeras",
+          "Name": "Doom and Gloom",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 0],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the critical strike chance of your Bane of Agony and Bane of Doom by 4%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the critical strike chance of your Bane of Agony and Bane of Doom by 8%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_BurningSpirit",
+          "Name": "Improved Life Tap",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 1],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the amount of Mana awarded by your Life Tap spell by 10%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the amount of Mana awarded by your Life Tap spell by 20%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_AbominationExplosion",
+          "Name": "Improved Corruption",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 2],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the damage done by your Corruption by 4%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the damage done by your Corruption by 8%."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases the damage done by your Corruption by 12%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_warlock_jinx",
+          "Name": "Jinx",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 0],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Curse of the Elements also affects up to 15 nearby enemy targets within 20 yards of the cursed target.<br/><br/>Also, your Curse of Weakness increases the target's energy, rage, focus or runic power costs of abilities by 5% while active."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Curse of the Elements also affects up to 15 nearby enemy targets within 40 yards of the cursed target.<br/><br/>Also, your Curse of Weakness increases the target's energy, rage, focus or runic power costs of abilities by 10% while active."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_warlock_soulsiphon",
+          "Name": "Soul Siphon",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Siphon Life","Soul Swap"],
+          "Position": [1, 1],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the amount drained by your Drain Life and Drain Soul spells by an additional 3% for each of your Affliction effects on the target, up to a maximum of 9% additional effect."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the amount drained by your Drain Life and Drain Soul spells by an additional 6% for each of your Affliction effects on the target, up to a maximum of 18% additional effect."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_Requiem",
+          "Name": "Siphon Life",
+          "Points": 0,
+          "Dependency": "Soul Siphon",
+          "Support": [],
+          "Position": [1, 2],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "When you deal damage with your Corruption spell, you have a 25% chance to be healed for 2% of your total health."
+              },
+              {
+                "Number": 2,
+                "Description": "When you deal damage with your Corruption spell, you have a 50% chance to be healed for 2% of your total health."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_GrimWard",
+          "Name": "Curse of Exhaustion",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 0],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the target's movement speed by 30% for 30 sec. Only one Curse per Warlock can be active on any one target."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_Possession",
+          "Name": "Improved Fear",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 2],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Causes your Fear spell to inflict a Nightmare on the target when the fear effect ends. The Nightmare effect reduces the target's movement speed by 15% for 5 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Causes your Fear spell to inflict a Nightmare on the target when the fear effect ends. The Nightmare effect reduces the target's movement speed by 30% for 5 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warlock_Eradication",
+          "Name": "Eradication",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 3],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "When you deal damage with Corruption, you have 6% chance to increase your spell casting speed by 6% for 10 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "When you deal damage with Corruption, you have 6% chance to increase your spell casting speed by 12% for 10 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "When you deal damage with Corruption, you have 6% chance to increase your spell casting speed by 20% for 10 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_DeathScream",
+          "Name": "Improved Howl of Terror",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 0],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the casting time of your Howl of Terror spell by 0.8 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the casting time of your Howl of Terror spell by 1.5 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_warlock_soulswap",
+          "Name": "Soul Swap",
+          "Points": 0,
+          "Dependency": "Soul Siphon",
+          "Support": [],
+          "Position": [3, 1],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "You instantly deal 250 damage, and remove your Shadow damage-over-time effects from the target.<br/><br/>For 20 sec afterwards, the next target you cast Soul Swap: Exhale on will be afflicted by the Shadow damage-over-time effects and suffer 1 damage.<br/><br/>You cannot Soul Swap to the same target."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_ShadowEmbrace",
+          "Name": "Shadow Embrace",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 2],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Shadow Bolt and Haunt spells apply the Shadow Embrace effect, increasing all Shadow periodic damage dealt to the target by you by 3%. Lasts for 12 sec. Stacks up to 3 times."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Shadow Bolt and Haunt spells apply the Shadow Embrace effect, increasing all Shadow periodic damage dealt to the target by you by 4%. Lasts for 12 sec. Stacks up to 3 times."
+              },
+              {
+                "Number": 3,
+                "Description": "Your Shadow Bolt and Haunt spells apply the Shadow Embrace effect, increasing all Shadow periodic damage dealt to the target by you by 5%. Stacks up to 3 times."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_DeathsEmbrace",
+          "Name": "Death's Embrace",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 0],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "While at or below 25% health, your Drain Life heals an additional 1% of your total health.<br/><br/>Increases the damage done by your Shadow Spells by 4% when your target is at or below 25% health."
+              },
+              {
+                "Number": 2,
+                "Description": "While at or below 25% health, your Drain Life heals an additional 2% of your total health.<br/><br/>Increases the damage done by your Shadow Spells by 8% when your target is at or below 25% health."
+              },
+              {
+                "Number": 3,
+                "Description": "While at or below 25% health, your Drain Life heals an additional 3% of your total health.<br/><br/>Increases the damage done by your Shadow Spells by 12% when your target is at or below 25% health."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_Twilight",
+          "Name": "Nightfall",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 1],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Gives your Corruption and Drain Life spells a 2% chance to cause you to enter a Shadow Trance state after damaging the opponent. The Shadow Trance state reduces the casting time of your next Shadow Bolt spell by 100%."
+              },
+              {
+                "Number": 2,
+                "Description": "Gives your Corruption and Drain Life spells a 4% chance to cause you to enter a Shadow Trance state after damaging the opponent. The Shadow Trance state reduces the casting time of your next Shadow Bolt spell by 100%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_SeedOfDestruction",
+          "Name": "Soulburn: Seed of Corruption",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 2],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Grants the Soulburn empowerment to your Seed of Corruption spell.<br/><br/>Your Seed of Corruption detonation effect will afflict Corruption on all enemy targets. The Soul Shard will be refunded if the detonation is successful."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warlock_EverlastingAffliction",
+          "Name": "Everlasting Affliction",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Pandemic"],
+          "Position": [5, 1],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the critical effect chance of your Corruption, Seed of Corruption and Unstable Affliction by 5%.<br/><br/>And your Drain Life, Drain Soul, and Haunt spells have a 33% chance to reset the duration of your Corruption spell on the target."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the critical effect chance of your Corruption, Seed of Corruption and Unstable Affliction by 10%.<br/><br/>And your Drain Life, Drain Soul, and Haunt spells have a 66% chance to reset the duration of your Corruption spell on the target."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases the critical effect chance of your Corruption, Seed of Corruption and Unstable Affliction by 15%.<br/><br/>And your Drain Life, Drain Soul, and Haunt spells have a 100% chance to reset the duration of your Corruption spell on the target."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "spell_shadow_lastingaffliction",
+          "Name": "Pandemic",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 2],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the global cooldown of your Bane and Curse spells by 0.25 sec.<br/><br/>Your Drain Soul has a 50% chance to refresh the duration of your Unstable Affliction spell when dealing damage on targets below 25% health."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the global cooldown of your Bane and Curse spells by 0.5 sec.<br/><br/>Your Drain Soul has a 100% chance to refresh the duration of your Unstable Affliction spell when dealing damage on targets below 25% health."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warlock_Haunt",
+          "Name": "Haunt",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [6, 1],
+          "Enable": false,
+          "Tier": 7,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "You send a ghostly soul into the target, dealing Shadow damage and increasing all damage done by your Shadow damage-over-time effects on the target by 20% for 12 sec. When the Haunt spell ends or is dispelled, the soul returns to you, healing you for 100% of the damage it did to the target."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Demonology",
+    "Icon": "spell_shadow_metamorphosis",
+    "Background": "warlock_demonology",
+    "Points": 0,
+    "Talents": {
+      "Talent": [
+        {
+          "Icon": "Spell_Shadow_Metamorphosis",
+          "Name": "Demonic Embrace",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 0],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases your total Stamina by 4%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases your total Stamina by 7%."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases your total Stamina by 10%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_warlock_darkarts",
+          "Name": "Dark Arts",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 1],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the cast time of your Imp's Firebolt spell by 0.25 sec, increases the damage done by your Felguard's Legion Strike by 5%, and increases the damage done by your Felhunter's Shadow Bite by 5%."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the cast time of your Imp's Firebolt spell by 0.5 sec, increases the damage done by your Felguard's Legion Strike by 10%, and increases the damage done by your Felhunter's Shadow Bite by 10%."
+              },
+              {
+                "Number": 3,
+                "Description": "Reduces the cast time of your Imp's Firebolt spell by 0.75 sec, increases the damage done by your Felguard's Legion Strike by 15%, and increases the damage done by your Felhunter's Shadow Bite by 15%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_FelMending",
+          "Name": "Fel Synergy",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 2],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "You have a 50% chance to heal your pet for 15% of the amount of spell damage done by you."
+              },
+              {
+                "Number": 2,
+                "Description": "You have a 100% chance to heal your pet for 15% of the amount of spell damage done by you."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_DemonicTactics",
+          "Name": "Demonic Rebirth",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 0],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "If your summoned demon dies, you gain the Demonic Rebirth effect reducing the cast time of your next summon demon spell by 50%. Lasts for 10 sec. This effect has a 2 min cooldown."
+              },
+              {
+                "Number": 2,
+                "Description": "If your summoned demon dies, you gain the Demonic Rebirth effect reducing the cast time of your next summon demon spell by 100%. Lasts for 10 sec. This effect has a 2 min cooldown."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_ManaFeed",
+          "Name": "Mana Feed",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 1],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "When your summoned demon critically hits with its Basic Attack, you instantly gain 2% total mana. When you gain mana from Life Tap, your summoned demon gains 30% of the mana you gain."
+              },
+              {
+                "Number": 2,
+                "Description": "When your summoned demon critically hits with its Basic Attack, you instantly gain 4% total mana. When you gain mana from Life Tap, your summoned demon gains 60% of the mana you gain."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_RagingScream",
+          "Name": "Demonic Aegis",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 2],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the amount of health generated through spells and effects granted by your Demon Armor by an additional 5%, and increases the amount of health returned by your Fel Armor by 50%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the amount of health generated through spells and effects granted by your Demon Armor by an additional 10%, and increases the amount of health returned by your Fel Armor by 100%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_ImpPhaseShift",
+          "Name": "Master Summoner",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 3],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the casting time of your Imp, Voidwalker, Succubus, Felhunter and Felguard Summoning spells by 0.5 sec and the Mana cost by 50%."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the casting time of your Imp, Voidwalker, Succubus, Felhunter and Felguard Summoning spells by 1 sec and the Mana cost by 100%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Nature_RemoveCurse",
+          "Name": "Impending Doom",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Demonic Empowerment"],
+          "Position": [2, 0],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the chance for your Bane of Doom to summon a demon by 10% when it deals damage. Also grants your Shadow Bolt, Hand of Gul'dan, Soul Fire, and Incinerate spells a 5% chance to reduce the cooldown of your Demon Form by 15 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the chance for your Bane of Doom to summon a demon by 20% when it deals damage. Also grants your Shadow Bolt, Hand of Gul'dan, Soul Fire, and Incinerate spells a 10% chance to reduce the cooldown of your Demon Form by 15 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases the chance for your Bane of Doom to summon a demon by 30% when it deals damage. Also grants your Shadow Bolt, Hand of Gul'dan, Soul Fire, and Incinerate spells a 15% chance to reduce the cooldown of your Demon Form by 15 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warlock_DemonicEmpowerment",
+          "Name": "Demonic Empowerment",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 1],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Grants the Warlock's summoned demon Empowerment. Imp - Instantly heals the Imp for 30% of its total health. Voidwalker - Increases the Voidwalker's health by 20%, and its threat generated from spells and attacks by 20% for 20 sec. Succubus - Instantly vanishes, causing the Succubus to go into an improved Invisibility state. The vanish effect removes all stuns, snares and movement impairing effects from the Succubus. Felhunter - Dispels all magical effects from the Felhunter. Felguard - Instantly removes all stun, snare, fear, banish, or horror and movement impairing effects from your Felguard and makes your Felguard immune to them for 15 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_LifeDrain",
+          "Name": "Improved Health Funnel",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 2],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the amount of Health transferred by your Health Funnel spell by 10% and reduces the health cost by 10%. In addition, your summoned demon takes 15% less damage while under the effect of your Health Funnel."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the amount of Health transferred by your Health Funnel spell by 20% and reduces the health cost by 20%. In addition, your summoned demon takes 30% less damage while under the effect of your Health Funnel."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warlock_MoltenCore",
+          "Name": "Molten Core",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 0],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "You have 2% chance to gain the Molten Core effect when your Immolate deals damage. The Molten Core effect empowers your next 3 Incinerate spells cast within 15 sec. Increasing damage done by 6% and reducing cast time by 10%"
+              },
+              {
+                "Number": 2,
+                "Description": "You have 4% chance to gain the Molten Core effect when your Immolate deals damage. The Molten Core effect empowers your next 3 Incinerate spells cast within 15 sec. Increasing damage done by 12% and reducing cast time by 20%"
+              },
+              {
+                "Number": 3,
+                "Description": "You have 6% chance to gain the Molten Core effect when your Immolate deals damage. The Molten Core effect empowers your next 3 Incinerate spells cast within 15 sec. Increasing damage done by 18% and reducing cast time by 30%"
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "INV_SummerFest_FireSpirit",
+          "Name": "Hand of Gul'dan",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Aura of Foreboding","Inferno"],
+          "Position": [3, 1],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Summons a falling meteor down upon the enemy target, dealing 1 Shadowflame damage and erupts an aura of magic within 4 yards, causing all targets within it to have a 10% increased chance to be critically hit by any Warlock demons. The aura lasts for 15 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_SealOfKings",
+          "Name": "Aura of Foreboding",
+          "Points": 0,
+          "Dependency": "Hand of Gul'dan",
+          "Support": [],
+          "Position": [3, 2],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "When your Hand of Gul'dan lands, all enemies within 4 yards will be rooted for 2 sec and stunned for the same duration if they are still within the Curse of Gul'dan aura 6 sec afterward."
+              },
+              {
+                "Number": 2,
+                "Description": "When your Hand of Gul'dan lands, all enemies within 4 yards will be rooted for 3 sec and stunned for the same duration if they are still within the Curse of Gul'dan aura 6 sec afterward."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_warlock_ancientgrimoire",
+          "Name": "Ancient Grimoire",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 0],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the duration of your Infernal and Doomguard summons by 10 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the duration of your Infernal and Doomguard summons by 20 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_warlock_inferno",
+          "Name": "Inferno",
+          "Points": 0,
+          "Dependency": "Hand of Gul'dan",
+          "Support": [],
+          "Position": [4, 1],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Enables you to channel Hellfire while moving, and increases the duration of your Immolate by 6 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Fire_Fireball02",
+          "Name": "Decimation",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 2],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "When you Shadowbolt, Incinerate or Soul Fire a target that is at or below 25% health, the cast time of your Soul Fire spell is reduced by 20% for 10 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "When you Shadowbolt, Incinerate or Soul Fire a target that is at or below 25% health, the cast time of your Soul Fire spell is reduced by 40% for 10 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_warlock_cremation",
+          "Name": "Cremation",
+          "Points": 0,
+          "Dependency": "Inferno",
+          "Support": [],
+          "Position": [5, 1],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the damage done by your Hellfire by 15%, and your Hand of Gul'dan has a 50% chance to refresh the duration of your Immolate on the target."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the damage done by your Hellfire by 30%, and your Hand of Gul'dan has a 100% chance to refresh the duration of your Immolate on the target."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_DemonicPact",
+          "Name": "Demonic Pact",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 2],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases your spell damage by 2%, and your summoned demon grants the Demonic Pact effect to all nearby friendly party and raid members. The Demonic Pact effect increases spell power by 10%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_DemonForm",
+          "Name": "Metamorphosis",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [6, 1],
+          "Enable": false,
+          "Tier": 7,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "You transform into a Demon for 30 sec. This form increases your armor by 600%, damage by 20%, reduces the chance you'll be critically hit by melee attacks by 6% and reduces the duration of stun and snare effects by 50%. You gain some unique demon abilities in addition to your normal abilities. 3 minute cooldown."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Name": "Destruction",
+    "Icon": "spell_shadow_rainoffire",
+    "Background": "warlock_destruction",
+    "Points": 0,
+    "Talents": {
+      "Talent": [
+        {
+          "Icon": "Spell_Shadow_DeathPact",
+          "Name": "Bane",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 0],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the casting time of your Shadow Bolt, Chaos Bolt and Immolate spells by 0.1 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the casting time of your Shadow Bolt, Chaos Bolt and Immolate spells by 0.3 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "Reduces the casting time of your Shadow Bolt, Chaos Bolt and Immolate spells by 0.5 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_ShadowandFlame",
+          "Name": "Shadow and Flame",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 1],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the damage done by your Shadow Bolt and Incinerate spells by 4%, and your Shadow Bolt and Incinerate have a 33% chance to cause the Shadow and Flame effect to the target. The Shadow and Flame effect causes the target to be vulnerable to spell damage, increasing spell critical strike chance against that target by 5% for 30 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the damage done by your Shadow Bolt and Incinerate spells by 8%, and your Shadow Bolt and Incinerate have a 66% chance to cause the Shadow and Flame effect to the target. The Shadow and Flame effect causes the target to be vulnerable to spell damage, increasing spell critical strike chance against that target by 5% for 30 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases the damage done by your Shadow Bolt and Incinerate spells by 12%, and your Shadow Bolt and Incinerate have a 100% chance to cause the Shadow and Flame effect to the target. The Shadow and Flame effect causes the target to be vulnerable to spell damage, increasing spell critical strike chance against that target by 5% for 30 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Fire_Immolation",
+          "Name": "Improved Immolate",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [0, 2],
+          "Enable": true,
+          "Tier": 1,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the damage done by your Immolate spell by 10%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the damage done by your Immolate spell by 20%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Fire_Fire",
+          "Name": "Aftermath",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 0],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Rain of Fire has a 6% chance to Stun targets for 2 sec., and your Conflagrate has a 50% chance to daze the target for 5 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Rain of Fire has a 12% chance to Stun targets for 2 sec., and your Conflagrate has a 100% chance to daze the target for 5 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Fire_SelfDestruct",
+          "Name": "Emberstorm",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 1],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Reduces the cast time of your Soul Fire by 0.5 sec and your Incinerate by 0.13 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Reduces the cast time of your Soul Fire by 1 sec and your Incinerate by 0.25 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Fire_SoulBurn",
+          "Name": "Improved Searing Pain",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [1, 2],
+          "Enable": false,
+          "Tier": 2,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the critical strike chance of your Searing Pain spell by 20% on targets at or below 25% health."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the critical strike chance of your Searing Pain spell by 40% on targets at or below 25% health."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Fire_Fireball02",
+          "Name": "Improved Soul Fire",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 0],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases your Fire and Shadow damage done by 4% for 20 sec after you deal damage with Soul Fire."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases your Fire and Shadow damage done by 8% for 20 sec after you deal damage with Soul Fire."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warlock_Backdraft",
+          "Name": "Backdraft",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 1],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "When you cast Conflagrate, the cast time of your next three Shadow Bolt, Incinerate and Chaos Bolt spells is reduced by 10%. Lasts 15 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "When you cast Conflagrate, the cast time for your next three Shadow Bolt, Incinerate and Chaos Bolt spells is reduced by 20%. Lasts 15 sec."
+              },
+              {
+                "Number": 3,
+                "Description": "When you cast Conflagrate, the cast time for your next three Shadow Bolt, Incinerate and Chaos Bolt spells is reduced by 30%. Lasts 15 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_ScourgeBuild",
+          "Name": "Shadowburn",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [2, 2],
+          "Enable": false,
+          "Tier": 3,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Instantly blasts the target for 1 Shadowflame damage. If the target dies within 5 sec of Shadowburn, and yields experience or honor, the caster gains 3 Soul Shards. Only usable on enemies that have less than 20% health."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_warlock_burningembers",
+          "Name": "Burning Embers",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Empowered Imp"],
+          "Position": [3, 0],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Soul Fire and your Imp's Firebolt cause a Burning Ember damage-over-time effect on the target equal to 25% of the damage done lasting 7 sec. The Burning Ember effect deals up to 0 fire damage every 1 sec for 7 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Soul Fire and your Imp's Firebolt cause a Burning Ember damage-over-time effect on the target equal to 50% of the damage done lasting 7 sec. The Burning Ember effect deals up to 0 fire damage every 1 sec for 7 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_SoulLeech_3",
+          "Name": "Soul Leech",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 1],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Shadowburn, Soul Fire and Chaos Bolt instantly restore 2% of your total health and mana when they deal damage and also grant Replenishment. Replenishment - Grants up to 10 party or raid members mana regeneration equal to 1% of their maximum mana per 10 sec. Lasts for 15 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Shadowburn, Soul Fire and Chaos Bolt instantly restore 4% of your total health and mana when they deal damage and also grant Replenishment. Replenishment - Grants up to 10 party or raid members mana regeneration equal to 1% of their maximum mana per 10 sec. Lasts for 15 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Fire_PlayingWithFire",
+          "Name": "Backlash",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [3, 2],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Gives you a 8% chance when hit by a physical attack to reduce the cast time of your next Shadow Bolt or Incinerate spell by 100%. This effect lasts 8 sec and will not occur more than once every 8 seconds."
+              },
+              {
+                "Number": 2,
+                "Description": "Gives you a 16% chance when hit by a physical attack to reduce the cast time of your next Shadow Bolt or Incinerate spell by 100%. This effect lasts 8 sec and will not occur more than once every 8 seconds."
+              },
+              {
+                "Number": 3,
+                "Description": "Gives you a 25% chance when hit by a physical attack to reduce the cast time of your next Shadow Bolt or Incinerate spell by 100%. This effect lasts 8 sec and will not occur more than once every 8 seconds."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Fire_FelFireward",
+          "Name": "Nether Ward",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Nether Protection"],
+          "Position": [3, 3],
+          "Enable": false,
+          "Tier": 4,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Transforms your Shadow Ward into Nether Ward. You must be within Demon Armor or Fel Armor in order for the transformation effect to occur. Absorbs [M1+(SP*0.807)] spell damage. Lasts 30 sec. 30 sec cooldown."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warlock_FireandBrimstone",
+          "Name": "Fire and Brimstone",
+          "Points": 0,
+          "Dependency": "",
+          "Support": ["Chaos Bolt"],
+          "Position": [4, 1],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Increases the damage done by your Incinerate and Chaos Bolt spells to targets afflicted by your Immolate by 5%, and the critical strike chance of your Conflagrate spell is increased by 5%."
+              },
+              {
+                "Number": 2,
+                "Description": "Increases the damage done by your Incinerate and Chaos Bolt spells to targets afflicted by your Immolate by 10%, and the critical strike chance of your Conflagrate spell is increased by 10%."
+              },
+              {
+                "Number": 3,
+                "Description": "Increases the damage done by your Incinerate and Chaos Bolt spells to targets afflicted by your Immolate by 15%, and the critical strike chance of your Conflagrate spell is increased by 15%."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_Shadowfury",
+          "Name": "Shadowfury",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [4, 2],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Shadowfury is unleashed, causing 342 to 407 Shadow damage and stunning all enemies within 8 yds for 3 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Spell_Shadow_NetherProtection",
+          "Name": "Nether Protection",
+          "Points": 0,
+          "Dependency": "Nether Ward",
+          "Support": [],
+          "Position": [4, 3],
+          "Enable": false,
+          "Tier": 5,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "When you absorb damage through Shadow Ward, Nether Ward or other effects, you gain Nether Protection, reducing all damage by that spell school by 15% for 12 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "When you absorb damage through Shadow Ward, Nether Ward or other effects, you gain Nether Protection, reducing all damage by that spell school by 30% for 12 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warlock_EmpoweredImp",
+          "Name": "Empowered Imp",
+          "Points": 0,
+          "Dependency": "Burning Embers",
+          "Support": [],
+          "Position": [5, 0],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Your Imp's Firebolt has a 2% chance to cause your next Soul Fire spell to be instant cast within 8 sec."
+              },
+              {
+                "Number": 2,
+                "Description": "Your Imp's Firebolt has a 4% chance to cause your next Soul Fire spell to be instant cast within 8 sec."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "ability_warlock_baneofhavoc",
+          "Name": "Bane of Havoc",
+          "Points": 0,
+          "Dependency": "",
+          "Support": [],
+          "Position": [5, 2],
+          "Enable": false,
+          "Tier": 6,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Banes the target for 5 min, causing 15% of all damage done by the Warlock to other targets to also be dealt to the baned target. Only one target can have Bane of Havoc at a time, and only one Bane per Warlock can be active on any one target."
+              }
+            ]
+          }
+        },
+        {
+          "Icon": "Ability_Warlock_ChaosBolt",
+          "Name": "Chaos Bolt",
+          "Points": 0,
+          "Dependency": "Fire and Brimstone",
+          "Support": [],
+          "Position": [6, 1],
+          "Enable": false,
+          "Tier": 7,
+          "Ranks": {
+            "Rank": [
+              {
+                "Number": 1,
+                "Description": "Sends a bolt of chaotic fire at the enemy, dealing 836 to 1061 Fire damage. Chaos Bolt cannot be resisted, and pierces through all absorption effects."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

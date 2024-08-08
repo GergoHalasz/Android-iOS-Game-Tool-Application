@@ -234,13 +234,68 @@ getWarlockArrowList(String expansion) {
     ]
   ];
 
+  var arrowListCata = [
+    [
+      ArrowWidget(
+        startPosition: Position(row: 1, column: 1),
+        endPosition: Position(row: 3, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Soul Swap',
+      ),
+      RightArrowWidget(
+        startPosition: Position(row: 1, column: 1),
+        endPosition: Position(row: 1, column: 2),
+        lengthType: 'short',
+        dependencyTalent: 'Siphon Life',
+      ),
+    ],[
+      ArrowWidget(
+        startPosition: Position(row: 3, column: 1),
+        endPosition: Position(row: 4, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Inferno',
+      ),
+     RightArrowWidget(
+        startPosition: Position(row: 3, column: 1),
+        endPosition: Position(row: 3, column: 2),
+        lengthType: 'short',
+        dependencyTalent: 'Aura of Foreboding',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 5, column: 1),
+        lengthType: 'short',
+        dependencyTalent: 'Cremation',
+      ),
+    ],[
+      ArrowWidget(
+        startPosition: Position(row: 3, column: 0),
+        endPosition: Position(row: 5, column: 0),
+        lengthType: 'medium',
+        dependencyTalent: 'Empowered Imp',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 4, column: 1),
+        endPosition: Position(row: 6, column: 1),
+        lengthType: 'medium',
+        dependencyTalent: 'Chaos Bolt',
+      ),
+      ArrowWidget(
+        startPosition: Position(row: 3, column: 3),
+        endPosition: Position(row: 4, column: 3),
+        lengthType: 'short',
+        dependencyTalent: 'Nether Protection',
+      ),
+    ]
+  ];
+
   arrowWidgetsClass() {
     if (expansion == "tbc")
       return arrowListTbc;
     else if (expansion == "vanilla")
       return arrowListVanilla;
-    else
-      return arrowListWotlk;
+    else if (expansion == "cata") return arrowListCata;
+    return arrowListWotlk;
   }
 
   return arrowWidgetsClass();
