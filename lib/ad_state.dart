@@ -101,13 +101,17 @@ class AdState extends ChangeNotifier {
         loadInterstitialAd();
       }));
       interstitialAd!.show();
+    } else {
+      if (interstitialAd == null) {
+        loadInterstitialAd();
+      }
     }
   }
 
   void showInterstitialAdClassScreen() {
     if (interstitialAd != null &&
         !isAdFreeVersion &&
-        interstitialAdCounter == 2) {
+        interstitialAdCounter == 3) {
       interstitialAdCounter = 0;
       interstitialAd!.fullScreenContentCallback =
           FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {
@@ -118,6 +122,10 @@ class AdState extends ChangeNotifier {
         loadInterstitialAd();
       }));
       interstitialAd!.show();
+    } else {
+      if (interstitialAd == null) {
+        loadInterstitialAd();
+      }
     }
   }
 }
