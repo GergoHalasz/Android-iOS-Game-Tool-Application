@@ -267,6 +267,9 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                         child: Container(
                                           child: InkWell(
                                             onTap: () async {
+                                              if(adState.interstitialAd == null) {
+                                                          adState.loadInterstitialAd();
+                                                        }
                                               adState.interstitialAdCounter++;
                                               adState
                                                   .showInterstitialAdClassScreen();
@@ -344,6 +347,9 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                       child: Container(
                                         child: InkWell(
                                           onTap: () async {
+                                            if(adState.interstitialAd == null) {
+                                                          adState.loadInterstitialAd();
+                                                        }
                                             adState.interstitialAdCounter++;
                                             adState
                                                 .showInterstitialAdClassScreen();
@@ -539,6 +545,9 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                                     "buildClass"]]),
                                                       ),
                                                       onTap: () {
+                                                        if(adState.interstitialAd == null) {
+                                                          adState.loadInterstitialAd();
+                                                        }
                                                         adState.showInterstitialAd();
                                                         String className =
                                                             builds[index]

@@ -91,6 +91,9 @@ class _DetailScreenContentState extends State<DetailScreenContent>
         _tabController.addListener(() {
           setState(() {
             interstitialAdCounter++;
+            if(adState.interstitialAd == null) {
+                                                          adState.loadInterstitialAd();
+                                                        }
             if (interstitialAdCounter == 8) {
               adState.showInterstitialAd();
               interstitialAdCounter = 0;
@@ -339,6 +342,9 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                     color: Colors.white,
                   ),
                   onTap: () {
+                    if(adState.interstitialAd == null) {
+                                                          adState.loadInterstitialAd();
+                                                        }
                     interstitialAdCounter++;
                     if (interstitialAdCounter == 8) {
                       adState.showInterstitialAd();
@@ -558,6 +564,9 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     switch (item) {
       case MenuItems.itemResetTree:
         talentProvider.resetTalentTree(_selectedIndex);
+        if(adState.interstitialAd == null) {
+                                                          adState.loadInterstitialAd();
+                                                        }
         interstitialAdCounter++;
         if (interstitialAdCounter == 8) {
           adState.showInterstitialAd();
@@ -566,6 +575,9 @@ class _DetailScreenContentState extends State<DetailScreenContent>
         break;
       case MenuItems.itemShareBuild:
         shareBuild();
+        if(adState.interstitialAd == null) {
+                                                          adState.loadInterstitialAd();
+                                                        }
         interstitialAdCounter++;
         if (interstitialAdCounter == 8) {
           adState.showInterstitialAd();
