@@ -47,7 +47,7 @@ class _SaveScreenState extends State<SaveScreen> {
 
     Future<void> _saveBuild() async {
       if (_controller.text != "") {
-        adState.createInterstitialAd();
+        adState.showInterstitialAd();
         final prefs = await SharedPreferences.getInstance();
         var data = talentProvider.talentTrees.toJson();
         Map dataJson = {

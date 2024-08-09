@@ -69,6 +69,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
       'https://github.com/HalaszGergo123/wow-talent-calculator/blob/main/terms_and_conditions.md';
   String _privacyUrl =
       'https://github.com/HalaszGergo123/wow-talent-calculator/blob/main/privacy_policy.md';
+  int interstitialAdCounter = 0;
 
   @override
   void didChangeDependencies() {
@@ -87,6 +88,16 @@ class _DetailScreenContentState extends State<DetailScreenContent>
             ..load();
           firstTimeAdInit = false;
         });
+        _tabController.addListener(() {
+          setState(() {
+            interstitialAdCounter++;
+            if (interstitialAdCounter == 8) {
+              adState.showInterstitialAd();
+              interstitialAdCounter = 0;
+            }
+            _selectedIndex = _tabController.index;
+          });
+        });
       });
     }
   }
@@ -104,47 +115,12 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     classColor = widget.classColor;
     arrowTrees = widget.arrowTrees;
     _tabController = TabController(length: 3, vsync: this, initialIndex: 0);
-    _tabController.addListener(() {
-      setState(() {
-        _selectedIndex = _tabController.index;
-      });
-    });
   }
 
   @override
   void dispose() {
     _tabController.dispose();
     super.dispose();
-  }
-
-  void saveTalent() {
-    print("save talent");
-
-    String json = jsonEncode(talentTrees);
-    print(json);
-  }
-
-  void loadTalent() {
-    print("load talent");
-  }
-
-  void showHelp() {
-    print("show help");
-    _showDialog();
-  }
-
-  void _showDialog() {
-    // flutter defined function
-  }
-
-  void handlePopupMenuSelect(String value) {
-    if (value == 'Load') {
-      loadTalent();
-    } else if (value == 'Save') {
-      saveTalent();
-    } else if (value == 'Help') {
-      showHelp();
-    }
   }
 
   TabBar _tabBar() => TabBar(
@@ -363,6 +339,11 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                     color: Colors.white,
                   ),
                   onTap: () {
+                    interstitialAdCounter++;
+                    if (interstitialAdCounter == 8) {
+                      adState.showInterstitialAd();
+                      interstitialAdCounter = 0;
+                    }
                     talentProvider.resetTalentTree(_selectedIndex);
                   },
                 ),
@@ -577,9 +558,19 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     switch (item) {
       case MenuItems.itemResetTree:
         talentProvider.resetTalentTree(_selectedIndex);
+        interstitialAdCounter++;
+        if (interstitialAdCounter == 8) {
+          adState.showInterstitialAd();
+          interstitialAdCounter = 0;
+        }
         break;
       case MenuItems.itemShareBuild:
         shareBuild();
+        interstitialAdCounter++;
+        if (interstitialAdCounter == 8) {
+          adState.showInterstitialAd();
+          interstitialAdCounter = 0;
+        }
         break;
 
       case MenuItems.itemSetGlyphs:

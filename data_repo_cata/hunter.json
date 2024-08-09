@@ -88,7 +88,7 @@
           "Support": [],
           "Position": [1, 0],
           "Enable": false,
-          "Tier": 1,
+          "Tier": 2,
           "Ranks": {
             "Rank": [
               {
@@ -110,7 +110,7 @@
           "Support": [],
           "Position": [1, 1],
           "Enable": false,
-          "Tier": 1,
+          "Tier": 2,
           "Ranks": {
             "Rank": [
               {
@@ -132,7 +132,7 @@
           "Support": ["Focus Fire"],
           "Position": [1, 2],
           "Enable": false,
-          "Tier": 1,
+          "Tier": 2,
           "Ranks": {
             "Rank": [
               {
@@ -158,7 +158,7 @@
           "Support": [],
           "Position": [1, 3],
           "Enable": false,
-          "Tier": 1,
+          "Tier": 2,
           "Ranks": {
             "Rank": [
               {
@@ -180,7 +180,7 @@
           "Support": [],
           "Position": [2, 0],
           "Enable": false,
-          "Tier": 1,
+          "Tier": 3,
           "Ranks": {
             "Rank": [
               {
@@ -206,7 +206,7 @@
           "Support": ["Bestial Wrath"],
           "Position": [2, 1],
           "Enable": false,
-          "Tier": 1,
+          "Tier": 3,
           "Ranks": {
             "Rank": [
               {
@@ -224,7 +224,7 @@
           "Support": [],
           "Position": [2, 2],
           "Enable": false,
-          "Tier": 1,
+          "Tier": 3,
           "Ranks": {
             "Rank": [
               {
@@ -242,7 +242,7 @@
           "Support": [],
           "Position": [3, 0],
           "Enable": false,
-          "Tier": 1,
+          "Tier": 4,
           "Ranks": {
             "Rank": [
               {
@@ -268,7 +268,7 @@
           "Support": [],
           "Position": [3, 2],
           "Enable": false,
-          "Tier": 1,
+          "Tier": 4,
           "Ranks": {
             "Rank": [
               {
@@ -290,7 +290,7 @@
           "Support": [],
           "Position": [4, 0],
           "Enable": false,
-          "Tier": 1,
+          "Tier": 5,
           "Ranks": {
             "Rank": [
               {
@@ -312,7 +312,7 @@
           "Support": ["The Beast Within"],
           "Position": [4, 1],
           "Enable": false,
-          "Tier": 1,
+          "Tier": 5,
           "Ranks": {
             "Rank": [
               {
@@ -330,7 +330,7 @@
           "Support": ["Invigoration"],
           "Position": [4, 2],
           "Enable": false,
-          "Tier": 1,
+          "Tier": 5,
           "Ranks": {
             "Rank": [
               {
@@ -348,7 +348,7 @@
           "Support": [],
           "Position": [5, 0],
           "Enable": false,
-          "Tier": 1,
+          "Tier": 6,
           "Ranks": {
             "Rank": [
               {
@@ -370,7 +370,7 @@
           "Support": [],
           "Position": [5, 1],
           "Enable": false,
-          "Tier": 1,
+          "Tier": 6,
           "Ranks": {
             "Rank": [
               {
@@ -388,7 +388,7 @@
           "Support": [],
           "Position": [5, 2],
           "Enable": false,
-          "Tier": 1,
+          "Tier": 6,
           "Ranks": {
             "Rank": [
               {
@@ -410,7 +410,7 @@
           "Support": [],
           "Position": [6, 1],
           "Enable": false,
-          "Tier": 1,
+          "Tier": 7,
           "Ranks": {
             "Rank": [
               {

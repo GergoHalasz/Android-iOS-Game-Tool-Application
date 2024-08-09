@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:provider/provider.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:wowtalentcalculator/DetailsScreen/classes_screen.dart';
@@ -60,6 +61,7 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
         "assets/background/${images[Random().nextInt(images.length)]}.png");
     imagesList.add(
         "assets/background/${images[Random().nextInt(images.length)]}.png");
+
     super.initState();
   }
 

@@ -12,7 +12,7 @@ class AdState extends ChangeNotifier {
 
   AdState(this.initialization) {
     this.initialization = initialization;
-    createInterstitialAd();
+    loadInterstitialAd();
     Purchases.addPurchaserInfoUpdateListener((purchaserInfo) {
       updatePurchaseStatus();
     });
@@ -74,7 +74,7 @@ class AdState extends ChangeNotifier {
     onAdImpression: (Ad ad) => print('Ad impression.'),
   );
 
-  void createInterstitialAd() {
+  void loadInterstitialAd() {
     if (!isAdFreeVersion) {
       InterstitialAd.load(
           adUnitId: interstitialAdUnitId!,
@@ -86,38 +86,38 @@ class AdState extends ChangeNotifier {
             onAdFailedToLoad: (LoadAdError error) {
               interstitialAd = null;
             },
-          )).then((onValue) => {loadInterstitialAd(true)});
+          ));
     }
   }
 
-  void loadInterstitialAd(bool freezeChecks) {
+  void showInterstitialAd() {
     if (interstitialAd != null && !isAdFreeVersion) {
-      if (freezeChecks) {
-        interstitialAd!.fullScreenContentCallback =
-            FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {
-          interstitialAd!.dispose();
-          createInterstitialAd();
-        }, onAdFailedToShowFullScreenContent: ((ad, error) {
-          interstitialAd!.dispose();
-          createInterstitialAd();
-        }));
-        interstitialAd!.show();
-      } else {
-        if (interstitialAdCounter >= 3) {
-          interstitialAd!.fullScreenContentCallback =
-              FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {
-            interstitialAd!.dispose();
-            createInterstitialAd();
-          }, onAdFailedToShowFullScreenContent: ((ad, error) {
-            interstitialAd!.dispose();
-            createInterstitialAd();
-          }));
-          interstitialAdCounter = 0;
-          interstitialAd!.show();
-        } else {
-          interstitialAdCounter++;
-        }
-      }
+      interstitialAd!.fullScreenContentCallback =
+          FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {
+        interstitialAd!.dispose();
+        loadInterstitialAd();
+      }, onAdFailedToShowFullScreenContent: ((ad, error) {
+        interstitialAd!.dispose();
+        loadInterstitialAd();
+      }));
+      interstitialAd!.show();
+    }
+  }
+
+  void showInterstitialAdClassScreen() {
+    if (interstitialAd != null &&
+        !isAdFreeVersion &&
+        interstitialAdCounter == 2) {
+      interstitialAdCounter = 0;
+      interstitialAd!.fullScreenContentCallback =
+          FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {
+        interstitialAd!.dispose();
+        loadInterstitialAd();
+      }, onAdFailedToShowFullScreenContent: ((ad, error) {
+        interstitialAd!.dispose();
+        loadInterstitialAd();
+      }));
+      interstitialAd!.show();
     }
   }
 }

@@ -267,6 +267,9 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                         child: Container(
                                           child: InkWell(
                                             onTap: () async {
+                                              adState.interstitialAdCounter++;
+                                              adState
+                                                  .showInterstitialAdClassScreen();
                                               List snapshot =
                                                   await loadTalentString(
                                                       element,
@@ -325,6 +328,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                               })
                             else
                               ...tbcVanillaClasses.map((element) {
+                                
                                 return Container(
                                   width: SizeConfig.cellSize / 1.35,
                                   height: SizeConfig.cellSize / 1.35,
@@ -340,6 +344,9 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                       child: Container(
                                         child: InkWell(
                                           onTap: () async {
+                                            adState.interstitialAdCounter++;
+                                            adState
+                                                .showInterstitialAdClassScreen();
                                             List snapshot =
                                                 await loadTalentString(
                                                     element, widget.expansion);
@@ -532,6 +539,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                                     "buildClass"]]),
                                                       ),
                                                       onTap: () {
+                                                        adState.showInterstitialAd();
                                                         String className =
                                                             builds[index]
                                                                     ["build"]
