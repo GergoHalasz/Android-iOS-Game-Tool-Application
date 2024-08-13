@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -28,13 +30,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  bool isConnectedToInternet = false;
   @override
-  void initState() {
-    super.initState();
+  void dispose() {
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    
+
     return MaterialApp(
         title: 'Classic Talent Calculator',
         debugShowCheckedModeBanner: false,

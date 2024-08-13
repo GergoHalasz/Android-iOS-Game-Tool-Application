@@ -49,6 +49,7 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
   List<String> imagesList = [];
   bool firstTimeAdInit = true;
   late BannerAd banner;
+  bool isConnectedToInternet = false;
 
   @override
   void initState() {
@@ -61,7 +62,7 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
         "assets/background/${images[Random().nextInt(images.length)]}.png");
     imagesList.add(
         "assets/background/${images[Random().nextInt(images.length)]}.png");
-
+    checkInternetConnection();
     super.initState();
   }
 
@@ -84,6 +85,15 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
       });
     }
     super.didChangeDependencies();
+  }
+
+  void checkInternetConnection() async {
+    bool result = await InternetConnectionChecker().hasConnection;
+    if (result == true) {
+      print('YAY! Free cute dog pics!');
+    } else {
+      print('No internet :( Reason:');
+    }
   }
 
   @override
