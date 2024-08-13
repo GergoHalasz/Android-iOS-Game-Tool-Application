@@ -62,7 +62,6 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
         "assets/background/${images[Random().nextInt(images.length)]}.png");
     imagesList.add(
         "assets/background/${images[Random().nextInt(images.length)]}.png");
-    checkInternetConnection();
     super.initState();
   }
 
@@ -83,6 +82,7 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
           firstTimeAdInit = false;
         });
       });
+      if (!adState.isAdFreeVersion) checkInternetConnection();
     }
     super.didChangeDependencies();
   }
@@ -90,9 +90,25 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
   void checkInternetConnection() async {
     bool result = await InternetConnectionChecker().hasConnection;
     if (result == true) {
-      print('YAY! Free cute dog pics!');
     } else {
-      print('No internet :( Reason:');
+      showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (context) => AlertDialog(
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                checkInternetConnection();
+              },
+              child: const Text('Connected'),
+            )
+          ],
+          content: Text(
+              'Please connect to the internet to proceed further. Click on the \"Connected\" button if you did connect to the internet.'),
+          title: Text("No internet connection"),
+        ),
+      );
     }
   }
 
@@ -109,37 +125,6 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
           centerTitle: true,
         ),
         drawer: Drawer(child: DrawerScreen()),
-        floatingActionButton: !adState.isAdFreeVersion
-            ? GestureDetector(
-                onTap: () async {
-                  final adState = Provider.of<AdState>(context, listen: false);
-                  if (!adState.isAdFreeVersion) {
-                    final offerings = await PurchaseApi.fetchOffers();
-                    final isSuccess = await Purchases.purchasePackage(
-                        offerings[0].availablePackages[0]);
-                    if (isSuccess.allPurchasedProductIdentifiers.length == 1) {
-                      adState.changeToAdFreeVersion();
-                    }
-                  }
-                },
-                child: Container(
-                  padding: EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                      color: Color(0xff2E6171),
-                      borderRadius: BorderRadius.all(Radius.circular(60))),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.not_interested, color: Colors.red),
-                      Text(
-                        'Remove Ads',
-                        style: TextStyle(fontSize: 12, color: Colors.white),
-                      )
-                    ],
-                  ),
-                ),
-              )
-            : null,
         bottomNavigationBar: !adState.isAdFreeVersion
             ? Container(
                 height: 52,

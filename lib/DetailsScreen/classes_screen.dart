@@ -94,7 +94,6 @@ class _ClassesScreenState extends State<ClassesScreen> {
       });
     });
     super.initState();
-    checkInternetConnection();
   }
 
   void checkInternetConnection() async {
@@ -147,6 +146,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
           firstTimeAdInit = false;
         });
       });
+      if (!adState.isAdFreeVersion) checkInternetConnection();
     }
   }
 

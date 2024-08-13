@@ -12,3 +12,5 @@ Future<List> loadTalentString(String name, String? expansion) async {
   final jsonResponse = json.decode(jsonTalent);
   return jsonResponse;
 }
+
+

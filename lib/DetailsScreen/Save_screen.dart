@@ -100,83 +100,124 @@ class _SaveScreenState extends State<SaveScreen> {
       }
     }
 
-    return AlertDialog(
+    return Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Color(0xff556F7A),
-        title: new Text(
-          'Save Build',
-          style: TextStyle(color: Colors.white, fontSize: 15),
-        ),
-        actions: [
-          TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Color(0xff2E6171),
-              ),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text(
-                'Cancel',
-                style: TextStyle(color: Colors.white),
-              )),
-          TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Color(0xff2E6171),
-              ),
-              onPressed: () {
-                _saveBuild();
-              },
-              child: const Text(
-                'Save',
-                style: TextStyle(color: Colors.white),
-              )),
-        ],
-        content: DefaultTextStyle(
+        appBar: AppBar(
+            iconTheme: IconThemeData(color: Colors.white),
+            centerTitle: true,
+            title: Text(
+              'Save Build',
+              style: TextStyle(color: Colors.white),
+            ),
+            backgroundColor: Color(0xff2E6171),
+            actions: <Widget>[
+              Container(
+                  padding: EdgeInsets.only(right: 15),
+                  child: InkResponse(
+                    child: Icon(
+                      Icons.save,
+                      color: Colors.white,
+                    ),
+                    onTap: () {
+                      _saveBuild();
+                      FocusScope.of(context).unfocus();
+                    },
+                  )),
+            ]),
+        body: DefaultTextStyle(
             style: TextStyle(
                 fontSize: 16,
                 color: Colors.white,
                 fontFamily: "Roboto",
                 fontWeight: FontWeight.w900),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                    padding: EdgeInsets.all(10),
-                    child: Theme(
-                      data: new ThemeData(
-                        primaryColor: Colors.redAccent,
-                        primaryColorDark: Colors.red,
-                      ),
-                      child: TextField(
-                        autofocus: true,
-                        controller: _controller,
-                        decoration: InputDecoration(
-                          errorStyle:
-                              TextStyle(color: Colors.red[600], fontSize: 14),
-                          errorText:
-                              isTextEmpty ? "Build Name Can't Be Empty" : null,
-                          counterStyle: TextStyle(color: Colors.white),
-                          labelText: 'Name',
-                          labelStyle: TextStyle(color: Colors.white),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.white, width: 0.0),
+            child: SafeArea(
+              child: Stack(children: [
+                Column(
+                  children: [
+                    Container(
+                        padding: EdgeInsets.all(10),
+                        child: Theme(
+                          data: new ThemeData(
+                            primaryColor: Colors.redAccent,
+                            primaryColorDark: Colors.red,
                           ),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                          child: TextField(
+                            controller: _controller,
+                            decoration: InputDecoration(
+                              errorStyle: TextStyle(
+                                  color: Colors.red[600], fontSize: 14),
+                              errorText: isTextEmpty
+                                  ? "Build Name Can't Be Empty"
+                                  : null,
+                              counterStyle: TextStyle(color: Colors.white),
+                              labelText: 'Name',
+                              labelStyle: TextStyle(color: Colors.white),
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: Colors.white, width: 0.0),
+                              ),
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.white),
+                              ),
+                            ),
+                            maxLength: 25,
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontFamily: "Roboto",
+                                fontWeight: FontWeight.w900),
+                            onChanged: (text) {
+                              buildName = text;
+                            },
                           ),
+                        )),
+                  ],
+                ),
+                if (!adState.isAdFreeVersion)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 120),
+                    child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Text(
+                          'Please support me by removing the ads! :)',
+                          style: TextStyle(fontSize: 15),
+                        )),
+                  ),
+                if (!adState.isAdFreeVersion)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 45),
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.grey,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
+                        width: 200,
+                        child: ListTile(
+                          dense: true,
+                          leading:
+                              Icon(Icons.not_interested, color: Colors.white),
+                          title: Text(
+                            'Remove Ads  Offline Mode',
+                            style: TextStyle(color: Colors.white, fontSize: 16),
+                          ),
+                          onTap: () async {
+                            if (!adState.isAdFreeVersion) {
+                              final offerings = await PurchaseApi.fetchOffers();
+                              final isSuccess = await Purchases.purchasePackage(
+                                  offerings[0].availablePackages[0]);
+                              if (isSuccess == true) {
+                                adState.changeToAdFreeVersion();
+                              }
+                            }
+                          },
                         ),
-                        maxLength: 25,
-                        style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.white,
-                            fontFamily: "Roboto",
-                            fontWeight: FontWeight.w900),
-                        onChanged: (text) {
-                          buildName = text;
-                        },
                       ),
-                    )),
-              ],
+                    ),
+                  ),
+              ]),
             )));
   }
 }
