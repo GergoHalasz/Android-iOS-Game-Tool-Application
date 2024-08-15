@@ -108,6 +108,24 @@ class AdState extends ChangeNotifier {
     }
   }
 
+  void showInterstitialAdClass2() {
+    if (interstitialAd != null && !isAdFreeVersion && interstitialAdCounter == 2) {
+      interstitialAd!.fullScreenContentCallback =
+          FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {
+        interstitialAd!.dispose();
+        loadInterstitialAd();
+      }, onAdFailedToShowFullScreenContent: ((ad, error) {
+        interstitialAd!.dispose();
+        loadInterstitialAd();
+      }));
+      interstitialAd!.show();
+    } else {
+      if (interstitialAd == null) {
+        loadInterstitialAd();
+      }
+    }
+  }
+
   void showInterstitialAdClassScreen() {
     if (interstitialAd != null &&
         !isAdFreeVersion &&

@@ -91,14 +91,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
         });
         _tabController.addListener(() {
           setState(() {
-            interstitialAdCounter++;
-            if (adState.interstitialAd == null) {
-              adState.loadInterstitialAd();
-            }
-            if (interstitialAdCounter == 8) {
-              adState.showInterstitialAd();
-              interstitialAdCounter = 0;
-            }
             _selectedIndex = _tabController.index;
           });
         });
@@ -373,7 +365,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                       adState.loadInterstitialAd();
                     }
                     interstitialAdCounter++;
-                    if (interstitialAdCounter == 8) {
+                    if (interstitialAdCounter == 6) {
                       adState.showInterstitialAd();
                       interstitialAdCounter = 0;
                     }
@@ -595,7 +587,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
           adState.loadInterstitialAd();
         }
         interstitialAdCounter++;
-        if (interstitialAdCounter == 8) {
+        if (interstitialAdCounter == 6) {
           adState.showInterstitialAd();
           interstitialAdCounter = 0;
         }
@@ -606,7 +598,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
           adState.loadInterstitialAd();
         }
         interstitialAdCounter++;
-        if (interstitialAdCounter == 8) {
+        if (interstitialAdCounter == 6) {
           adState.showInterstitialAd();
           interstitialAdCounter = 0;
         }

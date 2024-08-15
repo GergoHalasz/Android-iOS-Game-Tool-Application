@@ -580,7 +580,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                               .loadInterstitialAd();
                                                         }
                                                         adState
-                                                            .showInterstitialAd();
+                                                            .showInterstitialAdClass2();
                                                         String className =
                                                             builds[index]
                                                                     ["build"]
