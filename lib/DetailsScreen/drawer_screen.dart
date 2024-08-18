@@ -157,7 +157,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
               ListTile(
                 leading: Icon(Icons.not_interested, color: Colors.white),
                 title: Text(
-                  'Remove Ads & Offline Mode',
+                  'Remove Ads',
                   style: TextStyle(color: Colors.white),
                 ),
                 onTap: () async {

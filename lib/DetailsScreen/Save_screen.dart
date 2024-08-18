@@ -176,11 +176,11 @@ class _SaveScreenState extends State<SaveScreen> {
                 ),
                 if (!adState.isAdFreeVersion)
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 120),
+                    padding: const EdgeInsets.only(bottom: 110),
                     child: Align(
                         alignment: Alignment.bottomCenter,
                         child: Text(
-                          'Please support me by removing the ads! :)',
+                          'Support me by removing the ads! :)',
                           style: TextStyle(fontSize: 15),
                         )),
                   ),
@@ -200,7 +200,7 @@ class _SaveScreenState extends State<SaveScreen> {
                           leading:
                               Icon(Icons.not_interested, color: Colors.white),
                           title: Text(
-                            'Remove Ads  Offline Mode',
+                            'Remove Ads',
                             style: TextStyle(color: Colors.white, fontSize: 16),
                           ),
                           onTap: () async {

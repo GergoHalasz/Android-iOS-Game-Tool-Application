@@ -1,7 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:provider/provider.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:wowtalentcalculator/DetailsScreen/classes_screen.dart';
@@ -82,41 +81,72 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
           firstTimeAdInit = false;
         });
       });
-      if (!adState.isAdFreeVersion) checkInternetConnection();
+      // if (!adState.isAdFreeVersion) checkInternetConnection();
     }
     super.didChangeDependencies();
   }
 
-  void checkInternetConnection() async {
-    bool result = await InternetConnectionChecker().hasConnection;
-    if (result == true) {
-    } else {
-      showDialog(
-        barrierDismissible: false,
-        context: context,
-        builder: (context) => AlertDialog(
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-                checkInternetConnection();
-              },
-              child: const Text('Connected'),
-            )
-          ],
-          content: Text(
-              'Please connect to the internet to proceed further. Click on the \"Connected\" button if you did connect to the internet.'),
-          title: Text("No internet connection"),
-        ),
-      );
-    }
-  }
+  // void checkInternetConnection() async {
+  //   bool result = await InternetConnectionChecker().hasConnection;
+  //   if (result == true) {
+  //   } else {
+  //     showDialog(
+  //       barrierDismissible: false,
+  //       context: context,
+  //       builder: (context) => AlertDialog(
+  //         actions: [
+  //           TextButton(
+  //             onPressed: () {
+  //               Navigator.of(context).pop();
+  //               checkInternetConnection();
+  //             },
+  //             child: const Text('Connected'),
+  //           )
+  //         ],
+  //         content: Text(
+  //             'Please connect to the internet to proceed further. Click on the \"Connected\" button if you did connect to the internet.'),
+  //         title: Text("No internet connection"),
+  //       ),
+  //     );
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
     final adState = Provider.of<AdState>(context);
 
     return Scaffold(
+        floatingActionButton: !adState.isAdFreeVersion
+            ? GestureDetector(
+                onTap: () async {
+                  final adState = Provider.of<AdState>(context, listen: false);
+                  if (!adState.isAdFreeVersion) {
+                    final offerings = await PurchaseApi.fetchOffers();
+                    final isSuccess = await Purchases.purchasePackage(
+                        offerings[0].availablePackages[0]);
+                    if (isSuccess.allPurchasedProductIdentifiers.length == 1) {
+                      adState.changeToAdFreeVersion();
+                    }
+                  }
+                },
+                child: Container(
+                  padding: EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                      color: Color(0xff2E6171),
+                      borderRadius: BorderRadius.all(Radius.circular(60))),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.not_interested, color: Colors.red),
+                      Text(
+                        'Remove Ads',
+                        style: TextStyle(fontSize: 12, color: Colors.white),
+                      )
+                    ],
+                  ),
+                ),
+              )
+            : null,
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.white),
           backgroundColor: Color(0xff2E6171),
