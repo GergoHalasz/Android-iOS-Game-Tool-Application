@@ -65,6 +65,7 @@ class _RuneDetailsDialogState extends State<RuneDetailsDialog> {
                         color: Colors.grey,
                         borderRadius: BorderRadius.all(Radius.circular(10))),
                     message: rune.description,
+                    textStyle: TextStyle(fontFamily: 'Roboto'),
                     child: Material(
                       color: Colors.transparent,
                       child: Ink(

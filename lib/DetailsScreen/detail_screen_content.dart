@@ -314,7 +314,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                           ),
                           Text(
                             'Runes',
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: 14),
                           )
                         ],
                       ),
@@ -395,11 +395,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
               preferredSize: _tabBar().preferredSize,
               child: ColoredBox(color: Color(0xff556F7A), child: _tabBar()))),
       body: DefaultTextStyle(
-        style: TextStyle(
-            fontSize: 16,
-            color: Colors.white,
-            fontFamily: "Roboto",
-            fontWeight: FontWeight.w900),
+        style: TextStyle(color: Colors.white, fontFamily: 'Morpheus', fontSize: 18),
         child: Column(
           children: [
             Container(
@@ -451,7 +447,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                               Text(
                                   '${talentProvider.getRemainingTalentPoints()}',
                                   style:
-                                      TextStyle(color: kColorSelectiveYellow))
+                                      TextStyle(color: kColorSelectiveYellow,))
                             ],
                           ),
                         ),

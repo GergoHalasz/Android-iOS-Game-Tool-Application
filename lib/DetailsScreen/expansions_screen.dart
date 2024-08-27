@@ -116,13 +116,6 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
     final adState = Provider.of<AdState>(context);
 
     return Scaffold(
-        appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.white),
-          backgroundColor: Color(0xff2E6171),
-          title:
-              Text("Talent Calculator", style: TextStyle(color: Colors.white)),
-          centerTitle: true,
-        ),
         drawer: Drawer(child: DrawerScreen()),
         bottomNavigationBar: !adState.isAdFreeVersion
             ? Container(
@@ -144,20 +137,36 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                 padding: EdgeInsets.only(top: 16),
                 child: Column(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
+                      Column(
+                        children: [
+                          Text(
+                            'VANILLA SOD TBC WOTLK CATA TALENT CALCULATOR',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 24),
+                            textAlign: TextAlign.center,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 16.0),
+                            child: Text(
+                              'Choose the expansion',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 24),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ],
+                      ),
                       ...expansions.asMap().entries.map((entry) {
                         if (entry.value == 'vanilla') {
                           return Column(
                             children: [
-                              Text(
-                                'SoD with runes & Classic',
-                                style: TextStyle(
-                                    color: const Color.fromARGB(255, 255, 255, 255), fontSize: 19, fontWeight: FontWeight.bold),
-                              ),
                               Container(
-                                  width: SizeConfig.cellSize / 0.8,
-                                  height: SizeConfig.cellSize / 0.8,
+                                  width: SizeConfig.cellSize / 1.1,
+                                  height: SizeConfig.cellSize / 1.1,
                                   child: Material(
                                     color: Colors.transparent,
                                     child: Ink(
@@ -186,13 +195,12 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                                       ),
                                     ),
                                   )),
-                              
                             ],
                           );
                         }
                         return Container(
-                            width: SizeConfig.cellSize / 0.8,
-                            height: SizeConfig.cellSize / 0.8,
+                            width: SizeConfig.cellSize / 1.1,
+                            height: SizeConfig.cellSize / 1.1,
                             child: Material(
                               color: Colors.transparent,
                               child: Ink(

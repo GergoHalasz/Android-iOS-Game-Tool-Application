@@ -295,102 +295,105 @@ class _SpellWidgetState extends State<SpellWidget> {
       backgroundColor: Color(0xff556F7A),
       content: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Align(
-                alignment: Alignment.bottomLeft,
-                child: Text(
-                  '${widget.talent.name}',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                      letterSpacing: -0.5),
-                )),
-            Align(
-                alignment: Alignment.bottomLeft,
-                child: Text('Rank $currentRank/$maxRank',
-                    style: TextStyle(color: Colors.white, fontSize: 14))),
-            Align(
-                alignment: Alignment.bottomLeft,
-                child: Text(
-                  '${widget.talent.ranks.rankList[currentRank == 0 ? 0 : currentRank - 1].description}',
-                  style: TextStyle(
-                      color: Colors.amber,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12,
-                      letterSpacing: -0.5),
-                )),
-            if (currentRank != 0 && currentRank < maxRank)
-              SizedBox(
-                height: 8,
-              ),
-            if (currentRank != 0 && currentRank < maxRank)
-              Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Text('Next rank:',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 11,
-                          letterSpacing: -0.5))),
-            if (currentRank != 0 && currentRank < maxRank)
+        child: DefaultTextStyle(
+          style: TextStyle(fontFamily: 'Roboto',fontWeight: FontWeight.bold),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
               Align(
                   alignment: Alignment.bottomLeft,
                   child: Text(
-                    '${widget.talent.ranks.rankList[currentRank < maxRank ? currentRank : currentRank - 1].description}',
+                    '${widget.talent.name}',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14,
+                        letterSpacing: -0.5),
+                  )),
+              Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Text('Rank $currentRank/$maxRank',
+                      style: TextStyle(color: Colors.white, fontSize: 14))),
+              Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Text(
+                    '${widget.talent.ranks.rankList[currentRank == 0 ? 0 : currentRank - 1].description}',
                     style: TextStyle(
                         color: Colors.amber,
                         fontWeight: FontWeight.bold,
                         fontSize: 12,
                         letterSpacing: -0.5),
                   )),
-            if (widget.talent.enable)
-              SizedBox(
-                height: 4,
-              ),
-            if (widget.talent.enable)
-              Align(
-                alignment: Alignment.bottomLeft,
-                child: Row(
-                  children: [
-                    Text(
-                      'Swipe up to learn',
-                      style: TextStyle(
-                          color:
-                              currentRank < maxRank ? Colors.green : Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 11,
-                          letterSpacing: -0.5),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 12.0),
-                      child: Text(
-                        'Long tap to max rank',
+              if (currentRank != 0 && currentRank < maxRank)
+                SizedBox(
+                  height: 8,
+                ),
+              if (currentRank != 0 && currentRank < maxRank)
+                Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Text('Next rank:',
                         style: TextStyle(
-                            color: Colors.grey[400],
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 11,
+                            letterSpacing: -0.5))),
+              if (currentRank != 0 && currentRank < maxRank)
+                Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Text(
+                      '${widget.talent.ranks.rankList[currentRank < maxRank ? currentRank : currentRank - 1].description}',
+                      style: TextStyle(
+                          color: Colors.amber,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                          letterSpacing: -0.5),
+                    )),
+              if (widget.talent.enable)
+                SizedBox(
+                  height: 4,
+                ),
+              if (widget.talent.enable)
+                Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Row(
+                    children: [
+                      Text(
+                        'Swipe up to learn',
+                        style: TextStyle(
+                            color:
+                                currentRank < maxRank ? Colors.green : Colors.red,
                             fontWeight: FontWeight.bold,
                             fontSize: 11,
                             letterSpacing: -0.5),
                       ),
-                    )
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.only(left: 12.0),
+                        child: Text(
+                          'Long tap to max rank',
+                          style: TextStyle(
+                              color: Colors.grey[400],
+                              fontWeight: FontWeight.bold,
+                              fontSize: 11,
+                              letterSpacing: -0.5),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-            if (widget.talent.enable)
-              Align(
-                alignment: Alignment.bottomLeft,
-                child: Text(
-                  'Swipe down to unlearn',
-                  style: TextStyle(
-                      color: Colors.red,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 11,
-                      letterSpacing: -0.5),
-                ),
-              )
-          ],
+              if (widget.talent.enable)
+                Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Text(
+                    'Swipe down to unlearn',
+                    style: TextStyle(
+                        color: Colors.red,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 11,
+                        letterSpacing: -0.5),
+                  ),
+                )
+            ],
+          ),
         ),
       ),
       child: Container(

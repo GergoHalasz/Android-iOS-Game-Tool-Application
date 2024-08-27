@@ -32,10 +32,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    
-
     return MaterialApp(
-        title: 'Classic Talent Calculator',
+      theme: ThemeData(fontFamily: 'Morpheus'),
+        title: 'Classic Talent Calculastor',
         debugShowCheckedModeBanner: false,
         home: LoadHomeScreen());
   }

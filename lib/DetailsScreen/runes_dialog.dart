@@ -37,54 +37,57 @@ class _RunesDialogState extends State<RunesDialog> {
             color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
       ),
       backgroundColor: Colors.black,
-      content: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          ...runeTypes.map(
-            (runeType) {
-              switch (runeType) {
-                case "Chest":
-                  return RuneWidget(
-                    runes: classRunes.runes!.chest,
-                    type: "Chest",
-                  );
-                case "Waist":
-                  return RuneWidget(
-                    runes: classRunes.runes!.waist,
-                    type: "Waist",
-                  );
-                case "Legs":
-                  return RuneWidget(
-                    runes: classRunes.runes!.legs,
-                    type: "Legs",
-                  );
-                case "Feet":
-                  return RuneWidget(
-                    runes: classRunes.runes!.feet,
-                    type: "Feet",
-                  );
-                case "Hands":
-                  return RuneWidget(
-                    runes: classRunes.runes!.hands,
-                    type: "Hands",
-                  );
-                case "Head":
-                  return RuneWidget(
-                    runes: classRunes.runes!.headPhase3,
-                    type: "Head",
-                  );
-                case "Wrists":
-                  return RuneWidget(
-                    runes: classRunes.runes!.wristsPhase3,
-                    type: "Wrists",
-                  );
-                default:
-                  return Container();
-              }
-            },
-          )
-        ],
+      content: DefaultTextStyle(
+        style: TextStyle(fontFamily: 'Roboto'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ...runeTypes.map(
+              (runeType) {
+                switch (runeType) {
+                  case "Chest":
+                    return RuneWidget(
+                      runes: classRunes.runes!.chest,
+                      type: "Chest",
+                    );
+                  case "Waist":
+                    return RuneWidget(
+                      runes: classRunes.runes!.waist,
+                      type: "Waist",
+                    );
+                  case "Legs":
+                    return RuneWidget(
+                      runes: classRunes.runes!.legs,
+                      type: "Legs",
+                    );
+                  case "Feet":
+                    return RuneWidget(
+                      runes: classRunes.runes!.feet,
+                      type: "Feet",
+                    );
+                  case "Hands":
+                    return RuneWidget(
+                      runes: classRunes.runes!.hands,
+                      type: "Hands",
+                    );
+                  case "Head":
+                    return RuneWidget(
+                      runes: classRunes.runes!.headPhase3,
+                      type: "Head",
+                    );
+                  case "Wrists":
+                    return RuneWidget(
+                      runes: classRunes.runes!.wristsPhase3,
+                      type: "Wrists",
+                    );
+                  default:
+                    return Container();
+                }
+              },
+            )
+          ],
+        ),
       ),
     );
   }
