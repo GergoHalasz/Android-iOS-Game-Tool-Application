@@ -18,7 +18,7 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
     minDays: 0,
     minLaunches: 0,
     remindDays: 1,
-    remindLaunches: 4,
+    remindLaunches: 2,
     googlePlayIdentifier: 'com.fissher.wowtalentcalculator',
     appStoreIdentifier: '1593368066',
   );
@@ -26,11 +26,6 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      CustomDoNotOpenAgainCondition condition = CustomDoNotOpenAgainCondition();
-      CustomMinimumAppLaunchesCondition minimumAppLaunchesCondition =
-          CustomMinimumAppLaunchesCondition(minLaunches: 4, remindLaunches: 5);
-      rateMyApp.conditions.add(condition);
-      rateMyApp.conditions.add(minimumAppLaunchesCondition);
       await rateMyApp.init();
       if (mounted && rateMyApp.shouldOpenDialog) {
         if (Platform.isAndroid) {

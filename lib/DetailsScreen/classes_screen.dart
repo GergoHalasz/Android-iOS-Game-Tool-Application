@@ -210,6 +210,16 @@ class _ClassesScreenState extends State<ClassesScreen> {
     });
   }
 
+  getExpansionTitle() {
+    if (widget.expansion == "vanilla")
+      return "SoD & Vanilla Classes";
+    else if (widget.expansion == "tbc")
+      return "TBC Classes";
+    else if (widget.expansion == 'wotlk')
+      return "WotLK Classes";
+    else if (widget.expansion == 'cata') return "Cataclysm Classes";
+  }
+
   @override
   Widget build(BuildContext context) {
     final adState = Provider.of<AdState>(context);
@@ -265,8 +275,8 @@ class _ClassesScreenState extends State<ClassesScreen> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        '${capitalize(widget.expansion != "vanilla" ? widget.expansion : "SoD")} Classes',
-                        style: TextStyle(fontSize: 24),
+                        '${getExpansionTitle()}',
+                        style: TextStyle(fontSize: 24,),
                       ),
                       Container(
                         child: SizedBox(
@@ -579,6 +589,8 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                           adState
                                                               .loadInterstitialAd();
                                                         }
+                                                        adState
+                                                            .interstitialAdCounter2++;
                                                         adState
                                                             .showInterstitialAdClass2();
                                                         String className =

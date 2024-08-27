@@ -9,6 +9,7 @@ class AdState extends ChangeNotifier {
   Future<InitializationStatus> initialization;
   InterstitialAd? interstitialAd;
   int interstitialAdCounter = 0;
+  int interstitialAdCounter2 = 0;
 
   AdState(this.initialization) {
     this.initialization = initialization;
@@ -109,7 +110,8 @@ class AdState extends ChangeNotifier {
   }
 
   void showInterstitialAdClass2() {
-    if (interstitialAd != null && !isAdFreeVersion && interstitialAdCounter == 2) {
+    if (interstitialAd != null && !isAdFreeVersion && interstitialAdCounter2 == 2) {
+      interstitialAdCounter2 = 0;
       interstitialAd!.fullScreenContentCallback =
           FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {
         interstitialAd!.dispose();

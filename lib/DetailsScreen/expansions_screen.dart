@@ -116,37 +116,6 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
     final adState = Provider.of<AdState>(context);
 
     return Scaffold(
-        floatingActionButton: !adState.isAdFreeVersion
-            ? GestureDetector(
-                onTap: () async {
-                  final adState = Provider.of<AdState>(context, listen: false);
-                  if (!adState.isAdFreeVersion) {
-                    final offerings = await PurchaseApi.fetchOffers();
-                    final isSuccess = await Purchases.purchasePackage(
-                        offerings[0].availablePackages[0]);
-                    if (isSuccess.allPurchasedProductIdentifiers.length == 1) {
-                      adState.changeToAdFreeVersion();
-                    }
-                  }
-                },
-                child: Container(
-                  padding: EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                      color: Color(0xff2E6171),
-                      borderRadius: BorderRadius.all(Radius.circular(60))),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.not_interested, color: Colors.red),
-                      Text(
-                        'Remove Ads',
-                        style: TextStyle(fontSize: 12, color: Colors.white),
-                      )
-                    ],
-                  ),
-                ),
-              )
-            : null,
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.white),
           backgroundColor: Color(0xff2E6171),
@@ -181,6 +150,11 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                         if (entry.value == 'vanilla') {
                           return Column(
                             children: [
+                              Text(
+                                'SoD with runes & Classic',
+                                style: TextStyle(
+                                    color: const Color.fromARGB(255, 255, 255, 255), fontSize: 19, fontWeight: FontWeight.bold),
+                              ),
                               Container(
                                   width: SizeConfig.cellSize / 0.8,
                                   height: SizeConfig.cellSize / 0.8,
@@ -212,11 +186,7 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                                       ),
                                     ),
                                   )),
-                              Text(
-                                'SoD & Vanilla',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 16),
-                              )
+                              
                             ],
                           );
                         }
