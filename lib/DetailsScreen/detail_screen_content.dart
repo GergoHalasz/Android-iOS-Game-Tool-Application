@@ -395,7 +395,8 @@ class _DetailScreenContentState extends State<DetailScreenContent>
               preferredSize: _tabBar().preferredSize,
               child: ColoredBox(color: Color(0xff556F7A), child: _tabBar()))),
       body: DefaultTextStyle(
-        style: TextStyle(color: Colors.white, fontFamily: 'Morpheus', fontSize: 18),
+        style: TextStyle(
+            color: Colors.white, fontFamily: 'Morpheus', fontSize: 18),
         child: Column(
           children: [
             Container(
@@ -446,8 +447,9 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                               Text('Remaining points: '),
                               Text(
                                   '${talentProvider.getRemainingTalentPoints()}',
-                                  style:
-                                      TextStyle(color: kColorSelectiveYellow,))
+                                  style: TextStyle(
+                                    color: kColorSelectiveYellow,
+                                  ))
                             ],
                           ),
                         ),
@@ -626,6 +628,17 @@ class _DetailScreenContentState extends State<DetailScreenContent>
           await launchUrl(Uri.parse(url));
         } else {
           throw 'Could not launch $url';
+        }
+        break;
+
+      case MenuItems.itemRemoveAds:
+        if (!adState.isAdFreeVersion) {
+          final offerings = await PurchaseApi.fetchOffers();
+          final isSuccess = await Purchases.purchasePackage(
+              offerings[0].availablePackages[0]);
+          if (isSuccess == true) {
+            adState.changeToAdFreeVersion();
+          }
         }
         break;
     }
