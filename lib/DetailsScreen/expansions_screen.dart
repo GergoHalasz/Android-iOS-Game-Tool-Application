@@ -164,6 +164,7 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                         if (entry.value == 'vanilla') {
                           return Column(
                             children: [
+                              
                               Container(
                                   width: SizeConfig.cellSize / 1.1,
                                   height: SizeConfig.cellSize / 1.1,
@@ -195,6 +196,13 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                                       ),
                                     ),
                                   )),
+                                  Text(
+                                    'SoD with runes & Vanilla',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18),
+                                    textAlign: TextAlign.center,
+                                  ),
                             ],
                           );
                         }

@@ -3,8 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:wowtalentcalculator/RateMyAppCustomClasses/do_not_open_again_condition.dart';
-import 'package:wowtalentcalculator/RateMyAppCustomClasses/minimum_app_launches_condition.dart';
 import 'home_screen.dart';
 
 class LoadHomeScreen extends StatefulWidget {
@@ -16,11 +14,11 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
   RateMyApp rateMyApp = RateMyApp(
     preferencesPrefix: 'rateMyApp_',
     minDays: 0,
-    minLaunches: 0,
-    remindDays: 1,
+    minLaunches: 2,
+    remindDays: 0,
     remindLaunches: 2,
     googlePlayIdentifier: 'com.fissher.wowtalentcalculator',
-    appStoreIdentifier: '1593368066',
+    appStoreIdentifier: 'com.fissher.wowTalentCalculator',
   );
 
   @override
@@ -36,9 +34,9 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
               actionsBuilder: actionsBuilderAndroid);
         } else {
           rateMyApp.showStarRateDialog(context,
-              title: 'Enjoying WoW Talent Calculator?',
-              message:
-                  'Hey Classic Peep, if you like the app leave a rating! :)',
+              title: 'Rate This App',
+              starRatingOptions: StarRatingOptions(initialRating: 4),
+              message: 'Do you like this app? Please leave a rating',
               actionsBuilder: actionsBuilderIOS);
         }
       }
@@ -53,14 +51,14 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
 
   List<Widget> actionsBuilderIOS(BuildContext context, double? stars) =>
       stars == null
-          ? [buildOkButton()]
+          ? [buildCancelButton()]
           : [buildCancelButton(), buildRemindButton(), buildOkButton()];
 
   List<Widget> actionsBuilderAndroid(BuildContext context) =>
       [buildCancelButton(), buildRemindButton(), buildOkButton()];
 
   Widget buildOkButton() {
-    return RateMyAppRateButton(rateMyApp, text: 'RATE');
+    return RateMyAppRateButton(rateMyApp, text: 'OK');
   }
 
   Widget buildCancelButton() {

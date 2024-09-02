@@ -16,8 +16,9 @@
 	<string>6.0</string>
   <key>LSApplicationQueriesSchemes</key>
   <array>
-  <string>https</string>
-  <string>http</string>
+    <string>https</string>
+    <string>http</string>
+    <string>itms</string>
   </array>
 	<key>CFBundleName</key>
 	<string>WoW Talents</string>

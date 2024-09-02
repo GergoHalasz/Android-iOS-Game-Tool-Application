@@ -457,7 +457,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                           margin: EdgeInsets.all(3),
                           color: Color(0xff2E6171),
                           child:
-                              Text('Saved builds - Swipe Left to Delete', style: TextStyle(color: Colors.white),),
+                              Text('Saved builds - Swipe to Delete', style: TextStyle(color: Colors.white),),
                         ),
                         Container(
                             height: 200,
