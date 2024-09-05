@@ -246,13 +246,13 @@ class _ClassesScreenState extends State<ClassesScreen> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.miniStartTop,
-      bottomNavigationBar: !adState.isAdFreeVersion
-          ? Container(
-              height: 52,
-              color: Colors.black,
-              child: AdWidget(ad: banner!),
-            )
-          : null,
+      // bottomNavigationBar: !adState.isAdFreeVersion
+      //     ? Container(
+      //         height: 52,
+      //         color: Colors.black,
+      //         child: AdWidget(ad: banner!),
+      //       )
+      //     : null,
       body: Stack(children: [
         Positioned.fill(
           child: Container(
