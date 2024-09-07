@@ -632,6 +632,17 @@ class _DetailScreenContentState extends State<DetailScreenContent>
           throw 'Could not launch $url';
         }
         break;
+      case MenuItems.itemRemoveAds:
+        final adState = Provider.of<AdState>(context, listen: false);
+        if (!adState.isAdFreeVersion) {
+          final offerings = await PurchaseApi.fetchOffers();
+          final isSuccess = await Purchases.purchasePackage(
+              offerings[0].availablePackages[0]);
+          if (isSuccess.allPurchasedProductIdentifiers.length == 1) {
+            adState.changeToAdFreeVersion();
+          }
+        }
+        break;
     }
   }
 }
