@@ -22,5 +22,5 @@ class MenuItems {
       const MenuItemPopUp('Leave a Rating!', Icons.rate_review);
 
   static const itemRemoveAds =
-      const MenuItemPopUp('Remove Ads(3\$)', Icons.block);
+      const MenuItemPopUp('Remove Ads', Icons.block);
 }

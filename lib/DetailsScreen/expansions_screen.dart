@@ -150,11 +150,7 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                         if (entry.value == 'vanilla') {
                           return Column(
                             children: [
-                              Text(
-                                'SoD with runes & Classic',
-                                style: TextStyle(
-                                    color: const Color.fromARGB(255, 255, 255, 255), fontSize: 19, fontWeight: FontWeight.bold),
-                              ),
+                            
                               Container(
                                   width: SizeConfig.cellSize / 0.8,
                                   height: SizeConfig.cellSize / 0.8,
