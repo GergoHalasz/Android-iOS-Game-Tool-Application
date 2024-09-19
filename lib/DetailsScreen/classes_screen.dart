@@ -5,6 +5,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 // import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:provider/provider.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
 import 'package:wowtalentcalculator/DetailsScreen/detail_screen_content.dart';
@@ -19,6 +20,8 @@ import 'package:wowtalentcalculator/utils/methods.dart';
 import 'package:wowtalentcalculator/utils/routestyle.dart';
 import 'package:wowtalentcalculator/utils/size_config.dart';
 import 'package:wowtalentcalculator/utils/string.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
+import '../api/purchase_api.dart';
 
 class ClassesScreen extends StatefulWidget {
   final String expansion;
@@ -96,30 +99,45 @@ class _ClassesScreenState extends State<ClassesScreen> {
     super.initState();
   }
 
-  // void checkInternetConnection() async {
-  //   bool result = await InternetConnectionChecker().hasConnection;
-  //   if (result == true) {
-  //   } else {
-  //     showDialog(
-  //       barrierDismissible: false,
-  //       context: context,
-  //       builder: (context) => AlertDialog(
-  //         actions: [
-  //           TextButton(
-  //             onPressed: () {
-  //               Navigator.of(context).pop();
-  //               checkInternetConnection();
-  //             },
-  //             child: const Text('Connected'),
-  //           )
-  //         ],
-  //         content: Text(
-  //             'Please connect to the internet to proceed further. Click on the \"Connected\" button if you did connect to the internet.'),
-  //         title: Text("No internet connection"),
-  //       ),
-  //     );
-  //   }
-  // }
+  void checkInternetConnection() async {
+    bool result = await InternetConnectionChecker().hasConnection;
+    if (result == true) {
+    } else {
+      showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (context) => AlertDialog(
+          actions: [
+            TextButton(
+              onPressed: () async {
+                final adState = Provider.of<AdState>(context, listen: false);
+                if (!adState.isAdFreeVersion) {
+                  final offerings = await PurchaseApi.fetchOffers();
+                  final isSuccess = await Purchases.purchasePackage(
+                      offerings[0].availablePackages[0]);
+                  if (isSuccess.allPurchasedProductIdentifiers.length == 1) {
+                    adState.changeToAdFreeVersion();
+                    Navigator.of(context).pop();
+                  }
+                }
+              },
+              child: const Text('Remove Ads'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                checkInternetConnection();
+              },
+              child: const Text('Connected'),
+            )
+          ],
+          content: Text(
+              'Please connect to the internet to proceed further. Click on the \"Connected\" button if you did connect to the internet. If you want to use it offline you can buy the remove ads package.'),
+          title: Text("No internet connection"),
+        ),
+      );
+    }
+  }
 
   setSavedBuilds() {
     _getSavedBuilds().then((res) {
@@ -146,7 +164,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
           firstTimeAdInit = false;
         });
       });
-      // if (!adState.isAdFreeVersion) checkInternetConnection();
+      if (!adState.isAdFreeVersion) checkInternetConnection();
     }
   }
 

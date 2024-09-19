@@ -16,8 +16,8 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
   RateMyApp rateMyApp = RateMyApp(
     preferencesPrefix: 'rateMyApp_',
     minDays: 0,
-    minLaunches: 0,
-    remindDays: 1,
+    minLaunches: 2,
+    remindDays: 2,
     remindLaunches: 2,
     googlePlayIdentifier: 'com.fissher.wowtalentcalculator',
     appStoreIdentifier: '1593368066',

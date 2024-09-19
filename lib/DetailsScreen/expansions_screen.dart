@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:provider/provider.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:wowtalentcalculator/DetailsScreen/classes_screen.dart';
@@ -81,35 +82,50 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
           firstTimeAdInit = false;
         });
       });
-      // if (!adState.isAdFreeVersion) checkInternetConnection();
+      if (!adState.isAdFreeVersion) checkInternetConnection();
     }
     super.didChangeDependencies();
   }
 
-  // void checkInternetConnection() async {
-  //   bool result = await InternetConnectionChecker().hasConnection;
-  //   if (result == true) {
-  //   } else {
-  //     showDialog(
-  //       barrierDismissible: false,
-  //       context: context,
-  //       builder: (context) => AlertDialog(
-  //         actions: [
-  //           TextButton(
-  //             onPressed: () {
-  //               Navigator.of(context).pop();
-  //               checkInternetConnection();
-  //             },
-  //             child: const Text('Connected'),
-  //           )
-  //         ],
-  //         content: Text(
-  //             'Please connect to the internet to proceed further. Click on the \"Connected\" button if you did connect to the internet.'),
-  //         title: Text("No internet connection"),
-  //       ),
-  //     );
-  //   }
-  // }
+  void checkInternetConnection() async {
+    bool result = await InternetConnectionChecker().hasConnection;
+    if (result == true) {
+    } else {
+      showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (context) => AlertDialog(
+          actions: [
+            TextButton(
+              onPressed: () async {
+                final adState = Provider.of<AdState>(context, listen: false);
+                if (!adState.isAdFreeVersion) {
+                  final offerings = await PurchaseApi.fetchOffers();
+                  final isSuccess = await Purchases.purchasePackage(
+                      offerings[0].availablePackages[0]);
+                  if (isSuccess.allPurchasedProductIdentifiers.length == 1) {
+                    adState.changeToAdFreeVersion();
+                    Navigator.of(context).pop();
+                  }
+                }
+              },
+              child: const Text('Remove Ads'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                checkInternetConnection();
+              },
+              child: const Text('Connected'),
+            )
+          ],
+          content: Text(
+              'Please connect to the internet to proceed further. Click on the \"Connected\" button if you did connect to the internet. If you want to use it offline you can buy the remove ads package.'),
+          title: Text("No internet connection"),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -150,7 +166,6 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                         if (entry.value == 'vanilla') {
                           return Column(
                             children: [
-                            
                               Container(
                                   width: SizeConfig.cellSize / 0.8,
                                   height: SizeConfig.cellSize / 0.8,
@@ -182,7 +197,6 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                                       ),
                                     ),
                                   )),
-                              
                             ],
                           );
                         }
