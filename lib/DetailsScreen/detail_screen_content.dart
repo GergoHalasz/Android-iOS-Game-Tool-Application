@@ -66,7 +66,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
   Key talentTree1Key = UniqueKey();
   Key talentTree2Key = UniqueKey();
   Key talentTree3Key = UniqueKey();
-  BannerAd? banner;
   String _termsUrl =
       'https://github.com/HalaszGergo123/wow-talent-calculator/blob/main/terms_and_conditions.md';
   String _privacyUrl =
@@ -81,15 +80,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     if (firstTimeAdInit) {
       // adState.initializeInterstitialAds();
       adState.initialization.then((value) {
-        setState(() {
-          banner = BannerAd(
-              adUnitId: adState.bannerAdUnitId,
-              size: AdSize.banner,
-              request: AdRequest(),
-              listener: adState.listener)
-            ..load();
-          firstTimeAdInit = false;
-        });
+        
         _tabController.addListener(() {
           setState(() {
             _selectedIndex = _tabController.index;
@@ -294,13 +285,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     }
 
     return Scaffold(
-      bottomNavigationBar: !adState.isAdFreeVersion
-          ? Container(
-              height: 52,
-              color: Colors.black,
-              child: AdWidget(ad: banner!),
-            )
-          : null,
+      
       floatingActionButton: talentProvider.expansion == "vanilla"
           ? Stack(
               children: <Widget>[

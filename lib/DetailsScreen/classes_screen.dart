@@ -63,7 +63,6 @@ class _ClassesScreenState extends State<ClassesScreen> {
   ScrollController _scrollController = ScrollController();
   late String currentExpansionSelected;
   bool firstTimeAdInit = true;
-  BannerAd? banner;
 
   List builds = [];
   Future<List> _getSavedBuilds() async {
@@ -153,17 +152,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
     if (firstTimeAdInit) {
       final adState = Provider.of<AdState>(context);
 
-      adState.initialization.then((value) {
-        setState(() {
-          banner = BannerAd(
-              adUnitId: adState.bannerAdUnitId,
-              size: AdSize.banner,
-              request: AdRequest(),
-              listener: adState.listener)
-            ..load();
-          firstTimeAdInit = false;
-        });
-      });
+      
       if (!adState.isAdFreeVersion) checkInternetConnection();
     }
   }
@@ -264,13 +253,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.miniStartTop,
-      bottomNavigationBar: !adState.isAdFreeVersion
-          ? Container(
-              height: 52,
-              color: Colors.black,
-              child: AdWidget(ad: banner!),
-            )
-          : null,
+      
       body: DefaultTextStyle(
           style: TextStyle(
               fontSize: 15,

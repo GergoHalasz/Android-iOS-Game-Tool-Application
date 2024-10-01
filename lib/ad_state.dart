@@ -11,12 +11,10 @@ class AdState extends ChangeNotifier {
   int interstitialAdCounter = 0;
   int interstitialAdCounter2 = 0;
 
+
   AdState(this.initialization) {
     this.initialization = initialization;
-    loadInterstitialAd();
-    Purchases.addPurchaserInfoUpdateListener((purchaserInfo) {
-      updatePurchaseStatus();
-    });
+    
     checkIsAdFreeversion();
   }
 
@@ -110,7 +108,7 @@ class AdState extends ChangeNotifier {
   }
 
   void showInterstitialAdClass2() {
-    if (interstitialAd != null && !isAdFreeVersion && interstitialAdCounter2 == 2) {
+    if (interstitialAd != null && !isAdFreeVersion && interstitialAdCounter2 == 3) {
       interstitialAdCounter2 = 0;
       interstitialAd!.fullScreenContentCallback =
           FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {
@@ -131,7 +129,7 @@ class AdState extends ChangeNotifier {
   void showInterstitialAdClassScreen() {
     if (interstitialAd != null &&
         !isAdFreeVersion &&
-        interstitialAdCounter == 3) {
+        interstitialAdCounter == 4) {
       interstitialAdCounter = 0;
       interstitialAd!.fullScreenContentCallback =
           FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {

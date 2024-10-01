@@ -48,7 +48,6 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
   String image = "";
   List<String> imagesList = [];
   bool firstTimeAdInit = true;
-  late BannerAd banner;
   bool isConnectedToInternet = false;
 
   @override
@@ -70,18 +69,6 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
     final adState = Provider.of<AdState>(context);
 
     if (firstTimeAdInit) {
-      // adState.initializeInterstitialAds();
-      adState.initialization.then((value) {
-        setState(() {
-          banner = BannerAd(
-              adUnitId: adState.bannerAdUnitId,
-              size: AdSize.banner,
-              request: AdRequest(),
-              listener: adState.listener)
-            ..load();
-          firstTimeAdInit = false;
-        });
-      });
       if (!adState.isAdFreeVersion) checkInternetConnection();
     }
     super.didChangeDependencies();
@@ -139,14 +126,38 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
               Text("Talent Calculator", style: TextStyle(color: Colors.white)),
           centerTitle: true,
         ),
-        drawer: Drawer(child: DrawerScreen()),
-        bottomNavigationBar: !adState.isAdFreeVersion
-            ? Container(
-                height: 52,
-                color: Colors.black,
-                child: AdWidget(ad: banner!),
+        floatingActionButton: !adState.isAdFreeVersion
+            ? GestureDetector(
+                onTap: () async {
+                  final adState = Provider.of<AdState>(context, listen: false);
+                  if (!adState.isAdFreeVersion) {
+                    final offerings = await PurchaseApi.fetchOffers();
+                    final isSuccess = await Purchases.purchasePackage(
+                        offerings[0].availablePackages[0]);
+                    if (isSuccess.allPurchasedProductIdentifiers.length == 1) {
+                      adState.changeToAdFreeVersion();
+                    }
+                  }
+                },
+                child: Container(
+                  padding: EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                      color: Color(0xff2E6171),
+                      borderRadius: BorderRadius.all(Radius.circular(60))),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.not_interested, color: Colors.red),
+                      Text(
+                        'Remove Ads',
+                        style: TextStyle(fontSize: 12, color: Colors.white),
+                      )
+                    ],
+                  ),
+                ),
               )
             : null,
+        drawer: Drawer(child: DrawerScreen()),
         body: Container(
             child: Stack(fit: StackFit.expand, children: [
           Container(
