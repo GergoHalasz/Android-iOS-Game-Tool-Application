@@ -157,7 +157,6 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                 ),
               )
             : null,
-        drawer: Drawer(child: DrawerScreen()),
         body: Container(
             child: Stack(fit: StackFit.expand, children: [
           Container(
