@@ -623,16 +623,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
           }),
         );
         break;
-
-      case MenuItems.itemLeaveRating:
-        const url =
-            'https://apps.apple.com/us/app/id1593368066'; // Replace this with your app's store URL
-        if (await canLaunchUrl(Uri.parse(url))) {
-          await launchUrl(Uri.parse(url));
-        } else {
-          throw 'Could not launch $url';
-        }
-        break;
       case MenuItems.itemRemoveAds:
         final adState = Provider.of<AdState>(context, listen: false);
         if (!adState.isAdFreeVersion) {

@@ -4,7 +4,6 @@ import 'package:wowtalentcalculator/model/menu_item.dart';
 class MenuItems {
   static const List<MenuItemPopUp> itemsFirst = [
     itemResetTree,
-    itemLeaveRating,
     itemRemoveAds,
   ];
 
@@ -18,8 +17,7 @@ class MenuItems {
       const MenuItemPopUp('Glyphs', Icons.account_balance_wallet);
 
   static const itemShareBuild = const MenuItemPopUp('Share Build', Icons.share);
-  static const itemLeaveRating =
-      const MenuItemPopUp('Leave a Rating!', Icons.rate_review);
+
 
   static const itemRemoveAds =
       const MenuItemPopUp('Remove Ads', Icons.block);
