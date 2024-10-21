@@ -7,7 +7,6 @@ import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
 import 'package:wowtalentcalculator/DetailsScreen/Save_screen.dart';
 import 'package:wowtalentcalculator/DetailsScreen/drawer_screen.dart';
