@@ -79,7 +79,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     if (firstTimeAdInit) {
       // adState.initializeInterstitialAds();
       adState.initialization.then((value) {
-        
         _tabController.addListener(() {
           setState(() {
             _selectedIndex = _tabController.index;
@@ -284,7 +283,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     }
 
     return Scaffold(
-      
       floatingActionButton: talentProvider.expansion == "vanilla"
           ? Stack(
               children: <Widget>[
@@ -374,21 +372,29 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                 ),
               ),
             ),
-            DividerTheme(
-              data: DividerThemeData(color: Colors.grey),
-              child: PopupMenuButton<MenuItemPopUp>(
-                icon: Icon(Icons.more_horiz, color: Colors.white),
-                offset: Offset(0, 56),
-                onSelected: (item) => onSelected(context, item),
-                itemBuilder: (context) => [
-                  ...MenuItems.itemsFirst.map(buildItem).toList(),
-                  if (talentProvider.expansion == 'wotlk')
-                    ...MenuItems.itemsThird.map(buildItem).toList(),
-                  ...MenuItems.itemsForth.map(buildItem).toList(),
-                ],
-                color: Color(0xff556F7A),
+            Padding(
+              padding: EdgeInsets.only(left: 12, right: 6),
+              child: Container(
+                child: InkResponse(
+                  child: Icon(
+                    Icons.share,
+                    color: Colors.white,
+                  ),
+                  onTap: () {
+                    shareBuild();
+                    if (adState.interstitialAd == null) {
+                      adState.loadInterstitialAd();
+                    }
+                    interstitialAdCounter++;
+                    if (interstitialAdCounter == 6) {
+                      adState.showInterstitialAd();
+                      interstitialAdCounter = 0;
+                    }
+                  },
+                ),
               ),
-            )
+            ),
+            
           ],
           backgroundColor: Color(0xff2E6171),
           bottom: PreferredSize(
