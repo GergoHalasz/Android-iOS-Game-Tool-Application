@@ -283,45 +283,45 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     }
 
     return Scaffold(
-      floatingActionButton: talentProvider.expansion == "vanilla"
-          ? Stack(
-              children: <Widget>[
-                Positioned(
-                  bottom: MediaQuery.of(context).size.height /
-                      3, // Adjust as needed
-                  right: 0.0,
-                  child: GestureDetector(
-                    onTap: () {
-                      _showRunesDialog();
-                    },
-                    child: Container(
-                      padding: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black, // specify border color
-                            width: 2.0, // specify border width
-                          ),
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.all(Radius.circular(60))),
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            'assets/Icons/rune.png', // Provide your rune icon image path
-                            width: 24.0, // adjust icon size as needed
-                            height: 22.0,
-                          ),
-                          Text(
-                            'Runes',
-                            style: TextStyle(fontSize: 12),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            )
-          : null,
+      // floatingActionButton: talentProvider.expansion == "vanilla"
+      //     ? Stack(
+      //         children: <Widget>[
+      //           Positioned(
+      //             bottom: MediaQuery.of(context).size.height /
+      //                 3, // Adjust as needed
+      //             right: 0.0,
+      //             child: GestureDetector(
+      //               onTap: () {
+      //                 _showRunesDialog();
+      //               },
+      //               child: Container(
+      //                 padding: EdgeInsets.all(8),
+      //                 decoration: BoxDecoration(
+      //                     border: Border.all(
+      //                       color: Colors.black, // specify border color
+      //                       width: 2.0, // specify border width
+      //                     ),
+      //                     color: Colors.grey,
+      //                     borderRadius: BorderRadius.all(Radius.circular(60))),
+      //                 child: Column(
+      //                   children: [
+      //                     Image.asset(
+      //                       'assets/Icons/rune.png', // Provide your rune icon image path
+      //                       width: 24.0, // adjust icon size as needed
+      //                       height: 22.0,
+      //                     ),
+      //                     Text(
+      //                       'Runes',
+      //                       style: TextStyle(fontSize: 12),
+      //                     )
+      //                   ],
+      //                 ),
+      //               ),
+      //             ),
+      //           ),
+      //         ],
+      //       )
+      //     : null,
       appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.white),
           centerTitle: true,
@@ -351,7 +351,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 12),
+              padding: EdgeInsets.only(left: 12, right: 10),
               child: Container(
                 child: InkResponse(
                   child: Icon(
@@ -372,28 +372,28 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(left: 12, right: 6),
-              child: Container(
-                child: InkResponse(
-                  child: Icon(
-                    Icons.share,
-                    color: Colors.white,
-                  ),
-                  onTap: () {
-                    shareBuild();
-                    if (adState.interstitialAd == null) {
-                      adState.loadInterstitialAd();
-                    }
-                    interstitialAdCounter++;
-                    if (interstitialAdCounter == 6) {
-                      adState.showInterstitialAd();
-                      interstitialAdCounter = 0;
-                    }
-                  },
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: EdgeInsets.only(left: 12, right: 6),
+            //   child: Container(
+            //     child: InkResponse(
+            //       child: Icon(
+            //         Icons.share,
+            //         color: Colors.white,
+            //       ),
+            //       onTap: () {
+            //         shareBuild();
+            //         if (adState.interstitialAd == null) {
+            //           adState.loadInterstitialAd();
+            //         }
+            //         interstitialAdCounter++;
+            //         if (interstitialAdCounter == 6) {
+            //           adState.showInterstitialAd();
+            //           interstitialAdCounter = 0;
+            //         }
+            //       },
+            //     ),
+            //   ),
+            // ),
             
           ],
           backgroundColor: Color(0xff2E6171),

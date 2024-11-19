@@ -219,7 +219,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
 
   getExpansionTitle() {
     if (widget.expansion == "vanilla")
-      return "SoD & Vanilla Classes";
+      return "Vanilla Classes";
     else if (widget.expansion == "tbc")
       return "TBC Classes";
     else if (widget.expansion == 'wotlk')
