@@ -196,13 +196,7 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                                       ),
                                     ),
                                   )),
-                                  Text(
-                                    'SoD with runes & Vanilla',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 18),
-                                    textAlign: TextAlign.center,
-                                  ),
+                                  
                             ],
                           );
                         }
