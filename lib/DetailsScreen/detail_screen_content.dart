@@ -6,7 +6,6 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
 import 'package:wowtalentcalculator/DetailsScreen/Save_screen.dart';
 import 'package:wowtalentcalculator/DetailsScreen/drawer_screen.dart';
@@ -624,11 +623,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
       case MenuItems.itemLeaveRating:
         const url =
             'https://apps.apple.com/us/app/id1593368066'; // Replace this with your app's store URL
-        if (await canLaunchUrl(Uri.parse(url))) {
-          await launchUrl(Uri.parse(url));
-        } else {
-          throw 'Could not launch $url';
-        }
+        
         break;
 
       case MenuItems.itemRemoveAds:
