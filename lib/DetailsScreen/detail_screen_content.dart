@@ -383,7 +383,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                   ...MenuItems.itemsFirst.map(buildItem).toList(),
                   if (talentProvider.expansion == 'wotlk')
                     ...MenuItems.itemsThird.map(buildItem).toList(),
-                  ...MenuItems.itemsForth.map(buildItem).toList(),
                 ],
                 color: Color(0xff556F7A),
               ),
@@ -589,17 +588,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
           interstitialAdCounter = 0;
         }
         break;
-      case MenuItems.itemShareBuild:
-        shareBuild();
-        if (adState.interstitialAd == null) {
-          adState.loadInterstitialAd();
-        }
-        interstitialAdCounter++;
-        if (interstitialAdCounter == 6) {
-          adState.showInterstitialAd();
-          interstitialAdCounter = 0;
-        }
-        break;
+     
 
       case MenuItems.itemSetGlyphs:
         Navigator.push(
@@ -620,22 +609,9 @@ class _DetailScreenContentState extends State<DetailScreenContent>
         );
         break;
 
-      case MenuItems.itemLeaveRating:
-        const url =
-            'https://apps.apple.com/us/app/id1593368066'; // Replace this with your app's store URL
-        
-        break;
+      
 
-      case MenuItems.itemRemoveAds:
-        if (!adState.isAdFreeVersion) {
-          final offerings = await PurchaseApi.fetchOffers();
-          final isSuccess = await Purchases.purchasePackage(
-              offerings[0].availablePackages[0]);
-          if (isSuccess == true) {
-            adState.changeToAdFreeVersion();
-          }
-        }
-        break;
+     
     }
   }
 }
