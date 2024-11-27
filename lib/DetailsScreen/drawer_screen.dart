@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
 import 'package:wowtalentcalculator/api/purchase_api.dart';
 
@@ -122,9 +121,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                                         decoration: TextDecoration.underline,
                                         fontSize: 13),
                                   ),
-                                  onTap: () {
-                                    launch(_privacyUrl);
-                                  },
+                                  onTap: () {},
                                 ),
                                 InkWell(
                                   child: Text(
@@ -134,9 +131,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                                         decoration: TextDecoration.underline,
                                         fontSize: 13),
                                   ),
-                                  onTap: () {
-                                    launch(_termsUrl);
-                                  },
+                                  onTap: () {},
                                 ),
                               ],
                             )
