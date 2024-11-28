@@ -120,13 +120,7 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
 
     return Scaffold(
         drawer: Drawer(child: DrawerScreen()),
-        appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.white),
-          backgroundColor: Color(0xff2E6171),
-          title:
-              Text("Talent Calculator", style: TextStyle(color: Colors.white)),
-          centerTitle: true,
-        ),
+        
         floatingActionButton: !adState.isAdFreeVersion
             ? GestureDetector(
                 onTap: () async {
