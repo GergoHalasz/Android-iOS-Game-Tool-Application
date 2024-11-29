@@ -103,34 +103,51 @@ class _SaveScreenState extends State<SaveScreen> {
 
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: Color(0xff556F7A),
+        backgroundColor: Color.fromARGB(255, 57, 57, 57),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: !adState.isAdFreeVersion
-            ? GestureDetector(
-                onTap: () async {
-                  final adState = Provider.of<AdState>(context, listen: false);
-                  if (!adState.isAdFreeVersion) {
-                    final offerings = await PurchaseApi.fetchOffers();
-                    final isSuccess = await Purchases.purchasePackage(
-                        offerings[0].availablePackages[0]);
-                    if (isSuccess.allPurchasedProductIdentifiers.length == 1) {
-                      adState.changeToAdFreeVersion();
+            ? Padding(
+                padding: EdgeInsets.all(36),
+                child: GestureDetector(
+                  onTap: () async {
+                    final adState =
+                        Provider.of<AdState>(context, listen: false);
+                    if (!adState.isAdFreeVersion) {
+                      final offerings = await PurchaseApi.fetchOffers();
+                      final isSuccess = await Purchases.purchasePackage(
+                          offerings[0].availablePackages[0]);
+                      if (isSuccess.allPurchasedProductIdentifiers.length ==
+                          1) {
+                        adState.changeToAdFreeVersion();
+                      }
                     }
-                  }
-                },
-                child: Container(
-                  padding: EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                      color: Color(0xff2E6171),
-                      borderRadius: BorderRadius.all(Radius.circular(60))),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.not_interested, color: Colors.red),
-                      Text(
-                        'Remove Ads 3\$',
-                        style: TextStyle(fontSize: 12, color: Colors.white,),
-                      )
-                    ],
+                  },
+                  child: Container(
+                    width: 200,
+                    padding: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 123, 123, 123),
+                        borderRadius: BorderRadius.all(Radius.circular(60))),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Padding(
+                            padding: EdgeInsets.only(right: 8),
+                            child:
+                                Icon(Icons.not_interested, color: Colors.red)),
+                        Padding(
+                          padding: const EdgeInsets.all(7.0),
+                          child: Text(
+                            'Remove Ads',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               )
@@ -142,7 +159,7 @@ class _SaveScreenState extends State<SaveScreen> {
               'Save Build',
               style: TextStyle(color: Colors.white),
             ),
-            backgroundColor: Color(0xff2E6171),
+            backgroundColor: Color.fromARGB(255, 57, 57, 57),
             actions: <Widget>[
               Container(
                   padding: EdgeInsets.only(right: 15),

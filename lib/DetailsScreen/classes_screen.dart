@@ -212,7 +212,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
 
   getExpansionTitle() {
     if (widget.expansion == "vanilla")
-      return "SoD & Vanilla Classes";
+      return "Vanilla Classes";
     else if (widget.expansion == "tbc")
       return "TBC Classes";
     else if (widget.expansion == 'wotlk')
@@ -228,7 +228,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
         margin: EdgeInsets.only(top: 22, left: 12),
         child: Material(
           borderRadius: BorderRadius.circular(20),
-          color: Color(0xff2E6171),
+          color: Color.fromARGB(255, 83, 83, 83),
           child: Container(
             padding: EdgeInsets.all(8),
             child: InkWell(
@@ -455,7 +455,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                         Container(
                           alignment: Alignment.center,
                           margin: EdgeInsets.all(3),
-                          color: Color(0xff2E6171),
+                          color: Color.fromARGB(255, 83, 83, 83),
                           child:
                               Text('Saved builds - Swipe to Delete', style: TextStyle(color: Colors.white),),
                         ),

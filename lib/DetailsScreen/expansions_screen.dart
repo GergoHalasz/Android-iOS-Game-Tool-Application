@@ -142,7 +142,7 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                       Column(
                         children: [
                           Text(
-                            'VANILLA SOD TBC WOTLK CATA TALENT CALCULATOR',
+                            'WoW Classic Talent Calculator',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 24),
@@ -166,8 +166,8 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                             children: [
                               
                               Container(
-                                  width: SizeConfig.cellSize / 1.1,
-                                  height: SizeConfig.cellSize / 1.1,
+                                  width: SizeConfig.cellSize / 0.9,
+                                  height: SizeConfig.cellSize / 0.9,
                                   child: Material(
                                     color: Colors.transparent,
                                     child: Ink(
@@ -201,8 +201,8 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
                           );
                         }
                         return Container(
-                            width: SizeConfig.cellSize / 1.1,
-                            height: SizeConfig.cellSize / 1.1,
+                            width: SizeConfig.cellSize / 0.9,
+                            height: SizeConfig.cellSize / 0.9,
                             child: Material(
                               color: Colors.transparent,
                               child: Ink(

@@ -292,7 +292,7 @@ class _SpellWidgetState extends State<SpellWidget> {
       fadeOutDuration: Duration(milliseconds: 0),
       tailLength: 0,
       key: key,
-      backgroundColor: Color(0xff556F7A),
+      backgroundColor: Color.fromARGB(255, 83, 83, 83),
       content: Padding(
         padding: const EdgeInsets.all(8.0),
         child: DefaultTextStyle(

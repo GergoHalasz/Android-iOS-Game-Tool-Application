@@ -249,15 +249,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
         });
   }
 
-  void _showRunesDialog() {
-    showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return ChangeNotifierProvider<TalentProvider>.value(
-              value: talentProvider, child: RunesDialog());
-        });
-  }
-
   @override
   Widget build(BuildContext context) {
     final adState = Provider.of<AdState>(context);
@@ -282,45 +273,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
               height: 52,
               color: Colors.black,
               child: AdWidget(ad: banner!),
-            )
-          : null,
-      floatingActionButton: talentProvider.expansion == "vanilla"
-          ? Stack(
-              children: <Widget>[
-                Positioned(
-                  bottom: MediaQuery.of(context).size.height /
-                      3, // Adjust as needed
-                  right: 0.0,
-                  child: GestureDetector(
-                    onTap: () {
-                      _showRunesDialog();
-                    },
-                    child: Container(
-                      padding: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black, // specify border color
-                            width: 2.0, // specify border width
-                          ),
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.all(Radius.circular(60))),
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            'assets/Icons/rune.png', // Provide your rune icon image path
-                            width: 24.0, // adjust icon size as needed
-                            height: 22.0,
-                          ),
-                          Text(
-                            'Runes',
-                            style: TextStyle(fontSize: 14),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
             )
           : null,
       appBar: AppBar(
@@ -374,7 +326,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
               ),
             ),
             DividerTheme(
-              data: DividerThemeData(color: Colors.grey),
+              data: DividerThemeData(color: const Color.fromARGB(255, 49, 49, 49)),
               child: PopupMenuButton<MenuItemPopUp>(
                 icon: Icon(Icons.more_horiz, color: Colors.white),
                 offset: Offset(0, 56),
@@ -383,15 +335,16 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                   ...MenuItems.itemsFirst.map(buildItem).toList(),
                   if (talentProvider.expansion == 'wotlk')
                     ...MenuItems.itemsThird.map(buildItem).toList(),
+                  ...MenuItems.itemsForth.map(buildItem).toList(),
                 ],
-                color: Color(0xff556F7A),
+                color: Color.fromARGB(255, 57, 57, 57),
               ),
             )
           ],
-          backgroundColor: Color(0xff2E6171),
+          backgroundColor: Color.fromARGB(255, 57, 57, 57),
           bottom: PreferredSize(
               preferredSize: _tabBar().preferredSize,
-              child: ColoredBox(color: Color(0xff556F7A), child: _tabBar()))),
+              child: ColoredBox(color: Color.fromARGB(255, 83, 83, 83), child: _tabBar()))),
       body: DefaultTextStyle(
         style: TextStyle(
             color: Colors.white, fontFamily: 'Morpheus', fontSize: 18),
@@ -399,7 +352,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
           children: [
             Container(
                 height: SizeConfig.blockSizeVertical * 4.5,
-                color: Color(0xff556F7A),
+                color: Color.fromARGB(255, 83, 83, 83),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -588,7 +541,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
           interstitialAdCounter = 0;
         }
         break;
-     
 
       case MenuItems.itemSetGlyphs:
         Navigator.push(
@@ -609,9 +561,17 @@ class _DetailScreenContentState extends State<DetailScreenContent>
         );
         break;
 
-      
-
-     
+      case MenuItems.itemShareBuild:
+        shareBuild();
+        if (adState.interstitialAd == null) {
+          adState.loadInterstitialAd();
+        }
+        interstitialAdCounter++;
+        if (interstitialAdCounter == 6) {
+          adState.showInterstitialAd();
+          interstitialAdCounter = 0;
+        }
+        break;
     }
   }
 }
