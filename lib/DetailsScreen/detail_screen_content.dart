@@ -10,6 +10,7 @@ import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
 import 'package:wowtalentcalculator/DetailsScreen/Save_screen.dart';
 import 'package:wowtalentcalculator/DetailsScreen/drawer_screen.dart';
 import 'package:wowtalentcalculator/DetailsScreen/glyphs_screen.dart';
+import 'package:wowtalentcalculator/DetailsScreen/newBuild_dialog.dart';
 import 'package:wowtalentcalculator/DetailsScreen/runes_dialog.dart';
 import 'package:wowtalentcalculator/DetailsScreen/talent_dialog.dart';
 import 'package:wowtalentcalculator/data/menu_items.dart';
@@ -225,29 +226,20 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     });
   }
 
-  showSaveBuildDialog(bool isGlyphSet) {
+
+  showAddBuildDialog() {
     showDialog(
         context: context,
         builder: (BuildContext context) {
           return ChangeNotifierProvider<TalentProvider>.value(
               value: talentProvider,
-              child: SaveScreen(
-                  changeBuildKeyAndName: (key, buildName) {
-                    setState(() {
-                      this.buildKey = key;
-                      this.buildName = buildName;
-                    });
-                  },
-                  changeBuildName: (buildName) {
-                    setState(() {
-                      this.buildName = buildName;
-                    });
-                  },
-                  buildName: buildName,
-                  buildKey: buildKey,
-                  isGlyphSet: isGlyphSet));
+              child: NewBuildDialog(
+                fetchSavedBuild: fetchSavedBuild,
+                changeClass: changeClass,
+              ));
         });
   }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -268,6 +260,21 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     }
 
     return Scaffold(
+      drawer: Drawer(
+          child: DrawerScreen(
+        fetchSavedBuild: fetchSavedBuild,
+        changeClass: changeClass,
+      )),
+      floatingActionButton: Padding(
+        padding: EdgeInsets.only(bottom: !adState.isAdFreeVersion ? 45 : 15),
+        child: FloatingActionButton(
+            onPressed: showAddBuildDialog,
+            backgroundColor: Color(0xffB79FAD),
+            child: Icon(
+              Icons.add,
+              size: 35,
+            )),
+      ),
       bottomNavigationBar: !adState.isAdFreeVersion
           ? Container(
               height: 52,
@@ -326,7 +333,8 @@ class _DetailScreenContentState extends State<DetailScreenContent>
               ),
             ),
             DividerTheme(
-              data: DividerThemeData(color: const Color.fromARGB(255, 49, 49, 49)),
+              data: DividerThemeData(
+                  color: const Color.fromARGB(255, 49, 49, 49)),
               child: PopupMenuButton<MenuItemPopUp>(
                 icon: Icon(Icons.more_horiz, color: Colors.white),
                 offset: Offset(0, 56),
@@ -344,7 +352,8 @@ class _DetailScreenContentState extends State<DetailScreenContent>
           backgroundColor: Color.fromARGB(255, 57, 57, 57),
           bottom: PreferredSize(
               preferredSize: _tabBar().preferredSize,
-              child: ColoredBox(color: Color.fromARGB(255, 83, 83, 83), child: _tabBar()))),
+              child: ColoredBox(
+                  color: Color.fromARGB(255, 83, 83, 83), child: _tabBar()))),
       body: DefaultTextStyle(
         style: TextStyle(
             color: Colors.white, fontFamily: 'Morpheus', fontSize: 18),
