@@ -1,14 +1,22 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
 import 'package:wowtalentcalculator/api/purchase_api.dart';
+import 'package:wowtalentcalculator/provider/talent_provider.dart';
 
 class DrawerScreen extends StatefulWidget {
-  const DrawerScreen({Key? key}) : super(key: key);
+  Function changeClass;
+  Function fetchSavedBuild;
+
+  DrawerScreen({required this.changeClass, required this.fetchSavedBuild});
 
   @override
   State<DrawerScreen> createState() => _DrawerScreenState();
@@ -17,6 +25,7 @@ class DrawerScreen extends StatefulWidget {
 class _DrawerScreenState extends State<DrawerScreen> {
   bool isOpen = false;
   List builds = [];
+  late TalentProvider talentProvider;
   Future<List> _getSavedBuilds() async {
     final prefs = await SharedPreferences.getInstance();
     List<String> keys = prefs.getKeys().toList();
@@ -70,6 +79,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
 
   @override
   Widget build(BuildContext context) {
+    talentProvider = Provider.of<TalentProvider>(context);
     final adState = Provider.of<AdState>(context);
 
     return Material(
@@ -91,7 +101,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                     context: context,
                     builder: (context) {
                       return AlertDialog(
-                        title: new Text("Classic Talent Calculator"),
+                        title: new Text("WoW Talent Calculator"),
                         content: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
@@ -101,7 +111,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                               children: <TextSpan>[
                                 TextSpan(
                                   text:
-                                      "Copyright 2024 Halasz Gergo.All rights reserved.\n\nLogo and store icons created using Icons8 icons are based on remasterings by warcrafttavern.com\n\n",
+                                      "Copyright 2019 Halasz Gergo.All rights reserved.\n\nLogo and store icons created using Icons8 icons are based on remasterings by barrens.chat\n\n",
                                 ),
                                 TextSpan(
                                   text:
@@ -185,10 +195,8 @@ class _DrawerScreenState extends State<DrawerScreen> {
                         await Purchases.restoreTransactions();
                     if (restoredInfo.allPurchasedProductIdentifiers.length >
                             0 &&
-                        (restoredInfo.allPurchasedProductIdentifiers[0] ==
-                                "wowtc_ad_free_version" ||
-                            restoredInfo.allPurchasedProductIdentifiers[0] ==
-                                "123456")) {
+                        restoredInfo.allPurchasedProductIdentifiers[0] ==
+                            "wowtc_ad_free_version") {
                       adState.changeToAdFreeVersion();
                     } else {
                       showDialog(
