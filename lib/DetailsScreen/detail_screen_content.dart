@@ -239,6 +239,30 @@ class _DetailScreenContentState extends State<DetailScreenContent>
               ));
         });
   }
+
+  showSaveBuildDialog(bool isGlyphSet) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return ChangeNotifierProvider<TalentProvider>.value(
+              value: talentProvider,
+              child: SaveScreen(
+                  changeBuildKeyAndName: (key, buildName) {
+                    setState(() {
+                      this.buildKey = key;
+                      this.buildName = buildName;
+                    });
+                  },
+                  changeBuildName: (buildName) {
+                    setState(() {
+                      this.buildName = buildName;
+                    });
+                  },
+                  buildName: buildName,
+                  buildKey: buildKey,
+                  isGlyphSet: isGlyphSet));
+        });
+  }
   
 
   @override

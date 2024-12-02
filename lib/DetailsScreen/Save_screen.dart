@@ -93,7 +93,6 @@ class _SaveScreenState extends State<SaveScreen> {
         }
         talentProvider.changeBuildName(buildName);
         Navigator.pop(context);
-        Navigator.pop(context);
       } else {
         setState(() {
           isTextEmpty = true;

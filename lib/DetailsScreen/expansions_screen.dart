@@ -116,7 +116,6 @@ class _ExpansionsScreenState extends State<ExpansionsScreen> {
     final adState = Provider.of<AdState>(context);
 
     return Scaffold(
-        drawer: Drawer(child: DrawerScreen()),
         bottomNavigationBar: !adState.isAdFreeVersion
             ? Container(
                 height: 52,
