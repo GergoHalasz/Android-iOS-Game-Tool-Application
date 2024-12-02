@@ -46,7 +46,10 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return HomeScreen();
+    return HomeScreen(
+      expansion: getExpansion(),
+      druidTalentTrees: loadTalentString('druid', 'start'),
+    );
   }
 
   List<Widget> actionsBuilderIOS(BuildContext context, double? stars) =>
