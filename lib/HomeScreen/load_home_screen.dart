@@ -7,41 +7,22 @@ import 'package:wowtalentcalculator/utils/methods.dart';
 import 'home_screen.dart';
 
 class LoadHomeScreen extends StatefulWidget {
+  LoadHomeScreen({Key? key, required this.rateMyApp}) : super(key: key);
+
+  RateMyApp? rateMyApp;
   @override
   State<LoadHomeScreen> createState() => _LoadHomeScreenState();
 }
 
 class _LoadHomeScreenState extends State<LoadHomeScreen> {
-  RateMyApp rateMyApp = RateMyApp(
-    preferencesPrefix: 'rateMyApp_',
-    minDays: 0,
-    minLaunches: 2,
-    remindDays: 0,
-    remindLaunches: 2,
-    googlePlayIdentifier: 'com.fissher.wowtalentcalculator',
-    appStoreIdentifier: 'com.fissher.wowTalentCalculator',
-  );
-
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      await rateMyApp.init();
-      if (mounted && rateMyApp.shouldOpenDialog) {
-        if (Platform.isAndroid) {
-          rateMyApp.showRateDialog(context,
-              title: 'Rate This App',
-              message:
-                  'Hey Classic Peep, if you like the app leave a rating! :)',
-              actionsBuilder: actionsBuilderAndroid);
-        } else {
-          rateMyApp.showStarRateDialog(context,
-              title: 'Rate This App',
-              starRatingOptions: StarRatingOptions(initialRating: 4),
-              message: 'Do you like this app? Please leave a rating',
-              actionsBuilder: actionsBuilderIOS);
-        }
-      }
-    });
+    widget.rateMyApp?.showStarRateDialog(context,
+        title: 'Rate This App',
+        message: 'Do you like this app? Please leave a rating',
+        starRatingOptions: StarRatingOptions(initialRating: 4),
+        actionsBuilder: actionsBuilder
+        );
     super.initState();
   }
 
@@ -53,23 +34,23 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
     );
   }
 
-  List<Widget> actionsBuilderIOS(BuildContext context, double? stars) =>
+  List<Widget> actionsBuilder(BuildContext context, double? stars) =>
       stars == null
           ? [buildCancelButton()]
-          : [buildCancelButton(), buildRemindButton(), buildOkButton()];
+          : [buildOkButton(), buildCancelButton()];
 
-  List<Widget> actionsBuilderAndroid(BuildContext context) =>
-      [buildCancelButton(), buildRemindButton(), buildOkButton()];
+  // List<Widget> actionsBuilderAndroid(BuildContext context) =>
+  //     [buildCancelButton(), buildRemindButton(), buildOkButton()];
 
   Widget buildOkButton() {
-    return RateMyAppRateButton(rateMyApp, text: 'OK');
+    return RateMyAppRateButton(widget.rateMyApp!, text: 'OK');
   }
 
   Widget buildCancelButton() {
-    return RateMyAppNoButton(rateMyApp, text: 'CANCEL');
+    return RateMyAppNoButton(widget.rateMyApp!, text: 'CANCEL');
   }
 
-  Widget buildRemindButton() {
-    return RateMyAppLaterButton(rateMyApp, text: 'LATER');
-  }
+  // Widget buildRemindButton() {
+  //   return RateMyAppLaterButton(rateMyApp, text: 'LATER');
+  // }
 }

@@ -8,13 +8,13 @@ Future<String> loadJson(String name, String expansion) async {
 }
 
 Future<List> loadTalentString(String name, String? expansion) async {
-  if(expansion == 'start') {
+  if (expansion == 'start') {
     final prefs = await SharedPreferences.getInstance();
 
     expansion = prefs.getString('expansion');
-    if(expansion == null) {
-      expansion = 'tbc';
-      prefs.setString('expansion', 'tbc');
+    if (expansion == null) {
+      expansion = 'vanilla';
+      prefs.setString('expansion', 'vanilla');
     }
   }
 
@@ -28,10 +28,7 @@ Future<String> getExpansion() async {
   final prefs = await SharedPreferences.getInstance();
 
   expansion = prefs.getString('expansion');
-  if(expansion == null) {
-    expansion = 'tbc';
-    prefs.setString('expansion', 'tbc');
-  }
+  expansion = 'vanilla';
+  prefs.setString('expansion', 'vanilla');
   return expansion;
 }
-

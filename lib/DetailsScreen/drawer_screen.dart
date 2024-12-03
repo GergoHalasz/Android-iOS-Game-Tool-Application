@@ -8,6 +8,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
 import 'package:wowtalentcalculator/api/purchase_api.dart';
 import 'package:wowtalentcalculator/provider/talent_provider.dart';
@@ -83,7 +84,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
     final adState = Provider.of<AdState>(context);
 
     return Material(
-      color: Color(0xff556F7A),
+      color: Color.fromARGB(255, 93, 93, 93),
       child: DefaultTextStyle(
         style: TextStyle(
             fontSize: 16,
@@ -132,6 +133,8 @@ class _DrawerScreenState extends State<DrawerScreen> {
                                         fontSize: 13),
                                   ),
                                   onTap: () {
+                                    canLaunchUrl(
+                                        Uri.dataFromString(_privacyUrl));
                                   },
                                 ),
                                 InkWell(
@@ -143,6 +146,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                                         fontSize: 13),
                                   ),
                                   onTap: () {
+                                    canLaunchUrl(Uri.dataFromString(_termsUrl));
                                   },
                                 ),
                               ],

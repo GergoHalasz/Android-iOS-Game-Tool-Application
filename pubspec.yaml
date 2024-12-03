@@ -15,7 +15,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 3.2.0+110
+version: 3.2.1+111
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -45,6 +45,8 @@ dependencies:
   change_app_package_name: ^1.1.0
   swipedetector_nullsafety: ^2.0.0
   google_mobile_ads: ^5.1.0
+  url_launcher: ^6.3.1
+  flutter_native_splash: ^2.4.3
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +65,14 @@ flutter_icons:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
 flutter_lints: ^1.0.0
+
+flutter_native_splash:
+  android: true
+  ios: true
+  web: false
+
+  color: "#000000"
+  image: "assets/AppIcons/appIcon.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -123,7 +133,4 @@ flutter:
           weight: 700
         - asset: assets/fonts/Roboto-Black.ttf
           weight: 900
-    - family: Morpheus
-      fonts:
-        - asset: assets/fonts/MORPHEUS.ttf
-          weight: 400
+

@@ -6,6 +6,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:wowtalentcalculator/ArrowWidgets/class_arrow_widget.dart';
 import 'package:wowtalentcalculator/DetailsScreen/Save_screen.dart';
 import 'package:wowtalentcalculator/DetailsScreen/drawer_screen.dart';
@@ -226,7 +227,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     });
   }
 
-
   showAddBuildDialog() {
     showDialog(
         context: context,
@@ -263,7 +263,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                   isGlyphSet: isGlyphSet));
         });
   }
-  
 
   @override
   Widget build(BuildContext context) {
@@ -291,13 +290,17 @@ class _DetailScreenContentState extends State<DetailScreenContent>
       )),
       floatingActionButton: Padding(
         padding: EdgeInsets.only(bottom: !adState.isAdFreeVersion ? 45 : 15),
-        child: FloatingActionButton(
-            onPressed: showAddBuildDialog,
-            backgroundColor: Color(0xffB79FAD),
-            child: Icon(
-              Icons.add,
-              size: 35,
-            )),
+        child: Container(
+          width: 65,
+          height: 65,
+          child: FloatingActionButton(
+              onPressed: showAddBuildDialog,
+              backgroundColor: classColor,
+              child: Icon(
+                Icons.add,
+                size: 35,
+              )),
+        ),
       ),
       bottomNavigationBar: !adState.isAdFreeVersion
           ? Container(
@@ -379,8 +382,8 @@ class _DetailScreenContentState extends State<DetailScreenContent>
               child: ColoredBox(
                   color: Color.fromARGB(255, 83, 83, 83), child: _tabBar()))),
       body: DefaultTextStyle(
-        style: TextStyle(
-            color: Colors.white, fontFamily: 'Morpheus', fontSize: 18),
+        style:
+            TextStyle(color: Colors.white, fontFamily: 'Roboto', fontSize: 18),
         child: Column(
           children: [
             Container(
@@ -603,6 +606,27 @@ class _DetailScreenContentState extends State<DetailScreenContent>
         if (interstitialAdCounter == 6) {
           adState.showInterstitialAd();
           interstitialAdCounter = 0;
+        }
+        break;
+
+      case MenuItems.itemLeaveRating:
+        const url =
+            'https://apps.apple.com/us/app/id1593368066'; // Replace this with your app's store URL
+        if (await canLaunchUrl(Uri.parse(url))) {
+          await launchUrl(Uri.parse(url));
+        } else {
+          throw 'Could not launch $url';
+        }
+        break;
+      
+      case MenuItems.itemRemoveAds:
+        if (!adState.isAdFreeVersion) {
+          final offerings = await PurchaseApi.fetchOffers();
+          final isSuccess = await Purchases.purchasePackage(
+              offerings[0].availablePackages[0]);
+          if (isSuccess == true) {
+            adState.changeToAdFreeVersion();
+          }
         }
         break;
     }

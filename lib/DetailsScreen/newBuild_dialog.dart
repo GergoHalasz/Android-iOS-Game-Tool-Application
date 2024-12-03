@@ -23,7 +23,7 @@ class NewBuildDialog extends StatefulWidget {
 }
 
 class _NewBuildDialogState extends State<NewBuildDialog> {
-  List<String> expansions = ['vanilla', 'tbc', 'wotlk'];
+  List<String> expansions = ['vanilla', 'tbc', 'wotlk', 'cata'];
   List<String> wotlkClasses = [
     'deathknight',
     'druid',
@@ -48,7 +48,7 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
     'warrior',
   ];
   ScrollController _scrollController = ScrollController();
-  String currentExpansionSelected = 'tbc';
+  String currentExpansionSelected = 'vanilla';
 
   List builds = [];
   Future<List> _getSavedBuilds() async {
@@ -115,7 +115,7 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
     }
 
     return AlertDialog(
-      backgroundColor: Color(0xff556F7A),
+      backgroundColor: Color.fromARGB(255, 61, 61, 61),
       title: new Text(
         'Choose expansion and create or see saved builds',
         style: TextStyle(color: Colors.white, fontSize: 15),
@@ -129,47 +129,47 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              height: 45,
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey, width: 2),
-                  borderRadius: BorderRadius.all(Radius.circular(10))),
-              child: DropdownButtonHideUnderline(
-                child: DropdownButton(
-                    selectedItemBuilder: (_) {
-                      return expansions
-                          .map((e) => Container(
-                                alignment: Alignment.centerLeft,
-                                child: Text(
-                                  capitalize(e),
-                                ),
-                              ))
-                          .toList();
-                    },
-                    style: TextStyle(color: Colors.white),
-                    iconSize: 30,
-                    icon: Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.white,
-                    ),
-                    isExpanded: true,
-                    value: currentExpansionSelected,
-                    items: expansions.map((item) {
-                      return DropdownMenuItem(
-                          value: item,
-                          child: Text(
-                            capitalize(item),
-                            style: TextStyle(color: Colors.black),
-                          ));
-                    }).toList(),
-                    onChanged: (value) {
-                      setState(() {
-                        currentExpansionSelected = value as String;
-                      });
-                    }),
-              ),
-            ),
+            // Container(
+            //   height: 45,
+            //   padding: EdgeInsets.symmetric(horizontal: 10),
+            //   decoration: BoxDecoration(
+            //       border: Border.all(color: Colors.grey, width: 2),
+            //       borderRadius: BorderRadius.all(Radius.circular(10))),
+            //   child: DropdownButtonHideUnderline(
+            //     child: DropdownButton(
+            //         selectedItemBuilder: (_) {
+            //           return expansions
+            //               .map((e) => Container(
+            //                     alignment: Alignment.centerLeft,
+            //                     child: Text(
+            //                       capitalize(e),
+            //                     ),
+            //                   ))
+            //               .toList();
+            //         },
+            //         style: TextStyle(color: Colors.white),
+            //         iconSize: 30,
+            //         icon: Icon(
+            //           Icons.arrow_drop_down,
+            //           color: Colors.white,
+            //         ),
+            //         isExpanded: true,
+            //         value: currentExpansionSelected,
+            //         items: expansions.map((item) {
+            //           return DropdownMenuItem(
+            //               value: item,
+            //               child: Text(
+            //                 capitalize(item),
+            //                 style: TextStyle(color: Colors.black),
+            //               ));
+            //         }).toList(),
+            //         onChanged: (value) {
+            //           setState(() {
+            //             currentExpansionSelected = value as String;
+            //           });
+            //         }),
+            //   ),
+            // ),
             Container(
               height: SizeConfig.cellSize / 1.7 * 3 + 40,
               child: RawScrollbar(
@@ -213,10 +213,12 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                                               BorderRadius.circular(10)),
                                       child: InkWell(
                                         onTap: () async {
-                                          final prefs = await SharedPreferences.getInstance();
+                                          final prefs = await SharedPreferences
+                                              .getInstance();
                                           Navigator.pop(context);
                                           loadInterstitialAd();
-                                          prefs.setString('expansion', currentExpansionSelected);
+                                          prefs.setString('expansion',
+                                              currentExpansionSelected);
                                           talentProvider.changeExpansion(
                                               currentExpansionSelected);
                                           widget.changeClass(element);
@@ -251,10 +253,12 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                                             BorderRadius.circular(10)),
                                     child: InkWell(
                                       onTap: () async {
-                                        final prefs = await SharedPreferences.getInstance();
+                                        final prefs = await SharedPreferences
+                                            .getInstance();
                                         Navigator.pop(context);
                                         loadInterstitialAd();
-                                        prefs.setString('expansion', currentExpansionSelected);
+                                        prefs.setString('expansion',
+                                            currentExpansionSelected);
                                         talentProvider.changeExpansion(
                                             currentExpansionSelected);
                                         widget.changeClass(element);
@@ -283,90 +287,103 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                     alignment: Alignment.center,
                     margin: EdgeInsets.all(3),
                     width: double.infinity,
-                    color: Color(0xff2E6171),
+                    color: Color.fromARGB(255, 117, 117, 117),
                     child: Text('Saved builds'),
                   ),
                   Container(
                       width: double.maxFinite,
                       height: SizeConfig.screenHeight / 5,
-                      child: ListView.builder(
-                          itemCount: builds.length,
-                          itemBuilder: (context, index) {
-                            if ((builds[index] != null &&
-                                    currentExpansionSelected == "tbc" &&
-                                    builds[index]["key"][0] == "t") ||
-                                (builds[index] != null &&
-                                    currentExpansionSelected == "vanilla" &&
-                                    builds[index]["key"][0] == "v") ||
-                                (builds[index] != null &&
-                                    currentExpansionSelected == "wotlk" &&
-                                    builds[index]["key"][0] == "w")) {
-                              return Column(children: [
-                                Slidable(
-                                    key: Key(builds[index]["key"]),
-                                    endActionPane: ActionPane(
-                                      extentRatio: 1 / 5,
-                                      // A motion is a widget used to control how the pane animates.
-                                      motion: const ScrollMotion(),
+                      child: RawScrollbar(
+                          thumbColor: const Color.fromARGB(255, 255, 255, 255),
+                          thumbVisibility: true,
+                          thickness: 3.5,
+                          radius: Radius.circular(20),
+                          controller: _scrollController,
+                          child: ListView.builder(
+                              itemCount: builds.length,
+                              itemBuilder: (context, index) {
+                                if ((builds[index] != null &&
+                                        currentExpansionSelected == "tbc" &&
+                                        builds[index]["key"][0] == "t") ||
+                                    (builds[index] != null &&
+                                        currentExpansionSelected == "vanilla" &&
+                                        builds[index]["key"][0] == "v") ||
+                                    (builds[index] != null &&
+                                        currentExpansionSelected == "wotlk" &&
+                                        builds[index]["key"][0] == "w") ||
+                                    (builds[index] != null &&
+                                        currentExpansionSelected == "cata" &&
+                                        builds[index]["key"][0] == "c")) {
+                                  return Column(children: [
+                                    Slidable(
+                                        key: Key(builds[index]["key"]),
+                                        endActionPane: ActionPane(
+                                          extentRatio: 1 / 5,
+                                          // A motion is a widget used to control how the pane animates.
+                                          motion: const ScrollMotion(),
 
-                                      // A pane can dismiss the Slidable.
+                                          // A pane can dismiss the Slidable.
 
-                                      // All actions are defined in the children parameter.
-                                      children: [
-                                        // A SlidableAction can have an icon and/or a label.
-                                        SlidableAction(
-                                          onPressed: (context) {
-                                            onDeleteBuild(
-                                                context, builds[index]["key"]);
-                                          },
-                                          backgroundColor: Colors.red,
-                                          foregroundColor: Colors.white,
-                                          icon: Icons.delete,
-                                        )
-                                      ],
-                                    ),
-                                    child: Container(
-                                      child: Card(
-                                        color: Colors.grey.shade700,
-                                        margin: EdgeInsets.fromLTRB(3, 0, 3, 3),
-                                        child: ListTile(
-                                          visualDensity:
-                                              VisualDensity(vertical: -4),
-                                          contentPadding: EdgeInsets.symmetric(
-                                              horizontal: 12),
-                                          dense: true,
-                                          subtitle: Text(
-                                              '${builds[index]["build"]["build"][0]["Points"]}/${builds[index]["build"]["build"][1]["Points"]}/${builds[index]["build"]["build"][2]["Points"]}',
-                                              style: TextStyle(
-                                                  color: classColors[
-                                                      builds[index]["build"]
-                                                          ["buildClass"]])),
-                                          leading: Image.asset(
-                                            "assets/Class/${builds[index]["build"]["buildClass"]}.png",
-                                          ),
-                                          title: Text(
-                                            builds[index]["build"]["buildName"],
-                                            style: TextStyle(
-                                                fontSize: 15,
-                                                color: classColors[builds[index]
-                                                    ["build"]["buildClass"]]),
-                                          ),
-                                          onTap: () {
-                                            Navigator.pop(context);
-                                            loadInterstitialAd();
-                                            talentProvider.changeExpansion(
-                                            currentExpansionSelected);
-                                            widget.fetchSavedBuild(
-                                                builds[index]["build"],
-                                                builds[index]["key"]);
-                                          },
+                                          // All actions are defined in the children parameter.
+                                          children: [
+                                            // A SlidableAction can have an icon and/or a label.
+                                            SlidableAction(
+                                              onPressed: (context) {
+                                                onDeleteBuild(context,
+                                                    builds[index]["key"]);
+                                              },
+                                              backgroundColor: Colors.red,
+                                              foregroundColor: Colors.white,
+                                              icon: Icons.delete,
+                                            )
+                                          ],
                                         ),
-                                      ),
-                                    ))
-                              ]);
-                            } else
-                              return Container();
-                          }))
+                                        child: Container(
+                                          child: Card(
+                                            color: Colors.grey.shade700,
+                                            margin:
+                                                EdgeInsets.fromLTRB(3, 0, 3, 3),
+                                            child: ListTile(
+                                              visualDensity:
+                                                  VisualDensity(vertical: -4),
+                                              contentPadding:
+                                                  EdgeInsets.symmetric(
+                                                      horizontal: 12),
+                                              dense: true,
+                                              subtitle: Text(
+                                                  '${builds[index]["build"]["build"][0]["Points"]}/${builds[index]["build"]["build"][1]["Points"]}/${builds[index]["build"]["build"][2]["Points"]}',
+                                                  style: TextStyle(
+                                                      color: classColors[
+                                                          builds[index]["build"]
+                                                              ["buildClass"]])),
+                                              leading: Image.asset(
+                                                "assets/Class/${builds[index]["build"]["buildClass"]}.png",
+                                              ),
+                                              title: Text(
+                                                builds[index]["build"]
+                                                    ["buildName"],
+                                                style: TextStyle(
+                                                    fontSize: 15,
+                                                    color: classColors[
+                                                        builds[index]["build"]
+                                                            ["buildClass"]]),
+                                              ),
+                                              onTap: () {
+                                                Navigator.pop(context);
+                                                loadInterstitialAd();
+                                                talentProvider.changeExpansion(
+                                                    currentExpansionSelected);
+                                                widget.fetchSavedBuild(
+                                                    builds[index]["build"],
+                                                    builds[index]["key"]);
+                                              },
+                                            ),
+                                          ),
+                                        ))
+                                  ]);
+                                } else
+                                  return Container();
+                              })))
                 ],
               ),
             )

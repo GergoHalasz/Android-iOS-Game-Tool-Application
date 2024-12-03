@@ -6,6 +6,7 @@ import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:wowtalentcalculator/HomeScreen/load_home_screen.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
 import 'package:wowtalentcalculator/api/purchase_api.dart';
+import 'package:wowtalentcalculator/widgets/rate_app_init_widget.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,6 +44,7 @@ class _MyAppState extends State<MyApp> {
           primarySwatch: Colors.blue,
         ),
         debugShowCheckedModeBanner: false,
-        home: LoadHomeScreen());
+        home: RateAppInitWidget(
+            builder: (rateMyApp) => LoadHomeScreen(rateMyApp: rateMyApp)));
   }
 }
