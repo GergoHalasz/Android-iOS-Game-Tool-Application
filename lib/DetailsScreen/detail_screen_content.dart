@@ -382,8 +382,11 @@ class _DetailScreenContentState extends State<DetailScreenContent>
               child: ColoredBox(
                   color: Color.fromARGB(255, 83, 83, 83), child: _tabBar()))),
       body: DefaultTextStyle(
-        style:
-            TextStyle(color: Colors.white, fontFamily: 'Roboto', fontSize: 18),
+        style: TextStyle(
+            color: Colors.white,
+            fontFamily: 'Roboto',
+            fontWeight: FontWeight.bold,
+            fontSize: 16),
         child: Column(
           children: [
             Container(
@@ -618,7 +621,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
           throw 'Could not launch $url';
         }
         break;
-      
+
       case MenuItems.itemRemoveAds:
         if (!adState.isAdFreeVersion) {
           final offerings = await PurchaseApi.fetchOffers();
