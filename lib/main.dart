@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -7,17 +10,12 @@ import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:wowtalentcalculator/HomeScreen/load_home_screen.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
 import 'package:wowtalentcalculator/api/purchase_api.dart';
+import 'package:wowtalentcalculator/utils/rating_service.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await PurchaseApi.init();
-  InAppReview inAppReview = InAppReview.instance;
-  if (await inAppReview.isAvailable()) {
-    inAppReview.requestReview();
-  }
-
-  
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   final initFuture = MobileAds.instance.initialize();
