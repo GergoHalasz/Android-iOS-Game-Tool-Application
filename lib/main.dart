@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:in_app_review/in_app_review.dart';
 import 'package:provider/provider.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:wowtalentcalculator/HomeScreen/load_home_screen.dart';
 import 'package:wowtalentcalculator/ad_state.dart';
 import 'package:wowtalentcalculator/api/purchase_api.dart';
-import 'package:wowtalentcalculator/widgets/rate_app_init_widget.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await PurchaseApi.init();
+  InAppReview inAppReview = InAppReview.instance;
+  if (await inAppReview.isAvailable()) {
+    inAppReview.requestReview();
+  }
+
+  
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   final initFuture = MobileAds.instance.initialize();
@@ -44,7 +50,6 @@ class _MyAppState extends State<MyApp> {
           primarySwatch: Colors.blue,
         ),
         debugShowCheckedModeBanner: false,
-        home: RateAppInitWidget(
-            builder: (rateMyApp) => LoadHomeScreen(rateMyApp: rateMyApp)));
+        home: LoadHomeScreen());
   }
 }
