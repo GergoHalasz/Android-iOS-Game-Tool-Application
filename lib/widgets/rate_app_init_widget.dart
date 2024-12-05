@@ -17,7 +17,7 @@ class _RateAppInitWidgetState extends State<RateAppInitWidget> {
   Widget build(BuildContext context) {
     return RateMyAppBuilder(
       rateMyApp: RateMyApp(
-          appStoreIdentifier: "com.fissher.wowTalentCalculator",
+          appStoreIdentifier: "1593368066",
           googlePlayIdentifier: "com.gergo.asdlol",
           minLaunches: 2,
           minDays: 0,

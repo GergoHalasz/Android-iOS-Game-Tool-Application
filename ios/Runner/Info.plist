@@ -21,9 +21,9 @@
 			<string>itms</string>
 		</array>
 		<key>CFBundleName</key>
-		<string>Vanilla Talents</string>
+		<string>WoW Talents</string>
 		<key>CFBundleDisplayName</key>
-		<string>Vanilla Talents</string>
+		<string>WoW Talents</string>
 		<key>CFBundlePackageType</key>
 		<string>APPL</string>
 		<key>CFBundleShortVersionString</key>

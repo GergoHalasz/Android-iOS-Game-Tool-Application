@@ -291,8 +291,8 @@ class _DetailScreenContentState extends State<DetailScreenContent>
       floatingActionButton: Padding(
         padding: EdgeInsets.only(bottom: !adState.isAdFreeVersion ? 45 : 15),
         child: Container(
-          width: 65,
-          height: 65,
+          width: 58,
+          height: 58,
           child: FloatingActionButton(
               onPressed: showAddBuildDialog,
               backgroundColor: classColor,
