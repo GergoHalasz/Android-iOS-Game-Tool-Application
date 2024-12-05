@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:in_app_review/in_app_review.dart';
 // import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
@@ -613,12 +614,12 @@ class _DetailScreenContentState extends State<DetailScreenContent>
         break;
 
       case MenuItems.itemLeaveRating:
-        const url =
-            'https://apps.apple.com/us/app/id1593368066'; // Replace this with your app's store URL
-        if (await canLaunchUrl(Uri.parse(url))) {
-          await launchUrl(Uri.parse(url));
-        } else {
-          throw 'Could not launch $url';
+        final InAppReview _inAppReview = InAppReview.instance;
+        final available = await _inAppReview.isAvailable();
+        if (available) {
+          _inAppReview.openStoreListing(
+            appStoreId: '1593368066',
+          );
         }
         break;
 

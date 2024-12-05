@@ -18,7 +18,7 @@ class RatingService {
       return false;
     }
 
-    if (countOpens != 2) {
+    if (countOpens != 4) {
       _prefs.setInt(keyNameForCount, countOpens + 1);
       return false;
     } else {

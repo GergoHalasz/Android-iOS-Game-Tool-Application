@@ -27,26 +27,19 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
               context: context,
               builder: (context) {
                 return CupertinoAlertDialog(
-                  title: Text('Über diese App'),
+                  title: Text('Rate this app'),
                   content: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'StVO 2024',
+                        'If you like this app, please take a little bit of your time to review it !\nIt really helps us and it shouldn\'t take you more than one minute.',
                         style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(height: 8),
-                      Text('Version 1.0.0'),
-                      SizedBox(height: 16),
-                      Text(
-                        '',
-                        style: TextStyle(fontStyle: FontStyle.italic),
                       ),
                     ],
                   ),
                   actions: [
                     CupertinoDialogAction(
-                      child: Text('Schließen'),
+                      child: Text('RATE'),
                       onPressed: () async {
                         InAppReview inAppReview = InAppReview.instance;
 
@@ -54,6 +47,18 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
                           inAppReview.openStoreListing(
                               appStoreId: '1593368066');
                         }
+                        Navigator.of(context).pop(); // Close the dialog
+                      },
+                    ),
+                    CupertinoDialogAction(
+                      child: Text('NO THANKS'),
+                      onPressed: () async {
+                        Navigator.of(context).pop(); // Close the dialog
+                      },
+                    ),
+                    CupertinoDialogAction(
+                      child: Text('MAYBE LATER'),
+                      onPressed: () async {
                         Navigator.of(context).pop(); // Close the dialog
                       },
                     ),
