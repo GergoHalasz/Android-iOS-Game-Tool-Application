@@ -303,13 +303,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
               )),
         ),
       ),
-      bottomNavigationBar: !adState.isAdFreeVersion
-          ? Container(
-              height: 52,
-              color: Colors.black,
-              child: AdWidget(ad: banner!),
-            )
-          : null,
+      
       appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.white),
           centerTitle: true,
