@@ -303,7 +303,13 @@ class _DetailScreenContentState extends State<DetailScreenContent>
               )),
         ),
       ),
-      
+      bottomNavigationBar: !adState.isAdFreeVersion
+          ? Container(
+              height: 52,
+              color: Colors.black,
+              child: AdWidget(ad: banner!),
+            )
+          : null,
       appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.white),
           centerTitle: true,
@@ -341,7 +347,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                     color: Colors.white,
                   ),
                   onTap: () {
-                   
                     interstitialAdCounter++;
                     if (interstitialAdCounter == 6) {
                       adState.showInterstitialAd();
@@ -564,7 +569,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     switch (item) {
       case MenuItems.itemResetTree:
         talentProvider.resetTalentTree(_selectedIndex);
-        
+
         interstitialAdCounter++;
         if (interstitialAdCounter == 6) {
           adState.showInterstitialAd();
@@ -593,7 +598,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
 
       case MenuItems.itemShareBuild:
         shareBuild();
-       
+
         interstitialAdCounter++;
         if (interstitialAdCounter == 6) {
           adState.showInterstitialAd();
