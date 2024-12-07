@@ -86,6 +86,7 @@ class AdState extends ChangeNotifier {
             },
             onAdFailedToLoad: (LoadAdError error) {
               interstitialAd = null;
+              loadInterstitialAd();
             },
           ));
     }

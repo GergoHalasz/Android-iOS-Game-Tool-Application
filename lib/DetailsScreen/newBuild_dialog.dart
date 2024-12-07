@@ -101,19 +101,6 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
   Widget build(BuildContext context) {
     final adState = Provider.of<AdState>(context);
 
-    loadInterstitialAd() {
-      if (!adState.isAdFreeVersion) {
-        if (adState.interstitialAdCounter >= 1) {
-          adState.interstitialAdCounter = 0;
-          adState.interstitialAd?.show();
-          adState.interstitialAd?.dispose();
-          adState.showInterstitialAd();
-        } else {
-          adState.interstitialAdCounter++;
-        }
-      }
-    }
-
     return AlertDialog(
       backgroundColor: Color.fromARGB(255, 61, 61, 61),
       title: new Text(
@@ -129,47 +116,47 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Container(
-            //   height: 45,
-            //   padding: EdgeInsets.symmetric(horizontal: 10),
-            //   decoration: BoxDecoration(
-            //       border: Border.all(color: Colors.grey, width: 2),
-            //       borderRadius: BorderRadius.all(Radius.circular(10))),
-            //   child: DropdownButtonHideUnderline(
-            //     child: DropdownButton(
-            //         selectedItemBuilder: (_) {
-            //           return expansions
-            //               .map((e) => Container(
-            //                     alignment: Alignment.centerLeft,
-            //                     child: Text(
-            //                       capitalize(e),
-            //                     ),
-            //                   ))
-            //               .toList();
-            //         },
-            //         style: TextStyle(color: Colors.white),
-            //         iconSize: 30,
-            //         icon: Icon(
-            //           Icons.arrow_drop_down,
-            //           color: Colors.white,
-            //         ),
-            //         isExpanded: true,
-            //         value: currentExpansionSelected,
-            //         items: expansions.map((item) {
-            //           return DropdownMenuItem(
-            //               value: item,
-            //               child: Text(
-            //                 capitalize(item),
-            //                 style: TextStyle(color: Colors.black),
-            //               ));
-            //         }).toList(),
-            //         onChanged: (value) {
-            //           setState(() {
-            //             currentExpansionSelected = value as String;
-            //           });
-            //         }),
-            //   ),
-            // ),
+            Container(
+              height: 45,
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey, width: 2),
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton(
+                    selectedItemBuilder: (_) {
+                      return expansions
+                          .map((e) => Container(
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  capitalize(e),
+                                ),
+                              ))
+                          .toList();
+                    },
+                    style: TextStyle(color: Colors.white),
+                    iconSize: 30,
+                    icon: Icon(
+                      Icons.arrow_drop_down,
+                      color: Colors.white,
+                    ),
+                    isExpanded: true,
+                    value: currentExpansionSelected,
+                    items: expansions.map((item) {
+                      return DropdownMenuItem(
+                          value: item,
+                          child: Text(
+                            capitalize(item),
+                            style: TextStyle(color: Colors.black),
+                          ));
+                    }).toList(),
+                    onChanged: (value) {
+                      setState(() {
+                        currentExpansionSelected = value as String;
+                      });
+                    }),
+              ),
+            ),
             Container(
               height: SizeConfig.cellSize / 1.7 * 3 + 40,
               child: RawScrollbar(
@@ -188,7 +175,8 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                       spacing: 27,
                       runSpacing: 10,
                       children: [
-                        if (currentExpansionSelected == 'wotlk')
+                        if (currentExpansionSelected == 'wotlk' ||
+                            currentExpansionSelected == 'cata')
                           ...wotlkClasses.map((element) {
                             return Container(
                                 width: SizeConfig.cellSize / 1.65,
@@ -216,7 +204,9 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                                           final prefs = await SharedPreferences
                                               .getInstance();
                                           Navigator.pop(context);
-                                          loadInterstitialAd();
+                                          adState.interstitialAdCounter++;
+                                          adState
+                                              .showInterstitialAdClassScreen();
                                           prefs.setString('expansion',
                                               currentExpansionSelected);
                                           talentProvider.changeExpansion(
@@ -256,7 +246,8 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                                         final prefs = await SharedPreferences
                                             .getInstance();
                                         Navigator.pop(context);
-                                        loadInterstitialAd();
+                                        adState.interstitialAdCounter++;
+                                        adState.showInterstitialAdClassScreen();
                                         prefs.setString('expansion',
                                             currentExpansionSelected);
                                         talentProvider.changeExpansion(
@@ -370,7 +361,10 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                                               ),
                                               onTap: () {
                                                 Navigator.pop(context);
-                                                loadInterstitialAd();
+                                                adState
+                                                    .interstitialAdCounter2++;
+                                                adState
+                                                    .showInterstitialAdClass2();
                                                 talentProvider.changeExpansion(
                                                     currentExpansionSelected);
                                                 widget.fetchSavedBuild(

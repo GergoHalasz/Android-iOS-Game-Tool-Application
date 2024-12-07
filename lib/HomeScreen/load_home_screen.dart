@@ -20,53 +20,59 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
 
   @override
   void initState() {
-    Timer(const Duration(seconds: 2), () {
-      _ratingService.isSecondTimeOpen().then((secondOpen) {
-        if (secondOpen) {
-          showCupertinoDialog(
-              context: context,
-              builder: (context) {
-                return CupertinoAlertDialog(
-                  title: Text('Rate this app'),
-                  content: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'If you like this app, please take a little bit of your time to review it !\nIt really helps us and it shouldn\'t take you more than one minute.',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+    Timer(const Duration(seconds: 2), () async {
+      late SharedPreferences _prefs;
+      _prefs = await SharedPreferences.getInstance();
+
+      if (_prefs.getBool("askAgainRate") == null)
+        _ratingService.isSecondTimeOpen().then((secondOpen) {
+          if (secondOpen) {
+            showCupertinoDialog(
+                context: context,
+                builder: (context) {
+                  return CupertinoAlertDialog(
+                    title: Text('Rate this app'),
+                    content: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'If you like this app, please take a little bit of your time to review it !\nIt really helps us and it shouldn\'t take you more than one minute.',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    actions: [
+                      CupertinoDialogAction(
+                        child: Text('RATE'),
+                        onPressed: () async {
+                          InAppReview inAppReview = InAppReview.instance;
+
+                          if (await inAppReview.isAvailable()) {
+                            inAppReview.openStoreListing(
+                                appStoreId: '1593368066');
+                          }
+                          _prefs.setBool('askAgainRate', false);
+
+                          Navigator.of(context).pop(); // Close the dialog
+                        },
+                      ),
+                      CupertinoDialogAction(
+                        child: Text('NO THANKS'),
+                        onPressed: () async {
+                          Navigator.of(context).pop(); // Close the dialog
+                        },
+                      ),
+                      CupertinoDialogAction(
+                        child: Text('MAYBE LATER'),
+                        onPressed: () async {
+                          Navigator.of(context).pop(); // Close the dialog
+                        },
                       ),
                     ],
-                  ),
-                  actions: [
-                    CupertinoDialogAction(
-                      child: Text('RATE'),
-                      onPressed: () async {
-                        InAppReview inAppReview = InAppReview.instance;
-
-                        if (await inAppReview.isAvailable()) {
-                          inAppReview.openStoreListing(
-                              appStoreId: '1593368066');
-                        }
-                        Navigator.of(context).pop(); // Close the dialog
-                      },
-                    ),
-                    CupertinoDialogAction(
-                      child: Text('NO THANKS'),
-                      onPressed: () async {
-                        Navigator.of(context).pop(); // Close the dialog
-                      },
-                    ),
-                    CupertinoDialogAction(
-                      child: Text('MAYBE LATER'),
-                      onPressed: () async {
-                        Navigator.of(context).pop(); // Close the dialog
-                      },
-                    ),
-                  ],
-                );
-              });
-        }
-      });
+                  );
+                });
+          }
+        });
     });
 
     super.initState();

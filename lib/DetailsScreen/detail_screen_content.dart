@@ -347,9 +347,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
                     color: Colors.white,
                   ),
                   onTap: () {
-                    if (adState.interstitialAd == null) {
-                      adState.loadInterstitialAd();
-                    }
+                   
                     interstitialAdCounter++;
                     if (interstitialAdCounter == 6) {
                       adState.showInterstitialAd();
@@ -572,9 +570,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     switch (item) {
       case MenuItems.itemResetTree:
         talentProvider.resetTalentTree(_selectedIndex);
-        if (adState.interstitialAd == null) {
-          adState.loadInterstitialAd();
-        }
+        
         interstitialAdCounter++;
         if (interstitialAdCounter == 6) {
           adState.showInterstitialAd();
@@ -603,9 +599,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
 
       case MenuItems.itemShareBuild:
         shareBuild();
-        if (adState.interstitialAd == null) {
-          adState.loadInterstitialAd();
-        }
+       
         interstitialAdCounter++;
         if (interstitialAdCounter == 6) {
           adState.showInterstitialAd();

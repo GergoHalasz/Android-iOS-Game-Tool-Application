@@ -300,10 +300,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                     child: Container(
                                       child: InkWell(
                                         onTap: () async {
-                                          if (adState.interstitialAd ==
-                                              null) {
-                                            adState.loadInterstitialAd();
-                                          }
+                                          
                                           adState.interstitialAdCounter++;
                                           adState
                                               .showInterstitialAdClassScreen();
