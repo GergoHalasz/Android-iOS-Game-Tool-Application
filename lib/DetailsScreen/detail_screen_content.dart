@@ -577,25 +577,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
         }
         break;
 
-      case MenuItems.itemSetGlyphs:
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) {
-            ClassGlyphs classGlyphs =
-                talentProvider.classGlyphs.firstWhere((classGlyphs) {
-              String className = talentProvider.className;
-              if (className == 'deathknight') className = 'death knight';
-              return classGlyphs.name!.toLowerCase() == className;
-            });
-            return ChangeNotifierProvider<TalentProvider>.value(
-                value: talentProvider,
-                child: GlyphsScreen(
-                  classGlyphs: classGlyphs,
-                ));
-          }),
-        );
-        break;
-
       case MenuItems.itemShareBuild:
         shareBuild();
 
