@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:in_app_review/in_app_review.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 // import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
@@ -97,7 +98,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
           });
         });
       });
-      // if (!adState.isAdFreeVersion) checkInternetConnection();
+      if (!adState.isAdFreeVersion) checkInternetConnection();
     }
   }
 
@@ -122,30 +123,45 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     super.dispose();
   }
 
-  // void checkInternetConnection() async {
-  //   bool result = await InternetConnectionChecker().hasConnection;
-  //   if (result == true) {
-  //   } else {
-  //     showDialog(
-  //       barrierDismissible: false,
-  //       context: context,
-  //       builder: (context) => AlertDialog(
-  //         actions: [
-  //           TextButton(
-  //             onPressed: () {
-  //               Navigator.of(context).pop();
-  //               checkInternetConnection();
-  //             },
-  //             child: const Text('Connected'),
-  //           )
-  //         ],
-  //         content: Text(
-  //             'Please connect to the internet to proceed further. Click on the \"Connected\" button if you did connect to the internet.'),
-  //         title: Text("No internet connection"),
-  //       ),
-  //     );
-  //   }
-  // }
+  void checkInternetConnection() async {
+    bool result = await InternetConnectionChecker().hasConnection;
+    if (result == true) {
+    } else {
+      showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (context) => AlertDialog(
+          actions: [
+            TextButton(
+              onPressed: () async {
+                final adState = Provider.of<AdState>(context, listen: false);
+                if (!adState.isAdFreeVersion) {
+                  final offerings = await PurchaseApi.fetchOffers();
+                  final isSuccess = await Purchases.purchasePackage(
+                      offerings[0].availablePackages[0]);
+                  if (isSuccess.allPurchasedProductIdentifiers.length == 1) {
+                    adState.changeToAdFreeVersion();
+                    Navigator.of(context).pop();
+                  }
+                }
+              },
+              child: const Text('Remove Ads'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                checkInternetConnection();
+              },
+              child: const Text('Connected'),
+            )
+          ],
+          content: Text(
+              'Please connect to the internet to proceed further. Click on the \"Connected\" button if you did connect to the internet. Also you can buy the remove ads package and then the app can be used also without internet.'),
+          title: Text("No internet connection"),
+        ),
+      );
+    }
+  }
 
   TabBar _tabBar() => TabBar(
         controller: _tabController,
@@ -235,6 +251,7 @@ class _DetailScreenContentState extends State<DetailScreenContent>
           return ChangeNotifierProvider<TalentProvider>.value(
               value: talentProvider,
               child: NewBuildDialog(
+                expansion: talentProvider.expansion,
                 fetchSavedBuild: fetchSavedBuild,
                 changeClass: changeClass,
               ));
@@ -284,11 +301,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     }
 
     return Scaffold(
-      drawer: Drawer(
-          child: DrawerScreen(
-        fetchSavedBuild: fetchSavedBuild,
-        changeClass: changeClass,
-      )),
       floatingActionButton: Padding(
         padding: EdgeInsets.only(bottom: !adState.isAdFreeVersion ? 45 : 15),
         child: Container(

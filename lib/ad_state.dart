@@ -8,8 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class AdState extends ChangeNotifier {
   Future<InitializationStatus> initialization;
   InterstitialAd? interstitialAd;
-  int interstitialAdCounter = 0;
-  int interstitialAdCounter2 = 0;
+  int interstitialAdCounter = 1;
 
   AdState(this.initialization) {
     this.initialization = initialization;
@@ -57,6 +56,10 @@ class AdState extends ChangeNotifier {
   String get interstitialAdUnitId => Platform.isAndroid
       ? 'ca-app-pub-3940256099942544/1033173712'
       : 'ca-app-pub-7574598565891663/8411007639';
+  
+  String get appOpenAdUnitId => Platform.isAndroid
+      ? 'ca-app-pub-3940256099942544/9257395921'
+      : 'ca-app-pub-3940256099942544/5575463023';
 
   final BannerAdListener listener = BannerAdListener(
     // Called when an ad is successfully received.
@@ -110,29 +113,10 @@ class AdState extends ChangeNotifier {
     }
   }
 
-  void showInterstitialAdClass2() {
-    if (interstitialAd != null && !isAdFreeVersion && interstitialAdCounter2 == 2) {
-      interstitialAdCounter2 = 0;
-      interstitialAd!.fullScreenContentCallback =
-          FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {
-        interstitialAd!.dispose();
-        loadInterstitialAd();
-      }, onAdFailedToShowFullScreenContent: ((ad, error) {
-        interstitialAd!.dispose();
-        loadInterstitialAd();
-      }));
-      interstitialAd!.show();
-    } else {
-      if (interstitialAd == null) {
-        loadInterstitialAd();
-      }
-    }
-  }
-
   void showInterstitialAdClassScreen() {
     if (interstitialAd != null &&
         !isAdFreeVersion &&
-        interstitialAdCounter == 3) {
+        interstitialAdCounter == 2) {
       interstitialAdCounter = 0;
       interstitialAd!.fullScreenContentCallback =
           FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {

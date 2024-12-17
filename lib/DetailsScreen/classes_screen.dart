@@ -586,9 +586,9 @@ class _ClassesScreenState extends State<ClassesScreen> {
                                                           .loadInterstitialAd();
                                                     }
                                                     adState
-                                                        .interstitialAdCounter2++;
+                                                        .interstitialAdCounter++;
                                                     adState
-                                                        .showInterstitialAdClass2();
+                                                        .showInterstitialAdClassScreen();
                                                     String className =
                                                         builds[index]
                                                                 ["build"]

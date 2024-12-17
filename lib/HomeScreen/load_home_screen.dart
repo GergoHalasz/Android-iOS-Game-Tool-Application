@@ -4,8 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:wowtalentcalculator/DetailsScreen/expansions_screen.dart';
 import 'package:wowtalentcalculator/utils/methods.dart';
 import 'package:wowtalentcalculator/utils/rating_service.dart';
+import 'package:wowtalentcalculator/utils/size_config.dart';
 import 'home_screen.dart';
 
 class LoadHomeScreen extends StatefulWidget {
@@ -43,6 +45,18 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
                     ),
                     actions: [
                       CupertinoDialogAction(
+                        child: Text('NO THANKS'),
+                        onPressed: () async {
+                          Navigator.of(context).pop(); // Close the dialog
+                        },
+                      ),
+                      CupertinoDialogAction(
+                        child: Text('MAYBE LATER'),
+                        onPressed: () async {
+                          Navigator.of(context).pop(); // Close the dialog
+                        },
+                      ),
+                      CupertinoDialogAction(
                         child: Text('RATE'),
                         onPressed: () async {
                           InAppReview inAppReview = InAppReview.instance;
@@ -53,18 +67,6 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
                           }
                           _prefs.setBool('askAgainRate', false);
 
-                          Navigator.of(context).pop(); // Close the dialog
-                        },
-                      ),
-                      CupertinoDialogAction(
-                        child: Text('NO THANKS'),
-                        onPressed: () async {
-                          Navigator.of(context).pop(); // Close the dialog
-                        },
-                      ),
-                      CupertinoDialogAction(
-                        child: Text('MAYBE LATER'),
-                        onPressed: () async {
                           Navigator.of(context).pop(); // Close the dialog
                         },
                       ),
@@ -86,10 +88,9 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return HomeScreen(
-      expansion: getExpansion(),
-      druidTalentTrees: loadTalentString('druid', 'start'),
-    );
+    SizeConfig().init(context);
+
+    return ExpansionsScreen();
   }
 
   // List<Widget> actionsBuilderAndroid(BuildContext context) =>

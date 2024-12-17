@@ -14,10 +14,7 @@ import 'package:wowtalentcalculator/api/purchase_api.dart';
 import 'package:wowtalentcalculator/provider/talent_provider.dart';
 
 class DrawerScreen extends StatefulWidget {
-  Function changeClass;
-  Function fetchSavedBuild;
-
-  DrawerScreen({required this.changeClass, required this.fetchSavedBuild});
+  DrawerScreen();
 
   @override
   State<DrawerScreen> createState() => _DrawerScreenState();
@@ -80,7 +77,6 @@ class _DrawerScreenState extends State<DrawerScreen> {
 
   @override
   Widget build(BuildContext context) {
-    talentProvider = Provider.of<TalentProvider>(context);
     final adState = Provider.of<AdState>(context);
 
     return Material(
