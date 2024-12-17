@@ -105,51 +105,57 @@ class _SaveScreenState extends State<SaveScreen> {
         backgroundColor: Color.fromARGB(255, 57, 57, 57),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: !adState.isAdFreeVersion
-            ? Padding(
-                padding: EdgeInsets.all(36),
-                child: GestureDetector(
-                  onTap: () async {
-                    final adState =
-                        Provider.of<AdState>(context, listen: false);
-                    if (!adState.isAdFreeVersion) {
-                      final offerings = await PurchaseApi.fetchOffers();
-                      final isSuccess = await Purchases.purchasePackage(
-                          offerings[0].availablePackages[0]);
-                      if (isSuccess.allPurchasedProductIdentifiers.length ==
-                          1) {
-                        adState.changeToAdFreeVersion();
-                      }
-                    }
-                  },
-                  child: Container(
-                    width: 200,
-                    padding: EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 123, 123, 123),
-                        borderRadius: BorderRadius.all(Radius.circular(60))),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Padding(
-                            padding: EdgeInsets.only(right: 8),
-                            child:
-                                Icon(Icons.not_interested, color: Colors.red)),
-                        Padding(
-                          padding: const EdgeInsets.all(7.0),
-                          child: Text(
-                            'Remove Ads',
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.white,
+            ? Column(mainAxisSize: MainAxisSize.min,children: [
+                Text(
+                              'Support me by removing the ads!',
+                              style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),
                             ),
-                          ),
-                        )
-                      ],
+                Padding(
+                  padding: EdgeInsets.all(36),
+                  child: GestureDetector(
+                    onTap: () async {
+                      final adState =
+                          Provider.of<AdState>(context, listen: false);
+                      if (!adState.isAdFreeVersion) {
+                        final offerings = await PurchaseApi.fetchOffers();
+                        final isSuccess = await Purchases.purchasePackage(
+                            offerings[0].availablePackages[0]);
+                        if (isSuccess.allPurchasedProductIdentifiers.length ==
+                            1) {
+                          adState.changeToAdFreeVersion();
+                        }
+                      }
+                    },
+                    child: Container(
+                      width: 200,
+                      padding: EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 123, 123, 123),
+                          borderRadius: BorderRadius.all(Radius.circular(60))),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Padding(
+                              padding: EdgeInsets.only(right: 8),
+                              child: Icon(Icons.not_interested,
+                                  color: Colors.red)),
+                          Padding(
+                            padding: const EdgeInsets.all(7.0),
+                            child: Text(
+                              'Remove Ads',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.white,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              )
+              ])
             : null,
         appBar: AppBar(
             iconTheme: IconThemeData(color: Colors.white),

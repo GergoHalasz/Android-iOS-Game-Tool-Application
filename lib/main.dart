@@ -20,7 +20,7 @@ Future main() async {
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   final initFuture = MobileAds.instance.initialize();
-  loadAd();
+  await loadAd();
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider<AdState>(create: (_) => AdState(initFuture)),
@@ -39,7 +39,7 @@ loadAd() async {
     isAdFreeVersion = true;
   }
   if (!isAdFreeVersion) {
-    AppOpenAd.load(
+    await AppOpenAd.load(
       adUnitId: "ca-app-pub-7574598565891663/9817239401",
       request: AdRequest(),
       adLoadCallback: AppOpenAdLoadCallback(
