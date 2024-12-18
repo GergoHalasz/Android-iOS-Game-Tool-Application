@@ -300,6 +300,9 @@ class _DetailScreenContentState extends State<DetailScreenContent>
     }
 
     return Scaffold(
+      drawer: Drawer(
+        child: DrawerScreen(),
+      ),
       floatingActionButton: Padding(
         padding: EdgeInsets.only(bottom: !adState.isAdFreeVersion ? 45 : 15),
         child: Container(

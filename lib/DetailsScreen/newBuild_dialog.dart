@@ -359,13 +359,17 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                                                         builds[index]["build"]
                                                             ["buildClass"]]),
                                               ),
-                                              onTap: () {
+                                              onTap: () async {
+                                                final prefs =
+                                                    await SharedPreferences
+                                                        .getInstance();
                                                 Navigator.pop(context);
-                                                adState
-                                                    .interstitialAdCounter++;
+                                                adState.interstitialAdCounter++;
                                                 adState
                                                     .showInterstitialAdClassScreen();
                                                 talentProvider.changeExpansion(
+                                                    currentExpansionSelected);
+                                                prefs.setString('expansion',
                                                     currentExpansionSelected);
                                                 widget.fetchSavedBuild(
                                                     builds[index]["build"],
