@@ -88,9 +88,11 @@ class _LoadHomeScreenState extends State<LoadHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
 
-    return ExpansionsScreen();
+    return HomeScreen(
+      expansion: getExpansion(),
+      druidTalentTrees: loadTalentString('druid', 'start'),
+    );
   }
 
   // List<Widget> actionsBuilderAndroid(BuildContext context) =>

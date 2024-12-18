@@ -15,6 +15,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //home_screen is the first page render that can calculate screen size
+    SizeConfig().init(context);
 
     return FutureBuilder(
         future: expansion,

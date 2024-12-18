@@ -251,7 +251,6 @@ class _DetailScreenContentState extends State<DetailScreenContent>
           return ChangeNotifierProvider<TalentProvider>.value(
               value: talentProvider,
               child: NewBuildDialog(
-                expansion: talentProvider.expansion,
                 fetchSavedBuild: fetchSavedBuild,
                 changeClass: changeClass,
               ));

@@ -13,14 +13,10 @@ import 'package:wowtalentcalculator/utils/size_config.dart';
 import 'package:wowtalentcalculator/utils/string.dart';
 
 class NewBuildDialog extends StatefulWidget {
-  String expansion;
   Function changeClass;
   Function fetchSavedBuild;
 
-  NewBuildDialog(
-      {required this.changeClass,
-      required this.fetchSavedBuild,
-      required this.expansion});
+  NewBuildDialog({required this.changeClass, required this.fetchSavedBuild});
 
   @override
   _NewBuildDialogState createState() => _NewBuildDialogState();
@@ -108,7 +104,7 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
     return AlertDialog(
       backgroundColor: Color.fromARGB(255, 61, 61, 61),
       title: new Text(
-        'Choose class and create or see saved builds',
+        'Choose expansion and create or see saved builds',
         style: TextStyle(color: Colors.white, fontSize: 15),
       ),
       content: DefaultTextStyle(
@@ -120,6 +116,47 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            Container(
+              height: 45,
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey, width: 2),
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton(
+                    selectedItemBuilder: (_) {
+                      return expansions
+                          .map((e) => Container(
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  capitalize(e),
+                                ),
+                              ))
+                          .toList();
+                    },
+                    style: TextStyle(color: Colors.white),
+                    iconSize: 30,
+                    icon: Icon(
+                      Icons.arrow_drop_down,
+                      color: Colors.white,
+                    ),
+                    isExpanded: true,
+                    value: currentExpansionSelected,
+                    items: expansions.map((item) {
+                      return DropdownMenuItem(
+                          value: item,
+                          child: Text(
+                            capitalize(item),
+                            style: TextStyle(color: Colors.black),
+                          ));
+                    }).toList(),
+                    onChanged: (value) {
+                      setState(() {
+                        currentExpansionSelected = value as String;
+                      });
+                    }),
+              ),
+            ),
             Container(
               height: SizeConfig.cellSize / 1.7 * 3 + 40,
               child: RawScrollbar(
@@ -138,8 +175,8 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                       spacing: 27,
                       runSpacing: 10,
                       children: [
-                        if (widget.expansion == 'wotlk' ||
-                            widget.expansion == 'cata')
+                        if (currentExpansionSelected == 'wotlk' ||
+                            currentExpansionSelected == 'cata')
                           ...wotlkClasses.map((element) {
                             return Container(
                                 width: SizeConfig.cellSize / 1.65,
@@ -170,10 +207,10 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                                           adState.interstitialAdCounter++;
                                           adState
                                               .showInterstitialAdClassScreen();
-                                          prefs.setString(
-                                              'expansion', widget.expansion);
+                                          prefs.setString('expansion',
+                                              currentExpansionSelected);
                                           talentProvider.changeExpansion(
-                                              widget.expansion);
+                                              currentExpansionSelected);
                                           widget.changeClass(element);
                                         },
                                         borderRadius: BorderRadius.circular(10),
@@ -211,10 +248,10 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                                         Navigator.pop(context);
                                         adState.interstitialAdCounter++;
                                         adState.showInterstitialAdClassScreen();
-                                        prefs.setString(
-                                            'expansion', widget.expansion);
-                                        talentProvider
-                                            .changeExpansion(widget.expansion);
+                                        prefs.setString('expansion',
+                                            currentExpansionSelected);
+                                        talentProvider.changeExpansion(
+                                            currentExpansionSelected);
                                         widget.changeClass(element);
                                       },
                                       borderRadius: BorderRadius.circular(10),
@@ -257,16 +294,16 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                               itemCount: builds.length,
                               itemBuilder: (context, index) {
                                 if ((builds[index] != null &&
-                                        widget.expansion == "tbc" &&
+                                        currentExpansionSelected == "tbc" &&
                                         builds[index]["key"][0] == "t") ||
                                     (builds[index] != null &&
-                                        widget.expansion == "vanilla" &&
+                                        currentExpansionSelected == "vanilla" &&
                                         builds[index]["key"][0] == "v") ||
                                     (builds[index] != null &&
-                                        widget.expansion == "wotlk" &&
+                                        currentExpansionSelected == "wotlk" &&
                                         builds[index]["key"][0] == "w") ||
                                     (builds[index] != null &&
-                                        widget.expansion == "cata" &&
+                                        currentExpansionSelected == "cata" &&
                                         builds[index]["key"][0] == "c")) {
                                   return Column(children: [
                                     Slidable(
@@ -329,7 +366,7 @@ class _NewBuildDialogState extends State<NewBuildDialog> {
                                                 adState
                                                     .showInterstitialAdClassScreen();
                                                 talentProvider.changeExpansion(
-                                                    widget.expansion);
+                                                    currentExpansionSelected);
                                                 widget.fetchSavedBuild(
                                                     builds[index]["build"],
                                                     builds[index]["key"]);
